@@ -1,7 +1,30 @@
 import uuid
 import calendar
 import time
+import sqlite3
 from datetime import datetime
+
+
+def getUniqueCuteID(length, tour_db):
+    proposedID = getCuteID(length)
+    searching = True
+    while searching:
+        if not dbContainsID(proposedID, tour_db):
+            return proposedID
+        else:
+            proposedID = getCuteID(length)
+
+
+def dbContainsID(proposedID, tour_db):
+    containsID = True
+    conn = sqlite3.connect(tour_db)
+    c = conn.cursor()
+    c.execute('SELECT * FROM ' + tour_db + ' WHERE id=?', proposedID)
+    if not bool(c.fetchone()):
+        containsID = False
+    conn.commit()
+    conn.close()
+    return containsID
 
 
 def getCuteID(length):

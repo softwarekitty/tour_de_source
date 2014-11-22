@@ -1,55 +1,84 @@
 import sqlite3
 import datetime
-from util import getCuteID
-from util import getDateTimeMS
+import util
+# import os
 
 
 class Tourist:
-    REPORT_HEADER = "R_"
-    REPORT_DELIM = "_"
-    REPORT_TAIL = ".db"
-    def __init__(self, tour_db, scanner):
-        self.start = getDateTimeMS(datetime.datetime.utcnow())
-        self.id = getCuteID(7)
-        self.tour_db = tour_db
-        self.report = REPORT_HEADER + self.id + REPORT_DELIM + self.start + REPORT_TAIL
-        self.register(scanner)
-        self.begin_report()
 
-    def beginTour(self, scanner):
-        pass
+    def __init__(self, depot, email, scanner, sourcers):
+        self.depot = depot
+        self.email = email
+        self.scanner = scanner
+        self.sourcers = sourcers
 
-    def begin_report(self, scanner):
-        conn = sqlite3.connect(self.report)
-        c = conn.cursor()
+        self.start = util.getDateTimeMS(datetime.datetime.utcnow())
+        self.id = util.getUniqueCuteID(5, depot.getDB())
+        self.report_db = 'R' + self.id + '.db'
+        self.register()
+        self.initialize_report()
 
-        # TODO
-        c.execute('''CREATE TABLE name (Tour) (id int, start int, last int, nFiles int, status text, scanner text, gmail text, download text)''')
-        conn.commit()
-        conn.close()
-
-
-
+    def register(self):
         conn = sqlite3.connect(self.tour_db)
         c = conn.cursor()
         # id, start, last, nFiles, status, scanner, email, download
-        c.execute('''INSERT INTO Tour VALUES (''' + self.id + ''', 1100, 1200, 0, 'INITIAL', ''' + scanner.id + ''', 'contact and auth email', 'where to download product of tour')''')
+        # note that scanner.id is a placeholder for the scanner blob
+        c.execute('INSERT INTO Tour VALUES (' + self.id + ', ' + self.start + ', ' + self.start + ', 0, "INITIAL", ' + self.scanner.id + ', ' + self.email + ', ' + self.report_db + ')')
         conn.commit()
         conn.close()
 
-    def register(self, scanner):
-        conn = sqlite3.connect(self.tour_db)
+    def initialize_report(self):
+        # # always delete the report if it exists (we are restarting)
+        # reportPath = self.depot.getPath() + self.report_db
+        # try:
+        #     os.remove(reportPath)
+        # except OSError:
+        #     pass
+
+        # initialize the core tables
+        conn = sqlite3.connect(self.report_db)
         c = conn.cursor()
-        # id, start, last, nFiles, status, scanner, email, download
-        c.execute('''INSERT INTO Tour VALUES (''' + self.id + ''', ''' + self.start + ''', 1200, 0, 'INITIAL', ''' + scanner.id + ''', 'contact and auth email', 'where to download product of tour')''')
+        c.execute('''CREATE TABLE name (Scan) (ID int, dateTimeMS int, nFiles int, sourceID int)''')
+        c.execute('''CREATE TABLE name (Source) (ID int, metaTablename text, dataTablename text, metaID int, dataID, int)''')
         conn.commit()
         conn.close()
 
-    def updateDepot(self, current_status):
+        # now initialize whatever sourcer tables
+        for s in self.sourcers:
+            s.initialize_report(self.report_db)
+
+        # finally, let the scanner create whatever tables it wants
+        self.scanner.initialize_report(self.report_db)
+
+    def beginTour(self):
+        self.updateStatus("RUNNING")
+
+        # main loop
+        tour_complete = False
+        while not tour_complete:
+            sourcers_empty = True
+            for s in self.sourcers:
+
+                # get status from tour_db
+                # if should stop(status)
+                    # log reason, break
+                # info = s.info
+                # log info, status
+                try:
+                    if s.hasNext():
+                        sourcers_empty = False
+                        r = s.next()
+                        while r.rewind():
+                            self.scanner.scanDirectory(self.path, self.report_db)
+                except Exception as e:
+                    print "exception in main loop: ", e
+                    self.updateStatus("ERROR")
+            tour_complete = sourcers_empty
+        self.updateStatus("FINISHED")
+
+    def updateStatus(self, current_status):
         conn = sqlite3.connect(self.tour_db)
         c = conn.cursor()
-
-        # TODO
-        c.execute('''CREATE TABLE name (Tour) (id int, tour_start int, tour_last int, n_files int, status text, scanner text, gmail text, download_url text)''')
+        c.execute('''UPDATE Tour SET status=? WHERE id=?''', current_status, self.id)
         conn.commit()
         conn.close()
