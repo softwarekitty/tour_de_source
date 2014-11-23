@@ -29,6 +29,9 @@ class Depot:
     def shouldRenew():
         return False
 
+    def getConsecutiveExceptionLimit():
+        return 5
+
 
 def test_depot():
     print "testing"

@@ -1,6 +1,7 @@
 import sqlite3
 import datetime
 import util
+import logging
 # import os
 
 
@@ -55,26 +56,35 @@ class Tourist:
 
         # main loop
         tour_complete = False
+        consecutiveExceptionCounter = 0
+        finalState = "FINISHED"
         while not tour_complete:
-            sourcers_empty = True
+            sourcers_exhausted = True
+            cancelled = False
+            broken = False
             for s in self.sourcers:
-
-                # get status from tour_db
-                # if should stop(status)
-                    # log reason, break
-                # info = s.info
-                # log info, status
+                if self.isCancelled():
+                    cancelled = True
+                    finalState = "CANCELLED"
+                    break
+                elif self.depot.getConsecutiveExceptionLimit() > consecutiveExceptionCounter:
+                    broken = True
+                    finalState = "BROKEN"
+                    break
                 try:
                     if s.hasNext():
-                        sourcers_empty = False
+                        sourcers_exhausted = False
                         r = s.next()
+                        logging.info("SCAN_" + self.id + ": " + r.log())
                         while r.rewind():
                             self.scanner.scanDirectory(self.path, self.report_db)
+                        consecutiveExceptionCounter = 0
                 except Exception as e:
-                    print "exception in main loop: ", e
-                    self.updateStatus("ERROR")
-            tour_complete = sourcers_empty
-        self.updateStatus("FINISHED")
+                    consecutiveExceptionCounter += 1
+                    logging.exception(e)
+            tour_complete = sourcers_exhausted or cancelled or broken
+        self.updateStatus(finalState)
+        logging.info("FINAL STATE: " + finalState)
 
     def updateStatus(self, current_status):
         conn = sqlite3.connect(self.tour_db)
@@ -82,3 +92,12 @@ class Tourist:
         c.execute('''UPDATE Tour SET status=? WHERE id=?''', current_status, self.id)
         conn.commit()
         conn.close()
+
+    def isCancelled(self):
+        isCancelled = False
+        conn = sqlite3.connect(self.tour_db)
+        c = conn.cursor()
+        c.execute('''SELECT status FROM Tour WHERE id=?''', self.id)
+        isCancelled = c.fetchone() == "CANCELLED"
+        conn.close()
+        return isCancelled
