@@ -2,7 +2,20 @@ import uuid
 import calendar
 import time
 import sqlite3
+import hashlib
 from datetime import datetime
+
+
+def getURLContent():
+    return "string"
+
+
+def get_cuteHash(filePath):
+    with open(filePath, "r") as fileHandle:
+        content = fileHandle.read()
+        h = hashlib.sha224(content)
+        iHash = int(h.hexdigest(), 16)
+        return base36encode(iHash)
 
 
 def getUniqueCuteID(length, tour_db):

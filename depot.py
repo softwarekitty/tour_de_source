@@ -11,7 +11,9 @@ class Depot:
             try:
                 os.remove(dbpath)
             except OSError:
+                # expect to hit this when the db has not been created yet
                 pass
+        # not renewing, then you would create only if no db exists yet
         if not os.path.isfile(dbpath):
             conn = sqlite3.connect(Depot.DB)
             c = conn.cursor()

@@ -51,10 +51,10 @@ class Tourist:
         # finally, let the scanner create whatever tables it wants
         self.scanner.initialize_report(self.report_db)
 
-    def beginTour(self):
-        self.updateStatus("RUNNING")
-
+    def tour(self):
         # main loop
+        self.updateStatus("RUNNING")
+        logging.info("SCAN_" + self.id + " RUNNING")
         tour_complete = False
         consecutiveExceptionCounter = 0
         finalState = "FINISHED"
@@ -72,7 +72,7 @@ class Tourist:
                     finalState = "BROKEN"
                     break
                 try:
-                    if s.hasNext():
+                    if not s.isExhausted():
                         sourcers_exhausted = False
                         r = s.next()
                         logging.info("SCAN_" + self.id + ": " + r.log())
@@ -81,10 +81,10 @@ class Tourist:
                         consecutiveExceptionCounter = 0
                 except Exception as e:
                     consecutiveExceptionCounter += 1
-                    logging.exception(e)
+                    logging.exception("SCAN_" + self.id + " EXCEPTION:" + e)
             tour_complete = sourcers_exhausted or cancelled or broken
         self.updateStatus(finalState)
-        logging.info("FINAL STATE: " + finalState)
+        logging.info("SCAN_" + self.id + " FINAL STATE: " + finalState)
 
     def updateStatus(self, current_status):
         conn = sqlite3.connect(self.tour_db)

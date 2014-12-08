@@ -8,4 +8,4 @@ d = Depot()
 e = "investigationbot@gmail.com"
 s = [GithubPythonSourcer("Version")]
 t = Tourist(d, e, PythonRegexScanner(), s)
-t.beginTour()
+t.tour()
