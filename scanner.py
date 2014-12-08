@@ -12,42 +12,6 @@ class PythonRegexScanner:
 
     # regex_flags = ["IGNORECASE","DEBUG","LOCALE","MULTILINE","DOTALL","UNICODE","VERBOSE"]
 
-    def initialize_report(self, report_db):
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute('''CREATE TABLE name (Regex) (scanID int, fileID int, regexFunction int, pattern text, flags int)''')
-        c.execute('''CREATE TABLE name (File) (cuteHash char(44), filePath text, scanID int)''')
-        conn.commit()
-        conn.close()
-
-    def record_regex(self, scanID, fileID, regexFunction, pattern, flags, report_db):
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute("INSERT INTO Regex values (?,?,?,?,?)", (scanID, fileID, regexFunction, pattern, flags))
-        conn.commit()
-        conn.close()
-
-    def db_contains_file(self, cuteHash, report_db):
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute("SELECT EXISTS(SELECT 1 FROM File WHERE cuteHash=? LIMIT 1)", cuteHash)
-        found = c.fetchone()
-        conn.commit()
-        conn.close()
-        if found:
-            return True
-        else:
-            return False
-
-    def registerFilePath(self, cuteHash, filePath, scanID, report_db):
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute("INSERT INTO File values (?,?,?)", (cuteHash, filePath, scanID))
-        lastRow = c.lastrowid
-        conn.commit()
-        conn.close()
-        return lastRow
-
     # filePaths is a list of python file paths to scan
     def extract_regex(self, filePaths, scanID, report_db):
         for filePath in filePaths:
@@ -55,12 +19,15 @@ class PythonRegexScanner:
 
             # hash to avoid re-scanning identical files.
             cuteHash = util.get_cuteHash(filePath)
-            if not self.db_contains_file(cuteHash, report_db):
-                fileID = self.registerFilePath(cuteHash, filePath, scanID, report_db)
+            isUniqueHash = self.db_contains_hash(cuteHash, report_db)
+
+            # the track_file function tracks duplicates, repeats
+            fileID = self.track_file(cuteHash, filePath, scanID, report_db, isUniqueHash)
+            if isUniqueHash:
                 node = astroid.manager.AstroidManager().ast_from_file(filePath)
                 self.extractRegexR(node, fileID, scanID, report_db)
-            # print("returning regexes: "+str(regexes))
 
+    # this is public so that the index mapping is not mysterious
     def get_function_list(self):
         return ["re.compile", "re.search", "re.match", "re.split", "re.findall", "re.finditer", "re.sub", "re.subn"]
 
@@ -101,16 +68,15 @@ class PythonRegexScanner:
         for grandchild in child.get_children():
             self.extractRegexR(grandchild, fileID, scanID, report_db)
 
-
-# this is the order in python docs and in our function list
-# re.compile(pattern,flags=0),
-# re.search(pattern,string,flags=0),
-# re.match(pattern,string,flags=0),
-# re.split(pattern,string,maxsplit=0,flags=0),
-# re.findall(pattern,string,flags=0),
-# re.finditer(pattern,string,flags=0),
-# re.sub(pattern,repl,string,count=0,flags=0),
-# re.subn(pattern,repl,string,count=0,flags=0),
+    # this is the order in python docs and in our function list
+    # re.compile(pattern,flags=0),
+    # re.search(pattern,string,flags=0),
+    # re.match(pattern,string,flags=0),
+    # re.split(pattern,string,maxsplit=0,flags=0),
+    # re.findall(pattern,string,flags=0),
+    # re.finditer(pattern,string,flags=0),
+    # re.sub(pattern,repl,string,count=0,flags=0),
+    # re.subn(pattern,repl,string,count=0,flags=0),
     def extract_flags(self, regexFunction, regex_citation):
         if regexFunction == 0:
             return regex_citation[1]
@@ -123,3 +89,68 @@ class PythonRegexScanner:
         else:
             logging.error("cannot extract flags from " + regex_citation)
             return 0
+
+    def track_file(self, cuteHash, filePath, scanID, report_db, isUniqueHash):
+        # fileID will be None if there is single no entry in the File table
+        # with cuteHash, filepath, scanID all matching
+        fileID = self.increment_tracked_file(cuteHash, filePath, scanID, report_db, isUniqueHash)
+        if not fileID:
+            return self.insert_file(cuteHash, filePath, scanID, 1, report_db)
+        else:
+            return fileID
+
+    # ###################### database functions #######################
+
+    def initialize_report(self, report_db):
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute('''CREATE TABLE name (Regex) (scanID int, fileID int, regexFunction int, pattern text, flags int)''')
+        c.execute('''CREATE TABLE name (File) (cuteHash char(44), filePath text, scanID int, count int)''')
+        conn.commit()
+        conn.close()
+
+    def record_regex(self, scanID, fileID, regexFunction, pattern, flags, report_db):
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute("INSERT INTO Regex values (?,?,?,?,?)", (scanID, fileID, regexFunction, pattern, flags))
+        conn.commit()
+        conn.close()
+
+    def insert_file(self, cuteHash, filePath, scanID, count, report_db):
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute("INSERT INTO File values (?,?,?,?)", (cuteHash, filePath, scanID, count))
+        fileID = c.lastrowid
+        conn.commit()
+        conn.close()
+        return fileID
+
+    def increment_tracked_file(self, cuteHash, filePath, scanID, report_db, isUniqueHash):
+        if isUniqueHash:
+            return None
+        else:
+            conn = sqlite3.connect(report_db)
+            c = conn.cursor()
+            c.execute("SELECT * FROM File WHERE cuteHash=?, scanID=?, filePath=?", (cuteHash, scanID, filePath))
+            found = c.fetchone()
+            if found:
+                fileID = c.lastrowid
+                c.execute("UPDATE File SET count = count + 1 WHERE rowid =" + str(fileID))
+            conn.commit()
+            conn.close()
+            if found:
+                return fileID
+            else:
+                return None
+
+    def db_contains_hash(self, cuteHash, report_db):
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute("SELECT EXISTS(SELECT 1 FROM File WHERE cuteHash=? LIMIT 1)", (cuteHash))
+        found = c.fetchone()
+        conn.commit()
+        conn.close()
+        if found:
+            return True
+        else:
+            return False
