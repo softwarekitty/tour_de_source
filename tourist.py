@@ -20,11 +20,13 @@ class Tourist:
         self.initialize_report()
 
     def register(self):
-        conn = sqlite3.connect(self.tour_db)
+        conn = sqlite3.connect(self.depot.getDB())
         c = conn.cursor()
         # id, start, last, nFiles, status, scanner, email, download
         # note that scanner.id is a placeholder for the scanner blob
-        c.execute('INSERT INTO Tour VALUES (' + self.id + ', ' + self.start + ', ' + self.start + ', 0, "INITIAL", ' + self.scanner.id + ', ' + self.email + ', ' + self.report_db + ')')
+        insertStatement = 'INSERT INTO Tour VALUES ("' + self.id + '", ' + str(self.start) + ', ' + str(self.start) + ', 0, "INITIAL", "' + self.scanner.id + '", "' + self.email + '", "' + self.report_db + '")'
+        print "creating tour table with statement: " + insertStatement
+        c.execute(insertStatement)
         conn.commit()
         conn.close()
 
@@ -81,17 +83,17 @@ class Tourist:
         logging.info("SCAN_" + self.id + " FINAL STATE: " + finalState)
 
     def updateStatus(self, current_status):
-        conn = sqlite3.connect(self.tour_db)
+        conn = sqlite3.connect(self.depot.getDB())
         c = conn.cursor()
-        c.execute('''UPDATE Tour SET status=? WHERE id=?''', current_status, self.id)
+        c.execute('''UPDATE Tour SET status=? WHERE id=?''', (current_status, self.id, ))
         conn.commit()
         conn.close()
 
     def isCancelled(self):
         isCancelled = False
-        conn = sqlite3.connect(self.tour_db)
+        conn = sqlite3.connect(self.depot.getDB())
         c = conn.cursor()
-        c.execute('''SELECT status FROM Tour WHERE id=?''', self.id)
+        c.execute('''SELECT status FROM Tour WHERE id=?''', (self.id, ))
         isCancelled = c.fetchone() == "CANCELLED"
         conn.close()
         return isCancelled

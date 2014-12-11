@@ -28,7 +28,7 @@ def dbContainsID(proposedID, tour_db):
     containsID = True
     conn = sqlite3.connect(tour_db)
     c = conn.cursor()
-    c.execute('SELECT * FROM ' + tour_db + ' WHERE id=?', proposedID)
+    c.execute('SELECT * FROM Tour WHERE id=?', (proposedID,))
     if not bool(c.fetchone()):
         containsID = False
     conn.commit()

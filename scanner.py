@@ -25,7 +25,6 @@ class PythonRegexScanner:
         # c.execute('''CREATE TABLE name (Scan) (dateTimeMS int, nFiles int, sourceID int)''')
         # c.execute('''CREATE TABLE name (Source) (metaTablename text, dataTablename text, metaID int, dataID, int)''')
 
-
         allFiles = []
         for root, dirs, files in os.walk(path):
             for name in files:
@@ -33,7 +32,7 @@ class PythonRegexScanner:
         pythonPaths = filter(self.pythonFilter.search, allFiles)
 
         # TODO - needs the sourceID, so sourcer needs implementation first
-        scanID = register_scan(sourceID, len(pythonPaths), report_db)
+        scanID = self.register_scan(sourceID, len(pythonPaths), report_db)
 
         self.extract_regex(pythonPaths, scanID, report_db)
 
@@ -131,8 +130,8 @@ class PythonRegexScanner:
     def initialize_report(self, report_db):
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
-        c.execute('''CREATE TABLE name (Regex) (scanID int, fileID int, regexFunction int, pattern text, flags int)''')
-        c.execute('''CREATE TABLE name (File) (cuteHash char(44), filePath text, scanID int, count int)''')
+        c.execute('''CREATE TABLE Regex (scanID int, fileID int, regexFunction int, pattern text, flags int)''')
+        c.execute('''CREATE TABLE File (cuteHash char(44), filePath text, scanID int, count int)''')
         conn.commit()
         conn.close()
 

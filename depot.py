@@ -1,5 +1,6 @@
 import sqlite3
 import os
+import sh
 
 
 class Depot:
@@ -9,13 +10,14 @@ class Depot:
         dbpath = self.getPath() + self.getDB()
         if self.shouldRenew():
             try:
-                os.remove(dbpath)
+                sh.cd("/Users/carlchapman/Documents/SoftwareProjects/tour_de_source")
+                sh.rm('-r', sh.glob('./*.db'))
             except OSError:
                 # expect to hit this when the db has not been created yet
                 pass
         # not renewing, then you would create only if no db exists yet
         if not os.path.isfile(dbpath):
-            conn = sqlite3.connect(Depot.DB)
+            conn = sqlite3.connect(self.getDB())
             c = conn.cursor()
             c.execute('''CREATE TABLE Tour (id text, start int, last int, nFiles int, status text, scanner text, gmail text, download text)''')
             conn.commit()
@@ -28,10 +30,10 @@ class Depot:
     def getDB(self):
         return 'tour.db'
 
-    def shouldRenew():
-        return False
+    def shouldRenew(self):
+        return True
 
-    def getConsecutiveExceptionLimit():
+    def getConsecutiveExceptionLimit(self):
         return 5
 
 
