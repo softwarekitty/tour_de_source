@@ -6,6 +6,6 @@ from scanner import PythonRegexScanner
 
 d = Depot()
 e = "investigationbot@gmail.com"
-s = [GithubPythonSourcer("Version")]
+s = [GithubPythonSourcer("MasterAndTags")]
 t = Tourist(d, e, PythonRegexScanner(), s)
 t.tour()

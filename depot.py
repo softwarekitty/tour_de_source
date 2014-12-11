@@ -17,7 +17,7 @@ class Depot:
         if not os.path.isfile(dbpath):
             conn = sqlite3.connect(Depot.DB)
             c = conn.cursor()
-            c.execute('''CREATE TABLE name (Tour) (id text, start int, last int, nFiles int, status text, scanner text, gmail text, download text)''')
+            c.execute('''CREATE TABLE Tour (id text, start int, last int, nFiles int, status text, scanner text, gmail text, download text)''')
             conn.commit()
             conn.close()
 

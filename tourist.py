@@ -29,18 +29,12 @@ class Tourist:
         conn.close()
 
     def initialize_report(self):
-        # # always delete the report if it exists (we are restarting)
-        # reportPath = self.depot.getPath() + self.report_db
-        # try:
-        #     os.remove(reportPath)
-        # except OSError:
-        #     pass
 
         # initialize the core tables
         conn = sqlite3.connect(self.report_db)
         c = conn.cursor()
-        c.execute('''CREATE TABLE name (Scan) (ID int, dateTimeMS int, nFiles int, sourceID int)''')
-        c.execute('''CREATE TABLE name (Source) (ID int, metaTablename text, dataTablename text, metaID int, dataID, int)''')
+        c.execute('''CREATE TABLE Scan (dateTimeMS int, nFiles int, sourceID int)''')
+        c.execute('''CREATE TABLE Source (metaTableName text, dataTableName text, metaID int, dataID int)''')
         conn.commit()
         conn.close()
 
@@ -74,10 +68,10 @@ class Tourist:
                 try:
                     if not s.isExhausted():
                         sourcers_exhausted = False
-                        r = s.next()
+                        r = s.next(self.depot.getPath(), self.report_db)
                         logging.info("SCAN_" + self.id + ": " + r.log())
                         while r.rewind():
-                            self.scanner.scanDirectory(self.path, self.report_db)
+                            self.scanner.scanDirectory(self.depot.getPath(), r.getSourceID(), self.report_db)
                         consecutiveExceptionCounter = 0
                 except Exception as e:
                     consecutiveExceptionCounter += 1

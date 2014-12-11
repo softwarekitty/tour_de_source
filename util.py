@@ -6,10 +6,6 @@ import hashlib
 from datetime import datetime
 
 
-def getURLContent():
-    return "string"
-
-
 def get_cuteHash(filePath):
     with open(filePath, "r") as fileHandle:
         content = fileHandle.read()

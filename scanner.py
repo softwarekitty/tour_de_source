@@ -5,10 +5,37 @@ import astroid.node_classes
 import astroid.inspector
 import logging
 import util
+import os
+import re
+
+'''
+scanner interface is just 'scanDirectory(path, report_db)'
+    path is a the directory path as a string
+    report_db names the db file to report to
+
+    but for the tourist's Scan table: (dateTimeMS int, nFiles int, sourceID int) to be meaningful, the scanner is expected to register at the start of each scan of one project version (getting a scanID) by writing to that table, and then all custom tables populated when scanning a project version should use reference that scanID.
+'''
 
 
 class PythonRegexScanner:
     id = "python regex scanner"
+    pythonFilter = re.compile('.*\.py$', re.IGNORECASE)
+
+    def scanDirectory(self, path, sourceID, report_db):
+        # c.execute('''CREATE TABLE name (Scan) (dateTimeMS int, nFiles int, sourceID int)''')
+        # c.execute('''CREATE TABLE name (Source) (metaTablename text, dataTablename text, metaID int, dataID, int)''')
+
+
+        allFiles = []
+        for root, dirs, files in os.walk(path):
+            for name in files:
+                allFiles.append(os.path.join(root, name))
+        pythonPaths = filter(self.pythonFilter.search, allFiles)
+
+        # TODO - needs the sourceID, so sourcer needs implementation first
+        scanID = register_scan(sourceID, len(pythonPaths), report_db)
+
+        self.extract_regex(pythonPaths, scanID, report_db)
 
     # regex_flags = ["IGNORECASE","DEBUG","LOCALE","MULTILINE","DOTALL","UNICODE","VERBOSE"]
 
