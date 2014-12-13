@@ -2,7 +2,6 @@ import sqlite3
 import datetime
 import util
 import logging
-# import os
 
 
 class Tourist:
@@ -59,11 +58,12 @@ class Tourist:
             cancelled = False
             broken = False
             for s in self.sourcers:
+                print "ecounter: " + str(consecutiveExceptionCounter)
                 if self.isCancelled():
                     cancelled = True
                     finalState = "CANCELLED"
                     break
-                elif self.depot.getConsecutiveExceptionLimit() > consecutiveExceptionCounter:
+                elif self.depot.getConsecutiveExceptionLimit() < consecutiveExceptionCounter:
                     broken = True
                     finalState = "BROKEN"
                     break
@@ -77,7 +77,9 @@ class Tourist:
                         consecutiveExceptionCounter = 0
                 except Exception as e:
                     consecutiveExceptionCounter += 1
-                    logging.exception("SCAN_" + self.id + " EXCEPTION:" + e)
+                    print str(e)
+                    logging.error("SCAN_" + self.id + " EXCEPTION:" + str(e))
+                print "finished one sourcer"
             tour_complete = sourcers_exhausted or cancelled or broken
         self.updateStatus(finalState)
         logging.info("SCAN_" + self.id + " FINAL STATE: " + finalState)
@@ -96,4 +98,5 @@ class Tourist:
         c.execute('''SELECT status FROM Tour WHERE id=?''', (self.id, ))
         isCancelled = c.fetchone() == "CANCELLED"
         conn.close()
+        logging.debug("SCAN_" + self.id + " Tour Canceled: " + str(isCancelled))
         return isCancelled

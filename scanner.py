@@ -21,7 +21,11 @@ class PythonRegexScanner:
     id = "python regex scanner"
     pythonFilter = re.compile('.*\.py$', re.IGNORECASE)
 
+    def log(self, msg=""):
+        logging.debug("PyReS - " + msg)
+
     def scanDirectory(self, path, sourceID, report_db):
+        self.log("scanDirectory, path: " + str(path) + " sourceID: " + str(sourceID) + " report_db: " + report_db)
         # c.execute('''CREATE TABLE name (Scan) (dateTimeMS int, nFiles int, sourceID int)''')
         # c.execute('''CREATE TABLE name (Source) (metaTablename text, dataTablename text, metaID int, dataID, int)''')
 
@@ -40,6 +44,7 @@ class PythonRegexScanner:
 
     # filePaths is a list of python file paths to scan
     def extract_regex(self, filePaths, scanID, report_db):
+        self.log("extract_regex, len(filepaths): " + str(len(filePaths)) + " scanID: " + str(scanID))
         for filePath in filePaths:
             # print("parsing file: "+file)
 
@@ -78,14 +83,14 @@ class PythonRegexScanner:
                         neighborFile = x.get_children().next()
                         regex_citation[arg_counter] = str(neighborFile.name) + "." + str(x.attrname)
                     else:
-                        print("unexpected class found: " + x.__class__.__name__)
+                        logging.warning("PyReS - extractRegexR, unexpected class found: " + x.__class__.__name__)
 
                 elif isinstance(x, astroid.node_classes.Name):
                     regex_citation[arg_counter] = x.infer().next().as_string()
                 elif isinstance(x, astroid.node_classes.Const):
                     regex_citation[arg_counter] = x.as_string()
                 else:
-                    print("unexpected class found: " + x.__class__.__name__)
+                    logging.warning("PyReS - extractRegexR, unexpected class found: " + x.__class__.__name__)
                 arg_counter += 1
             regexFunction = target_func.index(regex_citation[0])
             pattern = regex_citation[1]
@@ -113,10 +118,11 @@ class PythonRegexScanner:
         elif regexFunction in [6, 7]:
             return regex_citation[4]
         else:
-            logging.error("cannot extract flags from " + regex_citation)
+            logging.error("PyReS - extract_flags, cannot extract flags from " + str(regex_citation))
             return 0
 
     def track_file(self, cuteHash, filePath, scanID, report_db, isUniqueHash):
+        self.log("track_file, cuteHash: " + cuteHash + " filePath: " + filePath + " scanID: " + str(scanID))
         # fileID will be None if there is single no entry in the File table
         # with cuteHash, filepath, scanID all matching
         fileID = self.increment_tracked_file(cuteHash, filePath, scanID, report_db, isUniqueHash)
@@ -128,6 +134,7 @@ class PythonRegexScanner:
     # ###################### database functions #######################
 
     def initialize_report(self, report_db):
+        self.log("initialize_report, report_db: " + report_db)
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute('''CREATE TABLE Regex (scanID int, fileID int, regexFunction int, pattern text, flags int)''')
@@ -136,6 +143,7 @@ class PythonRegexScanner:
         conn.close()
 
     def record_regex(self, scanID, fileID, regexFunction, pattern, flags, report_db):
+        self.log("record_regex, scanID: " + str(scanID) + " fileID: " + str(fileID) + " regexFunction: " + str(regexFunction) + " pattern: " + str(pattern) + " flags: " + str(flags))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute("INSERT INTO Regex values (?,?,?,?,?)", (scanID, fileID, regexFunction, pattern, flags))
@@ -143,6 +151,7 @@ class PythonRegexScanner:
         conn.close()
 
     def insert_file(self, cuteHash, filePath, scanID, count, report_db):
+        self.log("insert_file, cuteHash: " + cuteHash + " scanID: " + str(scanID) + " count: " + str(count))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute("INSERT INTO File values (?,?,?,?)", (cuteHash, filePath, scanID, count))
@@ -165,6 +174,7 @@ class PythonRegexScanner:
             conn.commit()
             conn.close()
             if found:
+                logging.info("PyReS - increment_tracked_file, cuteHash: " + cuteHash + " filePath: " + filePath + " scanID: " + str(scanID) + " fileID: " + str(fileID))
                 return fileID
             else:
                 return None
