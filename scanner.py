@@ -27,7 +27,7 @@ class PythonRegexScanner:
 
     def scanDirectory(self, path, sourceID, report_db):
         scanBeginS = util.getDateTimeS(datetime.datetime.utcnow())
-        self.log("scanDirectory, path: " + str(path) + " sourceID: " + str(sourceID) + " scanBeginS: " + scanBeginS + " report_db: " + report_db)
+        self.log("scanDirectory, path: " + str(path) + " sourceID: " + str(sourceID) + " scanBeginS: " + str(scanBeginS) + " report_db: " + report_db)
         # c.execute('''CREATE TABLE name (Scan) (scanBeginS int, nFiles int, sourceID int)''')
         # c.execute('''CREATE TABLE name (Source) (metaTablename text, dataTablename text, metaID int, dataID, int)''')
 
@@ -46,11 +46,11 @@ class PythonRegexScanner:
     def extract_regex(self, filePaths, scanID, report_db):
         self.log("extract_regex, len(filepaths): " + str(len(filePaths)) + " scanID: " + str(scanID))
         for filePath in filePaths:
-            # print("parsing file: "+file)
 
             # hash to avoid re-scanning identical files.
             cuteHash = util.get_cuteHash(filePath)
             isUniqueHash = self.db_contains_hash(cuteHash, report_db)
+            logging.info("PyReS - extract_regex, extracting from filePath " + filePath + " isUniqueHash: " + str(isUniqueHash))
 
             # the track_file function tracks duplicates, repeats
             fileID = self.track_file(cuteHash, filePath, scanID, report_db, isUniqueHash)
@@ -110,13 +110,14 @@ class PythonRegexScanner:
     # re.subn(pattern,repl,string,count=0,flags=0),
     def extract_flags(self, regexFunction, regex_citation):
         if regexFunction == 0:
-            return regex_citation[1]
-        elif regexFunction in [1, 2, 4, 5]:
+            # note that arg0 is the regexFunction, arg1 is the pattern
             return regex_citation[2]
-        elif regexFunction == 3:
+        elif regexFunction in [1, 2, 4, 5]:
             return regex_citation[3]
-        elif regexFunction in [6, 7]:
+        elif regexFunction == 3:
             return regex_citation[4]
+        elif regexFunction in [6, 7]:
+            return regex_citation[5]
         else:
             logging.error("PyReS - extract_flags, cannot extract flags from " + str(regex_citation))
             return 0
@@ -143,12 +144,14 @@ class PythonRegexScanner:
         conn.close()
 
     def register_scan(self, scanBeginS, sourceID, nFiles, report_db):
-        self.log("register_scan, scanBeginS: " + scanBeginS + "sourceID: " + str(sourceID) + " nFiles: " + str(nFiles))
+        self.log("register_scan, scanBeginS: " + str(scanBeginS) + " sourceID: " + str(sourceID) + " nFiles: " + str(nFiles))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute("INSERT INTO Scan values (?,?,?)", (scanBeginS, nFiles, sourceID))
+        scanID = c.lastrowid
         conn.commit()
         conn.close()
+        return scanID
 
     def record_regex(self, scanID, fileID, regexFunction, pattern, flags, report_db):
         self.log("record_regex, scanID: " + str(scanID) + " fileID: " + str(fileID) + " regexFunction: " + str(regexFunction) + " pattern: " + str(pattern) + " flags: " + str(flags))
@@ -178,7 +181,7 @@ class PythonRegexScanner:
             found = c.fetchone()
             if found:
                 fileID = c.lastrowid
-                c.execute("UPDATE File SET count = count + 1 WHERE rowid =" + str(fileID))
+                c.execute("UPDATE File SET count = count + 1 WHERE rowid =?", (fileID,))
             conn.commit()
             conn.close()
             if found:
@@ -190,7 +193,7 @@ class PythonRegexScanner:
     def db_contains_hash(self, cuteHash, report_db):
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
-        c.execute("SELECT EXISTS(SELECT 1 FROM File WHERE cuteHash=? LIMIT 1)", (cuteHash))
+        c.execute("SELECT EXISTS(SELECT 1 FROM File WHERE cuteHash=? LIMIT 1)", (cuteHash, ))
         found = c.fetchone()
         conn.commit()
         conn.close()

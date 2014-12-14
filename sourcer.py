@@ -44,10 +44,11 @@ class GithubPythonSourcer:
     def __init__(self, rewinder_type):
         self.rewinder_type = rewinder_type
         self.exhausted = False
-        # self.last = 0
+        self.last = 0
 
         # for testing only - this makes the first Python project very small
-        self.last = 15249308
+        # self.last = 15249308
+
         self.repos = []
         self.log("initialized")
 

@@ -75,6 +75,14 @@ def test_getDateTimeS():
     assert start < getDateTimeS(datetime.now())
 
 
+def test_get_cuteHash_fileExists():
+    safePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/testFile.txt"
+    with open(safePath, 'w+') as testFile:
+        testFile.write('12345678')
+    cuteHash = get_cuteHash(safePath)
+    assert cuteHash == '1lhjps3myz35yhr7cad4j81jdz5fym7oekjcacq1atht'
+
+
 # cite: https://gist.github.com/kfr2/4287546
 def base36encode(number):
     """Converts an integer into a base36 string."""
