@@ -41,7 +41,7 @@ def getCuteID(length):
     return base36encode(uuid.uuid4().int)[0:actualLength]
 
 
-def getDateTimeMS(dateTime_input):
+def getDateTimeS(dateTime_input):
     return calendar.timegm(dateTime_input.utctimetuple())
 
 
@@ -68,11 +68,11 @@ def test_getCuteID():
     assert 20000 < counter
 
 
-def test_getDateTimeMS():
-    start = getDateTimeMS(datetime.now())
-    time.sleep(0.01)
+def test_getDateTimeS():
+    start = getDateTimeS(datetime.now())
+    time.sleep(2)
     print start
-    assert start < getDateTimeMS(datetime.now())
+    assert start < getDateTimeS(datetime.now())
 
 
 # cite: https://gist.github.com/kfr2/4287546

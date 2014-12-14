@@ -1,12 +1,12 @@
 import sh
 import util
-import logging
 
 '''
     GitRewinder expects a list of (sha, sourceID) tuples with most recent on top, the path of the project in which the sha hashes can be used by git to rewind a project, and what type the rewinder is for logging (Version, MasterOnly, InitialOnly, 2Week, Monthly, etc.)
 '''
 
 
+# notice in this class there is no database access or logging done directly, only enough code to accomplish the effect of rewinding the source
 class GitRewinder:
 
     def __init__(self, stack, path, type):
@@ -18,7 +18,6 @@ class GitRewinder:
         self.cuteID = util.getCuteID(9)
 
     def rewind(self):
-        self.log()
         if not self.stack:
             return False
         shaSourceIDTuple = self.stack.pop()
@@ -31,16 +30,16 @@ class GitRewinder:
         return True
 
     def getType(self):
-        return str(self.type)
+        return self.type
 
     def getSourceID(self):
-        return str(self.sourceID)
+        return self.sourceID
 
     def getSHA(self):
-        return str(self.sha)
+        return self.sha
 
     def getID(self):
-        return str(self.cuteID)
+        return self.cuteID
 
     def log(self):
-        logging.debug("GitRe - type: " + self.getType() + " ID: " + self.getID() + " sha: " + self.getSHA() + " sourceID: " + self.getSourceID())
+        return "GitRe - log, type: " + self.getType() + " ID: " + self.getID() + " sha: " + self.getSHA() + " sourceID: " + str(self.getSourceID())

@@ -44,6 +44,7 @@ class GithubPythonSourcer:
     def __init__(self, rewinder_type):
         self.rewinder_type = rewinder_type
         self.exhausted = False
+        # self.last = 0
 
         # for testing only - this makes the first Python project very small
         self.last = 15249308
@@ -54,22 +55,22 @@ class GithubPythonSourcer:
         return bool(self.exhausted)
 
     def log(self, msg=""):
-        state = "GiPyS - last: " + str(self.last) + " len(repos): " + str(len(self.repos)) + " :: "
+        logMessage = "GiPyS - " + msg + " last: " + str(self.last) + " len(repos): " + str(len(self.repos))
         if self.exhausted:
-            msg = "exhausted:True " + msg
-            logging.info(state + msg)
+            logMessage = logMessage + " exhausted:True"
+            logging.warning(logMessage)
         else:
-            logging.debug(state + msg)
+            logging.debug(logMessage)
 
     # returns a rewinder for the next repo
-    def next(self, path, report_db):
+    def next(self, repo_path, report_path):
         self.log("next")
         if len(self.repos) == 0:
             self.refresh_repos(self.last)
         if self.exhausted is True:
             return None
         self.last = self.repos.pop()
-        return self.getRewinder(self.last, path, report_db)
+        return self.getRewinder(self.last, repo_path, report_path)
 
     def get_json(self, url):
 
@@ -126,13 +127,14 @@ class GithubPythonSourcer:
         return request
 
     # this is a placeholder for adding rewinders to this sourcer
-    def getRewinder(self, repoID, path, report_db):
+    def getRewinder(self, repoID, repo_path, report_path):
         if self.rewinder_type == "MasterAndTags":
-            return self.getGitMasterAndTagsRewinder(repoID, path, report_db)
+            return self.getGitMasterAndTagsRewinder(repoID, repo_path, report_path)
         else:
             return None
 
-    def getGitMasterAndTagsRewinder(self, repoID, path, report_db):
+        # Rewinder ready to rewind.  populates the meta, data, source tables, clones repo and builds stack for Rewinder.
+    def getGitMasterAndTagsRewinder(self, repoID, repo_path, report_path):
         self.log("geGiMaATaRe, repoID: " + str(repoID))
 
         # using repoID and github api, find masterSHA, repoJSON, tagJSON, masterJSON
@@ -143,15 +145,15 @@ class GithubPythonSourcer:
         masterSHA = masterJSON['commit']['sha']
 
         # populate the meta table with this project's meta information
-        metaID = self.record_meta(repoID, masterSHA, repoJSON, tagJSON, masterJSON, report_db)
+        metaID = self.record_meta(repoID, masterSHA, repoJSON, tagJSON, masterJSON, report_path)
 
-        # populate the data table with masterDateMS, masterSHA, metaID
+        # populate the data table with masterDateS, masterSHA, metaID
         masterDate = masterJSON['commit']['commit']['committer']['date']
-        masterDateMS = calendar.timegm(dateutil.parser.parse(masterDate).utctimetuple())
-        dataID = self.record_data(masterDateMS, masterSHA, metaID, report_db)
+        masterDateS = calendar.timegm(dateutil.parser.parse(masterDate).utctimetuple())
+        dataID = self.record_data(masterDateS, masterSHA, metaID, report_path)
 
         # finally, populate the source table with the metaID, dataID combo
-        sourceID = self.record_source(metaID, dataID, report_db)
+        sourceID = self.record_source(metaID, dataID, report_path)
 
         # begin creating the stack for the rewinder with the master tuple
         stack = []
@@ -164,16 +166,16 @@ class GithubPythonSourcer:
             for tagObject in tagJSON:
                 tagCommitJSON = self.get_json(tagObject['commit']['url'])
                 tagCommitDate = tagCommitJSON['commit']['committer']['date']
-                tagCommitDateMS = calendar.timegm(dateutil.parser.parse(tagCommitDate).utctimetuple())
-                tagTuples.append((tagCommitDateMS, tagCommitJSON['sha']))
+                tagCommitDateS = calendar.timegm(dateutil.parser.parse(tagCommitDate).utctimetuple())
+                tagTuples.append((tagCommitDateS, tagCommitJSON['sha']))
 
-            # this should sort by tagCommitDateMS
+            # this should sort by tagCommitDateS
             tagTuples.sort()
 
             # now add these tags to the report_db and the stack
             for tagTuple in tagTuples:
-                dataID = self.record_data(tagTuple[0], tagTuple[1], metaID, report_db)
-                sourceID = self.record_source(metaID, dataID, report_db)
+                dataID = self.record_data(tagTuple[0], tagTuple[1], metaID, report_path)
+                sourceID = self.record_source(metaID, dataID, report_path)
                 stack.append((tagTuple[1], sourceID))
 
         # shaSourceID tuples were appended from most recent backwards
@@ -182,13 +184,22 @@ class GithubPythonSourcer:
 
         # empty the base folder, git clone the project, get rewindable path
         cloneURL = repoJSON['clone_url']
-        sh.cd(path)
-        sh.rm('-r', sh.glob('./*'))
-        logging.info("GiPyS - geGiMaATaRe, cloning repository with url: " + cloneURL + " into path: " + path + " this may take some time...")
+        sh.cd(repo_path)
+        sh.rm('-r', sh.glob('./*'), _err=self.logErrorHandler)
+        logging.info("GiPyS - geGiMaATaRe, cloning repository with url: " + cloneURL + " into path: " + repo_path + " this may take some time...")
         sh.git.clone(cloneURL)
-        os.chdir(path)
-        repoDirName = os.walk('.').next()[1][0]
-        rewindablePath = path + "/" + repoDirName
+
+        # TODO - less hackish way to find the new cloned directory.
+        # here the invisible '.DS_Store' directory is sometimes present
+        directoriesInPath = os.listdir(repo_path)
+        directoriesInPath.sort()
+        if len(directoriesInPath) == 1:
+            repoDirName = directoriesInPath[0]
+        else:
+            repoDirName = directoriesInPath[1]
+
+        logging.debug("GiPyS - geGiMaATaRe, repoDirName: " + repoDirName)
+        rewindablePath = repo_path + repoDirName
         logging.info("GiPyS - geGiMaATaRe, creating GitRewinder with repoID: " + str(repoID) + " with a stack of " + str(len(stack)) + " shas and a rewindable path: " + rewindablePath)
         return rewinder.GitRewinder(stack, rewindablePath, self.rewinder_type)
 
@@ -211,7 +222,7 @@ class GithubPythonSourcer:
             try:
                 languagesJSON = self.get_json(projectJSON['languages_url'])
                 pythonProjectFound = "Python" in languagesJSON
-                self.log("GiPyS - refresh_repos, projectFound:" + str(pythonProjectFound) + " languagesJSON: " + str(languagesJSON))
+                self.log("refresh_repos, projectFound:" + str(pythonProjectFound) + " languagesJSON: " + str(languagesJSON))
                 if pythonProjectFound:
                     self.repos.append(projectJSON['id'])
             except:
@@ -233,9 +244,12 @@ class GithubPythonSourcer:
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute("CREATE TABLE " + self.META_TABLE_NAME + " (repoID int, masterSHA text, repoJSON text, tagJSON text, masterJSON text)")
-        c.execute("CREATE TABLE " + self.DATA_TABLE_NAME + " (commitDateTimeMS int, commitSHA text, metaID int)")
+        c.execute("CREATE TABLE " + self.DATA_TABLE_NAME + " (commitDateTimeS int, commitSHA text, metaID int)")
         conn.commit()
         conn.close()
+
+    def logErrorHandler(self, errorMessage):
+        self.log("logErrorHandler, errorMessage: " + str(errorMessage))
 
     def record_meta(self, repoID, masterSHA, repoJSON, tagJSON, masterJSON, report_db):
         self.log("record_meta, repoID: " + str(repoID) + " masterSHA: " + masterSHA)
@@ -247,11 +261,11 @@ class GithubPythonSourcer:
         conn.close()
         return metaRowID
 
-    def record_data(self, commitDateTimeMS, commitSHA, metaID, report_db):
-        self.log("record_data, cDaTiMS: " + str(commitDateTimeMS) + " cSHA: " + commitSHA + " metaID: " + str(metaID))
+    def record_data(self, commitDateTimeS, commitSHA, metaID, report_db):
+        self.log("record_data, cDaTiS: " + str(commitDateTimeS) + " cSHA: " + commitSHA + " metaID: " + str(metaID))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
-        c.execute("INSERT INTO GithubData values (?,?,?)", (commitDateTimeMS, commitSHA, metaID))
+        c.execute("INSERT INTO GithubData values (?,?,?)", (commitDateTimeS, commitSHA, metaID))
         dataRowID = c.lastrowid
         conn.commit()
         conn.close()

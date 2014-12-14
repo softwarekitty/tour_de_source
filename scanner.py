@@ -3,6 +3,7 @@ import astroid.manager
 import astroid.as_string
 import astroid.node_classes
 import astroid.inspector
+import datetime
 import logging
 import util
 import os
@@ -13,7 +14,7 @@ scanner interface is just 'scanDirectory(path, report_db)'
     path is a the directory path as a string
     report_db names the db file to report to
 
-    but for the tourist's Scan table: (dateTimeMS int, nFiles int, sourceID int) to be meaningful, the scanner is expected to register at the start of each scan of one project version (getting a scanID) by writing to that table, and then all custom tables populated when scanning a project version should use reference that scanID.
+    but for the tourist's Scan table: (scanBeginS int, nFiles int, sourceID int) to be meaningful, the scanner is expected to register at the start of each scan of one project version (getting a scanID) by writing to that table, and then all custom tables populated when scanning a project version should use reference that scanID.
 '''
 
 
@@ -25,8 +26,9 @@ class PythonRegexScanner:
         logging.debug("PyReS - " + msg)
 
     def scanDirectory(self, path, sourceID, report_db):
-        self.log("scanDirectory, path: " + str(path) + " sourceID: " + str(sourceID) + " report_db: " + report_db)
-        # c.execute('''CREATE TABLE name (Scan) (dateTimeMS int, nFiles int, sourceID int)''')
+        scanBeginS = util.getDateTimeS(datetime.datetime.utcnow())
+        self.log("scanDirectory, path: " + str(path) + " sourceID: " + str(sourceID) + " scanBeginS: " + scanBeginS + " report_db: " + report_db)
+        # c.execute('''CREATE TABLE name (Scan) (scanBeginS int, nFiles int, sourceID int)''')
         # c.execute('''CREATE TABLE name (Source) (metaTablename text, dataTablename text, metaID int, dataID, int)''')
 
         allFiles = []
@@ -34,10 +36,8 @@ class PythonRegexScanner:
             for name in files:
                 allFiles.append(os.path.join(root, name))
         pythonPaths = filter(self.pythonFilter.search, allFiles)
-
-        # TODO - needs the sourceID, so sourcer needs implementation first
-        scanID = self.register_scan(sourceID, len(pythonPaths), report_db)
-
+        # (self, scanBeginS, sourceID, nFiles, report_db)
+        scanID = self.register_scan(scanBeginS, sourceID, len(pythonPaths), report_db)
         self.extract_regex(pythonPaths, scanID, report_db)
 
     # regex_flags = ["IGNORECASE","DEBUG","LOCALE","MULTILINE","DOTALL","UNICODE","VERBOSE"]
@@ -139,6 +139,14 @@ class PythonRegexScanner:
         c = conn.cursor()
         c.execute('''CREATE TABLE Regex (scanID int, fileID int, regexFunction int, pattern text, flags int)''')
         c.execute('''CREATE TABLE File (cuteHash char(44), filePath text, scanID int, count int)''')
+        conn.commit()
+        conn.close()
+
+    def register_scan(self, scanBeginS, sourceID, nFiles, report_db):
+        self.log("register_scan, scanBeginS: " + scanBeginS + "sourceID: " + str(sourceID) + " nFiles: " + str(nFiles))
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute("INSERT INTO Scan values (?,?,?)", (scanBeginS, nFiles, sourceID))
         conn.commit()
         conn.close()
 
