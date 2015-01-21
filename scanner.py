@@ -49,7 +49,8 @@ class PythonRegexScanner:
 
             # hash to avoid re-scanning identical files.
             cuteHash = util.get_cuteHash(filePath)
-            isUniqueHash = self.db_contains_hash(cuteHash, report_db)
+
+            isUniqueHash = not self.db_contains_hash(cuteHash, report_db)
             logging.info("PyReS - extract_regex, extracting from filePath " + filePath + " isUniqueHash: " + str(isUniqueHash))
 
             # the track_file function tracks duplicates, repeats

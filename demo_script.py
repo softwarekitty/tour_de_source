@@ -4,13 +4,13 @@ from sourcer import GithubPythonSourcer
 from scanner import PythonRegexScanner
 import logging
 
-# logging.basicConfig(
-#     filename="demo_script.log",
-#     level=logging.DEBUG,
-#     # format='[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s',
-#     format='%(levelname)s - %(message)s',
-#     datefmt='%H:%M:%S'
-# )
+logging.basicConfig(
+    filename="demo_script.log",
+    level=logging.DEBUG,
+    # format='[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s',
+    format='%(levelname)s - %(message)s',
+    datefmt='%H:%M:%S'
+)
 
 # console = logging.StreamHandler()
 # console.setLevel(logging.DEBUG)
@@ -18,8 +18,6 @@ import logging
 # # add the handler to the root logger
 # logging.getLogger('').addHandler(console)
 # logger = logging.getLogger(__name__)
-
-logging.basicConfig(level=logging.DEBUG)
 
 
 d = Depot()
