@@ -140,7 +140,7 @@ class PythonRegexScanner:
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute('''CREATE TABLE Regex (scanID int, fileID int, regexFunction int, pattern text, flags int)''')
-        c.execute('''CREATE TABLE File (cuteHash char(44), filePath text, scanID int, count int)''')
+        c.execute('''CREATE TABLE File (cuteHash char(44), filePath text, scanID int, nDuplicates int)''')
         conn.commit()
         conn.close()
 
@@ -162,11 +162,11 @@ class PythonRegexScanner:
         conn.commit()
         conn.close()
 
-    def insert_file(self, cuteHash, filePath, scanID, count, report_db):
-        self.log("insert_file, cuteHash: " + cuteHash + " scanID: " + str(scanID) + " count: " + str(count))
+    def insert_file(self, cuteHash, filePath, scanID, nCopies, report_db):
+        self.log("insert_file, cuteHash: " + cuteHash + " scanID: " + str(scanID) + " nCopies: " + str(nCopies))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
-        c.execute("INSERT INTO File values (?,?,?,?)", (cuteHash, filePath, scanID, count))
+        c.execute("INSERT INTO File values (?,?,?,?)", (cuteHash, filePath, scanID, nCopies))
         fileID = c.lastrowid
         conn.commit()
         conn.close()
@@ -182,7 +182,7 @@ class PythonRegexScanner:
             found = c.fetchone()
             if found:
                 fileID = c.lastrowid
-                c.execute("UPDATE File SET count = count + 1 WHERE rowid =?", (fileID,))
+                c.execute("UPDATE File SET nCopies = nCopies + 1 WHERE rowid =?", (fileID,))
             conn.commit()
             conn.close()
             if found:
