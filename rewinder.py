@@ -9,11 +9,12 @@ import util
 # notice in this class there is no database access or logging done directly, only enough code to accomplish the effect of rewinding the source
 class GitRewinder:
 
-    def __init__(self, stack, path, type):
+    def __init__(self, stack, path, metaID, type):
         self.stack = stack
         self.path = path
         self.type = type
         self.sourceID = -1
+        self.metaID = metaID
         self.sha = "initialized"
         self.cuteID = util.getCuteID(9)
 
@@ -34,6 +35,9 @@ class GitRewinder:
 
     def getSourceID(self):
         return self.sourceID
+
+    def getMetaID(self):
+        return self.metaID
 
     def getSHA(self):
         return self.sha

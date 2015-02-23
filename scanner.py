@@ -25,7 +25,7 @@ class PythonRegexScanner:
     def log(self, msg=""):
         logging.debug("PyReS - " + msg)
 
-    def scanDirectory(self, path, sourceID, report_db):
+    def scanDirectory(self, path, sourceID, metaID, report_db):
         scanBeginS = util.getDateTimeS(datetime.datetime.utcnow())
         self.log("scanDirectory, path: " + str(path) + " sourceID: " + str(sourceID) + " scanBeginS: " + str(scanBeginS) + " report_db: " + report_db)
         # c.execute('''CREATE TABLE name (Scan) (scanBeginS int, nFiles int, sourceID int)''')
@@ -38,12 +38,12 @@ class PythonRegexScanner:
         pythonPaths = filter(self.pythonFilter.search, allFiles)
         # (self, scanBeginS, sourceID, nFiles, report_db)
         scanID = self.register_scan(scanBeginS, sourceID, len(pythonPaths), report_db)
-        self.extract_regex(pythonPaths, scanID, report_db)
+        self.extract_regex(pythonPaths, scanID, metaID, report_db)
 
     # regex_flags = ["IGNORECASE","DEBUG","LOCALE","MULTILINE","DOTALL","UNICODE","VERBOSE"]
 
     # filePaths is a list of python file paths to scan
-    def extract_regex(self, filePaths, scanID, report_db):
+    def extract_regex(self, filePaths, scanID, metaID, report_db):
         self.log("extract_regex, len(filepaths): " + str(len(filePaths)) + " scanID: " + str(scanID))
         for filePath in filePaths:
 
@@ -57,13 +57,13 @@ class PythonRegexScanner:
             fileID = self.track_file(cuteHash, filePath, scanID, report_db, isUniqueHash)
             if isUniqueHash:
                 node = astroid.manager.AstroidManager().ast_from_file(filePath)
-                self.extractRegexR(node, fileID, scanID, report_db)
+                self.extractRegexR(node, fileID, scanID, metaID, report_db)
 
     # this is public so that the index mapping is not mysterious
     def get_function_list(self):
         return ["re.compile", "re.search", "re.match", "re.split", "re.findall", "re.finditer", "re.sub", "re.subn"]
 
-    def extractRegexR(self, child, fileID, scanID, report_db):
+    def extractRegexR(self, child, fileID, scanID, metaID, report_db):
         # all the methods we will look for
         target_func = self.get_function_list()
         if isinstance(child, astroid.node_classes.CallFunc) and child.func.as_string() in target_func:
@@ -96,9 +96,9 @@ class PythonRegexScanner:
             regexFunction = target_func.index(regex_citation[0])
             pattern = regex_citation[1]
             flags = self.extract_flags(regexFunction, regex_citation)
-            self.record_regex(scanID, fileID, regexFunction, pattern, flags, report_db)
+            self.record_regex(scanID, fileID, metaID, regexFunction, pattern, flags, report_db)
         for grandchild in child.get_children():
-            self.extractRegexR(grandchild, fileID, scanID, report_db)
+            self.extractRegexR(grandchild, fileID, scanID, metaID, report_db)
 
     # this is the order in python docs and in our function list
     # re.compile(pattern,flags=0),
@@ -139,7 +139,7 @@ class PythonRegexScanner:
         self.log("initialize_report, report_db: " + report_db)
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
-        c.execute('''CREATE TABLE Regex (scanID int, fileID int, regexFunction int, pattern text, flags int)''')
+        c.execute('''CREATE TABLE Regex (scanID int, fileID int, metaID int, regexFunction int, pattern text, flags int)''')
         c.execute('''CREATE TABLE File (cuteHash char(44), filePath text, scanID int, nDuplicates int)''')
         conn.commit()
         conn.close()
@@ -154,11 +154,11 @@ class PythonRegexScanner:
         conn.close()
         return scanID
 
-    def record_regex(self, scanID, fileID, regexFunction, pattern, flags, report_db):
-        self.log("record_regex, scanID: " + str(scanID) + " fileID: " + str(fileID) + " regexFunction: " + str(regexFunction) + " pattern: " + str(pattern) + " flags: " + str(flags))
+    def record_regex(self, scanID, fileID, metaID, regexFunction, pattern, flags, report_db):
+        self.log("record_regex, scanID: " + str(scanID) + " fileID: " + str(fileID) + " metaID: " + str(metaID) + " regexFunction: " + str(regexFunction) + " pattern: " + str(pattern) + " flags: " + str(flags))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
-        c.execute("INSERT INTO Regex values (?,?,?,?,?)", (scanID, fileID, regexFunction, pattern, flags))
+        c.execute("INSERT INTO Regex values (?,?,?,?,?,?)", (scanID, fileID, metaID, regexFunction, pattern, flags))
         conn.commit()
         conn.close()
 

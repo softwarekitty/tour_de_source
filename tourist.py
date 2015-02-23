@@ -79,7 +79,7 @@ class Tourist:
                         r = s.next(self.depot.getRepoPath(), self.getReportPath())
                         logging.info("Touri - tour, SCAN_" + self.id + " now has rewinder: " + r.log())
                         while r.rewind():
-                            self.scanner.scanDirectory(self.depot.getRepoPath(), r.getSourceID(), self.getReportPath())
+                            self.scanner.scanDirectory(self.depot.getRepoPath(), r.getSourceID(), r.getMetaID, self.getReportPath())
                         consecutiveExceptionCounter = 0
                 except Exception as e:
                     consecutiveExceptionCounter += 1

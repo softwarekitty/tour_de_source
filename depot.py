@@ -8,6 +8,7 @@ class Depot:
 
     # if the tour.db file is not yet defined, or we are in recreate mode, create it
     def __init__(self):
+        logging.info("Depot - ***************init Depot**********.")
         if self.shouldRenew():
             try:
                 sh.cd(self.getDataPath())

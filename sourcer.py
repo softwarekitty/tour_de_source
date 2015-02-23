@@ -37,7 +37,7 @@ For logical consistency, I want next() to always get the next larger repoID.  An
 '''
 
 
-class GithubPythonSourcer:
+class GithubPythonSourcer(object):
     META_TABLE_NAME = "GithubMeta"
     DATA_TABLE_NAME = "GithubData"
 
@@ -62,6 +62,10 @@ class GithubPythonSourcer:
             logging.warning(logMessage)
         else:
             logging.debug(logMessage)
+
+    # error stream for `sh' instance
+    def logErrorHandler(self, errorMessage):
+        self.log("logErrorHandler, errorMessage: " + str(errorMessage))
 
     # returns a rewinder for the next repo
     def next(self, repo_path, report_path):
@@ -202,7 +206,7 @@ class GithubPythonSourcer:
         logging.debug("GiPyS - geGiMaATaRe, repoDirName: " + repoDirName)
         rewindablePath = repo_path + repoDirName
         logging.info("GiPyS - geGiMaATaRe, creating GitRewinder with repoID: " + str(repoID) + " with a stack of " + str(len(stack)) + " shas and a rewindable path: " + rewindablePath)
-        return rewinder.GitRewinder(stack, rewindablePath, self.rewinder_type)
+        return rewinder.GitRewinder(stack, rewindablePath, metaID, self.rewinder_type)
 
     # refresh the repos of projects, using the first page found
     # that has a python project on it
@@ -237,7 +241,7 @@ class GithubPythonSourcer:
         self.repos.reverse()
         logging.info("GiPyS - refresh_repos, finished refreshing, found " + str(len(self.repos)) + " Python repos in " + str(projectCounter) + " Github projects with last scanned repoID: " + str(repoID))
 
-    # ############### database functions #################
+    # ############### database functions for GithubPythonSourcer #############
 
     def initialize_report(self, report_db):
         self.log("initialize_report, report_db: " + report_db)
@@ -248,9 +252,6 @@ class GithubPythonSourcer:
         c.execute("CREATE TABLE " + self.DATA_TABLE_NAME + " (commitDateTimeS int, commitSHA text, metaID int)")
         conn.commit()
         conn.close()
-
-    def logErrorHandler(self, errorMessage):
-        self.log("logErrorHandler, errorMessage: " + str(errorMessage))
 
     def record_meta(self, repoID, masterSHA, repoJSON, tagJSON, masterJSON, report_db):
         self.log("record_meta, repoID: " + str(repoID) + " masterSHA: " + masterSHA)
@@ -281,3 +282,101 @@ class GithubPythonSourcer:
         conn.commit()
         conn.close()
         return sourceRowID
+
+# ############################# A Test Sourcer ############################
+
+
+# this sourcer quickly simulates a cloning a github repo by using a local folder
+class LocalTestSourcer(GithubPythonSourcer):
+    def log(self, msg=""):
+        logMessage = "LoTeS - " + msg + " last: " + str(self.last) + " len(repos): " + str(len(self.repos))
+        if self.exhausted:
+            logMessage = logMessage + " exhausted:True"
+            logging.warning(logMessage)
+        else:
+            logging.debug(logMessage)
+
+    # the test sourcer does not need to build
+    def initialize_report(self, report_db):
+        self.log("initialize_report, report_db: " + report_db)
+        # this report_db should already exist, created in Tourist
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute("CREATE TABLE " + self.META_TABLE_NAME + " (repoID int, masterSHA text, repoJSON text, tagJSON text, masterJSON text)")
+        c.execute("CREATE TABLE " + self.DATA_TABLE_NAME + " (commitDateTimeS int, commitSHA text, metaID int)")
+        conn.commit()
+        conn.close()
+
+    # returns a rewinder for the next repo
+    def next(self, repo_path, report_path):
+        self.log("next")
+        if self.exhausted is True:
+            return None
+
+        # only gets a rewinder once for the local test folder
+        localFolderRewinder = self.getRewinder(self.last, repo_path, report_path)
+        self.exhausted = True
+        return localFolderRewinder
+
+    # this is a placeholder for adding rewinders to this sourcer
+    # for the test sourcer, we always use the same rewinder
+    def getRewinder(self, repoID, repo_path, report_path):
+        return self.nCommitsGitRewinder(repoID, repo_path, report_path, 20)
+
+        # Rewinder ready to rewind.
+        # This rewinder will bookmark up to `n' commits on the master branch, about evenly spaced and in the same descending order as returned by git log.  The list should include the most recent commit first.
+    def nCommitsGitRewinder(self, repoID, repo_path, report_path, n):
+        self.log("nCoGiRe, repoID: " + str(repoID))
+        # we would have to do the stuff below if not using a local copy
+        # using repoID and github api, find repoJSON
+        # repoJSON = self.get_json("https://api.github.com/repositories/" + str(repoID))
+        # empty the base folder, git clone the project, get rewindable path
+        # cloneURL = repoJSON['clone_url']
+
+        sh.rsync("-r", '/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/test_repo/', repo_path,)
+        sh.cd(repo_path)
+
+        # TODO - less hackish way to find the new cloned directory.
+        # here the invisible '.DS_Store' directory is sometimes present
+        # maybe we should find the closest directory containing a `.git' hidden directory.  For now this will work most of the time.
+        directoriesInPath = os.listdir(repo_path)
+        directoriesInPath.sort()
+        for directory in directoriesInPath:
+            if not directory[0] == ".":
+                # self.log("found good directory: " + directory)
+                repoDirName = directory
+            else:
+                # self.log("found bad directory: " + directory)
+                pass
+        sh.cd(repoDirName)
+        # sh.rm('-r', sh.glob('./*'), _err=self.logErrorHandler)
+        # logging.info("GiPyS - geGiMaATaRe, cloning repository with url: " + cloneURL + " into path: " + repo_path + " this may take some time...")
+        # sh.git.clone(cloneURL)
+        commitList = []
+        # import subprocess
+        # args = ["cd", "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/copycat", ";", "ls", ">", "output"]
+        # subprocess.Popen(args, shell=True)
+        # where = sh.ls()
+        # self.log("WHERE: " + repr(where))
+        sh.git.bake("")
+        self.log("PWD: " + str(sh.pwd()))
+        for line in sh.git.log("--format=format:\"%H %ct\"", _iter=True, _tty_out=False):
+            self.log("SOMETHING: " + repr(line))
+        # sh.tee(sh.git.log("--format=format:\"%H %ct\"", _err=self.logErrorHandler), "experiment.txt")
+        # sh.Command("/usr/local/gin/git log --format=format:\"%H %ct\" > example.txt")
+        # sorted(commitList, key=lambda tup: tup[1], reverse=True)
+
+        for x in commitList:
+            self.log("line: " + str(x[1]))
+        quit()
+
+        # get the commit log for the master branch as a list of n <SHA,date> tuples
+        stack = []
+        rewindablePath = "meow"
+        metaID = None
+        return rewinder.GitRewinder(stack, rewindablePath, metaID, self.rewinder_type)
+
+    def processGitLogOutput(self, line):
+        cleanedLine = line[line.find('"') + 1:line.rfind('"')]
+        # commitList.append(tuple(cleanedLine.split(' ')))
+        self.log("cleanedLine: " + cleanedLine)

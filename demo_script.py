@@ -1,6 +1,7 @@
 from depot import Depot
 from tourist import Tourist
-from sourcer import GithubPythonSourcer
+# from sourcer import GithubPythonSourcer
+from sourcer import LocalTestSourcer
 from scanner import PythonRegexScanner
 import logging
 
@@ -22,6 +23,7 @@ logging.basicConfig(
 
 d = Depot()
 e = "investigationbot@gmail.com"
-s = [GithubPythonSourcer("MasterAndTags")]
+s = [LocalTestSourcer("copycat_test_sourcer")]
+# s = [GithubPythonSourcer("MasterAndTags")]
 t = Tourist(d, e, PythonRegexScanner(), s)
 t.tour()
