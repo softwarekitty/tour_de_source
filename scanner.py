@@ -10,11 +10,11 @@ import os
 import re
 
 '''
-scanner interface is just 'scanDirectory(path, report_db)'
-    path is a the directory path as a string
-    report_db names the db file to report to
-
-    but for the tourist's Scan table: (scanBeginS int, nFiles int, sourceID int) to be meaningful, the scanner is expected to register at the start of each scan of one project version (getting a scanID) by writing to that table, and then all custom tables populated when scanning a project version should use reference that scanID.
+scanner interface is: 'scanDirectory(repoPath, reportPath, UniqueSourceID, sourceJSON)'
+    repoPath is a the directory where the repo to scan exists
+    reportPath is where sqlite can open a connection to the report DB
+    UniqueSourceID is unique across all sourcers to this project source
+    sourceJSON holds whatever information the sourcer provides to clarify the type, meta and data information about the source - like it was Github, ropID 15341, master branch, clone_url..., sha 2344833 committed at time 14393383838.  These details can depend on what is useful, and are likely to evolve a bit over time.
 '''
 
 
@@ -22,51 +22,44 @@ class PythonRegexScanner:
     id = "python regex scanner"
     pythonFilter = re.compile('.*\.py$', re.IGNORECASE)
 
-    def log(self, msg=""):
-        logging.debug("PyReS - " + msg)
-
-    def scanDirectory(self, path, sourceID, metaID, report_db):
+    def scanDirectory(self, path, report_db, uniqueSourceID, sourceJSON, shaSet):
         scanBeginS = util.getDateTimeS(datetime.datetime.utcnow())
-        self.log("scanDirectory, path: " + str(path) + " sourceID: " + str(sourceID) + " scanBeginS: " + str(scanBeginS) + " report_db: " + report_db)
-        # c.execute('''CREATE TABLE name (Scan) (scanBeginS int, nFiles int, sourceID int)''')
-        # c.execute('''CREATE TABLE name (Source) (metaTablename text, dataTablename text, metaID int, dataID, int)''')
+        logging.debug("PyReS - scanDirectory, path: " + str(path) + " uniqueSourceID: " + str(uniqueSourceID) + " scanBeginS: " + str(scanBeginS) + " report_db: " + report_db)
 
+        # get a list of the python file paths
         allFiles = []
         for root, dirs, files in os.walk(path):
             for name in files:
                 allFiles.append(os.path.join(root, name))
         pythonPaths = filter(self.pythonFilter.search, allFiles)
-        # (self, scanBeginS, sourceID, nFiles, report_db)
-        scanID = self.register_scan(scanBeginS, sourceID, len(pythonPaths), report_db)
-        self.extract_regex(pythonPaths, scanID, metaID, report_db)
+        nDuplicates = 0
+        progressCounter = 0
+
+        for pythonFilePath in pythonPaths:
+            try:
+                fileHash = util.get_cuteHash(pythonFilePath)
+                if fileHash not in shaSet:
+                    progressCounter = 0
+                    shaSet.append(fileHash)
+                    node = astroid.manager.AstroidManager().ast_from_file(pythonFilePath)
+                    progressCounter = 1
+                    patternSet = []
+                    cleanFilePath = pythonFilePath[len(path):]
+                    self.extractRegexR(node, report_db, patternSet, uniqueSourceID, sourceJSON, fileHash, cleanFilePath)
+                    progressCounter = 2
+                    self.incrementPatternsPerFile(len(patternSet), report_db)
+                else:
+                    nDuplicates += 1
+            except Exception as e:
+                logging.warning("PyReS - problem extracting from file: " + str(pythonFilePath) + " exception: " + str(e) + " progressCounter: " + str(progressCounter))
+        logging.info("PyReS - finished scanning directory: " + str(path) + " nDuplicates: " + str(nDuplicates))
 
     # regex_flags = ["IGNORECASE","DEBUG","LOCALE","MULTILINE","DOTALL","UNICODE","VERBOSE"]
-
-    # filePaths is a list of python file paths to scan
-    def extract_regex(self, filePaths, scanID, metaID, report_db):
-        self.log("extract_regex, len(filepaths): " + str(len(filePaths)) + " scanID: " + str(scanID))
-        for filePath in filePaths:
-
-            # hash to avoid re-scanning identical files.
-            cuteHash = util.get_cuteHash(filePath)
-
-            isUniqueHash = not self.db_contains_hash(cuteHash, report_db)
-            logging.info("PyReS - extract_regex, extracting from filePath " + filePath + " isUniqueHash: " + str(isUniqueHash))
-
-            # the track_file function tracks duplicates, repeats
-            fileID = self.track_file(cuteHash, filePath, scanID, report_db, isUniqueHash)
-            if isUniqueHash:
-                node = astroid.manager.AstroidManager().ast_from_file(filePath)
-                self.extractRegexR(node, fileID, scanID, metaID, report_db)
-
-    # this is public so that the index mapping is not mysterious
-    def get_function_list(self):
-        return ["re.compile", "re.search", "re.match", "re.split", "re.findall", "re.finditer", "re.sub", "re.subn"]
-
-    def extractRegexR(self, child, fileID, scanID, metaID, report_db):
+    def extractRegexR(self, child, report_db, patternSet, uniqueSourceID, sourceJSON, fileHash, pythonFilePath):
         # all the methods we will look for
         target_func = self.get_function_list()
         if isinstance(child, astroid.node_classes.CallFunc) and child.func.as_string() in target_func:
+            # self.log("found targedFunction: " + str(child.func.as_string()))
             regex_citation = [child.func.as_string(), "arg1", "arg2", "arg3", "arg4", "arg5"]
             arg_counter = 1
             for x in child.args:
@@ -95,10 +88,73 @@ class PythonRegexScanner:
                 arg_counter += 1
             regexFunction = target_func.index(regex_citation[0])
             pattern = regex_citation[1]
+            if pattern not in patternSet:
+                patternSet.append(pattern)
             flags = self.extract_flags(regexFunction, regex_citation)
-            self.record_regex(scanID, fileID, metaID, regexFunction, pattern, flags, report_db)
+            self.record_regex_citation(uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction, report_db)
         for grandchild in child.get_children():
-            self.extractRegexR(grandchild, fileID, scanID, metaID, report_db)
+            self.extractRegexR(grandchild, report_db, patternSet, uniqueSourceID, sourceJSON, fileHash, pythonFilePath)
+
+    # ###################### database functions #######################
+
+    def initialize_report(self, report_db):
+        logging.info("PyReS - initialize_report, report_db: " + report_db)
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute('''CREATE TABLE RegexCitation (uniqueSourceID int, sourceJSON text, fileHash char(44), filePath text, pattern text, flags int, regexFunction int)''')
+        c.execute('''CREATE TABLE FilesPerProject (nFiles int, frequency int)''')
+        c.execute('''CREATE TABLE PatternsPerFile (nPatterns int, frequency int)''')
+        conn.commit()
+        conn.close()
+
+        # the Coalesce function returns the first non-null option.
+    def incrementPatternsPerFile(self, numberOfPatterns, report_db):
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute('''SELECT frequency FROM PatternsPerFile WHERE nPatterns = ?''', (numberOfPatterns,))
+
+        # oldFrequency will be a tuple like (1,) or null
+        oldFrequency = c.fetchone()
+        # self.log("oldFrequency: " + str(oldFrequency) + " not oldFrequency: " + str(not oldFrequency))
+        if not oldFrequency:
+            c.execute("INSERT INTO PatternsPerFile values (?,?)", (numberOfPatterns, 1))
+        else:
+            c.execute("UPDATE PatternsPerFile SET frequency=? WHERE nPatterns=?", (oldFrequency[0] + 1, numberOfPatterns))
+        conn.commit()
+        conn.close()
+
+    def incrementFilesPerProject(self, numberOfFiles, report_db):
+        logging.debug("PyReS - incrementing filesPerProject: " + str(numberOfFiles))
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute('''SELECT frequency FROM FilesPerProject WHERE nFiles = ?''', (numberOfFiles,))
+
+        # oldFrequency will be a tuple like (1,) or null
+        oldFrequency = c.fetchone()
+        if not oldFrequency:
+            c.execute("INSERT INTO FilesPerProject values (?,?)", (numberOfFiles, 1))
+        else:
+            c.execute("UPDATE FilesPerProject SET frequency=? WHERE nFiles=?", (oldFrequency[0] + 1, numberOfFiles))
+        conn.commit()
+        conn.close()
+
+    # (uniqueSourceID int, sourceJSON text, scanID int, fileHash char(44), filePath text, pattern text, flags int, regexFunction int)
+    def record_regex_citation(self, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction, report_db):
+        logging.debug("PyReS - record_regex, uniqueSourceID: " + str(uniqueSourceID) + " sourceJSON: " + str(sourceJSON) + " fileHash: " + str(fileHash) + " filePath: " + str(pythonFilePath) + " pattern: " + str(pattern) + " flags: " + str(flags) + " regexFunction: " + str(regexFunction))
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute("INSERT INTO RegexCitation values (?,?,?,?,?,?,?)", (uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction))
+        conn.commit()
+        conn.close()
+
+# ######################### helpers ###################################
+
+    # def log(self, msg=""):
+    #    logging.debug("PyReS - " + msg)
+
+    # this is public so that the index mapping is not mysterious
+    def get_function_list(self):
+        return ["re.compile", "re.search", "re.match", "re.split", "re.findall", "re.finditer", "re.sub", "re.subn"]
 
     # this is the order in python docs and in our function list
     # re.compile(pattern,flags=0),
@@ -122,83 +178,3 @@ class PythonRegexScanner:
         else:
             logging.error("PyReS - extract_flags, cannot extract flags from " + str(regex_citation))
             return 0
-
-    def track_file(self, cuteHash, filePath, scanID, report_db, isUniqueHash):
-        self.log("track_file, cuteHash: " + cuteHash + " filePath: " + filePath + " scanID: " + str(scanID))
-        # fileID will be None if there is single no entry in the File table
-        # with cuteHash, filepath, scanID all matching
-        fileID = self.increment_tracked_file(cuteHash, filePath, scanID, report_db, isUniqueHash)
-        if not fileID:
-            return self.insert_file(cuteHash, filePath, scanID, 1, report_db)
-        else:
-            return fileID
-
-    # ###################### database functions #######################
-
-    def initialize_report(self, report_db):
-        self.log("initialize_report, report_db: " + report_db)
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute('''CREATE TABLE Regex (scanID int, fileID int, metaID int, regexFunction int, pattern text, flags int)''')
-        c.execute('''CREATE TABLE File (cuteHash char(44), filePath text, scanID int, nDuplicates int)''')
-        conn.commit()
-        conn.close()
-
-    def register_scan(self, scanBeginS, sourceID, nFiles, report_db):
-        self.log("register_scan, scanBeginS: " + str(scanBeginS) + " sourceID: " + str(sourceID) + " nFiles: " + str(nFiles))
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute("INSERT INTO Scan values (?,?,?)", (scanBeginS, nFiles, sourceID))
-        scanID = c.lastrowid
-        conn.commit()
-        conn.close()
-        return scanID
-
-    def record_regex(self, scanID, fileID, metaID, regexFunction, pattern, flags, report_db):
-        self.log("record_regex, scanID: " + str(scanID) + " fileID: " + str(fileID) + " metaID: " + str(metaID) + " regexFunction: " + str(regexFunction) + " pattern: " + str(pattern) + " flags: " + str(flags))
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute("INSERT INTO Regex values (?,?,?,?,?,?)", (scanID, fileID, metaID, regexFunction, pattern, flags))
-        conn.commit()
-        conn.close()
-
-    def insert_file(self, cuteHash, filePath, scanID, nCopies, report_db):
-        self.log("insert_file, cuteHash: " + cuteHash + " scanID: " + str(scanID) + " nCopies: " + str(nCopies))
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute("INSERT INTO File values (?,?,?,?)", (cuteHash, filePath, scanID, nCopies))
-        fileID = c.lastrowid
-        conn.commit()
-        conn.close()
-        return fileID
-
-    def increment_tracked_file(self, cuteHash, filePath, scanID, report_db, isUniqueHash):
-        if isUniqueHash:
-            return None
-        else:
-            conn = sqlite3.connect(report_db)
-            c = conn.cursor()
-            c.execute("SELECT * FROM File WHERE cuteHash=?, scanID=?, filePath=?", (cuteHash, scanID, filePath))
-            found = c.fetchone()
-            if found:
-                fileID = c.lastrowid
-                c.execute("UPDATE File SET nCopies = nCopies + 1 WHERE rowid =?", (fileID,))
-            conn.commit()
-            conn.close()
-            if found:
-                logging.info("PyReS - increment_tracked_file, cuteHash: " + cuteHash + " filePath: " + filePath + " scanID: " + str(scanID) + " fileID: " + str(fileID))
-                return fileID
-            else:
-                return None
-
-    def db_contains_hash(self, cuteHash, report_db):
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute("SELECT EXISTS(SELECT 1 FROM File WHERE cuteHash=? LIMIT 1)", (cuteHash, ))
-        found = c.fetchone()
-        conn.commit()
-        conn.close()
-        if found:
-            return True
-        else:
-            return False

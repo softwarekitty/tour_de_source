@@ -24,6 +24,6 @@ logging.basicConfig(
 d = Depot()
 e = "investigationbot@gmail.com"
 s = [LocalTestSourcer("copycat_test_sourcer")]
-# s = [GithubPythonSourcer("MasterAndTags")]
+# s = [GithubPythonSourcer("20Commits")]
 t = Tourist(d, e, PythonRegexScanner(), s)
 t.tour()
