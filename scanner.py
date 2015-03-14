@@ -107,7 +107,6 @@ class PythonRegexScanner:
         conn.commit()
         conn.close()
 
-        # the Coalesce function returns the first non-null option.
     def incrementPatternsPerFile(self, numberOfPatterns, report_db):
         conn = sqlite3.connect(report_db)
         c = conn.cursor()

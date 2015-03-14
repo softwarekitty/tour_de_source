@@ -52,14 +52,6 @@ class GithubPythonSourcer(object):
 
 # ####################### convenience methods ################################
 
-    def log(self, msg=""):
-        logMessage = "GiPyS - " + msg + " last: " + str(self.last) + " len(repos): " + str(len(self.repos))
-        if self.exhausted:
-            logMessage = logMessage + " exhausted:True"
-            logging.warning(logMessage)
-        else:
-            logging.debug(logMessage)
-
     # refresh the repos of projects, using the first page found
     # that has a python project on it
     # set exhausted to true if the source is exhausted
@@ -147,6 +139,18 @@ class GithubPythonSourcer(object):
         request.add_header("Authorization", "Basic %s" % encoded64)
         return request
 
+    def log(self, msg=""):
+        logMessage = "GiPyS - " + msg + " last: " + str(self.last) + " len(repos): " + str(len(self.repos))
+        if self.exhausted:
+            logMessage = logMessage + " exhausted:True"
+            logging.warning(logMessage)
+        else:
+            logging.debug(logMessage)
+
+    # error stream for `sh' instance
+    def logErrorHandler(self, errorMessage):
+        self.log("logErrorHandler, errorMessage: " + str(errorMessage))
+
     # this is a placeholder for adding rewinders to this sourcer
     def getRewinder(self, repoID, repo_path, report_path, uniqueSourceID):
         if self.rewinder_type == "MasterAndTags":
@@ -155,6 +159,9 @@ class GithubPythonSourcer(object):
             return self.nCommitsGithubRewinder(self, repoID, repo_path, report_path, uniqueSourceID, 20)
         else:
             return None
+
+# these rewinders are so large that they could be in their own file
+# ############################ NCommits ###############################
 
         # Rewinder ready to rewind.
         # This rewinder will bookmark up to `n' commits on the master branch, about evenly spaced and in the same descending order as returned by git log.  The list should include the most recent commit first.
@@ -212,8 +219,8 @@ class GithubPythonSourcer(object):
         stack.reverse()
         return rewinder.GitRewinder(rewindablePath, self.rewinder_type, uniqueSourceID, stack)
 
+# ############################ MasterAndTags ##########################
 
-        # Rewinder ready to rewind.  populates the meta, data, source tables, clones repo and builds stack for Rewinder.
     def getGitMasterAndTagsRewinder(self, repoID, repo_path, report_path):
         self.log("geGiMaATaRe, repoID: " + str(repoID))
         # TODO - this code is out of synch with version 4 (with the nCommitsGithubRewinder).  It was probably a bad assumption to think that the wide variety of people using Github all have similar behavior with the rather unpopular tagging feature.  In fact a huge number of projects don't have any tags, and when they are used, they might be used for major version releases (as I expected) or for things like the major build every two weeks, or just as an experiment by people who haven't figured out how they want to use tags.
@@ -285,9 +292,6 @@ class GithubPythonSourcer(object):
         logging.info("GiPyS - geGiMaATaRe, creating GitRewinder with repoID: " + str(repoID) + " with a stack of " + str(len(stack)) + " shas and a rewindable path: " + rewindablePath)
         return rewinder.GitRewinder(stack, rewindablePath, metaID, self.rewinder_type)
 
-    # error stream for `sh' instance
-    def logErrorHandler(self, errorMessage):
-        self.log("logErrorHandler, errorMessage: " + str(errorMessage))
 
 # ############################# A Test Sourcer ############################
 
@@ -302,11 +306,9 @@ class LocalTestSourcer(GithubPythonSourcer):
             return None
 
         # only gets a rewinder once for the local test folder
-        localFolderRewinder = self.getRewinder(self.last, repo_path, report_path, uniqueSourceID)
+        localFolderRewinder = self.nCommitsGithubRewinder(self.last, repo_path, report_path, uniqueSourceID, 20)
         self.exhausted = True
         return localFolderRewinder
-
-# ####################### convenience methods ##############################
 
     def log(self, msg=""):
         logMessage = "LoTeS - " + msg + " last: " + str(self.last) + " len(repos): " + str(len(self.repos))
@@ -315,8 +317,3 @@ class LocalTestSourcer(GithubPythonSourcer):
             logging.warning(logMessage)
         else:
             logging.debug(logMessage)
-
-    # this is a placeholder for adding rewinders to this sourcer
-    # for the test sourcer, we always use the same rewinder
-    def getRewinder(self, repoID, repo_path, report_path, uniqueSourceID):
-        return self.nCommitsGithubRewinder(repoID, repo_path, report_path, uniqueSourceID, 20)
