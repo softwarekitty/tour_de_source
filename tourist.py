@@ -1,16 +1,17 @@
 import sqlite3
 import datetime
 import util
-import logging
+import json
 
 
 class Tourist:
 
-    def __init__(self, depot, email, scanner, sourcers):
+    def __init__(self, depot, email, scanner, sourcers, logger):
         self.depot = depot
         self.email = email
         self.scanner = scanner
         self.sourcers = sourcers
+        self.logger = logger
 
         self.startS = util.getDateTimeS(datetime.datetime.utcnow())
         self.id = util.getUniqueCuteID(5, depot.getTourPath())
@@ -21,7 +22,7 @@ class Tourist:
     def tour(self):
         # main loop
         self.updateStatus("RUNNING")
-        logging.info("Touri - tour, SCAN_" + self.id + " RUNNING")
+        self.logger.critical("Touri - tour, SCAN_" + self.id + " RUNNING")
         tour_complete = False
         consecutiveExceptionCounter = 0
         finalState = "FINISHED"
@@ -30,10 +31,9 @@ class Tourist:
             sourcers_exhausted = True
             cancelled = False
             broken = False
-            scanCount = 0
             for s in self.sourcers:
                 if consecutiveExceptionCounter > 0:
-                    logging.warning("Touri - tour, consecutiveExceptionCounter: " + str(consecutiveExceptionCounter))
+                    self.logger.error("Touri - tour, consecutiveExceptionCounter: " + str(consecutiveExceptionCounter))
                 if self.isCancelled():
                     cancelled = True
                     finalState = "CANCELLED"
@@ -44,24 +44,27 @@ class Tourist:
                     break
                 try:
                     if not s.isExhausted():
-                        sourcers_exhausted = False
                         r = s.next(self.depot.getRepoPath(), self.getReportPath(), uniqueSourceID)
-                        uniqueSourceID += 1
-                        shaSet = []
-                        logging.info("Touri - tour, SCAN_" + self.id + " now has rewinder: " + r.log())
-                        while r.rewind():
-                            self.scanner.scanDirectory(self.depot.getRepoPath(), self.getReportPath(), r.getUniqueSourceID(), r.getSourceJSON(), shaSet)
-                        self.scanner.incrementFilesPerProject(len(shaSet), self.getReportPath())
-                        consecutiveExceptionCounter = 0
+                        if r:
+                            sourcers_exhausted = False
+                            uniqueSourceID += 1
+                            shaSet = []
+                            filePathSet = []
+                            citationSet = []
+                            self.logger.info("Touri - tour, SCAN_" + self.id + " now has rewinder: " + r.log())
+                            while r.rewind():
+                                self.scanner.scanDirectory(self.depot.getRepoPath(), self.getReportPath(), r.getUniqueSourceID(), r.getSourceJSON(), shaSet, filePathSet, citationSet)
+                            self.logger.debug("filePathSet content: " + str(filePathSet))
+                            self.logger.critical("Touri - scan complete for uniqueSourceID " + str(uniqueSourceID) + " len(filePathSet): " + str(len(filePathSet)) + " len(citationSet): " + str(len(citationSet)))
+                            self.scanner.incrementFilesPerProject(len(filePathSet), self.getReportPath())
+                            consecutiveExceptionCounter = 0
                 except Exception as e:
                     consecutiveExceptionCounter += 1
                     print str(e)
-                    logging.error("Touri - tour, SCAN_" + self.id + " EXCEPTION:" + str(e))
-                scanCount += 1
-                logging.debug("Touri - tour, scanCount: " + str(scanCount))
+                    self.logger.error("Touri - tour, SCAN_" + self.id + " EXCEPTION:" + str(e))
             tour_complete = sourcers_exhausted or cancelled or broken
         self.updateStatus(finalState)
-        logging.info("Touri - tour, SCAN_" + self.id + " FINAL STATE: " + finalState)
+        self.logger.critical("Touri - tour, SCAN_" + self.id + " FINAL STATE: " + finalState + " after scanning " + str(uniqueSourceID) + " sources")
 
 # ######################### conveneince methods #######################
 
@@ -75,7 +78,7 @@ class Tourist:
         # id, startS, last, nFiles, status, scanner, email, download
         # note that scanner.id might be a placeholder for the scanner blob
         insertStatement = 'INSERT INTO Tour VALUES ("' + self.id + '", ' + str(self.startS) + ', ' + str(self.startS) + ', 0, "INITIAL", "' + self.scanner.id + '", "' + self.email + '", "' + self.report_db + '")'
-        logging.info("Touri - register, registering tourist in tour table with statement: " + insertStatement)
+        self.logger.info("Touri - register, registering tourist in tour table with statement: " + insertStatement)
         c.execute(insertStatement)
         conn.commit()
         conn.close()
@@ -96,5 +99,5 @@ class Tourist:
         c.execute('''SELECT status FROM Tour WHERE id=?''', (self.id, ))
         isCancelled = c.fetchone() == "CANCELLED"
         conn.close()
-        logging.debug("Touri - tour, SCAN_" + self.id + " Tour Canceled: " + str(isCancelled))
+        self.logger.critical("Touri - tour, SCAN_" + self.id + " Tour Canceled: " + str(isCancelled))
         return isCancelled

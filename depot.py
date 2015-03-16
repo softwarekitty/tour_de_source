@@ -8,20 +8,19 @@ import logging
 class Depot:
 
     # if the tour.db file is not yet defined, or we are in recreate mode, create it
-    def __init__(self):
-
+    def __init__(self, logger):
         # signal the start of the outer depot program
-        logging.info("Depot - ***************init Depot**********.")
+        logger.critical("Depot - ***************init Depot**********.")
 
         # we should renew if we are in development mode - renewing erases old tour.db files.  If you don't renew, then we will append any new tours to the old tour.db file.
         if self.shouldRenew():
             try:
                 sh.cd(self.getDataPath())
                 sh.rm('-r', sh.glob('./*.db'))
-                logging.info("Depot - success trying to renew.")
+                logger.info("Depot - success trying to renew.")
             except:
                 # expect to hit this when the db has not been created yet
-                logging.info("Depot - failure trying to renew.")
+                logger.error("Depot - failure trying to renew.")
                 pass
 
         # not renewing, then you would create only if no db exists yet
@@ -34,9 +33,9 @@ class Depot:
             c.execute('''CREATE TABLE Tour (id text, start int, last int, nFiles int, status text, scannerType text, gmail text, reportPath text)''')
             conn.commit()
             conn.close()
-            logging.info("Depot - __init__, new Tour table created in path: " + dbFilePath)
+            logger.info("Depot - __init__, new Tour table created in path: " + dbFilePath)
         else:
-            logging.info("Depot - __init__, the file " + dbFilePath + " already exists and so no new Tour table has been created")
+            logger.info("Depot - __init__, the file " + dbFilePath + " already exists and so no new Tour table has been created")
 
 
 # ############################# immutable getters ###########################

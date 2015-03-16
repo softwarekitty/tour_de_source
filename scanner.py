@@ -4,8 +4,8 @@ import astroid.as_string
 import astroid.node_classes
 import astroid.inspector
 import datetime
-import logging
 import util
+import json
 import os
 import re
 
@@ -22,9 +22,12 @@ class PythonRegexScanner:
     id = "python regex scanner"
     pythonFilter = re.compile('.*\.py$', re.IGNORECASE)
 
-    def scanDirectory(self, path, report_db, uniqueSourceID, sourceJSON, shaSet):
+    def __init__(self, logger):
+        self.logger = logger
+
+    def scanDirectory(self, path, report_db, uniqueSourceID, sourceJSON, shaSet, filePathSet, citationSet):
         scanBeginS = util.getDateTimeS(datetime.datetime.utcnow())
-        logging.debug("PyReS - scanDirectory, path: " + str(path) + " uniqueSourceID: " + str(uniqueSourceID) + " scanBeginS: " + str(scanBeginS) + " report_db: " + report_db)
+        self.logger.debug("PyReS - scanDirectory, path: " + str(path) + " uniqueSourceID: " + str(uniqueSourceID) + " scanBeginS: " + str(scanBeginS) + " report_db: " + report_db)
 
         # get a list of the python file paths
         allFiles = []
@@ -41,21 +44,24 @@ class PythonRegexScanner:
                 if fileHash not in shaSet:
                     progressCounter = 0
                     shaSet.append(fileHash)
-                    node = astroid.manager.AstroidManager().ast_from_file(pythonFilePath)
-                    progressCounter = 1
-                    patternSet = []
                     cleanFilePath = pythonFilePath[len(path):]
-                    self.extractRegexR(node, report_db, patternSet, uniqueSourceID, sourceJSON, fileHash, cleanFilePath)
+                    if cleanFilePath not in filePathSet:
+                        filePathSet.append(cleanFilePath)
+                    progressCounter = 1
+
+                    node = astroid.manager.AstroidManager().ast_from_file(pythonFilePath)
                     progressCounter = 2
-                    self.incrementPatternsPerFile(len(patternSet), report_db)
+
+                    self.extractRegexR(node, report_db, uniqueSourceID, sourceJSON, fileHash, cleanFilePath, citationSet)
+                    progressCounter = 3
                 else:
                     nDuplicates += 1
             except Exception as e:
-                logging.warning("PyReS - problem extracting from file: " + str(pythonFilePath) + " exception: " + str(e) + " progressCounter: " + str(progressCounter))
-        logging.info("PyReS - finished scanning directory: " + str(path) + " nDuplicates: " + str(nDuplicates))
+                self.logger.warning("PyReS - problem extracting from file: " + str(pythonFilePath) + " exception: " + str(e) + " progressCounter: " + str(progressCounter))
+        self.logger.info("PyReS - finished scanning directory: " + str(path) + " nDuplicates: " + str(nDuplicates))
 
     # regex_flags = ["IGNORECASE","DEBUG","LOCALE","MULTILINE","DOTALL","UNICODE","VERBOSE"]
-    def extractRegexR(self, child, report_db, patternSet, uniqueSourceID, sourceJSON, fileHash, pythonFilePath):
+    def extractRegexR(self, child, report_db, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, citationSet):
         # all the methods we will look for
         target_func = self.get_function_list()
         if isinstance(child, astroid.node_classes.CallFunc) and child.func.as_string() in target_func:
@@ -77,53 +83,54 @@ class PythonRegexScanner:
                         neighborFile = x.get_children().next()
                         regex_citation[arg_counter] = str(neighborFile.name) + "." + str(x.attrname)
                     else:
-                        logging.warning("PyReS - extractRegexR, unexpected class found: " + x.__class__.__name__)
+                        self.logger.warning("PyReS - extractRegexR, unexpected class found: " + x.__class__.__name__)
 
                 elif isinstance(x, astroid.node_classes.Name):
                     regex_citation[arg_counter] = x.infer().next().as_string()
                 elif isinstance(x, astroid.node_classes.Const):
                     regex_citation[arg_counter] = x.as_string()
                 else:
-                    logging.warning("PyReS - extractRegexR, unexpected class found: " + x.__class__.__name__)
+                    self.logger.warning("PyReS - extractRegexR, unexpected class found: " + x.__class__.__name__)
                 arg_counter += 1
             regexFunction = target_func.index(regex_citation[0])
             pattern = regex_citation[1]
-            if pattern not in patternSet:
-                patternSet.append(pattern)
             flags = self.extract_flags(regexFunction, regex_citation)
-            self.record_regex_citation(uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction, report_db)
+            citationTuple = (pythonFilePath, pattern, flags, regexFunction)
+            if citationTuple not in citationSet:
+                citationSet.append(citationTuple)
+            # if self.isFirstAppearanceInPath(uniqueSourceID, pythonFilePath, pattern, flags, regexFunction, report_db):
+                self.record_regex_citation(uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction, report_db)
         for grandchild in child.get_children():
-            self.extractRegexR(grandchild, report_db, patternSet, uniqueSourceID, sourceJSON, fileHash, pythonFilePath)
+            self.extractRegexR(grandchild, report_db, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, citationSet)
 
     # ###################### database functions #######################
 
+    # #  - if a file's hash is not unique, it is skipped.  If its hash is unique, all new (pattern, flag, regexFunction) tuples for that filepath are added in that pass.  So the total number of files scanned from one project is equal to the number of unique filepaths scanned, and each unique tuple appears only once per file.
+    # def isFirstAppearanceInPath(self, uniqueSourceID, pythonFilePath, pattern, flags, regexFunction, report_db):
+    #     firstAppearance = False
+    #     conn = sqlite3.connect(report_db)
+    #     c = conn.cursor()
+
+    #     c.execute('''SELECT * FROM RegexCitation WHERE uniqueSourceID = ? AND filePath = ? AND pattern = ? AND flags = ? AND regexFunction = ?''', (uniqueSourceID, pythonFilePath, pattern, flags, regexFunction))
+
+    #     citationTuple = c.fetchone()
+    #     if not citationTuple:
+    #         firstAppearance = True
+    #     conn.commit()
+    #     conn.close()
+    #     return firstAppearance
+
     def initialize_report(self, report_db):
-        logging.info("PyReS - initialize_report, report_db: " + report_db)
+        self.logger.info("PyReS - initialize_report, report_db: " + report_db)
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute('''CREATE TABLE RegexCitation (uniqueSourceID int, sourceJSON text, fileHash char(44), filePath text, pattern text, flags int, regexFunction int)''')
         c.execute('''CREATE TABLE FilesPerProject (nFiles int, frequency int)''')
-        c.execute('''CREATE TABLE PatternsPerFile (nPatterns int, frequency int)''')
-        conn.commit()
-        conn.close()
-
-    def incrementPatternsPerFile(self, numberOfPatterns, report_db):
-        conn = sqlite3.connect(report_db)
-        c = conn.cursor()
-        c.execute('''SELECT frequency FROM PatternsPerFile WHERE nPatterns = ?''', (numberOfPatterns,))
-
-        # oldFrequency will be a tuple like (1,) or null
-        oldFrequency = c.fetchone()
-        # self.log("oldFrequency: " + str(oldFrequency) + " not oldFrequency: " + str(not oldFrequency))
-        if not oldFrequency:
-            c.execute("INSERT INTO PatternsPerFile values (?,?)", (numberOfPatterns, 1))
-        else:
-            c.execute("UPDATE PatternsPerFile SET frequency=? WHERE nPatterns=?", (oldFrequency[0] + 1, numberOfPatterns))
         conn.commit()
         conn.close()
 
     def incrementFilesPerProject(self, numberOfFiles, report_db):
-        logging.debug("PyReS - incrementing filesPerProject: " + str(numberOfFiles))
+        self.logger.debug("PyReS - incrementing filesPerProject: " + str(numberOfFiles))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute('''SELECT frequency FROM FilesPerProject WHERE nFiles = ?''', (numberOfFiles,))
@@ -139,7 +146,7 @@ class PythonRegexScanner:
 
     # (uniqueSourceID int, sourceJSON text, scanID int, fileHash char(44), filePath text, pattern text, flags int, regexFunction int)
     def record_regex_citation(self, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction, report_db):
-        logging.debug("PyReS - record_regex, uniqueSourceID: " + str(uniqueSourceID) + " sourceJSON: " + str(sourceJSON) + " fileHash: " + str(fileHash) + " filePath: " + str(pythonFilePath) + " pattern: " + str(pattern) + " flags: " + str(flags) + " regexFunction: " + str(regexFunction))
+        self.logger.debug("PyReS - record_regex, uniqueSourceID: " + str(uniqueSourceID) + " sourceJSON: " + str(sourceJSON) + " fileHash: " + str(fileHash) + " filePath: " + str(pythonFilePath) + " pattern: " + str(pattern) + " flags: " + str(flags) + " regexFunction: " + str(regexFunction))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute("INSERT INTO RegexCitation values (?,?,?,?,?,?,?)", (uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction))
@@ -147,9 +154,6 @@ class PythonRegexScanner:
         conn.close()
 
 # ######################### helpers ###################################
-
-    # def log(self, msg=""):
-    #    logging.debug("PyReS - " + msg)
 
     # this is public so that the index mapping is not mysterious
     def get_function_list(self):
@@ -175,5 +179,5 @@ class PythonRegexScanner:
         elif regexFunction in [6, 7]:
             return regex_citation[5]
         else:
-            logging.error("PyReS - extract_flags, cannot extract flags from " + str(regex_citation))
+            self.logger.error("PyReS - extract_flags, cannot extract flags from " + str(regex_citation))
             return 0
