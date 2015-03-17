@@ -207,7 +207,7 @@ LOG_WARNING_FILENAME = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_so
 
 def getConsoleHandler():
     console = logging.StreamHandler()
-    console.setLevel(logging.DEBUG)
+    console.setLevel(logging.INFO)
     formatter = logging.Formatter("%(levelname)s-%(message)s")
     console.setFormatter(formatter)
     return console
@@ -242,3 +242,25 @@ def prepareLogging(email, password, to):
     logger.addHandler(getRotatingFileHandler())
     logger.addHandler(getGmailRotatingFileHandler(email, password, to))
     return logger
+
+
+def emailFinishedMessage(email, password, to, subject):
+    msg = MIMEMultipart()
+    msg['From'] = email
+    msg['To'] = to
+    msg['Subject'] = subject
+    msg.attach(MIMEText("progress report: the scanner has exited"))
+
+    part = MIMEBase('application', "octet-stream")
+    part.set_payload(open(LOG_WARNING_FILENAME, "rb").read())
+    Encoders.encode_base64(part)
+    part.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(LOG_WARNING_FILENAME))
+    msg.attach(part)
+
+    mailServer = smtplib.SMTP("smtp.gmail.com", 587)
+    mailServer.ehlo()
+    mailServer.starttls()
+    mailServer.ehlo()
+    mailServer.login(email, password)
+    mailServer.sendmail(email, to, msg.as_string())
+    mailServer.close()

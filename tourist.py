@@ -1,14 +1,15 @@
 import sqlite3
 import datetime
 import util
-import json
 
 
-class Tourist:
+class Tourist(object):
 
-    def __init__(self, depot, email, scanner, sourcers, logger):
+    def __init__(self, depot, email, password, to, scanner, sourcers, logger):
         self.depot = depot
         self.email = email
+        self.password = password
+        self.to = to
         self.scanner = scanner
         self.sourcers = sourcers
         self.logger = logger
@@ -64,7 +65,9 @@ class Tourist:
                     self.logger.error("Touri - tour, SCAN_" + self.id + " EXCEPTION:" + str(e))
             tour_complete = sourcers_exhausted or cancelled or broken
         self.updateStatus(finalState)
-        self.logger.critical("Touri - tour, SCAN_" + self.id + " FINAL STATE: " + finalState + " after scanning " + str(uniqueSourceID) + " sources")
+        self.logger.critical("Touri - tour, SCAN_" + self.id + " FINAL STATE: " + finalState + " after scanning " + str(uniqueSourceID) + " sources containing Python out of " + str(s.getNProjects()) + " total sources observed")
+        util.emailFinishedMessage(self.email, self.password, self.to, "TOUR COMPLETE!")
+
 
 # ######################### conveneince methods #######################
 
@@ -101,3 +104,49 @@ class Tourist:
         conn.close()
         self.logger.critical("Touri - tour, SCAN_" + self.id + " Tour Canceled: " + str(isCancelled))
         return isCancelled
+
+
+# useful for stress-testing the sourcer - no breaks!
+class LookiLoo(Tourist):
+    def __init__(self, depot, email, password, to, scanner, sourcers, logger):
+        Tourist.__init__(self, depot, email, password, to, scanner, sourcers, logger)
+
+    def tour(self):
+        # main loop
+        self.updateStatus("RUNNING")
+        self.logger.critical("Looki - tour, SCAN_" + self.id + " RUNNING")
+        tour_complete = False
+        consecutiveExceptionCounter = 0
+        finalState = "FINISHED"
+        uniqueSourceID = 0
+        while not tour_complete:
+            sourcers_exhausted = True
+            cancelled = False
+            broken = False
+            for s in self.sourcers:
+                if consecutiveExceptionCounter > 0:
+                    self.logger.error("Looki - tour, consecutiveExceptionCounter: " + str(consecutiveExceptionCounter))
+                if self.isCancelled():
+                    cancelled = True
+                    finalState = "CANCELLED"
+                    break
+                elif self.depot.getConsecutiveExceptionLimit() < consecutiveExceptionCounter:
+                    broken = True
+                    finalState = "BROKEN"
+                    break
+                try:
+                    if not s.isExhausted():
+                        r = s.next(self.depot.getRepoPath(), self.getReportPath(), uniqueSourceID)
+                        if r:
+                            sourcers_exhausted = False
+                            uniqueSourceID += 1
+                            while r.rewind():
+                                self.logger.info("Looki - just looking, not scanning")
+                            consecutiveExceptionCounter = 0
+                except Exception as e:
+                    consecutiveExceptionCounter += 1
+                    print str(e)
+                    self.logger.error("Looki - tour, SCAN_" + self.id + " EXCEPTION:" + str(e))
+            tour_complete = sourcers_exhausted or cancelled or broken
+        self.updateStatus(finalState)
+        self.logger.critical("Looki - tour, SCAN_" + self.id + " FINAL STATE: " + finalState + " after scanning " + str(uniqueSourceID) + " sources containing Python out of " + str(s.getNProjects()) + " total sources observed")

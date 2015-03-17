@@ -37,9 +37,10 @@ class GithubPythonSourcer(object):
         self.since = first - 1
         self.stop = stop
 
+        self.nProjects = 0
         self.exhausted = False
         self.repos = []
-        self.logger.critical("initialized GithubPythonSourcer with rewinder_type: " + self.rewinder_type + " email: " + email + "first: " + str(first) + " stop:" + str(self.stop))
+        self.logger.critical("initialized GithubPythonSourcer with rewinder_type: " + self.rewinder_type + " email: " + email + " first: " + str(first) + " stop:" + str(self.stop))
 
     def isExhausted(self):
         return bool(self.exhausted)
@@ -90,7 +91,7 @@ class GithubPythonSourcer(object):
             try:
                 languagesJSON = self.get_json(projectJSON['languages_url'])
                 pythonProjectFound = "Python" in languagesJSON
-                self.logger.info("GiPyS - " + "refresh_repos, pythonProjectFound:" + str(pythonProjectFound) + " languagesJSON: " + str(languagesJSON) + " since: " + str(self.since) + " len(repos): " + str(len(self.repos)) + " name: " + projectJSON['name'])
+                self.logger.info("GiPyS - " + "refresh_repos, pythonProjectFound:" + str(pythonProjectFound) + " languagesJSON: " + str(languagesJSON) + "since: " + str(self.since) + " repoID: " + str(repoID) + " len(repos): " + str(len(self.repos)) + " name: " + projectJSON['name'])
                 if pythonProjectFound:
                     self.repos.append(projectJSON['id'])
             except KeyboardInterrupt:
@@ -98,6 +99,7 @@ class GithubPythonSourcer(object):
             except:
                 self.logger.warning("GiPyS - refresh_repos, failed to finish entire page of repos starting at lastRepo: " + str(lastRepo) + " but succeeded up to but excluding: " + str(repoID) + " which is the first " + str(projectCounter) + " projects.  this troublesome url will be skipped.")
             projectCounter += 1
+            self.nProjects += 1
 
         # repos can be empty if there are no python projects on this page
         if len(self.repos) == 0:
@@ -133,8 +135,8 @@ class GithubPythonSourcer(object):
                 # don't push the rate limit if none remain - wait for reset
                 if limit_remaining <= 1:
                     limit_resetS = rateJSON['resources']['core']['reset']
-                    nowS = calendar.timegm(time.timegm())
-                    time_to_waitS = limit_resetS - (nowS + 2)
+                    nowS = calendar.timegm(time.gmtime())
+                    time_to_waitS = limit_resetS - (nowS - 2)
                     self.logger.warning("GiPyS - get_json, limit_remaining: " + str(limit_remaining) + " url: " + url + " backoff: " + str(backoff_counter) + " ttwS: " + str(time_to_waitS))
                     time.sleep(time_to_waitS)
 
@@ -157,6 +159,9 @@ class GithubPythonSourcer(object):
             self.logger.warning("GiPyS - get_json, backing off with backoffS: " + str(backoffS) + " attempt: " + str(attempt_counter) + "/" + str(attempt_limit) + " url: " + url)
             time.sleep(backoffS)
 
+    def getNProjects(self):
+        return self.nProjects
+
     def get_authorized_request(self, url):
         encoded64 = base64.encodestring(self.credentials).replace('\n', '')
         request = urllib2.Request(url)
@@ -172,12 +177,28 @@ class GithubPythonSourcer(object):
 
     # this is a placeholder for adding rewinders to this sourcer
     def getRewinder(self, repoID, repo_path, report_path, uniqueSourceID):
-        if self.rewinder_type == "MasterAndTags":
-            return self.getGitMasterAndTagsRewinder(repoID, repo_path, report_path, uniqueSourceID)
-        elif self.rewinder_type == "20Commits":
-            return self.nCommitsGithubRewinder(repoID, repo_path, report_path, uniqueSourceID, 20)
-        else:
-            return None
+        for i in range(0, 10):
+            try:
+                if self.rewinder_type == "MasterAndTags":
+                    return self.getGitMasterAndTagsRewinder(repoID, repo_path, report_path, uniqueSourceID)
+                elif self.rewinder_type == "20Commits":
+                    return self.nCommitsGithubRewinder(repoID, repo_path, report_path, uniqueSourceID, 20)
+                elif self.rewinder_type == "mock":
+                    return self.getMockRewinder(repoID)
+                else:
+                    return None
+            except KeyboardInterrupt:
+                raise
+            except Exception as e:
+                backoffS = random.randrange(min(2 ** i, 40))
+                # this can happen when the dns gets in a bad state, or if a getRewinder method is throwing some exception
+                self.logger.error("GiPySo-getRewinder, Issue creating rewinder for repoID: " + str(repoID) + ", iteration: " + str(i) + ", exception message: " + str(e))
+                self.logger.critical("GiPySo-getRewinder, Backing off for " + str(backoffS) + " seconds")
+                time.sleep(backoffS)
+
+        # by returning None, we skip this source.
+        self.logger.critical("GiPySo-getRewinder, Issue creating rewinder for repoID: " + str(repoID) + ", could not be resolved after 10 attempts.  Returning None.")
+        return None
 
 # these rewinders are so large that they could be in their own file
 # ############################ NCommits ###############################
@@ -255,17 +276,24 @@ class GithubPythonSourcer(object):
     def fakeNCommitsGithubRewinder(self, repoID, repo_path, report_path, uniqueSourceID, n):
         default_branch = "master"
         clone_url = "fake_clone_url"
+        repo_name = "copycat"
 
         self.log("nCoGiRe, rsync-ing test_repo folder to repo folder")
         sh.rsync("-r", '/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/test_repo/', repo_path,)
         sh.cd(repo_path)
+
+        # hopefully the correct directory has the same name as the project, or is the last directory of all cloned directories.  This can vary - with git you could potentially have all your files in the root cloned directory, but in practice, almost noone does that.  I have seen several projects with multiple folders in this root cloned directory.  I think this is a case where it is best to just ignore the unusual ones.
         directoriesInPath = os.listdir(repo_path)
         directoriesInPath.sort()
-
-        # TODO - find the right directory more often
         for directory in directoriesInPath:
             if not directory[0] == ".":
+                if directory.lower() == repo_name.lower():
+                    repoDirName = directory
+                    break
                 repoDirName = directory
+
+        if repoDirName != repo_name:
+            self.logger.critical("GiPyS - nCoGiRe, did not find folder with same name as project(" + repo_name + ").  Using the last directory found: " + repoDirName)
 
         # now get the time and sha for commits
         sh.cd(repoDirName)
@@ -275,7 +303,7 @@ class GithubPythonSourcer(object):
             pair = cleanedLine.split(' ')
 
             # this json is what couples each rewinded data source to a particular github project version.  For bitbucket or another source, many of the inner fields should be different, but the three root fields: type, meta and data should be the same for all future sourceJson objects like this.
-            sourceJson = json.dumps({"type": "Github", "meta": {"repoID": str(repoID), "default_branch": str(default_branch), "clone_url": clone_url}, "data": {"sha": str(pair[1]), "commitS": str(pair[0])}})
+            sourceJson = json.dumps({"type": "Github", "meta": {"repoID": str(repoID), "default_branch": str(default_branch), "clone_url": clone_url, "name": repoDirName}, "data": {"sha": str(pair[1]), "commitS": str(pair[0])}})
             if len(pair) == 2:
                 commitList.append((pair[0], pair[1], sourceJson))
 
@@ -380,6 +408,23 @@ class GithubPythonSourcer(object):
         self.logger.info("GiPyS - geGiMaATaRe, creating GitRewinder with repoID: " + str(repoID) + " with a stack of " + str(len(stack)) + " shas and a rewindable path: " + rewindablePath)
         return rewinder.GitRewinder(stack, rewindablePath, metaID, self.rewinder_type)
 
+# this is for testing the github api, so we want many calls to get_json
+# ############################# OnlyJSON ############################
+    def getMockRewinder(self, repoID):
+        self.log("getMock, repoID: " + str(repoID) + " maxing out calls to github.")
+        for i in range(0, 1000):
+            repoJSON = self.get_json("https://api.github.com/repositories/" + str(repoID))
+            repo_name = repoJSON['name']
+        default_branch = repoJSON['default_branch']
+        self.log("getMock - default branch name: " + default_branch)
+        clone_url = repoJSON['clone_url']
+        masterURL = re.sub(r'({.*)$', '/' + default_branch, repoJSON['branches_url'])
+        masterJSON = self.get_json(masterURL)
+        masterSHA = masterJSON['commit']['sha']
+        masterDate = masterJSON['commit']['commit']['committer']['date']
+        masterDateS = calendar.timegm(dateutil.parser.parse(masterDate).utctimetuple())
+        sourceJSON = json.dumps({"type": "Mock_Github", "meta": {"repoID": str(repoID), "default_branch": str(default_branch), "clone_url": clone_url, "name": repo_name}, "data": {"sha": masterSHA, "commitS": masterDateS}})
+        return rewinder.MockRewinder(repoID, sourceJSON)
 
 # ############################# A Test Sourcer ############################
 
@@ -390,6 +435,7 @@ class LocalTestSourcer(GithubPythonSourcer):
     # returns a rewinder for the next repo
     def next(self, repo_path, report_path, uniqueSourceID):
         self.log("next")
+        self.nProjects = 1
         if self.exhausted is True:
             return None
 

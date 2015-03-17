@@ -38,3 +38,28 @@ class GitRewinder:
 
     def log(self):
         return "GitRe - log, type: " + self.rewinder_type + " ID: " + self.cuteID + " uniqueSourceID: " + str(self.getUniqueSourceID()) + " sha: " + str(self.sha)
+
+
+# This is a mock, not a stub because its values depend on externalities
+class MockRewinder:
+    def __init__(self, repoID, sourceJSON):
+        self.initial = True
+        self.repoID = repoID
+        self.sourceJSON = sourceJSON
+
+    def rewind(self):
+        if self.initial:
+            self.initial = False
+            return True
+        else:
+            return False
+
+    def getUniqueSourceID(self):
+        return -1
+
+    # after much trial and error making complex SQL tables, it seems like a little unstructured data might be the best way to characterize important state for various sources like Bitbucket, Sourceforge, etc.  Note that the rewinder itself never gets past the Tourist - it passes content to the scanner and steers the rewinding process with `rewind()'
+    def getSourceJSON(self):
+        return self.sourceJSON
+
+    def log(self):
+        return "FakeRe - log, repoID: " + str(self.repoID)

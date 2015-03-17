@@ -5,7 +5,6 @@ import astroid.node_classes
 import astroid.inspector
 import datetime
 import util
-import json
 import os
 import re
 
@@ -27,7 +26,7 @@ class PythonRegexScanner:
 
     def scanDirectory(self, path, report_db, uniqueSourceID, sourceJSON, shaSet, filePathSet, citationSet):
         scanBeginS = util.getDateTimeS(datetime.datetime.utcnow())
-        self.logger.debug("PyReS - scanDirectory, path: " + str(path) + " uniqueSourceID: " + str(uniqueSourceID) + " scanBeginS: " + str(scanBeginS) + " report_db: " + report_db)
+        self.logger.debug("PyReS - scanDirectory, path: " + str(path) + " uniqueSourceID: " + str(uniqueSourceID) + " scanBeginS: " + str(scanBeginS) + " report_db: " + report_db + " sourceJSON: " + sourceJSON)
 
         # get a list of the python file paths
         allFiles = []
@@ -58,7 +57,7 @@ class PythonRegexScanner:
                     nDuplicates += 1
             except Exception as e:
                 self.logger.warning("PyReS - problem extracting from file: " + str(pythonFilePath) + " exception: " + str(e) + " progressCounter: " + str(progressCounter))
-        self.logger.info("PyReS - finished scanning directory: " + str(path) + " nDuplicates: " + str(nDuplicates))
+        self.logger.info("PyReS - finished scanning project. " + " nDuplicates: " + str(nDuplicates) + " uniqueSourceID: " + str(uniqueSourceID) + " sourceJSON: " + sourceJSON)
 
     # regex_flags = ["IGNORECASE","DEBUG","LOCALE","MULTILINE","DOTALL","UNICODE","VERBOSE"]
     def extractRegexR(self, child, report_db, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, citationSet):
@@ -98,27 +97,11 @@ class PythonRegexScanner:
             citationTuple = (pythonFilePath, pattern, flags, regexFunction)
             if citationTuple not in citationSet:
                 citationSet.append(citationTuple)
-            # if self.isFirstAppearanceInPath(uniqueSourceID, pythonFilePath, pattern, flags, regexFunction, report_db):
                 self.record_regex_citation(uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction, report_db)
         for grandchild in child.get_children():
             self.extractRegexR(grandchild, report_db, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, citationSet)
 
     # ###################### database functions #######################
-
-    # #  - if a file's hash is not unique, it is skipped.  If its hash is unique, all new (pattern, flag, regexFunction) tuples for that filepath are added in that pass.  So the total number of files scanned from one project is equal to the number of unique filepaths scanned, and each unique tuple appears only once per file.
-    # def isFirstAppearanceInPath(self, uniqueSourceID, pythonFilePath, pattern, flags, regexFunction, report_db):
-    #     firstAppearance = False
-    #     conn = sqlite3.connect(report_db)
-    #     c = conn.cursor()
-
-    #     c.execute('''SELECT * FROM RegexCitation WHERE uniqueSourceID = ? AND filePath = ? AND pattern = ? AND flags = ? AND regexFunction = ?''', (uniqueSourceID, pythonFilePath, pattern, flags, regexFunction))
-
-    #     citationTuple = c.fetchone()
-    #     if not citationTuple:
-    #         firstAppearance = True
-    #     conn.commit()
-    #     conn.close()
-    #     return firstAppearance
 
     def initialize_report(self, report_db):
         self.logger.info("PyReS - initialize_report, report_db: " + report_db)
