@@ -15,6 +15,8 @@ import os
 import logging.handlers
 import sh
 
+BASE_PATH = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/"
+
 
 def get_cuteHash(filePath):
     with open(filePath, "r") as fileHandle:
@@ -86,7 +88,7 @@ def test_getDateTimeS():
 
 
 def test_get_cuteHash_fileExists():
-    safePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/testFile.txt"
+    safePath = BASE_PATH + "repo/testFile.txt"
     with open(safePath, 'w+') as testFile:
         testFile.write('12345678')
     cuteHash = get_cuteHash(safePath)
@@ -199,10 +201,9 @@ class RotatingFileGmailHandler(RotatingFileHandler):
         mailServer.sendmail(self.email, self.to, msg.as_string())
         mailServer.close()
 
+LOG_DEBUG_FILENAME = BASE_PATH + "data/log/tour_de_source.debug.log"
 
-LOG_DEBUG_FILENAME = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/log/tour_de_source.debug.log"
-
-LOG_WARNING_FILENAME = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/log/tour_de_source.warning.log"
+LOG_CRITICAL_FILENAME = BASE_PATH + "data/log/tour_de_source.critical.log"
 
 
 def getConsoleHandler():
@@ -214,7 +215,7 @@ def getConsoleHandler():
 
 
 def getRotatingFileHandler():
-    rotating = logging.handlers.RotatingFileHandler(filename=LOG_DEBUG_FILENAME, maxBytes=2097152, backupCount=1000, delay=False)
+    rotating = logging.handlers.RotatingFileHandler(filename=LOG_DEBUG_FILENAME, maxBytes=4194304, backupCount=999, delay=False)
     formatter = logging.Formatter("%(asctime)s %(levelname)s-%(message)s", '%a, %d %b %H:%M:%S')
     rotating.setFormatter(formatter)
     rotating.setLevel(logging.DEBUG)
@@ -222,17 +223,17 @@ def getRotatingFileHandler():
 
 
 def getGmailRotatingFileHandler(email, password, to):
-    gmailing = RotatingFileGmailHandler(LOG_WARNING_FILENAME, email, password, to, "WARNING Log Report", maxBytes=524288, backupCount=1000, delay=False)
-    formatter = logging.Formatter("%(asctime)s %(levelname)s-%(message)s", '%a, %d %b %H:%M:%S')
+    gmailing = RotatingFileGmailHandler(LOG_CRITICAL_FILENAME, email, password, to, "CRITICAL Log Report", maxBytes=4194304, backupCount=999, delay=False)
+    formatter = logging.Formatter("%(asctime)s %(message)s", '%H:%M:%S')
     gmailing.setFormatter(formatter)
-    gmailing.setLevel(logging.WARNING)
+    gmailing.setLevel(logging.CRITICAL)
     return gmailing
 
 
 def prepareLogging(email, password, to):
     # erase old logging files if any exist
     try:
-        sh.cd("/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/log")
+        sh.cd(BASE_PATH + "data/log")
         sh.rm('-r', sh.glob('./*'))
     except:
         pass
@@ -244,17 +245,17 @@ def prepareLogging(email, password, to):
     return logger
 
 
-def emailFinishedMessage(email, password, to, subject):
+def emailEndingMessage(email, password, to, subject):
     msg = MIMEMultipart()
     msg['From'] = email
     msg['To'] = to
     msg['Subject'] = subject
-    msg.attach(MIMEText("progress report: the scanner has exited"))
+    msg.attach(MIMEText("progress report: the tour has ended"))
 
     part = MIMEBase('application', "octet-stream")
-    part.set_payload(open(LOG_WARNING_FILENAME, "rb").read())
+    part.set_payload(open(LOG_CRITICAL_FILENAME, "rb").read())
     Encoders.encode_base64(part)
-    part.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(LOG_WARNING_FILENAME))
+    part.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(LOG_CRITICAL_FILENAME))
     msg.attach(part)
 
     mailServer = smtplib.SMTP("smtp.gmail.com", 587)

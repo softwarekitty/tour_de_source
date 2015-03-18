@@ -7,10 +7,12 @@ from scanner import PythonRegexScanner
 import util
 
 
-e = "investigationyen@gmail.com"
-p = "kos8izjrv3oary"
+e1 = "investigationbot@gmail.com"
+p1 = "cro0thiezlutrl"
+credentials = "investigationbot:cro0thiezlutrl"
+
 to = "carlallenchapman@gmail.com"
-l = util.prepareLogging(e, p, to)
+l = util.prepareLogging(e1, p1, to)
 
 
 d = Depot(l)
@@ -26,8 +28,8 @@ d = Depot(l)
 
 # test normal operation or run normally
 # self.since = 15249308 will be a small, fast repo, 15249311 is two repos later
-s = [GithubPythonSourcer("20Commits", e, p, l)]  # , 15249309, 15249409)]
-t = Tourist(d, e, p, to, PythonRegexScanner(l), s, l)
+s = [GithubPythonSourcer("20Commits", e1, p1, l, credentials, 15249309, 15249311)]
+t = Tourist(d, e1, p1, to, PythonRegexScanner(l), s, l, "Tour of bot1 ended with status: ")
 
 
 t.tour()

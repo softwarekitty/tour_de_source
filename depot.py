@@ -1,6 +1,7 @@
 import sqlite3
 import os
 import sh
+from util import BASE_PATH
 
 
 # the Depot is a placeholder for a program that tracks multiple simultaneous tours all using the interfaces provided by this project.  As of right now, it does not provide any useful functionality, but the idea is that multiple concurrent users would want separate repo paths, data paths, maybe exception limits, etc.  Any program managing many arbitrary program executions would want to know when they started, when they finished and where the generated report is.  The depot should handle these concerns, like how a depot might handle routing tourists, vehicles and luggage.
@@ -39,12 +40,15 @@ class Depot:
 
 # ############################# immutable getters ###########################
 
+    def getBasePath(self):
+        return BASE_PATH
+
     # we don't want any accidental modification of this, so it's get only
     def getRepoPath(self):
-        return '/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/'
+        return self.getBasePath() + 'repo/'
 
     def getDataPath(self):
-        return '/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/'
+        return self.getBasePath() + 'data/'
 
     def getTourPath(self):
         return self.getDataPath() + 'tour.db'

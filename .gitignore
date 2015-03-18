@@ -8,6 +8,7 @@ __pycache__/
 #tour_de_source
 data/
 repo/
+clones/
 
 
 # C extensions

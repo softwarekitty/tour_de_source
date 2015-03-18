@@ -5,7 +5,7 @@ import util
 
 class Tourist(object):
 
-    def __init__(self, depot, email, password, to, scanner, sourcers, logger):
+    def __init__(self, depot, email, password, to, scanner, sourcers, logger, endingMessage):
         self.depot = depot
         self.email = email
         self.password = password
@@ -13,6 +13,7 @@ class Tourist(object):
         self.scanner = scanner
         self.sourcers = sourcers
         self.logger = logger
+        self.endingMessage = endingMessage
 
         self.startS = util.getDateTimeS(datetime.datetime.utcnow())
         self.id = util.getUniqueCuteID(5, depot.getTourPath())
@@ -23,7 +24,7 @@ class Tourist(object):
     def tour(self):
         # main loop
         self.updateStatus("RUNNING")
-        self.logger.critical("Touri - tour, SCAN_" + self.id + " RUNNING")
+        self.logger.info("Touri - tour, SCAN_" + self.id + " RUNNING")
         tour_complete = False
         consecutiveExceptionCounter = 0
         finalState = "FINISHED"
@@ -34,7 +35,7 @@ class Tourist(object):
             broken = False
             for s in self.sourcers:
                 if consecutiveExceptionCounter > 0:
-                    self.logger.error("Touri - tour, consecutiveExceptionCounter: " + str(consecutiveExceptionCounter))
+                    self.logger.critical("Touri - tour, consecutiveExceptionCounter: " + str(consecutiveExceptionCounter))
                 if self.isCancelled():
                     cancelled = True
                     finalState = "CANCELLED"
@@ -45,9 +46,9 @@ class Tourist(object):
                     break
                 try:
                     if not s.isExhausted():
+                        sourcers_exhausted = False
                         r = s.next(self.depot.getRepoPath(), self.getReportPath(), uniqueSourceID)
                         if r:
-                            sourcers_exhausted = False
                             uniqueSourceID += 1
                             shaSet = []
                             filePathSet = []
@@ -56,17 +57,20 @@ class Tourist(object):
                             while r.rewind():
                                 self.scanner.scanDirectory(self.depot.getRepoPath(), self.getReportPath(), r.getUniqueSourceID(), r.getSourceJSON(), shaSet, filePathSet, citationSet)
                             self.logger.debug("filePathSet content: " + str(filePathSet))
-                            self.logger.critical("Touri - scan complete for uniqueSourceID " + str(uniqueSourceID) + " len(filePathSet): " + str(len(filePathSet)) + " len(citationSet): " + str(len(citationSet)))
+                            self.logger.info("Touri - done w/ID " + str(uniqueSourceID) + " nFiles: " + str(len(filePathSet)) + " nCites: " + str(len(citationSet)))
                             self.scanner.incrementFilesPerProject(len(filePathSet), self.getReportPath())
                             consecutiveExceptionCounter = 0
+                except (KeyboardInterrupt, SystemExit) as exit:
+                    self.cancel()
+                    self.logger.critical("Touri - tour, SCAN_" + self.id + "  has been cancelled by the host with EXCEPTION:" + str(type(exit).__name__))
                 except Exception as e:
                     consecutiveExceptionCounter += 1
                     print str(e)
-                    self.logger.error("Touri - tour, SCAN_" + self.id + " EXCEPTION:" + str(e))
+                    self.logger.critical("Touri - tour, SCAN_" + self.id + " EXCEPTION:" + str(e))
             tour_complete = sourcers_exhausted or cancelled or broken
         self.updateStatus(finalState)
         self.logger.critical("Touri - tour, SCAN_" + self.id + " FINAL STATE: " + finalState + " after scanning " + str(uniqueSourceID) + " sources containing Python out of " + str(s.getNProjects()) + " total sources observed")
-        util.emailFinishedMessage(self.email, self.password, self.to, "TOUR COMPLETE!")
+        util.emailEndingMessage(self.email, self.password, self.to, self.endingMessage + self.getStatus())
 
 
 # ######################### conveneince methods #######################
@@ -94,15 +98,37 @@ class Tourist(object):
         conn.commit()
         conn.close()
 
+    # convenience method for updating tour status in tour.db
+    def getStatus(self):
+        conn = sqlite3.connect(self.depot.getTourPath())
+        c = conn.cursor()
+        c.execute('''SELECT status FROM Tour WHERE id=?''', (self.id, ))
+        statusTuple = c.fetchone()
+        conn.commit()
+        conn.close()
+        if statusTuple is None or statusTuple[0] is None:
+            return "UNKNOWN"
+        else:
+            return statusTuple[0]
+
+    def cancel(self):
+        conn = sqlite3.connect(self.depot.getTourPath())
+        c = conn.cursor()
+        c.execute('''UPDATE Tour Set status=? WHERE id=?''', ("CANCELLED", self.id))
+        conn.commit()
+        conn.close()
+
     # this checks with tour.db to see if the tour has been cancelled
     def isCancelled(self):
         isCancelled = False
         conn = sqlite3.connect(self.depot.getTourPath())
         c = conn.cursor()
         c.execute('''SELECT status FROM Tour WHERE id=?''', (self.id, ))
-        isCancelled = c.fetchone() == "CANCELLED"
+        statusTuple = c.fetchone()
+        isCancelled = statusTuple == (u'CANCELLED',)
         conn.close()
-        self.logger.critical("Touri - tour, SCAN_" + self.id + " Tour Canceled: " + str(isCancelled))
+        if isCancelled:
+            self.logger.critical("Touri - tour, SCAN_" + self.id + " Tour Canceled: " + str(isCancelled))
         return isCancelled
 
 

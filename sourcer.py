@@ -10,6 +10,7 @@ import sh
 import os
 import random
 import sys
+from util import BASE_PATH
 
 '''*Sourcer interface:
         *Sourcer(rewinder_type, first, stop) rewinder_type could be Version, Weekly, 1%, initial, latest, etc - a placeholder for future extensions.  The first and stop variables allow control of the range of repoID values for this source to provide.  In accordance with the Github API, we will always be getting a page of repos with ID larger than a 'since' value.  So if 'first' is 201, we will query github with 'since' equal to 200, so that the lowest possible first repo is 200.  Similarly the 'stop' value will stop the sourcer from sourcing any values larger than 'stop', although it will source that repoID, if it exists.  No long running processes should occur in __init__.
@@ -29,10 +30,13 @@ import sys
 
 class GithubPythonSourcer(object):
 
-    def __init__(self, rewinder_type, email, password, logger, first=1, stop=sys.maxsize):
+    def __init__(self, rewinder_type, email, password, logger, credentials=None, first=1, stop=sys.maxsize):
 
         self.rewinder_type = rewinder_type
-        self.credentials = email[:email.index('@')] + ":" + password
+        if credentials is None:
+            self.credentials = email[:email.index('@')] + ":" + password
+        else:
+            self.credentials = credentials
         self.logger = logger
         self.since = first - 1
         self.stop = stop
@@ -52,6 +56,8 @@ class GithubPythonSourcer(object):
         # refresh the page if necessary, stop if necessary
         if not self.exhausted and len(self.repos) == 0:
             self.refresh_repos(self.since)
+            if len(self.repos) == 0:
+                self.exhausted = True
         if self.exhausted is True:
             self.logger.critical("GiPyS - exhausted, since: " + str(self.since) + " stop: " + str(self.stop) + " len(repos): " + str(len(self.repos)))
             return None
@@ -68,6 +74,7 @@ class GithubPythonSourcer(object):
         # if we are at the stopping point, then this is the last one
         if self.since == self.stop:
             self.exhausted = True
+        self.logger.critical("GiPyS - next repoID: " + str(self.since))
         return self.getRewinder(self.since, repo_path, report_path, uniqueSourceID)
 
 # ####################### convenience methods ################################
@@ -88,10 +95,14 @@ class GithubPythonSourcer(object):
         projectCounter = 0
         for projectJSON in sinceLastJSON:
             repoID = projectJSON['id']
+            if repoID > self.stop:
+                self.logger.info("GiPyS - refresh_repos, stopped refreshing with stop:" + str(self.stop) + " and current repoID: " + str(repoID))
+                return
             try:
                 languagesJSON = self.get_json(projectJSON['languages_url'])
                 pythonProjectFound = "Python" in languagesJSON
-                self.logger.info("GiPyS - " + "refresh_repos, pythonProjectFound:" + str(pythonProjectFound) + " languagesJSON: " + str(languagesJSON) + "since: " + str(self.since) + " repoID: " + str(repoID) + " len(repos): " + str(len(self.repos)) + " name: " + projectJSON['name'])
+                self.logger.info("GiPyS - refresh_repos, repoID:" + str(repoID) + " hasPython: " + str(pythonProjectFound) + " name: " + projectJSON['name'])
+                self.logger.debug("GiPyS - refresh_repos, since:" + str(self.since) + " len(repos): " + str(len(self.repos)) + " languagesJSON: " + str(languagesJSON))
                 if pythonProjectFound:
                     self.repos.append(projectJSON['id'])
             except KeyboardInterrupt:
@@ -137,7 +148,7 @@ class GithubPythonSourcer(object):
                     limit_resetS = rateJSON['resources']['core']['reset']
                     nowS = calendar.timegm(time.gmtime())
                     time_to_waitS = limit_resetS - (nowS - 2)
-                    self.logger.warning("GiPyS - get_json, limit_remaining: " + str(limit_remaining) + " url: " + url + " backoff: " + str(backoff_counter) + " ttwS: " + str(time_to_waitS))
+                    self.logger.critical("GiPyS - get_json, blocked by rate limit: " + str(limit_remaining) + " ttwS: " + str(time_to_waitS))
                     time.sleep(time_to_waitS)
 
                 urlJSON = json.load(urllib2.urlopen(self.get_authorized_request(url)))
@@ -146,12 +157,12 @@ class GithubPythonSourcer(object):
             except urllib2.HTTPError, e:
                 self.logger.error("GiPyS - get_json, HTTPError!!!")
             except Exception as e:
-                self.logger.error("GiPyS - get_json, Problem with getting json " + str(e))
+                self.logger.critical("GiPyS - get_json, Unexpected roblem with getting json: " + str(e))
 
             # break out of this cycle for troublesome urls
             attempt_counter += 1
             if attempt_counter >= attempt_limit:
-                self.logger.error("GiPyS - get_json, Giving up on url " + url + " after " + str(attempt_counter) + " attempts")
+                self.logger.critical("GiPyS - get_json, Giving up on url " + url + " after " + str(attempt_counter) + " attempts")
                 raise Exception("this url is not worth the trouble: " + url)
 
             # back off a random time to avoid looking like such a robot
@@ -279,7 +290,7 @@ class GithubPythonSourcer(object):
         repo_name = "copycat"
 
         self.log("nCoGiRe, rsync-ing test_repo folder to repo folder")
-        sh.rsync("-r", '/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/test_repo/', repo_path,)
+        sh.rsync("-r", BASE_PATH + 'test_repo/', repo_path,)
         sh.cd(repo_path)
 
         # hopefully the correct directory has the same name as the project, or is the last directory of all cloned directories.  This can vary - with git you could potentially have all your files in the root cloned directory, but in practice, almost noone does that.  I have seen several projects with multiple folders in this root cloned directory.  I think this is a case where it is best to just ignore the unusual ones.
