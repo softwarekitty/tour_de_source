@@ -1,6 +1,74 @@
-03:28:45 Depot - ***************init Depot**********.
-03:28:45 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311
-03:28:54 GiPyS - next repoID: 15249309
-03:28:55 GiPySo-getRewinder, Backing off for 0 seconds
-03:29:07 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
-03:29:07 Touri - tour, SCAN_59611 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 5 total sources observed
+17:44:18 Depot - ***************init Depot**********.
+17:44:18 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 4718592 stop:4980735
+17:44:59 GiPyS - next repoID: 4718593
+17:45:06 GiPyS - next repoID: 4718600
+17:45:08 GiPyS - next repoID: 4718645
+17:45:11 GiPyS - next repoID: 4718655
+17:45:12 GiPyS - next repoID: 4718657
+17:45:21 GiPyS - next repoID: 4718659
+17:45:23 GiPyS - next repoID: 4718695
+17:45:28 GiPyS - next repoID: 4718708
+17:45:30 GiPyS - next repoID: 4718717
+17:45:41 GiPyS - next repoID: 4718755
+17:46:30 GiPyS - next repoID: 4718850
+17:46:31 GiPyS - next repoID: 4718869
+17:47:21 GiPyS - next repoID: 4718876
+17:47:32 GiPyS - next repoID: 4718900
+17:47:34 GiPyS - next repoID: 4718919
+17:47:47 GiPyS - next repoID: 4718958
+17:47:52 GiPyS - next repoID: 4718963
+17:47:56 GiPyS - next repoID: 4718976
+17:48:40 GiPyS - next repoID: 4719035
+17:48:41 GiPyS - next repoID: 4719058
+17:48:43 GiPyS - next repoID: 4719063
+17:48:55 GiPyS - next repoID: 4719110
+17:48:59 GiPyS - next repoID: 4719140
+17:49:02 GiPyS - next repoID: 4719151
+17:49:03 GiPyS - next repoID: 4719160
+17:49:07 GiPyS - next repoID: 4719171
+17:49:13 GiPyS - next repoID: 4719201
+17:49:54 GiPyS - next repoID: 4719245
+17:49:55 GiPyS - next repoID: 4719301
+17:49:59 GiPyS - next repoID: 4719302
+17:50:01 GiPyS - next repoID: 4719311
+17:50:03 GiPyS - next repoID: 4719315
+17:50:06 GiPyS - next repoID: 4719320
+17:50:13 GiPyS - next repoID: 4719342
+17:50:15 GiPyS - next repoID: 4719366
+17:50:29 GiPyS - next repoID: 4719370
+17:50:37 GiPyS - next repoID: 4719403
+17:50:38 GiPyS - next repoID: 4719414
+17:51:05 GiPyS - next repoID: 4719437
+17:51:44 GiPyS - next repoID: 4719477
+17:51:47 GiPyS - next repoID: 4719536
+17:51:53 GiPyS - next repoID: 4719562
+17:51:55 GiPyS - next repoID: 4719573
+17:51:58 GiPyS - next repoID: 4719588
+17:52:00 GiPyS - next repoID: 4719619
+17:52:02 GiPyS - next repoID: 4719624
+17:52:09 GiPyS - next repoID: 4719647
+18:12:55 GiPyS - next repoID: 4719649
+18:12:59 GiPyS - next repoID: 4719655
+18:13:40 GiPyS - next repoID: 4719725
+18:13:46 GiPyS - next repoID: 4719742
+18:13:49 GiPyS - next repoID: 4719752
+18:16:58 GiPyS - next repoID: 4719754
+18:17:04 GiPyS - next repoID: 4719759
+18:17:24 GiPyS - next repoID: 4719778
+18:17:36 GiPyS - next repoID: 4719786
+18:21:53 GiPyS - next repoID: 4719793
+18:21:56 GiPyS - next repoID: 4719797
+18:22:01 GiPyS - next repoID: 4719820
+18:24:47 GiPyS - next repoID: 4719822
+18:24:51 GiPyS - next repoID: 4719836
+18:25:03 GiPyS - next repoID: 4719838
+18:25:10 GiPyS - next repoID: 4719852
+18:25:58 GiPyS - next repoID: 4719870
+18:26:04 GiPyS - next repoID: 4719872
+18:26:09 GiPyS - next repoID: 4719890
+18:26:12 GiPyS - next repoID: 4719929
+18:26:18 GiPyS - next repoID: 4719984
+18:26:25 GiPyS - next repoID: 4719999
+18:35:34 Touri - tour, SCAN_c9dkn  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+18:35:34 Touri - tour, SCAN_c9dkn Tour Canceled: True
+18:35:37 Touri - tour, SCAN_c9dkn FINAL STATE: CANCELLED after scanning 69 sources containing Python out of 700 total sources observed
