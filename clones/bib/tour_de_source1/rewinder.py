@@ -1,5 +1,6 @@
 import sh
 import util
+import logging
 
 '''
     GitRewinder expects the path of the project in which the sha hashes can be used by git to rewind a project, what type the rewinder is for logging (Version, MasterOnly, InitialOnly, 2Week, Monthly, etc.), the uniqueSourceID, and a list of (commitTime,sha,sourceJSON) tuples with most recent on top.
@@ -26,7 +27,9 @@ class GitRewinder:
 
         # Note that --hard is needed to get rid of files from previous commits
         sh.cd(self.path)
+        self.logger.setLevel(logging.CRITICAL)
         sh.git.reset("--hard", self.sha)
+        self.logger.setLevel(logging.DEBUG)
         return True
 
     def getUniqueSourceID(self):
