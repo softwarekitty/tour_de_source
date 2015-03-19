@@ -27,9 +27,10 @@ class GitRewinder:
 
         # Note that --hard is needed to get rid of files from previous commits
         sh.cd(self.path)
-        self.logger.setLevel(logging.CRITICAL)
+        logger = logging.getLogger('')
+        logger.setLevel(logging.CRITICAL)
         sh.git.reset("--hard", self.sha)
-        self.logger.setLevel(logging.DEBUG)
+        logger.setLevel(logging.DEBUG)
         return True
 
     def getUniqueSourceID(self):
