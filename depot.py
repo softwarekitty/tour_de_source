@@ -12,12 +12,12 @@ class Depot:
     def __init__(self, logger):
         # signal the start of the outer depot program
         logger.critical("Depot - ***************init Depot**********.")
-        # if not os.path.exists(self.getRepoPath()):
-        #     os.makedirs(self.getRepoPath())
-        # if not os.path.exists(self.getDataPath()):
-        #     os.makedirs(self.getDataPath())
-        # if not os.path.exists(self.getDataPath()):
-        #     os.makedirs(self.getDataPath() + "log/")
+        if not os.path.exists(self.getRepoPath()):
+            os.makedirs(self.getRepoPath())
+        if not os.path.exists(self.getDataPath()):
+            os.makedirs(self.getDataPath())
+        if not os.path.exists(self.getDataPath()):
+            os.makedirs(self.getDataPath() + "log/")
         # if not os.path.exists(self.getDataPath() + "log/" + util.LOG_DEBUG_FILENAME):
         #     open(self.getDataPath() + "log/" + util.LOG_DEBUG_FILENAME, 'a').close()
         # if not os.path.exists(self.getDataPath() + "log/" + util.LOG_CRITICAL_FILENAME):
