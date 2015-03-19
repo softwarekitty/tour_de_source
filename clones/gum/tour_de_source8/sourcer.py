@@ -10,6 +10,7 @@ import sh
 import os
 import random
 import sys
+import logging
 from util import BASE_PATH
 
 '''*Sourcer interface:
@@ -229,7 +230,13 @@ class GithubPythonSourcer(object):
         sh.cd(repo_path)
         sh.rm('-r', sh.glob('./*'), _err=self.logErrorHandler)
         self.logger.warning("GiPyS - nCoGiRe, cloning repository with url: " + clone_url + " into path: " + repo_path + " this may take some time...")
+
+        # on linux, I'm having trouble where git commands output a torrent of
+        # logging output that I didn't authorize.  It may be a python bug, since
+        # crunchbang defaults to python 2.7.3 and this was developed on 2.7.5
+        self.logger.setLevel(logging.CRITICAL)
         sh.git.clone(clone_url, "-b", default_branch)
+        self.logger.setLevel(logging.DEBUG)
 
         # hopefully the correct directory has the same name as the project, or is the last directory of all cloned directories.  This can vary - with git you could potentially have all your files in the root cloned directory, but in practice, almost noone does that.  I have seen several projects with multiple folders in this root cloned directory.  I think this is a case where it is best to just ignore the unusual ones.
         directoriesInPath = os.listdir(repo_path)
@@ -247,6 +254,7 @@ class GithubPythonSourcer(object):
         # now get the time and sha for commits
         sh.cd(repoDirName)
         commitList = []
+        self.logger.setLevel(logging.CRITICAL)
         for line in sh.git.log("--format=format:\"%ct %H\"", _iter=True, _tty_out=False, _err=self.logErrorHandler):
             cleanedLine = line[line.find('"') + 1:line.rfind('"')]
             pair = cleanedLine.split(' ')
@@ -255,6 +263,7 @@ class GithubPythonSourcer(object):
             sourceJson = json.dumps({"type": "Github", "meta": {"repoID": str(repoID), "default_branch": str(default_branch), "clone_url": clone_url, "name": repoDirName}, "data": {"sha": str(pair[1]), "commitS": str(pair[0])}})
             if len(pair) == 2:
                 commitList.append((pair[0], pair[1], sourceJson))
+        self.logger.setLevel(logging.DEBUG)
 
         # here we are sorting by the first field of the tuple: the commit time
         commitList.sort(reverse=True)
