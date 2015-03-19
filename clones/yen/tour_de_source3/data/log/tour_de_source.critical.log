@@ -1,5 +1,6 @@
-01:50:58 Depot - ***************init Depot**********.
-01:50:58 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 524288 stop:786431
-01:51:43 Touri - tour, SCAN_95616  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
-01:51:43 Touri - tour, SCAN_95616 Tour Canceled: True
-01:51:43 Touri - tour, SCAN_95616 FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 39 total sources observed
+03:28:45 Depot - ***************init Depot**********.
+03:28:45 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311
+03:28:54 GiPyS - next repoID: 15249309
+03:28:55 GiPySo-getRewinder, Backing off for 0 seconds
+03:29:07 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
+03:29:07 Touri - tour, SCAN_59611 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 5 total sources observed

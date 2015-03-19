@@ -1,6 +1,6 @@
 import util
-import sys
-sys.path.append(util.LOCAL_PATH)
+# import sys
+# sys.path.append(util.LOCAL_PATH)
 
 from depot import Depot
 from tourist import Tourist
