@@ -15,6 +15,8 @@ class Depot:
             os.makedirs(self.getRepoPath())
         if not os.path.exists(self.getDataPath()):
             os.makedirs(self.getDataPath())
+        if not os.path.exists(self.getDataPath()):
+            os.makedirs(self.getDataPath() + "log/")
 
         # we should renew if we are in development mode - renewing erases old tour.db files.  If you don't renew, then we will append any new tours to the old tour.db file.
         if self.shouldRenew():
