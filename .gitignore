@@ -6,8 +6,6 @@ __pycache__/
 .DS_Store
 
 #tour_de_source
-data/
-repo/
 
 
 # C extensions
