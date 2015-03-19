@@ -11,6 +11,10 @@ class Depot:
     def __init__(self, logger):
         # signal the start of the outer depot program
         logger.critical("Depot - ***************init Depot**********.")
+        if not os.path.exists(self.getRepoPath()):
+            os.makedirs(self.getRepoPath())
+        if not os.path.exists(self.getDataPath()):
+            os.makedirs(self.getDataPath())
 
         # we should renew if we are in development mode - renewing erases old tour.db files.  If you don't renew, then we will append any new tours to the old tour.db file.
         if self.shouldRenew():
