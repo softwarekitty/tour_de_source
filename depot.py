@@ -1,6 +1,7 @@
 import sqlite3
 import os
 import sh
+import util
 from util import BASE_PATH
 
 
@@ -17,6 +18,10 @@ class Depot:
             os.makedirs(self.getDataPath())
         if not os.path.exists(self.getDataPath()):
             os.makedirs(self.getDataPath() + "log/")
+        if not os.path.exists(self.getDataPath() + "log/" + util.LOG_DEBUG_FILENAME):
+            open(self.getDataPath() + "log/" + util.LOG_DEBUG_FILENAME, 'a').close()
+        if not os.path.exists(self.getDataPath() + "log/" + util.LOG_CRITICAL_FILENAME):
+            open(self.getDataPath() + "log/" + util.LOG_CRITICAL_FILENAME, 'a').close()
 
         # we should renew if we are in development mode - renewing erases old tour.db files.  If you don't renew, then we will append any new tours to the old tour.db file.
         if self.shouldRenew():
