@@ -1,6 +1,221 @@
-03:28:45 Depot - ***************init Depot**********.
-03:28:45 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311
-03:28:54 GiPyS - next repoID: 15249309
-03:28:55 GiPySo-getRewinder, Backing off for 0 seconds
-03:29:07 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
-03:29:07 Touri - tour, SCAN_59611 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 5 total sources observed
+17:47:29 Depot - ***************init Depot**********.
+17:47:29 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 3145728 stop:3407871
+17:48:06 GiPyS - next repoID: 3145742
+17:48:15 GiPyS - next repoID: 3145765
+17:48:25 GiPyS - next repoID: 3145766
+17:48:27 GiPyS - next repoID: 3145771
+17:48:41 GiPyS - next repoID: 3145799
+17:48:51 GiPyS - next repoID: 3145807
+17:48:53 GiPyS - next repoID: 3145811
+17:48:55 GiPyS - next repoID: 3145812
+17:49:01 GiPyS - next repoID: 3145813
+17:49:04 GiPyS - next repoID: 3145829
+17:49:07 GiPyS - next repoID: 3145872
+17:49:23 GiPyS - next repoID: 3145874
+17:49:26 GiPyS - next repoID: 3145877
+17:50:11 GiPyS - next repoID: 3145953
+17:50:18 GiPyS - next repoID: 3146024
+17:50:22 GiPyS - next repoID: 3146043
+17:51:27 GiPyS - next repoID: 3146059
+17:51:33 GiPyS - next repoID: 3146096
+17:51:35 GiPyS - next repoID: 3146111
+17:52:23 GiPyS - next repoID: 3146179
+17:52:25 GiPyS - next repoID: 3146184
+17:52:27 GiPyS - next repoID: 3146198
+17:52:30 GiPyS - next repoID: 3146211
+17:53:27 GiPyS - next repoID: 3146252
+17:53:30 GiPyS - next repoID: 3146281
+17:53:32 GiPyS - next repoID: 3146285
+17:53:35 GiPyS - next repoID: 3146323
+17:53:38 GiPyS - next repoID: 3146342
+17:54:23 GiPyS - next repoID: 3146404
+17:54:27 GiPyS - next repoID: 3146408
+17:55:22 GiPyS - next repoID: 3146422
+17:55:27 GiPyS - next repoID: 3146426
+17:55:30 GiPyS - next repoID: 3146445
+17:55:33 GiPyS - next repoID: 3146463
+17:55:36 GiPyS - next repoID: 3146477
+17:55:40 GiPyS - next repoID: 3146488
+17:55:57 GiPyS - next repoID: 3146496
+17:56:08 GiPyS - next repoID: 3146518
+17:56:09 GiPyS - next repoID: 3146520
+17:56:14 GiPyS - next repoID: 3146528
+17:56:56 GiPyS - next repoID: 3146611
+17:56:57 GiPyS - next repoID: 3146616
+17:57:00 GiPyS - next repoID: 3146630
+17:57:02 GiPyS - next repoID: 3146649
+17:57:22 GiPyS - next repoID: 3146664
+17:57:30 GiPyS - next repoID: 3146679
+17:57:37 GiPyS - next repoID: 3146681
+18:03:20 GiPyS - next repoID: 3146700
+18:03:29 GiPyS - next repoID: 3146709
+18:03:37 GiPyS - next repoID: 3146711
+18:03:39 GiPyS - next repoID: 3146716
+18:04:26 GiPyS - next repoID: 3146740
+18:04:31 GiPyS - next repoID: 3146756
+18:04:34 GiPyS - next repoID: 3146768
+18:04:39 GiPyS - next repoID: 3146819
+18:04:42 GiPyS - next repoID: 3146860
+18:04:49 GiPyS - next repoID: 3146879
+18:04:52 GiPyS - next repoID: 3146923
+18:04:56 GiPyS - next repoID: 3146964
+18:05:00 GiPyS - next repoID: 3146969
+18:06:30 GiPyS - next repoID: 3147014
+18:07:18 GiPyS - next repoID: 3147095
+18:07:31 GiPyS - next repoID: 3147128
+18:07:39 GiPyS - next repoID: 3147130
+18:07:55 GiPyS - next repoID: 3147159
+18:08:03 GiPyS - next repoID: 3147160
+18:08:06 GiPyS - next repoID: 3147168
+18:08:09 GiPyS - next repoID: 3147175
+18:08:17 GiPyS - next repoID: 3147185
+18:09:23 GiPyS - next repoID: 3147216
+18:09:25 GiPyS - next repoID: 3147221
+18:09:29 GiPyS - next repoID: 3147241
+18:09:33 GiPyS - next repoID: 3147265
+18:09:38 GiPyS - next repoID: 3147323
+18:09:42 GiPyS - next repoID: 3147363
+18:09:49 GiPyS - next repoID: 3147370
+18:09:55 GiPyS - next repoID: 3147379
+18:09:58 GiPyS - next repoID: 3147381
+18:10:23 GiPyS - next repoID: 3147386
+18:11:05 GiPyS - next repoID: 3147427
+18:11:14 GiPyS - next repoID: 3147456
+18:12:09 GiPyS - next repoID: 3147464
+18:12:17 GiPyS - next repoID: 3147473
+18:12:21 GiPyS - next repoID: 3147531
+18:12:32 GiPyS - next repoID: 3147536
+18:13:15 GiPyS - next repoID: 3147539
+18:13:23 GiPyS - next repoID: 3147554
+18:13:25 GiPyS - next repoID: 3147563
+18:13:26 GiPyS - next repoID: 3147586
+18:13:38 GiPyS - next repoID: 3147607
+18:15:36 GiPyS - next repoID: 3147619
+18:15:37 GiPyS - next repoID: 3147620
+18:15:40 GiPyS - next repoID: 3147653
+18:15:46 GiPyS - next repoID: 3147713
+18:15:57 GiPyS - next repoID: 3147719
+18:16:01 GiPyS - next repoID: 3147754
+18:16:04 GiPyS - next repoID: 3147781
+18:16:33 GiPyS - next repoID: 3147790
+18:16:36 GiPyS - next repoID: 3147800
+18:16:42 GiPyS - next repoID: 3147801
+18:16:44 GiPySo-getRewinder, Backing off for 0 seconds
+18:16:45 GiPySo-getRewinder, Backing off for 1 seconds
+18:16:46 GiPySo-getRewinder, Backing off for 3 seconds
+18:16:50 GiPySo-getRewinder, Backing off for 3 seconds
+18:16:53 GiPySo-getRewinder, Backing off for 3 seconds
+18:16:57 GiPySo-getRewinder, Backing off for 22 seconds
+18:17:20 GiPySo-getRewinder, Backing off for 3 seconds
+18:17:23 GiPySo-getRewinder, Backing off for 7 seconds
+18:17:31 GiPySo-getRewinder, Backing off for 32 seconds
+18:18:03 GiPySo-getRewinder, Backing off for 38 seconds
+18:18:41 GiPySo-getRewinder, Issue creating rewinder for repoID: 3147801, could not be resolved after 10 attempts.  Returning None.
+18:18:41 GiPyS - next repoID: 3147804
+18:18:42 GiPySo-getRewinder, Backing off for 0 seconds
+18:18:42 GiPySo-getRewinder, Backing off for 1 seconds
+18:18:44 GiPySo-getRewinder, Backing off for 1 seconds
+18:18:45 GiPySo-getRewinder, Backing off for 0 seconds
+18:18:46 GiPySo-getRewinder, Backing off for 4 seconds
+18:18:50 GiPySo-getRewinder, Backing off for 0 seconds
+18:18:51 GiPySo-getRewinder, Backing off for 31 seconds
+18:19:22 GiPySo-getRewinder, Backing off for 30 seconds
+18:19:53 GiPySo-getRewinder, Backing off for 33 seconds
+18:20:26 GiPySo-getRewinder, Backing off for 26 seconds
+18:20:52 GiPySo-getRewinder, Issue creating rewinder for repoID: 3147804, could not be resolved after 10 attempts.  Returning None.
+18:20:52 GiPyS - next repoID: 3147825
+18:20:53 GiPySo-getRewinder, Backing off for 0 seconds
+18:20:54 GiPySo-getRewinder, Backing off for 0 seconds
+18:20:54 GiPySo-getRewinder, Backing off for 2 seconds
+18:20:57 GiPySo-getRewinder, Backing off for 6 seconds
+18:21:03 GiPySo-getRewinder, Backing off for 11 seconds
+18:21:15 GiPySo-getRewinder, Backing off for 14 seconds
+18:21:30 GiPySo-getRewinder, Backing off for 31 seconds
+18:22:01 GiPySo-getRewinder, Backing off for 25 seconds
+18:22:27 GiPySo-getRewinder, Backing off for 2 seconds
+18:22:29 GiPySo-getRewinder, Backing off for 11 seconds
+18:22:40 GiPySo-getRewinder, Issue creating rewinder for repoID: 3147825, could not be resolved after 10 attempts.  Returning None.
+18:23:35 GiPyS - get_json, Giving up on url https://api.github.com/repos/masse75/UnSupportedAppstore.bundle/languages after 5 attempts
+18:23:39 GiPyS - next repoID: 3147857
+18:23:39 GiPySo-getRewinder, Backing off for 0 seconds
+18:23:40 GiPySo-getRewinder, Backing off for 1 seconds
+18:23:41 GiPySo-getRewinder, Backing off for 2 seconds
+18:23:44 GiPySo-getRewinder, Backing off for 1 seconds
+18:23:46 GiPySo-getRewinder, Backing off for 13 seconds
+18:23:59 GiPySo-getRewinder, Backing off for 13 seconds
+18:24:13 GiPySo-getRewinder, Backing off for 3 seconds
+18:24:16 GiPySo-getRewinder, Backing off for 1 seconds
+18:24:18 GiPySo-getRewinder, Backing off for 15 seconds
+18:24:33 GiPySo-getRewinder, Backing off for 5 seconds
+18:24:38 GiPySo-getRewinder, Issue creating rewinder for repoID: 3147857, could not be resolved after 10 attempts.  Returning None.
+18:24:38 GiPyS - next repoID: 3147921
+18:24:39 GiPySo-getRewinder, Backing off for 0 seconds
+18:24:39 GiPySo-getRewinder, Backing off for 1 seconds
+18:24:41 GiPySo-getRewinder, Backing off for 3 seconds
+18:24:44 GiPySo-getRewinder, Backing off for 3 seconds
+18:24:48 GiPySo-getRewinder, Backing off for 12 seconds
+18:25:00 GiPySo-getRewinder, Backing off for 29 seconds
+18:25:30 GiPySo-getRewinder, Backing off for 27 seconds
+18:25:57 GiPySo-getRewinder, Backing off for 32 seconds
+18:26:30 GiPySo-getRewinder, Backing off for 9 seconds
+18:26:39 GiPySo-getRewinder, Backing off for 35 seconds
+18:27:14 GiPySo-getRewinder, Issue creating rewinder for repoID: 3147921, could not be resolved after 10 attempts.  Returning None.
+18:27:14 GiPyS - next repoID: 3147931
+18:27:15 GiPySo-getRewinder, Backing off for 0 seconds
+18:27:15 GiPySo-getRewinder, Backing off for 1 seconds
+18:27:17 GiPySo-getRewinder, Backing off for 3 seconds
+18:27:20 GiPySo-getRewinder, Backing off for 5 seconds
+18:27:26 GiPySo-getRewinder, Backing off for 10 seconds
+18:27:37 GiPySo-getRewinder, Backing off for 5 seconds
+18:27:42 GiPySo-getRewinder, Backing off for 19 seconds
+18:28:02 GiPySo-getRewinder, Backing off for 27 seconds
+18:28:29 GiPySo-getRewinder, Backing off for 35 seconds
+18:29:05 GiPySo-getRewinder, Backing off for 36 seconds
+18:29:41 GiPySo-getRewinder, Issue creating rewinder for repoID: 3147931, could not be resolved after 10 attempts.  Returning None.
+18:29:41 GiPyS - next repoID: 3147943
+18:29:42 GiPySo-getRewinder, Backing off for 0 seconds
+18:29:42 GiPySo-getRewinder, Backing off for 0 seconds
+18:29:43 GiPySo-getRewinder, Backing off for 0 seconds
+18:29:43 GiPySo-getRewinder, Backing off for 5 seconds
+18:29:49 GiPySo-getRewinder, Backing off for 12 seconds
+18:30:01 GiPySo-getRewinder, Backing off for 24 seconds
+18:30:26 GiPySo-getRewinder, Backing off for 13 seconds
+18:30:39 GiPySo-getRewinder, Backing off for 30 seconds
+18:31:10 GiPySo-getRewinder, Backing off for 9 seconds
+18:31:19 GiPySo-getRewinder, Backing off for 26 seconds
+18:31:45 GiPySo-getRewinder, Issue creating rewinder for repoID: 3147943, could not be resolved after 10 attempts.  Returning None.
+18:31:45 GiPyS - next repoID: 3147960
+18:31:46 GiPySo-getRewinder, Backing off for 0 seconds
+18:31:46 GiPySo-getRewinder, Backing off for 1 seconds
+18:31:48 GiPySo-getRewinder, Backing off for 3 seconds
+18:31:51 GiPySo-getRewinder, Backing off for 1 seconds
+18:31:53 GiPySo-getRewinder, Backing off for 7 seconds
+18:32:01 GiPySo-getRewinder, Backing off for 10 seconds
+18:32:11 GiPySo-getRewinder, Backing off for 12 seconds
+18:32:24 GiPySo-getRewinder, Backing off for 4 seconds
+18:32:28 GiPySo-getRewinder, Backing off for 11 seconds
+18:32:40 GiPySo-getRewinder, Backing off for 25 seconds
+18:33:05 GiPySo-getRewinder, Issue creating rewinder for repoID: 3147960, could not be resolved after 10 attempts.  Returning None.
+18:33:05 GiPyS - next repoID: 3147964
+18:33:05 GiPySo-getRewinder, Backing off for 0 seconds
+18:33:06 GiPySo-getRewinder, Backing off for 0 seconds
+18:33:06 GiPySo-getRewinder, Backing off for 3 seconds
+18:33:10 GiPySo-getRewinder, Backing off for 0 seconds
+18:33:10 GiPySo-getRewinder, Backing off for 1 seconds
+18:33:12 GiPySo-getRewinder, Backing off for 3 seconds
+18:33:15 GiPySo-getRewinder, Backing off for 10 seconds
+18:33:26 GiPySo-getRewinder, Backing off for 17 seconds
+18:33:43 GiPySo-getRewinder, Backing off for 5 seconds
+18:33:49 GiPySo-getRewinder, Backing off for 9 seconds
+18:33:58 GiPySo-getRewinder, Issue creating rewinder for repoID: 3147964, could not be resolved after 10 attempts.  Returning None.
+18:33:58 GiPyS - next repoID: 3147979
+18:33:58 GiPySo-getRewinder, Backing off for 0 seconds
+18:33:59 GiPySo-getRewinder, Backing off for 0 seconds
+18:33:59 GiPySo-getRewinder, Backing off for 2 seconds
+18:34:02 GiPySo-getRewinder, Backing off for 5 seconds
+18:34:07 GiPySo-getRewinder, Backing off for 5 seconds
+18:34:13 GiPySo-getRewinder, Backing off for 19 seconds
+18:34:32 GiPySo-getRewinder, Backing off for 15 seconds
+18:34:33 Touri - tour, SCAN_ckszm  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+18:34:33 Touri - tour, SCAN_ckszm Tour Canceled: True
+18:34:33 Touri - tour, SCAN_ckszm FINAL STATE: CANCELLED after scanning 99 sources containing Python out of 1100 total sources observed

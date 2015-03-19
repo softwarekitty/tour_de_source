@@ -1,6 +1,94 @@
-03:28:45 Depot - ***************init Depot**********.
-03:28:45 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311
-03:28:54 GiPyS - next repoID: 15249309
-03:28:55 GiPySo-getRewinder, Backing off for 0 seconds
-03:29:07 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
-03:29:07 Touri - tour, SCAN_59611 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 5 total sources observed
+18:12:55 Depot - ***************init Depot**********.
+18:12:55 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 3932160 stop:4194303
+18:13:38 GiPyS - next repoID: 3932196
+18:13:44 GiPyS - next repoID: 3932246
+18:13:46 GiPySo-getRewinder, Backing off for 0 seconds
+18:13:49 GiPyS - next repoID: 3932263
+18:13:52 GiPyS - next repoID: 3932264
+18:13:55 GiPyS - next repoID: 3932307
+18:13:56 GiPyS - next repoID: 3932317
+18:13:58 GiPyS - next repoID: 3932346
+18:14:10 GiPyS - next repoID: 3932353
+18:14:33 Touri - tour, SCAN_bm7jg EXCEPTION:[Errno 2] No such file or directory: '/home/carl/Documents/SoftwareProjects/tour_de_source/clones/gum/tour_de_source7/repo/rubinius'
+18:14:33 Touri - tour, consecutiveExceptionCounter: 1
+18:15:11 GiPyS - next repoID: 3932404
+18:15:13 GiPyS - next repoID: 3932405
+18:15:15 GiPyS - next repoID: 3932434
+18:15:16 GiPySo-getRewinder, Backing off for 0 seconds
+18:15:19 GiPySo-getRewinder, Backing off for 1 seconds
+18:15:22 GiPySo-getRewinder, Backing off for 1 seconds
+18:15:27 GiPyS - next repoID: 3932447
+18:18:21 GiPyS - next repoID: 3932452
+18:18:27 GiPyS - next repoID: 3932472
+18:18:43 GiPyS - next repoID: 3932497
+18:18:47 GiPyS - next repoID: 3932498
+18:18:51 GiPyS - next repoID: 3932538
+18:18:55 GiPyS - next repoID: 3932540
+18:19:13 GiPyS - next repoID: 3932555
+18:19:16 GiPyS - next repoID: 3932570
+18:19:22 GiPyS - next repoID: 3932576
+18:20:01 GiPyS - next repoID: 3932637
+18:20:58 GiPyS - next repoID: 3932644
+18:21:07 GiPyS - next repoID: 3932650
+18:21:10 GiPyS - next repoID: 3932666
+18:21:12 GiPyS - next repoID: 3932674
+18:22:29 GiPyS - next repoID: 3932681
+18:22:40 GiPyS - next repoID: 3932690
+18:22:42 GiPyS - next repoID: 3932701
+18:23:05 GiPyS - next repoID: 3932722
+18:23:09 GiPyS - next repoID: 3932723
+18:23:16 GiPyS - next repoID: 3932734
+18:23:32 GiPyS - next repoID: 3932738
+18:23:38 GiPyS - next repoID: 3932776
+18:23:41 GiPyS - next repoID: 3932779
+18:25:19 GiPyS - next repoID: 3932782
+18:26:07 GiPyS - next repoID: 3932854
+18:26:09 GiPyS - next repoID: 3932869
+18:26:16 GiPyS - next repoID: 3932893
+18:26:34 GiPyS - next repoID: 3932897
+18:26:36 GiPyS - next repoID: 3932898
+18:26:40 GiPyS - next repoID: 3932920
+18:26:42 GiPyS - next repoID: 3932927
+18:26:46 GiPyS - next repoID: 3932947
+18:26:49 GiPyS - next repoID: 3932981
+18:26:58 GiPyS - next repoID: 3932991
+18:27:39 GiPyS - next repoID: 3933001
+18:28:01 GiPyS - next repoID: 3933011
+18:28:14 GiPyS - next repoID: 3933028
+18:28:23 GiPyS - next repoID: 3933087
+18:28:27 GiPyS - next repoID: 3933100
+18:28:32 GiPyS - next repoID: 3933163
+18:28:34 GiPyS - next repoID: 3933183
+18:28:39 GiPyS - next repoID: 3933184
+18:28:43 GiPyS - next repoID: 3933189
+18:28:47 GiPyS - next repoID: 3933203
+18:29:07 GiPyS - next repoID: 3933208
+18:29:54 GiPyS - next repoID: 3933239
+18:29:59 GiPyS - next repoID: 3933253
+18:30:03 GiPyS - next repoID: 3933261
+18:30:06 GiPyS - next repoID: 3933318
+18:30:10 GiPyS - next repoID: 3933319
+18:30:15 GiPyS - next repoID: 3933356
+18:30:20 GiPyS - next repoID: 3933361
+18:30:22 GiPyS - next repoID: 3933395
+18:30:27 GiPyS - next repoID: 3933422
+18:30:43 GiPyS - next repoID: 3933423
+18:31:29 GiPyS - next repoID: 3933487
+18:31:35 GiPyS - next repoID: 3933577
+18:31:40 GiPyS - next repoID: 3933588
+18:31:44 GiPyS - next repoID: 3933606
+18:31:46 GiPyS - next repoID: 3933620
+18:32:25 GiPyS - next repoID: 3933733
+18:32:28 GiPyS - next repoID: 3933760
+18:32:30 GiPyS - next repoID: 3933761
+18:32:38 GiPyS - next repoID: 3933818
+18:32:43 GiPyS - next repoID: 3933847
+18:33:27 GiPyS - next repoID: 3933898
+18:33:34 GiPyS - next repoID: 3933928
+18:33:39 GiPyS - next repoID: 3933942
+18:33:43 GiPyS - next repoID: 3933997
+18:33:49 GiPyS - next repoID: 3934006
+18:33:54 GiPyS - next repoID: 3934024
+18:34:25 Touri - tour, SCAN_bm7jg  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+18:34:25 Touri - tour, SCAN_bm7jg Tour Canceled: True
+18:34:25 Touri - tour, SCAN_bm7jg FINAL STATE: CANCELLED after scanning 83 sources containing Python out of 965 total sources observed

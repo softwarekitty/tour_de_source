@@ -1,6 +1,149 @@
-03:28:45 Depot - ***************init Depot**********.
-03:28:45 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311
-03:28:54 GiPyS - next repoID: 15249309
-03:28:55 GiPySo-getRewinder, Backing off for 0 seconds
-03:29:07 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
-03:29:07 Touri - tour, SCAN_59611 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 5 total sources observed
+18:12:01 Depot - ***************init Depot**********.
+18:12:01 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 2097152 stop:2359295
+18:12:39 GiPyS - next repoID: 2097154
+18:12:43 GiPyS - next repoID: 2097184
+18:12:50 GiPyS - next repoID: 2097187
+18:13:04 GiPyS - next repoID: 2097188
+18:13:06 GiPyS - next repoID: 2097190
+18:13:34 GiPyS - next repoID: 2097225
+18:13:35 GiPyS - next repoID: 2097241
+18:13:38 GiPyS - next repoID: 2097251
+18:13:43 GiPyS - next repoID: 2097270
+18:13:45 GiPyS - next repoID: 2097334
+18:13:48 GiPyS - next repoID: 2097346
+18:13:52 GiPyS - next repoID: 2097355
+18:13:55 GiPyS - next repoID: 2097361
+18:13:58 GiPyS - next repoID: 2097370
+18:14:07 GiPyS - next repoID: 2097374
+18:14:09 GiPyS - next repoID: 2097378
+18:14:54 GiPyS - next repoID: 2097424
+18:14:57 GiPyS - next repoID: 2097445
+18:15:04 GiPyS - next repoID: 2097446
+18:15:07 GiPyS - next repoID: 2097453
+18:15:10 GiPyS - next repoID: 2097463
+18:15:27 GiPyS - next repoID: 2097469
+18:15:38 GiPyS - next repoID: 2097474
+18:15:44 GiPyS - next repoID: 2097496
+18:15:48 GiPyS - next repoID: 2097514
+18:15:56 GiPyS - next repoID: 2097550
+18:15:58 GiPyS - next repoID: 2097552
+18:15:58 GiPySo-getRewinder, Backing off for 0 seconds
+18:15:58 GiPySo-getRewinder, Backing off for 0 seconds
+18:15:59 GiPySo-getRewinder, Backing off for 0 seconds
+18:15:59 GiPySo-getRewinder, Backing off for 7 seconds
+18:16:07 GiPySo-getRewinder, Backing off for 3 seconds
+18:16:10 GiPySo-getRewinder, Backing off for 14 seconds
+18:16:24 GiPySo-getRewinder, Backing off for 17 seconds
+18:16:42 GiPySo-getRewinder, Backing off for 32 seconds
+18:17:14 GiPySo-getRewinder, Backing off for 25 seconds
+18:17:40 GiPySo-getRewinder, Backing off for 4 seconds
+18:17:44 GiPySo-getRewinder, Issue creating rewinder for repoID: 2097552, could not be resolved after 10 attempts.  Returning None.
+18:17:44 GiPyS - next repoID: 2097559
+18:17:44 GiPySo-getRewinder, Backing off for 0 seconds
+18:17:45 GiPySo-getRewinder, Backing off for 0 seconds
+18:17:45 GiPySo-getRewinder, Backing off for 1 seconds
+18:17:46 GiPySo-getRewinder, Backing off for 7 seconds
+18:17:54 GiPySo-getRewinder, Backing off for 4 seconds
+18:17:58 GiPySo-getRewinder, Backing off for 22 seconds
+18:18:21 GiPySo-getRewinder, Backing off for 30 seconds
+18:18:51 GiPySo-getRewinder, Backing off for 24 seconds
+18:19:16 GiPySo-getRewinder, Backing off for 35 seconds
+18:19:51 GiPySo-getRewinder, Backing off for 22 seconds
+18:20:13 GiPySo-getRewinder, Issue creating rewinder for repoID: 2097559, could not be resolved after 10 attempts.  Returning None.
+18:20:13 GiPyS - next repoID: 2097571
+18:20:13 GiPySo-getRewinder, Backing off for 0 seconds
+18:20:14 GiPySo-getRewinder, Backing off for 1 seconds
+18:20:15 GiPySo-getRewinder, Backing off for 0 seconds
+18:20:16 GiPySo-getRewinder, Backing off for 2 seconds
+18:20:18 GiPySo-getRewinder, Backing off for 1 seconds
+18:20:20 GiPySo-getRewinder, Backing off for 16 seconds
+18:20:36 GiPySo-getRewinder, Backing off for 38 seconds
+18:21:15 GiPySo-getRewinder, Backing off for 21 seconds
+18:21:36 GiPySo-getRewinder, Backing off for 17 seconds
+18:21:54 GiPySo-getRewinder, Backing off for 30 seconds
+18:22:24 GiPySo-getRewinder, Issue creating rewinder for repoID: 2097571, could not be resolved after 10 attempts.  Returning None.
+18:23:01 GiPyS - next repoID: 2097619
+18:23:01 GiPySo-getRewinder, Backing off for 0 seconds
+18:23:02 GiPySo-getRewinder, Backing off for 0 seconds
+18:23:02 GiPySo-getRewinder, Backing off for 1 seconds
+18:23:04 GiPySo-getRewinder, Backing off for 4 seconds
+18:23:08 GiPySo-getRewinder, Backing off for 12 seconds
+18:23:20 GiPySo-getRewinder, Backing off for 0 seconds
+18:23:21 GiPySo-getRewinder, Backing off for 33 seconds
+18:23:54 GiPySo-getRewinder, Backing off for 22 seconds
+18:24:17 GiPySo-getRewinder, Backing off for 17 seconds
+18:24:34 GiPySo-getRewinder, Backing off for 9 seconds
+18:24:43 GiPySo-getRewinder, Issue creating rewinder for repoID: 2097619, could not be resolved after 10 attempts.  Returning None.
+18:24:43 GiPyS - next repoID: 2097632
+18:24:44 GiPySo-getRewinder, Backing off for 0 seconds
+18:24:44 GiPySo-getRewinder, Backing off for 0 seconds
+18:24:45 GiPySo-getRewinder, Backing off for 3 seconds
+18:24:48 GiPySo-getRewinder, Backing off for 5 seconds
+18:24:53 GiPySo-getRewinder, Backing off for 6 seconds
+18:25:00 GiPySo-getRewinder, Backing off for 1 seconds
+18:25:01 GiPySo-getRewinder, Backing off for 36 seconds
+18:25:38 GiPySo-getRewinder, Backing off for 37 seconds
+18:26:15 GiPySo-getRewinder, Backing off for 2 seconds
+18:26:18 GiPySo-getRewinder, Backing off for 8 seconds
+18:26:26 GiPySo-getRewinder, Issue creating rewinder for repoID: 2097632, could not be resolved after 10 attempts.  Returning None.
+18:26:26 GiPyS - next repoID: 2097637
+18:26:26 GiPySo-getRewinder, Backing off for 0 seconds
+18:26:26 GiPySo-getRewinder, Backing off for 0 seconds
+18:26:27 GiPySo-getRewinder, Backing off for 1 seconds
+18:26:28 GiPySo-getRewinder, Backing off for 1 seconds
+18:26:30 GiPySo-getRewinder, Backing off for 5 seconds
+18:26:35 GiPySo-getRewinder, Backing off for 9 seconds
+18:26:44 GiPySo-getRewinder, Backing off for 6 seconds
+18:26:51 GiPySo-getRewinder, Backing off for 27 seconds
+18:27:18 GiPySo-getRewinder, Backing off for 34 seconds
+18:27:53 GiPySo-getRewinder, Backing off for 30 seconds
+18:28:23 GiPySo-getRewinder, Issue creating rewinder for repoID: 2097637, could not be resolved after 10 attempts.  Returning None.
+18:28:23 GiPyS - next repoID: 2097655
+18:28:23 GiPySo-getRewinder, Backing off for 0 seconds
+18:28:24 GiPySo-getRewinder, Backing off for 1 seconds
+18:28:25 GiPySo-getRewinder, Backing off for 1 seconds
+18:28:26 GiPySo-getRewinder, Backing off for 4 seconds
+18:28:31 GiPySo-getRewinder, Backing off for 0 seconds
+18:28:31 GiPySo-getRewinder, Backing off for 4 seconds
+18:28:36 GiPySo-getRewinder, Backing off for 6 seconds
+18:28:42 GiPySo-getRewinder, Backing off for 0 seconds
+18:28:42 GiPySo-getRewinder, Backing off for 39 seconds
+18:29:22 GiPySo-getRewinder, Backing off for 14 seconds
+18:29:36 GiPySo-getRewinder, Issue creating rewinder for repoID: 2097655, could not be resolved after 10 attempts.  Returning None.
+18:29:36 GiPyS - next repoID: 2097674
+18:29:36 GiPySo-getRewinder, Backing off for 0 seconds
+18:29:37 GiPySo-getRewinder, Backing off for 0 seconds
+18:29:37 GiPySo-getRewinder, Backing off for 2 seconds
+18:29:40 GiPySo-getRewinder, Backing off for 3 seconds
+18:29:43 GiPySo-getRewinder, Backing off for 10 seconds
+18:29:53 GiPySo-getRewinder, Backing off for 30 seconds
+18:30:24 GiPySo-getRewinder, Backing off for 4 seconds
+18:30:28 GiPySo-getRewinder, Backing off for 39 seconds
+18:31:08 GiPySo-getRewinder, Backing off for 9 seconds
+18:31:17 GiPySo-getRewinder, Backing off for 0 seconds
+18:31:17 GiPySo-getRewinder, Issue creating rewinder for repoID: 2097674, could not be resolved after 10 attempts.  Returning None.
+18:31:17 GiPyS - next repoID: 2097759
+18:31:18 GiPySo-getRewinder, Backing off for 0 seconds
+18:31:18 GiPySo-getRewinder, Backing off for 0 seconds
+18:31:19 GiPySo-getRewinder, Backing off for 3 seconds
+18:31:22 GiPySo-getRewinder, Backing off for 7 seconds
+18:31:29 GiPySo-getRewinder, Backing off for 4 seconds
+18:31:34 GiPySo-getRewinder, Backing off for 11 seconds
+18:31:45 GiPySo-getRewinder, Backing off for 23 seconds
+18:32:09 GiPySo-getRewinder, Backing off for 20 seconds
+18:32:29 GiPySo-getRewinder, Backing off for 29 seconds
+18:32:59 GiPySo-getRewinder, Backing off for 34 seconds
+18:33:33 GiPySo-getRewinder, Issue creating rewinder for repoID: 2097759, could not be resolved after 10 attempts.  Returning None.
+18:33:33 GiPyS - next repoID: 2097770
+18:33:33 GiPySo-getRewinder, Backing off for 0 seconds
+18:33:33 GiPySo-getRewinder, Backing off for 0 seconds
+18:33:34 GiPySo-getRewinder, Backing off for 3 seconds
+18:33:37 GiPySo-getRewinder, Backing off for 1 seconds
+18:33:39 GiPySo-getRewinder, Backing off for 0 seconds
+18:33:39 GiPySo-getRewinder, Backing off for 26 seconds
+18:34:06 GiPySo-getRewinder, Backing off for 12 seconds
+18:34:18 GiPySo-getRewinder, Backing off for 21 seconds
+18:34:39 GiPySo-getRewinder, Backing off for 13 seconds
+18:34:45 Touri - tour, SCAN_b3dom  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+18:34:45 Touri - tour, SCAN_b3dom Tour Canceled: True
+18:34:45 Touri - tour, SCAN_b3dom FINAL STATE: CANCELLED after scanning 26 sources containing Python out of 300 total sources observed
