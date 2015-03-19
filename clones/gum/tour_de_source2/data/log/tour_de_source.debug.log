@@ -1,0 +1,107 @@
+Thu, 19 Mar 01:51:04 CRITICAL-Depot - ***************init Depot**********.
+Thu, 19 Mar 01:51:04 ERROR-Depot - failure trying to renew.
+Thu, 19 Mar 01:51:04 INFO-Depot - __init__, new Tour table created in path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/clones/bib/tour_de_source2/data/tour.db
+Thu, 19 Mar 01:51:04 CRITICAL-initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 262144 stop:524287
+Thu, 19 Mar 01:51:04 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("b61zk", 1426747864, 1426747864, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1426747864_b61zk.db")
+Thu, 19 Mar 01:51:04 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/clones/bib/tour_de_source2/data/R1426747864_b61zk.db
+Thu, 19 Mar 01:51:04 INFO-Touri - tour, SCAN_b61zk RUNNING
+Thu, 19 Mar 01:51:04 DEBUG-GiPyS - next since: 262143 len(repos): 0
+Thu, 19 Mar 01:51:04 DEBUG-GiPyS - refresh_repos, lastRepo: 262143 since: 262143 len(repos): 0
+Thu, 19 Mar 01:51:05 INFO-GiPyS - limit_remaining: 5000
+Thu, 19 Mar 01:51:08 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories?since=262143 limit_remaining: 5000
+Thu, 19 Mar 01:51:09 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/johan/sizzle/languages limit_remaining: 4999
+Thu, 19 Mar 01:51:09 INFO-GiPyS - refresh_repos, repoID:262146 hasPython: False name: sizzle
+Thu, 19 Mar 01:51:09 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {u'PHP': 7975, u'JavaScript': 527858}
+Thu, 19 Mar 01:51:10 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/justingrammens/bummerbutton/languages limit_remaining: 4998
+Thu, 19 Mar 01:51:10 INFO-GiPyS - refresh_repos, repoID:262148 hasPython: False name: bummerbutton
+Thu, 19 Mar 01:51:10 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {u'Java': 4338}
+Thu, 19 Mar 01:51:11 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/qymm2000/test/languages limit_remaining: 4997
+Thu, 19 Mar 01:51:11 INFO-GiPyS - refresh_repos, repoID:262152 hasPython: False name: test
+Thu, 19 Mar 01:51:11 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {}
+Thu, 19 Mar 01:51:12 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/hanhanxpp/corner/languages limit_remaining: 4996
+Thu, 19 Mar 01:51:12 INFO-GiPyS - refresh_repos, repoID:262154 hasPython: False name: corner
+Thu, 19 Mar 01:51:12 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {}
+Thu, 19 Mar 01:51:13 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/jtimberman/debian/languages limit_remaining: 4995
+Thu, 19 Mar 01:51:13 INFO-GiPyS - refresh_repos, repoID:262155 hasPython: False name: debian
+Thu, 19 Mar 01:51:13 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {u'Ruby': 13693}
+Thu, 19 Mar 01:51:14 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/atmos/rack-redirect/languages limit_remaining: 4994
+Thu, 19 Mar 01:51:14 INFO-GiPyS - refresh_repos, repoID:262156 hasPython: False name: rack-redirect
+Thu, 19 Mar 01:51:14 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {u'Ruby': 3906}
+Thu, 19 Mar 01:51:15 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/patternexon/themetry/languages limit_remaining: 4993
+Thu, 19 Mar 01:51:15 INFO-GiPyS - refresh_repos, repoID:262157 hasPython: False name: themetry
+Thu, 19 Mar 01:51:15 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {}
+Thu, 19 Mar 01:51:16 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/kaz6120/vim-settings/languages limit_remaining: 4992
+Thu, 19 Mar 01:51:16 INFO-GiPyS - refresh_repos, repoID:262158 hasPython: False name: vim-settings
+Thu, 19 Mar 01:51:16 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {u'VimL': 315967}
+Thu, 19 Mar 01:51:16 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/monkrb/website/languages limit_remaining: 4991
+Thu, 19 Mar 01:51:16 INFO-GiPyS - refresh_repos, repoID:262162 hasPython: False name: website
+Thu, 19 Mar 01:51:16 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {u'JavaScript': 67036, u'Ruby': 6428}
+Thu, 19 Mar 01:51:17 INFO-GiPyS - limit_remaining: 4990
+Thu, 19 Mar 01:51:18 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/holtonma/eom_tweet/languages limit_remaining: 4990
+Thu, 19 Mar 01:51:18 INFO-GiPyS - refresh_repos, repoID:262164 hasPython: False name: eom_tweet
+Thu, 19 Mar 01:51:18 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {}
+Thu, 19 Mar 01:51:19 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/lionhearting/arora/languages limit_remaining: 4989
+Thu, 19 Mar 01:51:19 INFO-GiPyS - refresh_repos, repoID:262168 hasPython: False name: arora
+Thu, 19 Mar 01:51:19 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {}
+Thu, 19 Mar 01:51:20 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/mml/snipmate-snippets/languages limit_remaining: 4988
+Thu, 19 Mar 01:51:20 INFO-GiPyS - refresh_repos, repoID:262170 hasPython: False name: snipmate-snippets
+Thu, 19 Mar 01:51:20 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {}
+Thu, 19 Mar 01:51:21 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/dterei/vim-settings/languages limit_remaining: 4987
+Thu, 19 Mar 01:51:21 INFO-GiPyS - refresh_repos, repoID:262178 hasPython: False name: vim-settings
+Thu, 19 Mar 01:51:21 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {u'Shell': 344, u'VimL': 93716}
+Thu, 19 Mar 01:51:22 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/euphoria/git-jira-attacher/languages limit_remaining: 4986
+Thu, 19 Mar 01:51:22 INFO-GiPyS - refresh_repos, repoID:262180 hasPython: True name: git-jira-attacher
+Thu, 19 Mar 01:51:22 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 0 languagesJSON: {u'Python': 7434}
+Thu, 19 Mar 01:51:24 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/dterei/vim-eclipse-plugin/languages limit_remaining: 4985
+Thu, 19 Mar 01:51:24 INFO-GiPyS - refresh_repos, repoID:262184 hasPython: True name: vim-eclipse-plugin
+Thu, 19 Mar 01:51:24 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 1 languagesJSON: {u'Python': 28906, u'Java': 76370}
+Thu, 19 Mar 01:51:24 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/dterei/shell-settings/languages limit_remaining: 4984
+Thu, 19 Mar 01:51:24 INFO-GiPyS - refresh_repos, repoID:262186 hasPython: False name: shell-settings
+Thu, 19 Mar 01:51:24 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 2 languagesJSON: {u'ApacheConf': 2844, u'Shell': 28481, u'Ruby': 1299}
+Thu, 19 Mar 01:51:25 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/timjdinkins/new-blackjack/languages limit_remaining: 4983
+Thu, 19 Mar 01:51:25 INFO-GiPyS - refresh_repos, repoID:262187 hasPython: False name: new-blackjack
+Thu, 19 Mar 01:51:25 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 2 languagesJSON: {u'JavaScript': 8363, u'Erlang': 37364}
+Thu, 19 Mar 01:51:26 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/killing/gtunet/languages limit_remaining: 4982
+Thu, 19 Mar 01:51:26 INFO-GiPyS - refresh_repos, repoID:262188 hasPython: False name: gtunet
+Thu, 19 Mar 01:51:26 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 2 languagesJSON: {u'C': 178516, u'Shell': 409}
+Thu, 19 Mar 01:51:27 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/antarestrader/Blog/languages limit_remaining: 4981
+Thu, 19 Mar 01:51:27 INFO-GiPyS - refresh_repos, repoID:262196 hasPython: False name: Blog
+Thu, 19 Mar 01:51:27 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 2 languagesJSON: {u'JavaScript': 106658, u'Ruby': 122883}
+Thu, 19 Mar 01:51:28 INFO-GiPyS - limit_remaining: 4980
+Thu, 19 Mar 01:51:29 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/dougbradbury/sharebread/languages limit_remaining: 4980
+Thu, 19 Mar 01:51:29 INFO-GiPyS - refresh_repos, repoID:262197 hasPython: False name: sharebread
+Thu, 19 Mar 01:51:29 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 2 languagesJSON: {u'JavaScript': 148, u'Ruby': 43164}
+Thu, 19 Mar 01:51:29 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/abock/rpm-repo-clone/languages limit_remaining: 4979
+Thu, 19 Mar 01:51:29 INFO-GiPyS - refresh_repos, repoID:262198 hasPython: False name: rpm-repo-clone
+Thu, 19 Mar 01:51:29 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 2 languagesJSON: {u'C#': 61480}
+Thu, 19 Mar 01:51:30 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/lpereira/miscuino/languages limit_remaining: 4978
+Thu, 19 Mar 01:51:30 INFO-GiPyS - refresh_repos, repoID:262200 hasPython: False name: miscuino
+Thu, 19 Mar 01:51:30 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 2 languagesJSON: {u'C++': 9771}
+Thu, 19 Mar 01:51:31 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/kyleconroy/pycraig/languages limit_remaining: 4977
+Thu, 19 Mar 01:51:31 INFO-GiPyS - refresh_repos, repoID:262204 hasPython: True name: pycraig
+Thu, 19 Mar 01:51:31 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 2 languagesJSON: {u'Python': 66569}
+Thu, 19 Mar 01:51:33 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/Zuz666/TourGuide/languages limit_remaining: 4976
+Thu, 19 Mar 01:51:33 INFO-GiPyS - refresh_repos, repoID:262205 hasPython: False name: TourGuide
+Thu, 19 Mar 01:51:33 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 3 languagesJSON: {u'Lua': 1265701}
+Thu, 19 Mar 01:51:34 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/wangqun/Inspect/languages limit_remaining: 4975
+Thu, 19 Mar 01:51:34 INFO-GiPyS - refresh_repos, repoID:262206 hasPython: False name: Inspect
+Thu, 19 Mar 01:51:34 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 3 languagesJSON: {}
+Thu, 19 Mar 01:51:35 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/indexzero/wpf-window-chrome/languages limit_remaining: 4974
+Thu, 19 Mar 01:51:35 INFO-GiPyS - refresh_repos, repoID:262207 hasPython: False name: wpf-window-chrome
+Thu, 19 Mar 01:51:35 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 3 languagesJSON: {u'C#': 38352}
+Thu, 19 Mar 01:51:36 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/p3lim-wow/Inomena/languages limit_remaining: 4973
+Thu, 19 Mar 01:51:36 INFO-GiPyS - refresh_repos, repoID:262208 hasPython: False name: Inomena
+Thu, 19 Mar 01:51:36 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 3 languagesJSON: {u'TeX': 280, u'Lua': 27466}
+Thu, 19 Mar 01:51:37 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/afalkear/leisure/languages limit_remaining: 4972
+Thu, 19 Mar 01:51:37 INFO-GiPyS - refresh_repos, repoID:262210 hasPython: False name: leisure
+Thu, 19 Mar 01:51:37 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 3 languagesJSON: {}
+Thu, 19 Mar 01:51:38 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/bmabey/cukes.info-design/languages limit_remaining: 4971
+Thu, 19 Mar 01:51:38 INFO-GiPyS - refresh_repos, repoID:262211 hasPython: False name: cukes.info-design
+Thu, 19 Mar 01:51:38 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 3 languagesJSON: {}
+Thu, 19 Mar 01:51:39 INFO-GiPyS - limit_remaining: 4970
+Thu, 19 Mar 01:51:39 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/trudotw/agilebill/languages limit_remaining: 4970
+Thu, 19 Mar 01:51:39 INFO-GiPyS - refresh_repos, repoID:262212 hasPython: False name: agilebill
+Thu, 19 Mar 01:51:39 DEBUG-GiPyS - refresh_repos, since:262143 len(repos): 3 languagesJSON: {}
+Thu, 19 Mar 01:51:39 CRITICAL-Touri - tour, SCAN_b61zk  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+Thu, 19 Mar 01:51:39 CRITICAL-Touri - tour, SCAN_b61zk Tour Canceled: True
+Thu, 19 Mar 01:51:39 CRITICAL-Touri - tour, SCAN_b61zk FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 30 total sources observed

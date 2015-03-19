@@ -1,0 +1,125 @@
+Thu, 19 Mar 01:51:10 CRITICAL-Depot - ***************init Depot**********.
+Thu, 19 Mar 01:51:10 ERROR-Depot - failure trying to renew.
+Thu, 19 Mar 01:51:10 INFO-Depot - __init__, new Tour table created in path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/clones/bib/tour_de_source1/data/tour.db
+Thu, 19 Mar 01:51:10 CRITICAL-initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 0 stop:262143
+Thu, 19 Mar 01:51:10 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("b5px8", 1426747870, 1426747870, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1426747870_b5px8.db")
+Thu, 19 Mar 01:51:10 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/clones/bib/tour_de_source1/data/R1426747870_b5px8.db
+Thu, 19 Mar 01:51:10 INFO-Touri - tour, SCAN_b5px8 RUNNING
+Thu, 19 Mar 01:51:10 DEBUG-GiPyS - next since: -1 len(repos): 0
+Thu, 19 Mar 01:51:10 DEBUG-GiPyS - refresh_repos, lastRepo: -1 since: -1 len(repos): 0
+Thu, 19 Mar 01:51:10 INFO-GiPyS - limit_remaining: 5000
+Thu, 19 Mar 01:51:13 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories?since=-1 limit_remaining: 5000
+Thu, 19 Mar 01:51:14 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/mojombo/grit/languages limit_remaining: 4999
+Thu, 19 Mar 01:51:14 INFO-GiPyS - refresh_repos, repoID:1 hasPython: False name: grit
+Thu, 19 Mar 01:51:14 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 0 languagesJSON: {u'Ruby': 219981}
+Thu, 19 Mar 01:51:15 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/wycats/merb-core/languages limit_remaining: 4998
+Thu, 19 Mar 01:51:15 INFO-GiPyS - refresh_repos, repoID:26 hasPython: False name: merb-core
+Thu, 19 Mar 01:51:15 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 0 languagesJSON: {u'JavaScript': 8925, u'Ruby': 948883}
+Thu, 19 Mar 01:51:16 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/rubinius/rubinius/languages limit_remaining: 4997
+Thu, 19 Mar 01:51:16 INFO-GiPyS - refresh_repos, repoID:27 hasPython: True name: rubinius
+Thu, 19 Mar 01:51:16 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 0 languagesJSON: {u'C': 517583, u'Shell': 14148, u'HTML': 81103, u'Python': 21164, u'DTrace': 4932, u'Makefile': 7385, u'C++': 3292583, u'Perl': 255918, u'Objective-C': 31, u'LLVM': 24552, u'Smarty': 1973, u'Diff': 3460, u'Groff': 41909, u'Ruby': 7177592}
+Thu, 19 Mar 01:51:17 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/mojombo/god/languages limit_remaining: 4996
+Thu, 19 Mar 01:51:17 INFO-GiPyS - refresh_repos, repoID:28 hasPython: False name: god
+Thu, 19 Mar 01:51:17 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'C': 9261, u'Shell': 788, u'Ruby': 282530, u'JavaScript': 6329, u'CSS': 6486}
+Thu, 19 Mar 01:51:18 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/vanpelt/jsawesome/languages limit_remaining: 4995
+Thu, 19 Mar 01:51:18 INFO-GiPyS - refresh_repos, repoID:29 hasPython: False name: jsawesome
+Thu, 19 Mar 01:51:18 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 126588, u'Ruby': 9677}
+Thu, 19 Mar 01:51:19 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/wycats/jspec/languages limit_remaining: 4994
+Thu, 19 Mar 01:51:19 INFO-GiPyS - refresh_repos, repoID:31 hasPython: False name: jspec
+Thu, 19 Mar 01:51:19 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 48977}
+Thu, 19 Mar 01:51:20 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/exception_logger/languages limit_remaining: 4993
+Thu, 19 Mar 01:51:20 INFO-GiPyS - refresh_repos, repoID:35 hasPython: False name: exception_logger
+Thu, 19 Mar 01:51:20 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 1531, u'Ruby': 10936}
+Thu, 19 Mar 01:51:21 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/ambition/languages limit_remaining: 4992
+Thu, 19 Mar 01:51:21 INFO-GiPyS - refresh_repos, repoID:36 hasPython: False name: ambition
+Thu, 19 Mar 01:51:21 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 2032, u'Ruby': 21237}
+Thu, 19 Mar 01:51:22 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/technoweenie/restful-authentication/languages limit_remaining: 4991
+Thu, 19 Mar 01:51:22 INFO-GiPyS - refresh_repos, repoID:42 hasPython: False name: restful-authentication
+Thu, 19 Mar 01:51:22 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 145649}
+Thu, 19 Mar 01:51:22 INFO-GiPyS - limit_remaining: 4990
+Thu, 19 Mar 01:51:24 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/technoweenie/attachment_fu/languages limit_remaining: 4990
+Thu, 19 Mar 01:51:24 INFO-GiPyS - refresh_repos, repoID:43 hasPython: False name: attachment_fu
+Thu, 19 Mar 01:51:24 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 132960}
+Thu, 19 Mar 01:51:25 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/topfunky/bong/languages limit_remaining: 4989
+Thu, 19 Mar 01:51:25 INFO-GiPyS - refresh_repos, repoID:47 hasPython: False name: bong
+Thu, 19 Mar 01:51:25 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 5994}
+Thu, 19 Mar 01:51:26 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/Caged/microsis/languages limit_remaining: 4988
+Thu, 19 Mar 01:51:26 INFO-GiPyS - refresh_repos, repoID:48 hasPython: False name: microsis
+Thu, 19 Mar 01:51:26 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 124846, u'Ruby': 815}
+Thu, 19 Mar 01:51:27 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/anotherjesse/s3/languages limit_remaining: 4987
+Thu, 19 Mar 01:51:27 INFO-GiPyS - refresh_repos, repoID:52 hasPython: False name: s3
+Thu, 19 Mar 01:51:27 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 40947, u'Ruby': 160}
+Thu, 19 Mar 01:51:28 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/anotherjesse/taboo/languages limit_remaining: 4986
+Thu, 19 Mar 01:51:28 INFO-GiPyS - refresh_repos, repoID:53 hasPython: False name: taboo
+Thu, 19 Mar 01:51:28 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 82130, u'Ruby': 1735}
+Thu, 19 Mar 01:51:29 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/anotherjesse/foxtracs/languages limit_remaining: 4985
+Thu, 19 Mar 01:51:29 INFO-GiPyS - refresh_repos, repoID:54 hasPython: False name: foxtracs
+Thu, 19 Mar 01:51:29 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 25985}
+Thu, 19 Mar 01:51:30 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/anotherjesse/fotomatic/languages limit_remaining: 4984
+Thu, 19 Mar 01:51:30 INFO-GiPyS - refresh_repos, repoID:56 hasPython: False name: fotomatic
+Thu, 19 Mar 01:51:30 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 177, u'ActionScript': 4239}
+Thu, 19 Mar 01:51:31 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/mojombo/glowstick/languages limit_remaining: 4983
+Thu, 19 Mar 01:51:31 INFO-GiPyS - refresh_repos, repoID:61 hasPython: False name: glowstick
+Thu, 19 Mar 01:51:31 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 4624}
+Thu, 19 Mar 01:51:32 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/starling/languages limit_remaining: 4982
+Thu, 19 Mar 01:51:32 INFO-GiPyS - refresh_repos, repoID:63 hasPython: False name: starling
+Thu, 19 Mar 01:51:32 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 35715}
+Thu, 19 Mar 01:51:34 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/wycats/merb-more/languages limit_remaining: 4981
+Thu, 19 Mar 01:51:34 INFO-GiPyS - refresh_repos, repoID:65 hasPython: False name: merb-more
+Thu, 19 Mar 01:51:34 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 32696, u'Ruby': 677142}
+Thu, 19 Mar 01:51:34 INFO-GiPyS - limit_remaining: 4980
+Thu, 19 Mar 01:51:35 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/macournoyer/thin/languages limit_remaining: 4980
+Thu, 19 Mar 01:51:35 INFO-GiPyS - refresh_repos, repoID:68 hasPython: False name: thin
+Thu, 19 Mar 01:51:35 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'C': 41376, u'Shell': 867, u'ApacheConf': 1251, u'JavaScript': 148, u'C++': 489, u'HTML': 19495, u'Ragel in Ruby Host': 5835, u'Ruby': 231293, u'CSS': 2210}
+Thu, 19 Mar 01:51:36 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/jamesgolick/resource_controller/languages limit_remaining: 4979
+Thu, 19 Mar 01:51:36 INFO-GiPyS - refresh_repos, repoID:71 hasPython: False name: resource_controller
+Thu, 19 Mar 01:51:36 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 120261}
+Thu, 19 Mar 01:51:37 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/jamesgolick/markaby/languages limit_remaining: 4978
+Thu, 19 Mar 01:51:37 INFO-GiPyS - refresh_repos, repoID:73 hasPython: False name: markaby
+Thu, 19 Mar 01:51:37 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 68339}
+Thu, 19 Mar 01:51:37 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/jamesgolick/enum_field/languages limit_remaining: 4977
+Thu, 19 Mar 01:51:37 INFO-GiPyS - refresh_repos, repoID:74 hasPython: False name: enum_field
+Thu, 19 Mar 01:51:37 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 4975}
+Thu, 19 Mar 01:51:39 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/subtlety/languages limit_remaining: 4976
+Thu, 19 Mar 01:51:39 INFO-GiPyS - refresh_repos, repoID:75 hasPython: False name: subtlety
+Thu, 19 Mar 01:51:39 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 8890}
+Thu, 19 Mar 01:51:40 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/zippy/languages limit_remaining: 4975
+Thu, 19 Mar 01:51:40 INFO-GiPyS - refresh_repos, repoID:92 hasPython: False name: zippy
+Thu, 19 Mar 01:51:40 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 8833}
+Thu, 19 Mar 01:51:41 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/cache_fu/languages limit_remaining: 4974
+Thu, 19 Mar 01:51:41 INFO-GiPyS - refresh_repos, repoID:93 hasPython: False name: cache_fu
+Thu, 19 Mar 01:51:41 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 16532}
+Thu, 19 Mar 01:51:42 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/KirinDave/phosphor/languages limit_remaining: 4973
+Thu, 19 Mar 01:51:42 INFO-GiPyS - refresh_repos, repoID:95 hasPython: False name: phosphor
+Thu, 19 Mar 01:51:42 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {}
+Thu, 19 Mar 01:51:42 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/bmizerany/sinatra/languages limit_remaining: 4972
+Thu, 19 Mar 01:51:42 INFO-GiPyS - refresh_repos, repoID:98 hasPython: False name: sinatra
+Thu, 19 Mar 01:51:42 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'CoffeeScript': 13, u'Ruby': 280044}
+Thu, 19 Mar 01:51:43 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/jnewland/gsa-prototype/languages limit_remaining: 4971
+Thu, 19 Mar 01:51:43 INFO-GiPyS - refresh_repos, repoID:102 hasPython: False name: gsa-prototype
+Thu, 19 Mar 01:51:43 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 121223, u'Ruby': 674}
+Thu, 19 Mar 01:51:44 INFO-GiPyS - limit_remaining: 4970
+Thu, 19 Mar 01:51:44 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/technoweenie/duplikate/languages limit_remaining: 4970
+Thu, 19 Mar 01:51:44 INFO-GiPyS - refresh_repos, repoID:105 hasPython: False name: duplikate
+Thu, 19 Mar 01:51:44 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 10103}
+Thu, 19 Mar 01:51:45 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/jnewland/lazy_record/languages limit_remaining: 4969
+Thu, 19 Mar 01:51:45 INFO-GiPyS - refresh_repos, repoID:118 hasPython: False name: lazy_record
+Thu, 19 Mar 01:51:45 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 5332}
+Thu, 19 Mar 01:51:46 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/jnewland/gsa-feeds/languages limit_remaining: 4968
+Thu, 19 Mar 01:51:46 INFO-GiPyS - refresh_repos, repoID:119 hasPython: False name: gsa-feeds
+Thu, 19 Mar 01:51:46 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 25082, u'Ruby': 44151}
+Thu, 19 Mar 01:51:47 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/jnewland/votigoto/languages limit_remaining: 4967
+Thu, 19 Mar 01:51:47 INFO-GiPyS - refresh_repos, repoID:120 hasPython: False name: votigoto
+Thu, 19 Mar 01:51:47 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 25082, u'Ruby': 41169}
+Thu, 19 Mar 01:51:48 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/mofo/languages limit_remaining: 4966
+Thu, 19 Mar 01:51:48 INFO-GiPyS - refresh_repos, repoID:127 hasPython: False name: mofo
+Thu, 19 Mar 01:51:48 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'JavaScript': 115666, u'Ruby': 44672}
+Thu, 19 Mar 01:51:48 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/jnewland/xhtmlize/languages limit_remaining: 4965
+Thu, 19 Mar 01:51:48 INFO-GiPyS - refresh_repos, repoID:129 hasPython: False name: xhtmlize
+Thu, 19 Mar 01:51:48 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Ruby': 852}
+Thu, 19 Mar 01:51:49 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/schacon/ruby-git/languages limit_remaining: 4964
+Thu, 19 Mar 01:51:49 INFO-GiPyS - refresh_repos, repoID:130 hasPython: False name: ruby-git
+Thu, 19 Mar 01:51:49 DEBUG-GiPyS - refresh_repos, since:-1 len(repos): 1 languagesJSON: {u'Shell': 20838, u'Ruby': 130047}
+Thu, 19 Mar 01:51:50 CRITICAL-Touri - tour, SCAN_b5px8  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+Thu, 19 Mar 01:51:50 CRITICAL-Touri - tour, SCAN_b5px8 Tour Canceled: True
+Thu, 19 Mar 01:51:50 CRITICAL-Touri - tour, SCAN_b5px8 FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 36 total sources observed

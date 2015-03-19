@@ -1,0 +1,5 @@
+01:51:04 Depot - ***************init Depot**********.
+01:51:04 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 262144 stop:524287
+01:51:39 Touri - tour, SCAN_b61zk  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+01:51:39 Touri - tour, SCAN_b61zk Tour Canceled: True
+01:51:39 Touri - tour, SCAN_b61zk FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 30 total sources observed
