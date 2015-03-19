@@ -12,7 +12,7 @@ from scanner import PythonRegexScanner
 
 e1 = "investigationbot@gmail.com"
 p1 = "cro0thiezlutrl"
-smallWords = ["bat", "bee", "bib", "bog", "boo", "box", "bum", "bus"]
+smallWords = ["ram", "rat", "ray", "rig", "rip", "rod", "rug", "run"]
 
 to = "carlallenchapman@gmail.com"
 l = util.prepareLogging(e1, p1, to)
@@ -31,8 +31,8 @@ d = Depot(l)
 
 # test normal operation or run normally
 # self.since = 15249308 will be a small, fast repo, 15249311 is two repos later
-s = [GithubPythonSourcer("20Commits", e1, p1, l, "investigation" + smallWords[0] + ":whorysq5im5ztb", 15249309, 15249311)]
-t = Tourist(d, e1, p1, to, PythonRegexScanner(l), s, l, "Tour of bot1 ended with status: ")
+s = [GithubPythonSourcer("20Commits", e1, p1, l, "investigation" + smallWords[7] + ":adjutasfc4dnsa", 6029312, 6291455)]
+t = Tourist(d, e1, p1, to, PythonRegexScanner(l), s, l, "Tour of " + smallWords[7] + " ended with status: ")
 
 
 t.tour()
