@@ -235,6 +235,16 @@ def getGmailRotatingFileHandler(email, password, to):
 
 
 def prepareLogging(email, password, to):
+    if not os.path.exists(BASE_PATH + "repo/"):
+        os.makedirs(BASE_PATH + "repo/")
+    if not os.path.exists(BASE_PATH + "data/"):
+        os.makedirs(BASE_PATH + "data/")
+    if not os.path.exists(BASE_PATH + "data/log"):
+        os.makedirs(BASE_PATH + "data/log")
+    # if not os.path.exists(BASE_PATH + "data/log" + LOG_DEBUG_FILENAME):
+    #     open(BASE_PATH + "data/log" + LOG_DEBUG_FILENAME, 'a').close()
+    # if not os.path.exists(BASE_PATH + "data/log" + LOG_CRITICAL_FILENAME):
+    #     open(BASE_PATH + "data/log" + LOG_CRITICAL_FILENAME, 'a').close()
     # erase old logging files if any exist
     try:
         sh.cd(BASE_PATH + "data/log")
