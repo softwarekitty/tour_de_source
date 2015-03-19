@@ -1,6 +1,72 @@
-03:28:45 Depot - ***************init Depot**********.
-03:28:45 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311
-03:28:54 GiPyS - next repoID: 15249309
-03:28:55 GiPySo-getRewinder, Backing off for 0 seconds
-03:29:07 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
-03:29:07 Touri - tour, SCAN_59611 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 5 total sources observed
+17:46:29 Depot - ***************init Depot**********.
+17:46:29 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 524288 stop:786431
+17:47:06 GiPyS - next repoID: 524310
+17:47:08 GiPyS - next repoID: 524318
+17:47:58 GiPyS - next repoID: 524329
+17:51:10 GiPyS - next repoID: 524345
+17:51:13 GiPyS - next repoID: 524384
+17:51:15 GiPyS - next repoID: 524436
+17:51:18 GiPyS - next repoID: 524438
+17:51:22 GiPyS - next repoID: 524447
+17:51:24 GiPyS - next repoID: 524455
+17:51:26 GiPyS - next repoID: 524473
+17:51:29 GiPyS - next repoID: 524485
+17:52:15 GiPyS - next repoID: 524540
+17:52:18 GiPyS - next repoID: 524592
+17:52:20 GiPyS - next repoID: 524603
+17:52:23 GiPyS - next repoID: 524616
+17:52:29 GiPyS - next repoID: 524658
+17:52:54 GiPyS - next repoID: 524699
+17:52:56 GiPyS - next repoID: 524710
+17:53:07 GiPyS - next repoID: 524733
+17:53:08 GiPyS - next repoID: 524738
+17:53:48 GiPyS - next repoID: 524758
+17:53:50 GiPyS - next repoID: 524786
+17:59:35 GiPyS - next repoID: 524820
+18:17:41 GiPyS - next repoID: 524824
+18:17:53 GiPyS - next repoID: 524830
+18:17:56 GiPyS - next repoID: 524845
+18:18:02 GiPyS - next repoID: 524855
+18:18:08 GiPyS - next repoID: 524863
+18:21:31 GiPyS - next repoID: 524872
+18:21:34 GiPyS - next repoID: 524899
+18:21:45 GiPyS - next repoID: 524908
+18:21:53 GiPyS - next repoID: 524950
+18:22:42 GiPyS - get_json, Giving up on url https://api.github.com/repos/clconway/Autoconf-Archive/languages after 5 attempts
+18:23:01 GiPyS - next repoID: 525014
+18:24:40 GiPyS - next repoID: 525105
+18:24:44 GiPyS - next repoID: 525109
+18:24:52 GiPyS - next repoID: 525130
+18:24:58 GiPyS - next repoID: 525140
+18:25:00 GiPyS - next repoID: 525174
+18:25:06 GiPyS - next repoID: 525178
+18:25:14 GiPyS - next repoID: 525202
+18:26:29 GiPyS - next repoID: 525316
+18:26:37 GiPyS - next repoID: 525341
+18:26:43 GiPyS - next repoID: 525348
+18:26:52 GiPyS - next repoID: 525352
+18:26:57 GiPyS - next repoID: 525382
+18:27:06 GiPyS - next repoID: 525385
+18:28:08 GiPyS - next repoID: 525435
+18:28:15 GiPyS - next repoID: 525442
+18:29:30 GiPyS - next repoID: 525447
+18:29:37 GiPyS - next repoID: 525470
+18:29:47 GiPyS - next repoID: 525471
+18:29:49 GiPyS - next repoID: 525473
+18:29:55 GiPyS - next repoID: 525523
+18:29:59 GiPyS - next repoID: 525524
+18:30:08 GiPyS - next repoID: 525552
+18:30:15 GiPyS - next repoID: 525577
+18:31:17 GiPyS - next repoID: 525579
+18:31:22 GiPyS - next repoID: 525592
+18:31:32 GiPyS - next repoID: 525622
+18:32:14 GiPyS - next repoID: 525642
+18:32:29 GiPyS - next repoID: 525646
+18:32:39 GiPyS - next repoID: 525664
+18:32:46 GiPyS - next repoID: 525668
+18:33:13 GiPyS - next repoID: 525684
+18:33:25 GiPyS - next repoID: 525778
+18:33:35 GiPyS - next repoID: 525781
+18:33:50 Touri - tour, SCAN_10fpc  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+18:33:50 Touri - tour, SCAN_10fpc Tour Canceled: True
+18:33:50 Touri - tour, SCAN_10fpc FINAL STATE: CANCELLED after scanning 66 sources containing Python out of 800 total sources observed

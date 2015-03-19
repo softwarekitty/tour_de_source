@@ -1,6 +1,182 @@
-03:28:45 Depot - ***************init Depot**********.
-03:28:45 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311
-03:28:54 GiPyS - next repoID: 15249309
-03:28:55 GiPySo-getRewinder, Backing off for 0 seconds
-03:29:07 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
-03:29:07 Touri - tour, SCAN_59611 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 5 total sources observed
+17:46:41 Depot - ***************init Depot**********.
+17:46:41 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 0 stop:262143
+17:47:43 GiPyS - get_json, Giving up on url https://api.github.com/repos/bs/starling/languages after 5 attempts
+17:47:44 GiPyS - next repoID: 27
+17:48:49 GiPyS - next repoID: 212
+17:48:51 GiPyS - next repoID: 237
+17:48:54 GiPyS - next repoID: 312
+17:49:18 GiPyS - get_json, Giving up on url https://api.github.com/repos/bs/starling/languages after 5 attempts
+17:49:51 GiPyS - next repoID: 379
+17:49:52 GiPyS - next repoID: 625
+17:50:02 GiPyS - next repoID: 648
+17:50:53 GiPyS - get_json, Giving up on url https://api.github.com/repos/reinh/dm/languages after 5 attempts
+17:51:25 GiPyS - next repoID: 885
+17:51:41 GiPyS - next repoID: 966
+17:52:01 GiPyS - next repoID: 1124
+17:52:03 GiPyS - next repoID: 1126
+17:52:42 GiPyS - next repoID: 1482
+17:53:03 GiPyS - next repoID: 1531
+17:53:07 GiPyS - next repoID: 1540
+17:53:10 GiPyS - next repoID: 1603
+17:53:16 GiPyS - next repoID: 1613
+17:53:22 GiPyS - next repoID: 1655
+17:53:23 GiPyS - next repoID: 1664
+17:53:25 GiPyS - next repoID: 1674
+17:53:26 GiPyS - next repoID: 1679
+17:53:29 GiPyS - next repoID: 1712
+17:54:18 GiPyS - get_json, Giving up on url https://api.github.com/repos/chriseppstein/ruby-freebase/languages after 5 attempts
+17:54:34 GiPyS - next repoID: 1756
+17:54:40 GiPyS - next repoID: 1775
+17:56:00 GiPyS - next repoID: 1784
+17:56:12 GiPyS - next repoID: 1827
+17:56:14 GiPyS - next repoID: 1845
+17:56:19 GiPyS - next repoID: 1858
+17:56:23 GiPyS - next repoID: 1864
+17:56:40 GiPyS - next repoID: 1876
+17:56:51 GiPyS - next repoID: 1928
+17:56:58 GiPyS - next repoID: 1949
+17:57:02 GiPyS - next repoID: 1977
+17:57:10 GiPyS - next repoID: 1985
+17:57:16 GiPyS - next repoID: 1991
+17:57:21 GiPyS - next repoID: 2058
+17:58:06 GiPyS - next repoID: 2105
+17:58:10 GiPyS - next repoID: 2401
+17:58:17 GiPyS - next repoID: 2403
+17:59:21 GiPyS - next repoID: 2434
+17:59:25 GiPyS - next repoID: 2467
+17:59:27 GiPyS - next repoID: 2480
+17:59:31 GiPyS - next repoID: 2482
+17:59:35 GiPyS - next repoID: 2485
+18:00:20 GiPyS - get_json, Giving up on url https://api.github.com/repos/h-lame/vanilla-rb/languages after 5 attempts
+18:00:51 GiPyS - get_json, Giving up on url https://api.github.com/repos/efrendiaz/helloworld/languages after 5 attempts
+18:00:56 GiPyS - next repoID: 2518
+18:01:03 GiPyS - next repoID: 2537
+18:01:07 GiPyS - next repoID: 2546
+18:01:13 GiPyS - next repoID: 2569
+18:01:14 GiPyS - next repoID: 2595
+18:01:19 GiPyS - next repoID: 2669
+18:01:29 GiPyS - next repoID: 2707
+18:01:33 GiPyS - next repoID: 2758
+18:01:39 GiPyS - next repoID: 2838
+18:01:40 GiPyS - next repoID: 2864
+18:01:45 GiPyS - next repoID: 2907
+18:02:27 GiPyS - next repoID: 2922
+18:02:34 GiPyS - next repoID: 3023
+18:02:36 GiPyS - next repoID: 3026
+18:02:44 GiPyS - next repoID: 3027
+18:02:48 GiPyS - next repoID: 3030
+18:02:55 GiPyS - next repoID: 3032
+18:03:01 GiPyS - next repoID: 3033
+18:03:09 GiPyS - next repoID: 3043
+18:03:12 GiPyS - next repoID: 3046
+18:03:20 GiPyS - next repoID: 3058
+18:03:22 GiPyS - next repoID: 3095
+18:03:24 GiPyS - next repoID: 3177
+18:03:26 GiPyS - next repoID: 3211
+18:04:34 GiPyS - next repoID: 3266
+18:05:30 GiPyS - get_json, Giving up on url https://api.github.com/repos/soylentfoo/atlrug-demo/languages after 5 attempts
+18:05:31 GiPyS - next repoID: 3442
+18:05:34 GiPyS - next repoID: 3503
+18:07:55 GiPyS - next repoID: 3656
+18:08:16 GiPyS - get_json, Giving up on url https://api.github.com/repos/soylentfoo/atlrug-demo/languages after 5 attempts
+18:08:50 GiPyS - next repoID: 3697
+18:08:54 GiPyS - next repoID: 3718
+18:08:59 GiPyS - next repoID: 3781
+18:09:04 GiPyS - next repoID: 3810
+18:09:09 GiPyS - next repoID: 3849
+18:09:14 GiPyS - next repoID: 3926
+18:09:15 GiPyS - next repoID: 3935
+18:09:23 GiPyS - next repoID: 3961
+18:09:25 GiPyS - next repoID: 3998
+18:09:34 GiPyS - next repoID: 4032
+18:09:38 GiPyS - next repoID: 4054
+18:10:19 GiPyS - next repoID: 4164
+18:10:20 GiPyS - next repoID: 4291
+18:10:26 GiPyS - next repoID: 4411
+18:10:32 GiPyS - next repoID: 4484
+18:11:13 GiPyS - next repoID: 4741
+18:11:17 GiPyS - next repoID: 4865
+18:12:07 GiPyS - next repoID: 5022
+18:12:08 GiPyS - next repoID: 5155
+18:12:12 GiPyS - next repoID: 5171
+18:12:32 GiPyS - next repoID: 5189
+18:13:38 GiPyS - next repoID: 5318
+18:13:47 GiPyS - next repoID: 5448
+18:13:54 GiPyS - next repoID: 5532
+18:14:08 GiPyS - next repoID: 5581
+18:14:16 GiPyS - next repoID: 5608
+18:14:21 GiPyS - next repoID: 5614
+18:14:30 GiPyS - next repoID: 5619
+18:14:32 GiPyS - next repoID: 5625
+18:14:55 GiPyS - next repoID: 5633
+18:15:24 GiPyS - next repoID: 5643
+18:16:04 GiPyS - next repoID: 5718
+18:16:07 GiPyS - next repoID: 5848
+18:16:28 GiPyS - next repoID: 5970
+18:16:31 GiPyS - next repoID: 6048
+18:16:33 GiPyS - next repoID: 6052
+18:16:41 GiPyS - next repoID: 6101
+18:17:24 GiPyS - next repoID: 6172
+18:17:31 GiPyS - next repoID: 6275
+18:17:40 GiPyS - next repoID: 6366
+18:17:47 GiPyS - next repoID: 6390
+18:17:50 GiPyS - next repoID: 6408
+18:18:02 GiPyS - next repoID: 6541
+18:18:26 GiPyS - next repoID: 6653
+18:19:17 GiPyS - next repoID: 6770
+18:19:51 GiPyS - next repoID: 6780
+18:19:57 GiPyS - next repoID: 6833
+18:20:06 GiPyS - next repoID: 7029
+18:20:13 GiPyS - next repoID: 7083
+18:21:15 GiPyS - next repoID: 7171
+18:21:24 GiPyS - next repoID: 7202
+18:21:33 GiPyS - next repoID: 7277
+18:21:53 GiPyS - next repoID: 7320
+18:21:57 GiPyS - next repoID: 7327
+18:22:13 GiPyS - next repoID: 7335
+18:22:32 GiPyS - next repoID: 7368
+18:22:38 GiPyS - next repoID: 7444
+18:23:31 GiPyS - next repoID: 7610
+18:23:33 GiPyS - next repoID: 7611
+18:23:40 GiPyS - next repoID: 7707
+18:24:03 GiPyS - next repoID: 7776
+18:24:09 GiPyS - next repoID: 7928
+18:24:50 GiPyS - get_json, Giving up on url https://api.github.com/repos/ELLIOTTCABLE/merb_strokedb/languages after 5 attempts
+18:25:00 GiPyS - get_json, Giving up on url https://api.github.com/repos/be9/merb_strokedb/languages after 5 attempts
+18:25:17 GiPyS - next repoID: 7951
+18:25:22 GiPyS - next repoID: 7970
+18:25:23 GiPyS - next repoID: 8045
+18:25:30 GiPyS - next repoID: 8049
+18:26:02 GiPyS - next repoID: 8055
+18:26:09 GiPyS - next repoID: 8058
+18:26:13 GiPyS - next repoID: 8168
+18:26:49 GiPyS - next repoID: 8227
+18:26:55 GiPyS - next repoID: 8293
+18:27:05 GiPyS - next repoID: 8338
+18:27:14 GiPyS - next repoID: 8354
+18:27:24 GiPyS - next repoID: 8389
+18:27:28 GiPyS - next repoID: 8432
+18:28:25 GiPyS - get_json, Giving up on url https://api.github.com/repos/mehulshah/vanilla-rb/languages after 5 attempts
+18:28:34 GiPyS - next repoID: 8516
+18:28:40 GiPyS - next repoID: 8622
+18:28:49 GiPyS - next repoID: 8730
+18:29:05 GiPyS - next repoID: 8757
+18:29:13 GiPyS - next repoID: 8779
+18:29:25 GiPyS - next repoID: 8875
+18:30:07 GiPyS - next repoID: 8987
+18:30:18 GiPyS - next repoID: 9007
+18:30:57 GiPyS - next repoID: 9065
+18:31:03 GiPyS - next repoID: 9074
+18:31:17 GiPyS - next repoID: 9096
+18:31:20 GiPyS - next repoID: 9100
+18:31:23 GiPyS - next repoID: 9130
+18:31:30 GiPyS - next repoID: 9132
+18:31:41 GiPyS - next repoID: 9157
+18:31:44 GiPyS - next repoID: 9241
+18:31:52 GiPyS - next repoID: 9272
+18:33:05 GiPyS - next repoID: 9278
+18:33:09 GiPyS - next repoID: 9304
+18:33:11 GiPyS - next repoID: 9314
+18:33:40 Touri - tour, SCAN_51ul0  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+18:33:40 Touri - tour, SCAN_51ul0 Tour Canceled: True
+18:33:40 Touri - tour, SCAN_51ul0 FINAL STATE: CANCELLED after scanning 166 sources containing Python out of 2245 total sources observed

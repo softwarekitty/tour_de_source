@@ -1,6 +1,75 @@
-03:28:45 Depot - ***************init Depot**********.
-03:28:45 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311
-03:28:54 GiPyS - next repoID: 15249309
-03:28:55 GiPySo-getRewinder, Backing off for 0 seconds
-03:29:07 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
-03:29:07 Touri - tour, SCAN_59611 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 5 total sources observed
+18:09:30 Depot - ***************init Depot**********.
+18:09:30 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 1572864 stop:1835007
+18:10:12 GiPyS - next repoID: 1572873
+18:10:17 GiPyS - next repoID: 1572898
+18:10:20 GiPyS - next repoID: 1572916
+18:10:22 GiPyS - next repoID: 1572930
+18:10:23 GiPySo-getRewinder, Backing off for 0 seconds
+18:10:25 GiPySo-getRewinder, Backing off for 0 seconds
+18:10:29 GiPyS - next repoID: 1572958
+18:10:30 GiPySo-getRewinder, Backing off for 0 seconds
+18:10:31 GiPySo-getRewinder, Backing off for 1 seconds
+18:10:33 GiPyS - next repoID: 1572972
+18:10:47 GiPySo-getRewinder, Backing off for 0 seconds
+18:10:58 GiPySo-getRewinder, Backing off for 1 seconds
+18:11:54 GiPyS - next repoID: 1572990
+18:11:56 GiPyS - next repoID: 1573004
+18:11:58 GiPyS - next repoID: 1573053
+18:12:02 GiPyS - next repoID: 1573083
+18:12:05 GiPyS - next repoID: 1573085
+18:12:23 GiPyS - next repoID: 1573091
+18:12:35 GiPyS - next repoID: 1573101
+18:13:25 GiPyS - next repoID: 1573205
+18:13:43 GiPyS - next repoID: 1573213
+18:13:46 GiPyS - next repoID: 1573239
+18:13:50 GiPyS - next repoID: 1573243
+18:14:00 GiPyS - next repoID: 1573271
+18:14:03 GiPyS - next repoID: 1573272
+18:14:49 GiPyS - next repoID: 1573327
+18:14:53 GiPyS - next repoID: 1573362
+18:14:56 GiPyS - next repoID: 1573443
+18:15:07 GiPyS - next repoID: 1573514
+18:17:07 GiPyS - get_json, Giving up on url https://api.github.com/repos/linuxunil/CraftBukkit/languages after 5 attempts
+18:17:16 GiPyS - next repoID: 1573529
+18:17:17 GiPyS - next repoID: 1573532
+18:17:20 GiPyS - next repoID: 1573566
+18:18:51 GiPyS - next repoID: 1573649
+18:18:55 GiPyS - next repoID: 1573660
+18:18:57 GiPyS - next repoID: 1573669
+18:18:59 GiPyS - next repoID: 1573673
+18:19:02 GiPyS - next repoID: 1573709
+18:19:17 GiPyS - next repoID: 1573716
+18:21:31 GiPyS - next repoID: 1573719
+18:21:34 GiPyS - next repoID: 1573722
+18:22:19 GiPyS - get_json, Giving up on url https://api.github.com/repos/msumpter/webber/languages after 5 attempts
+18:22:37 GiPyS - next repoID: 1573771
+18:23:45 GiPyS - next repoID: 1573888
+18:23:56 GiPyS - next repoID: 1573914
+18:24:06 GiPyS - next repoID: 1573933
+18:24:22 GiPyS - next repoID: 1573934
+18:24:29 GiPyS - next repoID: 1573943
+18:24:31 GiPyS - next repoID: 1573972
+18:24:33 GiPyS - next repoID: 1573984
+18:25:07 GiPyS - next repoID: 1574013
+18:25:47 GiPyS - next repoID: 1574026
+18:25:50 GiPyS - next repoID: 1574042
+18:26:55 GiPyS - next repoID: 1574051
+18:27:01 GiPyS - next repoID: 1574061
+18:29:28 GiPyS - next repoID: 1574067
+18:29:29 GiPyS - next repoID: 1574092
+18:29:36 GiPyS - next repoID: 1574114
+18:29:49 GiPyS - next repoID: 1574131
+18:29:52 GiPyS - next repoID: 1574141
+18:30:19 GiPyS - next repoID: 1574162
+18:30:22 GiPyS - next repoID: 1574171
+18:30:31 GiPyS - next repoID: 1574174
+18:30:38 GiPyS - next repoID: 1574181
+18:30:40 GiPyS - next repoID: 1574212
+18:31:30 GiPyS - next repoID: 1574299
+18:31:31 GiPyS - next repoID: 1574322
+18:31:34 GiPyS - next repoID: 1574330
+18:31:37 GiPyS - next repoID: 1574336
+18:31:40 GiPyS - next repoID: 1574348
+18:33:58 Touri - tour, SCAN_5sl61  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+18:33:58 Touri - tour, SCAN_5sl61 Tour Canceled: True
+18:33:58 Touri - tour, SCAN_5sl61 FINAL STATE: CANCELLED after scanning 62 sources containing Python out of 700 total sources observed
