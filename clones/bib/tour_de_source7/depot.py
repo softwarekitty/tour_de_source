@@ -1,7 +1,6 @@
 import sqlite3
 import os
 import sh
-import util
 from util import BASE_PATH
 
 

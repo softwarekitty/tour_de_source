@@ -31,7 +31,7 @@ d = Depot(l)
 
 # test normal operation or run normally
 # self.since = 15249308 will be a small, fast repo, 15249311 is two repos later
-s = [GithubPythonSourcer("20Commits", e1, p1, l, "investigation" + smallWords[0] + ":whorysq5im5ztb", 0, 262143)]
+s = [GithubPythonSourcer("20Commits", e1, p1, l, "investigation" + smallWords[0] + ":whorysq5im5ztb", 15249309, 15249311)]##0, 262143)]
 t = Tourist(d, e1, p1, to, PythonRegexScanner(l), s, l, "Tour of " + smallWords[0] + " ended with status: ")
 
 
