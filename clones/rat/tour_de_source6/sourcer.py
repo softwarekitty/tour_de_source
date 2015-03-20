@@ -39,7 +39,8 @@ class GithubPythonSourcer(object):
         else:
             self.credentials = credentials
         self.logger = logger
-        self.since = first - 1
+        self.nextID = first - 1
+        self.lastRepoID = self.nextID
         self.stop = stop
 
         self.nProjects = 0
@@ -56,29 +57,29 @@ class GithubPythonSourcer(object):
 
         # refresh the page if necessary, stop if necessary
         if not self.exhausted and len(self.repos) == 0:
-            self.refresh_repos(self.since)
+            self.refresh_repos(self.lastRepoID)
             if len(self.repos) == 0:
                 self.exhausted = True
         if self.exhausted is True:
-            self.logger.critical("GiPyS - exhausted, since: " + str(self.since) + " stop: " + str(self.stop) + " len(repos): " + str(len(self.repos)))
+            self.logger.critical("GiPyS - exhausted, since: " + str(self.nextID) + " stop: " + str(self.stop) + " len(repos): " + str(len(self.repos)))
             return None
 
         # repos is not empty, so make sure it is descending, then pop
         if self.repos[0] < self.repos[-1]:
             self.repos.reverse()
-        self.since = self.repos.pop()
+        self.nextID = self.repos.pop()
 
         # if we have gone beyond the stopping point, stop
-        if self.since > self.stop:
+        if self.nextID > self.stop:
             self.exhausted = True
-            self.logger.critical("GiPyS - exhausted, since: " + str(self.since) + " stop: " + str(self.stop) + " len(repos): " + str(len(self.repos)))
+            self.logger.critical("GiPyS - exhausted, since: " + str(self.nextID) + " stop: " + str(self.stop) + " len(repos): " + str(len(self.repos)))
             return None
 
         # if we are at the stopping point, then this is the last one
-        if self.since == self.stop:
+        if self.nextID == self.stop:
             self.exhausted = True
-        self.logger.critical("GiPyS - next repoID: " + str(self.since))
-        return self.getRewinder(self.since, repo_path, report_path, uniqueSourceID)
+        self.logger.critical("GiPyS - next repoID: " + str(self.nextID))
+        return self.getRewinder(self.nextID, repo_path, report_path, uniqueSourceID)
 
 # ####################### convenience methods ################################
 
@@ -98,6 +99,7 @@ class GithubPythonSourcer(object):
         projectCounter = 0
         for projectJSON in sinceLastJSON:
             repoID = projectJSON['id']
+            self.lastRepoID = repoID
             if repoID > self.stop:
                 self.logger.info("GiPyS - refresh_repos, stopped refreshing with stop:" + str(self.stop) + " and current repoID: " + str(repoID))
                 return
@@ -105,7 +107,7 @@ class GithubPythonSourcer(object):
                 languagesJSON = self.get_json(projectJSON['languages_url'])
                 pythonProjectFound = "Python" in languagesJSON
                 self.logger.info("GiPyS - refresh_repos, repoID:" + str(repoID) + " hasPython: " + str(pythonProjectFound) + " name: " + projectJSON['name'])
-                self.logger.debug("GiPyS - refresh_repos, since:" + str(self.since) + " len(repos): " + str(len(self.repos)) + " languagesJSON: " + str(languagesJSON))
+                self.logger.debug("GiPyS - refresh_repos, since:" + str(self.nextID) + " len(repos): " + str(len(self.repos)) + " languagesJSON: " + str(languagesJSON))
                 if pythonProjectFound:
                     self.repos.append(projectJSON['id'])
             except KeyboardInterrupt:
@@ -182,7 +184,7 @@ class GithubPythonSourcer(object):
         return request
 
     def log(self, msg=""):
-        self.logger.debug("GiPyS - " + msg + " since: " + str(self.since) + " len(repos): " + str(len(self.repos)))
+        self.logger.debug("GiPyS - " + msg + " since: " + str(self.nextID) + " len(repos): " + str(len(self.repos)))
 
     # error stream for `sh' instance
     def logErrorHandler(self, errorMessage):
@@ -474,9 +476,9 @@ class LocalTestSourcer(GithubPythonSourcer):
             return None
 
         # only gets a rewinder once for the local test folder
-        localFolderRewinder = self.fakeNCommitsGithubRewinder(self.since, repo_path, report_path, uniqueSourceID, 20)
+        localFolderRewinder = self.fakeNCommitsGithubRewinder(self.nextID, repo_path, report_path, uniqueSourceID, 20)
         self.exhausted = True
         return localFolderRewinder
 
     def log(self, msg=""):
-        self.logger.debug("LoTeS - " + msg + " since: " + str(self.since) + " len(repos): " + str(len(self.repos)))
+        self.logger.debug("LoTeS - " + msg + " since: " + str(self.nextID) + " len(repos): " + str(len(self.repos)))
