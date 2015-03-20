@@ -1,8 +1,8 @@
-14:16:41 Depot - ***************init Depot**********.
-14:16:42 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249411
-14:17:48 GiPyS - next repoID: 15249309
-14:17:51 GiPyS - next repoID: 15249325
-14:17:53 GiPyS - next repoID: 15249331
-14:17:57 GiPyS - next repoID: 15249392
-14:18:24 GiPyS - exhausted, since: 15249392 stop: 15249411 len(repos): 0
-14:18:24 Touri - tour, SCAN_1wxn7 FINAL STATE: FINISHED after scanning 4 sources containing Python out of 82 total sources observed
+15:00:19 Depot - ***************init Depot**********.
+15:00:19 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249411
+15:01:24 GiPyS - next repoID: 15249309
+15:01:27 GiPyS - next repoID: 15249325
+15:01:29 GiPyS - next repoID: 15249331
+15:01:33 GiPyS - next repoID: 15249392
+15:01:45 GiPyS - exhausted, since: 15249392 stop: 15249411 len(repos): 0
+15:01:45 Touri - tour, SCAN_d87ne FINAL STATE: FINISHED after scanning 4 sources containing Python out of 65 total sources observed
