@@ -199,7 +199,7 @@ class GithubPythonSourcer(object):
                     return self.getMockRewinder(repoID)
                 else:
                     return None
-            except KeyboardInterrupt:
+            except (KeyboardInterrupt, RuntimeWarning):
                 raise
             except Exception as e:
                 backoffS = random.randrange(min(2 ** i, 40))
@@ -226,15 +226,28 @@ class GithubPythonSourcer(object):
         self.log("nCoGiRe - default branch name: " + default_branch)
         clone_url = repoJSON['clone_url']
 
-        # erase everything in repo_path and then clone project
-        sh.cd(repo_path)
-        sh.rm('-r', sh.glob('./*'), _err=self.logErrorHandler)
+        if not os.path.exists(repo_path):
+            self.logger.critical("GiPyS - nCoGiRe, this path does not exist!! repo_path: " + repo_path)
+            raise RuntimeWarning
+        else:
+            # the path exists and is not empty
+            if os.listdir(repo_path):
+                # erase everything in repo_path and then clone project
+                self.logger.info("GiPyS - nCoGiRe, attempting to remove contents of repo_path: " + str(repo_path))
+                self.logger.setLevel(logging.ERROR)
+                try:
+                    sh.cd(repo_path)
+                    sh.rm('-r', sh.glob('./*'), _err=self.logErrorHandler)
+                except:
+                    self.logger.error("GiPyS - nCoGiRe, failure to erase repo_path.  ")
+                self.logger.setLevel(logging.DEBUG)
         self.logger.warning("GiPyS - nCoGiRe, cloning repository with url: " + clone_url + " into path: " + repo_path + " this may take some time...")
 
         # on linux, I'm having trouble where git commands output a torrent of
         # logging output that I didn't authorize.  It may be a python bug, since
         # crunchbang defaults to python 2.7.3 and this was developed on 2.7.5
         self.logger.setLevel(logging.CRITICAL)
+        sh.cd(repo_path)
         sh.git.clone(clone_url, "-b", default_branch)
         self.logger.setLevel(logging.DEBUG)
 
