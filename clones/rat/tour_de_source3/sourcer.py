@@ -63,7 +63,9 @@ class GithubPythonSourcer(object):
             self.logger.critical("GiPyS - exhausted, since: " + str(self.since) + " stop: " + str(self.stop) + " len(repos): " + str(len(self.repos)))
             return None
 
-        # repos is not empty, so pop
+        # repos is not empty, so make sure it is descending, then pop
+        if self.repos[0] < self.repos[-1]:
+            self.repos.reverse()
         self.since = self.repos.pop()
 
         # if we have gone beyond the stopping point, stop
@@ -118,7 +120,6 @@ class GithubPythonSourcer(object):
             self.logger.info("GiPyS - refresh_repos, no repos found on page starting at:" + str(lastRepo))
             self.refresh_repos(repoID)
             return
-        self.repos.reverse()
         self.logger.info("GiPyS - refresh_repos, finished refreshing, found " + str(len(self.repos)) + " Python repos in " + str(projectCounter) + " Github projects with last scanned repoID: " + str(repoID))
 
     def get_json(self, url):
