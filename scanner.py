@@ -50,17 +50,23 @@ class PythonRegexScanner:
 
                     node = astroid.manager.AstroidManager().ast_from_file(pythonFilePath)
                     progressCounter = 2
-
-                    self.extractRegexR(node, report_db, uniqueSourceID, sourceJSON, fileHash, cleanFilePath, citationSet)
+                    endFileScanS = util.getDateTimeS(datetime.datetime.utcnow()) + 10
+                    self.extractRegexR(node, report_db, uniqueSourceID, sourceJSON, fileHash, cleanFilePath, citationSet, endFileScanS)
                     progressCounter = 3
                 else:
                     nDuplicates += 1
+            except RuntimeWarning:
+                nowS = util.getDateTimeS(datetime.datetime.utcnow())
+                self.logger.warning("PyReS - timeout extracting from file: " + str(pythonFilePath) + " endFileScanS: " + str(endFileScanS) + " nowS: " + str(nowS))
             except Exception as e:
                 self.logger.warning("PyReS - problem extracting from file: " + str(pythonFilePath) + " exception: " + str(e) + " progressCounter: " + str(progressCounter))
         self.logger.info("PyReS - finished scanning project. " + " nDuplicates: " + str(nDuplicates) + " uniqueSourceID: " + str(uniqueSourceID) + " sourceJSON: " + sourceJSON)
 
     # regex_flags = ["IGNORECASE","DEBUG","LOCALE","MULTILINE","DOTALL","UNICODE","VERBOSE"]
-    def extractRegexR(self, child, report_db, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, citationSet):
+    def extractRegexR(self, child, report_db, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, citationSet, endFileScanS):
+        nowS = util.getDateTimeS(datetime.datetime.utcnow())
+        if nowS >= endFileScanS:
+            raise RuntimeWarning
         # all the methods we will look for
         target_func = self.get_function_list()
         if isinstance(child, astroid.node_classes.CallFunc) and child.func.as_string() in target_func:
@@ -99,7 +105,7 @@ class PythonRegexScanner:
                 citationSet.append(citationTuple)
                 self.record_regex_citation(uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction, report_db)
         for grandchild in child.get_children():
-            self.extractRegexR(grandchild, report_db, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, citationSet)
+            self.extractRegexR(grandchild, report_db, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, citationSet, endFileScanS)
 
     # ###################### database functions #######################
 

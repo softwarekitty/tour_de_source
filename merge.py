@@ -5,6 +5,7 @@ import json
 import os
 
 globalCounter = 0
+globalRepoIDMap = {}
 
 
 def insertNFiles(merged_report_db, row):
@@ -28,8 +29,15 @@ def insertRegexCitation(merged_report_db, row, repoID):
     conn = sqlite3.connect(merged_report_db)
     c = conn.cursor()
     global globalCounter
-    c.execute("INSERT INTO RegexCitationMerged values (?,?,?,?,?,?,?,?)", (globalCounter, repoID, row[1], row[2], row[3], row[4], row[5], row[6]))
-    globalCounter += 1
+    global globalRepoIDMap
+    thisRecordUniqueSourceID = -1
+    if repoID in globalRepoIDMap:
+        thisRecordUniqueSourceID = globalRepoIDMap[repoID]
+    else:
+        globalRepoIDMap[repoID] = globalCounter
+        thisRecordUniqueSourceID = globalCounter
+        globalCounter += 1
+    c.execute("INSERT INTO RegexCitationMerged values (?,?,?,?,?,?,?,?)", (thisRecordUniqueSourceID, repoID, row[1], row[2], row[3], row[4], row[5], row[6]))
     conn.commit()
     conn.close()
 
@@ -37,9 +45,17 @@ def insertRegexCitation(merged_report_db, row, repoID):
 def insertRegexCitationOld(merged_report_db, row):
     conn = sqlite3.connect(merged_report_db)
     c = conn.cursor()
+    repoID = row[1]
     global globalCounter
-    c.execute("INSERT INTO RegexCitationMerged values (?,?,?,?,?,?,?,?)", (globalCounter, row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
-    globalCounter += 1
+    global globalRepoIDMap
+    thisRecordUniqueSourceID = -1
+    if repoID in globalRepoIDMap:
+        thisRecordUniqueSourceID = globalRepoIDMap[repoID]
+    else:
+        globalRepoIDMap[repoID] = globalCounter
+        thisRecordUniqueSourceID = globalCounter
+        globalCounter += 1
+    c.execute("INSERT INTO RegexCitationMerged values (?,?,?,?,?,?,?,?)", (thisRecordUniqueSourceID, row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
     conn.commit()
     conn.close()
 
@@ -113,6 +129,7 @@ merged_report_db = MERGED_PATH + "merged_report.db"
 # clean out the old one, if it is there
 if os.path.isfile(merged_report_db):
     os.remove(merged_report_db)
+    print "removed old merged_report_db.db"
 initialize_merged_report(merged_report_db)
 
 for name in cloneNames:
@@ -135,6 +152,7 @@ for name in cloneNames:
         print "merging with report: " + report
         merge(merged_report_db, report)
 
-for otherDatabase in [db for db in glob.glob(MERGED_PATH + "./*.db") if db != merged_report_db]:
-    mergeAny(merged_report_db, otherDatabase)
+for otherDatabase in [db for db in glob.glob(MERGED_PATH + "*.db") if db != merged_report_db]:
+    print "would merge otherdatabase: " + otherDatabase
+    # mergeAny(merged_report_db, otherDatabase)
 print "merge complete"
