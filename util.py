@@ -18,7 +18,9 @@ from os.path import expanduser
 
 HOME = expanduser("~")
 LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
-BASE_PATH = LOCAL_PATH + "clones/bib/tour_de_source1/"
+# this is true only for the clones:
+# BASE_PATH = LOCAL_PATH + "clones/bib/tour_de_source1/"
+BASE_PATH = LOCAL_PATH
 
 
 def get_cuteHash(filePath):

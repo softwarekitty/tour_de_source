@@ -1,5 +1,1 @@
-18/03 14:55:36 Depot - ***************init Depot**********.
-18/03 14:55:36 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311
-18/03 14:55:42 GiPyS - next repoID: 15249309
-18/03 14:55:49 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
-18/03 14:55:49 Touri - tour, SCAN_698ak FINAL STATE: FINISHED after scanning 1 sources containing Python out of 5 total sources observed
+14:14:49 Depot - ***************init Depot**********.
