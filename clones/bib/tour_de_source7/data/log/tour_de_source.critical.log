@@ -1,5 +1,700 @@
-11:57:47 Depot - ***************init Depot**********.
-11:57:47 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 1835008 stop:2097151
-11:59:08 Touri - tour, SCAN_13pgr  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
-11:59:08 Touri - tour, SCAN_13pgr Tour Canceled: True
-11:59:08 Touri - tour, SCAN_13pgr FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 85 total sources observed
+16:28:18 Depot - ***************init Depot**********.
+16:28:19 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 1572864 stop:1835007
+16:28:55 GiPyS - next repoID: 1572873
+16:28:57 GiPyS - next repoID: 1572898
+16:29:00 GiPyS - next repoID: 1572916
+16:29:02 GiPyS - next repoID: 1572930
+16:29:04 GiPyS - next repoID: 1572958
+16:29:06 GiPyS - next repoID: 1572972
+16:29:40 GiPyS - next repoID: 1572990
+16:29:42 GiPyS - next repoID: 1573004
+16:29:43 GiPyS - next repoID: 1573053
+16:29:45 GiPyS - next repoID: 1573083
+16:29:48 GiPyS - next repoID: 1573085
+16:30:09 GiPyS - next repoID: 1573091
+16:30:19 GiPyS - next repoID: 1573101
+16:31:03 GiPyS - next repoID: 1573205
+16:31:13 GiPyS - next repoID: 1573213
+16:31:17 GiPyS - next repoID: 1573239
+16:31:21 GiPyS - next repoID: 1573243
+16:31:24 GiPyS - next repoID: 1573271
+16:31:26 GiPyS - next repoID: 1573272
+16:31:28 GiPyS - next repoID: 1573327
+16:32:15 GiPyS - next repoID: 1573362
+16:32:19 GiPyS - next repoID: 1573443
+16:32:27 GiPyS - next repoID: 1573514
+16:33:48 GiPyS - next repoID: 1573529
+16:33:49 GiPyS - next repoID: 1573532
+16:33:55 GiPyS - next repoID: 1573566
+16:36:05 GiPyS - get_json, Giving up on url https://api.github.com/repos/linuxunil/CraftBukkit/languages after 5 attempts
+16:36:25 GiPyS - next repoID: 1573649
+16:36:28 GiPyS - next repoID: 1573660
+16:36:31 GiPyS - next repoID: 1573669
+16:36:34 GiPyS - next repoID: 1573673
+16:36:37 GiPyS - next repoID: 1573709
+16:36:58 GiPyS - next repoID: 1573716
+16:39:22 GiPyS - next repoID: 1573719
+16:39:25 GiPyS - next repoID: 1573722
+16:39:29 GiPyS - next repoID: 1573771
+16:41:05 GiPyS - get_json, Giving up on url https://api.github.com/repos/msumpter/webber/languages after 5 attempts
+16:41:36 GiPyS - next repoID: 1573888
+16:41:51 GiPyS - next repoID: 1573914
+16:42:04 GiPyS - next repoID: 1573933
+16:42:27 GiPyS - next repoID: 1573934
+16:42:36 GiPyS - next repoID: 1573943
+16:42:38 GiPyS - next repoID: 1573972
+16:42:40 GiPyS - next repoID: 1573984
+16:43:26 GiPyS - next repoID: 1574013
+16:43:31 GiPyS - next repoID: 1574026
+16:43:34 GiPyS - next repoID: 1574042
+16:44:43 GiPyS - next repoID: 1574051
+16:44:48 GiPyS - next repoID: 1574061
+16:47:33 GiPyS - next repoID: 1574067
+16:47:37 GiPyS - next repoID: 1574092
+16:48:19 GiPyS - next repoID: 1574114
+16:48:39 GiPyS - next repoID: 1574131
+16:48:42 GiPyS - next repoID: 1574141
+16:49:12 GiPyS - next repoID: 1574162
+16:49:14 GiPyS - next repoID: 1574171
+16:49:16 GiPyS - next repoID: 1574174
+16:49:23 GiPyS - next repoID: 1574181
+16:49:25 GiPyS - next repoID: 1574212
+16:49:41 GiPyS - next repoID: 1574299
+16:49:43 GiPyS - next repoID: 1574322
+16:49:48 GiPyS - next repoID: 1574330
+16:49:50 GiPyS - next repoID: 1574336
+16:49:52 GiPyS - next repoID: 1574348
+16:58:10 GiPyS - next repoID: 1574433
+16:58:20 GiPyS - next repoID: 1574462
+16:58:27 GiPyS - next repoID: 1574466
+16:59:26 GiPyS - next repoID: 1574497
+16:59:33 GiPyS - next repoID: 1574513
+16:59:51 GiPyS - next repoID: 1574523
+17:00:00 GiPyS - next repoID: 1574533
+17:01:11 GiPyS - next repoID: 1574544
+17:01:13 GiPyS - next repoID: 1574555
+17:01:19 GiPyS - next repoID: 1574562
+17:01:25 GiPyS - next repoID: 1574594
+17:01:33 GiPyS - next repoID: 1574629
+17:05:29 GiPyS - next repoID: 1574634
+17:08:38 GiPyS - next repoID: 1574681
+17:08:49 GiPyS - next repoID: 1574684
+17:09:54 GiPyS - next repoID: 1574697
+17:11:13 GiPyS - next repoID: 1574741
+17:11:19 GiPyS - next repoID: 1574748
+17:11:28 GiPyS - next repoID: 1574763
+17:11:44 GiPyS - next repoID: 1574773
+17:11:53 GiPyS - next repoID: 1574778
+17:12:06 GiPyS - next repoID: 1574798
+17:12:11 GiPyS - next repoID: 1574826
+17:12:58 GiPyS - next repoID: 1574903
+17:13:12 GiPyS - next repoID: 1574916
+17:13:22 GiPyS - next repoID: 1574918
+17:13:33 GiPyS - next repoID: 1574927
+17:13:36 GiPyS - next repoID: 1574954
+17:14:09 GiPyS - next repoID: 1574955
+17:14:19 GiPyS - next repoID: 1574970
+17:14:29 GiPyS - next repoID: 1574998
+17:14:38 GiPyS - next repoID: 1574999
+17:14:49 GiPyS - next repoID: 1575000
+17:17:12 GiPyS - next repoID: 1575002
+17:17:21 GiPyS - next repoID: 1575032
+17:17:41 GiPyS - next repoID: 1575067
+17:17:50 GiPyS - next repoID: 1575082
+17:17:55 GiPyS - next repoID: 1575105
+17:19:00 GiPyS - next repoID: 1575126
+17:19:06 GiPyS - next repoID: 1575162
+17:21:24 GiPyS - next repoID: 1575185
+17:21:27 GiPyS - next repoID: 1575265
+17:21:35 GiPyS - next repoID: 1575268
+17:21:47 GiPyS - next repoID: 1575270
+17:22:02 GiPyS - next repoID: 1575273
+17:22:20 GiPyS - next repoID: 1575291
+17:22:32 GiPyS - next repoID: 1575292
+17:22:42 GiPyS - next repoID: 1575293
+17:23:05 GiPyS - next repoID: 1575295
+17:23:12 GiPyS - next repoID: 1575298
+17:23:21 GiPyS - next repoID: 1575307
+17:23:41 GiPyS - next repoID: 1575319
+17:23:58 GiPyS - next repoID: 1575320
+17:24:08 GiPyS - next repoID: 1575327
+17:24:51 GiPyS - next repoID: 1575329
+17:25:51 GiPyS - next repoID: 1575341
+17:31:03 GiPyS - next repoID: 1575343
+17:31:19 GiPyS - next repoID: 1575345
+17:31:42 GiPyS - next repoID: 1575349
+17:32:10 GiPyS - next repoID: 1575354
+17:32:32 GiPyS - next repoID: 1575355
+17:32:58 GiPyS - next repoID: 1575362
+17:33:40 GiPyS - next repoID: 1575372
+17:34:05 GiPyS - next repoID: 1575378
+17:34:37 GiPyS - next repoID: 1575379
+17:35:03 GiPyS - next repoID: 1575396
+17:35:17 GiPyS - next repoID: 1575408
+17:36:02 GiPyS - next repoID: 1575468
+17:36:39 GiPyS - next repoID: 1575518
+17:37:06 GiPyS - next repoID: 1575526
+17:38:24 GiPyS - next repoID: 1575581
+17:38:32 GiPyS - next repoID: 1575632
+17:38:45 GiPyS - next repoID: 1575633
+17:39:21 GiPyS - next repoID: 1575635
+17:39:31 GiPyS - next repoID: 1575642
+17:39:48 GiPyS - next repoID: 1575719
+17:41:03 GiPyS - next repoID: 1575745
+17:41:39 GiPyS - next repoID: 1575750
+17:42:04 GiPyS - next repoID: 1575771
+17:42:38 Touri - tour, SCAN_dm3i6 EXCEPTION:[Errno 12] Cannot allocate memory
+17:42:38 Touri - tour, consecutiveExceptionCounter: 1
+17:42:38 GiPyS - next repoID: 1575787
+17:42:39 GiPySo-getRewinder, Backing off for 0 seconds
+17:42:39 GiPySo-getRewinder, Backing off for 0 seconds
+17:42:40 GiPySo-getRewinder, Backing off for 0 seconds
+17:42:40 GiPySo-getRewinder, Backing off for 4 seconds
+17:42:45 GiPySo-getRewinder, Backing off for 3 seconds
+17:42:48 GiPySo-getRewinder, Backing off for 29 seconds
+17:43:18 GiPySo-getRewinder, Backing off for 35 seconds
+17:43:53 GiPySo-getRewinder, Backing off for 39 seconds
+17:44:33 GiPySo-getRewinder, Backing off for 7 seconds
+17:44:41 GiPySo-getRewinder, Backing off for 37 seconds
+17:45:18 GiPySo-getRewinder, Issue creating rewinder for repoID: 1575787, could not be resolved after 10 attempts.  Returning None.
+17:45:18 Touri - tour, consecutiveExceptionCounter: 1
+17:45:18 GiPyS - next repoID: 1575803
+17:45:19 GiPySo-getRewinder, Backing off for 0 seconds
+17:45:20 GiPySo-getRewinder, Backing off for 1 seconds
+17:45:21 GiPySo-getRewinder, Backing off for 2 seconds
+17:45:24 GiPySo-getRewinder, Backing off for 7 seconds
+17:45:31 GiPySo-getRewinder, Backing off for 4 seconds
+17:45:36 GiPySo-getRewinder, Backing off for 16 seconds
+17:45:52 GiPySo-getRewinder, Backing off for 5 seconds
+17:45:58 GiPySo-getRewinder, Backing off for 5 seconds
+17:46:03 GiPySo-getRewinder, Backing off for 12 seconds
+17:46:16 GiPySo-getRewinder, Backing off for 28 seconds
+17:46:44 GiPySo-getRewinder, Issue creating rewinder for repoID: 1575803, could not be resolved after 10 attempts.  Returning None.
+17:46:44 Touri - tour, consecutiveExceptionCounter: 1
+17:47:35 GiPyS - next repoID: 1575837
+17:47:36 GiPySo-getRewinder, Backing off for 0 seconds
+17:47:36 GiPySo-getRewinder, Backing off for 1 seconds
+17:47:38 GiPySo-getRewinder, Backing off for 2 seconds
+17:47:40 GiPySo-getRewinder, Backing off for 2 seconds
+17:47:43 GiPySo-getRewinder, Backing off for 0 seconds
+17:47:44 GiPySo-getRewinder, Backing off for 19 seconds
+17:48:03 GiPySo-getRewinder, Backing off for 25 seconds
+17:48:29 GiPySo-getRewinder, Backing off for 3 seconds
+17:48:32 GiPySo-getRewinder, Backing off for 23 seconds
+17:48:56 GiPySo-getRewinder, Backing off for 25 seconds
+17:49:21 GiPySo-getRewinder, Issue creating rewinder for repoID: 1575837, could not be resolved after 10 attempts.  Returning None.
+17:49:21 Touri - tour, consecutiveExceptionCounter: 1
+17:49:21 GiPyS - next repoID: 1575848
+17:49:22 GiPySo-getRewinder, Backing off for 0 seconds
+17:49:23 GiPySo-getRewinder, Backing off for 1 seconds
+17:49:25 GiPySo-getRewinder, Backing off for 1 seconds
+17:49:26 GiPySo-getRewinder, Backing off for 2 seconds
+17:49:29 GiPySo-getRewinder, Backing off for 7 seconds
+17:49:36 GiPySo-getRewinder, Backing off for 7 seconds
+17:49:44 GiPySo-getRewinder, Backing off for 38 seconds
+17:50:23 GiPySo-getRewinder, Backing off for 17 seconds
+17:50:40 GiPySo-getRewinder, Backing off for 10 seconds
+17:50:51 GiPySo-getRewinder, Backing off for 15 seconds
+17:51:06 GiPySo-getRewinder, Issue creating rewinder for repoID: 1575848, could not be resolved after 10 attempts.  Returning None.
+17:51:06 Touri - tour, consecutiveExceptionCounter: 1
+17:51:06 GiPyS - next repoID: 1575890
+17:51:07 GiPySo-getRewinder, Backing off for 0 seconds
+17:51:07 GiPySo-getRewinder, Backing off for 0 seconds
+17:51:08 GiPySo-getRewinder, Backing off for 1 seconds
+17:51:10 GiPySo-getRewinder, Backing off for 6 seconds
+17:51:17 GiPySo-getRewinder, Backing off for 6 seconds
+17:51:23 GiPySo-getRewinder, Backing off for 6 seconds
+17:51:30 GiPySo-getRewinder, Backing off for 0 seconds
+17:51:31 GiPySo-getRewinder, Backing off for 3 seconds
+17:51:34 GiPySo-getRewinder, Backing off for 26 seconds
+17:52:01 GiPySo-getRewinder, Backing off for 16 seconds
+17:52:17 GiPySo-getRewinder, Issue creating rewinder for repoID: 1575890, could not be resolved after 10 attempts.  Returning None.
+17:52:17 Touri - tour, consecutiveExceptionCounter: 1
+17:52:17 GiPyS - next repoID: 1575903
+17:52:20 GiPyS - next repoID: 1575986
+17:53:55 GiPyS - next repoID: 1575998
+17:54:58 GiPyS - next repoID: 1576005
+17:55:42 GiPyS - next repoID: 1576020
+17:57:22 GiPyS - next repoID: 1576029
+17:58:18 GiPyS - next repoID: 1576032
+17:58:33 GiPyS - next repoID: 1576046
+17:59:25 GiPyS - next repoID: 1576052
+18:00:27 Touri - tour, SCAN_dm3i6 EXCEPTION:[Errno 12] Cannot allocate memory
+18:00:27 Touri - tour, consecutiveExceptionCounter: 1
+18:01:11 GiPyS - next repoID: 1576109
+18:01:12 GiPySo-getRewinder, Backing off for 0 seconds
+18:01:12 GiPySo-getRewinder, Backing off for 1 seconds
+18:01:45 Touri - tour, SCAN_dm3i6 EXCEPTION:[Errno 12] Cannot allocate memory
+18:01:45 Touri - tour, consecutiveExceptionCounter: 2
+18:01:45 GiPyS - next repoID: 1576110
+18:01:45 GiPySo-getRewinder, Backing off for 0 seconds
+18:01:46 GiPySo-getRewinder, Backing off for 1 seconds
+18:01:47 GiPySo-getRewinder, Backing off for 0 seconds
+18:01:47 GiPySo-getRewinder, Backing off for 2 seconds
+18:01:50 GiPySo-getRewinder, Backing off for 11 seconds
+18:02:01 GiPySo-getRewinder, Backing off for 17 seconds
+18:02:19 GiPySo-getRewinder, Backing off for 6 seconds
+18:02:25 GiPySo-getRewinder, Backing off for 10 seconds
+18:02:35 GiPySo-getRewinder, Backing off for 0 seconds
+18:02:36 GiPySo-getRewinder, Backing off for 20 seconds
+18:02:56 GiPySo-getRewinder, Issue creating rewinder for repoID: 1576110, could not be resolved after 10 attempts.  Returning None.
+18:02:56 Touri - tour, consecutiveExceptionCounter: 2
+18:02:56 GiPyS - next repoID: 1576127
+18:02:56 GiPySo-getRewinder, Backing off for 0 seconds
+18:02:57 GiPySo-getRewinder, Backing off for 1 seconds
+18:02:58 GiPySo-getRewinder, Backing off for 0 seconds
+18:02:58 GiPySo-getRewinder, Backing off for 0 seconds
+18:02:59 GiPySo-getRewinder, Backing off for 10 seconds
+18:03:09 GiPySo-getRewinder, Backing off for 24 seconds
+18:03:35 GiPySo-getRewinder, Backing off for 23 seconds
+18:03:59 GiPySo-getRewinder, Backing off for 17 seconds
+18:04:16 GiPySo-getRewinder, Backing off for 12 seconds
+18:04:29 GiPySo-getRewinder, Backing off for 1 seconds
+18:04:30 GiPySo-getRewinder, Issue creating rewinder for repoID: 1576127, could not be resolved after 10 attempts.  Returning None.
+18:04:30 Touri - tour, consecutiveExceptionCounter: 2
+18:04:30 GiPyS - next repoID: 1576129
+18:04:30 GiPySo-getRewinder, Backing off for 0 seconds
+18:04:30 GiPySo-getRewinder, Backing off for 0 seconds
+18:04:31 GiPySo-getRewinder, Backing off for 3 seconds
+18:04:34 GiPySo-getRewinder, Backing off for 2 seconds
+18:04:37 GiPySo-getRewinder, Backing off for 11 seconds
+18:04:48 GiPySo-getRewinder, Backing off for 1 seconds
+18:04:50 GiPySo-getRewinder, Backing off for 15 seconds
+18:05:05 GiPySo-getRewinder, Backing off for 4 seconds
+18:05:09 GiPySo-getRewinder, Backing off for 4 seconds
+18:05:14 GiPySo-getRewinder, Backing off for 1 seconds
+18:05:15 GiPySo-getRewinder, Issue creating rewinder for repoID: 1576129, could not be resolved after 10 attempts.  Returning None.
+18:05:15 Touri - tour, consecutiveExceptionCounter: 2
+18:05:15 GiPyS - next repoID: 1576160
+18:05:15 GiPySo-getRewinder, Backing off for 0 seconds
+18:05:16 GiPySo-getRewinder, Backing off for 0 seconds
+18:05:16 GiPySo-getRewinder, Backing off for 2 seconds
+18:05:19 GiPySo-getRewinder, Backing off for 1 seconds
+18:05:20 GiPySo-getRewinder, Backing off for 0 seconds
+18:05:20 GiPySo-getRewinder, Backing off for 0 seconds
+18:05:21 GiPySo-getRewinder, Backing off for 6 seconds
+18:05:27 GiPySo-getRewinder, Backing off for 16 seconds
+18:05:44 GiPySo-getRewinder, Backing off for 31 seconds
+18:06:15 GiPySo-getRewinder, Backing off for 0 seconds
+18:06:15 GiPySo-getRewinder, Issue creating rewinder for repoID: 1576160, could not be resolved after 10 attempts.  Returning None.
+18:06:15 Touri - tour, consecutiveExceptionCounter: 2
+18:06:15 GiPyS - next repoID: 1576210
+18:06:16 GiPySo-getRewinder, Backing off for 0 seconds
+18:06:16 GiPySo-getRewinder, Backing off for 0 seconds
+18:06:17 GiPySo-getRewinder, Backing off for 1 seconds
+18:06:18 GiPySo-getRewinder, Backing off for 0 seconds
+18:06:18 GiPySo-getRewinder, Backing off for 10 seconds
+18:06:29 GiPySo-getRewinder, Backing off for 3 seconds
+18:06:32 GiPySo-getRewinder, Backing off for 5 seconds
+18:06:38 GiPySo-getRewinder, Backing off for 7 seconds
+18:06:45 GiPySo-getRewinder, Backing off for 20 seconds
+18:07:05 GiPySo-getRewinder, Backing off for 20 seconds
+18:07:26 GiPySo-getRewinder, Issue creating rewinder for repoID: 1576210, could not be resolved after 10 attempts.  Returning None.
+18:07:26 Touri - tour, consecutiveExceptionCounter: 2
+18:07:26 GiPyS - next repoID: 1576211
+18:07:26 GiPySo-getRewinder, Backing off for 0 seconds
+18:07:27 GiPySo-getRewinder, Backing off for 0 seconds
+18:07:28 GiPySo-getRewinder, Backing off for 0 seconds
+18:07:28 GiPySo-getRewinder, Backing off for 4 seconds
+18:07:43 GiPyS - next repoID: 1576235
+18:07:46 GiPyS - next repoID: 1576265
+18:07:49 GiPyS - next repoID: 1576272
+18:08:00 GiPyS - next repoID: 1576278
+18:08:36 GiPyS - get_json, Giving up on url https://api.github.com/repos/alron/CraftBukkit/languages after 5 attempts
+18:08:56 GiPyS - next repoID: 1576291
+18:09:01 GiPyS - next repoID: 1576302
+18:09:06 GiPyS - next repoID: 1576310
+18:09:22 GiPyS - next repoID: 1576333
+18:09:39 GiPyS - next repoID: 1576355
+18:09:57 GiPyS - next repoID: 1576361
+18:10:10 GiPyS - next repoID: 1576395
+18:10:15 GiPyS - next repoID: 1576411
+18:10:25 GiPyS - next repoID: 1576481
+18:11:01 GiPyS - next repoID: 1576517
+18:11:03 GiPyS - next repoID: 1576532
+18:11:43 GiPyS - next repoID: 1576599
+18:11:53 GiPyS - next repoID: 1576601
+18:11:59 GiPyS - next repoID: 1576602
+18:12:04 GiPyS - next repoID: 1576619
+18:12:06 GiPyS - next repoID: 1576658
+18:12:09 GiPyS - next repoID: 1576713
+18:12:11 GiPyS - next repoID: 1576736
+18:12:17 GiPyS - next repoID: 1576742
+18:12:22 GiPyS - next repoID: 1576747
+18:13:21 GiPyS - next repoID: 1576801
+18:13:25 GiPyS - next repoID: 1576820
+18:13:29 GiPyS - next repoID: 1576821
+18:13:36 GiPyS - next repoID: 1576826
+18:14:10 GiPyS - next repoID: 1576831
+18:15:36 GiPyS - next repoID: 1576842
+18:15:46 GiPyS - next repoID: 1576865
+18:15:56 GiPyS - next repoID: 1576906
+18:16:03 GiPyS - next repoID: 1576923
+18:16:14 GiPyS - next repoID: 1576924
+18:16:18 GiPyS - next repoID: 1577016
+18:16:23 GiPyS - next repoID: 1577021
+18:17:59 GiPyS - next repoID: 1577059
+18:18:27 GiPyS - next repoID: 1577066
+18:18:34 GiPyS - next repoID: 1577118
+18:18:50 GiPyS - next repoID: 1577180
+18:18:54 GiPyS - next repoID: 1577239
+18:18:59 GiPyS - next repoID: 1577265
+18:19:06 GiPyS - next repoID: 1577277
+18:19:10 GiPyS - next repoID: 1577278
+18:19:54 GiPyS - next repoID: 1577310
+18:20:04 GiPyS - next repoID: 1577441
+18:20:13 GiPyS - next repoID: 1577450
+18:20:21 GiPyS - next repoID: 1577471
+18:20:24 GiPyS - next repoID: 1577473
+18:20:28 GiPyS - next repoID: 1577477
+18:20:32 GiPyS - next repoID: 1577482
+18:21:37 GiPyS - next repoID: 1577560
+18:21:42 GiPyS - next repoID: 1577566
+18:21:53 GiPyS - next repoID: 1577567
+18:22:04 GiPyS - next repoID: 1577592
+18:22:12 GiPyS - next repoID: 1577594
+18:22:15 GiPyS - next repoID: 1577620
+18:23:07 GiPyS - next repoID: 1577626
+18:23:15 GiPyS - next repoID: 1577722
+18:23:23 GiPyS - next repoID: 1577733
+18:23:27 GiPyS - next repoID: 1577742
+18:23:30 GiPyS - next repoID: 1577756
+18:24:21 GiPyS - next repoID: 1577772
+18:24:28 GiPyS - next repoID: 1577778
+18:24:35 GiPyS - next repoID: 1577797
+18:24:42 GiPyS - next repoID: 1577854
+18:24:58 GiPyS - next repoID: 1577856
+18:25:02 GiPyS - next repoID: 1577886
+18:25:09 GiPyS - next repoID: 1577921
+18:25:12 GiPyS - next repoID: 1577946
+18:25:22 GiPyS - next repoID: 1577964
+18:25:29 GiPyS - next repoID: 1577991
+18:25:37 GiPyS - next repoID: 1578004
+18:25:44 GiPyS - next repoID: 1578006
+18:25:46 GiPyS - next repoID: 1578018
+18:26:26 GiPyS - next repoID: 1578054
+18:26:34 GiPyS - next repoID: 1578061
+18:26:41 GiPyS - next repoID: 1578064
+18:26:50 GiPyS - next repoID: 1578065
+18:26:59 GiPyS - next repoID: 1578083
+18:27:06 GiPyS - next repoID: 1578124
+18:29:23 GiPyS - next repoID: 1578126
+18:29:33 GiPyS - next repoID: 1578129
+18:29:36 GiPyS - next repoID: 1578134
+18:29:39 GiPyS - next repoID: 1578135
+18:29:47 GiPyS - next repoID: 1578148
+18:29:58 GiPyS - next repoID: 1578167
+18:30:09 GiPyS - next repoID: 1578179
+18:30:20 GiPyS - next repoID: 1578181
+18:30:31 GiPyS - next repoID: 1578207
+18:30:37 GiPyS - next repoID: 1578212
+18:30:47 GiPyS - next repoID: 1578216
+18:30:49 GiPyS - next repoID: 1578238
+18:30:59 GiPyS - next repoID: 1578263
+18:31:07 GiPyS - next repoID: 1578267
+18:31:49 GiPyS - next repoID: 1578318
+18:31:59 GiPyS - next repoID: 1578326
+18:32:13 GiPyS - next repoID: 1578329
+18:32:29 GiPyS - next repoID: 1578344
+18:32:39 GiPyS - next repoID: 1578367
+18:32:43 GiPyS - next repoID: 1578372
+18:32:53 GiPyS - next repoID: 1578391
+18:33:06 GiPyS - next repoID: 1578393
+18:33:16 GiPyS - next repoID: 1578400
+18:33:26 GiPyS - next repoID: 1578404
+18:33:35 GiPyS - next repoID: 1578409
+18:33:44 GiPyS - next repoID: 1578453
+18:33:51 GiPyS - next repoID: 1578456
+18:34:05 GiPyS - next repoID: 1578472
+18:34:13 GiPyS - next repoID: 1578477
+18:34:22 GiPyS - next repoID: 1578481
+18:35:23 GiPyS - next repoID: 1578553
+18:35:27 GiPyS - next repoID: 1578629
+18:35:44 GiPyS - next repoID: 1578641
+18:39:23 GiPyS - next repoID: 1578647
+18:39:49 GiPyS - next repoID: 1578724
+18:39:58 GiPyS - next repoID: 1578781
+18:40:08 GiPyS - next repoID: 1578790
+18:40:12 GiPyS - next repoID: 1578796
+18:40:21 GiPyS - next repoID: 1578817
+18:41:08 GiPyS - next repoID: 1578821
+18:41:17 GiPyS - next repoID: 1578846
+18:41:25 GiPyS - next repoID: 1578854
+18:41:34 GiPyS - next repoID: 1578861
+18:41:42 GiPyS - next repoID: 1578886
+18:41:53 GiPyS - next repoID: 1578898
+18:42:04 GiPyS - next repoID: 1578922
+18:43:19 GiPyS - next repoID: 1578928
+18:43:28 GiPyS - next repoID: 1578931
+18:43:50 GiPyS - next repoID: 1578951
+18:44:01 GiPyS - next repoID: 1578956
+18:44:11 GiPyS - next repoID: 1578969
+18:44:15 GiPyS - next repoID: 1578998
+18:44:26 GiPyS - next repoID: 1579008
+18:45:17 GiPyS - next repoID: 1579010
+18:46:12 GiPyS - next repoID: 1579081
+18:46:24 GiPyS - next repoID: 1579160
+18:46:34 GiPyS - next repoID: 1579178
+18:46:43 GiPyS - next repoID: 1579186
+18:46:57 GiPyS - next repoID: 1579190
+18:47:42 GiPyS - next repoID: 1579197
+18:47:46 GiPyS - next repoID: 1579198
+18:48:12 GiPyS - next repoID: 1579240
+18:48:24 GiPyS - next repoID: 1579279
+18:48:35 GiPyS - next repoID: 1579295
+18:49:26 GiPyS - next repoID: 1579324
+18:49:34 GiPyS - next repoID: 1579329
+18:49:48 GiPyS - next repoID: 1579331
+18:49:58 GiPyS - next repoID: 1579345
+18:50:01 GiPyS - next repoID: 1579357
+18:50:07 GiPyS - next repoID: 1579364
+18:50:16 GiPyS - next repoID: 1579379
+18:50:27 GiPyS - next repoID: 1579434
+18:50:32 GiPyS - next repoID: 1579470
+18:50:36 GiPyS - next repoID: 1579475
+18:50:54 GiPyS - next repoID: 1579483
+18:51:03 GiPyS - next repoID: 1579517
+18:51:14 GiPyS - next repoID: 1579534
+18:51:26 GiPyS - next repoID: 1579559
+18:52:08 GiPyS - next repoID: 1579664
+18:52:19 GiPyS - next repoID: 1579686
+18:52:29 GiPyS - next repoID: 1579698
+18:52:39 GiPyS - next repoID: 1579711
+18:53:04 GiPyS - next repoID: 1579723
+18:53:18 GiPyS - next repoID: 1579733
+18:53:28 GiPyS - next repoID: 1579740
+18:54:20 GiPyS - next repoID: 1579762
+18:54:37 GiPyS - next repoID: 1579779
+18:54:41 GiPyS - next repoID: 1579805
+18:54:52 GiPyS - next repoID: 1579828
+18:55:03 GiPyS - next repoID: 1579829
+18:55:14 GiPyS - next repoID: 1579838
+18:55:26 GiPyS - next repoID: 1579856
+18:55:56 GiPyS - next repoID: 1579870
+18:56:07 GiPyS - next repoID: 1579875
+18:56:18 GiPyS - next repoID: 1579889
+18:56:27 GiPyS - next repoID: 1579905
+18:56:54 GiPyS - next repoID: 1579917
+18:57:18 GiPyS - next repoID: 1579936
+18:57:36 GiPyS - next repoID: 1579940
+18:57:59 GiPyS - next repoID: 1579954
+18:58:02 GiPyS - next repoID: 1579989
+18:58:49 GiPyS - next repoID: 1579993
+18:58:53 GiPyS - next repoID: 1580006
+18:58:55 GiPyS - next repoID: 1580035
+18:58:58 GiPyS - next repoID: 1580036
+18:59:19 GiPyS - next repoID: 1580039
+18:59:31 GiPyS - next repoID: 1580040
+18:59:35 GiPyS - next repoID: 1580047
+18:59:46 GiPyS - next repoID: 1580069
+18:59:59 GiPyS - next repoID: 1580089
+19:00:02 GiPyS - next repoID: 1580095
+19:00:08 GiPyS - next repoID: 1580097
+19:00:23 GiPyS - next repoID: 1580125
+19:00:35 GiPyS - next repoID: 1580134
+19:01:25 GiPyS - next repoID: 1580146
+19:01:38 GiPyS - next repoID: 1580178
+19:02:34 GiPyS - next repoID: 1580332
+19:02:58 GiPyS - next repoID: 1580365
+19:03:13 GiPyS - next repoID: 1580374
+19:04:50 GiPyS - next repoID: 1580434
+19:05:39 GiPyS - next repoID: 1580458
+19:05:43 GiPyS - next repoID: 1580487
+19:05:49 GiPyS - next repoID: 1580519
+19:06:00 GiPyS - next repoID: 1580552
+19:06:17 GiPyS - next repoID: 1580589
+19:06:26 GiPyS - next repoID: 1580596
+19:06:30 GiPyS - next repoID: 1580600
+19:06:33 GiPyS - next repoID: 1580625
+19:06:47 GiPyS - next repoID: 1580635
+19:07:00 GiPyS - next repoID: 1580642
+19:07:12 GiPyS - next repoID: 1580651
+19:07:23 GiPyS - next repoID: 1580659
+19:08:13 GiPyS - next repoID: 1580759
+19:08:27 GiPyS - next repoID: 1580763
+19:08:39 GiPyS - next repoID: 1580773
+19:08:56 GiPyS - next repoID: 1580787
+19:09:09 GiPyS - next repoID: 1580800
+19:09:12 GiPyS - next repoID: 1580830
+19:09:29 GiPyS - next repoID: 1580839
+19:09:36 GiPyS - next repoID: 1580860
+19:09:44 GiPyS - next repoID: 1580897
+19:10:26 GiPyS - next repoID: 1580898
+19:11:14 GiPyS - next repoID: 1580927
+19:11:28 GiPyS - next repoID: 1580952
+19:11:38 GiPyS - next repoID: 1581018
+19:12:45 GiPyS - next repoID: 1581022
+19:12:55 GiPyS - next repoID: 1581039
+19:13:07 GiPyS - next repoID: 1581041
+19:13:14 GiPyS - next repoID: 1581053
+19:13:24 GiPyS - next repoID: 1581054
+19:13:39 GiPyS - next repoID: 1581065
+19:13:52 GiPyS - next repoID: 1581067
+19:13:59 GiPyS - next repoID: 1581117
+19:14:59 GiPyS - next repoID: 1581118
+19:15:06 GiPyS - next repoID: 1581120
+19:15:17 GiPyS - next repoID: 1581133
+19:16:04 GiPyS - next repoID: 1581176
+19:16:30 GiPyS - next repoID: 1581196
+19:16:42 GiPyS - next repoID: 1581223
+19:16:55 GiPyS - next repoID: 1581225
+19:17:08 GiPyS - next repoID: 1581294
+19:17:19 GiPyS - next repoID: 1581307
+19:17:33 GiPyS - next repoID: 1581328
+19:17:59 GiPyS - next repoID: 1581376
+19:18:11 GiPyS - next repoID: 1581386
+19:21:07 GiPyS - next repoID: 1581395
+19:21:53 GiPyS - next repoID: 1581416
+19:21:58 GiPyS - next repoID: 1581421
+19:22:09 GiPyS - next repoID: 1581491
+19:22:20 GiPyS - next repoID: 1581515
+19:22:31 GiPyS - next repoID: 1581526
+19:22:53 GiPyS - next repoID: 1581535
+19:23:04 GiPyS - next repoID: 1581545
+19:23:08 GiPyS - next repoID: 1581560
+19:23:15 GiPyS - next repoID: 1581567
+19:23:36 GiPyS - next repoID: 1581590
+19:28:21 GiPyS - next repoID: 1581627
+19:29:12 GiPyS - next repoID: 1581630
+19:29:30 GiPyS - next repoID: 1581695
+19:29:47 GiPyS - next repoID: 1581703
+19:30:06 GiPyS - next repoID: 1581739
+19:30:47 GiPyS - next repoID: 1581825
+19:31:10 GiPyS - next repoID: 1581833
+19:31:18 GiPyS - next repoID: 1581876
+19:31:32 GiPyS - next repoID: 1581900
+19:31:44 GiPyS - next repoID: 1581916
+19:31:51 GiPyS - next repoID: 1581924
+19:32:03 GiPyS - next repoID: 1581926
+19:32:17 GiPyS - next repoID: 1581928
+19:32:36 GiPyS - next repoID: 1581930
+19:32:55 GiPyS - next repoID: 1581940
+19:33:41 GiPyS - next repoID: 1581952
+19:33:56 GiPyS - next repoID: 1581975
+19:34:03 GiPyS - next repoID: 1582004
+19:34:13 GiPyS - next repoID: 1582015
+19:34:47 GiPyS - next repoID: 1582025
+19:35:39 GiPyS - next repoID: 1582068
+19:35:55 GiPyS - next repoID: 1582101
+19:36:49 GiPyS - next repoID: 1582118
+19:37:05 GiPyS - next repoID: 1582139
+19:37:11 GiPyS - next repoID: 1582229
+19:37:26 GiPyS - next repoID: 1582234
+19:37:45 GiPyS - next repoID: 1582240
+19:38:02 GiPyS - next repoID: 1582254
+19:38:42 GiPyS - next repoID: 1582287
+19:38:51 GiPyS - next repoID: 1582306
+19:39:06 GiPyS - next repoID: 1582328
+19:39:22 GiPyS - next repoID: 1582354
+19:39:46 GiPyS - next repoID: 1582381
+19:40:07 GiPyS - next repoID: 1582416
+19:40:24 GiPyS - next repoID: 1582456
+19:40:35 GiPyS - next repoID: 1582505
+19:41:26 GiPyS - next repoID: 1582538
+19:41:41 GiPyS - next repoID: 1582543
+19:41:53 GiPyS - next repoID: 1582559
+19:42:03 GiPyS - next repoID: 1582563
+19:42:12 GiPyS - next repoID: 1582565
+19:42:16 GiPyS - next repoID: 1582573
+19:42:36 GiPyS - next repoID: 1582599
+19:42:46 GiPyS - next repoID: 1582634
+19:42:49 GiPyS - next repoID: 1582646
+19:43:04 GiPyS - next repoID: 1582685
+19:43:17 GiPyS - next repoID: 1582699
+19:43:31 GiPyS - next repoID: 1582727
+19:44:13 GiPyS - next repoID: 1582815
+19:44:26 GiPyS - next repoID: 1582825
+19:45:24 GiPyS - next repoID: 1582845
+19:45:41 GiPyS - next repoID: 1582848
+19:45:59 GiPyS - next repoID: 1582852
+19:46:15 GiPyS - next repoID: 1582877
+19:46:32 GiPyS - next repoID: 1582926
+19:46:43 GiPyS - next repoID: 1582931
+19:47:13 GiPyS - next repoID: 1582964
+19:48:07 GiPyS - next repoID: 1583076
+19:48:13 GiPyS - next repoID: 1583091
+19:49:39 GiPyS - next repoID: 1583092
+19:49:52 GiPyS - next repoID: 1583100
+19:50:15 GiPyS - next repoID: 1583101
+19:50:32 GiPyS - next repoID: 1583134
+19:50:53 GiPyS - next repoID: 1583148
+19:51:18 GiPyS - next repoID: 1583166
+19:51:28 GiPyS - next repoID: 1583179
+19:51:44 GiPyS - next repoID: 1583186
+19:51:49 GiPyS - next repoID: 1583192
+19:52:03 GiPyS - next repoID: 1583230
+19:52:32 GiPyS - next repoID: 1583247
+19:53:00 GiPyS - next repoID: 1583257
+19:53:53 GiPyS - next repoID: 1583294
+19:53:59 GiPyS - next repoID: 1583314
+19:54:47 GiPyS - next repoID: 1583323
+19:54:54 GiPyS - next repoID: 1583341
+19:55:05 GiPyS - next repoID: 1583357
+19:55:10 GiPyS - next repoID: 1583369
+19:55:15 GiPyS - next repoID: 1583424
+19:55:28 GiPyS - next repoID: 1583437
+19:56:08 GiPyS - next repoID: 1583522
+19:56:21 GiPyS - next repoID: 1583536
+19:57:56 GiPyS - next repoID: 1583551
+19:58:14 GiPyS - next repoID: 1583557
+19:58:33 GiPyS - next repoID: 1583562
+19:58:58 GiPyS - next repoID: 1583566
+19:59:02 GiPyS - next repoID: 1583575
+19:59:19 GiPyS - next repoID: 1583598
+20:00:49 GiPyS - next repoID: 1583618
+20:00:59 GiPyS - next repoID: 1583674
+20:01:13 GiPyS - next repoID: 1583678
+20:01:24 GiPyS - next repoID: 1583705
+20:01:45 GiPyS - next repoID: 1583709
+20:02:10 GiPyS - next repoID: 1583710
+20:04:49 Touri - tour, SCAN_dm3i6 EXCEPTION:[Errno 12] Cannot allocate memory
+20:04:49 Touri - tour, consecutiveExceptionCounter: 1
+20:04:49 GiPyS - next repoID: 1583716
+20:04:49 GiPySo-getRewinder, Backing off for 0 seconds
+20:04:49 GiPySo-getRewinder, Backing off for 0 seconds
+20:04:50 GiPySo-getRewinder, Backing off for 2 seconds
+20:04:52 GiPySo-getRewinder, Backing off for 7 seconds
+20:04:59 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:04:59 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:02 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:09 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:19 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:19 GiPyS - get_json, Giving up on url https://api.github.com/repositories/1583716 after 5 attempts
+20:05:19 GiPySo-getRewinder, Backing off for 0 seconds
+20:05:19 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:19 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:21 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:23 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:28 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:28 GiPyS - get_json, Giving up on url https://api.github.com/repositories/1583716 after 5 attempts
+20:05:28 GiPySo-getRewinder, Backing off for 12 seconds
+20:05:40 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:41 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:41 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:43 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:53 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:05:53 GiPyS - get_json, Giving up on url https://api.github.com/repositories/1583716 after 5 attempts
+20:05:53 GiPySo-getRewinder, Backing off for 30 seconds
+20:06:23 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:06:23 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:06:23 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:06:30 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:06:44 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:06:44 GiPyS - get_json, Giving up on url https://api.github.com/repositories/1583716 after 5 attempts
+20:06:44 GiPySo-getRewinder, Backing off for 22 seconds
+20:07:06 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:06 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:08 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:09 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:13 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:13 GiPyS - get_json, Giving up on url https://api.github.com/repositories/1583716 after 5 attempts
+20:07:13 GiPySo-getRewinder, Backing off for 6 seconds
+20:07:19 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:20 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:22 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:26 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:38 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno -2] Name or service not known>
+20:07:38 GiPyS - get_json, Giving up on url https://api.github.com/repositories/1583716 after 5 attempts
+20:07:38 GiPySo-getRewinder, Backing off for 29 seconds
+20:08:07 GiPySo-getRewinder, Issue creating rewinder for repoID: 1583716, could not be resolved after 10 attempts.  Returning None.
+20:08:07 Touri - tour, consecutiveExceptionCounter: 1
