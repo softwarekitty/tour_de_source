@@ -30,7 +30,7 @@ d = Depot(l)
 # t = LookiLoo(d, e, p, to, PythonRegexScanner(l), s, l)
 
 # test normal operation or run normally
-# self.since = 15249308 will be a small, fast repo, 15249311 is two repos later
+# 15249309 will be a small, fast repo, 15249311 is two repos later
 s = [GithubPythonSourcer("20Commits", e1, p1, l, "investigation" + smallWords[0] + ":whorysq5im5ztb", 15249309, 15249311)]
 t = Tourist(d, e1, p1, to, PythonRegexScanner(l), s, l, "Tour of bot1 ended with status: ")
 

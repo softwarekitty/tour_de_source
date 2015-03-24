@@ -2,7 +2,7 @@ import util
 import glob
 import shutil
 
-ignoreFileNames = ["merge.py", "distribute.py", "main.py", "util.py", "webappIdea.py"]
+ignoreFileNames = ["merge.py", "distribute.py", "main.py", "util.py", "webappIdea.py", "clean.py"]
 ignoreFilesList = [util.BASE_PATH + g for g in ignoreFileNames]
 pythonFilesInRoot = glob.glob(util.BASE_PATH + "*.py")
 
