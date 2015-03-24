@@ -49,7 +49,6 @@ class Depot:
             logger.info("Depot - __init__, the file " + dbFilePath + " already exists and so no new Tour table has been created")
 
 
-
 # ############################# immutable getters ###########################
 
     def getBasePath(self):

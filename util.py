@@ -12,9 +12,14 @@ from email.MIMEText import MIMEText
 from email import Encoders
 import logging
 import os
+import base64
+import json
+import urllib2
+import random
 import logging.handlers
 import sh
 from os.path import expanduser
+import commands
 
 HOME = expanduser("~")
 LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
@@ -117,6 +122,87 @@ def base36encode(number):
         number, i = divmod(number, len(ALPHABET))
         base36 = ALPHABET[i] + base36
     return sign + base36
+
+
+# no exception if successfully able to erase whatever is at path
+def erasePath(path, logger=None):
+    if os.path.isfile(path):
+        try:
+            os.remove(path)
+        except Exception as e:
+            if logger:
+                logger.warning("failure to erase file: " + path + " exception: " + e.strerror)
+            raise e
+    else:
+        try:
+            cmd = "rm -rf " + path
+            result = commands.getstatusoutput(cmd)
+            if result is None:
+                raise RuntimeWarning("None result in util.erasePath")
+            if result[0] != 0:
+                raise RuntimeWarning("util.erasePath has non-zero result for trying to delete path: " + path)
+        except Exception as e:
+            if logger:
+                logger.warning("failure to erase non-file: " + path + " exception: " + e.strerror)
+            raise e
+
+
+def get_authorized_request(url, credentials):
+    encoded64 = base64.encodestring(credentials).replace('\n', '')
+    request = urllib2.Request(url)
+    request.add_header("Authorization", "Basic %s" % encoded64)
+    return request
+
+
+def get_json(logger, url, credentials):
+
+    attempt_counter = 0
+    attempt_limit = 5
+    backoff_counter = 1
+    max_waitS = 180
+
+    # keep trying until we get the json from github
+    while True:
+        emergency_waitS = 2 ** backoff_counter
+        if emergency_waitS < max_waitS:
+            backoff_counter += 1
+        else:
+            emergency_waitS = max_waitS
+
+        try:
+            # first check rate limit - does not count against you
+            check_limit_url = "https://api.github.com/rate_limit"
+            rateJSON = json.load(urllib2.urlopen(get_authorized_request(check_limit_url, credentials)))
+            limit_remaining = rateJSON['resources']['core']['remaining']
+            if limit_remaining % 10 == 0:
+                logger.info("GiPyS - limit_remaining: " + str(limit_remaining))
+
+            # don't push the rate limit if none remain - wait for reset
+            if limit_remaining <= 1:
+                limit_resetS = rateJSON['resources']['core']['reset']
+                nowS = calendar.timegm(time.gmtime())
+                time_to_waitS = limit_resetS - (nowS - 2)
+                logger.critical("GiPyS - get_json, blocked by rate limit: " + str(limit_remaining) + " ttwS: " + str(time_to_waitS))
+                time.sleep(time_to_waitS)
+
+            urlJSON = json.load(urllib2.urlopen(get_authorized_request(url), credentials))
+            logger.debug("GiPyS - get_json Success, url: " + url + " limit_remaining: " + str(limit_remaining))
+            return urlJSON
+        except urllib2.HTTPError, e:
+            logger.error("GiPyS - get_json, HTTPError!!!")
+        except Exception as e:
+            logger.critical("GiPyS - get_json, Unexpected roblem with getting json: " + str(e))
+
+        # break out of this cycle for troublesome urls
+        attempt_counter += 1
+        if attempt_counter >= attempt_limit:
+            logger.critical("GiPyS - get_json, Giving up on url " + url + " after " + str(attempt_counter) + " attempts")
+            raise Exception("this url is not worth the trouble: " + url)
+
+        # back off a random time to avoid looking like such a robot
+        backoffS = random.randrange(emergency_waitS)
+        logger.warning("GiPyS - get_json, backing off with backoffS: " + str(backoffS) + " attempt: " + str(attempt_counter) + "/" + str(attempt_limit) + " url: " + url)
+        time.sleep(backoffS)
 
 
 # modified from python 2.7.5 source...
