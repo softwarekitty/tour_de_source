@@ -39,10 +39,12 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
                     for x in glob.glob(repo_path + ".*"):
                         util.erasePath(x, logger)
                 git.repo.base.Repo.clone_from(clone_url, repo_path, None, branch=default_branch)
-            except:
-                pass
+                break
+            except Exception as e:
+                logger.info("GiPyS - nCoGiRe, error: " + str(e))
 
     # now get the time and sha for commits
+    exit()
     commitList = []
     repoGit = git.Git(repo_path)
     hexshas = repoGit.log("--format=format:\"%ct %H\"").split('\n')

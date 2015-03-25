@@ -84,3 +84,26 @@
 20:02:50 Depot - ***************init Depot**********.
 20:02:50 initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807 credentials: investigationbot:cro0thiezlutrl
 20:02:50 Looki - tour, SCAN_6kl9l RUNNING
+21:26:02 Depot - ***************init Depot**********.
+21:26:02 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+21:26:30 GiPyS - next repoID: 15249309
+21:26:33 Touri - tour, SCAN_cq4ml  has been cancelled by the host with EXCEPTION:SystemExit
+21:26:33 Touri - tour, SCAN_cq4ml Tour Canceled: True
+21:26:33 Touri - tour, SCAN_cq4ml FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed
+21:28:00 Depot - ***************init Depot**********.
+21:28:00 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+21:28:24 GiPyS - next repoID: 15249309
+21:28:30 GiPySo-getRewinder, Backing off for 0 seconds
+21:28:37 GiPySo-getRewinder, Backing off for 1 seconds
+21:28:44 GiPySo-getRewinder, Backing off for 1 seconds
+21:28:46 GiPySo-getRewinder, Backing off for 0 seconds
+21:28:50 GiPySo-getRewinder, Backing off for 11 seconds
+21:28:59 Touri - tour, SCAN_f4511  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+21:28:59 Touri - tour, SCAN_f4511 Tour Canceled: True
+21:28:59 Touri - tour, SCAN_f4511 FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed
+21:29:15 Depot - ***************init Depot**********.
+21:29:15 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+21:29:29 GiPyS - next repoID: 15249309
+21:29:30 Touri - tour, SCAN_1lzo6  has been cancelled by the host with EXCEPTION:SystemExit
+21:29:30 Touri - tour, SCAN_1lzo6 Tour Canceled: True
+21:29:30 Touri - tour, SCAN_1lzo6 FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed

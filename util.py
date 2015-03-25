@@ -119,6 +119,8 @@ def base36encode(number):
 
 # no exception if successfully able to erase whatever is at path
 def erasePath(path, logger=None):
+    if logger:
+        logger.info("erasing path: " + path)
     if os.path.isfile(path):
         try:
             os.remove(path)

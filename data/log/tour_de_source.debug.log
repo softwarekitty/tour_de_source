@@ -529,3 +529,125 @@ Tue, 24 Mar 20:03:26 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 language
 Tue, 24 Mar 20:03:32 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/ambition/languages limit_remaining: 38
 Tue, 24 Mar 20:03:32 INFO-GiPyS - refresh_repos, repoID:36 hasPython: False name: ambition
 Tue, 24 Mar 20:03:32 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 2032, u'Ruby': 21237}
+Tue, 24 Mar 21:26:02 CRITICAL-Depot - ***************init Depot**********.
+Tue, 24 Mar 21:26:02 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/./R1427245370_6kl9l.db
+Tue, 24 Mar 21:26:02 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/./R1427247170_fjmvx.db
+Tue, 24 Mar 21:26:02 INFO-Depot - success trying to renew.
+Tue, 24 Mar 21:26:02 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Tue, 24 Mar 21:26:02 CRITICAL-initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+Tue, 24 Mar 21:26:02 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("cq4ml", 1427250362, 1427250362, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427250362_cq4ml.db")
+Tue, 24 Mar 21:26:02 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427250362_cq4ml.db
+Tue, 24 Mar 21:26:02 INFO-Touri - tour, SCAN_cq4ml RUNNING
+Tue, 24 Mar 21:26:02 DEBUG-GiPyS - next since: 15249308 len(repos): 0
+Tue, 24 Mar 21:26:02 DEBUG-GiPyS - refresh_repos, lastRepo: 15249308 since: 15249308 len(repos): 0
+Tue, 24 Mar 21:26:08 INFO-GiPyS - limit_remaining: 60
+Tue, 24 Mar 21:26:23 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories?since=15249308 limit_remaining: 60
+Tue, 24 Mar 21:26:25 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/madisonmay/CommonRegex/languages limit_remaining: 59
+Tue, 24 Mar 21:26:25 INFO-GiPyS - refresh_repos, repoID:15249309 hasPython: True name: CommonRegex
+Tue, 24 Mar 21:26:25 DEBUG-GiPyS - refresh_repos, since:15249308 len(repos): 0 languagesJSON: {u'Python': 17919}
+Tue, 24 Mar 21:26:27 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/StribogKonsult/Cordova-OrientationLock/languages limit_remaining: 58
+Tue, 24 Mar 21:26:27 INFO-GiPyS - refresh_repos, repoID:15249310 hasPython: False name: Cordova-OrientationLock
+Tue, 24 Mar 21:26:27 DEBUG-GiPyS - refresh_repos, since:15249308 len(repos): 1 languagesJSON: {}
+Tue, 24 Mar 21:26:30 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/gardenias/spring-mobile-learning/languages limit_remaining: 57
+Tue, 24 Mar 21:26:30 INFO-GiPyS - refresh_repos, repoID:15249311 hasPython: False name: spring-mobile-learning
+Tue, 24 Mar 21:26:30 DEBUG-GiPyS - refresh_repos, since:15249308 len(repos): 1 languagesJSON: {}
+Tue, 24 Mar 21:26:30 INFO-GiPyS - refresh_repos, stopped refreshing with stop:15249311 and current repoID: 15249312
+Tue, 24 Mar 21:26:30 CRITICAL-GiPyS - next repoID: 15249309
+Tue, 24 Mar 21:26:33 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories/15249309 limit_remaining: 56
+Tue, 24 Mar 21:26:33 DEBUG-nCoGiRe - default branch name: master
+Tue, 24 Mar 21:26:33 INFO-GiPyS - nCoGiRe, attempt 1 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:26:33 INFO-GiPyS - nCoGiRe, attempt 2 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:26:33 INFO-GiPyS - nCoGiRe, attempt 3 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:26:33 CRITICAL-Touri - tour, SCAN_cq4ml  has been cancelled by the host with EXCEPTION:SystemExit
+Tue, 24 Mar 21:26:33 CRITICAL-Touri - tour, SCAN_cq4ml Tour Canceled: True
+Tue, 24 Mar 21:26:33 CRITICAL-Touri - tour, SCAN_cq4ml FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed
+Tue, 24 Mar 21:28:00 CRITICAL-Depot - ***************init Depot**********.
+Tue, 24 Mar 21:28:00 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/./R1427250362_cq4ml.db
+Tue, 24 Mar 21:28:00 INFO-Depot - success trying to renew.
+Tue, 24 Mar 21:28:00 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Tue, 24 Mar 21:28:00 CRITICAL-initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+Tue, 24 Mar 21:28:00 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("f4511", 1427250480, 1427250480, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427250480_f4511.db")
+Tue, 24 Mar 21:28:00 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427250480_f4511.db
+Tue, 24 Mar 21:28:00 INFO-Touri - tour, SCAN_f4511 RUNNING
+Tue, 24 Mar 21:28:00 DEBUG-GiPyS - next since: 15249308 len(repos): 0
+Tue, 24 Mar 21:28:00 DEBUG-GiPyS - refresh_repos, lastRepo: 15249308 since: 15249308 len(repos): 0
+Tue, 24 Mar 21:28:09 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories?since=15249308 limit_remaining: 55
+Tue, 24 Mar 21:28:16 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/madisonmay/CommonRegex/languages limit_remaining: 54
+Tue, 24 Mar 21:28:16 INFO-GiPyS - refresh_repos, repoID:15249309 hasPython: True name: CommonRegex
+Tue, 24 Mar 21:28:16 DEBUG-GiPyS - refresh_repos, since:15249308 len(repos): 0 languagesJSON: {u'Python': 17919}
+Tue, 24 Mar 21:28:22 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/StribogKonsult/Cordova-OrientationLock/languages limit_remaining: 53
+Tue, 24 Mar 21:28:22 INFO-GiPyS - refresh_repos, repoID:15249310 hasPython: False name: Cordova-OrientationLock
+Tue, 24 Mar 21:28:22 DEBUG-GiPyS - refresh_repos, since:15249308 len(repos): 1 languagesJSON: {}
+Tue, 24 Mar 21:28:24 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/gardenias/spring-mobile-learning/languages limit_remaining: 52
+Tue, 24 Mar 21:28:24 INFO-GiPyS - refresh_repos, repoID:15249311 hasPython: False name: spring-mobile-learning
+Tue, 24 Mar 21:28:24 DEBUG-GiPyS - refresh_repos, since:15249308 len(repos): 1 languagesJSON: {}
+Tue, 24 Mar 21:28:24 INFO-GiPyS - refresh_repos, stopped refreshing with stop:15249311 and current repoID: 15249312
+Tue, 24 Mar 21:28:24 CRITICAL-GiPyS - next repoID: 15249309
+Tue, 24 Mar 21:28:30 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories/15249309 limit_remaining: 51
+Tue, 24 Mar 21:28:30 DEBUG-nCoGiRe - default branch name: master
+Tue, 24 Mar 21:28:30 INFO-GiPyS - nCoGiRe, attempt 1 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:28:30 ERROR-GiPySo-getRewinder, Issue creating rewinder for repoID: 15249309, iteration: 0, exception message: 'GitCommandError' object has no attribute 'strerror'
+Tue, 24 Mar 21:28:30 CRITICAL-GiPySo-getRewinder, Backing off for 0 seconds
+Tue, 24 Mar 21:28:35 INFO-GiPyS - limit_remaining: 50
+Tue, 24 Mar 21:28:37 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories/15249309 limit_remaining: 50
+Tue, 24 Mar 21:28:37 DEBUG-nCoGiRe - default branch name: master
+Tue, 24 Mar 21:28:37 INFO-GiPyS - nCoGiRe, attempt 1 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:28:37 ERROR-GiPySo-getRewinder, Issue creating rewinder for repoID: 15249309, iteration: 1, exception message: 'GitCommandError' object has no attribute 'strerror'
+Tue, 24 Mar 21:28:37 CRITICAL-GiPySo-getRewinder, Backing off for 1 seconds
+Tue, 24 Mar 21:28:44 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories/15249309 limit_remaining: 49
+Tue, 24 Mar 21:28:44 DEBUG-nCoGiRe - default branch name: master
+Tue, 24 Mar 21:28:44 INFO-GiPyS - nCoGiRe, attempt 1 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:28:44 ERROR-GiPySo-getRewinder, Issue creating rewinder for repoID: 15249309, iteration: 2, exception message: 'GitCommandError' object has no attribute 'strerror'
+Tue, 24 Mar 21:28:44 CRITICAL-GiPySo-getRewinder, Backing off for 1 seconds
+Tue, 24 Mar 21:28:46 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories/15249309 limit_remaining: 48
+Tue, 24 Mar 21:28:46 DEBUG-nCoGiRe - default branch name: master
+Tue, 24 Mar 21:28:46 INFO-GiPyS - nCoGiRe, attempt 1 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:28:46 ERROR-GiPySo-getRewinder, Issue creating rewinder for repoID: 15249309, iteration: 3, exception message: 'GitCommandError' object has no attribute 'strerror'
+Tue, 24 Mar 21:28:46 CRITICAL-GiPySo-getRewinder, Backing off for 0 seconds
+Tue, 24 Mar 21:28:50 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories/15249309 limit_remaining: 47
+Tue, 24 Mar 21:28:50 DEBUG-nCoGiRe - default branch name: master
+Tue, 24 Mar 21:28:50 INFO-GiPyS - nCoGiRe, attempt 1 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:28:50 ERROR-GiPySo-getRewinder, Issue creating rewinder for repoID: 15249309, iteration: 4, exception message: 'GitCommandError' object has no attribute 'strerror'
+Tue, 24 Mar 21:28:50 CRITICAL-GiPySo-getRewinder, Backing off for 11 seconds
+Tue, 24 Mar 21:28:59 CRITICAL-Touri - tour, SCAN_f4511  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+Tue, 24 Mar 21:28:59 CRITICAL-Touri - tour, SCAN_f4511 Tour Canceled: True
+Tue, 24 Mar 21:28:59 CRITICAL-Touri - tour, SCAN_f4511 FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed
+Tue, 24 Mar 21:29:15 CRITICAL-Depot - ***************init Depot**********.
+Tue, 24 Mar 21:29:15 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/./R1427250480_f4511.db
+Tue, 24 Mar 21:29:15 INFO-Depot - success trying to renew.
+Tue, 24 Mar 21:29:15 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Tue, 24 Mar 21:29:15 CRITICAL-initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+Tue, 24 Mar 21:29:15 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("1lzo6", 1427250555, 1427250555, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427250555_1lzo6.db")
+Tue, 24 Mar 21:29:15 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427250555_1lzo6.db
+Tue, 24 Mar 21:29:15 INFO-Touri - tour, SCAN_1lzo6 RUNNING
+Tue, 24 Mar 21:29:15 DEBUG-GiPyS - next since: 15249308 len(repos): 0
+Tue, 24 Mar 21:29:15 DEBUG-GiPyS - refresh_repos, lastRepo: 15249308 since: 15249308 len(repos): 0
+Tue, 24 Mar 21:29:24 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories?since=15249308 limit_remaining: 46
+Tue, 24 Mar 21:29:25 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/madisonmay/CommonRegex/languages limit_remaining: 45
+Tue, 24 Mar 21:29:25 INFO-GiPyS - refresh_repos, repoID:15249309 hasPython: True name: CommonRegex
+Tue, 24 Mar 21:29:25 DEBUG-GiPyS - refresh_repos, since:15249308 len(repos): 0 languagesJSON: {u'Python': 17919}
+Tue, 24 Mar 21:29:27 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/StribogKonsult/Cordova-OrientationLock/languages limit_remaining: 44
+Tue, 24 Mar 21:29:27 INFO-GiPyS - refresh_repos, repoID:15249310 hasPython: False name: Cordova-OrientationLock
+Tue, 24 Mar 21:29:27 DEBUG-GiPyS - refresh_repos, since:15249308 len(repos): 1 languagesJSON: {}
+Tue, 24 Mar 21:29:29 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/gardenias/spring-mobile-learning/languages limit_remaining: 43
+Tue, 24 Mar 21:29:29 INFO-GiPyS - refresh_repos, repoID:15249311 hasPython: False name: spring-mobile-learning
+Tue, 24 Mar 21:29:29 DEBUG-GiPyS - refresh_repos, since:15249308 len(repos): 1 languagesJSON: {}
+Tue, 24 Mar 21:29:29 INFO-GiPyS - refresh_repos, stopped refreshing with stop:15249311 and current repoID: 15249312
+Tue, 24 Mar 21:29:29 CRITICAL-GiPyS - next repoID: 15249309
+Tue, 24 Mar 21:29:30 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories/15249309 limit_remaining: 42
+Tue, 24 Mar 21:29:30 DEBUG-nCoGiRe - default branch name: master
+Tue, 24 Mar 21:29:30 INFO-GiPyS - nCoGiRe, attempt 1 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:29:30 INFO-GiPyS - nCoGiRe, error: 'git clone --branch=master -v https://github.com/madisonmay/CommonRegex.git /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/' returned with exit code 128
+stderr: 'fatal: destination path '/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo' already exists and is not an empty directory.
+'
+Tue, 24 Mar 21:29:30 INFO-GiPyS - nCoGiRe, attempt 2 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:29:30 INFO-GiPyS - nCoGiRe, error: 'git clone --branch=master -v https://github.com/madisonmay/CommonRegex.git /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/' returned with exit code 128
+stderr: 'fatal: destination path '/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo' already exists and is not an empty directory.
+'
+Tue, 24 Mar 21:29:30 INFO-GiPyS - nCoGiRe, attempt 3 to remove contents of repo_path: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/ and then clone using clone_url: https://github.com/madisonmay/CommonRegex.git
+Tue, 24 Mar 21:29:30 INFO-GiPyS - nCoGiRe, error: 'git clone --branch=master -v https://github.com/madisonmay/CommonRegex.git /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo/' returned with exit code 128
+stderr: 'fatal: destination path '/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/repo' already exists and is not an empty directory.
+'
+Tue, 24 Mar 21:29:30 CRITICAL-Touri - tour, SCAN_1lzo6  has been cancelled by the host with EXCEPTION:SystemExit
+Tue, 24 Mar 21:29:30 CRITICAL-Touri - tour, SCAN_1lzo6 Tour Canceled: True
+Tue, 24 Mar 21:29:30 CRITICAL-Touri - tour, SCAN_1lzo6 FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed
