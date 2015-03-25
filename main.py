@@ -12,7 +12,7 @@ LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
 import sys
 sys.path.append(LOCAL_PATH)
 
-KendrickMurray:kos8izjfc4dnsa
+# SPLIT_HERE
 # grouping the variables together for ease of multiplication
 cloneSuffix = ""
 smallWords = ["bat", "bee", "bib", "bog", "boo", "box", "bum", "bus"]
@@ -20,7 +20,7 @@ credentials = "investigation" + smallWords[0] + ":whorysq5im5ztb"
 first = 15249309
 stop = 15249309
 endingMessage = "Tour of bot1 ended with status: "
-
+# SPLIT_HERE
 
 BASE_PATH = LOCAL_PATH + cloneSuffix
 LOG_PATH = BASE_PATH + "data/log/"
