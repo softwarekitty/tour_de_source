@@ -32,11 +32,13 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
     else:
         # the path exists and is not empty
         for try_i in range(1, 4):
-            logger.info("GiPyS - nCoGiRe, attempt " + str(try_i) + " to remove contents of repo_path: " + str(repo_path) + " and then clone using clone_url: " + clone_url)
+            logger.debug("nCoGiRe, attempt " + str(try_i) + " to remove contents of repo_path: " + str(repo_path) + " and then clone using clone_url: " + clone_url)
             try:
                 # erase everything in repo_path and then clone project
-                if os.listdir(repo_path):
-                    for x in glob.glob(repo_path + ".*"):
+                repoPathContents = [os.path.join(repo_path, f) for f in os.listdir(repo_path)]
+                logger.info("nCoGiRe, repoPathContents: " + str(repoPathContents))
+                if repoPathContents:
+                    for x in repoPathContents:
                         util.erasePath(x, logger)
                 git.repo.base.Repo.clone_from(clone_url, repo_path, None, branch=default_branch)
                 break
@@ -44,7 +46,6 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
                 logger.info("GiPyS - nCoGiRe, error: " + str(e))
 
     # now get the time and sha for commits
-    exit()
     commitList = []
     repoGit = git.Git(repo_path)
     hexshas = repoGit.log("--format=format:\"%ct %H\"").split('\n')
@@ -54,13 +55,14 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
 
         # this json is what couples each rewinded data source to a particular github project version.  For bitbucket or another source, many of the inner fields should be different, but the three root fields: type, meta and data should be the same for all future sourceJson objects like this.
         sourceJson = json.dumps({"type": "Github", "meta": {"repoID": str(repoID), "default_branch": str(default_branch), "clone_url": clone_url, "name": repo_name}, "data": {"sha": str(pair[1]), "commitS": str(pair[0])}})
+        logger.debug("sourceJSON created: " + sourceJson)
         if len(pair) == 2:
             commitList.append((pair[0], pair[1], sourceJson))
 
     # here we are sorting by the first field of the tuple: the commit time
     commitList.sort(reverse=True)
     nCommits = len(commitList)
-
+    exit()
     if nCommits <= n:
         # return a rewinder with all commits
         stack = commitList
@@ -105,7 +107,7 @@ def fakeNCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSou
             repoDirName = directory
 
     if repoDirName != repo_name:
-        logger.critical("GiPyS - nCoGiRe, did not find folder with same name as project(" + repo_name + ").  Using the last directory found: " + repoDirName)
+        logger.critical("nCoGiRe, did not find folder with same name as project(" + repo_name + ").  Using the last directory found: " + repoDirName)
 
     # now get the time and sha for commits
     sh.cd(repoDirName)
