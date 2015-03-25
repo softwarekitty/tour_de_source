@@ -1,6 +1,9 @@
 import uuid
 import calendar
 import time
+import base64
+import urllib2
+import json
 import sqlite3
 import hashlib
 from datetime import datetime
@@ -269,3 +272,13 @@ def emailEndingMessage(email, password, to, subject):
     mailServer.login(email, password)
     mailServer.sendmail(email, to, msg.as_string())
     mailServer.close()
+
+
+def getRate(cred):
+    url = "https://api.github.com/rate_limit"
+    enc = base64.encodestring(cred).replace('\n', '')
+    req = urllib2.Request(url)
+    req.add_header("Authorization", "Basic %s" % enc)
+    jsonQ = urllib2.urlopen(req)
+    rateJSON = json.load(jsonQ)
+    return rateJSON['resources']['core']['remaining']

@@ -190,3 +190,11 @@
 22:54:37 GiPyS - next repoID: 15249309
 22:54:51 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
 22:54:51 Touri - tour, SCAN_a5t1g FINAL STATE: FINISHED after scanning 1 sources containing Python out of 3 total sources observed
+13:19:25 Depot - ***************init Depot**********.
+13:19:25 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249409 credentials: KendrickMurray:kos8izjfc4dnsa
+13:20:28 GiPyS - next repoID: 15249309
+13:20:31 GiPyS - next repoID: 15249325
+13:20:34 GiPyS - next repoID: 15249331
+13:20:36 GiPyS - next repoID: 15249392
+13:20:47 GiPyS - exhausted, since: 15249392 stop: 15249409 len(repos): 0
+13:20:47 Touri - tour, SCAN_ep56l FINAL STATE: FINISHED after scanning 4 sources containing Python out of 64 total sources observed

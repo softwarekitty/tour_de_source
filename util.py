@@ -311,12 +311,17 @@ def getGmailRotatingFileHandler(email, password, to, LOG_CRITICAL_FILENAME):
 
 
 def prepareLogging(email, password, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME):
+    LOG_PATH = BASE_PATH + "data/log/"
+    if not os.path.exists(LOG_PATH):
+        os.makedirs(LOG_PATH)
+
     # erase old logging files if any exist
     try:
         for x in glob.glob(BASE_PATH + "data/log/.*"):
             erasePath(x)
     except Exception as e:
         raise RuntimeWarning("failure to erase old logs with exception: " + e.strerror)
+
     logger = logging.getLogger('')
     logger.setLevel(logging.DEBUG)
     logger.addHandler(getConsoleHandler())
