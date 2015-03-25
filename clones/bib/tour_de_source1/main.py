@@ -18,7 +18,7 @@ import sys
 sys.path.append(LOCAL_PATH)
 
 # grouping the variables together for ease of multiplication
-cloneSuffix = ""
+cloneSuffix = "clones/bib/tour_de_source1/"
 smallWords = ["bat", "bee", "bib", "bog", "boo", "box", "bum", "bus"]
 credentials = "KendrickMurray:kos8izjfc4dnsa"
 first = 15249309

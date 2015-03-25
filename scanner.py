@@ -133,7 +133,7 @@ class PythonRegexScanner:
         conn.commit()
         conn.close()
 
-    def addFilesPerProject(self, numberOfFiles, frequency, report_db):
+    def setFilesPerProject(self, numberOfFiles, frequency, report_db):
         self.logger.debug("PyReS - addFilesPerProject, numberOfFiles: " + str(numberOfFiles) + " frequency: " + str(frequency))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
@@ -144,7 +144,7 @@ class PythonRegexScanner:
         if not oldFrequency:
             c.execute("INSERT INTO FilesPerProject values (?,?)", (numberOfFiles, frequency))
         else:
-            c.execute("UPDATE FilesPerProject SET frequency=? WHERE nFiles=?", (oldFrequency[0] + frequency, numberOfFiles))
+            c.execute("UPDATE FilesPerProject SET frequency=? WHERE nFiles=?", (frequency, numberOfFiles))
         conn.commit()
         conn.close()
 

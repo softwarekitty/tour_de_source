@@ -61,6 +61,8 @@ class Tourist(object):
                             self.logger.info("Touri - done w/ID " + str(uniqueSourceID) + " nFiles: " + str(len(filePathSet)) + " nCites: " + str(len(citationSet)))
                             self.scanner.incrementFilesPerProject(len(filePathSet), self.getReportPath())
                             consecutiveExceptionCounter = 0
+                            self.scanner.setFilesPerProject(-1, s.getNProjects(), self.getReportPath())
+                            self.scanner.setFilesPerProject(-2, s.getNFailures(), self.getReportPath())
                 except (KeyboardInterrupt, SystemExit) as exit:
                     self.cancel()
                     self.logger.critical("Touri - tour, SCAN_" + self.id + "  has been cancelled by the host with EXCEPTION:" + str(type(exit).__name__))
@@ -71,8 +73,6 @@ class Tourist(object):
             tour_complete = sourcers_exhausted or cancelled or broken
         self.updateStatus(finalState)
         # using the -1 and -2 keys for nFilesPerProject, we can record the number of projects observed and number of failures to the FilesPerProject database, which can be merged for a grand total later
-        self.scanner.addFilesPerProject(-1, s.getNProjects(), self.getReportPath())
-        self.scanner.addFilesPerProject(-2, s.getNFailures(), self.getReportPath())
         self.logger.critical("Touri - tour, SCAN_" + self.id + " FINAL STATE: " + finalState + " after scanning " + str(uniqueSourceID) + " sources containing Python out of " + str(s.getNProjects()) + " total sources observed")
         util.emailEndingMessage(self.email, self.password, self.to, self.endingMessage + self.getStatus(), self.LOG_CRITICAL_FILENAME)
 
