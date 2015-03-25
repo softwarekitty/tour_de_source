@@ -178,7 +178,7 @@ def get_json(logger, url, credentials):
                 logger.critical("GiPyS - get_json, blocked by rate limit: " + str(limit_remaining) + " ttwS: " + str(time_to_waitS))
                 time.sleep(time_to_waitS)
 
-            urlJSON = json.load(urllib2.urlopen(get_authorized_request(url), credentials))
+            urlJSON = json.load(urllib2.urlopen(get_authorized_request(url, credentials)))
             logger.debug("GiPyS - get_json Success, url: " + url + " limit_remaining: " + str(limit_remaining))
             return urlJSON
         except urllib2.HTTPError, e:

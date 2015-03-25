@@ -135,8 +135,8 @@ class Tourist(object):
 
 # useful for stress-testing the sourcer - no breaks!
 class LookiLoo(Tourist):
-    def __init__(self, depot, email, password, to, scanner, sourcers, logger):
-        Tourist.__init__(self, depot, email, password, to, scanner, sourcers, logger)
+    def __init__(self, depot, email, password, to, scanner, sourcers, logger, endingMessage, LOG_CRITICAL_FILENAME):
+        Tourist.__init__(self, depot, email, password, to, scanner, sourcers, logger, endingMessage, LOG_CRITICAL_FILENAME)
 
     def tour(self):
         # main loop
