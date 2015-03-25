@@ -11,6 +11,7 @@ HOME = expanduser("~")
 LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
 import sys
 sys.path.append(LOCAL_PATH)
+exit()
 
 # SPLIT_HERE
 # grouping the variables together for ease of multiplication

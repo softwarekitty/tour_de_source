@@ -224,3 +224,23 @@
 16:41:40 GiPyS - next repoID: 15249392
 16:41:51 GiPyS - exhausted, since: 15249392 stop: 15249409 len(repos): 0
 16:41:51 Touri - tour, SCAN_6pkza FINAL STATE: FINISHED after scanning 4 sources containing Python out of 64 total sources observed
+16:52:16 Depot - ***************init Depot**********.
+16:52:16 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+16:52:22 Touri - tour, SCAN_8nyxy  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+16:52:22 Touri - tour, SCAN_8nyxy Tour Canceled: True
+16:52:22 Touri - tour, SCAN_8nyxy FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
+16:53:17 Depot - ***************init Depot**********.
+16:53:17 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+16:53:19 Touri - tour, SCAN_bdgkm  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+16:53:19 Touri - tour, SCAN_bdgkm Tour Canceled: True
+16:53:19 Touri - tour, SCAN_bdgkm FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
+16:53:49 Depot - ***************init Depot**********.
+16:53:49 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+16:53:51 Touri - tour, SCAN_2vaxp  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+16:53:51 Touri - tour, SCAN_2vaxp Tour Canceled: True
+16:53:51 Touri - tour, SCAN_2vaxp FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
+16:54:47 Depot - ***************init Depot**********.
+16:54:47 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+16:54:50 Touri - tour, SCAN_9o7ai  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+16:54:50 Touri - tour, SCAN_9o7ai Tour Canceled: True
+16:54:50 Touri - tour, SCAN_9o7ai FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
