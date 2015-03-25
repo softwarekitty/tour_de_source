@@ -177,3 +177,16 @@
 22:46:49 Touri - tour, SCAN_37poe  has been cancelled by the host with EXCEPTION:SystemExit
 22:46:49 Touri - tour, SCAN_37poe Tour Canceled: True
 22:46:49 Touri - tour, SCAN_37poe FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed
+22:52:14 Depot - ***************init Depot**********.
+22:52:14 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+22:52:31 GiPyS - next repoID: 15249309
+22:52:38 Touri - tour, SCAN_b75q5 EXCEPTION:local variable 'exit' referenced before assignment
+22:52:38 Touri - tour, consecutiveExceptionCounter: 1
+22:52:48 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
+22:52:48 Touri - tour, consecutiveExceptionCounter: 1
+22:52:48 Touri - tour, SCAN_b75q5 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 3 total sources observed
+22:54:26 Depot - ***************init Depot**********.
+22:54:26 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+22:54:37 GiPyS - next repoID: 15249309
+22:54:51 GiPyS - exhausted, since: 15249309 stop: 15249311 len(repos): 0
+22:54:51 Touri - tour, SCAN_a5t1g FINAL STATE: FINISHED after scanning 1 sources containing Python out of 3 total sources observed

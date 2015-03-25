@@ -61,7 +61,6 @@ class Tourist(object):
                             self.logger.info("Touri - done w/ID " + str(uniqueSourceID) + " nFiles: " + str(len(filePathSet)) + " nCites: " + str(len(citationSet)))
                             self.scanner.incrementFilesPerProject(len(filePathSet), self.getReportPath())
                             consecutiveExceptionCounter = 0
-                            exit()
                 except (KeyboardInterrupt, SystemExit) as exit:
                     self.cancel()
                     self.logger.critical("Touri - tour, SCAN_" + self.id + "  has been cancelled by the host with EXCEPTION:" + str(type(exit).__name__))
