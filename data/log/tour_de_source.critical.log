@@ -159,3 +159,21 @@
 22:10:36 Touri - tour, SCAN_aem3q  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
 22:10:36 Touri - tour, SCAN_aem3q Tour Canceled: True
 22:10:36 Touri - tour, SCAN_aem3q FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed
+22:44:21 Depot - ***************init Depot**********.
+22:44:21 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+22:44:43 GiPyS - next repoID: 15249309
+22:44:49 Touri - tour, SCAN_2glao  has been cancelled by the host with EXCEPTION:SystemExit
+22:44:49 Touri - tour, SCAN_2glao Tour Canceled: True
+22:44:49 Touri - tour, SCAN_2glao FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed
+22:45:28 Depot - ***************init Depot**********.
+22:45:28 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+22:45:42 GiPyS - next repoID: 15249309
+22:45:50 Touri - tour, SCAN_psmnb  has been cancelled by the host with EXCEPTION:SystemExit
+22:45:50 Touri - tour, SCAN_psmnb Tour Canceled: True
+22:45:50 Touri - tour, SCAN_psmnb FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed
+22:46:30 Depot - ***************init Depot**********.
+22:46:30 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249311 credentials: investigationbat:whorysq5im5ztb
+22:46:41 GiPyS - next repoID: 15249309
+22:46:49 Touri - tour, SCAN_37poe  has been cancelled by the host with EXCEPTION:SystemExit
+22:46:49 Touri - tour, SCAN_37poe Tour Canceled: True
+22:46:49 Touri - tour, SCAN_37poe FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 3 total sources observed

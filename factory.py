@@ -55,14 +55,13 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
 
         # this json is what couples each rewinded data source to a particular github project version.  For bitbucket or another source, many of the inner fields should be different, but the three root fields: type, meta and data should be the same for all future sourceJson objects like this.
         sourceJson = json.dumps({"type": "Github", "meta": {"repoID": str(repoID), "default_branch": str(default_branch), "clone_url": clone_url, "name": repo_name}, "data": {"sha": str(pair[1]), "commitS": str(pair[0])}})
-        logger.debug("sourceJSON created: " + sourceJson)
+        # logger.info("sourceJSON created: " + sourceJson)
         if len(pair) == 2:
             commitList.append((pair[0], pair[1], sourceJson))
 
     # here we are sorting by the first field of the tuple: the commit time
     commitList.sort(reverse=True)
     nCommits = len(commitList)
-    exit()
     if nCommits <= n:
         # return a rewinder with all commits
         stack = commitList
