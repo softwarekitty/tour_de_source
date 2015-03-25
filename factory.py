@@ -19,7 +19,7 @@ import dateutil
 def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceID, n, rewinder_type, credentials):
 
     # get metadata for sourceJSON
-    repoJSON = util.get_json(logger, "https://api.github.com/repositories/" + str(repoID), credentials)
+    repoJSON = util.get_json(logger, "https://api.github.com/repositories/" + str(repoID), credentials, True)
     repo_name = repoJSON['name']
     default_branch = repoJSON['default_branch']
     logger.debug("nCoGiRe - default branch name: " + default_branch)

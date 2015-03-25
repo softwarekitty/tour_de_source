@@ -198,3 +198,29 @@
 13:20:36 GiPyS - next repoID: 15249392
 13:20:47 GiPyS - exhausted, since: 15249392 stop: 15249409 len(repos): 0
 13:20:47 Touri - tour, SCAN_ep56l FINAL STATE: FINISHED after scanning 4 sources containing Python out of 64 total sources observed
+16:11:49 Depot - ***************init Depot**********.
+16:11:49 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249409 credentials: KendrickMurray:kos8izjfc4dnsa
+16:11:49 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+16:11:49 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+16:11:50 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+16:11:56 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+16:12:02 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+16:12:02 GiPyS - get_json, Giving up on url https://api.github.com/repositories?since=15249308 after 5 attempts
+16:12:02 Touri - tour, SCAN_xpvdm EXCEPTION:this url is not worth the trouble: https://api.github.com/repositories?since=15249308
+16:12:02 Touri - tour, consecutiveExceptionCounter: 1
+16:12:02 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+16:12:02 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+16:12:03 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+16:12:08 GiPyS - get_json, Unexpected roblem with getting json: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+16:12:09 Touri - tour, SCAN_xpvdm  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+16:12:09 Touri - tour, consecutiveExceptionCounter: 1
+16:12:09 Touri - tour, SCAN_xpvdm Tour Canceled: True
+16:12:09 Touri - tour, SCAN_xpvdm FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
+16:39:05 Depot - ***************init Depot**********.
+16:39:05 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249409 credentials: KendrickMurray:kos8izjfc4dnsa
+16:41:28 GiPyS - next repoID: 15249309
+16:41:34 GiPyS - next repoID: 15249325
+16:41:36 GiPyS - next repoID: 15249331
+16:41:40 GiPyS - next repoID: 15249392
+16:41:51 GiPyS - exhausted, since: 15249392 stop: 15249409 len(repos): 0
+16:41:51 Touri - tour, SCAN_6pkza FINAL STATE: FINISHED after scanning 4 sources containing Python out of 64 total sources observed

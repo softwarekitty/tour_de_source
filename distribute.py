@@ -19,7 +19,7 @@ clonesPerMachine = 8
 
 cloneNames = ["bib", "gum", "rat", "yen"]
 robotNames = [["a", "b", "c", "d", "e", "f", "g", "h"], ["a", "b", "c", "d", "e", "f", "g", "h"], ["a", "b", "c", "d", "e", "f", "g", "h"], ["a", "b", "c", "d", "e", "f", "g", "h"]]
-credentials = [["KendrickMurray1:kos8izjfc4dnsa", "KendrickMurray2:kos8izjfc4dnsa", "KendrickMurray3:kos8izjfc4dnsa", "KendrickMurray4:kos8izjfc4dnsa", "KendrickMurray5:kos8izjfc4dnsa", "KendrickMurray6:kos8izjfc4dnsa", "KendrickMurray7:kos8izjfc4dnsa", "KendrickMurray8:kos8izjfc4dnsa"], ["KendrickMurray9:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa"], ["KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa"], ["KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa"]]
+credentials = [["KendrickMurray:kos8izjfc4dnsa", "KendrickMurray2:kos8izjfc4dnsa", "KendrickMurray3:kos8izjfc4dnsa", "KendrickMurray4:kos8izjfc4dnsa", "KendrickMurray5:kos8izjfc4dnsa", "KendrickMurray6:kos8izjfc4dnsa", "KendrickMurray7:kos8izjfc4dnsa", "KendrickMurray8:kos8izjfc4dnsa"], ["KendrickMurray9:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa"], ["KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa"], ["KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa", "KendrickMurray:kos8izjfc4dnsa"]]
 j = 0
 chunk = 1000
 for name in cloneNames:
@@ -33,10 +33,8 @@ for name in cloneNames:
         # stop = 15249309
         newMiddlePart = 'cloneSuffix = "' + cloneSuffix + '"\ncredentials = "' + cred + '"\nfirst = ' + str(first) + '\nstop = ' + str(stop) + '\nendingMessage = "Tour of ' + robotNames[j][i] + ' ended with status: "\n\n'
         newMain = parts[0] + newMiddlePart + parts[2]
-        print newMain
-
-
-        # shutil.copy(f, basePath)
+        fo = open(basePath + "main.py", "w")
+        fo.write(newMain)
     j += 1
     exit()
 print "done distributing"

@@ -147,7 +147,13 @@ def get_authorized_request(url, credentials):
     return request
 
 
-def get_json(logger, url, credentials):
+def get_json(logger, url, credentials, randWait=False):
+    maxOfRange = 7
+    randNapS = 2
+    if randWait:
+        randPick = random.randrange(maxOfRange)
+        if randPick == 0:
+            time.sleep(randNapS)
 
     attempt_counter = 0
     attempt_limit = 5
