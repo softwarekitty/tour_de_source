@@ -2699,3 +2699,56 @@ Wed, 25 Mar 16:41:51 CRITICAL-GiPyS - exhausted, since: 15249392 stop: 15249409 
 Wed, 25 Mar 16:41:51 DEBUG-PyReS - addFilesPerProject, numberOfFiles: -1 frequency: 64
 Wed, 25 Mar 16:41:51 DEBUG-PyReS - addFilesPerProject, numberOfFiles: -2 frequency: 0
 Wed, 25 Mar 16:41:51 CRITICAL-Touri - tour, SCAN_6pkza FINAL STATE: FINISHED after scanning 4 sources containing Python out of 64 total sources observed
+Wed, 25 Mar 16:52:16 CRITICAL-Depot - ***************init Depot**********.
+Wed, 25 Mar 16:52:16 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427319545_6pkza.db
+Wed, 25 Mar 16:52:16 INFO-Depot - success trying to renew.
+Wed, 25 Mar 16:52:16 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Wed, 25 Mar 16:52:16 CRITICAL-initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+Wed, 25 Mar 16:52:16 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("8nyxy", 1427320336, 1427320336, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427320336_8nyxy.db")
+Wed, 25 Mar 16:52:16 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427320336_8nyxy.db
+Wed, 25 Mar 16:52:16 INFO-Touri - tour, SCAN_8nyxy RUNNING
+Wed, 25 Mar 16:52:16 DEBUG-GiPyS - next since: 15249308 len(repos): 0
+Wed, 25 Mar 16:52:16 DEBUG-GiPyS - refresh_repos, lastRepo: 15249308 since: 15249308 len(repos): 0
+Wed, 25 Mar 16:52:19 INFO-GiPyS - limit_remaining: 60
+Wed, 25 Mar 16:52:22 CRITICAL-Touri - tour, SCAN_8nyxy  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+Wed, 25 Mar 16:52:22 CRITICAL-Touri - tour, SCAN_8nyxy Tour Canceled: True
+Wed, 25 Mar 16:52:22 CRITICAL-Touri - tour, SCAN_8nyxy FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
+Wed, 25 Mar 16:53:17 CRITICAL-Depot - ***************init Depot**********.
+Wed, 25 Mar 16:53:17 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427320336_8nyxy.db
+Wed, 25 Mar 16:53:17 INFO-Depot - success trying to renew.
+Wed, 25 Mar 16:53:17 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Wed, 25 Mar 16:53:17 CRITICAL-initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+Wed, 25 Mar 16:53:17 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("bdgkm", 1427320397, 1427320397, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427320397_bdgkm.db")
+Wed, 25 Mar 16:53:17 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427320397_bdgkm.db
+Wed, 25 Mar 16:53:17 INFO-Touri - tour, SCAN_bdgkm RUNNING
+Wed, 25 Mar 16:53:17 DEBUG-GiPyS - next since: 15249308 len(repos): 0
+Wed, 25 Mar 16:53:17 DEBUG-GiPyS - refresh_repos, lastRepo: 15249308 since: 15249308 len(repos): 0
+Wed, 25 Mar 16:53:19 CRITICAL-Touri - tour, SCAN_bdgkm  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+Wed, 25 Mar 16:53:19 CRITICAL-Touri - tour, SCAN_bdgkm Tour Canceled: True
+Wed, 25 Mar 16:53:19 CRITICAL-Touri - tour, SCAN_bdgkm FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
+Wed, 25 Mar 16:53:49 CRITICAL-Depot - ***************init Depot**********.
+Wed, 25 Mar 16:53:49 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427320397_bdgkm.db
+Wed, 25 Mar 16:53:49 INFO-Depot - success trying to renew.
+Wed, 25 Mar 16:53:49 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Wed, 25 Mar 16:53:49 CRITICAL-initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+Wed, 25 Mar 16:53:49 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("2vaxp", 1427320429, 1427320429, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427320429_2vaxp.db")
+Wed, 25 Mar 16:53:49 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427320429_2vaxp.db
+Wed, 25 Mar 16:53:49 INFO-Touri - tour, SCAN_2vaxp RUNNING
+Wed, 25 Mar 16:53:49 DEBUG-GiPyS - next since: 15249308 len(repos): 0
+Wed, 25 Mar 16:53:49 DEBUG-GiPyS - refresh_repos, lastRepo: 15249308 since: 15249308 len(repos): 0
+Wed, 25 Mar 16:53:51 CRITICAL-Touri - tour, SCAN_2vaxp  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+Wed, 25 Mar 16:53:51 CRITICAL-Touri - tour, SCAN_2vaxp Tour Canceled: True
+Wed, 25 Mar 16:53:51 CRITICAL-Touri - tour, SCAN_2vaxp FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
+Wed, 25 Mar 16:54:47 CRITICAL-Depot - ***************init Depot**********.
+Wed, 25 Mar 16:54:47 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427320429_2vaxp.db
+Wed, 25 Mar 16:54:47 INFO-Depot - success trying to renew.
+Wed, 25 Mar 16:54:47 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Wed, 25 Mar 16:54:47 CRITICAL-initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+Wed, 25 Mar 16:54:47 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("9o7ai", 1427320487, 1427320487, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427320487_9o7ai.db")
+Wed, 25 Mar 16:54:47 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427320487_9o7ai.db
+Wed, 25 Mar 16:54:47 INFO-Touri - tour, SCAN_9o7ai RUNNING
+Wed, 25 Mar 16:54:47 DEBUG-GiPyS - next since: 15249308 len(repos): 0
+Wed, 25 Mar 16:54:47 DEBUG-GiPyS - refresh_repos, lastRepo: 15249308 since: 15249308 len(repos): 0
+Wed, 25 Mar 16:54:50 CRITICAL-Touri - tour, SCAN_9o7ai  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+Wed, 25 Mar 16:54:50 CRITICAL-Touri - tour, SCAN_9o7ai Tour Canceled: True
+Wed, 25 Mar 16:54:50 CRITICAL-Touri - tour, SCAN_9o7ai FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
