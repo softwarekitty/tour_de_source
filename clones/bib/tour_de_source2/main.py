@@ -1,23 +1,23 @@
-import util
-from depot import Depot
-from tourist import Tourist
-from tourist import LookiLoo
-from sourcer import GithubPythonSourcer
-from sourcer import LocalTestSourcer
-from scanner import PythonRegexScanner
 from os.path import expanduser
-
 HOME = expanduser("~")
 LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
 import sys
 sys.path.append(LOCAL_PATH)
-exit()
+
+import util
+from depot import Depot
+from tourist import Tourist
+# from tourist import LookiLoo
+from sourcer import GithubPythonSourcer
+# from sourcer import LocalTestSourcer
+from scanner import PythonRegexScanner
+
 
 cloneSuffix = "clones/bib/tour_de_source2/"
-credentials = "KendrickMurray2:kos8izjfc4dnsa"
-first = 1000
-stop = 1999
-endingMessage = "Tour of b ended with status: "
+credentials = "KristinCoenen:adjutasfc4dnsA"
+first = 131072
+stop = 262143
+endingMessage = "Tour of bib_2 ended with status: "
 
 
 BASE_PATH = LOCAL_PATH + cloneSuffix
