@@ -133,6 +133,21 @@ class PythonRegexScanner:
         conn.commit()
         conn.close()
 
+    def addFilesPerProject(self, numberOfFiles, frequency, report_db):
+        self.logger.debug("PyReS - addFilesPerProject, numberOfFiles: " + str(numberOfFiles) + " frequency: " + str(frequency))
+        conn = sqlite3.connect(report_db)
+        c = conn.cursor()
+        c.execute('''SELECT frequency FROM FilesPerProject WHERE nFiles = ?''', (numberOfFiles,))
+
+        # oldFrequency will be a tuple like (1,) or null
+        oldFrequency = c.fetchone()
+        if not oldFrequency:
+            c.execute("INSERT INTO FilesPerProject values (?,?)", (numberOfFiles, frequency))
+        else:
+            c.execute("UPDATE FilesPerProject SET frequency=? WHERE nFiles=?", (oldFrequency[0] + frequency, numberOfFiles))
+        conn.commit()
+        conn.close()
+
     # (uniqueSourceID int, sourceJSON text, scanID int, fileHash char(44), filePath text, pattern text, flags int, regexFunction int)
     def record_regex_citation(self, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, pattern, flags, regexFunction, report_db):
         self.logger.debug("PyReS - record_regex, uniqueSourceID: " + str(uniqueSourceID) + " sourceJSON: " + str(sourceJSON) + " fileHash: " + str(fileHash) + " filePath: " + str(pythonFilePath) + " pattern: " + str(pattern) + " flags: " + str(flags) + " regexFunction: " + str(regexFunction))

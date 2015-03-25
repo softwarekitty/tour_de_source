@@ -35,6 +35,7 @@ class GithubPythonSourcer(object):
         self.stop = stop
 
         self.nProjects = 0
+        self.nFailures = 0
         self.exhausted = False
         self.repos = []
         self.logger.critical("initialized GithubPythonSourcer with rewinder_type: " + self.rewinder_type + " email: " + email + " first: " + str(first) + " stop:" + str(self.stop) + " credentials: " + str(self.credentials))
@@ -82,7 +83,7 @@ class GithubPythonSourcer(object):
     # is likely to refresh before we run out
     def refresh_repos(self, lastRepo):
         self.log("refresh_repos, lastRepo: " + str(lastRepo))
-        sinceLastJSON = util.get_json(self.logger, 'https://api.github.com/repositories?since=' + str(lastRepo), self.credentials)
+        sinceLastJSON = util.get_json(self.logger, 'https://api.github.com/repositories?since=' + str(lastRepo), self.credentials, True)
         if sinceLastJSON is None or sinceLastJSON == "":
             self.exhausted = True
             return
@@ -95,7 +96,7 @@ class GithubPythonSourcer(object):
                 self.logger.info("GiPyS - refresh_repos, stopped refreshing with stop:" + str(self.stop) + " and current repoID: " + str(repoID))
                 return
             try:
-                languagesJSON = util.get_json(self.logger, projectJSON['languages_url'], self.credentials)
+                languagesJSON = util.get_json(self.logger, projectJSON['languages_url'], self.credentials, True)
                 pythonProjectFound = "Python" in languagesJSON
                 self.logger.info("GiPyS - refresh_repos, repoID:" + str(repoID) + " hasPython: " + str(pythonProjectFound) + " name: " + projectJSON['name'])
                 self.logger.debug("GiPyS - refresh_repos, since:" + str(self.nextID) + " len(repos): " + str(len(self.repos)) + " languagesJSON: " + str(languagesJSON))
@@ -105,6 +106,7 @@ class GithubPythonSourcer(object):
                 raise
             except:
                 self.logger.warning("GiPyS - refresh_repos, failed to finish entire page of repos starting at lastRepo: " + str(lastRepo) + " but succeeded up to but excluding: " + str(repoID) + " which is the first " + str(projectCounter) + " projects.  this troublesome url will be skipped.")
+                self.nFailures += 1
             projectCounter += 1
             self.nProjects += 1
 
@@ -117,6 +119,9 @@ class GithubPythonSourcer(object):
 
     def getNProjects(self):
         return self.nProjects
+
+    def getNFailures(self):
+        return self.nFailures
 
     def log(self, msg=""):
         self.logger.debug("GiPyS - " + msg + " since: " + str(self.nextID) + " len(repos): " + str(len(self.repos)))
@@ -146,6 +151,7 @@ class GithubPythonSourcer(object):
 
         # by returning None, we skip this source.
         self.logger.critical("GiPySo-getRewinder, Issue creating rewinder for repoID: " + str(repoID) + ", could not be resolved after 6 attempts.  Returning None.")
+        self.nFailures += 1
         return None
 
 # ############################# A Test Sourcer ############################
