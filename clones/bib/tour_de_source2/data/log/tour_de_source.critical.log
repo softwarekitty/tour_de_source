@@ -1,0 +1,35 @@
+17:09:40 Depot - ***************init Depot**********.
+17:09:40 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 1000 stop:1999 credentials: KendrickMurray2:kos8izjfc4dnsa
+17:09:47 Touri - tour, SCAN_ex4fa  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+17:09:47 Touri - tour, SCAN_ex4fa Tour Canceled: True
+17:09:47 Touri - tour, SCAN_ex4fa FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 0 total sources observed
+17:10:04 Depot - ***************init Depot**********.
+17:10:04 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 1000 stop:1999 credentials: KendrickMurray:kos8izjfc4dnsa
+17:14:02 GiPyS - next repoID: 1124
+17:14:08 GiPyS - next repoID: 1126
+17:14:13 GiPyS - next repoID: 1482
+17:18:21 GiPyS - next repoID: 1531
+17:19:34 GiPyS - next repoID: 1540
+17:19:43 GiPyS - next repoID: 1603
+17:19:57 GiPyS - next repoID: 1613
+17:26:57 GiPyS - get_json, Giving up on url https://api.github.com/repos/chriseppstein/ruby-freebase/languages after 5 attempts
+17:27:54 GiPyS - next repoID: 1655
+17:27:58 GiPyS - next repoID: 1664
+17:28:02 GiPyS - next repoID: 1674
+17:28:04 GiPyS - next repoID: 1679
+17:28:07 GiPyS - next repoID: 1712
+17:28:11 GiPyS - next repoID: 1756
+17:28:23 GiPyS - next repoID: 1775
+17:37:07 GiPyS - next repoID: 1784
+17:38:42 GiPyS - next repoID: 1827
+17:38:47 GiPyS - next repoID: 1845
+17:38:51 GiPyS - next repoID: 1858
+17:38:57 GiPyS - next repoID: 1864
+18:03:44 GiPyS - next repoID: 1876
+18:06:36 GiPyS - next repoID: 1928
+18:07:49 GiPyS - next repoID: 1949
+18:07:53 GiPyS - next repoID: 1977
+18:11:14 GiPyS - next repoID: 1985
+18:11:18 GiPyS - next repoID: 1991
+18:11:29 GiPyS - exhausted, since: 1991 stop: 1999 len(repos): 0
+18:11:29 Touri - tour, SCAN_b8ahq FINAL STATE: FINISHED after scanning 25 sources containing Python out of 199 total sources observed

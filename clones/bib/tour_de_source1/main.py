@@ -7,23 +7,17 @@ sys.path.append(LOCAL_PATH)
 import util
 from depot import Depot
 from tourist import Tourist
-from tourist import LookiLoo
+# from tourist import LookiLoo
 from sourcer import GithubPythonSourcer
-from sourcer import LocalTestSourcer
+# from sourcer import LocalTestSourcer
 from scanner import PythonRegexScanner
 
-HOME = expanduser("~")
-LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
-import sys
-sys.path.append(LOCAL_PATH)
 
-# grouping the variables together for ease of multiplication
 cloneSuffix = "clones/bib/tour_de_source1/"
-smallWords = ["bat", "bee", "bib", "bog", "boo", "box", "bum", "bus"]
 credentials = "KendrickMurray:kos8izjfc4dnsa"
-first = 15249309
-stop = 15249409
-endingMessage = "Tour of testBot ended with status: "
+first = 0
+stop = 131071
+endingMessage = "Tour of bib_1 ended with status: "
 
 
 BASE_PATH = LOCAL_PATH + cloneSuffix
