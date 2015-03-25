@@ -1,3 +1,9 @@
+from os.path import expanduser
+HOME = expanduser("~")
+LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
+import sys
+sys.path.append(LOCAL_PATH)
+
 import util
 from depot import Depot
 from tourist import Tourist
@@ -5,13 +11,7 @@ from tourist import LookiLoo
 from sourcer import GithubPythonSourcer
 from sourcer import LocalTestSourcer
 from scanner import PythonRegexScanner
-from os.path import expanduser
 
-
-HOME = expanduser("~")
-LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
-import sys
-sys.path.append(LOCAL_PATH)
 
 BASE_PATH = LOCAL_PATH + "clones/bib/tour_de_source1/"
 
@@ -40,7 +40,7 @@ d = Depot(l, BASE_PATH)
 
 # test normal operation or run normally
 # 15249309 will be a small, fast repo, 15249311 is two repos later
-s = [GithubPythonSourcer("20Commits", e1, p1, l, "investigation" + smallWords[0] + ":whorysq5im5ztb", 0, 262143)]
+s = [GithubPythonSourcer("20Commits", e1, p1, l, "investigation" + smallWords[0] + ":whorysq5im5ztb", 15249309, 15249309)] #0, 262143)]
 t = Tourist(d, e1, p1, to, PythonRegexScanner(l), s, l, "Tour of " + smallWords[0] + " ended with status: ", LOG_CRITICAL_FILENAME)
 
 
