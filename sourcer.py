@@ -154,6 +154,11 @@ class GithubPythonSourcer(object):
 # this sourcer quickly simulates cloning a github repo by using a local folder
 class LocalTestSourcer(GithubPythonSourcer):
 
+    def __init__(self, rewinder_type, email, password, logger, credentials=None, first=1, stop=sys.maxsize, bp=None):
+        logger.debug("LoTeSo - bp: " + str(bp))
+        self.BASE_PATH = bp
+        super(LocalTestSourcer, self).__init__(rewinder_type, email, password, logger, credentials, first, stop)
+
     # returns a rewinder for the next repo
     def next(self, repo_path, report_path, uniqueSourceID):
         self.log("next")
@@ -162,7 +167,7 @@ class LocalTestSourcer(GithubPythonSourcer):
             return None
 
         # only gets a rewinder once for the local test folder
-        localFolderRewinder = factory.fakeNCommitsGithubRewinder(self.nextID, repo_path, report_path, uniqueSourceID, 20)
+        localFolderRewinder = factory.fakeNCommitsGithubRewinder(self.logger, self.nextID, repo_path, report_path, uniqueSourceID, 20, self.rewinder_type, self.BASE_PATH)
         self.exhausted = True
         return localFolderRewinder
 

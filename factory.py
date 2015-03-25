@@ -83,13 +83,13 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
 
 
 # For testing
-def fakeNCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceID, n, rewinder_type):
+def fakeNCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceID, n, rewinder_type, BASE_PATH):
     default_branch = "master"
     clone_url = "fake_clone_url"
     repo_name = "copycat"
 
     logger.debug("nCoGiRe, rsync-ing test_repo folder to repo folder")
-    sh.rsync("-r", util.BASE_PATH + 'test_repo/', repo_path,)
+    sh.rsync("-r", BASE_PATH + 'test_repo/', repo_path,)
     sh.cd(repo_path)
 
     # hopefully the correct directory has the same name as the project, or is the last directory of all cloned directories.  This can vary - with git you could potentially have all your files in the root cloned directory, but in practice, almost noone does that.  I have seen several projects with multiple folders in this root cloned directory.  I think this is a case where it is best to just ignore the unusual ones.
