@@ -37,7 +37,7 @@ class GithubPythonSourcer(object):
         self.nProjects = 0
         self.exhausted = False
         self.repos = []
-        self.logger.critical("initialized GithubPythonSourcer with rewinder_type: " + self.rewinder_type + " email: " + email + " first: " + str(first) + " stop:" + str(self.stop))
+        self.logger.critical("initialized GithubPythonSourcer with rewinder_type: " + self.rewinder_type + " email: " + email + " first: " + str(first) + " stop:" + str(self.stop) + " credentials: " + str(self.credentials))
 
     def isExhausted(self):
         return bool(self.exhausted)

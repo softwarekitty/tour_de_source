@@ -67,3 +67,20 @@
 19:50:44 Depot - ***************init Depot**********.
 19:50:44 initialized GithubPythonSourcer with rewinder_type: copycat_test_sourcer email: investigationbot@gmail.com first: 1 stop:9223372036854775807
 19:50:54 Touri - tour, SCAN_1g0yj FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
+19:52:26 Depot - ***************init Depot**********.
+19:52:26 initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+19:53:43 Depot - ***************init Depot**********.
+19:53:43 initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+19:53:43 Looki - tour, SCAN_4mcc0 RUNNING
+19:53:47 GiPyS - get_json, Unexpected roblem with getting json: get_authorized_request() takes exactly 2 arguments (1 given)
+19:53:49 GiPyS - get_json, Unexpected roblem with getting json: get_authorized_request() takes exactly 2 arguments (1 given)
+19:53:50 GiPyS - get_json, Unexpected roblem with getting json: get_authorized_request() takes exactly 2 arguments (1 given)
+19:58:00 Depot - ***************init Depot**********.
+19:58:00 initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+19:58:00 Looki - tour, SCAN_82czu RUNNING
+20:01:24 Depot - ***************init Depot**********.
+20:01:24 initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807 credentials: investigationbot:cro0thiezlutrl
+20:01:24 Looki - tour, SCAN_zdudn RUNNING
+20:02:50 Depot - ***************init Depot**********.
+20:02:50 initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807 credentials: investigationbot:cro0thiezlutrl
+20:02:50 Looki - tour, SCAN_6kl9l RUNNING

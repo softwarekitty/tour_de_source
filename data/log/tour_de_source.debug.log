@@ -411,3 +411,121 @@ Tue, 24 Mar 19:50:54 DEBUG-filePathSet content: ['.profile.d/bin/ipinfo.py', 'Co
 Tue, 24 Mar 19:50:54 INFO-Touri - done w/ID 1 nFiles: 150 nCites: 20
 Tue, 24 Mar 19:50:54 DEBUG-PyReS - incrementing filesPerProject: 150
 Tue, 24 Mar 19:50:54 CRITICAL-Touri - tour, SCAN_1g0yj FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
+Tue, 24 Mar 19:52:26 CRITICAL-Depot - ***************init Depot**********.
+Tue, 24 Mar 19:52:26 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/./R1427244644_1g0yj.db
+Tue, 24 Mar 19:52:26 INFO-Depot - success trying to renew.
+Tue, 24 Mar 19:52:26 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Tue, 24 Mar 19:52:26 CRITICAL-initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+Tue, 24 Mar 19:53:43 CRITICAL-Depot - ***************init Depot**********.
+Tue, 24 Mar 19:53:43 INFO-Depot - success trying to renew.
+Tue, 24 Mar 19:53:43 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Tue, 24 Mar 19:53:43 CRITICAL-initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+Tue, 24 Mar 19:53:43 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("4mcc0", 1427244823, 1427244823, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427244823_4mcc0.db")
+Tue, 24 Mar 19:53:43 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427244823_4mcc0.db
+Tue, 24 Mar 19:53:43 CRITICAL-Looki - tour, SCAN_4mcc0 RUNNING
+Tue, 24 Mar 19:53:43 DEBUG-GiPyS - next since: 0 len(repos): 0
+Tue, 24 Mar 19:53:43 DEBUG-GiPyS - refresh_repos, lastRepo: 0 since: 0 len(repos): 0
+Tue, 24 Mar 19:53:47 INFO-GiPyS - limit_remaining: 60
+Tue, 24 Mar 19:53:47 CRITICAL-GiPyS - get_json, Unexpected roblem with getting json: get_authorized_request() takes exactly 2 arguments (1 given)
+Tue, 24 Mar 19:53:47 WARNING-GiPyS - get_json, backing off with backoffS: 1 attempt: 1/5 url: https://api.github.com/repositories?since=0
+Tue, 24 Mar 19:53:49 INFO-GiPyS - limit_remaining: 60
+Tue, 24 Mar 19:53:49 CRITICAL-GiPyS - get_json, Unexpected roblem with getting json: get_authorized_request() takes exactly 2 arguments (1 given)
+Tue, 24 Mar 19:53:49 WARNING-GiPyS - get_json, backing off with backoffS: 0 attempt: 2/5 url: https://api.github.com/repositories?since=0
+Tue, 24 Mar 19:53:50 INFO-GiPyS - limit_remaining: 60
+Tue, 24 Mar 19:53:50 CRITICAL-GiPyS - get_json, Unexpected roblem with getting json: get_authorized_request() takes exactly 2 arguments (1 given)
+Tue, 24 Mar 19:53:50 WARNING-GiPyS - get_json, backing off with backoffS: 3 attempt: 3/5 url: https://api.github.com/repositories?since=0
+Tue, 24 Mar 19:58:00 CRITICAL-Depot - ***************init Depot**********.
+Tue, 24 Mar 19:58:00 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/./R1427244823_4mcc0.db
+Tue, 24 Mar 19:58:00 INFO-Depot - success trying to renew.
+Tue, 24 Mar 19:58:00 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Tue, 24 Mar 19:58:00 CRITICAL-initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+Tue, 24 Mar 19:58:00 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("82czu", 1427245080, 1427245080, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427245080_82czu.db")
+Tue, 24 Mar 19:58:00 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427245080_82czu.db
+Tue, 24 Mar 19:58:00 CRITICAL-Looki - tour, SCAN_82czu RUNNING
+Tue, 24 Mar 19:58:00 DEBUG-GiPyS - next since: 0 len(repos): 0
+Tue, 24 Mar 19:58:00 DEBUG-GiPyS - refresh_repos, lastRepo: 0 since: 0 len(repos): 0
+Tue, 24 Mar 19:58:01 INFO-GiPyS - limit_remaining: 60
+Tue, 24 Mar 19:58:12 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories?since=0 limit_remaining: 60
+Tue, 24 Mar 19:58:18 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/mojombo/grit/languages limit_remaining: 59
+Tue, 24 Mar 19:58:18 INFO-GiPyS - refresh_repos, repoID:1 hasPython: False name: grit
+Tue, 24 Mar 19:58:18 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 0 languagesJSON: {u'Ruby': 219981}
+Tue, 24 Mar 19:58:21 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/wycats/merb-core/languages limit_remaining: 58
+Tue, 24 Mar 19:58:21 INFO-GiPyS - refresh_repos, repoID:26 hasPython: False name: merb-core
+Tue, 24 Mar 19:58:21 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 0 languagesJSON: {u'JavaScript': 8925, u'Ruby': 948883}
+Tue, 24 Mar 19:58:23 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/rubinius/rubinius/languages limit_remaining: 57
+Tue, 24 Mar 19:58:23 INFO-GiPyS - refresh_repos, repoID:27 hasPython: True name: rubinius
+Tue, 24 Mar 19:58:23 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 0 languagesJSON: {u'C': 517583, u'Shell': 14148, u'HTML': 81103, u'Python': 21164, u'DTrace': 4932, u'Makefile': 7385, u'C++': 3292583, u'Perl': 255918, u'Objective-C': 31, u'LLVM': 24552, u'Smarty': 1973, u'Diff': 3460, u'Groff': 41909, u'Ruby': 7177592}
+Tue, 24 Mar 19:58:24 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/mojombo/god/languages limit_remaining: 56
+Tue, 24 Mar 19:58:24 INFO-GiPyS - refresh_repos, repoID:28 hasPython: False name: god
+Tue, 24 Mar 19:58:24 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'C': 9261, u'Shell': 788, u'JavaScript': 6329, u'HTML': 2576, u'Ruby': 282583, u'CSS': 6486}
+Tue, 24 Mar 19:58:29 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/vanpelt/jsawesome/languages limit_remaining: 55
+Tue, 24 Mar 19:58:29 INFO-GiPyS - refresh_repos, repoID:29 hasPython: False name: jsawesome
+Tue, 24 Mar 19:58:29 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 126588, u'Ruby': 9677}
+Tue, 24 Mar 19:58:31 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/wycats/jspec/languages limit_remaining: 54
+Tue, 24 Mar 19:58:31 INFO-GiPyS - refresh_repos, repoID:31 hasPython: False name: jspec
+Tue, 24 Mar 19:58:31 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 48977}
+Tue, 24 Mar 19:58:35 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/exception_logger/languages limit_remaining: 53
+Tue, 24 Mar 19:58:35 INFO-GiPyS - refresh_repos, repoID:35 hasPython: False name: exception_logger
+Tue, 24 Mar 19:58:35 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 1531, u'Ruby': 10936}
+Tue, 24 Mar 19:58:37 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/ambition/languages limit_remaining: 52
+Tue, 24 Mar 19:58:37 INFO-GiPyS - refresh_repos, repoID:36 hasPython: False name: ambition
+Tue, 24 Mar 19:58:37 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 2032, u'Ruby': 21237}
+Tue, 24 Mar 19:58:41 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/technoweenie/restful-authentication/languages limit_remaining: 51
+Tue, 24 Mar 19:58:41 INFO-GiPyS - refresh_repos, repoID:42 hasPython: False name: restful-authentication
+Tue, 24 Mar 19:58:41 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'Ruby': 145649}
+Tue, 24 Mar 19:58:44 INFO-GiPyS - limit_remaining: 50
+Tue, 24 Mar 19:58:45 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/technoweenie/attachment_fu/languages limit_remaining: 50
+Tue, 24 Mar 19:58:45 INFO-GiPyS - refresh_repos, repoID:43 hasPython: False name: attachment_fu
+Tue, 24 Mar 19:58:45 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'Ruby': 132960}
+Tue, 24 Mar 19:58:47 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/topfunky/bong/languages limit_remaining: 49
+Tue, 24 Mar 19:58:47 INFO-GiPyS - refresh_repos, repoID:47 hasPython: False name: bong
+Tue, 24 Mar 19:58:47 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'Ruby': 5994}
+Tue, 24 Mar 19:58:52 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/Caged/microsis/languages limit_remaining: 48
+Tue, 24 Mar 19:58:52 INFO-GiPyS - refresh_repos, repoID:48 hasPython: False name: microsis
+Tue, 24 Mar 19:58:52 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 124846, u'Ruby': 815}
+Tue, 24 Mar 20:01:24 CRITICAL-Depot - ***************init Depot**********.
+Tue, 24 Mar 20:01:24 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/./R1427245080_82czu.db
+Tue, 24 Mar 20:01:24 INFO-Depot - success trying to renew.
+Tue, 24 Mar 20:01:24 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Tue, 24 Mar 20:01:24 CRITICAL-initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807 credentials: investigationbot:cro0thiezlutrl
+Tue, 24 Mar 20:01:24 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("zdudn", 1427245284, 1427245284, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427245284_zdudn.db")
+Tue, 24 Mar 20:01:24 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427245284_zdudn.db
+Tue, 24 Mar 20:01:24 CRITICAL-Looki - tour, SCAN_zdudn RUNNING
+Tue, 24 Mar 20:01:24 DEBUG-GiPyS - next since: 0 len(repos): 0
+Tue, 24 Mar 20:01:24 DEBUG-GiPyS - refresh_repos, lastRepo: 0 since: 0 len(repos): 0
+Tue, 24 Mar 20:02:50 CRITICAL-Depot - ***************init Depot**********.
+Tue, 24 Mar 20:02:50 DEBUG-removing: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/./R1427245284_zdudn.db
+Tue, 24 Mar 20:02:50 INFO-Depot - success trying to renew.
+Tue, 24 Mar 20:02:50 INFO-Depot - __init__, the file /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tour.db already exists and so no new Tour table has been created
+Tue, 24 Mar 20:02:50 CRITICAL-initialized GithubPythonSourcer with rewinder_type: mock email: investigationbot@gmail.com first: 1 stop:9223372036854775807 credentials: investigationbot:cro0thiezlutrl
+Tue, 24 Mar 20:02:50 INFO-Touri - register, registering tourist in tour table with statement: INSERT INTO Tour VALUES ("6kl9l", 1427245370, 1427245370, 0, "INITIAL", "python regex scanner", "investigationbot@gmail.com", "R1427245370_6kl9l.db")
+Tue, 24 Mar 20:02:50 INFO-PyReS - initialize_report, report_db: /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/data/R1427245370_6kl9l.db
+Tue, 24 Mar 20:02:50 CRITICAL-Looki - tour, SCAN_6kl9l RUNNING
+Tue, 24 Mar 20:02:50 DEBUG-GiPyS - next since: 0 len(repos): 0
+Tue, 24 Mar 20:02:50 DEBUG-GiPyS - refresh_repos, lastRepo: 0 since: 0 len(repos): 0
+Tue, 24 Mar 20:03:10 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repositories?since=0 limit_remaining: 46
+Tue, 24 Mar 20:03:12 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/mojombo/grit/languages limit_remaining: 45
+Tue, 24 Mar 20:03:12 INFO-GiPyS - refresh_repos, repoID:1 hasPython: False name: grit
+Tue, 24 Mar 20:03:12 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 0 languagesJSON: {u'Ruby': 219981}
+Tue, 24 Mar 20:03:14 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/wycats/merb-core/languages limit_remaining: 44
+Tue, 24 Mar 20:03:14 INFO-GiPyS - refresh_repos, repoID:26 hasPython: False name: merb-core
+Tue, 24 Mar 20:03:14 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 0 languagesJSON: {u'JavaScript': 8925, u'Ruby': 948883}
+Tue, 24 Mar 20:03:16 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/rubinius/rubinius/languages limit_remaining: 43
+Tue, 24 Mar 20:03:16 INFO-GiPyS - refresh_repos, repoID:27 hasPython: True name: rubinius
+Tue, 24 Mar 20:03:16 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 0 languagesJSON: {u'C': 517583, u'Shell': 14148, u'HTML': 81103, u'Python': 21164, u'DTrace': 4932, u'Makefile': 7385, u'C++': 3292583, u'Perl': 255918, u'Objective-C': 31, u'LLVM': 24552, u'Smarty': 1973, u'Diff': 3460, u'Groff': 41909, u'Ruby': 7177592}
+Tue, 24 Mar 20:03:18 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/mojombo/god/languages limit_remaining: 42
+Tue, 24 Mar 20:03:18 INFO-GiPyS - refresh_repos, repoID:28 hasPython: False name: god
+Tue, 24 Mar 20:03:18 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'C': 9261, u'Shell': 788, u'JavaScript': 6329, u'HTML': 2576, u'Ruby': 282583, u'CSS': 6486}
+Tue, 24 Mar 20:03:22 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/vanpelt/jsawesome/languages limit_remaining: 41
+Tue, 24 Mar 20:03:22 INFO-GiPyS - refresh_repos, repoID:29 hasPython: False name: jsawesome
+Tue, 24 Mar 20:03:22 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 126588, u'Ruby': 9677}
+Tue, 24 Mar 20:03:23 INFO-GiPyS - limit_remaining: 40
+Tue, 24 Mar 20:03:25 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/wycats/jspec/languages limit_remaining: 40
+Tue, 24 Mar 20:03:25 INFO-GiPyS - refresh_repos, repoID:31 hasPython: False name: jspec
+Tue, 24 Mar 20:03:25 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 48977}
+Tue, 24 Mar 20:03:26 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/exception_logger/languages limit_remaining: 39
+Tue, 24 Mar 20:03:26 INFO-GiPyS - refresh_repos, repoID:35 hasPython: False name: exception_logger
+Tue, 24 Mar 20:03:26 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 1531, u'Ruby': 10936}
+Tue, 24 Mar 20:03:32 DEBUG-GiPyS - get_json Success, url: https://api.github.com/repos/defunkt/ambition/languages limit_remaining: 38
+Tue, 24 Mar 20:03:32 INFO-GiPyS - refresh_repos, repoID:36 hasPython: False name: ambition
+Tue, 24 Mar 20:03:32 DEBUG-GiPyS - refresh_repos, since:0 len(repos): 1 languagesJSON: {u'JavaScript': 2032, u'Ruby': 21237}

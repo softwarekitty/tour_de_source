@@ -32,13 +32,13 @@ l = util.prepareLogging(e1, p1, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_
 
 d = Depot(l, BASE_PATH)
 # test scanner or quickly send finished email
-s = [LocalTestSourcer("copycat_test_sourcer", e1, p1, l, bp=BASE_PATH)]
-t = Tourist(d, e1, p1, to, PythonRegexScanner(l), s, l, "LocalTestSourcer tour ended with status: ", LOG_CRITICAL_FILENAME)
+# s = [LocalTestSourcer("copycat_test_sourcer", e1, p1, l, bp=BASE_PATH)]
+# t = Tourist(d, e1, p1, to, PythonRegexScanner(l), s, l, "LocalTestSourcer tour ended with status: ", LOG_CRITICAL_FILENAME)
 
 
 # test github interactions
-# s = [GithubPythonSourcer("mock", e, p, l)]
-# t = LookiLoo(d, e, p, to, PythonRegexScanner(l), s, l, "Lookilo finished with status: ", LOG_CRITICAL_FILENAME)
+s = [GithubPythonSourcer("mock", e1, p1, l)]
+t = LookiLoo(d, e1, p1, to, PythonRegexScanner(l), s, l, "Lookilo finished with status: ", LOG_CRITICAL_FILENAME)
 
 # test normal operation or run normally
 # 15249309 will be a small, fast repo, 15249311 is two repos later
