@@ -28,22 +28,21 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
     # cloning fails if the directory is locked or not empty, so I am taking some extra care to delete the directory and immediately clone.  Some daemons can occasionally lock the path or create some random files in there.
     if not os.path.exists(repo_path):
         logger.critical("GiPyS - nCoGiRe, this path does not exist!! repo_path: " + repo_path)
-        raise RuntimeWarning
-    else:
-        # the path exists and is not empty
-        for try_i in range(1, 4):
-            logger.debug("nCoGiRe, attempt " + str(try_i) + " to remove contents of repo_path: " + str(repo_path) + " and then clone using clone_url: " + clone_url)
-            try:
-                # erase everything in repo_path and then clone project
-                repoPathContents = [os.path.join(repo_path, f) for f in os.listdir(repo_path)]
-                logger.info("nCoGiRe, repoPathContents: " + str(repoPathContents))
-                if repoPathContents:
-                    for x in repoPathContents:
-                        util.erasePath(x, logger)
-                git.repo.base.Repo.clone_from(clone_url, repo_path, None, branch=default_branch)
-                break
-            except Exception as e:
-                logger.info("GiPyS - nCoGiRe, error: " + str(e))
+        os.mkdir(repo_path)
+    # the path exists and is not empty
+    for try_i in range(1, 4):
+        logger.info("nCoGiRe, attempt " + str(try_i) + " to remove contents of repo_path: " + str(repo_path) + " and then clone using clone_url: " + clone_url)
+        try:
+            # erase everything in repo_path and then clone project
+            repoPathContents = [os.path.join(repo_path, f) for f in os.listdir(repo_path)]
+            logger.info("nCoGiRe, repoPathContents: " + str(repoPathContents))
+            if repoPathContents:
+                for x in repoPathContents:
+                    util.erasePath(x, logger)
+            git.repo.base.Repo.clone_from(clone_url, repo_path, None, branch=default_branch)
+            break
+        except Exception as e:
+            logger.info("GiPyS - nCoGiRe, error: " + str(e))
 
     # now get the time and sha for commits
     commitList = []
