@@ -14,7 +14,7 @@ class Depot:
         # we should renew if we are in development mode - renewing erases old tour.db files.  If you don't renew, then we will append any new tours to the old tour.db file.
         if self.shouldRenew():
             try:
-                for db in glob.glob(self.getDataPath() + "./*.db"):
+                for db in glob.glob(self.getDataPath() + "*.db"):
                     logger.debug("removing: " + db)
                     os.remove(db)
                 logger.info("Depot - success trying to renew.")
