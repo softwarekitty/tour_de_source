@@ -1,1 +1,69 @@
-14:14:49 Depot - ***************init Depot**********.
+18:55:11 Depot - ***************init Depot**********.
+18:55:11 initialized GithubPythonSourcer with rewinder_type: copycat_test_sourcer email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+18:55:21 Touri - tour, SCAN_7lqa8 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
+18:59:33 Depot - ***************init Depot**********.
+18:59:33 initialized GithubPythonSourcer with rewinder_type: copycat_test_sourcer email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+18:59:43 Touri - tour, SCAN_4p9wg FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
+19:16:01 Depot - ***************init Depot**********.
+19:16:01 initialized GithubPythonSourcer with rewinder_type: copycat_test_sourcer email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+19:16:01 Touri - tour, SCAN_a1oe3 EXCEPTION:'module' object has no attribute 'BASE_PATH'
+19:16:01 Touri - tour, consecutiveExceptionCounter: 1
+19:16:01 Touri - tour, SCAN_a1oe3 EXCEPTION:'module' object has no attribute 'BASE_PATH'
+19:16:01 Touri - tour, consecutiveExceptionCounter: 2
+19:16:01 Touri - tour, SCAN_a1oe3 EXCEPTION:'module' object has no attribute 'BASE_PATH'
+19:16:01 Touri - tour, consecutiveExceptionCounter: 3
+19:16:01 Touri - tour, SCAN_a1oe3 EXCEPTION:'module' object has no attribute 'BASE_PATH'
+19:16:01 Touri - tour, consecutiveExceptionCounter: 4
+19:16:01 Touri - tour, SCAN_a1oe3 EXCEPTION:'module' object has no attribute 'BASE_PATH'
+19:16:01 Touri - tour, consecutiveExceptionCounter: 5
+19:16:01 Touri - tour, SCAN_a1oe3 EXCEPTION:'module' object has no attribute 'BASE_PATH'
+19:16:01 Touri - tour, consecutiveExceptionCounter: 6
+19:16:01 Touri - tour, SCAN_a1oe3 FINAL STATE: BROKEN after scanning 0 sources containing Python out of 1 total sources observed
+19:31:37 Depot - ***************init Depot**********.
+19:31:37 initialized GithubPythonSourcer with rewinder_type: copycat_test_sourcer email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+19:31:37 Touri - tour, SCAN_1nk4d EXCEPTION:next() takes exactly 5 arguments (4 given)
+19:31:37 Touri - tour, consecutiveExceptionCounter: 1
+19:31:37 Touri - tour, SCAN_1nk4d EXCEPTION:next() takes exactly 5 arguments (4 given)
+19:31:37 Touri - tour, consecutiveExceptionCounter: 2
+19:31:37 Touri - tour, SCAN_1nk4d EXCEPTION:next() takes exactly 5 arguments (4 given)
+19:31:37 Touri - tour, consecutiveExceptionCounter: 3
+19:31:37 Touri - tour, SCAN_1nk4d EXCEPTION:next() takes exactly 5 arguments (4 given)
+19:31:37 Touri - tour, consecutiveExceptionCounter: 4
+19:31:37 Touri - tour, SCAN_1nk4d EXCEPTION:next() takes exactly 5 arguments (4 given)
+19:31:37 Touri - tour, consecutiveExceptionCounter: 5
+19:31:37 Touri - tour, SCAN_1nk4d EXCEPTION:next() takes exactly 5 arguments (4 given)
+19:31:37 Touri - tour, consecutiveExceptionCounter: 6
+19:31:37 Touri - tour, SCAN_1nk4d FINAL STATE: BROKEN after scanning 0 sources containing Python out of 0 total sources observed
+19:47:05 Depot - ***************init Depot**********.
+19:47:05 initialized GithubPythonSourcer with rewinder_type: copycat_test_sourcer email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+19:47:05 Touri - tour, SCAN_2kria EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:47:05 Touri - tour, consecutiveExceptionCounter: 1
+19:47:05 Touri - tour, SCAN_2kria EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:47:05 Touri - tour, consecutiveExceptionCounter: 2
+19:47:05 Touri - tour, SCAN_2kria EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:47:05 Touri - tour, consecutiveExceptionCounter: 3
+19:47:05 Touri - tour, SCAN_2kria EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:47:05 Touri - tour, consecutiveExceptionCounter: 4
+19:47:05 Touri - tour, SCAN_2kria EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:47:05 Touri - tour, consecutiveExceptionCounter: 5
+19:47:05 Touri - tour, SCAN_2kria EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:47:05 Touri - tour, consecutiveExceptionCounter: 6
+19:47:05 Touri - tour, SCAN_2kria FINAL STATE: BROKEN after scanning 0 sources containing Python out of 1 total sources observed
+19:49:13 Depot - ***************init Depot**********.
+19:49:13 initialized GithubPythonSourcer with rewinder_type: copycat_test_sourcer email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+19:49:13 Touri - tour, SCAN_2w9fx EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:49:13 Touri - tour, consecutiveExceptionCounter: 1
+19:49:13 Touri - tour, SCAN_2w9fx EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:49:13 Touri - tour, consecutiveExceptionCounter: 2
+19:49:13 Touri - tour, SCAN_2w9fx EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:49:13 Touri - tour, consecutiveExceptionCounter: 3
+19:49:13 Touri - tour, SCAN_2w9fx EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:49:13 Touri - tour, consecutiveExceptionCounter: 4
+19:49:13 Touri - tour, SCAN_2w9fx EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:49:13 Touri - tour, consecutiveExceptionCounter: 5
+19:49:13 Touri - tour, SCAN_2w9fx EXCEPTION:unsupported operand type(s) for +: 'NoneType' and 'str'
+19:49:13 Touri - tour, consecutiveExceptionCounter: 6
+19:49:13 Touri - tour, SCAN_2w9fx FINAL STATE: BROKEN after scanning 0 sources containing Python out of 1 total sources observed
+19:50:44 Depot - ***************init Depot**********.
+19:50:44 initialized GithubPythonSourcer with rewinder_type: copycat_test_sourcer email: investigationbot@gmail.com first: 1 stop:9223372036854775807
+19:50:54 Touri - tour, SCAN_1g0yj FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed

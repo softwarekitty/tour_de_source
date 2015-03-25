@@ -17,15 +17,8 @@ import json
 import urllib2
 import random
 import logging.handlers
-import sh
-from os.path import expanduser
+import glob
 import commands
-
-HOME = expanduser("~")
-LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
-# this is true only for the clones:
-# BASE_PATH = LOCAL_PATH + "clones/bib/tour_de_source1/"
-BASE_PATH = LOCAL_PATH
 
 
 def get_cuteHash(filePath):
@@ -97,7 +90,7 @@ def test_getDateTimeS():
     assert start < getDateTimeS(datetime.now())
 
 
-def test_get_cuteHash_fileExists():
+def test_get_cuteHash_fileExists(BASE_PATH):
     safePath = BASE_PATH + "repo/testFile.txt"
     with open(safePath, 'w+') as testFile:
         testFile.write('12345678')
@@ -292,10 +285,6 @@ class RotatingFileGmailHandler(RotatingFileHandler):
         mailServer.sendmail(self.email, self.to, msg.as_string())
         mailServer.close()
 
-LOG_DEBUG_FILENAME = BASE_PATH + "data/log/tour_de_source.debug.log"
-
-LOG_CRITICAL_FILENAME = BASE_PATH + "data/log/tour_de_source.critical.log"
-
 
 def getConsoleHandler():
     console = logging.StreamHandler()
@@ -305,7 +294,7 @@ def getConsoleHandler():
     return console
 
 
-def getRotatingFileHandler():
+def getRotatingFileHandler(LOG_DEBUG_FILENAME):
     rotating = logging.handlers.RotatingFileHandler(filename=LOG_DEBUG_FILENAME, maxBytes=4194304, backupCount=999, delay=False)
     formatter = logging.Formatter("%(asctime)s %(levelname)s-%(message)s", '%a, %d %b %H:%M:%S')
     rotating.setFormatter(formatter)
@@ -313,7 +302,7 @@ def getRotatingFileHandler():
     return rotating
 
 
-def getGmailRotatingFileHandler(email, password, to):
+def getGmailRotatingFileHandler(email, password, to, LOG_CRITICAL_FILENAME):
     gmailing = RotatingFileGmailHandler(LOG_CRITICAL_FILENAME, email, password, to, "CRITICAL Log Report", maxBytes=4194304, backupCount=999, delay=False)
     formatter = logging.Formatter("%(asctime)s %(message)s", '%H:%M:%S')
     gmailing.setFormatter(formatter)
@@ -321,22 +310,22 @@ def getGmailRotatingFileHandler(email, password, to):
     return gmailing
 
 
-def prepareLogging(email, password, to):
+def prepareLogging(email, password, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME):
     # erase old logging files if any exist
     try:
-        sh.cd(BASE_PATH + "data/log")
-        sh.rm('-r', sh.glob('./*'))
-    except:
-        pass
+        for x in glob.glob(BASE_PATH + "data/log/.*"):
+            erasePath(x)
+    except Exception as e:
+        raise RuntimeWarning("failure to erase old logs with exception: " + e.strerror)
     logger = logging.getLogger('')
     logger.setLevel(logging.DEBUG)
     logger.addHandler(getConsoleHandler())
-    logger.addHandler(getRotatingFileHandler())
-    logger.addHandler(getGmailRotatingFileHandler(email, password, to))
+    logger.addHandler(getRotatingFileHandler(LOG_DEBUG_FILENAME))
+    logger.addHandler(getGmailRotatingFileHandler(email, password, to, LOG_CRITICAL_FILENAME))
     return logger
 
 
-def emailEndingMessage(email, password, to, subject):
+def emailEndingMessage(email, password, to, subject, LOG_CRITICAL_FILENAME):
     msg = MIMEMultipart()
     msg['From'] = email
     msg['To'] = to

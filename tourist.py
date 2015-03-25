@@ -5,7 +5,7 @@ import util
 
 class Tourist(object):
 
-    def __init__(self, depot, email, password, to, scanner, sourcers, logger, endingMessage):
+    def __init__(self, depot, email, password, to, scanner, sourcers, logger, endingMessage, LOG_CRITICAL_FILENAME):
         self.depot = depot
         self.email = email
         self.password = password
@@ -14,6 +14,7 @@ class Tourist(object):
         self.sourcers = sourcers
         self.logger = logger
         self.endingMessage = endingMessage
+        self.LOG_CRITICAL_FILENAME = LOG_CRITICAL_FILENAME
 
         self.startS = util.getDateTimeS(datetime.datetime.utcnow())
         self.id = util.getUniqueCuteID(5, depot.getTourPath())
@@ -70,7 +71,7 @@ class Tourist(object):
             tour_complete = sourcers_exhausted or cancelled or broken
         self.updateStatus(finalState)
         self.logger.critical("Touri - tour, SCAN_" + self.id + " FINAL STATE: " + finalState + " after scanning " + str(uniqueSourceID) + " sources containing Python out of " + str(s.getNProjects()) + " total sources observed")
-        util.emailEndingMessage(self.email, self.password, self.to, self.endingMessage + self.getStatus())
+        util.emailEndingMessage(self.email, self.password, self.to, self.endingMessage + self.getStatus(), self.LOG_CRITICAL_FILENAME)
 
 
 # ######################### conveneince methods #######################

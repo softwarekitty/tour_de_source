@@ -10,7 +10,7 @@ import git
 class GitRewinder:
     def __init__(self, path, rewinder_type, uniqueSourceID, stack):
         self.stack = stack
-        self.git = git.Git(path)
+        self.gitRepo = git.Git(path)
         self.rewinder_type = rewinder_type
         self.sourceJson = "{initialized}"
         self.uniqueSourceID = uniqueSourceID
@@ -25,7 +25,7 @@ class GitRewinder:
         self.sourceJson = commitTuple[2]
 
         # Note that --hard is needed to get rid of files from previous commits
-        git.reset("--hard", self.sha)
+        self.gitRepo.reset("--hard", self.sha)
         return True
 
     def getUniqueSourceID(self):

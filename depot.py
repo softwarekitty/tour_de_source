@@ -1,6 +1,5 @@
 import sqlite3
 import os
-from util import BASE_PATH
 import glob
 
 
@@ -8,20 +7,10 @@ import glob
 class Depot:
 
     # if the tour.db file is not yet defined, or we are in recreate mode, create it
-    def __init__(self, logger):
+    def __init__(self, logger, BASE_PATH):
         # signal the start of the outer depot program
         logger.critical("Depot - ***************init Depot**********.")
-        # if not os.path.exists(self.getRepoPath()):
-        #     os.makedirs(self.getRepoPath())
-        # if not os.path.exists(self.getDataPath()):
-        #     os.makedirs(self.getDataPath())
-        # if not os.path.exists(self.getDataPath()):
-        #     os.makedirs(self.getDataPath() + "log/")
-        # if not os.path.exists(util.LOG_DEBUG_FILENAME):
-        #     open(util.LOG_DEBUG_FILENAME, 'a').close()
-        # if not os.path.exists(util.LOG_CRITICAL_FILENAME):
-        #     open(util.LOG_CRITICAL_FILENAME, 'a').close()
-
+        self.BASE_PATH = BASE_PATH
         # we should renew if we are in development mode - renewing erases old tour.db files.  If you don't renew, then we will append any new tours to the old tour.db file.
         if self.shouldRenew():
             try:
@@ -33,7 +22,6 @@ class Depot:
                 # expect to hit this when the db has not been created yet
                 logger.error("Depot - failure trying to renew.")
                 pass
-        exit()
         # not renewing, then you would create only if no db exists yet
         dbFilePath = self.getTourPath()
         if not os.path.isfile(dbFilePath):
@@ -50,19 +38,15 @@ class Depot:
 
 
 # ############################# immutable getters ###########################
-
-    def getBasePath(self):
-        return BASE_PATH
-
     # we don't want any accidental modification of this, so it's get only
     def getRepoPath(self):
-        return self.getBasePath() + 'repo/'
+        return self.BASE_PATH + 'repo/'
 
     def getDataPath(self):
-        return self.getBasePath() + 'data/'
+        return self.BASE_PATH + 'data/'
 
     def getTourPath(self):
-        return self.getDataPath() + 'tour.db'
+        return self.BASE_PATH + 'tour.db'
 
     def shouldRenew(self):
         return True
