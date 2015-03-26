@@ -41,8 +41,10 @@ from os.path import expanduser
 HOME = expanduser("~")
 LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
 
-proceed = input("the path to be cleaned is " + LOCAL_PATH + " to proceed type 1\n")
-if not proceed == 1:
+proceed = input("the path to be cleaned is " + LOCAL_PATH + " to proceed type 1, or to use '/home/carl/Documents/SoftwareProjects/tour_de_source/' type 2\n")
+if proceed == 2:
+    LOCAL_PATH = "/home/carl/Documents/SoftwareProjects/tour_de_source/"
+elif not proceed == 1:
     exit()
 
 cloneNames = ["bib", "gum", "rat", "yen"]
