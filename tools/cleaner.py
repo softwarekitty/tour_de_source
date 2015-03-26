@@ -13,6 +13,7 @@ for name in cloneNames:
         basePath = LOCAL_PATH + "clones/" + name + "/tour_de_source" + str(i) + "/"
         dataPath = basePath + "data/"
         # remove all python files?
+        print "basepath: " + basePath
         for f in glob.glob(basePath + "*.pyc"):
             print "removing: " + f
             os.remove(f)
