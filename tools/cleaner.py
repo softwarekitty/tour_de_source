@@ -56,15 +56,19 @@ for name in cloneNames:
         if not os.path.exists(basePath):
             print "creating path: " + basePath
             os.makedirs(basePath)
+            os.chmod(basePath, 0777)
         if not os.path.exists(basePath + "repo/"):
             print "creating path: " + basePath + "repo/"
             os.makedirs(basePath + "repo/")
+            os.chmod(basePath + "repo/", 0777)
         if not os.path.exists(basePath + "data/"):
             print "creating path: " + basePath + "data/"
             os.makedirs(basePath + "data/")
+            os.chmod(basePath + "data/", 0777)
         if not os.path.exists(basePath + "data/log/"):
             print "creating path: " + basePath + "data/log/"
             os.makedirs(basePath + "data/log/")
+            os.chmod(basePath + "data/log/", 0777)
         eraseAt(basePath)
         eraseAt(basePath + "data/")
         eraseAt(basePath + "data/log/")
