@@ -36,5 +36,4 @@ for name in cloneNames:
         fo = open(basePath + "main.py", "w")
         fo.write(newMain)
     j += 1
-    exit()
 print "done distributing"
