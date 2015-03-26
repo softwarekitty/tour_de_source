@@ -44,6 +44,8 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
         except Exception as e:
             logger.info("GiPyS - nCoGiRe, error: " + str(e))
 
+    # SELF-REWINDING PROBLEM IS HERE: happens when we fail to clear the directory, git refuses to clone into a directory containing something, and then after 3 tries we call git.Git(repo_path) and the only '.git' it can find is in tour_de_source.  So then we prepare a list of shas using git log and rewind according to them
+
     # now get the time and sha for commits
     commitList = []
     repoGit = git.Git(repo_path)

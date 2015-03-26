@@ -1,6 +1,7 @@
 import sqlite3
 import datetime
 import util
+import gc
 
 
 class Tourist(object):
@@ -57,6 +58,7 @@ class Tourist(object):
                             self.logger.info("Touri - tour, SCAN_" + self.id + " now has rewinder: " + r.log())
                             while r.rewind():
                                 self.scanner.scanDirectory(self.depot.getRepoPath(), self.getReportPath(), r.getUniqueSourceID(), r.getSourceJSON(), shaSet, filePathSet, citationSet)
+                                gc.collect()
                             self.logger.debug("filePathSet content: " + str(filePathSet))
                             self.logger.info("Touri - done w/ID " + str(uniqueSourceID) + " nFiles: " + str(len(filePathSet)) + " nCites: " + str(len(citationSet)))
                             self.scanner.incrementFilesPerProject(len(filePathSet), self.getReportPath())
