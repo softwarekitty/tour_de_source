@@ -14,6 +14,7 @@ for name in cloneNames:
         dataPath = basePath + "data/"
         # remove all python files?
         for f in glob.glob(basePath + "*.pyc"):
+            print "removing: " + f
             os.remove(f)
         for f in glob.glob(dataPath + "*.db"):
             os.remove(f)
