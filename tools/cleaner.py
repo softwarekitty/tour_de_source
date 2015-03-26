@@ -32,6 +32,7 @@ def eraseAt(basePath, eraseAll=False):
     if contents:
         for x in contents:
             if os.path.isfile(x) or eraseAll:
+                print "erasing: " + x
                 erasePath(x)
 
 
@@ -40,6 +41,10 @@ from os.path import expanduser
 HOME = expanduser("~")
 LOCAL_PATH = HOME + "/Documents/SoftwareProjects/tour_de_source/"
 
+proceed = input("the path to be cleaned is " + LOCAL_PATH + " to proceed type 1\n")
+if not proceed == 1:
+    exit()
+
 cloneNames = ["bib", "gum", "rat", "yen"]
 
 for name in cloneNames:
@@ -47,12 +52,16 @@ for name in cloneNames:
 
         basePath = LOCAL_PATH + "clones/" + name + "/tour_de_source" + str(i) + "/"
         if not os.path.exists(basePath):
+            print "creating path: " + basePath
             os.makedirs(basePath)
         if not os.path.exists(basePath + "repo/"):
+            print "creating path: " + basePath + "repo/"
             os.makedirs(basePath + "repo/")
         if not os.path.exists(basePath + "data/"):
+            print "creating path: " + basePath + "data/"
             os.makedirs(basePath + "data/")
         if not os.path.exists(basePath + "data/log/"):
+            print "creating path: " + basePath + "data/log/"
             os.makedirs(basePath + "data/log/")
         eraseAt(basePath)
         eraseAt(basePath + "data/")
