@@ -6,6 +6,7 @@ import commands
 
 # no exception if successfully able to erase whatever is at path
 def erasePath(path, logger=None):
+    os.chmod(path, 0777)
     if os.path.isfile(path):
         try:
             os.remove(path)
