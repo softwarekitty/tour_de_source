@@ -64,7 +64,8 @@ class Tourist(object):
                             self.scanner.incrementFilesPerProject(len(filePathSet), self.getReportPath())
                             consecutiveExceptionCounter = 0
                             self.scanner.setFilesPerProject(-1, s.getNProjects(), self.getReportPath())
-                            self.scanner.setFilesPerProject(-2, s.getNFailures(), self.getReportPath())
+                            self.scanner.setFilesPerProject(-2, s.nRefreshRepoFailures(), self.getReportPath())
+                            self.scanner.setFilesPerProject(-3, s.nGetRewinderFailures(), self.getReportPath())
                 except (KeyboardInterrupt, SystemExit) as exit:
                     self.cancel()
                     self.logger.critical("Touri - tour, SCAN_" + self.id + "  has been cancelled by the host with EXCEPTION:" + str(type(exit).__name__))

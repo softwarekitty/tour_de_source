@@ -1,5 +1,11 @@
 *.pyc
+*.class
 .DS_Store
 *.db
 repo/
 data/
+.project
+.metadata
+analysis/bin/
+.launch
+.classpath

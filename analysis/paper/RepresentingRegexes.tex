@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{datatool}
+\DTLsetseparator{,}
+
+\DTLloaddb{data}{/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/analysis/analysis_output/database.csv}
+
+\begin{document}
+Some data from the database:
+\\*nProjectsObserved: \DTLfetch{data}{key}{nProjectsObserved}{value}.
+\\*nRefreshRepoFailures: \DTLfetch{data}{key}{nRefreshRepoFailures}{value}.
+\\*nGetRewinderFailures: \DTLfetch{data}{key}{nGetRewinderFailures}{value}.
+
+\subsection*{\centerline{REPRESENTING A CORPUS OF REGEXES}}%unnumbered
+1. How can we choose a small list of actual regexes to best represent all regexes within a corpus by usage?
+\\*a.) What regexes are most frequently used?
+\\*b.) What features are most frequently used?
+\\*c.) What regexes are most cloned?
+\\*d.) What behavioral clustering can be observed?
+\\*e.) What syntactic clustering can be observed?
+\\*f.) Various synthesis of a-e.
+
+
+\subsection*{\centerline{CONTEXT AND CORPUS}}%unnumbered
+
+
+
+\end{document}

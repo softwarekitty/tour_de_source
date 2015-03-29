@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{datatool}
+\DTLsetseparator{,}
+
+\DTLloaddb{players}{database.csv}
+
+\begin{document}
+
+Sue's points: \DTLfetch{players}{name}{Sue}{points}.
+
+Pull information from row 3.
+\DTLassign{players}{3}{\name=name,\points=points}
+
+Here's the information: Name: \name. Points: \points.
+
+Pull information from the first row where the name column has the
+value ``John''.
+\DTLassignfirstmatch{players}{name}{John}{\name=name,\points=points}
+
+Here's the information: Name (we already know this anyway): \name.
+Points: \points.
+
+\subsection*{\centerline{CONTEXT AND CORPUS}}%unnumbered
+1. How can we choose a small list of actual regexes to best represent all regexes within a corpus by usage?
+\\*a.) What regexes are most frequently used?
+\\*b.) What features are most frequently used?
+\\*c.) What regexes are most cloned?
+\\*d.) What behavioral clustering can be observed?
+\\*e.) What syntactic clustering can be observed?
+\\*f.) Various synthesis of a-e.
+
+
+\subsection*{\centerline{CONTEXT AND CORPUS}}%unnumbered
+
+
+
+\end{document}
