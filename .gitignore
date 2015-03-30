@@ -9,3 +9,8 @@ data/
 analysis/bin/
 .launch
 .classpath
+*.bbl
+*.blg
+*.aux
+*.log
+
