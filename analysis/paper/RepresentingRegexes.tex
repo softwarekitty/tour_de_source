@@ -6,9 +6,13 @@
 
 \begin{document}
 Some data from the database:
-\\*nProjectsObserved: \DTLfetch{data}{key}{nProjectsObserved}{value}.
-\\*nRefreshRepoFailures: \DTLfetch{data}{key}{nRefreshRepoFailures}{value}.
-\\*nGetRewinderFailures: \DTLfetch{data}{key}{nGetRewinderFailures}{value}.
+\\*nObserved: \DTLfetch{data}{key}{nObserved}{value}.
+\\*nSkipped: \DTLfetch{data}{key}{nSkipped}{value}.
+\\*nAborted: \DTLfetch{data}{key}{nAborted}{value}.
+\\*nScanned: \DTLfetch{data}{key}{nScanned}{value}.
+\\*nProjectsWithRegex: \DTLfetch{data}{key}{nProjectsWithRegex}{value}.
+\\*nPythonFiles: \DTLfetch{data}{key}{nPythonFiles}{value}.
+\\*nFilesWithRegex: \DTLfetch{data}{key}{nFilesWithRegex}{value}.
 
 \subsection*{\centerline{REPRESENTING A CORPUS OF REGEXES}}%unnumbered
 1. How can we choose a small list of actual regexes to best represent all regexes within a corpus by usage?
