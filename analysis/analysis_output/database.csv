@@ -1,8 +1,8 @@
 key,value
-nProjectsObserved,5001
-nRefreshRepoFailures,3
+nAborted,5
+nScanned,9644
 nFilesWithRegex,50369
-nFilesScanned,550532
 nProjectsWithRegex,4873
-nPythonProjects,9644
-nGetRewinderFailures,5
+nPythonFiles,550532
+nSkipped,3
+nObserved,5001

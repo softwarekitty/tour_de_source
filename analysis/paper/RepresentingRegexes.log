@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.29)  29 MAR 2015 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.29)  29 MAR 2015 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -242,7 +242,7 @@ esentingRegexes.aux) )
 Here is how much of TeX's memory you used:
  3065 strings out of 493109
  38563 string characters out of 6135004
- 133975 words of memory out of 5000000
+ 134502 words of memory out of 5000000
  6515 multiletter control sequences out of 15000+600000
  4245 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -250,7 +250,7 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr10.pfb>
-Output written on RepresentingRegexes.pdf (1 page, 29443 bytes).
+Output written on RepresentingRegexes.pdf (1 page, 30904 bytes).
 PDF statistics:
  16 PDF objects out of 1000 (max. 8388607)
  10 compressed objects within 1 object stream
