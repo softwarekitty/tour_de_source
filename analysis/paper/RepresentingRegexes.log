@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.29)  30 MAR 2015 01:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.29)  30 MAR 2015 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,24 +6,93 @@ entering extended mode
 (./RepresentingRegexes.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(./IEEEtran.cls
+Document Class: IEEEtran 2012/11/21 V1.8c by Harald Hanche-Olsen and Anders Chr
+istensen
+-- Based on V1.7a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
-\abovecaptionskip=\skip41
-\belowcaptionskip=\skip42
-\bibindent=\dimen102
-)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/datatool/datatool.sty
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count90
+\@IEEEtranrubishbin=\box26
+) (/usr/local/texlive/2014/texmf-dist/tex/latex/datatool/datatool.sty
 Package: datatool 2014/06/10 v2.22 (NLCT)
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/xkeyval/xkeyval.sty
@@ -31,11 +100,11 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks14
-\XKV@tempa@toks=\toks15
+\XKV@toks=\toks15
+\XKV@tempa@toks=\toks16
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count87
+\XKV@depth=\count91
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
@@ -46,23 +115,23 @@ Package: xfor 2009/02/05 v1.05 (NLCT)
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count88
+\c@su@anzahl=\count92
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/03/19 v2.1d e-TeX tools for LaTeX (JAW)
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
-\et@xins=\count89
+\et@xins=\count93
 )
-\etb@tempcnta=\count90
+\etb@tempcnta=\count94
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/datatool/datatool-base.sty
 Package: datatool-base 2014/06/10 v2.22 (NLCT)
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip43
+\@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -70,51 +139,51 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks16
-\ex@=\dimen103
+\@emptytoks=\toks17
+\ex@=\dimen117
 ))
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen104
+\pmbraise@=\dimen118
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count91
+\inf@bad=\count95
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count92
-\leftroot@=\count93
+\uproot@=\count96
+\leftroot@=\count97
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count94
-\DOTSCASE@=\count95
+\classnum@=\count98
+\DOTSCASE@=\count99
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
-\big@size=\dimen105
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen119
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count96
-\c@MaxMatrixCols=\count97
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
 \dotsspace@=\muskip10
-\c@parentequation=\count98
-\dspbrk@lvl=\count99
-\tag@help=\toks17
-\row@=\count100
-\column@=\count101
-\maxfields@=\count102
-\andhelp@=\toks18
-\eqnshift@=\dimen106
-\alignsep@=\dimen107
-\tagshift@=\dimen108
-\tagwidth@=\dimen109
-\totwidth@=\dimen110
-\lineht@=\dimen111
-\@envbody=\toks19
-\multlinegap=\skip44
-\multlinetaggap=\skip45
-\mathdisplay@stack=\toks20
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks18
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks19
+\eqnshift@=\dimen120
+\alignsep@=\dimen121
+\tagshift@=\dimen122
+\tagwidth@=\dimen123
+\totwidth@=\dimen124
+\lineht@=\dimen125
+\@envbody=\toks20
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -127,19 +196,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/usr/local/texlive/2014/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count103
+\actioncount=\count107
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count104
-\FP@xia=\count105
-\FP@xib=\count106
-\FP@xfa=\count107
-\FP@xfb=\count108
-\FP@rega=\count109
-\FP@regb=\count110
-\FP@regs=\count111
-\FP@times=\count112
+\FP@xs=\count108
+\FP@xia=\count109
+\FP@xib=\count110
+\FP@xfa=\count111
+\FP@xfb=\count112
+\FP@rega=\count113
+\FP@regb=\count114
+\FP@regs=\count115
+\FP@times=\count116
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -158,7 +227,7 @@ Package: fp-pas 1994/08/29
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count113
+\FPseed=\count117
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -169,51 +238,51 @@ Package: fp-upn 1996/10/21
 (/usr/local/texlive/2014/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
 )))
-\@dtl@toks=\toks21
-\@dtl@tmpcount=\count114
-\dtl@tmplength=\skip46
-\dtl@sortresult=\count115
-\@dtl@numgrpsepcount=\count116
-\@dtl@datatype=\count117
-\dtl@codeA=\count118
-\dtl@codeB=\count119
-\@dtl@foreach@level=\count120
+\@dtl@toks=\toks22
+\@dtl@tmpcount=\count118
+\dtl@tmplength=\skip47
+\dtl@sortresult=\count119
+\@dtl@numgrpsepcount=\count120
+\@dtl@datatype=\count121
+\dtl@codeA=\count122
+\dtl@codeB=\count123
+\@dtl@foreach@level=\count124
 )
-\dtlcolumnnum=\count121
-\dtlrownum=\count122
-\@dtl@before=\toks22
-\@dtl@after=\toks23
-\@dtl@colhead=\toks24
-\dtlcurrentrow=\toks25
-\dtlbeforerow=\toks26
-\dtlafterrow=\toks27
-\dtlforeachlevel=\count123
-\c@DTLrowi=\count124
-\c@DTLrowii=\count125
-\c@DTLrowiii=\count126
-\c@DTLrow=\count127
-\dtl@rowi=\count128
-\dtl@rowii=\count129
-\dtl@rowiii=\count130
-\@dtl@curi=\toks28
-\@dtl@previ=\toks29
-\@dtl@nexti=\toks30
-\@dtl@curii=\toks31
-\@dtl@previi=\toks32
-\@dtl@nextii=\toks33
-\@dtl@curiii=\toks34
-\@dtl@previii=\toks35
-\@dtl@nextiii=\toks36
-\@dtl@elements=\count131
-\@dtl@list=\toks37
-\@dtl@rowa=\toks38
-\@dtl@rowb=\toks39
-\@dtl@toksA=\toks40
-\@dtl@toksB=\toks41
+\dtlcolumnnum=\count125
+\dtlrownum=\count126
+\@dtl@before=\toks23
+\@dtl@after=\toks24
+\@dtl@colhead=\toks25
+\dtlcurrentrow=\toks26
+\dtlbeforerow=\toks27
+\dtlafterrow=\toks28
+\dtlforeachlevel=\count127
+\c@DTLrowi=\count128
+\c@DTLrowii=\count129
+\c@DTLrowiii=\count130
+\c@DTLrow=\count131
+\dtl@rowi=\count132
+\dtl@rowii=\count133
+\dtl@rowiii=\count134
+\@dtl@curi=\toks29
+\@dtl@previ=\toks30
+\@dtl@nexti=\toks31
+\@dtl@curii=\toks32
+\@dtl@previi=\toks33
+\@dtl@nextii=\toks34
+\@dtl@curiii=\toks35
+\@dtl@previii=\toks36
+\@dtl@nextiii=\toks37
+\@dtl@elements=\count135
+\@dtl@list=\toks38
+\@dtl@rowa=\toks39
+\@dtl@rowb=\toks40
+\@dtl@toksA=\toks41
+\@dtl@toksB=\toks42
 \@dtl@write=\write3
 \@dtl@read=\read1
-\dtl@entrycr=\count132
-\dtl@omitlines=\count133
+\dtl@entrycr=\count136
+\dtl@omitlines=\count137
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
@@ -238,10 +307,10 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count134
+\Gread@gobject=\count138
 ))
-\Gin@req@height=\dimen112
-\Gin@req@width=\dimen113
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
@@ -300,79 +369,117 @@ Package grfext Info: Graphics extension search list:
 ,.JPEG,.JBIG2,.JB2]
 (grfext)             \PrependGraphicsExtensions on input line 150.
 )
-\dtldb@data=\toks42
-\dtlkeys@data=\toks43
-\dtlrows@data=\count135
-\dtlcols@data=\count136
+\dtldb@data=\toks43
+\dtlkeys@data=\toks44
+\dtlrows@data=\count139
+\dtlcols@data=\count140
 
+(/usr/local/texlive/2014/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/preprint/balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen128
+)
 (./RepresentingRegexes.aux)
 \openout1 = `RepresentingRegexes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count137
-\scratchdimen=\dimen114
-\scratchbox=\box28
-\nofMPsegments=\count138
-\nofMParguments=\count139
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count140
-\MPscratchDim=\dimen115
-\MPnumerator=\count141
-\makeMPintoPDFobject=\count142
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count141
+\scratchdimen=\dimen129
+\scratchbox=\box29
+\nofMPsegments=\count142
+\nofMParguments=\count143
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count144
+\MPscratchDim=\dimen130
+\MPnumerator=\count145
+\makeMPintoPDFobject=\count146
+\everyMPtoPDFconversion=\toks46
 )
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 35.
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 35.
+
+(./introduction.tex) (./motivation.tex) (./related.tex) (./study.tex)
 Package epstopdf Info: Source file: </Users/carlchapman/Documents/SoftwareProje
 cts/tour_de_source/analysis/analysis_output/filesPerProject.eps>
 (epstopdf)                    date: 2015-03-30 01:21:57
 (epstopdf)                    size: 4461 bytes
 (epstopdf)             Output file: <./filesPerProject-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-03-30 01:33:16
+(epstopdf)                    date: 2015-03-30 16:34:19
 (epstopdf)                    size: 8637 bytes
 (epstopdf)             Command: <repstopdf --outfile=./filesPerProject-eps-conv
 erted-to.pdf /Users/carlchapman/Documents/SoftwareProjects/tour_de_source/analy
 sis/analysis_output/filesPerProject.eps>
-(epstopdf)             \includegraphics on input line 33.
+(epstopdf)             \includegraphics on input line 80.
 Package epstopdf Info: Output file is already uptodate.
- <./filesPerProject-eps-converted-to.pdf, id=1, 505.89pt x 505.89pt>
+
+<./filesPerProject-eps-converted-to.pdf, id=1, 505.89pt x 505.89pt>
 File: ./filesPerProject-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./filesPerProject-eps-converted-to.pdf>
 Package pdftex.def Info: ./filesPerProject-eps-converted-to.pdf used on input l
-ine 33.
+ine 80.
 (pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
- [1
+ (./results.tex) (./discussion.tex) (./RepresentingRegexes.bbl)
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./files
-PerProject-eps-converted-to.pdf>] (./RepresentingRegexes.aux) ) 
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./filesPerProject-eps-converted-to.pdf>] (./RepresentingRegexes.aux) ) 
 Here is how much of TeX's memory you used:
- 4314 strings out of 493109
- 57608 string characters out of 6135004
- 158000 words of memory out of 5000000
- 7700 multiletter control sequences out of 15000+600000
- 4245 words of font info for 16 fonts, out of 8000000 for 9000
+ 5153 strings out of 493109
+ 73248 string characters out of 6135004
+ 177134 words of memory out of 5000000
+ 8497 multiletter control sequences out of 15000+600000
+ 34143 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,6n,50p,837b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on RepresentingRegexes.pdf (1 page, 37597 bytes).
+ 46i,6n,50p,837b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/l
+ocal/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-di
+st/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
+times/utmri8a.pfb>
+Output written on RepresentingRegexes.pdf (1 page, 68655 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 15 compressed objects within 1 object stream
+ 37 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

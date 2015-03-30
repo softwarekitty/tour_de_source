@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[conference]{IEEEtran}
 \usepackage{datatool}
 \usepackage{graphicx}
 \usepackage[update,prepend,outdir=./]{epstopdf}
@@ -6,7 +6,54 @@
 
 \DTLloaddb{data}{/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/analysis/analysis_output/database.csv}
 
+\usepackage{cite}
+\usepackage{balance}
+
+
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+\newcommand{\todo}[1]{\textbf{TODO: #1}}
+
 \begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Regex Usage in Two Million Open Source Projects}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Carl Chapman and Kathryn T. Stolee}
+\IEEEauthorblockA{Department of Computer Science\\
+Iowa State University\\
+\{carl1978, kstolee\}@iastate.edu}}
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+Regular expressions are used frequently in many programming languages for form validation,
+ad-hoc file searches, and simple parsing. Given their popularity, many researchers have focused on
+making regular expressions easier to build, understand, and use. Yet, there does not exist a study of
+regular expression feature usage and diversity. In this paper, we explore how often regular expressions are used, which language features are most common, and how syntactically and semantically similar regular expressions are to one another. To do this, we scraped 2 million open source Python projects from GitHub and explored the regular expressions contained within. Our results indicate that \todo{high level results}
+\end{abstract}
+
+
+
+
+\input{introduction}
+
+
+\input{motivation}
+
+\input{related}
+
+\input{study}
+
 Some data from the database:
 \\*nObserved: \DTLfetch{data}{key}{nObserved}{value}.
 \\*nSkipped: \DTLfetch{data}{key}{nSkipped}{value}.
@@ -35,7 +82,26 @@ Some data from the database:
 \label{fig:digraph}
 \end{figure}
 
+\input{results}
 
-Hi. 
+\input{discussion}
 
+\section{Conclusion}
+
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+This work is supported in part by NSF SHF-1218265, NSF SHF-EAGER-1446932, and the Harpole-Pentair endowment at Iowa State University.
+
+
+\bibliographystyle{abbrv}
+
+% The bibliography should be embedded for final submission.
+
+\bibliography{biblio}
+\balance
+
+
+% that's all folks
 \end{document}
+
