@@ -1,8 +1,5 @@
 import sqlite3
-import astroid.manager
-import astroid.as_string
-import astroid.node_classes
-import astroid.inspector
+import gc
 import datetime
 import util
 import os
@@ -48,10 +45,15 @@ class PythonRegexScanner:
                         filePathSet.append(cleanFilePath)
                     progressCounter = 1
 
-                    node = astroid.manager.AstroidManager().ast_from_file(pythonFilePath)
+                    # experimenting with ways to keep memory use minimal
+                    from astroid import manager
+                    node = manager.AstroidManager().ast_from_file(pythonFilePath)
                     progressCounter = 2
                     endFileScanS = util.getDateTimeS(datetime.datetime.utcnow()) + 10
                     self.extractRegexR(node, report_db, uniqueSourceID, sourceJSON, fileHash, cleanFilePath, citationSet, endFileScanS)
+                    node = None
+                    gc.collect()
+
                     progressCounter = 3
                 else:
                     nDuplicates += 1
@@ -64,35 +66,36 @@ class PythonRegexScanner:
 
     # regex_flags = ["IGNORECASE","DEBUG","LOCALE","MULTILINE","DOTALL","UNICODE","VERBOSE"]
     def extractRegexR(self, child, report_db, uniqueSourceID, sourceJSON, fileHash, pythonFilePath, citationSet, endFileScanS):
+        from astroid import node_classes, scoped_nodes, bases
         nowS = util.getDateTimeS(datetime.datetime.utcnow())
         if nowS >= endFileScanS:
             raise RuntimeWarning
         # all the methods we will look for
         target_func = self.get_function_list()
-        if isinstance(child, astroid.node_classes.CallFunc) and child.func.as_string() in target_func:
+        if isinstance(child, node_classes.CallFunc) and child.func.as_string() in target_func:
             # self.log("found targedFunction: " + str(child.func.as_string()))
             regex_citation = [child.func.as_string(), "arg1", "arg2", "arg3", "arg4", "arg5"]
             arg_counter = 1
             for x in child.args:
-                if isinstance(x, astroid.node_classes.Getattr):
+                if isinstance(x, node_classes.Getattr):
                     key = x.attrname
                     gc = x.get_children().next().infer().next()
 
                     # for all the cases I've inspected,
                     # we see: x->Name->(Module() or _Yes or Class)
-                    if isinstance(gc, astroid.scoped_nodes.Module):
+                    if isinstance(gc, scoped_nodes.Module):
                         regex_citation[arg_counter] = gc.globals[key][0].infer().next().as_string()
-                    elif isinstance(gc, astroid.scoped_nodes.Class):
+                    elif isinstance(gc, scoped_nodes.Class):
                         regex_citation[arg_counter] = gc.locals[key][0].infer().next().as_string()
-                    elif isinstance(gc, astroid.bases._Yes):
+                    elif isinstance(gc, bases._Yes):
                         neighborFile = x.get_children().next()
                         regex_citation[arg_counter] = str(neighborFile.name) + "." + str(x.attrname)
                     else:
                         self.logger.warning("PyReS - extractRegexR, unexpected class found: " + x.__class__.__name__)
 
-                elif isinstance(x, astroid.node_classes.Name):
+                elif isinstance(x, node_classes.Name):
                     regex_citation[arg_counter] = x.infer().next().as_string()
-                elif isinstance(x, astroid.node_classes.Const):
+                elif isinstance(x, node_classes.Const):
                     regex_citation[arg_counter] = x.as_string()
                 else:
                     self.logger.warning("PyReS - extractRegexR, unexpected class found: " + x.__class__.__name__)
