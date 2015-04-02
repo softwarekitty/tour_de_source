@@ -339,15 +339,15 @@ def getRotatingFileHandler(LOG_DEBUG_FILENAME):
     return rotating
 
 
-def getGmailRotatingFileHandler(email, password, to, LOG_CRITICAL_FILENAME):
-    gmailing = RotatingFileGmailHandler(LOG_CRITICAL_FILENAME, email, password, to, "CRITICAL Log Report", maxBytes=4194304, backupCount=999, delay=False)
+def getGmailRotatingFileHandler(email, password, to, LOG_CRITICAL_FILENAME, thisCloneName):
+    gmailing = RotatingFileGmailHandler(LOG_CRITICAL_FILENAME, email, password, to, thisCloneName + ": CRITICAL Log Report", maxBytes=4194304, backupCount=999, delay=False)
     formatter = logging.Formatter("%(asctime)s %(message)s", '%H:%M:%S')
     gmailing.setFormatter(formatter)
     gmailing.setLevel(logging.CRITICAL)
     return gmailing
 
 
-def prepareLogging(email, password, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME):
+def prepareLogging(email, password, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME, thisCloneName):
     LOG_PATH = BASE_PATH + "data/log/"
     if not os.path.exists(LOG_PATH):
         os.makedirs(LOG_PATH)
@@ -363,7 +363,7 @@ def prepareLogging(email, password, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITI
     logger.setLevel(logging.DEBUG)
     logger.addHandler(getConsoleHandler())
     logger.addHandler(getRotatingFileHandler(LOG_DEBUG_FILENAME))
-    logger.addHandler(getGmailRotatingFileHandler(email, password, to, LOG_CRITICAL_FILENAME))
+    logger.addHandler(getGmailRotatingFileHandler(email, password, to, LOG_CRITICAL_FILENAME, thisCloneName))
     return logger
 
 

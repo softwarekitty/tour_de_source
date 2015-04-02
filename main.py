@@ -15,6 +15,7 @@ from scanner import PythonRegexScanner
 
 # SPLIT_HERE
 # grouping the variables together for ease of multiplication
+thisCloneName = "bot_1"
 cloneSuffix = ""
 smallWords = ["bat", "bee", "bib", "bog", "boo", "box", "bum", "bus"]
 credentials = "investigation" + smallWords[0] + ":whorysq5im5ztb"
@@ -38,7 +39,7 @@ e1 = "investigationbot@gmail.com"
 p1 = "cro0thiezlutrl"
 
 to = "carlallenchapman@gmail.com"
-l = util.prepareLogging(e1, p1, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME)
+l = util.prepareLogging(e1, p1, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME, thisCloneName)
 
 
 d = Depot(l, BASE_PATH)

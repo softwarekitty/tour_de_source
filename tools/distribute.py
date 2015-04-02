@@ -24,6 +24,7 @@ totalStart = 0
 chunk = 131072
 for name in cloneNames:
     for i in range(0, clonesPerMachine):
+        thisCloneName = cloneNames[j] + "_" + str(i + 1)
         cloneSuffix = "clones/" + name + "/tour_de_source" + str(i + 1) + "/"
         basePath = LOCAL_PATH + cloneSuffix
         cred = credentials[j][i]
@@ -31,7 +32,7 @@ for name in cloneNames:
         stop = totalStart + (first + chunk - 1)
         # first = 15249309
         # stop = 15249309
-        newMiddlePart = 'cloneSuffix = "' + cloneSuffix + '"\ncredentials = "' + cred + '"\nfirst = ' + str(first) + '\nstop = ' + str(stop) + '\nendingMessage = "Tour of ' + cloneNames[j] + "_" + str(i+1) + ' ended with status: "\n\n'
+        newMiddlePart = 'thisCloneName = "' + thisCloneName + '"\ncloneSuffix = "' + cloneSuffix + '"\ncredentials = "' + cred + '"\nfirst = ' + str(first) + '\nstop = ' + str(stop) + '\nendingMessage = "Tour of ' + thisCloneName + ' ended with status: "\n\n'
         newMain = parts[0] + newMiddlePart + parts[2]
         fo = open(basePath + "main.py", "w")
         fo.write(newMain)
