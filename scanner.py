@@ -4,6 +4,9 @@ import datetime
 import util
 import os
 import re
+import sys
+import resource
+import objgraph
 
 '''
 scanner interface is: 'scanDirectory(repoPath, reportPath, UniqueSourceID, sourceJSON)'
@@ -46,14 +49,18 @@ class PythonRegexScanner:
                     progressCounter = 1
 
                     # experimenting with ways to keep memory use minimal
-                    from astroid import manager
-                    node = manager.AstroidManager().ast_from_file(pythonFilePath)
+                    import astroid
+                    self.logger.critical("Scanner before ast: " + str(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
+                    node = astroid.manager.AstroidManager().ast_from_file(pythonFilePath)
+                    self.logger.critical("Scanner after ast: " + str(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
                     progressCounter = 2
                     endFileScanS = util.getDateTimeS(datetime.datetime.utcnow()) + 10
                     self.extractRegexR(node, report_db, uniqueSourceID, sourceJSON, fileHash, cleanFilePath, citationSet, endFileScanS)
-                    node = None
-                    gc.collect()
-
+                    # util.delete_module("astroid")
+                    astroid.__init__()
+                    self.logger.critical("Scanner after calling __init__ again: " + str(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
+                    self.logger.critical("Scanner sys.getrefcount(astroid): " + str(sys.getrefcount(astroid)))
+                    self.logger.critical("Scanner leaking objects: " + str(objgraph.show_most_common_types()))
                     progressCounter = 3
                 else:
                     nDuplicates += 1
@@ -137,7 +144,7 @@ class PythonRegexScanner:
         conn.close()
 
     def setFilesPerProject(self, numberOfFiles, frequency, report_db):
-        self.logger.debug("PyReS - addFilesPerProject, numberOfFiles: " + str(numberOfFiles) + " frequency: " + str(frequency))
+        self.logger.debug("PyReS - setFilesPerProject, numberOfFiles: " + str(numberOfFiles) + " frequency: " + str(frequency))
         conn = sqlite3.connect(report_db)
         c = conn.cursor()
         c.execute('''SELECT frequency FROM FilesPerProject WHERE nFiles = ?''', (numberOfFiles,))

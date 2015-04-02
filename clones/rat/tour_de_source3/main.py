@@ -14,7 +14,7 @@ from scanner import PythonRegexScanner
 
 
 cloneSuffix = "clones/rat/tour_de_source3/"
-credentials = "ShamusVernon:ZGC3VCOdQWRs4D"
+credentials = "ShamusVernonII:ZGC3VCOdQWRs4D"
 first = 2359296
 stop = 2490367
 endingMessage = "Tour of rat_3 ended with status: "
