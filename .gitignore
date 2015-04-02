@@ -13,4 +13,4 @@ analysis/bin/
 *.blg
 *.aux
 *.log
-
+*.aux
