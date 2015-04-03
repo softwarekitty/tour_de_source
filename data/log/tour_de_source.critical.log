@@ -250,3 +250,7 @@
 18:04:39 Touri - tour, SCAN_dpqa3 EXCEPTION:'int' object is not callable
 18:04:39 Touri - tour, consecutiveExceptionCounter: 1
 18:04:39 Touri - tour, SCAN_dpqa3 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
+19:54:37 Depot - ***************init Depot**********.
+19:54:37 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+19:55:48 GiPyS - next repoID: 15249309
+19:56:39 Touri - tour, SCAN_hfwi1 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
