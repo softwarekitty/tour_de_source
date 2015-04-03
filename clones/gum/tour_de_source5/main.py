@@ -15,9 +15,9 @@ from scanner import PythonRegexScanner
 
 thisCloneName = "gum_5"
 cloneSuffix = "clones/gum/tour_de_source5/"
-credentials = "SimoneMatthews:E8fWrexKBld69POJ50"
-first = 6291456
-stop = 6815743
+credentials = "SimoneMatthewsX:E8fWrexKBld69POJ50"
+first = 3145728
+stop = 3407871
 endingMessage = "Tour of gum_5 ended with status: "
 
 
