@@ -17,7 +17,7 @@ thisCloneName = "bib_1"
 cloneSuffix = "clones/bib/tour_de_source1/"
 credentials = "KendrickMurray:kos8izjfc4dnsa"
 first = 0
-stop = 131071
+stop = 524287
 endingMessage = "Tour of bib_1 ended with status: "
 
 

@@ -16,8 +16,8 @@ from scanner import PythonRegexScanner
 thisCloneName = "bib_4"
 cloneSuffix = "clones/bib/tour_de_source4/"
 credentials = "SienaGarner:mW3sTB6ZpFzVlCZzYMq"
-first = 393216
-stop = 524287
+first = 1572864
+stop = 2097151
 endingMessage = "Tour of bib_4 ended with status: "
 
 

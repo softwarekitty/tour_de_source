@@ -18,9 +18,9 @@ from scanner import PythonRegexScanner
 thisCloneName = "bot_1"
 cloneSuffix = ""
 smallWords = ["bat", "bee", "bib", "bog", "boo", "box", "bum", "bus"]
-credentials = "investigation" + smallWords[0] + ":whorysq5im5ztb"
-first = 15249309
-stop = 15249309
+credentials = "KendrickMurray:kos8izjfc4dnsa"
+first = 33379990
+stop = 34379990
 endingMessage = "Tour of bot1 ended with status: "
 # SPLIT_HERE
 

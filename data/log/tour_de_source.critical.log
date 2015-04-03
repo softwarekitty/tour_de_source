@@ -360,3 +360,77 @@
 22:59:01 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
 22:59:17 GiPyS - next repoID: 15249309
 22:59:28 Touri - tour, SCAN_3d9o1 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
+14:14:42 Depot - ***************init Depot**********.
+14:14:42 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 33378545 stop:34378545 credentials: investigationbat:whorysq5im5ztb
+14:15:03 GiPyS - next repoID: 33378554
+14:15:05 GiPyS - next repoID: 33378557
+14:15:07 GiPyS - next repoID: 33378567
+14:15:09 GiPyS - next repoID: 33378571
+14:15:59 GiPyS - next repoID: 33378578
+14:17:13 Util - get_json, blocked by rate limit: 1 ttwS: 3451
+14:17:51 Touri - tour, SCAN_a0wm7  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+14:17:51 Touri - tour, SCAN_a0wm7 Tour Canceled: True
+14:17:51 Touri - tour, SCAN_a0wm7 FINAL STATE: CANCELLED after scanning 5 sources containing Python out of 52 total sources observed
+14:25:40 Depot - ***************init Depot**********.
+14:25:40 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 33378990 stop:34378990 credentials: AmandaKeller:amkaGXEpCUmdv56SBW
+14:25:51 GiPyS - next repoID: 33378996
+14:25:53 GiPyS - next repoID: 33379011
+14:25:58 GiPyS - next repoID: 33379020
+14:26:17 Util - get_json, blocked by rate limit: 1 ttwS: 3565
+14:26:24 Touri - tour, SCAN_eb2gu  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+14:26:24 Touri - tour, SCAN_eb2gu Tour Canceled: True
+14:26:24 Touri - tour, SCAN_eb2gu FINAL STATE: CANCELLED after scanning 3 sources containing Python out of 52 total sources observed
+14:29:24 Depot - ***************init Depot**********.
+14:29:24 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 33379990 stop:34379990 credentials: KendrickMurray:kos8izjfc4dnsa
+14:29:33 Touri - tour, SCAN_ar3jz  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+14:29:33 Touri - tour, SCAN_ar3jz Tour Canceled: True
+14:29:33 Touri - tour, SCAN_ar3jz FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 9 total sources observed
+14:31:24 Depot - ***************init Depot**********.
+14:31:24 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 33379990 stop:34379990 credentials: KendrickMurray:kos8izjfc4dnsa
+14:31:24 Touri - tour, SCAN_8eluk EXCEPTION:cannot concatenate 'str' and 'list' objects
+14:31:24 Touri - tour, consecutiveExceptionCounter: 1
+14:31:24 Touri - tour, SCAN_8eluk EXCEPTION:cannot concatenate 'str' and 'list' objects
+14:31:24 Touri - tour, consecutiveExceptionCounter: 2
+14:31:25 Touri - tour, SCAN_8eluk EXCEPTION:cannot concatenate 'str' and 'list' objects
+14:31:25 Touri - tour, consecutiveExceptionCounter: 3
+14:31:25 Touri - tour, SCAN_8eluk EXCEPTION:cannot concatenate 'str' and 'list' objects
+14:31:25 Touri - tour, consecutiveExceptionCounter: 4
+14:31:25 Touri - tour, SCAN_8eluk EXCEPTION:cannot concatenate 'str' and 'list' objects
+14:31:25 Touri - tour, consecutiveExceptionCounter: 5
+14:31:26 Touri - tour, SCAN_8eluk EXCEPTION:cannot concatenate 'str' and 'list' objects
+14:31:26 Touri - tour, consecutiveExceptionCounter: 6
+14:31:26 Touri - tour, SCAN_8eluk FINAL STATE: BROKEN after scanning 0 sources containing Python out of 0 total sources observed
+14:31:41 Depot - ***************init Depot**********.
+14:31:41 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 33379990 stop:34379990 credentials: KendrickMurray:kos8izjfc4dnsa
+14:31:48 Touri - tour, SCAN_3uyga  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+14:31:48 Touri - tour, SCAN_3uyga Tour Canceled: True
+14:31:48 Touri - tour, SCAN_3uyga FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 11 total sources observed
+14:32:11 Depot - ***************init Depot**********.
+14:32:11 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 33379990 stop:34379990 credentials: KendrickMurray:kos8izjfc4dnsa
+14:32:16 Touri - tour, SCAN_99fk3  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+14:32:16 Touri - tour, SCAN_99fk3 Tour Canceled: True
+14:32:16 Touri - tour, SCAN_99fk3 FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 4 total sources observed
+14:32:55 Depot - ***************init Depot**********.
+14:32:55 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 33379990 stop:34379990 credentials: KendrickMurray:kos8izjfc4dnsa
+14:32:55 Touri - tour, SCAN_2opz6 EXCEPTION:cannot concatenate 'str' and 'int' objects
+14:32:55 Touri - tour, consecutiveExceptionCounter: 1
+14:32:56 Touri - tour, SCAN_2opz6 EXCEPTION:cannot concatenate 'str' and 'int' objects
+14:32:56 Touri - tour, consecutiveExceptionCounter: 2
+14:32:56 Touri - tour, SCAN_2opz6 EXCEPTION:cannot concatenate 'str' and 'int' objects
+14:32:56 Touri - tour, consecutiveExceptionCounter: 3
+14:32:56 Touri - tour, SCAN_2opz6 EXCEPTION:cannot concatenate 'str' and 'int' objects
+14:32:56 Touri - tour, consecutiveExceptionCounter: 4
+14:32:57 Touri - tour, SCAN_2opz6 EXCEPTION:cannot concatenate 'str' and 'int' objects
+14:32:57 Touri - tour, consecutiveExceptionCounter: 5
+14:32:57 Touri - tour, SCAN_2opz6 EXCEPTION:cannot concatenate 'str' and 'int' objects
+14:32:57 Touri - tour, consecutiveExceptionCounter: 6
+14:32:57 Touri - tour, SCAN_2opz6 FINAL STATE: BROKEN after scanning 0 sources containing Python out of 0 total sources observed
+14:33:11 Depot - ***************init Depot**********.
+14:33:11 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 33379990 stop:34379990 credentials: KendrickMurray:kos8izjfc4dnsa
+14:33:15 Touri - tour, SCAN_7lfs9  has been cancelled by the host with EXCEPTION:KeyboardInterrupt
+14:33:15 Touri - tour, SCAN_7lfs9 Tour Canceled: True
+14:33:15 Touri - tour, SCAN_7lfs9 FINAL STATE: CANCELLED after scanning 0 sources containing Python out of 2 total sources observed
+14:34:18 Depot - ***************init Depot**********.
+14:34:18 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 33379990 stop:34379990 credentials: KendrickMurray:kos8izjfc4dnsa
+14:34:18 GiPyS - exhausted, since: 33379989 stop: 34379990 len(repos): 0
+14:34:18 Touri - tour, SCAN_2g17n FINAL STATE: FINISHED after scanning 0 sources containing Python out of 0 total sources observed

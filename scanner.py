@@ -45,9 +45,12 @@ class PythonRegexScanner:
                     if cleanFilePath not in filePathSet:
                         filePathSet.append(cleanFilePath)
                     progressCounter = 1
-                    self.logger.warning("Scanner before ast: " + str(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
+                    memBeforeAST = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
                     node = astroid.manager.AstroidManager().ast_from_file(pythonFilePath)
-                    self.logger.warning("Scanner after ast: " + str(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
+                    memAfterAST = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+                    warningBoundary = 134217728
+                    if memAfterAST - warningBoundary > memBeforeAST:
+                        self.logger.warning("Memory usage jumped by " + str(memAfterAST - warningBoundary) + " after creating ast for file: " + pythonFilePath + "memory now at:" + str(memAfterAST))
                     progressCounter = 2
                     endFileScanS = util.getDateTimeS(datetime.datetime.utcnow()) + 10
                     self.extractRegexR(node, report_db, uniqueSourceID, sourceJSON, fileHash, cleanFilePath, citationSet, endFileScanS)

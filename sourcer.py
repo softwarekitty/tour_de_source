@@ -85,7 +85,7 @@ class GithubPythonSourcer(object):
     def refresh_repos(self, lastRepo):
         self.log("refresh_repos, lastRepo: " + str(lastRepo))
         sinceLastJSON = util.get_json(self.logger, 'https://api.github.com/repositories?since=' + str(lastRepo), self.credentials, True)
-        if sinceLastJSON is None or sinceLastJSON == "":
+        if sinceLastJSON is None or len(str(sinceLastJSON)) < 3:
             self.exhausted = True
             return
         repoID = "errorRepoID"
