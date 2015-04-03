@@ -13,6 +13,7 @@ from sourcer import GithubPythonSourcer
 from scanner import PythonRegexScanner
 
 
+thisCloneName = "bib_1"
 cloneSuffix = "clones/bib/tour_de_source1/"
 credentials = "KendrickMurray:kos8izjfc4dnsa"
 first = 0
@@ -35,7 +36,7 @@ e1 = "investigationbot@gmail.com"
 p1 = "cro0thiezlutrl"
 
 to = "carlallenchapman@gmail.com"
-l = util.prepareLogging(e1, p1, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME)
+l = util.prepareLogging(e1, p1, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME, thisCloneName)
 
 
 d = Depot(l, BASE_PATH)

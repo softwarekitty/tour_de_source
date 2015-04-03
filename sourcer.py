@@ -35,8 +35,8 @@ class GithubPythonSourcer(object):
         self.stop = stop
 
         self.nProjects = 0
-        self.nRefreshRepoFailures = 0
-        self.nGetRewinderFailures = 0
+        self.nRRFailures = 0
+        self.nGRFailures = 0
         self.exhausted = False
         self.repos = []
         self.logger.critical("initialized GithubPythonSourcer with rewinder_type: " + self.rewinder_type + " email: " + email + " first: " + str(first) + " stop:" + str(self.stop) + " credentials: " + str(self.credentials))
@@ -107,7 +107,7 @@ class GithubPythonSourcer(object):
                 raise
             except:
                 self.logger.warning("GiPyS - refresh_repos, failed to finish entire page of repos starting at lastRepo: " + str(lastRepo) + " but succeeded up to but excluding: " + str(repoID) + " which is the first " + str(projectCounter) + " projects.  this troublesome url will be skipped.")
-                self.nRefreshRepoFailures += 1
+                self.nRRFailures += 1
             projectCounter += 1
             self.nProjects += 1
 
@@ -122,10 +122,10 @@ class GithubPythonSourcer(object):
         return self.nProjects
 
     def nRefreshRepoFailures(self):
-        return self.nRefreshRepoFailures
+        return self.nRRFailures
 
     def nGetRewinderFailures(self):
-        return self.nGetRewinderFailures
+        return self.nGRFailures
 
     def log(self, msg=""):
         self.logger.debug("GiPyS - " + msg + " since: " + str(self.nextID) + " len(repos): " + str(len(self.repos)))
@@ -155,7 +155,7 @@ class GithubPythonSourcer(object):
 
         # by returning None, we skip this source.
         self.logger.critical("GiPySo-getRewinder, Issue creating rewinder for repoID: " + str(repoID) + ", could not be resolved after 6 attempts.  Returning None.")
-        self.nGetRewinderFailures += 1
+        self.nGRFailures += 1
         return None
 
 # ############################# A Test Sourcer ############################

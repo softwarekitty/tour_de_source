@@ -13,8 +13,9 @@ from sourcer import GithubPythonSourcer
 from scanner import PythonRegexScanner
 
 
+thisCloneName = "rat_3"
 cloneSuffix = "clones/rat/tour_de_source3/"
-credentials = "ShamusVernonII:ZGC3VCOdQWRs4D"
+credentials = "ShamusVernonIII:ZGC3VCOdQWRs4D"
 first = 2359296
 stop = 2490367
 endingMessage = "Tour of rat_3 ended with status: "
@@ -35,7 +36,7 @@ e1 = "investigationbot@gmail.com"
 p1 = "cro0thiezlutrl"
 
 to = "carlallenchapman@gmail.com"
-l = util.prepareLogging(e1, p1, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME)
+l = util.prepareLogging(e1, p1, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITICAL_FILENAME, thisCloneName)
 
 
 d = Depot(l, BASE_PATH)

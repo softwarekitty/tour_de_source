@@ -3,6 +3,7 @@ import astroid as A
 import resource as R
 import gc
 
+
 def foo():
     print "new process initial memory: " + str(R.getrusage(R.RUSAGE_SELF).ru_maxrss)
     x = A.MANAGER.ast_from_file("/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/main.py")
@@ -24,8 +25,8 @@ def foo():
     x = A.MANAGER.ast_from_file("/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/tools/merge.py")
     print "new process after loading merge.py: " + str(R.getrusage(R.RUSAGE_SELF).ru_maxrss)
 
+
 def trial():
-    q = mp.Queue()
     p = mp.Process(target=foo)
     p.start()
     # print(q.get())
