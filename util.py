@@ -155,7 +155,7 @@ def erasePath(path, logger=None):
             os.remove(path)
         except Exception as e:
             if logger:
-                logger.warning("failure to erase file: " + path + " exception: " + e.strerror)
+                logger.warning("failure to erase file: " + path + " exception: " + str(e))
             raise e
     else:
         try:
@@ -167,7 +167,7 @@ def erasePath(path, logger=None):
                 raise RuntimeWarning("util.erasePath has non-zero result for trying to delete path: " + path)
         except Exception as e:
             if logger:
-                logger.warning("failure to erase non-file: " + path + " exception: " + e.strerror)
+                logger.warning("failure to erase non-file: " + path + " exception: " + str(e))
             raise e
 
 
@@ -357,7 +357,7 @@ def prepareLogging(email, password, to, BASE_PATH, LOG_DEBUG_FILENAME, LOG_CRITI
         for x in glob.glob(BASE_PATH + "data/log/.*"):
             erasePath(x)
     except Exception as e:
-        raise RuntimeWarning("failure to erase old logs with exception: " + e.strerror)
+        raise RuntimeWarning("failure to erase old logs with exception: " + str(e))
 
     logger = logging.getLogger('')
     logger.setLevel(logging.DEBUG)
