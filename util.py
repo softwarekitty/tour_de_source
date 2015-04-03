@@ -205,33 +205,33 @@ def get_json(logger, url, credentials, randWait=False):
             rateJSON = json.load(urllib2.urlopen(get_authorized_request(check_limit_url, credentials)))
             limit_remaining = rateJSON['resources']['core']['remaining']
             if limit_remaining % 10 == 0:
-                logger.info("GiPyS - limit_remaining: " + str(limit_remaining))
+                logger.info("Util - limit_remaining: " + str(limit_remaining))
 
             # don't push the rate limit if none remain - wait for reset
             if limit_remaining <= 1:
                 limit_resetS = rateJSON['resources']['core']['reset']
                 nowS = calendar.timegm(time.gmtime())
                 time_to_waitS = limit_resetS - (nowS - 2)
-                logger.critical("GiPyS - get_json, blocked by rate limit: " + str(limit_remaining) + " ttwS: " + str(time_to_waitS))
+                logger.critical("Util - get_json, blocked by rate limit: " + str(limit_remaining) + " ttwS: " + str(time_to_waitS))
                 time.sleep(time_to_waitS)
 
             urlJSON = json.load(urllib2.urlopen(get_authorized_request(url, credentials)))
-            logger.debug("GiPyS - get_json Success, url: " + url + " limit_remaining: " + str(limit_remaining))
+            logger.debug("Util - get_json Success, url: " + url + " limit_remaining: " + str(limit_remaining))
             return urlJSON
         except urllib2.HTTPError, e:
-            logger.error("GiPyS - get_json, HTTPError!!!")
+            logger.error("Util - get_json, HTTPError!!!")
         except Exception as e:
-            logger.critical("GiPyS - get_json, Unexpected roblem with getting json: " + str(e))
+            logger.critical("Util - get_json, Unexpected roblem with getting json: " + str(e))
 
         # break out of this cycle for troublesome urls
         attempt_counter += 1
         if attempt_counter >= attempt_limit:
-            logger.critical("GiPyS - get_json, Giving up on url " + url + " after " + str(attempt_counter) + " attempts")
+            logger.critical("Util - get_json, Giving up on url " + url + " after " + str(attempt_counter) + " attempts")
             raise Exception("this url is not worth the trouble: " + url)
 
         # back off a random time to avoid looking like such a robot
         backoffS = random.randrange(emergency_waitS)
-        logger.warning("GiPyS - get_json, backing off with backoffS: " + str(backoffS) + " attempt: " + str(attempt_counter) + "/" + str(attempt_limit) + " url: " + url)
+        logger.warning("Util - get_json, backing off with backoffS: " + str(backoffS) + " attempt: " + str(attempt_counter) + "/" + str(attempt_limit) + " url: " + url)
         time.sleep(backoffS)
 
 

@@ -1,7 +1,6 @@
 
 import rewinder
 import os
-import glob
 import json
 import git
 import util
@@ -9,6 +8,7 @@ import re
 import sh
 import calendar
 import dateutil
+import random
 # a factory for making different kinds of rewinders
 # this used to be in sourcer, but sourcer became hard to scroll through
 # ############################ NCommits ###############################
@@ -17,6 +17,9 @@ import dateutil
 # Rewinder ready to rewind.
 # This rewinder will bookmark up to `n' commits on the master branch, about evenly spaced and in the same descending order as returned by git log.  The list should include the most recent commit first.
 def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceID, n, rewinder_type, credentials):
+    # this is the path of the new directory to clone the project into
+    repoIDPath = repo_path + str(repoID) + "/"
+    logger.debug("Factory, repoIDPath: " + repoIDPath)
 
     # get metadata for sourceJSON
     repoJSON = util.get_json(logger, "https://api.github.com/repositories/" + str(repoID), credentials, True)
@@ -25,30 +28,56 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
     logger.debug("nCoGiRe - default branch name: " + default_branch)
     clone_url = repoJSON['clone_url']
 
-    # cloning fails if the directory is locked or not empty, so I am taking some extra care to delete the directory and immediately clone.  Some daemons can occasionally lock the path or create some random files in there.
+    # make sure that repo_path exists, or create it.
     if not os.path.exists(repo_path):
-        logger.critical("GiPyS - nCoGiRe, this path does not exist!! repo_path: " + repo_path)
+        logger.critical("Factory - nCoGiRe, this path does not exist!! repo_path: " + repo_path)
         os.mkdir(repo_path)
-    # the path exists and is not empty
+
+    # try to empty this folder and clone into a new folder in repo_path
     for try_i in range(1, 4):
-        logger.info("nCoGiRe, attempt " + str(try_i) + " to remove contents of repo_path: " + str(repo_path) + " and then clone using clone_url: " + clone_url)
+        if(try_i > 1):
+            logger.info("nCoGiRe, attempt " + str(try_i) + " to remove contents of repo_path: " + str(repo_path) + " and then clone using clone_url: " + clone_url)
         try:
-            # erase everything in repo_path and then clone project
+            # try to erase everything in repo_path
             repoPathContents = [os.path.join(repo_path, f) for f in os.listdir(repo_path)]
             logger.info("nCoGiRe, repoPathContents: " + str(repoPathContents))
             if repoPathContents:
+                # shuffle: don't always get stuck behind a problem directory
+                random.shuffle(repoPathContents)
                 for x in repoPathContents:
-                    util.erasePath(x, logger)
-            git.repo.base.Repo.clone_from(clone_url, repo_path, None, branch=default_branch)
+                    try:
+                        util.erasePath(x, logger)
+                    except Exception as ex:
+                        logger.warning("exception when trying to erasePath on: " + x + " ex: " + str(ex))
+                # I've had enough problems erasing the repo_path.  forget it.
+                # all that matters is that we can clone into an empty directory,
+                # and in the long run of course we want to avoid running out of
+                # disk space, so trying to erase all these directories is good
+
+            # make a new directory just for this new project - this should always succeed and allow git to clone, since all repoIDs are unique
+            os.mkdir(repoIDPath)
+            git.repo.base.Repo.clone_from(clone_url, repoIDPath, None, branch=default_branch)
             break
         except Exception as e:
-            logger.info("GiPyS - nCoGiRe, error: " + str(e))
+            logger.info("Factory - nCoGiRe, unexpected error: " + str(e))
 
-    # SELF-REWINDING PROBLEM IS HERE: happens when we fail to clear the directory, git refuses to clone into a directory containing something, and then after 3 tries we call git.Git(repo_path) and the only '.git' it can find is in tour_de_source.  So then we prepare a list of shas using git log and rewind according to them
+    # just to be safe, always do these sanity checks.
+    # the repoIDPath should exist and contain the new ".git" every time.
+    if not os.path.exists(repoIDPath):
+        logger.info("Factory - nCoGiRe, path missing!")
+        raise RuntimeWarning("do not proceed with repoIDPath directory missing - you will rewind the tour_de_source project!")
+    repoIDPathContents = [os.path.join(repoIDPath, f) for f in os.listdir(repoIDPath)]
+    logger.info("contents of repoIDPath: " + str(repoIDPathContents))
+    if not repoIDPathContents:
+        logger.info("Factory - nCoGiRe, repoIDPathContents is empty!")
+        raise RuntimeWarning("do not proceed with repoIDPath directory empty - you will rewind the tour_de_source project!")
+    if repoIDPath + ".git" not in repoIDPathContents:
+        logger.info("Factory - nCoGiRe, repoIDPathContents has no git!  cloning did not succeed.")
+        raise RuntimeWarning("do not proceed with repoIDPath directory having no .git folder - you will rewind the tour_de_source project!")
 
     # now get the time and sha for commits
     commitList = []
-    repoGit = git.Git(repo_path)
+    repoGit = git.Git(repoIDPath)
     hexshas = repoGit.log("--format=format:\"%ct %H\"").split('\n')
     for line in hexshas:
         cleanedLine = line[line.find('"') + 1:line.rfind('"')]
@@ -81,7 +110,7 @@ def nCommitsGithubRewinder(logger, repoID, repo_path, report_path, uniqueSourceI
 
     # remember python lists pop at the tail...
     stack.reverse()
-    return rewinder.GitRewinder(repo_path, rewinder_type, uniqueSourceID, stack)
+    return rewinder.GitRewinder(repoIDPath, rewinder_type, uniqueSourceID, stack)
 
 # ############################ fakeNCommits ###############################
 

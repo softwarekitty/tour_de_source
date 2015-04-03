@@ -254,3 +254,109 @@
 19:54:37 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
 19:55:48 GiPyS - next repoID: 15249309
 19:56:39 Touri - tour, SCAN_hfwi1 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
+21:34:38 Depot - ***************init Depot**********.
+21:34:38 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+21:34:52 GiPyS - next repoID: 15249309
+21:35:03 Scanner before ast: 20856832
+21:35:03 Scanner after ast: 21397504
+21:35:03 Scanner before ast: 31375360
+21:35:03 Scanner after ast: 31375360
+21:35:03 Scanner before ast: 31375360
+21:35:03 Scanner after ast: 31870976
+21:35:03 Scanner before ast: 31870976
+21:35:03 Scanner after ast: 31870976
+21:35:03 Scanner before ast: 31870976
+21:35:03 Scanner after ast: 31870976
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:03 Scanner before ast: 31891456
+21:35:03 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Scanner before ast: 31891456
+21:35:04 Scanner after ast: 31891456
+21:35:04 Touri - tour, SCAN_4goca FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
+22:43:04 Depot - ***************init Depot**********.
+22:43:04 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+22:43:09 GiPyS - next repoID: 15249309
+22:43:11 Touri - tour, SCAN_ewl4j EXCEPTION:do not proceed with repoIDPath directory having no .git folder - you will rewind the tour_de_source project!
+22:43:11 Touri - tour, consecutiveExceptionCounter: 1
+22:43:11 Touri - tour, SCAN_ewl4j FINAL STATE: FINISHED after scanning 0 sources containing Python out of 1 total sources observed
+22:49:24 Depot - ***************init Depot**********.
+22:49:24 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+22:49:29 GiPyS - next repoID: 15249309
+22:49:31 Touri - tour, SCAN_b0aon EXCEPTION:do not proceed with repoIDPath directory having no .git folder - you will rewind the tour_de_source project!
+22:49:31 Touri - tour, consecutiveExceptionCounter: 1
+22:49:31 Touri - tour, SCAN_b0aon FINAL STATE: FINISHED after scanning 0 sources containing Python out of 1 total sources observed
+22:51:24 Depot - ***************init Depot**********.
+22:51:24 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+22:51:28 GiPyS - next repoID: 15249309
+22:51:30 Touri - tour, SCAN_2k3z0 EXCEPTION:do not proceed with repoIDPath directory having no .git folder - you will rewind the tour_de_source project!
+22:51:30 Touri - tour, consecutiveExceptionCounter: 1
+22:51:30 Touri - tour, SCAN_2k3z0 FINAL STATE: FINISHED after scanning 0 sources containing Python out of 1 total sources observed
+22:52:46 Depot - ***************init Depot**********.
+22:52:46 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+22:52:52 GiPyS - next repoID: 15249309
+22:52:54 Touri - tour, SCAN_245jr EXCEPTION:do not proceed with repoIDPath directory having no .git folder - you will rewind the tour_de_source project!
+22:52:54 Touri - tour, consecutiveExceptionCounter: 1
+22:52:54 Touri - tour, SCAN_245jr FINAL STATE: FINISHED after scanning 0 sources containing Python out of 1 total sources observed
+22:57:40 Depot - ***************init Depot**********.
+22:57:40 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+22:57:56 GiPyS - next repoID: 15249309
+22:58:00 Touri - tour, SCAN_e5c8g EXCEPTION:do not proceed with repoIDPath directory having no .git folder - you will rewind the tour_de_source project!
+22:58:00 Touri - tour, consecutiveExceptionCounter: 1
+22:58:00 Touri - tour, SCAN_e5c8g FINAL STATE: FINISHED after scanning 0 sources containing Python out of 1 total sources observed
+22:59:01 Depot - ***************init Depot**********.
+22:59:01 initialized GithubPythonSourcer with rewinder_type: 20Commits email: investigationbot@gmail.com first: 15249309 stop:15249309 credentials: investigationbat:whorysq5im5ztb
+22:59:17 GiPyS - next repoID: 15249309
+22:59:28 Touri - tour, SCAN_3d9o1 FINAL STATE: FINISHED after scanning 1 sources containing Python out of 1 total sources observed
