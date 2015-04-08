@@ -1,7 +1,5 @@
 package analyze;
 
-import java.text.ParseException;
-
 import metric.FeatureCount;
 
 import org.antlr.runtime.tree.CommonTree;
@@ -9,13 +7,13 @@ import org.python.util.PythonInterpreter;
 
 import pcre.PCRE;
 
-public final class Regex implements Comparable<Regex> {
+public final class RegexCite implements Comparable<RegexCite> {
 	private final String pattern;
 	private final CommonTree rootTree;
 	private final FeatureCount features;
 	private final int weight;
 
-	public Regex(String pattern, int weight) {
+	public RegexCite(String pattern, int weight) {
 		this.pattern = pattern;
 		this.weight = weight;
 		if (pattern == null) {
@@ -35,7 +33,7 @@ public final class Regex implements Comparable<Regex> {
 	}
 
 	@Override
-	public int compareTo(Regex other) {
+	public int compareTo(RegexCite other) {
 		return this.pattern.compareTo(other.pattern);
 	}
 }
