@@ -14,7 +14,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeSet;
 
+import metric.AlienFeatureException;
 import metric.FeatureCount;
 
 import org.apache.commons.io.FileUtils;
@@ -56,6 +58,10 @@ public class PaperWriter {
 	private static String HAS_FLAGS = "HAS_FLAGS";
 	private static String CANNOT_PARSE = "CANNOT_PARSE";
 	private static String CAN_PARSE = "CAN_PARSE";
+	
+	private static String HAS_ALIEN = "HAS_ALIEN";
+	private static String DISTINCT_PATTERN = "DISTINCT_PATTERN";
+	private static String N_RC = "N_RC";
 
 	public static void main(String[] args) throws ClassNotFoundException,
 			SQLException, ValueMissingException, IOException,
@@ -103,6 +109,7 @@ public class PaperWriter {
 		p.waitFor();
 	}
 
+	//note this depends heavily on databaseFileContent containing various values
 	private static String createImagesScript(String connectionString,
 			String homePath, HashMap<String, Integer> databaseFileContent)
 			throws ClassNotFoundException, SQLException {
@@ -238,6 +245,25 @@ public class PaperWriter {
 		rScriptContent.append("barplot(P0_5, main=\"Corpus Origin\",legend=rownames(P0_5),col=c(\"palegreen1\",\"paleturquoise3\",\"cyan\"),xlim=c(0,9),width=0.6,las=1)\n");
 		rScriptContent.append("dev.off()\n");
 
+		
+		int nDistinctPatterns = databaseFileContent.get(DISTINCT_PATTERN);
+		int nHasAlien = databaseFileContent.get(HAS_ALIEN);
+		int nRC = databaseFileContent.get(N_RC);
+		
+		
+		// 1.P1 pie chart of the above three ints
+		rScriptContent.append("setEPS()\n");
+		rScriptContent.append("postscript(\"" + homePath +
+			"analysis/analysis_output/percentPatternAlien.eps\")\n");
+		rScriptContent.append("P1_1 = matrix(c(" + nHasAlien + "," +
+			(nDistinctPatterns-nHasAlien-nRC) + "," + nRC + "),ncol=1,byrow=T)\n");
+		rScriptContent.append("rownames(P1_1)=c(\"alien feature " + nHasAlien +
+			"\",\"error " + (nDistinctPatterns-nHasAlien-nRC) + "\",\"pattern corpus " +
+			nRC + "\")\n");
+		rScriptContent.append("par(pin=c(3.5,2))\n");
+		rScriptContent.append("barplot(P1_1, main=\"Preprocessing Distinct Patterns\",legend=rownames(P1_1),col=c(\"mediumblue\",\"lightskyblue1\",\"seagreen2\"),xlim=c(0,9),width=0.6,las=1)\n");
+		rScriptContent.append("dev.off()\n");
+		
 		rScriptContent.append("\n");
 		return rScriptContent.toString();
 	}
@@ -582,22 +608,34 @@ public class PaperWriter {
 			databaseFileContent.get(FLAGS_32) +
 			databaseFileContent.get(FLAGS_64) +
 			databaseFileContent.get(FLAGS_255));
-
-		int nCannotParse = getNCannotParse(connectionString);
+		
+		//this chunk is turning into spaghetti - refactor or separate more?
+		//often doing two things at once.
+		TreeSet<String> patternSet = new TreeSet<String>();
+		int nCannotParse = getNCannotParse_popPatternSet(connectionString,patternSet);
 		databaseFileContent.put(CANNOT_PARSE, nCannotParse);
 		int nDefault = databaseFileContent.get(FLAGS_0);
 		int nDebug = databaseFileContent.get(FLAGS_128);
 		databaseFileContent.put(CAN_PARSE, (nDefault + nDebug) - nCannotParse);
-
-		int nDistinctPatterns = initializePatternList(connectionString);
-
+		
+		int nDistinctPatterns = patternSet.size();
+		int nHasAlien = initializePatternList_retAlienCount(connectionString);
+		int nRC = patternList.size();
+		databaseFileContent.put(DISTINCT_PATTERN,nDistinctPatterns);
+		databaseFileContent.put(HAS_ALIEN,nHasAlien);
+		databaseFileContent.put(N_RC,nRC);
+		
+		
 		//
 		// 1.V1 raw number of distinct patterns in the corpus
 		databaseFileContent.put("distinctPatterns", nDistinctPatterns);
 
 	}
 
-	private static int initializePatternList(String connectionString) throws SQLException, ClassNotFoundException {
+	private static int initializePatternList_retAlienCount(String connectionString)
+			throws SQLException, ClassNotFoundException {
+		int alienCount = 0;
+		
 		// prepare sql
 		Connection c = null;
 		Statement stmt = null;
@@ -605,9 +643,13 @@ public class PaperWriter {
 		c = DriverManager.getConnection(connectionString);
 		c.setAutoCommit(false);
 		stmt = c.createStatement();
-		
-		//TODO - fix this sql, it overestimates weight right now
-		String query = "select pattern, count(uniqueSourceID) as weight from (select * from RegexCitationMerged where flags=0 or flags like 'arg%' or flags=128 or flags='re.DEBUG') where pattern!='arg1' group by pattern order by weight desc;";
+
+		// this proves that '\\s+' occurs in a certain number of projects:
+		// select distinct uniqueSourceID from RegexCitationMerged where
+		// (flags=0 or flags like 'arg%' or flags=128 or flags='re.DEBUG') and
+		// pattern!='arg1' and pattern="'\\s+'"
+		// I get the same number with the query below so it is probably working
+		String query = "select pattern, count(distinct uniqueSourceID) as weight from RegexCitationMerged where (flags=0 or flags like 'arg%' or flags=128 or flags='re.DEBUG') and pattern!='arg1' group by pattern order by weight desc;";
 
 		// these are all the distinct patterns with weight
 		ResultSet rs = stmt.executeQuery(query);
@@ -615,8 +657,12 @@ public class PaperWriter {
 			String pattern = rs.getString("pattern");
 			int weight = rs.getInt("weight");
 			try {
-				RegexCite r = new RegexCite(pattern,weight);
+				RegexCite r = new RegexCite(pattern, weight);
 				patternList.add(r);
+			} catch (AlienFeatureException e) {
+				System.out.println(
+					e.getMessage());
+				alienCount++;
 			} catch (Exception e) {
 				System.out.println("Cannot parse " + pattern + " because: " +
 					e.getMessage());
@@ -627,7 +673,8 @@ public class PaperWriter {
 		rs.close();
 		stmt.close();
 		c.close();
-		return patternList.size();
+		System.out.println("pl.size: " + patternList.size());
+		return alienCount;
 	}
 
 	/**
@@ -640,7 +687,7 @@ public class PaperWriter {
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
-	private static int getNCannotParse(String connectionString)
+	private static int getNCannotParse_popPatternSet(String connectionString, TreeSet<String> patternSet)
 			throws SQLException, ClassNotFoundException {
 		int nCannotParse = 0;
 
@@ -657,6 +704,7 @@ public class PaperWriter {
 		ResultSet rs = stmt.executeQuery(query);
 		while (rs.next()) {
 			String pattern = rs.getString("pattern");
+			patternSet.add(pattern);
 			try {
 				if (pattern == null) {
 					throw new IllegalArgumentException("pattern cannot be null");

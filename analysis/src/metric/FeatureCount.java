@@ -25,7 +25,7 @@ public class FeatureCount {
 		return copy;
 	}
 
-	public FeatureCount(CommonTree tree) {
+	public FeatureCount(CommonTree tree) throws AlienFeatureException{
 		this(treeToIndexCountMap(tree));
 	}
 
@@ -39,7 +39,7 @@ public class FeatureCount {
 	}
 
 	@SuppressWarnings("unchecked")
-	private static Map<Integer, Integer> treeToIndexCountMap(CommonTree treeRoot) {
+	private static Map<Integer, Integer> treeToIndexCountMap(CommonTree treeRoot) throws AlienFeatureException{
 		CountMap indexCountMap = new CountMap();
 
 		List<CommonTree> firstStack = new ArrayList<CommonTree>();
@@ -67,7 +67,7 @@ public class FeatureCount {
 		return indexCountMap;
 	}
 
-	private static void incrementCount(CommonTree tree, CountMap indexCountMap) {
+	private static void incrementCount(CommonTree tree, CountMap indexCountMap) throws AlienFeatureException{
 		List<String> ignoreList = Arrays.asList("","LAZY","QUANTIFIER","NUMBER","GREEDY","ALTERNATIVE","ELEMENT");
 		String tokenName = "";
 		if (tree.getType() == PCREParser.REPETITION_TYPE) {
@@ -82,11 +82,8 @@ public class FeatureCount {
 		if (featureIndex >= 0) {
 			indexCountMap.increment(featureIndex);
 		} else if (!ignoreList.contains(tokenName)){
-			System.err
-					.println("found unsupported feature: "
-							+ PCREParser.tokenNames[tree.getType()]
-							+ " this should be added to feature count or handled some other way!");
-			throw new IllegalArgumentException();
+			throw new AlienFeatureException("found unsupported feature: "
+					+ PCREParser.tokenNames[tree.getType()]);
 		}
 	}
 

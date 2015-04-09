@@ -39,6 +39,29 @@ class GitRewinder:
         return "GitRe - log, type: " + self.rewinder_type + " ID: " + self.cuteID + " uniqueSourceID: " + str(self.getUniqueSourceID()) + " sha: " + str(self.sha)
 
 
+# does not use sourceJSON
+class GitRewinderBasic:
+    def __init__(self, path, repoID, stack):
+        self.stack = stack
+        self.gitRepo = git.Git(path)
+        self.repoID = repoID
+        self.sha = "initialized"
+        self.cuteID = util.getCuteID(9)
+
+    def rewind(self):
+        if not self.stack:
+            return False
+        commitTuple = self.stack.pop()
+        self.sha = commitTuple[1]
+
+        # Note that --hard is needed to get rid of files from previous commits
+        self.gitRepo.reset("--hard", self.sha)
+        return True
+
+    def log(self):
+        return "GitRe - log, ID: " + self.cuteID + " repoID: " + str(self.repoID) + " sha: " + str(self.sha)
+
+
 # This is a mock, not a stub because its values depend on externalities
 class MockRewinder:
     def __init__(self, repoID, sourceJSON):

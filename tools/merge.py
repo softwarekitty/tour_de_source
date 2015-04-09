@@ -1,4 +1,4 @@
-import util
+
 import glob
 import sqlite3
 import json
@@ -136,27 +136,27 @@ if os.path.isfile(merged_report_db):
     print "removed old merged_report_db.db"
 initialize_merged_report(merged_report_db)
 
-for name in cloneNames:
-    for i in range(1, 9):
-        dataPath = LOCAL_PATH + "clones/" + name + "/tour_de_source" + str(i) + "/data/"
-        dbNames = glob.glob(dataPath + "*.db")
+# for name in cloneNames:
+#     for i in range(1, 9):
+#         dataPath = LOCAL_PATH + "clones/" + name + "/tour_de_source" + str(i) + "/data/"
+#         dbNames = glob.glob(dataPath + "*.db")
 
-        # allow but warn empty data directories
-        if len(dbNames) == 0:
-            print "empty path: " + dataPath
-            continue
-        reportNames = [x for x in dbNames if x != (dataPath + "tour.db")]
+#         # allow but warn empty data directories
+#         if len(dbNames) == 0:
+#             print "empty path: " + dataPath
+#             continue
+#         reportNames = [x for x in dbNames if x != (dataPath + "tour.db")]
 
-        # do not allow merging with multiple databases from one folder - this could lead to very bad data and quietly
-        if len(reportNames) > 1:
-            raise RuntimeWarning("length of reportNames: " + str(len(reportNames)) + " in datPath: " + dataPath + " ... " + str(reportNames))
-        report = reportNames[0]
+#         # do not allow merging with multiple databases from one folder - this could lead to very bad data and quietly
+#         if len(reportNames) > 1:
+#             raise RuntimeWarning("length of reportNames: " + str(len(reportNames)) + " in datPath: " + dataPath + " ... " + str(reportNames))
+#         report = reportNames[0]
 
-        # do the merge
-        print "merging with report: " + report
-        merge(merged_report_db, report)
+#         # do the merge
+#         print "merging with report: " + report
+#         merge(merged_report_db, report)
 
 for otherDatabase in [db for db in glob.glob(MERGED_PATH + "*.db") if db != merged_report_db]:
-    print "would merge otherdatabase: " + otherDatabase
-    # mergeAny(merged_report_db, otherDatabase)
+    # print "would merge otherdatabase: " + otherDatabase
+    mergeAny(merged_report_db, otherDatabase)
 print "merge complete"

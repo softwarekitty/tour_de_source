@@ -14,3 +14,6 @@ analysis/bin/
 *.aux
 *.log
 *.aux
+output
+*.js
+*.Rout

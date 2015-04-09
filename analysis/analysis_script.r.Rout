@@ -74,7 +74,7 @@ null device
 > P0_4 = matrix(c(8234,78,5972,2817,1437,2886,0,0),ncol=1,byrow=T)
 > rownames(P0_4)=c("IGNORECASE 8234","LOCALE 78","MULTILINE 5972","DOTALL 2817","UNICODE 1437","VERBOSE 2886","DEBUG 0","(combo) 0")
 > par(pin=c(3.5,2))
-> barplot(P0_4, main="non-default flag usage (DEFAULT: 129582)",legend=rownames(P0_4),col=c("lightcyan4","lightcoral","papayawhip","thistle2","grey66","firebrick3","deepskyblue4","moccasin"),xlim=c(0,9),width=0.6,las=1)
+> barplot(P0_4, main="non-default flag usage (DEFAULT: 129582)",legend=rownames(P0_4),col=c("steelblue2","lightcoral","papayawhip","thistle2","grey66","firebrick3","deepskyblue4","green3"),xlim=c(0,9),width=0.6,las=1)
 > dev.off()
 null device 
           1 
@@ -87,8 +87,17 @@ null device
 > dev.off()
 null device 
           1 
+> setEPS()
+> postscript("/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/analysis/analysis_output/percentPatternAlien.eps")
+> P1_1 = matrix(c(2664,116,21826),ncol=1,byrow=T)
+> rownames(P1_1)=c("alien feature 2664","error 116","pattern corpus 21826")
+> par(pin=c(3.5,2))
+> barplot(P1_1, main="Preprocessing Distinct Patterns",legend=rownames(P1_1),col=c("mediumblue","lightskyblue1","seagreen2"),xlim=c(0,9),width=0.6,las=1)
+> dev.off()
+null device 
+          1 
 > 
 > 
 > proc.time()
    user  system elapsed 
-  0.721   0.038   0.757 
+  0.685   0.038   0.712 
