@@ -38,6 +38,7 @@ public class C {
 	public static String HAS_ALIEN = "HAS_ALIEN";
 	public static String DISTINCT_PATTERN = "DISTINCT_PATTERN";
 	public static String N_RC = "N_RC";
+	public static String N_PCRE_ERROR = "N_PCRE_ERROR";
 
 	public static int getIntFromQuery(String connectionString, String query,
 			String valueName) throws ClassNotFoundException, SQLException,
@@ -72,5 +73,6 @@ public class C {
 		}
 		return value;
 	}
+
 
 }

@@ -15,20 +15,7 @@ import metric.AlienFeatureException;
 public class Section1 {
 
 	static void contributeToMap(HashMap<String, Integer> databaseFileContent,
-			String connectionString) {
-
-		// ??what is going in here?
-
-	}
-
-	static String contributeRString(
-			HashMap<String, Integer> databaseFileContent,
-			String connectionString, String homePath)
-			throws ClassNotFoundException, SQLException {
-		// mostly following:
-		// http://stackoverflow.com/questions/5142842
-		StringBuilder rScriptContent = new StringBuilder();
-		rScriptContent.append("\n");
+			String connectionString) throws ClassNotFoundException, SQLException {
 
 		// the set of all distinct patterns (including alien and
 		// PCRE-problematic ones)
@@ -46,41 +33,46 @@ public class Section1 {
 		// this one scan of a resultset gets all four values
 		initializeCorpus(connectionString, allPatterns, corpus, errorPatterns, alienPatterns);
 		
-		
-		//TODO - after this, finish/improve revisions.
-		
+		//1.V1 raw number of distinct patterns in the corpus
 		int nDistinctPatterns = allPatterns.size();
-		int nRC = corpus.size();
-
-		//
-		// 1.V1 raw number of distinct patterns in the corpus
 		databaseFileContent.put(C.DISTINCT_PATTERN, nDistinctPatterns);
-
-		//
-		// 1.V2 number of alien features
-		int nHasAlien = alienPatterns.size();
-		databaseFileContent.put(C.HAS_ALIEN, nHasAlien);
+		
+		// 1.V2 number of (non-alien) PCRE error causing patterns
+		int nError = errorPatterns.size();
+		databaseFileContent.put(C.N_PCRE_ERROR , nError);
+		
+		// 1.V3 number of alien features
+		int nAlien = alienPatterns.size();
+		databaseFileContent.put(C.HAS_ALIEN, nAlien);
+		
+		//1.V4 RC: raw minus the rest
+		int nRC = corpus.size();
 		databaseFileContent.put(C.N_RC, nRC);
 
-		databaseFileContent.put("distinctPatterns", nDistinctPatterns);
+	}
+
+	static String contributeRString(
+			HashMap<String, Integer> databaseFileContent,
+			String connectionString, String homePath)
+			throws ClassNotFoundException, SQLException {
+		// mostly following:
+		// http://stackoverflow.com/questions/5142842
+		StringBuilder rScriptContent = new StringBuilder();
+		rScriptContent.append("\n");
+
 
 		// 1.P1 pie chart describing how many distinct patterns have been
 		// filtered out
 		// due to having an alien feature, or some PCRE parser error
-		rScriptContent.append("setEPS()\n");
-		rScriptContent.append("postscript(\"" + homePath +
-			"analysis/analysis_output/percentPatternAlien.eps\")\n");
-		rScriptContent.append("P1_1 = matrix(c(" + nHasAlien + "," +
-			(nDistinctPatterns - nHasAlien - nRC) + "," + nRC +
-			"),ncol=1,byrow=T)\n");
-		rScriptContent.append("rownames(P1_1)=c(\"alien feature " + nHasAlien +
-			"\",\"error " + (nDistinctPatterns - nHasAlien - nRC) +
-			"\",\"pattern corpus " + nRC + "\")\n");
-		rScriptContent.append("par(pin=c(3.5,2))\n");
-		rScriptContent.append("barplot(P1_1, main=\"Preprocessing Distinct Patterns\",legend=rownames(P1_1),col=c(\"mediumblue\",\"lightskyblue1\",\"seagreen2\"),xlim=c(0,9),width=0.6,las=1)\n");
-		rScriptContent.append("dev.off()\n");
+		int nAlien = databaseFileContent.get(C.HAS_ALIEN);
+		int nPCREError = databaseFileContent.get(C.N_PCRE_ERROR);
+		int nRC = databaseFileContent.get(C.N_RC);
+		//double nRaw = databaseFileContent.get(C.DISTINCT_PATTERN);
+		int[] data = {nAlien,nPCREError,nRC};
+		String[] labels = {"alien feature","pcre error","included patterns"};
+		String[] colors = {"mediumblue","lightskyblue1","seagreen2"};
+		rScriptContent.append(RComposer.composeBarplotFromData(data, labels, homePath, "partDistinctPatterns", 3.5, 2,"Preprocessing Distinct Patterns",colors));
 
-		rScriptContent.append("\n");
 		return rScriptContent.toString();
 	}
 
