@@ -14,27 +14,27 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 public class IOUtil {
-	
-	public static String getFileContents(String filePath){
+
+	public static String getFileContents(String filePath) {
 		String contents = null;
-	    try {
+		try {
 			contents = FileUtils.readFileToString(new File(filePath));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	    return contents;
+		return contents;
 	}
-	
-	public static List<String> getFileLines(String filePath){
+
+	public static List<String> getFileLines(String filePath) {
 		List<String> contentLines = new ArrayList<String>();
 		contentLines.add("error content");
 		Path path = Paths.get(filePath);
-	    try {
+		try {
 			contentLines = Files.readAllLines(path, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	    return contentLines;
+		return contentLines;
 	}
 
 	public static void createAndWrite(File file, String content) {
@@ -47,5 +47,5 @@ public class IOUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}	
+	}
 }

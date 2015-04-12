@@ -69,7 +69,5 @@ public final class RegexCite implements Comparable<RegexCite> {
 	public String toString() {
 		return "RegexCite [pattern=" + pattern + "]";
 	}
-	
-	
 
 }
