@@ -8,21 +8,17 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.TreeSet;
 
 import metric.AlienFeatureException;
 
 public class Section1 {
 
-	static void contributeToMap(HashMap<String, Integer> databaseFileContent,
-			String connectionString) throws ClassNotFoundException, SQLException {
+	static void contributeToMap(HashMap<String, String> databaseFileContent,
+			String connectionString, List<RegexCite> emptyCorpus) throws ClassNotFoundException, SQLException {
 
 		// the set of all distinct patterns (including alien and
 		// PCRE-problematic ones)
 		List<String> allPatterns = new ArrayList<String>(1024);
-
-		// the list of patterns (with weights) that make up the corpus.
-		List<RegexCite> corpus = new ArrayList<RegexCite>(1024);
 
 		// the list of patterns (with weights) that PCRE has trouble parsing.
 		List<String> errorPatterns = new ArrayList<String>(1024);
@@ -31,28 +27,27 @@ public class Section1 {
 		List<String> alienPatterns = new ArrayList<String>(1024);
 
 		// this one scan of a resultset gets all four values
-		initializeCorpus(connectionString, allPatterns, corpus, errorPatterns, alienPatterns);
+		initializeCorpus(connectionString, allPatterns, emptyCorpus, errorPatterns, alienPatterns);
 		
 		//1.V1 raw number of distinct patterns in the corpus
 		int nDistinctPatterns = allPatterns.size();
-		databaseFileContent.put(C.DISTINCT_PATTERN, nDistinctPatterns);
+		databaseFileContent.put(C.N_DISTINCT_PATTERNS, Composer.commafy(nDistinctPatterns));
 		
-		// 1.V2 number of (non-alien) PCRE error causing patterns
 		int nError = errorPatterns.size();
-		databaseFileContent.put(C.N_PCRE_ERROR , nError);
+		String percentPCREError = Composer.percentify(nError, nDistinctPatterns);
+		databaseFileContent.put(C.P_PCRE_ERROR, percentPCREError);
 		
-		// 1.V3 number of alien features
 		int nAlien = alienPatterns.size();
-		databaseFileContent.put(C.HAS_ALIEN, nAlien);
+		String percentAlien = Composer.percentify(nAlien, nDistinctPatterns);
+		databaseFileContent.put(C.P_ALIEN, ""+percentAlien);
 		
-		//1.V4 RC: raw minus the rest
-		int nRC = corpus.size();
-		databaseFileContent.put(C.N_RC, nRC);
+		int nRC = emptyCorpus.size();
+		databaseFileContent.put(C.N_CORPUS,Composer.commafy(nRC));
 
 	}
 
 	static String contributeRString(
-			HashMap<String, Integer> databaseFileContent,
+			HashMap<String, String> databaseFileContent,
 			String connectionString, String homePath)
 			throws ClassNotFoundException, SQLException {
 		// mostly following:
@@ -61,17 +56,17 @@ public class Section1 {
 		rScriptContent.append("\n");
 
 
-		// 1.P1 pie chart describing how many distinct patterns have been
-		// filtered out
-		// due to having an alien feature, or some PCRE parser error
-		int nAlien = databaseFileContent.get(C.HAS_ALIEN);
-		int nPCREError = databaseFileContent.get(C.N_PCRE_ERROR);
-		int nRC = databaseFileContent.get(C.N_RC);
-		//double nRaw = databaseFileContent.get(C.DISTINCT_PATTERN);
-		int[] data = {nAlien,nPCREError,nRC};
-		String[] labels = {"alien feature","pcre error","included patterns"};
-		String[] colors = {"mediumblue","lightskyblue1","seagreen2"};
-		rScriptContent.append(RComposer.composeBarplotFromData(data, labels, homePath, "partDistinctPatterns", 3.5, 2,"Preprocessing Distinct Patterns",colors));
+//		// 1.P1 pie chart describing how many distinct patterns have been
+//		// filtered out
+//		// due to having an alien feature, or some PCRE parser error
+//		int nAlien = databaseFileContent.get(C.HAS_ALIEN);
+//		int nPCREError = databaseFileContent.get(C.N_PCRE_ERROR);
+//		int nRC = databaseFileContent.get(C.N_RC);
+//		//double nRaw = databaseFileContent.get(C.DISTINCT_PATTERN);
+//		int[] data_P1_1 = {nAlien,nPCREError,nRC};
+//		String[] labels_P1_1 = {"alien feature","pcre error","included patterns"};
+//		String[] colors_P1_1 = {"mediumblue","lightskyblue1","seagreen2"};
+//		rScriptContent.append(RComposer.composeBarplotFromData(data_P1_1, labels_P1_1, homePath, "partDistinctPatterns", 3.5, 2,"Preprocessing Distinct Patterns",colors_P1_1));
 
 		return rScriptContent.toString();
 	}

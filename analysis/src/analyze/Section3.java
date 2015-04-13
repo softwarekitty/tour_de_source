@@ -5,13 +5,13 @@ import java.util.HashMap;
 
 public class Section3 {
 
-	static void contributeToMap(HashMap<String, Integer> databaseFileContent,
+	static void contributeToMap(HashMap<String, String> databaseFileContent,
 			String connectionString) {
 
 	}
 
 	static String contributeRString(
-			HashMap<String, Integer> databaseFileContent,
+			HashMap<String, String> databaseFileContent,
 			String connectionString, String homePath)
 			throws ClassNotFoundException, SQLException {
 

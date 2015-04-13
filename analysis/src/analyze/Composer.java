@@ -3,13 +3,18 @@ package analyze;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
-public class RComposer {
+public class Composer {
 
 	// for testing some of these little functions
 	public static void main(String[] args) {
-		double x = 0.009978 / 1.0;
-		System.out.println(percentify(x, 1.0));
+//		double x = 0.009978 / 1.0;
+//		System.out.println(percentify(x, 1.0));
+		int y=42000;
+		System.out.println(commafy(y));
+		System.out.println(intify(commafy(y)));
 
 	}
 
@@ -23,8 +28,16 @@ public class RComposer {
 	// width, height);
 	// }
 
+	//try width=5,height=2.1
 	public static String composeBarplotFromData(int[] data, String[] labels,
-			String homePath, String plotname, double width, double height, String title, String[] colors) {
+			String homePath, String plotname, double width, double height,String[] colors) {
+		// mostly following:
+		// http://stackoverflow.com/questions/5142842
+		int sum = 0;
+		for(int d : data){
+			sum+=d;
+		}
+		
 		DecimalFormat df = new DecimalFormat("#0.#");
 		// String[] dataS = stringifyNumbers(data);
 		String widthS = df.format(width);
@@ -34,7 +47,7 @@ public class RComposer {
 		barplotContent.append("setEPS()\n");
 		barplotContent.append("postscript(" +
 			quote(homePath + "analysis/analysis_output/" + plotname + ".eps") +
-			")\n");
+			",width="+width+",height="+height+")\npar(mar=c(1,4,1,1), cex=0.97)\n");
 
 		String matrixName = "M_" + plotname;
 		barplotContent.append(matrixName + " = matrix(c(" +
@@ -42,8 +55,7 @@ public class RComposer {
 		barplotContent.append("rownames(" + matrixName + ")=c(" + "" +
 			commaSeparate(composeRownames(labels, data)) + ")\n");
 
-		barplotContent.append("par(pin=c(" + widthS + "," + heightS + "))\n");
-		barplotContent.append("barplot("+matrixName+", main="+quote(title)+",legend=rownames("+matrixName+"),col=c("+commaSeparate(composeColors(colors))+"),xlim=c(0,9),width=0.6,las=1)\n");
+		barplotContent.append("barplot("+matrixName+",legend=rownames("+matrixName+"),col=c("+commaSeparate(composeColors(colors))+"),xlim=c(0,9),width=0.6,ylim = range(pretty(c(0, "+sum+"))),las=1)\n");
 		barplotContent.append("dev.off()\n");
 		return barplotContent.toString();
 	}
@@ -66,15 +78,28 @@ public class RComposer {
 		String[] dataS = stringifyNumbers(data);
 		String[] rowNames = new String[n];
 		for (int i = 0; i < n; i++) {
-			rowNames[i] = quote(labels[i] + " " + dataS[i] + " (" +
+			rowNames[i] = quote(labels[i] + " " + commafy(intify(dataS[i])) + " (" +
 				percentify(data[i], sum) + "%)");
 		}
 		return rowNames;
 	}
 
-	private static String percentify(double d, double sum) {
+	public static String percentify(double d, double sum) {
 		DecimalFormat df = new DecimalFormat("##0.#");
 		return df.format(100 * round(d / sum, 3));
+	}
+	
+	public static String commafy(int n) {
+		return NumberFormat.getNumberInstance(Locale.US).format(n);
+	}
+	
+	public static int intify(String s){
+		int dotIndex = s.indexOf('.');
+		String intString = s;
+		if(dotIndex > -1){
+			intString = s.substring(0,dotIndex);
+		}
+		return Integer.parseInt(intString.replaceAll(",", ""));
 	}
 
 	private static String quote(String s) {
@@ -84,7 +109,7 @@ public class RComposer {
 	private static String[] stringifyNumbers(int[] data) {
 		String[] dataS = new String[data.length];
 		for (int i = 0; i < data.length; i++) {
-			dataS[i] = data[i] + "";
+			dataS[i] = ""+data[i];
 		}
 		return dataS;
 	}

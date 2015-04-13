@@ -7,11 +7,56 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class C {
+	//Study.RECORDING REGEX USAGES
+	public static String N_CLONE_URL = "nCloneURL";
+	public static String N_ABORTED = "nAborted";
+	public static String N_PROJ_SCANNED = "nProjScanned";
+	public static String N_USAGES = "nUsages";
+	
+	//Study.FILTERING REGEX USAGES
+	public static String N_BAD_FLAGS = "nBadFlags";
+	public static String N_INVALID_PATTERN = "nInvalidPattern";
+	public static String N_CLEAN_USAGES = "nCleanUsages";
+	public static String N_DISTINCT_PATTERNS= "nDistinctPatterns";
+	public static String P_PCRE_ERROR = "percentPCREError";
+	public static String P_ALIEN = "percentAlien";
+	public static String N_CORPUS = "nCorpus";
+	
+	//Results.CONTEXT AND CORPUS ORIGIN
+	public static String P_PROJECTS_USING_REGEX = "percentProjectsUsingRegex";
+	public static String P_FILES_USING_REGEX = "percentFilesUsingRegex";
+	
+	//for context quantile table
+	public static String Q1_RFILE_PER_PROJECT = "q1RFilePerProj";
+	public static String Q1_FILE_PER_PROJECT = "q1FilePerProj";
+	public static String Q1_R_PER_FILE = "q1RPerFile";
+	
+	public static String MED_RFILE_PER_PROJECT = "medRFilePerProj";
+	public static String MED_FILE_PER_PROJECT = "medFilePerProj";
+	public static String MED_R_PER_FILE = "medRPerFile";
+	
+	public static String Q3_RFILE_PER_PROJECT = "q3RFilePerProj";
+	public static String Q3_FILE_PER_PROJECT = "q3FilePerProj";
+	public static String Q3_R_PER_FILE = "q3RPerFile";
+	
+	public static String MAX_RFILE_PER_PROJECT = "maxRFilePerProj";
+	public static String MAX_FILE_PER_PROJECT = "maxFilePerProj";
+	public static String MAX_R_PER_FILE = "maxRPerFile";
+	
+	public static String N_EXPECTED_USAGES = "nExpectedUsages";
+	
+	//Restuls.FUNCTIONS AND FLAGS
+	public static String P_COMPILE = "percentCompile";
+	public static String P_FLAGS_0 = "percentFlags0";
+	public static String P_IGNORECASE = "percentI";
+	public static String P_MULTILINE = "percentM";
 
-	public static String N_PROJ_SCANNED = "nScanned";
-	public static String N_PROJ_HAS_REGEX = "nProjectsWithRegex";
-	public static String N_PYTHON_FILES = "nPythonFiles";
-	public static String N_FILES_HAS_REGEX = "nFilesWithRegex";
+	
+	
+	
+	//public static String N_PROJ_HAS_REGEX = "nProjectsWithRegex";
+	//public static String N_PYTHON_FILES = "nPythonFiles";
+	//public static String N_FILES_HAS_REGEX = "nFilesWithRegex";
 	public static String FUNC_0 = "FUNC_0";
 	public static String FUNC_1 = "FUNC_1";
 	public static String FUNC_2 = "FUNC_2";
@@ -30,15 +75,6 @@ public class C {
 	public static String FLAGS_64 = "FLAGS_64";
 	public static String FLAGS_128 = "FLAGS_128";
 	public static String FLAGS_255 = "FLAGS_128";
-
-	public static String HAS_FLAGS = "HAS_FLAGS";
-	public static String CANNOT_PARSE = "CANNOT_PARSE";
-	public static String CAN_PARSE = "CAN_PARSE";
-
-	public static String HAS_ALIEN = "HAS_ALIEN";
-	public static String DISTINCT_PATTERN = "DISTINCT_PATTERN";
-	public static String N_RC = "N_RC";
-	public static String N_PCRE_ERROR = "N_PCRE_ERROR";
 
 	public static int getIntFromQuery(String connectionString, String query,
 			String valueName) throws ClassNotFoundException, SQLException,

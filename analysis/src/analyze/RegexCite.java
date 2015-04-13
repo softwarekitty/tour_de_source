@@ -62,7 +62,23 @@ public final class RegexCite implements Comparable<RegexCite> {
 
 	@Override
 	public int compareTo(RegexCite other) {
-		return this.pattern.compareTo(other.pattern);
+		//higher weight is earlier
+		if(this.weight > other.weight){
+			return -1;
+		}else if(this.weight < other.weight){
+			return 1;
+		}else{
+			//shorter length is earlier
+			if(this.pattern.length() > other.pattern.length()){
+				return 1;
+			}else if(this.pattern.length() < other.pattern.length()){
+				return -1;
+			}else{
+				
+				//same weight and length: by hashcode
+				return this.pattern.compareTo(other.pattern);
+			}
+		}
 	}
 
 	@Override
