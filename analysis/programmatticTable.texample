@@ -1,0 +1,22 @@
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+pattern & weight \\
+\midrule
+\begin{minipage}{2in}
+\begin{verbatim}
+'\\s+'
+\end{verbatim}
+\end{minipage}
+& 181 \\
+\midrule
+\begin{minipage}{2in}
+\begin{verbatim}
+''
+\end{verbatim}
+\end{minipage}
+& 95 \\
+\bottomrule
+\end{tabular}
+\end{center}
+

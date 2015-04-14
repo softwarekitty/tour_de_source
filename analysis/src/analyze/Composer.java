@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.List;
 import java.util.Locale;
 
 public class Composer {
@@ -37,24 +38,19 @@ public class Composer {
 		for(int d : data){
 			sum+=d;
 		}
-		
 		DecimalFormat df = new DecimalFormat("#0.#");
-		// String[] dataS = stringifyNumbers(data);
 		String widthS = df.format(width);
 		String heightS = df.format(height);
-
 		StringBuilder barplotContent = new StringBuilder();
 		barplotContent.append("setEPS()\n");
 		barplotContent.append("postscript(" +
 			quote(homePath + "analysis/analysis_output/" + plotname + ".eps") +
-			",width="+width+",height="+height+")\npar(mar=c(1,4,1,1), cex=0.97)\n");
-
+			",width="+widthS+",height="+heightS+")\npar(mar=c(1,4,1,1), cex=0.97)\n");
 		String matrixName = "M_" + plotname;
 		barplotContent.append(matrixName + " = matrix(c(" +
 			commaSeparate(stringifyNumbers(data)) + "),ncol=1,byrow=T)\n");
 		barplotContent.append("rownames(" + matrixName + ")=c(" + "" +
 			commaSeparate(composeRownames(labels, data)) + ")\n");
-
 		barplotContent.append("barplot("+matrixName+",legend=rownames("+matrixName+"),col=c("+commaSeparate(composeColors(colors))+"),xlim=c(0,9),width=0.6,ylim = range(pretty(c(0, "+sum+"))),las=1)\n");
 		barplotContent.append("dev.off()\n");
 		return barplotContent.toString();
@@ -138,5 +134,24 @@ public class Composer {
 		bd = bd.setScale(places, RoundingMode.HALF_UP);
 		return bd.doubleValue();
 	}
+	
+	public static String composeRegexTable(List<RegexCite> regexes){
+		StringBuilder sb = new StringBuilder();
+		String beforePattern = "\\midrule\n\\begin{minipage}{2.3in}\n\\begin{verbatim}\n";
+		String betweenPatternAndWeight = "\\end{verbatim}\n\\end{minipage}\n& ";
+		String afterWeight = " \\\\ \n";
+		sb.append("\\begin{center}\n\\begin{tablular}{lc}\n\\toprule\n");
+		sb.append("pattern & weight \\\\ \n");
+		for(RegexCite rc : regexes){
+			sb.append(beforePattern);
+			sb.append(rc.getPattern());
+			sb.append(betweenPatternAndWeight);
+			sb.append(rc.getWeight());
+			sb.append(afterWeight);
+		}
+		sb.append("\\bottomrule\n\\end{tabluar}\n\\end{center}\n");
+		return sb.toString();
+	}
+	
 
 }
