@@ -21,7 +21,7 @@ public final class WeightRankedRegex implements RankableRegex{
 	public WeightRankedRegex(String pattern, int weight) {
 		if (pattern == null) {
 			throw new IllegalArgumentException("pattern cannot be null");
-		} else if ("".equals(pattern)) {
+		} else if ("".equals(pattern) || "''".equals(pattern)) {
 			throw new IllegalArgumentException("pattern cannot be empty");
 		} else {
 

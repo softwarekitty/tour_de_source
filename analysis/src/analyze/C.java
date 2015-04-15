@@ -80,6 +80,9 @@ public class C {
 	public static String FLAGS_64 = "FLAGS_64";
 	public static String FLAGS_128 = "FLAGS_128";
 	public static String FLAGS_255 = "FLAGS_128";
+	
+	
+	public static String R_SCRIPTNAME = "analysis_script.r";
 
 	public static int getIntFromQuery(String connectionString, String query,
 			String valueName) throws ClassNotFoundException, SQLException,

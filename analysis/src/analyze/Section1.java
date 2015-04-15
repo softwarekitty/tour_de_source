@@ -6,7 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 import metric.AlienFeatureException;
 
@@ -111,4 +115,23 @@ public class Section1 {
 		stmt.close();
 		c.close();		
 	}
+
+	public static Iterator<NamedStats> getCharacterStatsAndAddToDatabase(HashMap<String, String> databaseFileContent,List<WeightRankedRegex> corpus) {
+		List<NamedStats> nsList = new LinkedList<NamedStats>();
+		DescriptiveStatistics lengthStats = new DescriptiveStatistics();
+		DescriptiveStatistics weightStats = new DescriptiveStatistics();
+		DescriptiveStatistics tokenCountStats = new DescriptiveStatistics();
+		DescriptiveStatistics distinctFeatureStats = new DescriptiveStatistics();
+		for(WeightRankedRegex regex : corpus){
+			lengthStats.addValue(regex.getPattern().length());
+			weightStats.addValue(regex.getWeight());
+			tokenCountStats.addValue(regex.getFeatures().getTokenCount());
+			distinctFeatureStats.addValue(regex.getFeatures().getDistinctFeatureCount());
+		}
+		nsList.add(new NamedStats("pattern weight",weightStats));
+		nsList.add(new NamedStats("token count",tokenCountStats));
+		nsList.add(new NamedStats("distinct features",distinctFeatureStats));
+		nsList.add(new NamedStats("pattern length",lengthStats));
+		return nsList.iterator();
+	}	
 }

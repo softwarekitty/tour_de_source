@@ -7,6 +7,8 @@ import java.util.ArrayList;
 // import org.rosuda.JRI.Rengine;
 // import org.rosuda.JRI.REXP;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -37,47 +39,45 @@ public class PaperWriter {
 		HashMap<String, String> databaseFileContent = new HashMap<String, String>();
 		populateTexDatabase(databaseFileContent, connectionString);
 
-		// create the R script content for image creation
-		String rScriptContent = createImagesScript(connectionString, homePath, databaseFileContent);
+		// Below here we are making files
+		List<NameContentsPair> filesToMake = new LinkedList<NameContentsPair>();
 
-		// create the table showing source,Q1,Avg,Med,Q3,Max for filesPerProject,
-		// rFilesPerProject, regexPerFile
-		String contextQuartilesFileContent = Composer.composeHistogramTable(3, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent));
-		
+		// An R script to make images
+		filesToMake.add(new NameContentsPair(C.R_SCRIPTNAME, createImagesScript(connectionString, homePath, databaseFileContent)));
+
+		// create the table showing source,Q1,Avg,Med,Q3,Max for
+		// filesPerProject, rFilesPerProject, regexPerFile
+		filesToMake.add(new NameContentsPair("contextHistogram.tex", Composer.composeHistogramTable(3, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent))));
+
 		// make a latex table with the top N regexes by weight.
-		String topNbyWeightTableContent = Composer.composeRegexTable(10, corpus.iterator(), 2.3);
+		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRegexTable(10, corpus.iterator(), 2.3)));
+
+		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
+		// distinct features, token count and pattern length
+		filesToMake.add(new NameContentsPair("characterHistogram.tex", Composer.composeHistogramTable(4, Section1.getCharacterStatsAndAddToDatabase(databaseFileContent, corpus))));
 
 		// createContent
-		generateArtifacts(stringifyMap(databaseFileContent), contextQuartilesFileContent, topNbyWeightTableContent, rScriptContent, homePath);
+		generateArtifacts(stringifyMap(databaseFileContent), filesToMake, homePath);
 		System.out.println("finished paper writer");
 	}
 
 	private static void generateArtifacts(String databaseFileContent,
-			String contextQuartilesFileContent, String topNbyWeightContent,
-			String rScriptContent, String homePath) throws IOException,
-			InterruptedException {
-
-		//
-		// create the output file objects
-		String scriptName = "analysis_script.r";
-		String databaseName = "database.csv";
-		String contextQuartilesName = "contextQuartiles.tex";
-		String topNByWeightName = "topNW.tex";
+			List<NameContentsPair> filesToMake, String homePath)
+			throws IOException, InterruptedException {
 		String outputPath = homePath + "analysis/analysis_output/";
-		File dbFile = new File(outputPath + databaseName);
-		File contextQuartilesTable = new File(outputPath + contextQuartilesName);
-		File topNWFile = new File(outputPath + topNByWeightName);
-		File rFile = new File(outputPath + scriptName);
 		FileUtils.cleanDirectory(new File(outputPath));
 
-		IOUtil.createAndWrite(dbFile, databaseFileContent);
-		IOUtil.createAndWrite(contextQuartilesTable, contextQuartilesFileContent);
-		IOUtil.createAndWrite(topNWFile, topNbyWeightContent);
-		IOUtil.createAndWrite(rFile, rScriptContent);
+		// create the output file objects
+		String databaseName = "database.csv";
+		IOUtil.createAndWrite(new File(outputPath + databaseName), databaseFileContent);
+		for (NameContentsPair ncp : filesToMake) {
+			File f = new File(outputPath + ncp.getFilename());
+			IOUtil.createAndWrite(f, ncp.getContents());
+		}
 
 		// run the R script
 		Process p = Runtime.getRuntime().exec("/usr/local/bin/R CMD BATCH " +
-			outputPath + scriptName);
+			outputPath + C.R_SCRIPTNAME);
 
 		// add + " /dev/null" to the end to silence output
 		p.waitFor();
@@ -112,7 +112,7 @@ public class PaperWriter {
 
 	private static String stringifyMap(HashMap<String, String> map) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("key"+d+"value\n");
+		sb.append("key" + d + "value\n");
 		Set<Entry<String, String>> entrySet = map.entrySet();
 		for (Entry<String, String> e : entrySet) {
 			sb.append(e.getKey());

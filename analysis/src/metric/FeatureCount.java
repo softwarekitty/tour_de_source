@@ -24,6 +24,24 @@ public class FeatureCount {
 		System.arraycopy(featureCountArray, 0, copy, 0, length);
 		return copy;
 	}
+	
+	public int getDistinctFeatureCount(){
+		int nDistinctFeatures = 0;
+		for(int nParsedTokens : featureCountArray){
+			if(nParsedTokens>0){
+				nDistinctFeatures++;
+			}
+		}
+		return nDistinctFeatures;
+	}
+	
+	public int getTokenCount(){
+		int tokenCount = 0;
+		for(int nParsedTokens : featureCountArray){
+			tokenCount += nParsedTokens;
+		}
+		return tokenCount;
+	}
 
 	public FeatureCount(CommonTree tree) throws AlienFeatureException{
 		this(treeToIndexCountMap(tree));

@@ -8,7 +8,6 @@ public class NamedStats {
 	private final DescriptiveStatistics stats;
 
 	public NamedStats(String name, DescriptiveStatistics stats) {
-		super();
 		this.name = name;
 		this.stats = stats;
 	}
