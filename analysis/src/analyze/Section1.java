@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,32 +13,30 @@ import metric.AlienFeatureException;
 public class Section1 {
 
 	static void contributeToMap(HashMap<String, String> databaseFileContent,
-			String connectionString, List<RegexCite> emptyCorpus) throws ClassNotFoundException, SQLException {
+			String connectionString, List<WeightRankedRegex> emptyCorpus) throws ClassNotFoundException, SQLException {
 
 		// the set of all distinct patterns (including alien and
 		// PCRE-problematic ones)
-		List<String> allPatterns = new ArrayList<String>(1024);
-
-		// the list of patterns (with weights) that PCRE has trouble parsing.
-		List<String> errorPatterns = new ArrayList<String>(1024);
-		
-		// the list of patterns (with weights) that PCRE has trouble parsing.
-		List<String> alienPatterns = new ArrayList<String>(1024);
+		int[] allPatterns = {0};
+		int[] errorPatterns = {0};
+		int[] alienPatterns = {0};
 
 		// this one scan of a resultset gets all four values
 		initializeCorpus(connectionString, allPatterns, emptyCorpus, errorPatterns, alienPatterns);
 		
 		//1.V1 raw number of distinct patterns in the corpus
-		int nDistinctPatterns = allPatterns.size();
+		int nDistinctPatterns = allPatterns[0];
 		databaseFileContent.put(C.N_DISTINCT_PATTERNS, Composer.commafy(nDistinctPatterns));
 		
-		int nError = errorPatterns.size();
+		int nError = errorPatterns[0];
 		String percentPCREError = Composer.percentify(nError, nDistinctPatterns);
+		databaseFileContent.put(C.N_PCRE_ERROR, Composer.commafy(nError));
 		databaseFileContent.put(C.P_PCRE_ERROR, percentPCREError);
 		
-		int nAlien = alienPatterns.size();
+		int nAlien = alienPatterns[0];
 		String percentAlien = Composer.percentify(nAlien, nDistinctPatterns);
-		databaseFileContent.put(C.P_ALIEN, ""+percentAlien);
+		databaseFileContent.put(C.N_ALIEN, Composer.commafy(nAlien));
+		databaseFileContent.put(C.P_ALIEN, percentAlien);
 		
 		int nRC = emptyCorpus.size();
 		databaseFileContent.put(C.N_CORPUS,Composer.commafy(nRC));
@@ -56,24 +53,25 @@ public class Section1 {
 		rScriptContent.append("\n");
 
 
-//		// 1.P1 pie chart describing how many distinct patterns have been
-//		// filtered out
-//		// due to having an alien feature, or some PCRE parser error
-//		int nAlien = databaseFileContent.get(C.HAS_ALIEN);
-//		int nPCREError = databaseFileContent.get(C.N_PCRE_ERROR);
-//		int nRC = databaseFileContent.get(C.N_RC);
-//		//double nRaw = databaseFileContent.get(C.DISTINCT_PATTERN);
-//		int[] data_P1_1 = {nAlien,nPCREError,nRC};
-//		String[] labels_P1_1 = {"alien feature","pcre error","included patterns"};
-//		String[] colors_P1_1 = {"mediumblue","lightskyblue1","seagreen2"};
-//		rScriptContent.append(RComposer.composeBarplotFromData(data_P1_1, labels_P1_1, homePath, "partDistinctPatterns", 3.5, 2,"Preprocessing Distinct Patterns",colors_P1_1));
+		// 1.P1 pie chart describing how many distinct patterns have been
+		// filtered out
+		// due to having an alien feature, or some PCRE parser error
+		int nAlien = Composer.intify(databaseFileContent.get(C.N_ALIEN));
+		int nPCREError = Composer.intify(databaseFileContent.get(C.N_PCRE_ERROR));
+		int nRC = Composer.intify(databaseFileContent.get(C.N_CORPUS));
+		// double nRaw = databaseFileContent.get(C.DISTINCT_PATTERN);
+		int[] data_P1_1 = { nAlien, nPCREError, nRC };
+		String[] labels_P1_1 = { "alien feature", "pcre error",
+				"included patterns" };
+		String[] colors_P1_1 = { "mediumblue", "lightskyblue1", "seagreen2" };
+		rScriptContent.append(Composer.composeBarplotFromData(data_P1_1, labels_P1_1, homePath, "patternFiltering", 3.5, 2,colors_P1_1));
 
 		return rScriptContent.toString();
 	}
 
 	private static void initializeCorpus(String connectionString,
-			List<String> allPatterns, List<RegexCite> corpus,
-			List<String> errorPatterns, List<String> alienPatterns) throws ClassNotFoundException, SQLException {
+			int[] allPatterns, List<WeightRankedRegex> corpus,
+			int[] errorPatterns, int[] alienPatterns) throws ClassNotFoundException, SQLException {
 		// prepare sql
 		Connection c = null;
 		Statement stmt = null;
@@ -94,17 +92,17 @@ public class Section1 {
 		while (rs.next()) {
 			String pattern = rs.getString("pattern");
 			int weight = rs.getInt("weight");
-			allPatterns.add(pattern);
+			allPatterns[0]++;
 			try {
-				RegexCite r = new RegexCite(pattern, weight);
+				WeightRankedRegex r = new WeightRankedRegex(pattern, weight);
 				corpus.add(r);
 			} catch (AlienFeatureException e) {
 				System.out.println(e.getMessage());
-				alienPatterns.add(pattern);
+				alienPatterns[0]++;
 			} catch (Exception e) {
 				System.out.println("Cannot parse " + pattern + " because: " +
 					e.getMessage());
-				errorPatterns.add(pattern);
+				errorPatterns[0]++;
 			}
 		}
 

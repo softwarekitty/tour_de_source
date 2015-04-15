@@ -7,6 +7,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class C {
+	
+	//for slides and color charts
+	public static final String N_ALIEN = "N_ALIEN";
+	public static final String N_PCRE_ERROR = "N_PCRE_ERROR";
+
 	//Study.RECORDING REGEX USAGES
 	public static String N_CLONE_URL = "nCloneURL";
 	public static String N_ABORTED = "nAborted";

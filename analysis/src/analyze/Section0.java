@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map.Entry;
 
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
@@ -162,44 +165,6 @@ public class Section0 {
 		databaseFileContent.put(C.P_FILES_USING_REGEX, percentFilesUsingRegex);
 
 		int nUsages = Composer.intify(databaseFileContent.get(C.N_USAGES));
-
-		DescriptiveStatistics filesPerProjectStats = statsFilesPerProject(connectionString);
-		DescriptiveStatistics rFilesPerProjectStats = statsFromListQuery(connectionString, "select distinct uniqueSourceID, filePath, count(distinct filePath) as ct from RegexCitationMerged group by uniqueSourceID;", "ct");
-		DescriptiveStatistics regexPerFileStats = statsFromListQuery(connectionString, "select count(filePath) as ct from RegexCitationMerged group by uniqueSourceID, filePath;", "ct");
-
-		databaseFileContent.put(C.Q1_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
-			rFilesPerProjectStats.getPercentile(25))));
-		databaseFileContent.put(C.Q1_FILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
-			filesPerProjectStats.getPercentile(25))));
-		databaseFileContent.put(C.Q1_R_PER_FILE, Composer.commafy(Composer.intify("" +
-			regexPerFileStats.getPercentile(25))));
-
-		databaseFileContent.put(C.MED_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
-			rFilesPerProjectStats.getPercentile(50))));
-		databaseFileContent.put(C.MED_FILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
-			filesPerProjectStats.getPercentile(50))));
-		databaseFileContent.put(C.MED_R_PER_FILE, Composer.commafy(Composer.intify("" +
-			regexPerFileStats.getPercentile(50))));
-
-		databaseFileContent.put(C.Q3_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
-			rFilesPerProjectStats.getPercentile(75))));
-		databaseFileContent.put(C.Q3_FILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
-			filesPerProjectStats.getPercentile(75))));
-		databaseFileContent.put(C.Q3_R_PER_FILE, Composer.commafy(Composer.intify("" +
-			regexPerFileStats.getPercentile(75))));
-
-		databaseFileContent.put(C.MAX_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
-			rFilesPerProjectStats.getMax())));
-		databaseFileContent.put(C.MAX_FILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
-			filesPerProjectStats.getMax())));
-		databaseFileContent.put(C.MAX_R_PER_FILE, Composer.commafy(Composer.intify("" +
-			regexPerFileStats.getMax())));
-
-		double nExpectedUsages = regexPerFileStats.getPercentile(50) *
-			filesPerProjectStats.getPercentile(50) * nProjScanned;
-
-		databaseFileContent.put(C.N_EXPECTED_USAGES, Composer.commafy(Composer.intify("" +
-			Composer.round(nExpectedUsages, 0))));
 
 		// Results.FUNCTIONS AND FLAGS
 		// note: the regexFunction mapping uses indices from this array:
@@ -443,6 +408,53 @@ public class Section0 {
 			}
 		}
 		return stats;
+	}
+	//filesPerProject,rFilesPerProject, regexPerFile
+	public static Iterator<NamedStats> getContextStatsAndAddToDatabase(String connectionString, HashMap<String, String> databaseFileContent) throws ClassNotFoundException, SQLException {
+		int nProjScanned = Composer.intify(databaseFileContent.get(C.N_PROJ_SCANNED));
+
+		List<NamedStats> nsList = new LinkedList<NamedStats>();
+		DescriptiveStatistics filesPerProjectStats = statsFilesPerProject(connectionString);
+		DescriptiveStatistics rFilesPerProjectStats = statsFromListQuery(connectionString, "select distinct uniqueSourceID, filePath, count(distinct filePath) as ct from RegexCitationMerged group by uniqueSourceID;", "ct");
+		DescriptiveStatistics regexPerFileStats = statsFromListQuery(connectionString, "select count(filePath) as ct from RegexCitationMerged group by uniqueSourceID, filePath;", "ct");
+		nsList.add(new NamedStats("files per project",filesPerProjectStats));
+		nsList.add(new NamedStats("files with regex per project",rFilesPerProjectStats));
+		nsList.add(new NamedStats("regex usages per file",regexPerFileStats));
+		
+		databaseFileContent.put(C.Q1_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
+			rFilesPerProjectStats.getPercentile(25))));
+		databaseFileContent.put(C.Q1_FILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
+			filesPerProjectStats.getPercentile(25))));
+		databaseFileContent.put(C.Q1_R_PER_FILE, Composer.commafy(Composer.intify("" +
+			regexPerFileStats.getPercentile(25))));
+
+		databaseFileContent.put(C.MED_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
+			rFilesPerProjectStats.getPercentile(50))));
+		databaseFileContent.put(C.MED_FILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
+			filesPerProjectStats.getPercentile(50))));
+		databaseFileContent.put(C.MED_R_PER_FILE, Composer.commafy(Composer.intify("" +
+			regexPerFileStats.getPercentile(50))));
+
+		databaseFileContent.put(C.Q3_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
+			rFilesPerProjectStats.getPercentile(75))));
+		databaseFileContent.put(C.Q3_FILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
+			filesPerProjectStats.getPercentile(75))));
+		databaseFileContent.put(C.Q3_R_PER_FILE, Composer.commafy(Composer.intify("" +
+			regexPerFileStats.getPercentile(75))));
+
+		databaseFileContent.put(C.MAX_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
+			rFilesPerProjectStats.getMax())));
+		databaseFileContent.put(C.MAX_FILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
+			filesPerProjectStats.getMax())));
+		databaseFileContent.put(C.MAX_R_PER_FILE, Composer.commafy(Composer.intify("" +
+			regexPerFileStats.getMax())));
+
+		double nExpectedUsages = regexPerFileStats.getPercentile(50) *
+			filesPerProjectStats.getPercentile(50) * nProjScanned;
+
+		databaseFileContent.put(C.N_EXPECTED_USAGES, Composer.commafy(Composer.intify("" +
+			Composer.round(nExpectedUsages, 0))));
+		return nsList.iterator();
 	}
 
 }

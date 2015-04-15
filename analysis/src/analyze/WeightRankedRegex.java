@@ -7,7 +7,7 @@ import org.python.util.PythonInterpreter;
 
 import pcre.PCRE;
 
-public final class RegexCite implements Comparable<RegexCite> {
+public final class WeightRankedRegex implements RankableRegex{
 	private final String pattern;
 	private final CommonTree rootTree;
 
@@ -18,7 +18,7 @@ public final class RegexCite implements Comparable<RegexCite> {
 	private final FeatureCount features;
 	private final int weight;
 
-	public RegexCite(String pattern, int weight) {
+	public WeightRankedRegex(String pattern, int weight) {
 		if (pattern == null) {
 			throw new IllegalArgumentException("pattern cannot be null");
 		} else if ("".equals(pattern)) {
@@ -61,7 +61,7 @@ public final class RegexCite implements Comparable<RegexCite> {
 	}
 
 	@Override
-	public int compareTo(RegexCite other) {
+	public int compareTo(WeightRankedRegex other) {
 		//higher weight is earlier
 		if(this.weight > other.weight){
 			return -1;
