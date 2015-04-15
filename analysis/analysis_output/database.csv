@@ -3,12 +3,13 @@ FLAGS_2•2996
 medRFilePerProj•2
 nAborted•19
 FLAGS_0•47051
-nCorpus•12,577
+nCorpus•12,576
 FLAGS_4•24
 q3RPerFile•3
 medFilePerProj•6
 maxFilePerProj•5,963
 nProjScanned•3,898
+N_ALIEN•1,440
 FLAGS_32•397
 q1FilePerProj•2
 q3RFilePerProj•6
@@ -22,8 +23,8 @@ percentProjectsUsingRegex•42.2
 percentFlags0•87.3
 percentI•43.8
 nDistinctPatterns•14,113
-q3FilePerProj•21
 percentM•25.8
+q3FilePerProj•21
 maxRFilePerProj•541
 FLAGS_64•943
 FUNC_0•31054
@@ -34,6 +35,7 @@ FUNC_1•7116
 FLAGS_128•0
 nCleanUsages•43,525
 maxRPerFile•207
+N_PCRE_ERROR•97
 FUNC_7•77
 FLAGS_8•1764
 medRPerFile•1
@@ -43,5 +45,5 @@ FUNC_3•1084
 nCloneURL•42,000
 FUNC_6•6826
 percentCompile•57.6
-q1RPerFile•1
 FUNC_5•124
+q1RPerFile•1

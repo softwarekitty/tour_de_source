@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.29)  15 APR 2015 03:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.29)  15 APR 2015 05:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -563,10 +563,10 @@ Overfull \hbox (28.78001pt too wide) in paragraph at lines 5--6
  []
 
 Package epstopdf Info: Source file: <../analysis_output/partFunctions.eps>
-(epstopdf)                    date: 2015-04-13 18:48:53
+(epstopdf)                    date: 2015-04-15 05:38:25
 (epstopdf)                    size: 5266 bytes
 (epstopdf)             Output file: <./partFunctions-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-04-13 18:49:21
+(epstopdf)                    date: 2015-04-15 05:39:08
 (epstopdf)                    size: 10203 bytes
 (epstopdf)             Command: <repstopdf --outfile=./partFunctions-eps-conver
 ted-to.pdf ../analysis_output/partFunctions.eps>
@@ -585,10 +585,10 @@ Overfull \hbox (28.78001pt too wide) in paragraph at lines 21--22
  []
 
 Package epstopdf Info: Source file: <../analysis_output/partFlags.eps>
-(epstopdf)                    date: 2015-04-13 18:48:53
+(epstopdf)                    date: 2015-04-15 05:38:25
 (epstopdf)                    size: 5062 bytes
 (epstopdf)             Output file: <./partFlags-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-04-13 18:49:23
+(epstopdf)                    date: 2015-04-15 05:39:09
 (epstopdf)                    size: 11088 bytes
 (epstopdf)             Command: <repstopdf --outfile=./partFlags-eps-converted-
 to.pdf ../analysis_output/partFlags.eps>
@@ -611,12 +611,29 @@ Overfull \hbox (28.78001pt too wide) in paragraph at lines 1--1
  [][]\OT1/ptm/m/it/10 :
  []
 
-)) (./discussion.tex
-Overfull \hbox (28.78001pt too wide) in paragraph at lines 1--1
+
+Overfull \hbox (115.7788pt too wide) in paragraph at lines 50--50
+[]\OT1/pcr/m/n/10 '(-?(?:0|[1-9]\\d*))(\\.\\d+)?([eE][-+]?\\d+)?'[] 
+ []
+
+
+Overfull \hbox (67.7788pt too wide) in paragraph at lines 56--56
+[]\OT1/pcr/m/n/10 '[^]]+?\\] +([0-9.]+): (\\w+) <-(\\w+)'[] 
+ []
+
+
+Underfull \vbox (badness 4181) has occurred while \output is active []
+
+ [2 <./partFunctions-eps-converted-to.pdf> <./partFlags-eps-converted-to.pdf>])
+
+Overfull \hbox (28.78001pt too wide) in paragraph at lines 43--44
  [][]\OT1/ptm/m/it/10 :
  []
 
-[2 <./partFunctions-eps-converted-to.pdf> <./partFlags-eps-converted-to.pdf>])
+(../analysis_output/featureStats.tex)) (./discussion.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 (./RepresentingRegexes.bbl)
 
 ** Conference Paper **
@@ -629,11 +646,15 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
 [3] (./RepresentingRegexes.aux) ) 
 Here is how much of TeX's memory you used:
- 5483 strings out of 493109
- 77526 string characters out of 6135004
- 195989 words of memory out of 5000000
+ 5486 strings out of 493109
+ 77608 string characters out of 6135004
+ 198379 words of memory out of 5000000
  8796 multiletter control sequences out of 15000+600000
  40048 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -647,7 +668,7 @@ a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/t
 exlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/201
 4/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on RepresentingRegexes.pdf (3 pages, 120401 bytes).
+Output written on RepresentingRegexes.pdf (3 pages, 122246 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream

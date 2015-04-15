@@ -14,4 +14,11 @@ rownames(M_partFlags)=c("IGNORECASE 2,996 (43.8%)","LOCALE 24 (0.4%)","MULTILINE
 barplot(M_partFlags,legend=rownames(M_partFlags),col=c("gray80","gray32","gray67","gray8","gray50","gray92","grey20"),xlim=c(0,9),width=0.6,ylim = range(pretty(c(0, 6835))),las=1)
 dev.off()
 
+setEPS()
+postscript("/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/analysis/analysis_output/patternFiltering.eps",width=3.5,height=2)
+par(mar=c(1,4,1,1), cex=0.97)
+M_patternFiltering = matrix(c(1440,97,12576),ncol=1,byrow=T)
+rownames(M_patternFiltering)=c("alien feature 1,440 (10.2%)","pcre error 97 (0.7%)","included patterns 12,576 (89.1%)")
+barplot(M_patternFiltering,legend=rownames(M_patternFiltering),col=c("mediumblue","lightskyblue1","seagreen2"),xlim=c(0,9),width=0.6,ylim = range(pretty(c(0, 14113))),las=1)
+dev.off()
 ............

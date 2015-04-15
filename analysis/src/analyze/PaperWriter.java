@@ -59,8 +59,8 @@ public class PaperWriter {
 		// the key value database for strings in the paper
 		filesToMake.add(new NameContentsPair("database.csv", stringifyMap(databaseFileContent)));
 
-		// the key value database for strings in the paper
-		//filesToMake.add(new NameContentsPair("featuresDefined.tex", Section2.defineFeatures()));
+		// stats about how features are used
+		filesToMake.add(new NameContentsPair("featureStats.tex", Section2.featureStats(corpus,databaseFileContent)));
 		
 		// createContent
 		generateArtifacts(filesToMake, homePath);

@@ -11,6 +11,9 @@ public class C {
 	//for slides and color charts
 	public static final String N_ALIEN = "N_ALIEN";
 	public static final String N_PCRE_ERROR = "N_PCRE_ERROR";
+	public static final String P_LITERAL_PRESENT ="P_LITERAL_PRESENT";
+	public static final String R_SCRIPTNAME = "analysis_script.r";
+	public static final String P_LITERAL_TOKENS = "P_LITERAL_TOKENS";
 
 	//Study.RECORDING REGEX USAGES
 	public static String N_CLONE_URL = "nCloneURL";
@@ -82,7 +85,7 @@ public class C {
 	public static String FLAGS_255 = "FLAGS_128";
 	
 	
-	public static String R_SCRIPTNAME = "analysis_script.r";
+
 
 	public static int getIntFromQuery(String connectionString, String query,
 			String valueName) throws ClassNotFoundException, SQLException,
