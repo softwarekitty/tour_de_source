@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex RepresentingRegexes"] 1428990481 "RepresentingRegexes.aux" "RepresentingRegexes.bbl" "RepresentingRegexes" 1428990800
+["bibtex RepresentingRegexes"] 1429086952 "RepresentingRegexes.aux" "RepresentingRegexes.bbl" "RepresentingRegexes" 1429086954
   "/usr/local/texlive/2014/texmf-dist/bibtex/bst/base/abbrv.bst" 1292289607 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "RepresentingRegexes.aux" 1428990800 2429 f322a721ca7a0c354ee4b76d06b4c6e9 ""
+  "RepresentingRegexes.aux" 1429086953 3132 54bbe59f3c2bad7fb344f0e62ecd1cd0 ""
   "RepresentingRegexes.bcf" 0 -1 0 ""
   "biblio.bib" 1427998339 2763 ee1a100db81eebb3cebf391e0030206a ""
   (generated)
-  "RepresentingRegexes.blg"
   "RepresentingRegexes.bbl"
-["pdflatex"] 1428990799 "RepresentingRegexes.tex" "RepresentingRegexes.pdf" "RepresentingRegexes" 1428990800
+  "RepresentingRegexes.blg"
+["pdflatex"] 1429086952 "RepresentingRegexes.tex" "RepresentingRegexes.pdf" "RepresentingRegexes" 1429086954
   "../analysis_output/partFlags.eps" 1428968933 5062 3295710707ed35a75a5f20db871961d8 ""
   "../analysis_output/partFunctions.eps" 1428968933 5266 762c5f22bda93ce2f5926f7ef7900167 ""
   "../analysis_output/topNW.tex" 1428990796 287 0f1ab6e3114ce2a665af1a33d1bb32d7 ""
@@ -68,20 +68,21 @@
   "/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/xfor/xfor.sty" 1233902931 2689 44855b72da58344b1c1d9b3087bce6ca ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1417732693 4962 9c1069474ff71dbc47d5006555e352d3 ""
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/xtab/xtab.sty" 1312313272 20106 cec6cadeaa62ca1707a316e38d65a9eb ""
   "IEEEtran.cls" 1354041132 207390 d653df0f34cc52792528fb4a3b56093b ""
-  "RepresentingRegexes.aux" 1428990800 2429 f322a721ca7a0c354ee4b76d06b4c6e9 ""
-  "RepresentingRegexes.bbl" 1428990482 1228 5d1b583342031de94d5af90e0cb50029 "bibtex RepresentingRegexes"
-  "RepresentingRegexes.tex" 1428990035 2212 db26c89c05ab9ae1550dc8f8796e015d ""
+  "RepresentingRegexes.aux" 1429086953 3132 54bbe59f3c2bad7fb344f0e62ecd1cd0 ""
+  "RepresentingRegexes.bbl" 1429086952 1228 5d1b583342031de94d5af90e0cb50029 "bibtex RepresentingRegexes"
+  "RepresentingRegexes.tex" 1429083629 2122 d928bfe16b5371a283e3cca91086dd9d ""
   "discussion.tex" 1428951023 218 cad5247ce0a6b44099523ffd36b56ba3 ""
   "introduction.tex" 1427991527 202 12c97198f6726206cf16c48b2d13f639 ""
   "motivation.tex" 1427991527 158 95cb6c994c0f0c9f11ffe6cbac80f1f4 ""
   "related.tex" 1427991527 813 1e251f73160934daf32a202f6d79d0fd ""
-  "results.tex" 1428988963 2283 85a659a0557c8f387f7f379245172b1e ""
-  "study.tex" 1428950541 3632 c9edffe4bae95b50eece9a5f3c994aa5 ""
+  "results.tex" 1429081828 2386 a8882d27782b8680537e303a8addc6d2 ""
+  "study.tex" 1429086948 8245 fb191a6d75ab909ed4bda63ea24214d4 ""
   (generated)
-  "RepresentingRegexes.pdf"
   "RepresentingRegexes.log"
-  "./partFlags-eps-converted-to.pdf"
+  "RepresentingRegexes.pdf"
   "RepresentingRegexes.aux"
-  "./filesPerProject-eps-converted-to.pdf"
   "./partFunctions-eps-converted-to.pdf"
+  "./partFlags-eps-converted-to.pdf"
+  "./filesPerProject-eps-converted-to.pdf"

@@ -56,20 +56,25 @@ public class PaperWriter {
 		// distinct features, token count and pattern length
 		filesToMake.add(new NameContentsPair("characterHistogram.tex", Composer.composeHistogramTable(4, Section1.getCharacterStatsAndAddToDatabase(databaseFileContent, corpus))));
 
+		// the key value database for strings in the paper
+		filesToMake.add(new NameContentsPair("database.csv", stringifyMap(databaseFileContent)));
+
+		// the key value database for strings in the paper
+		//filesToMake.add(new NameContentsPair("featuresDefined.tex", Section2.defineFeatures()));
+		
 		// createContent
-		generateArtifacts(stringifyMap(databaseFileContent), filesToMake, homePath);
+		generateArtifacts(filesToMake, homePath);
 		System.out.println("finished paper writer");
 	}
 
-	private static void generateArtifacts(String databaseFileContent,
-			List<NameContentsPair> filesToMake, String homePath)
-			throws IOException, InterruptedException {
+	private static void generateArtifacts(List<NameContentsPair> filesToMake,
+			String homePath) throws IOException, InterruptedException {
+
+		// clean the old output, if any
 		String outputPath = homePath + "analysis/analysis_output/";
 		FileUtils.cleanDirectory(new File(outputPath));
 
-		// create the output file objects
-		String databaseName = "database.csv";
-		IOUtil.createAndWrite(new File(outputPath + databaseName), databaseFileContent);
+		// create all files using the list of name, contents
 		for (NameContentsPair ncp : filesToMake) {
 			File f = new File(outputPath + ncp.getFilename());
 			IOUtil.createAndWrite(f, ncp.getContents());

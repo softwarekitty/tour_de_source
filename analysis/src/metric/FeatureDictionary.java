@@ -9,12 +9,20 @@ public class FeatureDictionary {
 
 	HashMap<String, Integer> nameToIntMap;
 	HashMap<Integer, String> intToNameMap;
+	HashMap<Integer, String> intToCodeMap;
+	HashMap<Integer, String> intToDescMap;
 
 	public FeatureDictionary() {
 		initializeNameToIntMap();
 		initializeIntToNameMap();
+		initializeIntToCodeMap();
+		initializeIntToDescMap();
 	}
 
+	public String getCode(int index) {
+		return intToCodeMap.get(index);
+	}
+	
 	public String getName(int index) {
 		return intToNameMap.get(index);
 	}
@@ -116,6 +124,94 @@ public class FeatureDictionary {
 		intToNameMap.put(I_REP_LOWERBOUNDED_LAZY,REP_LOWERBOUNDED_LAZY);
 		intToNameMap.put(I_REP_QUESTIONABLE_LAZY,REP_QUESTIONABLE_LAZY);
 		intToNameMap.put(I_REP_SINGLEEXACTLY_LAZY,REP_SINGLEEXACTLY_LAZY);
+	}
+	
+
+	private void initializeIntToDescMap() {
+		intToDescMap = new HashMap<Integer,String>(32);	
+		intToDescMap.put(I_CC_DECIMAL,"any of: 0123456789");
+		intToDescMap.put(I_CC_NDECIMAL,"any non-decimal character");
+		intToDescMap.put(I_CC_NWHITESPACE,"any non-whitespace");
+		intToDescMap.put(I_CC_NWORD,"any non-word character");
+		intToDescMap.put(I_CC_RANGE,"for example a-z is all lowercase letters");
+		intToDescMap.put(I_CC_WHITESPACE,"tab, newline, return, vertical-tab space or form-feed");
+		intToDescMap.put(I_CC_WORD,"upper and lowercase letters, underscore and digits");
+
+		intToDescMap.put(I_LOOK_AHEAD,"require a matching sequence to the right");
+		intToDescMap.put(I_LOOK_AHEAD_NEGATIVE,"reject if there is a matching sequence to the right");
+		intToDescMap.put(I_LOOK_BEHIND,"require a matching sequence to the left");
+		intToDescMap.put(I_LOOK_BEHIND_NEGATIVE,"reject if there is a matching sequence to the left");
+		intToDescMap.put(I_LOOK_NON_CAPTURE,"require this sequence but do not capture it");
+		
+		intToDescMap.put(I_META_CC,"a custom character class");
+		intToDescMap.put(I_META_CAPTURING_GROUP,"a capture group / logical grouping");
+		intToDescMap.put(I_META_DOT_ANY,"a character class matching everything but newline");
+		intToDescMap.put(I_META_LITERAL,"a literal character");
+		intToDescMap.put(I_META_NCC,"a negated custom character class");
+		intToDescMap.put(I_META_NUMBERED_BACKREFERENCE,"require what was captured by the ith capture group");
+		intToDescMap.put(I_META_OR,"logical or");
+		
+		intToDescMap.put(I_POS_END_ANCHOR,"match the end of the string");
+		intToDescMap.put(I_POS_NONWORD,"negated word/non-word boundary");
+		intToDescMap.put(I_POS_START_ANCHOR,"match the start of the string");
+		intToDescMap.put(I_POS_WORD,"word/non-word boundary");
+		
+		intToDescMap.put(I_REP_ADDITIONAL,"one-or-more repetition");
+		intToDescMap.put(I_REP_DOUBLEBOUNDED,"at least n, at most m repetition");
+		intToDescMap.put(I_REP_KLEENISH,"zero-or-more repetition");
+		intToDescMap.put(I_REP_LOWERBOUNDED,"at least n repetition");
+		intToDescMap.put(I_REP_QUESTIONABLE,"zero-or-one repetition");
+		intToDescMap.put(I_REP_SINGLEEXACTLY,"exactly n repetition");
+		intToDescMap.put(I_REP_ADDITIONAL_LAZY,"lazy one-or-more repetition");
+		intToDescMap.put(I_REP_DOUBLEBOUNDED_LAZY,"lazy at least n, at most m repetition");
+		intToDescMap.put(I_REP_KLEENISH_LAZY,"lazy zero-or-more repetition");
+		intToDescMap.put(I_REP_LOWERBOUNDED_LAZY,"lazy at least n repetition");
+		intToDescMap.put(I_REP_QUESTIONABLE_LAZY,"lazy zero-or-one repetition");
+		intToDescMap.put(I_REP_SINGLEEXACTLY_LAZY,"lazy exactly n repetition");
+	}
+	
+
+	private void initializeIntToCodeMap() {
+		intToCodeMap = new HashMap<Integer,String>(32);		
+		intToCodeMap.put(I_CC_DECIMAL,"DEC");
+		intToCodeMap.put(I_CC_NDECIMAL,"NDEC");
+		intToCodeMap.put(I_CC_NWHITESPACE,"NWSP");
+		intToCodeMap.put(I_CC_NWORD,"NWRD");
+		intToCodeMap.put(I_CC_RANGE,"RNG");
+		intToCodeMap.put(I_CC_WHITESPACE,"WSP");
+		intToCodeMap.put(I_CC_WORD,"WRD");
+
+		intToCodeMap.put(I_LOOK_AHEAD,"LKA");
+		intToCodeMap.put(I_LOOK_AHEAD_NEGATIVE,"NLKA");
+		intToCodeMap.put(I_LOOK_BEHIND,"LKB");
+		intToCodeMap.put(I_LOOK_BEHIND_NEGATIVE,"NLKB");
+		intToCodeMap.put(I_LOOK_NON_CAPTURE,"NCG");
+		
+		intToCodeMap.put(I_META_CC,"CCC");
+		intToCodeMap.put(I_META_CAPTURING_GROUP,"CG");
+		intToCodeMap.put(I_META_DOT_ANY,"ANY");
+		intToCodeMap.put(I_META_LITERAL,"LIT");
+		intToCodeMap.put(I_META_NCC,"NCCC");
+		intToCodeMap.put(I_META_NUMBERED_BACKREFERENCE,"BKR");
+		intToCodeMap.put(I_META_OR,"OR");
+		
+		intToCodeMap.put(I_POS_END_ANCHOR,"END");
+		intToCodeMap.put(I_POS_NONWORD,"NWNW");
+		intToCodeMap.put(I_POS_START_ANCHOR,"STR");
+		intToCodeMap.put(I_POS_WORD,"WNW");
+		
+		intToCodeMap.put(I_REP_ADDITIONAL,"ADD");
+		intToCodeMap.put(I_REP_DOUBLEBOUNDED,"DBB");
+		intToCodeMap.put(I_REP_KLEENISH,"KLE");
+		intToCodeMap.put(I_REP_LOWERBOUNDED,"LWB");
+		intToCodeMap.put(I_REP_QUESTIONABLE,"QST");
+		intToCodeMap.put(I_REP_SINGLEEXACTLY,"SNG");
+		intToCodeMap.put(I_REP_ADDITIONAL_LAZY,"ADDL");
+		intToCodeMap.put(I_REP_DOUBLEBOUNDED_LAZY,"DBBL");
+		intToCodeMap.put(I_REP_KLEENISH_LAZY,"KLEL");
+		intToCodeMap.put(I_REP_LOWERBOUNDED_LAZY,"LWBL");
+		intToCodeMap.put(I_REP_QUESTIONABLE_LAZY,"QSTL");
+		intToCodeMap.put(I_REP_SINGLEEXACTLY_LAZY,"SNGL");
 	}
 
 	public static final String ELEMENT = "ELEMENT";

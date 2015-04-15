@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.29)  14 APR 2015 00:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.3.29)  15 APR 2015 03:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -332,6 +332,35 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen139
 \Gin@req@width=\dimen140
 )
+(/usr/local/texlive/2014/texmf-dist/tex/latex/xtab/xtab.sty
+Package: xtab 2011/07/31 v2.3f Extended supertabular package
+\c@tracingst=\count143
+\PWSTcapht=\dimen141
+\ST@wd=\dimen142
+\ST@rightskip=\skip48
+\ST@leftskip=\skip49
+\ST@parfillskip=\skip50
+\c@PWSTtable=\count144
+\PWSTlastpage=\count145
+\PWSTpenultimate=\count146
+\PWSTcurpage=\count147
+\PWSTtempc=\count148
+\PWSTlines=\count149
+\PWST@lastht=\dimen143
+\PWST@generalht=\dimen144
+\PWST@ht=\dimen145
+\ST@pageleft=\dimen146
+\ST@headht=\dimen147
+\ST@tailht=\dimen148
+\ST@pagesofar=\dimen149
+\ST@pboxht=\dimen150
+\ST@lineht=\dimen151
+\ST@stretchht=\dimen152
+\ST@prevht=\dimen153
+\ST@toadd=\dimen154
+\ST@dimen=\dimen155
+\ST@pbox=\box29
+)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -395,12 +424,8 @@ Package grfext Info: Graphics extension search list:
 )
 \dtldb@data=\toks43
 \dtlkeys@data=\toks44
-\dtlrows@data=\count143
-\dtlcols@data=\count144
-\dtldb@cq=\toks45
-\dtlkeys@cq=\toks46
-\dtlrows@cq=\count145
-\dtlcols@cq=\count146
+\dtlrows@data=\count150
+\dtlcols@data=\count151
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
@@ -409,44 +434,44 @@ Package: cite 2015/02/27  v 5.5
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/preprint/balance.sty
 Package: balance 1999/02/23 4.3 (PWD)
-\oldvsize=\dimen141
+\oldvsize=\dimen156
 )
 (./RepresentingRegexes.aux)
 \openout1 = `RepresentingRegexes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count147
-\scratchdimen=\dimen142
-\scratchbox=\box29
-\nofMPsegments=\count148
-\nofMParguments=\count149
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count150
-\MPscratchDim=\dimen143
-\MPnumerator=\count151
-\makeMPintoPDFobject=\count152
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count152
+\scratchdimen=\dimen157
+\scratchbox=\box30
+\nofMPsegments=\count153
+\nofMParguments=\count154
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count155
+\MPscratchDim=\dimen158
+\MPnumerator=\count156
+\makeMPintoPDFobject=\count157
+\everyMPtoPDFconversion=\toks46
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 41.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 37.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
 
 (./introduction.tex) (./motivation.tex) (./related.tex
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 8.
@@ -469,11 +494,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 /n/10 and
  []
 
-) (./study.tex [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdf
-tex.map}
+) (./study.tex
+Overfull \hbox (13.99994pt too wide) in paragraph at lines 2--2
+ [][] 
+ []
 
 
-]) (./results.tex
+Overfull \hbox (13.99994pt too wide) in paragraph at lines 9--9
+ [][] 
+ []
+
+[1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Overfull \hbox (28.78001pt too wide) in paragraph at lines 26--27
+ [][]\OT1/ptm/m/it/10 :
+ []
+
+
+Overfull \hbox (77.865pt too wide) in paragraph at lines 56--56
+[]\OT1/pcr/m/n/10 \t\n\r\v\f or space[] 
+ []
+
+
+Overfull \hbox (5.865pt too wide) in paragraph at lines 84--84
+[]\OT1/pcr/m/n/10 a(?=bc)[] 
+ []
+
+
+Overfull \hbox (5.865pt too wide) in paragraph at lines 89--89
+[]\OT1/pcr/m/n/10 a(?!yz)[] 
+ []
+
+
+Overfull \hbox (11.865pt too wide) in paragraph at lines 94--94
+[]\OT1/pcr/m/n/10 (?<=a)bc[] 
+ []
+
+
+Overfull \hbox (11.865pt too wide) in paragraph at lines 99--99
+[]\OT1/pcr/m/n/10 (?<!x)yz[] 
+ []
+
+
+Overfull \hbox (5.865pt too wide) in paragraph at lines 104--104
+[]\OT1/pcr/m/n/10 a(?:b)c[] 
+ []
+
+
+Overfull \hbox (5.865pt too wide) in paragraph at lines 109--109
+[]\OT1/pcr/m/n/10 [aeiou][] 
+ []
+
+
+Overfull \hbox (11.865pt too wide) in paragraph at lines 114--114
+[]\OT1/pcr/m/n/10 (caught)[] 
+ []
+
+
+Overfull \hbox (5.865pt too wide) in paragraph at lines 199--199
+[]\OT1/pcr/m/n/10 z{5,9}?[] 
+ []
+
+) (./results.tex
 Overfull \hbox (28.78001pt too wide) in paragraph at lines 5--6
  [][]\OT1/ptm/m/it/10 :
  []
@@ -486,17 +570,17 @@ Package epstopdf Info: Source file: <../analysis_output/partFunctions.eps>
 (epstopdf)                    size: 10203 bytes
 (epstopdf)             Command: <repstopdf --outfile=./partFunctions-eps-conver
 ted-to.pdf ../analysis_output/partFunctions.eps>
-(epstopdf)             \includegraphics on input line 15.
+(epstopdf)             \includegraphics on input line 16.
 Package epstopdf Info: Output file is already uptodate.
 <./partFunctions-eps-converted-to.pdf, id=12, 361.35pt x 151.56625pt>
 File: ./partFunctions-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./partFunctions-eps-converted-to.pdf>
 Package pdftex.def Info: ./partFunctions-eps-converted-to.pdf used on input lin
-e 15.
+e 16.
 (pdftex.def)             Requested size: 253.04987pt x 106.14189pt.
 
-Overfull \hbox (28.78001pt too wide) in paragraph at lines 20--21
+Overfull \hbox (28.78001pt too wide) in paragraph at lines 21--22
  [][]\OT1/ptm/m/it/10 :
  []
 
@@ -508,17 +592,17 @@ Package epstopdf Info: Source file: <../analysis_output/partFlags.eps>
 (epstopdf)                    size: 11088 bytes
 (epstopdf)             Command: <repstopdf --outfile=./partFlags-eps-converted-
 to.pdf ../analysis_output/partFlags.eps>
-(epstopdf)             \includegraphics on input line 24.
+(epstopdf)             \includegraphics on input line 25.
 Package epstopdf Info: Output file is already uptodate.
 <./partFlags-eps-converted-to.pdf, id=13, 361.35pt x 151.56625pt>
 File: ./partFlags-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./partFlags-eps-converted-to.pdf>
-Package pdftex.def Info: ./partFlags-eps-converted-to.pdf used on input line 24
+Package pdftex.def Info: ./partFlags-eps-converted-to.pdf used on input line 25
 .
 (pdftex.def)             Requested size: 253.04987pt x 106.14189pt.
 
-Overfull \hbox (28.78001pt too wide) in paragraph at lines 33--34
+Overfull \hbox (28.78001pt too wide) in paragraph at lines 34--35
  [][]\OT1/ptm/m/it/10 :
  []
 
@@ -527,7 +611,13 @@ Overfull \hbox (28.78001pt too wide) in paragraph at lines 1--1
  [][]\OT1/ptm/m/it/10 :
  []
 
-)) (./discussion.tex) (./RepresentingRegexes.bbl)
+)) (./discussion.tex
+Overfull \hbox (28.78001pt too wide) in paragraph at lines 1--1
+ [][]\OT1/ptm/m/it/10 :
+ []
+
+[2 <./partFunctions-eps-converted-to.pdf> <./partFlags-eps-converted-to.pdf>])
+(./RepresentingRegexes.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -539,31 +629,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
-
-[2 <./partFunctions-eps-converted-to.pdf> <./partFlags-eps-converted-to.pdf>]
-(./RepresentingRegexes.aux) ) 
+[3] (./RepresentingRegexes.aux) ) 
 Here is how much of TeX's memory you used:
- 5374 strings out of 493109
- 76154 string characters out of 6135004
- 186223 words of memory out of 5000000
- 8689 multiletter control sequences out of 15000+600000
- 41155 words of font info for 79 fonts, out of 8000000 for 9000
+ 5483 strings out of 493109
+ 77526 string characters out of 6135004
+ 195989 words of memory out of 5000000
+ 8796 multiletter control sequences out of 15000+600000
+ 40048 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,9n,50p,1025b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvip
-s/base/8r.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a
-.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on RepresentingRegexes.pdf (2 pages, 97608 bytes).
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/
+dvips/base/8r.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8
+a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on RepresentingRegexes.pdf (3 pages, 120401 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
