@@ -123,8 +123,8 @@ public class Section1 {
 		DescriptiveStatistics tokenCountStats = new DescriptiveStatistics();
 		DescriptiveStatistics distinctFeatureStats = new DescriptiveStatistics();
 		for(WeightRankedRegex regex : corpus){
-			lengthStats.addValue(regex.getPattern().length());
-			weightStats.addValue(regex.getWeight());
+			lengthStats.addValue(regex.getContent().length());
+			weightStats.addValue(regex.getRankableValue());
 			tokenCountStats.addValue(regex.getFeatures().getTokenCount());
 			distinctFeatureStats.addValue(regex.getFeatures().getDistinctFeatureCount());
 		}

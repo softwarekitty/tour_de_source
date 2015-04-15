@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
@@ -142,8 +143,8 @@ public class Composer {
 		return bd.doubleValue();
 	}
 
-	public static String composeRegexTable(int tableSize,
-			Iterator<? extends RankableRegex> it, double width) {
+	public static String composeRankTable(int tableSize,
+			Iterator<? extends RankableContent> it, double width, String contentsName, String rankName) {
 		StringBuilder sb = new StringBuilder();
 		DecimalFormat df = new DecimalFormat("#0.#");
 		String widthS = df.format(width);
@@ -152,14 +153,14 @@ public class Composer {
 		String betweenPatternAndWeight = "\\end{verbatim}\n\\end{minipage}\n& ";
 		String afterWeight = " \\\\ \n";
 		sb.append("\\begin{center}\n\\begin{tabular}{lc}\n\\toprule\n");
-		sb.append("pattern & weight \\\\ \n");
+		sb.append(contentsName+" & "+rankName+" \\\\ \n");
 		for (int i = 0; i < tableSize; i++) {
 			if (it.hasNext()) {
-				RankableRegex rr = it.next();
+				RankableContent rr = it.next();
 				sb.append(beforePattern);
-				sb.append(rr.getPattern());
+				sb.append(rr.getContent());
 				sb.append(betweenPatternAndWeight);
-				sb.append(rr.getWeight());
+				sb.append(rr.getRankableValue());
 				sb.append(afterWeight);
 			}
 		}
@@ -198,5 +199,11 @@ public class Composer {
 		}
 		sb.append("\\bottomrule\n\\end{tabluar}\n\\end{center}\n");
 		return sb.toString();
+	}
+	
+	public static String createString(char character, int length) {
+	    char[] chars = new char[length];
+	    Arrays.fill(chars, character);
+	    return new String(chars);
 	}
 }

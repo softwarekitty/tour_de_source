@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.apache.commons.io.FileUtils;
 // c.execute('''CREATE TABLE RegexCitation (uniqueSourceID int, sourceJSON text,
@@ -50,7 +51,7 @@ public class PaperWriter {
 		filesToMake.add(new NameContentsPair("contextHistogram.tex", Composer.composeHistogramTable(3, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent))));
 
 		// make a latex table with the top N regexes by weight.
-		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRegexTable(10, corpus.iterator(), 2.3)));
+		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.3,"pattern","weight")));
 
 		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
 		// distinct features, token count and pattern length
@@ -60,7 +61,10 @@ public class PaperWriter {
 		filesToMake.add(new NameContentsPair("database.csv", stringifyMap(databaseFileContent)));
 
 		// stats about how features are used
-		filesToMake.add(new NameContentsPair("featureStats.tex", Section2.featureStats(corpus,databaseFileContent)));
+		filesToMake.add(new NameContentsPair("featureStats.tex", Section2.featureStats(corpus, databaseFileContent)));
+		
+		// a table for the top N feature coAppearances
+		filesToMake.add(new NameContentsPair("coApp.tex", Section2.coAppearances(corpus, databaseFileContent,10)));
 		
 		// createContent
 		generateArtifacts(filesToMake, homePath);

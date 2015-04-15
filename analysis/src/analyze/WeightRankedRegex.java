@@ -3,17 +3,14 @@ package analyze;
 import metric.FeatureCount;
 
 import org.antlr.runtime.tree.CommonTree;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.python.util.PythonInterpreter;
 
 import pcre.PCRE;
 
-public final class WeightRankedRegex implements RankableRegex{
+public final class WeightRankedRegex implements RankableContent{
 	private final String pattern;
 	private final CommonTree rootTree;
-
-	public String getPattern() {
-		return pattern;
-	}
 
 	private final FeatureCount features;
 	private final int weight;
@@ -43,7 +40,9 @@ public final class WeightRankedRegex implements RankableRegex{
 			interpreter.exec("x = re.compile(" + pattern + ")");
 
 			// parse into the commontree
-			this.rootTree = new PCRE(pattern).getCommonTree();
+			String removeSingleQuotes = pattern.substring(1, pattern.length()-1);
+			String unescaped = StringEscapeUtils.unescapeJava(removeSingleQuotes);
+			this.rootTree = new PCRE(unescaped).getCommonTree();
 			this.features = new FeatureCount(rootTree);
 		}
 	}
@@ -56,27 +55,32 @@ public final class WeightRankedRegex implements RankableRegex{
 		return features;
 	}
 
-	public int getWeight() {
+	public int getRankableValue() {
 		return weight;
 	}
 
 	@Override
-	public int compareTo(WeightRankedRegex other) {
+	public int compareTo(RankableContent other) {
+		if(other.getClass()!=this.getClass()){
+			System.err.println("class mismatch");
+			return 1;
+		}
+		WeightRankedRegex wrrOther = (WeightRankedRegex)other;
 		//higher weight is earlier
-		if(this.weight > other.weight){
+		if(this.weight > wrrOther.weight){
 			return -1;
-		}else if(this.weight < other.weight){
+		}else if(this.weight < wrrOther.weight){
 			return 1;
 		}else{
 			//shorter length is earlier
-			if(this.pattern.length() > other.pattern.length()){
+			if(this.pattern.length() > wrrOther.pattern.length()){
 				return 1;
-			}else if(this.pattern.length() < other.pattern.length()){
+			}else if(this.pattern.length() < wrrOther.pattern.length()){
 				return -1;
 			}else{
 				
 				//same weight and length: by hashcode
-				return this.pattern.compareTo(other.pattern);
+				return this.pattern.compareTo(wrrOther.pattern);
 			}
 		}
 	}
@@ -84,6 +88,11 @@ public final class WeightRankedRegex implements RankableRegex{
 	@Override
 	public String toString() {
 		return "RegexCite [pattern=" + pattern + "]";
+	}
+
+	@Override
+	public String getContent() {
+		return pattern;
 	}
 
 }

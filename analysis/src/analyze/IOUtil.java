@@ -1,9 +1,11 @@
 package analyze;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -45,6 +47,32 @@ public class IOUtil {
 			bw.write(content);
 			bw.close();
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void waitNsecsOrContinue(int x){
+		System.out.println("return to continue (within "+x+ " seconds)");
+
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		long startTime = System.currentTimeMillis();
+		try {
+			while ((System.currentTimeMillis() - startTime) < x * 1000
+			        && !in.ready()) {
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		try {
+			if (in.ready()) {
+			    System.out.println("You entered: " + in.readLine());
+			} else {
+			    System.out.println("You did not enter data after "+x+ " seconds");
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
