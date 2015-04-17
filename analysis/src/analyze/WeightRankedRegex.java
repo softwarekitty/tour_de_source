@@ -40,9 +40,8 @@ public final class WeightRankedRegex implements RankableContent{
 			interpreter.exec("x = re.compile(" + pattern + ")");
 
 			// parse into the commontree
-			String removeSingleQuotes = pattern.substring(1, pattern.length()-1);
-			String unescaped = StringEscapeUtils.unescapeJava(removeSingleQuotes);
-			this.rootTree = new PCRE(unescaped).getCommonTree();
+
+			this.rootTree = new PCRE(getUnescapedPattern()).getCommonTree();
 			this.features = new FeatureCount(rootTree);
 		}
 	}
@@ -93,6 +92,12 @@ public final class WeightRankedRegex implements RankableContent{
 	@Override
 	public String getContent() {
 		return pattern;
+	}
+
+	public String getUnescapedPattern() {
+		String removeSingleQuotes = pattern.substring(1, pattern.length()-1);
+		String unescaped = StringEscapeUtils.unescapeJava(removeSingleQuotes);
+		return unescaped;
 	}
 
 }

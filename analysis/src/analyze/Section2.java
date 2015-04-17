@@ -20,7 +20,7 @@ public class Section2 {
 			String connectionString, String homePath)
 			throws ClassNotFoundException, SQLException {
 
-		return "...";
+		return "";
 	}
 
 	public static String featureStats(List<WeightRankedRegex> corpus,

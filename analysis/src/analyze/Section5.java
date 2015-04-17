@@ -15,7 +15,7 @@ public class Section5 {
 			String connectionString, String homePath)
 			throws ClassNotFoundException, SQLException {
 
-		return "...";
+		return "";
 	}
 
 }
