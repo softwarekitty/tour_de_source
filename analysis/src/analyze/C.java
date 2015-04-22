@@ -14,6 +14,8 @@ public class C {
 	public static final String P_LITERAL_PRESENT ="P_LITERAL_PRESENT";
 	public static final String R_SCRIPTNAME = "analysis_script.r";
 	public static final String P_LITERAL_TOKENS = "P_LITERAL_TOKENS";
+	public static final String S3_SCRIPTNAME = "syntaxClusterInput.abc";
+	public static final String S3_OUTPUT = "syntaxClusterOutput.abc";
 
 	//Study.RECORDING REGEX USAGES
 	public static String N_CLONE_URL = "nCloneURL";

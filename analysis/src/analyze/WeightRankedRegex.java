@@ -86,7 +86,7 @@ public final class WeightRankedRegex implements RankableContent{
 
 	@Override
 	public String toString() {
-		return "RegexCite [pattern=" + pattern + "]";
+		return "WeightRankedRegex [pattern=" + pattern + "]";
 	}
 
 	@Override

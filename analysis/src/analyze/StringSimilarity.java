@@ -45,7 +45,6 @@ public class StringSimilarity {
 		return matrix;
 	}
 	
-	//TODO
 	public static HalfMatrix getJaccardSimilarityMatrix(
 			ArrayList<WeightRankedRegex> corpus) {
 		HalfMatrix matrix = new HalfMatrix(corpus.size());

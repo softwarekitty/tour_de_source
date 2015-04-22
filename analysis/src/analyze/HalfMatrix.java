@@ -78,6 +78,19 @@ public class HalfMatrix {
 			System.out.println("]");
 		}
 	}
+
+	public String getABC(double minEdgeWeight) {
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i< values.length;i++){
+			for(int j=0;j<values[i].length;j++){
+				double edgeWeight = values[i][j];
+				if(edgeWeight >= minEdgeWeight){
+					sb.append(i + " " + j + " " + edgeWeight + "\n");
+				}
+			}
+		}
+		return sb.toString();
+	}
 	
 	
 

@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeSet;
 
 import org.apache.commons.io.FileUtils;
 
@@ -50,15 +51,15 @@ public class IOUtil {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void waitNsecsOrContinue(int x){
-		System.out.println("return to continue (within "+x+ " seconds)");
+
+	public static void waitNsecsOrContinue(int x) {
+		System.out.println("return to continue (within " + x + " seconds)");
 
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		long startTime = System.currentTimeMillis();
 		try {
-			while ((System.currentTimeMillis() - startTime) < x * 1000
-			        && !in.ready()) {
+			while ((System.currentTimeMillis() - startTime) < x * 1000 &&
+				!in.ready()) {
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -67,13 +68,47 @@ public class IOUtil {
 
 		try {
 			if (in.ready()) {
-			    System.out.println("You entered: " + in.readLine());
+				System.out.println("You entered: " + in.readLine());
 			} else {
-			    System.out.println("You did not enter data after "+x+ " seconds");
+				System.out.println("You did not enter data after " + x +
+					" seconds");
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	//
+	public static ArrayList<TreeSet<WeightRankedRegex>> getClusters(
+			String outputPath, String filename, String contents,
+			List<WeightRankedRegex> corpus) throws IOException,
+			InterruptedException {
+		// create the file for mcl to use as input
+		File f = new File(outputPath + filename);
+		IOUtil.createAndWrite(f, contents);
+
+		// run the mcl script
+		Process p = Runtime.getRuntime().exec("/usr/local/bin/mcl " +
+			outputPath + filename + " --abc -o " + outputPath + "mclOutput_" +
+			filename);
+		p.waitFor();
+
+		// parse mcl output
+		ArrayList<TreeSet<WeightRankedRegex>> clusters = new ArrayList<TreeSet<WeightRankedRegex>>();
+		File outputFile = new File(outputPath + "mclOutput_" + filename);
+		List<String> lines = FileUtils.readLines(outputFile, "UTF-8");
+		for(String line : lines){
+			String[] indices = line.split("\t");
+			if(indices.length==0){
+				continue;
+			}
+			TreeSet<WeightRankedRegex> cluster = new TreeSet<WeightRankedRegex>();
+			for(String index : indices){
+				cluster.add(corpus.get(Integer.parseInt(index)));
+			}
+			clusters.add(cluster);
+		}
+		return clusters;
 	}
 }
