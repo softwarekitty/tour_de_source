@@ -1,0 +1,43 @@
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+top 3 regexes & clusterWeight \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'\\s+'::181,'^\\s+'::26,'^\\s+$'::14\end{verbatim}
+\end{minipage}
+& 263 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'^\\s*$'::48,'\\s*'::30,'\\s*,'::16\end{verbatim}
+\end{minipage}
+& 178 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'\\d+'::70,'^\\d+$'::49,'\\d+$'::22\end{verbatim}
+\end{minipage}
+& 177 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'^\\w+$'::39,'\\w+'::31,'\\w+$'::11\end{verbatim}
+\end{minipage}
+& 93 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'(\\d+)'::32,'-r(\\d+)$'::17,'(\\d+)$'::7\end{verbatim}
+\end{minipage}
+& 92 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'\\\\(.)'::67,u'\\\\(.)'::4,'\\\\(.)?'::1\end{verbatim}
+\end{minipage}
+& 72 \\ 
+\bottomrule
+\end{tabular}
+\end{center}

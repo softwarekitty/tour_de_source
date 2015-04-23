@@ -66,6 +66,32 @@ public class PaperWriter {
 		// a table for the top N feature coAppearances
 		filesToMake.add(new NameContentsPair("coApp.tex", Section2.coAppearances(corpus, databaseFileContent,10)));
 		
+		// a table for the top N syntax clusters, using different string similarities
+		int nRows = 6;
+		double width = 2.8;
+		int nExamples = 3;
+		double minSimilarity = 0.75;
+		
+
+		int functionSwitch = C.LCS;
+		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+		
+		functionSwitch = C.COS;
+		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+		
+		functionSwitch = C.JACC;
+		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+		
+		functionSwitch = C.JAROW;
+		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+		
+		functionSwitch = C.LEV;
+		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+		
+		functionSwitch = C.SFT;
+		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+		
+		
 		// createContent
 		generateArtifacts(filesToMake, homePath);
 		System.out.println("finished paper writer");
@@ -80,6 +106,7 @@ public class PaperWriter {
 
 		// create all files using the list of name, contents
 		for (NameContentsPair ncp : filesToMake) {
+			System.out.println("creating "+ncp.getFilename());
 			File f = new File(outputPath + ncp.getFilename());
 			IOUtil.createAndWrite(f, ncp.getContents());
 		}

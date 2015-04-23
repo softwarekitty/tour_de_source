@@ -19,9 +19,12 @@ public class StringSimilarity {
 				int maxLength = Math.max(si.length(), patternJ.length());
 				double similarity = 0;
 				if (maxLength > 0) {
-					similarity = getDistance(si, patternJ, 4);
+					similarity = 1.0 - (getDistance(si, patternJ, 4) / (0.0 + maxLength));
 				}
 				matrix.set(i, j, similarity);
+			}
+			if(i%100==0){
+				System.out.println(C.functionames[C.SFT] + " i:"+i);
 			}
 		}
 		return matrix;
@@ -41,6 +44,9 @@ public class StringSimilarity {
 				}
 				matrix.set(i, j, similarity);
 			}
+			if(i%100==0){
+				System.out.println(C.functionames[C.COS] + " i:"+i);
+			}
 		}
 		return matrix;
 	}
@@ -59,6 +65,9 @@ public class StringSimilarity {
 				}
 				matrix.set(i, j, similarity);
 			}
+			if(i%100==0){
+				System.out.println(C.functionames[C.JACC] + " i:"+i);
+			}
 		}
 		return matrix;
 	}
@@ -76,6 +85,9 @@ public class StringSimilarity {
 					similarity = 1.0 - (StringUtils.getLevenshteinDistance(si, patternJ) / (0.0 + maxLength));
 				}
 				matrix.set(i, j, similarity);
+			}
+			if(i%100==0){
+				System.out.println(C.functionames[C.LEV] + " i:"+i);
 			}
 		}
 		return matrix;
@@ -96,6 +108,9 @@ public class StringSimilarity {
 				}
 				matrix.set(i, j, similarity);
 			}
+			if(i%100==0){
+				System.out.println(C.functionames[C.LCS] + " i:"+i);
+			}
 		}
 		return matrix;
 	}
@@ -108,6 +123,9 @@ public class StringSimilarity {
 			for (int j = 0; j < i; j++) {
 				double similarity = StringUtils.getJaroWinklerDistance(si, corpus.get(j).getUnescapedPattern());
 				matrix.set(i, j, similarity);
+			}
+			if(i%100==0){
+				System.out.println(C.functionames[C.JAROW] + " i:"+i);
 			}
 		}
 		return matrix;
@@ -149,7 +167,7 @@ public class StringSimilarity {
 			magnitude1 += Math.pow(v1[i], 2);
 			magnitude2 += Math.pow(v2[i], 2);
 		}
-		return dotProduct/(magnitude1 * magnitude2);
+		return dotProduct/Math.sqrt(magnitude1 * magnitude2);
 	}
 
 	private static HashMap<Character, Integer> getCharIntMap(String s1,

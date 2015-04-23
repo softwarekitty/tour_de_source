@@ -152,7 +152,7 @@ public class Section2 {
 		String afterWeight = " \\\\ \n";
 		
 		sb.append("\\begin{center}\n\\begin{tabular}{lcc}\n\\toprule\n");
-		sb.append("pair & example & nTimes \\\\ \n");
+		sb.append("pair & example from corpus & nTimes \\\\ \n");
 		for (int i = 0; i < tableSize; i++) {
 			if (it.hasNext()) {
 				CoAppearance cap = it.next();

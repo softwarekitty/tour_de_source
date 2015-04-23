@@ -1,0 +1,43 @@
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+top 3 regexes & clusterWeight \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'\\s+'::181,'\\s'::78,'\\d+'::70\end{verbatim}
+\end{minipage}
+& 8887 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'[a-zA-Z][-_.:a-zA-Z0-9]*'::47,'^[a-zA-Z0-9_]+$'::30,'^\\S+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+$'::29\end{verbatim}
+\end{minipage}
+& 2752 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'<([^>]*)>: \\[0x([0-9a-f]+)-0x([0-9a-f]+)\\]'::57,'^[0-9]+$'::27,'[0-9]+'::19\end{verbatim}
+\end{minipage}
+& 794 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+"l_ngettext, u?'\\%\\(num\\)s apple', u?'\\%\\(num\\)s apples', 3"::12,'\\d+ tests?, listed below'::11,'\\d+ tests? from ([a-zA-Z_])'::11\end{verbatim}
+\end{minipage}
+& 617 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'^[ ]*(#.*)?$'::41,'^(.*)@(.*)$'::17,'^([^=]*)=(.*)$'::15\end{verbatim}
+\end{minipage}
+& 572 \\ 
+\midrule
+\begin{minipage}{2.8in}
+\begin{verbatim}
+'get_task_tag\\)\\('::38,'get_cmd_state\\)\\('::38,'queue_data_in\\)\\('::38\end{verbatim}
+\end{minipage}
+& 546 \\ 
+\bottomrule
+\end{tabular}
+\end{center}

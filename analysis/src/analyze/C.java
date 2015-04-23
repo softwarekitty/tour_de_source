@@ -8,6 +8,15 @@ import java.sql.Statement;
 
 public class C {
 	
+	//for string similarity switch
+	public static final int COS = 0;
+	public static final int JACC = 1;
+	public static final int JAROW = 2;
+	public static final int LEV = 3;
+	public static final int LCS = 4;
+	public static final int SFT = 5;
+	public static final String[] functionames = { "cos", "jacc", "jaroW", "lev", "lcs", "sift" };
+	
 	//for slides and color charts
 	public static final String N_ALIEN = "N_ALIEN";
 	public static final String N_PCRE_ERROR = "N_PCRE_ERROR";

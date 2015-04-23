@@ -21,4 +21,3 @@ M_patternFiltering = matrix(c(1298,97,12718),ncol=1,byrow=T)
 rownames(M_patternFiltering)=c("alien feature 1,298 (9.2%)","pcre error 97 (0.7%)","included patterns 12,718 (90.1%)")
 barplot(M_patternFiltering,legend=rownames(M_patternFiltering),col=c("mediumblue","lightskyblue1","seagreen2"),xlim=c(0,9),width=0.6,ylim = range(pretty(c(0, 14113))),las=1)
 dev.off()
-............

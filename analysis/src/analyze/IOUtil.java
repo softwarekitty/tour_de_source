@@ -80,9 +80,9 @@ public class IOUtil {
 	}
 
 	//
-	public static ArrayList<TreeSet<WeightRankedRegex>> getClusters(
+	public static TreeSet<Cluster> getClusters(
 			String outputPath, String filename, String contents,
-			List<WeightRankedRegex> corpus) throws IOException,
+			List<WeightRankedRegex> corpus, int topN) throws IOException,
 			InterruptedException {
 		// create the file for mcl to use as input
 		File f = new File(outputPath + filename);
@@ -95,7 +95,7 @@ public class IOUtil {
 		p.waitFor();
 
 		// parse mcl output
-		ArrayList<TreeSet<WeightRankedRegex>> clusters = new ArrayList<TreeSet<WeightRankedRegex>>();
+		TreeSet<Cluster> clusters = new TreeSet<Cluster>();
 		File outputFile = new File(outputPath + "mclOutput_" + filename);
 		List<String> lines = FileUtils.readLines(outputFile, "UTF-8");
 		for(String line : lines){
@@ -103,7 +103,7 @@ public class IOUtil {
 			if(indices.length==0){
 				continue;
 			}
-			TreeSet<WeightRankedRegex> cluster = new TreeSet<WeightRankedRegex>();
+			Cluster cluster = new Cluster(topN);
 			for(String index : indices){
 				cluster.add(corpus.get(Integer.parseInt(index)));
 			}

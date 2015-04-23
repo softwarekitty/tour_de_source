@@ -152,7 +152,7 @@ public class Composer {
 			"in}\n\\begin{verbatim}\n";
 		String betweenPatternAndWeight = "\\end{verbatim}\n\\end{minipage}\n& ";
 		String afterWeight = " \\\\ \n";
-		sb.append("\\begin{center}\n\\begin{tabular}{lc}\n\\toprule\n");
+		sb.append("\\begin{table*}\n\\begin{center}\n\\begin{tabular}{lc}\n\\toprule\n");
 		sb.append(contentsName+" & "+rankName+" \\\\ \n");
 		for (int i = 0; i < tableSize; i++) {
 			if (it.hasNext()) {
@@ -164,7 +164,7 @@ public class Composer {
 				sb.append(afterWeight);
 			}
 		}
-		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n");
+		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n\\end{table*}\n");
 		return sb.toString();
 	}
 
