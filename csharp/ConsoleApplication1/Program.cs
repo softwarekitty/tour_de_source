@@ -15,11 +15,12 @@ namespace ConsoleApplication1
 
             Console.WriteLine("begin behavioral clustering script");
 
-            string corpusFileContent = System.IO.File.ReadAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exportedCorpus.txt");
+            string corpusFileContent = System.IO.File.ReadAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\miniCorpus.txt");
 
             Dictionary<int, Regex> patternMap = new Dictionary<int, Regex>();
             string[] corpusFileLines = corpusFileContent.Split(new string[] { "\n" }, StringSplitOptions.None);
             Regex numberFinder = new Regex(@"(\d+)\t(.*)");
+            string tempFilePath = @"C:\Users\IEUser\Desktop\temp.txt";
             foreach (string line in corpusFileLines)
             {
                 Match lineMatch = numberFinder.Match(line);
@@ -27,16 +28,40 @@ namespace ConsoleApplication1
                 {
                     int index = int.Parse(lineMatch.Groups[1].Value);
                     string pattern = lineMatch.Groups[2].Value;
+                    Regex regex = new Regex(pattern);
                     patternMap.Add(index,new Regex(pattern));
+
+                    System.IO.File.WriteAllText(tempFilePath, pattern);
+                    // note that 65536 is 2^16, 131072 is 2^17, which is about as slow as I'd want Rex to go
+                    string rexOutput = callRex("/r:"+tempFilePath+" /k:65536 /e:ASCII /s:23");
+                    System.IO.File.WriteAllText(@"C:\Users\IEUser\Desktop\rexOutput.txt", rexOutput);
+                    string[] rexOutputLines = rexOutput.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+
+                    System.IO.File.WriteAllLines(@"C:\Users\IEUser\Desktop\rexOutputSplit.txt", rexOutputLines);
+
+                    int counter = 0;
+                    foreach (string rexOutLine in rexOutputLines)
+                    {
+                        if (rexOutLine.Equals("")&&counter==0)
+                        {
+                            counter++;
+                            continue;
+                        }
+                        Match generatedLineMatch = regex.Match(rexOutLine);
+                        if (!generatedLineMatch.Success)
+                        {
+                            Console.WriteLine("FAILURE!! pattern: "+pattern+" failed to match: :::"+rexOutLine+":::");
+                        }
+                    }
+
+                    Console.WriteLine(rexOutput.Substring(0,200));
+                    Console.WriteLine("pattern successful: "+pattern);
+                    Console.WriteLine("");
                 }
             }
 
-
-            // note that 65536 is 2^16, 131072 is 2^17, which is about as slow as I'd want Rex to go
-            string meoutput = callRex(@"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))? /k:65536 /e:ASCII /s:23");
-
             // overwrites file
-            System.IO.File.WriteAllText(@"C:\Users\IEUser\Desktop\meoutput.txt",meoutput);
+            // System.IO.File.WriteAllText(@"C:\Users\IEUser\Desktop\meoutput.txt",meoutput);
         }
 
         static string callRex(string rexArgs)
