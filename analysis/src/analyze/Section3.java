@@ -7,6 +7,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.TreeSet;
 
+import analyze.exceptions.PythonParsingException;
+import analyze.exceptions.QuoteRuleException;
+
 public class Section3 {
 
 	static void contributeToMap(HashMap<String, String> databaseFileContent,
@@ -67,7 +70,7 @@ public class Section3 {
 		}
 	}
 
-	public static void main(String[] args) throws IOException, InterruptedException {
+	public static void main(String[] args) throws IOException, InterruptedException, IllegalArgumentException, QuoteRuleException, PythonParsingException {
 		// TODO - couldn't we do this same similarity matrix using feature
 		// vectors - why not?
 		ArrayList<WeightRankedRegex> corpus = new ArrayList<WeightRankedRegex>();

@@ -14,6 +14,8 @@ import java.util.Map.Entry;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.python.util.PythonInterpreter;
 
+import analyze.exceptions.ValueMissingException;
+
 public class Section0 {
 
 	static void contributeToMap(HashMap<String, String> databaseFileContent,
@@ -328,11 +330,11 @@ public class Section0 {
 					PythonInterpreter interpreter = new PythonInterpreter();
 					interpreter.exec("import re");
 					interpreter.exec("x = re.compile(" + pattern + ")");
+					//System.out.println("valid python pattern: "+pattern);
 					cleanCounter[0]++;
 				}
 			} catch (Exception e) {
-				System.out.println("Cannot parse " + pattern + " because: " +
-					e.getMessage());
+				//System.out.println("Section0.getNFlaglessInvalidClean: Cannot parse " + pattern + " because: " +e.getMessage());
 				invalidCounter[0]++;
 			}
 		}

@@ -1,6 +1,5 @@
 package metric;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,41 +9,42 @@ import java.util.Set;
 
 import org.antlr.runtime.tree.CommonTree;
 
+import analyze.exceptions.AlienFeatureException;
 import pcre.PCREParser;
 
 public class FeatureCount {
 	private static FeatureDictionary featureDictionary = new FeatureDictionary();
 
 	private final int[] featureCountArray;
-	
-	
-	public int[] getFeatureCountArray(){
+
+	public int[] getFeatureCountArray() {
 		int length = featureCountArray.length;
-		int [] copy = new int[length];
+		int[] copy = new int[length];
 		System.arraycopy(featureCountArray, 0, copy, 0, length);
 		return copy;
 	}
-	
-	public int getDistinctFeatureCount(){
+
+	public int getDistinctFeatureCount() {
 		int nDistinctFeatures = 0;
-		for(int nParsedTokens : featureCountArray){
-			if(nParsedTokens>0){
+		for (int nParsedTokens : featureCountArray) {
+			if (nParsedTokens > 0) {
 				nDistinctFeatures++;
 			}
 		}
 		return nDistinctFeatures;
 	}
-	
-	public int getTokenCount(){
+
+	public int getTokenCount() {
 		int tokenCount = 0;
-		for(int nParsedTokens : featureCountArray){
+		for (int nParsedTokens : featureCountArray) {
 			tokenCount += nParsedTokens;
 		}
 		return tokenCount;
 	}
 
-	public FeatureCount(CommonTree tree) throws AlienFeatureException{
-		this(treeToIndexCountMap(tree));
+	public FeatureCount(CommonTree tree, String pattern)
+			throws AlienFeatureException {
+		this(treeToIndexCountMap(tree, pattern));
 	}
 
 	// requires all keys to be in the range [0,featureDictionary.getSize())
@@ -57,7 +57,8 @@ public class FeatureCount {
 	}
 
 	@SuppressWarnings("unchecked")
-	private static Map<Integer, Integer> treeToIndexCountMap(CommonTree treeRoot) throws AlienFeatureException{
+	private static Map<Integer, Integer> treeToIndexCountMap(
+			CommonTree treeRoot, String pattern) throws AlienFeatureException {
 		CountMap indexCountMap = new CountMap();
 
 		List<CommonTree> firstStack = new ArrayList<CommonTree>();
@@ -68,25 +69,24 @@ public class FeatureCount {
 
 		while (!childListStack.isEmpty()) {
 
-			List<CommonTree> childStack = childListStack.get(childListStack
-					.size() - 1);
+			List<CommonTree> childStack = childListStack.get(childListStack.size() - 1);
 
 			if (childStack.isEmpty()) {
 				childListStack.remove(childListStack.size() - 1);
 			} else {
 				CommonTree subTree = childStack.remove(0);
-				incrementCount(subTree, indexCountMap);
+				incrementCount(subTree, indexCountMap, pattern);
 				if (subTree.getChildCount() > 0) {
-					childListStack.add(new ArrayList<CommonTree>(
-							(List<CommonTree>) subTree.getChildren()));
+					childListStack.add(new ArrayList<CommonTree>((List<CommonTree>) subTree.getChildren()));
 				}
 			}
 		}
 		return indexCountMap;
 	}
 
-	private static void incrementCount(CommonTree tree, CountMap indexCountMap) throws AlienFeatureException{
-		List<String> ignoreList = Arrays.asList("","LAZY","QUANTIFIER","NUMBER","GREEDY","ALTERNATIVE","ELEMENT");
+	private static void incrementCount(CommonTree tree, CountMap indexCountMap,
+			String pattern) throws AlienFeatureException {
+		List<String> ignoreList = Arrays.asList("", "QUANTIFIER", "NUMBER", "GREEDY", "ALTERNATIVE", "ELEMENT","NAME","OPTION","SET","UNSET");
 		String tokenName = "";
 		if (tree.getType() == PCREParser.REPETITION_TYPE) {
 			tokenName = tree.getText();
@@ -99,9 +99,10 @@ public class FeatureCount {
 		// it is some valid feature index that maps directly
 		if (featureIndex >= 0) {
 			indexCountMap.increment(featureIndex);
-		} else if (!ignoreList.contains(tokenName)){
-			throw new AlienFeatureException("found unsupported feature: "
-					+ PCREParser.tokenNames[tree.getType()]);
+		} else if (!ignoreList.contains(tokenName)) {
+			throw new AlienFeatureException("found unsupported feature: " +
+				PCREParser.tokenNames[tree.getType()] + " in pattern: " +
+				pattern, PCREParser.tokenNames[tree.getType()]);
 		}
 	}
 
@@ -129,7 +130,7 @@ public class FeatureCount {
 
 	@Override
 	public String toString() {
-		return "FeatureCount [featureCountArray="
-				+ Arrays.toString(featureCountArray) + "]";
+		return "FeatureCount [featureCountArray=" +
+			Arrays.toString(featureCountArray) + "]";
 	}
 }

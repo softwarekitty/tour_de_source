@@ -1,0 +1,7 @@
+HorizontalWhiteSpace::1
+ControlChar::1
+NAMED_REFERENCE_CONDITION::5
+REFERENCE_CONDITION_ABSOLUTE::9
+<invalid>::84
+POSIXNamedSet::1
+COMMENT::2

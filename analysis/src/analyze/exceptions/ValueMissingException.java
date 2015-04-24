@@ -1,4 +1,4 @@
-package analyze;
+package analyze.exceptions;
 
 public class ValueMissingException extends Exception {
 

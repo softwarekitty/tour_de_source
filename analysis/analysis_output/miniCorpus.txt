@@ -1,0 +1,203 @@
+0	\s+
+1	\s
+2	\d+
+3	[\x80-\xff]
+4	\nmd5_data = {\n([^}]+)}
+5	\\(.)
+6	([\\"]|[^\ -~])
+7	(-?(?:0|[1-9]\d*))(\.\d+)?([eE][-+]?\d+)?
+8	[^]]+?\] +([0-9.]+): (\w+) <-(\w+)
+9	.*rlen=([0-9]+)
+10	<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]
+11	[\x00-\x1f\\"\b\f\n\r\t]
+12	\W
+13	\s*,\s*
+14	^\d+$
+15	^\s*$
+16	[a-zA-Z][-_.:a-zA-Z0-9]*
+17	(\s+)
+18	(?m)^(?!$)
+19	 *$
+20	(?m)^\s*?$
+21	\n        # Grab the traceback header.  Different versions of Python have\n        # said different things on the first traceback line.\n        ^(?P<hdr> Traceback\ \(\n            (?: most\ recent\ call\ last\n            |   innermost\ last\n            ) \) :\n        )\n        \s* $                # toss trailing whitespace on the header.\n        (?P<stack> .*?)      # don't blink: absorb stuff until...\n        ^ (?P<msg> \w+ .*)   #     a line *starts* with alphanum.\n        
+22	(^|.*:)\s*\w*("|\')
+23	\n        # Source consists of a PS1 line followed by zero or more PS2 lines.\n        (?P<source>\n            (?:^(?P<indent> [ ]*) >>>    .*)    # PS1 line\n            (?:\n           [ ]*  \.\.\. .*)*)  # PS2 lines\n        \n?\n        # Want consists of any non-blank lines that do not start with PS1.\n        (?P<want> (?:(?![ ]*$)    # Not a blank line\n                     (?![ ]*>>>)  # Not a line starting with PS1\n                     .*$\n?       # But any other line\n                  )*)\n        
+24	\n
+25	^[ ]*(#.*)?$
+26	(?m)^[ ]*(?=\n)
+27	<doctest (?P<name>[\w\.]+)\[(?P<examplenum>\d+)\]>$
+28	[^:]*:
+29	^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?
+30	([\x80-\x9f])
+31	^\w+$
+32	\(\*
+33	alloc_fabric_acl\)\(
+34	close_session\)\(
+35	fall_back_to_erl0\)\(
+36	get_cmd_state\)\(
+37	get_default_depth
+38	get_fabric_name
+39	get_fabric_proto_ident
+40	get_pr_transport_id\)\(
+41	get_pr_transport_id_len\)\(
+42	get_tag
+43	get_task_tag\)\(
+44	get_wwn
+45	parse_pr_out_transport_id\)\(
+46	queue_data_in\)\(
+47	release_fabric_acl\)\(
+48	sess_get_index\)\(
+49	sess_logged_in\)\(
+50	set_default_node_attributes\)\(
+51	shutdown_session\)\(
+52	stop_session\)\(
+53	struct target_core_fabric_ops {
+54	tpg_get_inst_index\)\(
+55	write_pending\)\(
+56	write_pending_status\)\(
+57	coding[:=]\s*([-\w.]+)
+58	\S
+59	queue_status\)\(
+60	queue_tm_rsp\)\(
+61	(<[^<>]*)/>
+62	<!\s+([^<>]*)>
+63	[^\w\s-]
+64	is_state_remove\)\(
+65	-
+66	(\d+)
+67	[-\s]+
+68	^[a-f0-9]{40}$
+69	:
+70	\w+
+71	get_fabric_sense_len\)\(
+72	set_fabric_sense_len\)\(
+73	,
+74	/
+75	\s*
+76	^[a-zA-Z0-9_]+$
+77	^\S+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$
+78	<.*?>
+79	\r\n|\r|\n
+80	^<\?.*encoding=[\'"](.*?)[\'"].*\?>
+81	(?:\r\n)?[ \t]+
+82	.
+83	>
+84	^[0-9]+$
+85	^\w+://
+86	//.*
+87	[ \(\)<>@,;:\\"/\[\]\?=]
+88	\W+
+89	\n{2,}
+90	^\s+
+91	 
+92	&(#\d+|#x[0-9a-fA-F]+|\w+);
+93	(((?<=[a-z])[A-Z])|([A-Z](?![A-Z]|$)))
+94	[?/:|]+
+95	[\x80-\xff]
+96	\r(?!\n)|(?<!\r)\n
+97	^(?:\s*(?:,\s*)?([^ \t\r\n=]+)\s*=\s*\"?((?<=\")(?:[^\\\"]|\\.)*?(?=\")|(?<!\")[^ \t\r\n,]+(?!\"))\"?)(.*)$
+98	^(?:\s*(?:,\s*)?([^\0-\x1f\x7f-\xff()<>@,;:\\\"/[\]?={} \t]+)\s*=\s*\"?((?<=\")(?:[^\0-\x08\x0A-\x1f\x7f-\xff\\\"]|\\[\0-\x7f])*?(?=\")|(?<!\")[^\0-\x1f\x7f-\xff()<>@,;:\\\"/[\]?={} \t]+(?!\"))\"?)(.*)$
+99	^(\s*def\s)|(.*(?<!\w)lambda(:|\s))|^(\s*@)
+100	_
+101	"
+102	[*?[]
+103	new_cmd_failure\)\(
+104	release_cmd_to_pool
+105	(\s*){\s*$
+106	(\s*)}\s*$
+107	.*
+108	 +
+109	&
+110	<
+111	[&<]
+112	[\s,]
+113	\d+$
+114	\n{2,}
+115	\r?\n
+116	^(?P<prefix>[a-z]+)://(?P<suffix>.*)$
+117	^[ -~]{0,200}[!-~]$
+118	^\.\s*(\w+)\s*
+119	^\[\s*(\w+)\s*\]\s*
+120	^\s*(\w+)\s*
+121	pack_lun\)\(
+122	'
+123	(^|\W)`(.*?)'(\W|$)
+124	&#?\w+;
+125	&(#?[xX]?(?:[0-9a-fA-F]+|\w{1,8}));
+126	(\r\n|\r|\n)
+127	(\w*)
+128	(\w+(\.\w+)*)\.(\w*)
+129	\(.*?\)
+130	\s*(\w*|\w(\w|\.)*\w)\s*::
+131	^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>
+132	^\s*(?:var)?char\s*\(\s*(\d+)\s*\)\s*$
+133	^(?:!|&|\*)$
+134	^(?:<<)$
+135	^(?:=)$
+136	.*?\n
+137	>\s+<
+138	[^a-zA-Z0-9]
+139	\(\?P(<\w+>).+?\)
+140	\D
+141	\bgzip\b
+142	\sCONSTRAINT `[^`]*` FOREIGN KEY \(`([^`]*)`\) REFERENCES `([^`]*)` \(`([^`]*)`\)
+143	([a-z])'([A-Z])
+144	(<!--.*?-->|<[^>]*>)
+145	(?<![\w])(\d+)L(?![\w])
+146	(\d{1,2})\.(\d{1,2})\.(\d{1,2})
+147	/\*
+148	/\*.*?\*/
+149	<[^>]*?>
+150	=
+151	[0-9]+
+152	[<>]
+153	[\\].
+154	\$(\w+|\{[^}]*\})
+155	\.
+156	\[(.*?)\]
+157	\\[0-3][0-7][0-7]
+158	\n
+159	\r\n
+160	^\s*endblocktrans$
+161	^\s*plural$
+162	_\(((?:".*?")|(?:\'.*?\'))\)
+163	(?<=SECRET_KEY = ')'
+164	[^'\\]*(?:\\.[^'\\]*)*'
+165	^'''(.*?)'''\s*(#.*)?$
+166	^(.*?)'''\s*(#.*)?$
+167	%\(([^)]*)\)s
+168	(\\'[^\\']*\\'|"[^"]*")\s*
+169	(\d{4})-(\d\d?)-(\d\d?)$
+170	--\s*>
+171	[^"\\]*(?:\\.[^"\\]*)*"
+172	[^A-Za-z0-9.]+
+173	[a-zA-Z][-_.:a-zA-Z0-9]*\s*
+174	[a-zA-Z][-_.a-zA-Z0-9]*\s*
+175	\Z(?ms)
+176	\\
+177	\s*(#.*)?$
+178	\s*\[
+179	\n        \$(?:\n          (?P<escaped>\$)              |   # Two $ signs\n          (?P<named>[_a-z][_a-z0-9]*)  |   # $name format\n          {(?P<braced>[^}]*)}              # ${name} format\n        )\n        
+180	^"""(.*?)"""\s*(#.*)?$
+181	^(.*?)"""\s*(#.*)?$
+182	^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$
+183	^\s*blocktrans(?:\s+|$)
+184	^\s*trans\s+((?:".*?")|(?:\'.*?\'))\s*
+185	committed-rev="(\d+)"
+186	url="([^"]+)"
+187	x
+188	#
+189	#egg=([^&]*)
+190	&([^;]+);
+191	&([a-zA-Z][-.a-zA-Z0-9]*)[^a-zA-Z0-9]
+192	((^|[^%])(%%)*%[sy])
+193	([.\w-]+)\s*(.*)$
+194	([\w\d\.-]+)\s*([\d]+):.*$
+195	(\(|\)|\s+)
+196	-(20\d\d\d\d\d\d)$
+197	--
+198	-py\d\.\d$
+199	-r(\d+)$
+200	/Python(?:-32|-64)*$
+201	<p>Paragraph 1\s*</p>\s*<h2>\s*An h2</h2>
+202	<title>[^<]*Revision \d+:

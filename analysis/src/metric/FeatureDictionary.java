@@ -75,12 +75,15 @@ public class FeatureDictionary {
 		nameToIntMap.put(REP_LOWERBOUNDED,I_REP_LOWERBOUNDED);
 		nameToIntMap.put(REP_QUESTIONABLE,I_REP_QUESTIONABLE);
 		nameToIntMap.put(REP_SINGLEEXACTLY,I_REP_SINGLEEXACTLY);
-		nameToIntMap.put(REP_ADDITIONAL_LAZY,I_REP_ADDITIONAL_LAZY);
-		nameToIntMap.put(REP_DOUBLEBOUNDED_LAZY,I_REP_DOUBLEBOUNDED_LAZY);
-		nameToIntMap.put(REP_KLEENISH_LAZY,I_REP_KLEENISH_LAZY);
-		nameToIntMap.put(REP_LOWERBOUNDED_LAZY,I_REP_LOWERBOUNDED_LAZY);
-		nameToIntMap.put(REP_QUESTIONABLE_LAZY,I_REP_QUESTIONABLE_LAZY);
-		nameToIntMap.put(REP_SINGLEEXACTLY_LAZY,I_REP_SINGLEEXACTLY_LAZY);
+		nameToIntMap.put(REP_LAZY,I_REP_LAZY);
+		
+		nameToIntMap.put(XTRA_NAMED_GROUP_PYTHON,I_XTRA_NAMED_GROUP_PYTHON);
+		nameToIntMap.put(XTRA_END_SUBJECTLINE,I_XTRA_END_SUBJECTLINE);
+		nameToIntMap.put(XTRA_VERTICAL_WHITESPACE,I_XTRA_VERTICAL_WHITESPACE);
+		nameToIntMap.put(XTRA_OPTIONS,I_XTRA_OPTIONS);
+		nameToIntMap.put(XTRA_NAMED_BACKREFERENCE,I_XTRA_NAMED_BACKREFERENCE);
+
+
 	}
 
 	private void initializeIntToNameMap() {
@@ -118,12 +121,14 @@ public class FeatureDictionary {
 		intToNameMap.put(I_REP_LOWERBOUNDED,REP_LOWERBOUNDED);
 		intToNameMap.put(I_REP_QUESTIONABLE,REP_QUESTIONABLE);
 		intToNameMap.put(I_REP_SINGLEEXACTLY,REP_SINGLEEXACTLY);
-		intToNameMap.put(I_REP_ADDITIONAL_LAZY,REP_ADDITIONAL_LAZY);
-		intToNameMap.put(I_REP_DOUBLEBOUNDED_LAZY,REP_DOUBLEBOUNDED_LAZY);
-		intToNameMap.put(I_REP_KLEENISH_LAZY,REP_KLEENISH_LAZY);
-		intToNameMap.put(I_REP_LOWERBOUNDED_LAZY,REP_LOWERBOUNDED_LAZY);
-		intToNameMap.put(I_REP_QUESTIONABLE_LAZY,REP_QUESTIONABLE_LAZY);
-		intToNameMap.put(I_REP_SINGLEEXACTLY_LAZY,REP_SINGLEEXACTLY_LAZY);
+		intToNameMap.put(I_REP_LAZY,REP_LAZY);
+		
+		intToNameMap.put(I_XTRA_NAMED_GROUP_PYTHON,XTRA_NAMED_GROUP_PYTHON);
+		intToNameMap.put(I_XTRA_END_SUBJECTLINE,XTRA_END_SUBJECTLINE);
+		intToNameMap.put(I_XTRA_VERTICAL_WHITESPACE,XTRA_VERTICAL_WHITESPACE);
+		intToNameMap.put(I_XTRA_OPTIONS,XTRA_OPTIONS);
+		intToNameMap.put(I_XTRA_NAMED_BACKREFERENCE,XTRA_NAMED_BACKREFERENCE);
+
 	}
 	
 
@@ -162,12 +167,14 @@ public class FeatureDictionary {
 		intToDescMap.put(I_REP_LOWERBOUNDED,"at least n repetition");
 		intToDescMap.put(I_REP_QUESTIONABLE,"zero-or-one repetition");
 		intToDescMap.put(I_REP_SINGLEEXACTLY,"exactly n repetition");
-		intToDescMap.put(I_REP_ADDITIONAL_LAZY,"lazy one-or-more repetition");
-		intToDescMap.put(I_REP_DOUBLEBOUNDED_LAZY,"lazy at least n, at most m repetition");
-		intToDescMap.put(I_REP_KLEENISH_LAZY,"lazy zero-or-more repetition");
-		intToDescMap.put(I_REP_LOWERBOUNDED_LAZY,"lazy at least n repetition");
-		intToDescMap.put(I_REP_QUESTIONABLE_LAZY,"lazy zero-or-one repetition");
-		intToDescMap.put(I_REP_SINGLEEXACTLY_LAZY,"lazy exactly n repetition");
+		intToDescMap.put(I_REP_LAZY,"lazy repetition modifier");
+		
+		intToDescMap.put(I_XTRA_NAMED_GROUP_PYTHON,"named capture group");
+		intToDescMap.put(I_XTRA_END_SUBJECTLINE,"absolute end of string");
+		intToDescMap.put(I_XTRA_VERTICAL_WHITESPACE,"matches U+000B");
+		intToDescMap.put(I_XTRA_OPTIONS,"options wrapper");
+		intToDescMap.put(I_XTRA_NAMED_BACKREFERENCE,"references named capture group");
+
 	}
 	
 
@@ -206,12 +213,13 @@ public class FeatureDictionary {
 		intToCodeMap.put(I_REP_LOWERBOUNDED,"LWB");
 		intToCodeMap.put(I_REP_QUESTIONABLE,"QST");
 		intToCodeMap.put(I_REP_SINGLEEXACTLY,"SNG");
-		intToCodeMap.put(I_REP_ADDITIONAL_LAZY,"ADDL");
-		intToCodeMap.put(I_REP_DOUBLEBOUNDED_LAZY,"DBBL");
-		intToCodeMap.put(I_REP_KLEENISH_LAZY,"KLEL");
-		intToCodeMap.put(I_REP_LOWERBOUNDED_LAZY,"LWBL");
-		intToCodeMap.put(I_REP_QUESTIONABLE_LAZY,"QSTL");
-		intToCodeMap.put(I_REP_SINGLEEXACTLY_LAZY,"SNGL");
+		intToCodeMap.put(I_REP_LAZY,"LZY");
+		
+		intToCodeMap.put(I_XTRA_NAMED_GROUP_PYTHON,"NCG");
+		intToCodeMap.put(I_XTRA_END_SUBJECTLINE,"ENDZ");
+		intToCodeMap.put(I_XTRA_VERTICAL_WHITESPACE,"VWSP");
+		intToCodeMap.put(I_XTRA_OPTIONS,"OPT");
+		intToCodeMap.put(I_XTRA_NAMED_BACKREFERENCE,"BKRN");
 	}
 
 	public static final String ELEMENT = "ELEMENT";
@@ -221,19 +229,19 @@ public class FeatureDictionary {
 	public static final String NUMBER = "NUMBER";
 	public static final String QUANTIFIER = "QUANTIFIER";
 
-	//: /d
+	//: \d
 	public static final String CC_DECIMAL = "DecimalDigit";
-	//: /D
+	//: \D
 	public static final String CC_NDECIMAL = "NotDecimalDigit";
-	//: /S
+	//: \S
 	public static final String CC_NWHITESPACE = "NotWhiteSpace";
-	//: /W
+	//: \W
 	public static final String CC_NWORD = "NotWordChar";
 	//: [a-z] or maybe [3-7]
 	public static final String CC_RANGE = "RANGE";
-	//: /s
+	//: \s
 	public static final String CC_WHITESPACE = "WhiteSpace";
-	//: /w
+	//: \w
 	public static final String CC_WORD = "WordChar";
 
 	//: (?=...)
@@ -285,18 +293,20 @@ public class FeatureDictionary {
 	//: {n}
 	public static final String REP_SINGLEEXACTLY = "SINGLEEXACTLY";
 	
-	//: +?
-	public static final String REP_ADDITIONAL_LAZY = "ADDITIONAL_LAZY";
-	//: {n,m}?
-	public static final String REP_DOUBLEBOUNDED_LAZY = "DOUBLEBOUNDED_LAZY";
-	//: *?
-	public static final String REP_KLEENISH_LAZY = "KLEENISH_LAZY";
-	//: {n,}?
-	public static final String REP_LOWERBOUNDED_LAZY = "LOWERBOUNDED_LAZY";
-	//: ??
-	public static final String REP_QUESTIONABLE_LAZY = "QUESTIONABLE_LAZY";
-	//: {n}?
-	public static final String REP_SINGLEEXACTLY_LAZY = "SINGLEEXACTLY_LAZY";
+	//: +?,{n,m}?,*?,{n,}?,??,{n}?
+	public static final String REP_LAZY = "LAZY";
+	
+	
+	//: (?P<name>.)
+	public static final String XTRA_NAMED_GROUP_PYTHON = "NAMED_CAPTURING_GROUP_PYTHON";
+	//: \Z
+	public static final String XTRA_END_SUBJECTLINE = "EndOfSubjectOrLineEndOfSubject";
+	//: \v
+	public static final String XTRA_VERTICAL_WHITESPACE = "VerticalWhiteSpace";
+	//: (?s)
+	public static final String XTRA_OPTIONS = "OPTIONS";
+	//: (?P<qt>"?).(?P=qt)
+	public static final String XTRA_NAMED_BACKREFERENCE = "NAMED_BACKREFERENCE_PYTHON";
 
 	public static final int I_CC_DECIMAL = 0;
 	public static final int I_CC_NDECIMAL = 1;
@@ -331,12 +341,13 @@ public class FeatureDictionary {
 	public static final int I_REP_LOWERBOUNDED = 26;
 	public static final int I_REP_QUESTIONABLE = 27;
 	public static final int I_REP_SINGLEEXACTLY = 28;
-	public static final int I_REP_ADDITIONAL_LAZY = 29;
-	public static final int I_REP_DOUBLEBOUNDED_LAZY = 30;
-	public static final int I_REP_KLEENISH_LAZY = 31;
-	public static final int I_REP_LOWERBOUNDED_LAZY = 32;
-	public static final int I_REP_QUESTIONABLE_LAZY = 33;
-	public static final int I_REP_SINGLEEXACTLY_LAZY = 34;
+	public static final int I_REP_LAZY = 29;
+	
+	public static final int I_XTRA_NAMED_GROUP_PYTHON = 30;
+	public static final int I_XTRA_END_SUBJECTLINE = 31;
+	public static final int I_XTRA_VERTICAL_WHITESPACE = 32;
+	public static final int I_XTRA_OPTIONS = 33;
+	public static final int I_XTRA_NAMED_BACKREFERENCE = 34;
 
 
 }

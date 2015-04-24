@@ -12,6 +12,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeSet;
+
+import metric.FeatureDictionary;
 
 import org.apache.commons.io.FileUtils;
 // c.execute('''CREATE TABLE RegexCitation (uniqueSourceID int, sourceJSON text,
@@ -19,8 +22,11 @@ import org.apache.commons.io.FileUtils;
 // int)''')
 // c.execute('''CREATE TABLE FilesPerProject (nFiles int, frequency int)''')
 
+import analyze.exceptions.ValueMissingException;
+
 public class PaperWriter {
 	private static ArrayList<WeightRankedRegex> corpus;
+	private static HashMap<String, Integer> alienFeatureCount;
 
 	// the delimiter character for our 'csv' files used by latex
 	private static char d = '•';
@@ -30,6 +36,7 @@ public class PaperWriter {
 			InterruptedException {
 		System.out.println("begin paper writer");
 		corpus = new ArrayList<WeightRankedRegex>(1024);
+		alienFeatureCount = new HashMap<String, Integer>();
 
 		// initialize
 		String homePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/";
@@ -38,6 +45,8 @@ public class PaperWriter {
 
 		// populate the map with keys for the Latex database
 		HashMap<String, String> databaseFileContent = new HashMap<String, String>();
+
+		// the SectionX methods are called here
 		populateTexDatabase(databaseFileContent, connectionString);
 
 		// Below here we are making files
@@ -51,7 +60,7 @@ public class PaperWriter {
 		filesToMake.add(new NameContentsPair("contextHistogram.tex", Composer.composeHistogramTable(3, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent))));
 
 		// make a latex table with the top N regexes by weight.
-		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.3,"pattern","weight")));
+		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.3, "pattern", "weight")));
 
 		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
 		// distinct features, token count and pattern length
@@ -60,56 +69,118 @@ public class PaperWriter {
 		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
 		// distinct features, token count and pattern length
 		filesToMake.add(new NameContentsPair("exportedCorpus.txt", exportCorpus(corpus)));
-		
+
 		// the key value database for strings in the paper
 		filesToMake.add(new NameContentsPair("database.csv", stringifyMap(databaseFileContent)));
 
-//		// stats about how features are used
-//		filesToMake.add(new NameContentsPair("featureStats.tex", Section2.featureStats(corpus, databaseFileContent)));
-//		
-//		// a table for the top N feature coAppearances
-//		filesToMake.add(new NameContentsPair("coApp.tex", Section2.coAppearances(corpus, databaseFileContent,10)));
-		
-		// a table for the top N syntax clusters, using different string similarities
-//		int nRows = 6;
-//		double width = 2.8;
-//		int nExamples = 3;
-//		double minSimilarity = 0.75;
-//		
-//		int functionSwitch = C.LCS;
-//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-//		
-//		functionSwitch = C.COS;
-//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-//		
-//		functionSwitch = C.JACC;
-//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-//		
-//		functionSwitch = C.JAROW;
-//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-//		
-//		functionSwitch = C.LEV;
-//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-//		
-//		functionSwitch = C.SFT;
-//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-//		
-		
+		// list of alien features excluded
+		filesToMake.add(new NameContentsPair("alienFeatures.txt", stringifyAlienFeatures()));
+
+		// stats about how features are used
+		filesToMake.add(new NameContentsPair("featureStats.tex", Section2.featureStats(corpus, databaseFileContent)));
+
+		// a table for the top N feature coAppearances
+		filesToMake.add(new NameContentsPair("coApp.tex", Section2.coAppearances(corpus, databaseFileContent, 10)));
+
+		// a table for the top N syntax clusters, using different string
+		// similarities
+		// int nRows = 6;
+		// double width = 2.8;
+		// int nExamples = 3;
+		// double minSimilarity = 0.75;
+		//
+		// int functionSwitch = C.LCS;
+		// filesToMake.add(new
+		// NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex",
+		// Section3.getSyntaxClusteringTableContent(nRows,homePath +
+		// "analysis/analysis_output/", corpus, functionSwitch, minSimilarity,
+		// nExamples, width)));
+		//
+		// functionSwitch = C.COS;
+		// filesToMake.add(new
+		// NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex",
+		// Section3.getSyntaxClusteringTableContent(nRows,homePath +
+		// "analysis/analysis_output/", corpus, functionSwitch, minSimilarity,
+		// nExamples, width)));
+		//
+		// functionSwitch = C.JACC;
+		// filesToMake.add(new
+		// NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex",
+		// Section3.getSyntaxClusteringTableContent(nRows,homePath +
+		// "analysis/analysis_output/", corpus, functionSwitch, minSimilarity,
+		// nExamples, width)));
+		//
+		// functionSwitch = C.JAROW;
+		// filesToMake.add(new
+		// NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex",
+		// Section3.getSyntaxClusteringTableContent(nRows,homePath +
+		// "analysis/analysis_output/", corpus, functionSwitch, minSimilarity,
+		// nExamples, width)));
+		//
+		// functionSwitch = C.LEV;
+		// filesToMake.add(new
+		// NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex",
+		// Section3.getSyntaxClusteringTableContent(nRows,homePath +
+		// "analysis/analysis_output/", corpus, functionSwitch, minSimilarity,
+		// nExamples, width)));
+		//
+		// functionSwitch = C.SFT;
+		// filesToMake.add(new
+		// NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex",
+		// Section3.getSyntaxClusteringTableContent(nRows,homePath +
+		// "analysis/analysis_output/", corpus, functionSwitch, minSimilarity,
+		// nExamples, width)));
+		//
+
 		// createContent
 		generateArtifacts(filesToMake, homePath);
 		System.out.println("finished paper writer");
 	}
 
+	private static String stringifyAlienFeatures() {
+		StringBuilder sb = new StringBuilder();
+		for (Entry<String, Integer> entry : alienFeatureCount.entrySet()) {
+			sb.append(entry.getKey() + "::" + entry.getValue() + "\n");
+		}
+		return sb.toString();
+	}
+
+	// This export is for Rex, so we must filter everything Rex cannot support.
+	// here is an error message about what Rex cannot support from Rex:
+	// The following constructs are currently not supported: anchors \G, \b, \B,
+	// named groups, lookahead, lookbehind, as-few-as-possible quantifiers,
+	// backreferences,
+	// conditional alternation, substitution
 	private static String exportCorpus(ArrayList<WeightRankedRegex> corpusList) {
 		StringBuilder sb = new StringBuilder();
-		Iterator<WeightRankedRegex> it=corpusList.iterator();
-		int i=0;
-		while(it.hasNext()){
+		Iterator<WeightRankedRegex> it = corpusList.iterator();
+		int i = 0;
+		while (it.hasNext()) {
 			WeightRankedRegex wrr = it.next();
-			sb.append(i+"\t"+wrr.getUnescapedPattern()+"\n");
+			if (rexCompatible(wrr)) {
+				sb.append(i + "\t" + wrr.getUnescapedPattern() + "\n");
+			}
+			// this 'i' is the way back to the original entry in the corpusList,
+			// so it should increment for each wrr, compatible or not
 			i++;
 		}
 		return sb.toString();
+	}
+
+	private static boolean rexCompatible(WeightRankedRegex wrr) {
+		int[] features = wrr.getFeatures().getFeatureCountArray();
+		int[] incompatibleIndices = { FeatureDictionary.I_REP_LAZY, FeatureDictionary.I_LOOK_AHEAD,
+				FeatureDictionary.I_LOOK_AHEAD, FeatureDictionary.I_LOOK_BEHIND, FeatureDictionary.I_LOOK_BEHIND_NEGATIVE,
+				FeatureDictionary.I_LOOK_NON_CAPTURE, FeatureDictionary.I_META_NUMBERED_BACKREFERENCE,
+				FeatureDictionary.I_XTRA_NAMED_BACKREFERENCE, FeatureDictionary.I_POS_NONWORD, FeatureDictionary.I_POS_WORD,
+				FeatureDictionary.I_XTRA_NAMED_GROUP_PYTHON, FeatureDictionary.I_XTRA_OPTIONS,
+				FeatureDictionary.I_XTRA_VERTICAL_WHITESPACE };
+		for (int i : incompatibleIndices) {
+			if (features[i] != 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	private static void generateArtifacts(List<NameContentsPair> filesToMake,
@@ -121,7 +192,7 @@ public class PaperWriter {
 
 		// create all files using the list of name, contents
 		for (NameContentsPair ncp : filesToMake) {
-			System.out.println("creating "+ncp.getFilename());
+			System.out.println("creating " + ncp.getFilename());
 			File f = new File(outputPath + ncp.getFilename());
 			IOUtil.createAndWrite(f, ncp.getContents());
 		}
@@ -154,7 +225,7 @@ public class PaperWriter {
 			HashMap<String, String> databaseFileContent, String connectionString)
 			throws ClassNotFoundException, SQLException, ValueMissingException {
 		Section0.contributeToMap(databaseFileContent, connectionString);
-		Section1.contributeToMap(databaseFileContent, connectionString, corpus);
+		Section1.contributeToMap(databaseFileContent, connectionString, corpus, alienFeatureCount);
 		Section2.contributeToMap(databaseFileContent, connectionString);
 		Section3.contributeToMap(databaseFileContent, connectionString);
 		Section4.contributeToMap(databaseFileContent, connectionString);

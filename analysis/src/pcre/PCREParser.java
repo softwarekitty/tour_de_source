@@ -952,7 +952,7 @@ public class PCREParser extends Parser {
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(QUANTIFIER, "QUANTIFIER"), root_1);
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(NUMBER, "0"));
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(NUMBER, "1"));
-						String repetitionType = stream_quantifier_type.nextTree().toString().equals("GREEDY") ? FeatureDictionary.REP_QUESTIONABLE: FeatureDictionary.REP_QUESTIONABLE_LAZY;
+						String repetitionType = FeatureDictionary.REP_QUESTIONABLE;
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(REPETITION_TYPE, repetitionType));
 						adaptor.addChild(root_1, stream_quantifier_type.nextTree());
 						adaptor.addChild(root_0, root_1);
@@ -997,7 +997,7 @@ public class PCREParser extends Parser {
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(QUANTIFIER, "QUANTIFIER"), root_1);
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(NUMBER, "1"));
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(NUMBER, HUGE_NUMBER));
-						String repetitionType = stream_quantifier_type.nextTree().toString().equals("GREEDY") ? FeatureDictionary.REP_ADDITIONAL: FeatureDictionary.REP_ADDITIONAL_LAZY;
+						String repetitionType = FeatureDictionary.REP_ADDITIONAL;
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(REPETITION_TYPE, repetitionType));
 						adaptor.addChild(root_1, stream_quantifier_type.nextTree());
 						adaptor.addChild(root_0, root_1);
@@ -1042,7 +1042,7 @@ public class PCREParser extends Parser {
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(QUANTIFIER, "QUANTIFIER"), root_1);
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(NUMBER, "0"));
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(NUMBER, HUGE_NUMBER));
-						String repetitionType = stream_quantifier_type.nextTree().toString().equals("GREEDY") ? FeatureDictionary.REP_KLEENISH: FeatureDictionary.REP_KLEENISH_LAZY;
+						String repetitionType = FeatureDictionary.REP_KLEENISH;
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(REPETITION_TYPE, repetitionType));
 						adaptor.addChild(root_1, stream_quantifier_type.nextTree());
 						adaptor.addChild(root_0, root_1);
@@ -1095,7 +1095,7 @@ public class PCREParser extends Parser {
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(QUANTIFIER, "QUANTIFIER"), root_1);
 						adaptor.addChild(root_1, stream_number.nextTree());
 						adaptor.addChild(root_1, stream_number.nextTree());
-						String repetitionType = stream_quantifier_type.nextTree().toString().equals("GREEDY") ? FeatureDictionary.REP_SINGLEEXACTLY: FeatureDictionary.REP_SINGLEEXACTLY_LAZY;
+						String repetitionType = FeatureDictionary.REP_SINGLEEXACTLY;
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(REPETITION_TYPE, repetitionType));
 						adaptor.addChild(root_1, stream_quantifier_type.nextTree());
 						adaptor.addChild(root_0, root_1);
@@ -1151,7 +1151,7 @@ public class PCREParser extends Parser {
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(QUANTIFIER, "QUANTIFIER"), root_1);
 						adaptor.addChild(root_1, stream_number.nextTree());
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(NUMBER, HUGE_NUMBER));
-						String repetitionType = stream_quantifier_type.nextTree().toString().equals("GREEDY") ? FeatureDictionary.REP_LOWERBOUNDED: FeatureDictionary.REP_LOWERBOUNDED_LAZY;
+						String repetitionType = FeatureDictionary.REP_LOWERBOUNDED;
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(REPETITION_TYPE, repetitionType));
 						adaptor.addChild(root_1, stream_quantifier_type.nextTree());
 						adaptor.addChild(root_0, root_1);
@@ -1212,7 +1212,7 @@ public class PCREParser extends Parser {
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(QUANTIFIER, "QUANTIFIER"), root_1);
 						adaptor.addChild(root_1, stream_number.nextTree());
 						adaptor.addChild(root_1, stream_number.nextTree());
-						String repetitionType = stream_quantifier_type.nextTree().toString().equals("GREEDY") ? FeatureDictionary.REP_DOUBLEBOUNDED: FeatureDictionary.REP_DOUBLEBOUNDED_LAZY;
+						String repetitionType = FeatureDictionary.REP_DOUBLEBOUNDED;
 						adaptor.addChild(root_1, (CommonTree)adaptor.create(REPETITION_TYPE, repetitionType));
 						adaptor.addChild(root_1, stream_quantifier_type.nextTree());
 						adaptor.addChild(root_0, root_1);

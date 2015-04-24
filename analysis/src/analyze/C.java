@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import analyze.exceptions.ValueMissingException;
+
 public class C {
 	
 	//for string similarity switch
@@ -18,7 +20,8 @@ public class C {
 	public static final String[] functionames = { "cos", "jacc", "jaroW", "lev", "lcs", "sift" };
 	
 	//for slides and color charts
-	public static final String N_ALIEN = "N_ALIEN";
+	public static final String N_ALIEN = "N_ALIEN";	
+	public static final String N_UNICODE = "N_UNICODE";
 	public static final String N_PCRE_ERROR = "N_PCRE_ERROR";
 	public static final String P_LITERAL_PRESENT ="P_LITERAL_PRESENT";
 	public static final String R_SCRIPTNAME = "analysis_script.r";
