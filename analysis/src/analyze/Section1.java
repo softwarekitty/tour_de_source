@@ -104,7 +104,7 @@ public class Section1 {
 				System.out.println(e.getMessage());
 				alienPatterns[0]++;
 			} catch (Exception e) {
-				System.out.println("Cannot parse " + pattern + " because: " +
+				System.out.println("initializeCorpus: Cannot parse " + pattern + " because: " +
 					e.getMessage());
 				errorPatterns[0]++;
 			}

@@ -1,0 +1,6 @@
+\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

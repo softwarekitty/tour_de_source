@@ -7,11 +7,11 @@ import java.util.ArrayList;
 // import org.rosuda.JRI.Rengine;
 // import org.rosuda.JRI.REXP;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.TreeSet;
 
 import org.apache.commons.io.FileUtils;
 // c.execute('''CREATE TABLE RegexCitation (uniqueSourceID int, sourceJSON text,
@@ -57,44 +57,59 @@ public class PaperWriter {
 		// distinct features, token count and pattern length
 		filesToMake.add(new NameContentsPair("characterHistogram.tex", Composer.composeHistogramTable(4, Section1.getCharacterStatsAndAddToDatabase(databaseFileContent, corpus))));
 
+		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
+		// distinct features, token count and pattern length
+		filesToMake.add(new NameContentsPair("exportedCorpus.txt", exportCorpus(corpus)));
+		
 		// the key value database for strings in the paper
 		filesToMake.add(new NameContentsPair("database.csv", stringifyMap(databaseFileContent)));
 
-		// stats about how features are used
-		filesToMake.add(new NameContentsPair("featureStats.tex", Section2.featureStats(corpus, databaseFileContent)));
-		
-		// a table for the top N feature coAppearances
-		filesToMake.add(new NameContentsPair("coApp.tex", Section2.coAppearances(corpus, databaseFileContent,10)));
+//		// stats about how features are used
+//		filesToMake.add(new NameContentsPair("featureStats.tex", Section2.featureStats(corpus, databaseFileContent)));
+//		
+//		// a table for the top N feature coAppearances
+//		filesToMake.add(new NameContentsPair("coApp.tex", Section2.coAppearances(corpus, databaseFileContent,10)));
 		
 		// a table for the top N syntax clusters, using different string similarities
-		int nRows = 6;
-		double width = 2.8;
-		int nExamples = 3;
-		double minSimilarity = 0.75;
-		
-
-		int functionSwitch = C.LCS;
-		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-		
-		functionSwitch = C.COS;
-		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-		
-		functionSwitch = C.JACC;
-		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-		
-		functionSwitch = C.JAROW;
-		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-		
-		functionSwitch = C.LEV;
-		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-		
-		functionSwitch = C.SFT;
-		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
-		
+//		int nRows = 6;
+//		double width = 2.8;
+//		int nExamples = 3;
+//		double minSimilarity = 0.75;
+//		
+//		int functionSwitch = C.LCS;
+//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+//		
+//		functionSwitch = C.COS;
+//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+//		
+//		functionSwitch = C.JACC;
+//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+//		
+//		functionSwitch = C.JAROW;
+//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+//		
+//		functionSwitch = C.LEV;
+//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+//		
+//		functionSwitch = C.SFT;
+//		filesToMake.add(new NameContentsPair(C.functionames[functionSwitch]+"Clusters.tex", Section3.getSyntaxClusteringTableContent(nRows,homePath + "analysis/analysis_output/", corpus, functionSwitch, minSimilarity, nExamples, width)));
+//		
 		
 		// createContent
 		generateArtifacts(filesToMake, homePath);
 		System.out.println("finished paper writer");
+	}
+
+	private static String exportCorpus(ArrayList<WeightRankedRegex> corpusList) {
+		StringBuilder sb = new StringBuilder();
+		Iterator<WeightRankedRegex> it=corpusList.iterator();
+		int i=0;
+		while(it.hasNext()){
+			WeightRankedRegex wrr = it.next();
+			sb.append(i+"\t"+wrr.getUnescapedPattern()+"\n");
+			i++;
+		}
+		return sb.toString();
 	}
 
 	private static void generateArtifacts(List<NameContentsPair> filesToMake,
