@@ -28,16 +28,16 @@ namespace ConsoleApplication1
 
             Random gen = new Random();
 
-            string corpusFileContent = System.IO.File.ReadAllText(analysis_output_path + "exportedCorpus.txt");
+            //string corpusFileContent = System.IO.File.ReadAllText(analysis_output_path + "exportedCorpus.txt");
 
             Dictionary<int, Regex> regexMap = new Dictionary<int, Regex>();
             Dictionary<int, string> patternMap = new Dictionary<int, string>();
             Dictionary<int, string> failureMap = new Dictionary<int, string>();
             Dictionary<int, string> timeoutMap = new Dictionary<int, string>();
             Dictionary<int, string> exceptionMap = new Dictionary<int, string>();
-            string[] corpusFileLines = corpusFileContent.Split(new string[] { "\n" }, StringSplitOptions.None);
+            //string[] corpusFileLines = corpusFileContent.Split(new string[] { "\n" }, StringSplitOptions.None);
             Regex numberFinder = new Regex(@"(\d+)\t(.*)");
-
+            string[] corpusFileLines = { };
 
             foreach (string line in corpusFileLines)
             {
@@ -51,7 +51,7 @@ namespace ConsoleApplication1
                 }
             }
 
-            List<int> keyList = new List<int>(patternMap.Keys);
+            //List<int> keyList = new List<int>(patternMap.Keys);
             int nKeys = keyList.Count;
             Console.WriteLine("nKeys: " + nKeys);
             Console.WriteLine("");
@@ -59,10 +59,10 @@ namespace ConsoleApplication1
             // I want to use 65536, but that could take very long (20 mins per regex).
             // I chose 380 to save time but also still wash out some error
             int nStringsPerPattern = 384;
-            double minSimilarity = 0.70;
+            //double minSimilarity = 0.70;
 
             int originalSeed = int.MaxValue;
-            Random gen = new Random(originalSeed);
+            //Random gen = new Random(originalSeed);
             WholeMatrix wholeMatrix = new WholeMatrix(nRows, minSimilarity);
             Dictionary<int, int> keyConverter = Util.getKeyConverter(keyList);
             int[] differentSeeds = Enumerable.Repeat(0, keyList.Count).Select(i => gen.Next(0, int.MaxValue)).ToArray();
@@ -82,7 +82,10 @@ namespace ConsoleApplication1
             Regex regex_outer = regexMap[outerKey];
             string pattern_outer = patternMap[outerKey];
             string tempFilePath = @"C:\Users\IEUser\Desktop\tempFiles\temp" + i + ".txt";
-            HashSet<string> matchingStrings_outer = getMatchStrings(nStringsPerPattern, gen, pattern_outer, regex_outer, tempFilePath);
+
+            //fudge
+            HashSet<string> matchingStrings_outer = new HashSet<string>();
+                //getMatchStrings(nStringsPerPattern, gen, pattern_outer, regex_outer, tempFilePath);
             double nMatchingStrings = matchingStrings_outer.Count;
             int maxErrors = (int)((1 - minSimilarity) * nMatchingStrings) + 1;
 

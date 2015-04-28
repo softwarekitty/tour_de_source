@@ -15,7 +15,7 @@ namespace ConsoleApplication1
 
         public static void generateFilteredCorpusAndRexFolders(string exportedCorpusPath, string filteredCorpusPath, string rexStringsBase)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
 
