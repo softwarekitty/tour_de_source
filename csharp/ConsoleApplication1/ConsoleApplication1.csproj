@@ -41,8 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Util.cs" />
+    <Compile Include="HalfMatrix.cs" />
+    <Compile Include="PostProcess.cs" />
+    <Compile Include="PreProcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimilarityMatrixBuilder.cs" />
+    <Compile Include="WholeMatrix.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
