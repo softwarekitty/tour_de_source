@@ -13,85 +13,71 @@ namespace ConsoleApplication1
 {
     public static class SimilarityMatrixBuilder
     {
+        public static double initializedFlag = 0.00000987654321;
+        public static double incompleteFlag = 0.00000123456789;
+        public static double cancelledFlag = 0.0000050101010101;
+
         public static void vasquezSays()
         {
             Console.WriteLine("let's rock");
         }
 
 
-        public static int createBatchOfRows(int batchSize, string allRowsBase, string rexStringsBase, int nRows, double minSimilarity, List<int> keyList)
+        public static void createBatchOfRows(int batchSize, string allRowsBase, string filteredCorpusPath, string rexStringsBase, double minSimilarity)
         {
-            int nRowsCreated = 0;
-            Console.WriteLine("begin creating batch of rows");
 
-            //TODO - something like this, but a batch of files that don't exist yet in the base
-
-            Random gen = new Random();
-
-            //string corpusFileContent = System.IO.File.ReadAllText(analysis_output_path + "exportedCorpus.txt");
-
+            // create regexMap and keyList
             Dictionary<int, Regex> regexMap = new Dictionary<int, Regex>();
-            Dictionary<int, string> patternMap = new Dictionary<int, string>();
-            Dictionary<int, string> failureMap = new Dictionary<int, string>();
-            Dictionary<int, string> timeoutMap = new Dictionary<int, string>();
-            Dictionary<int, string> exceptionMap = new Dictionary<int, string>();
-            //string[] corpusFileLines = corpusFileContent.Split(new string[] { "\n" }, StringSplitOptions.None);
             Regex numberFinder = new Regex(@"(\d+)\t(.*)");
-            string[] corpusFileLines = { };
-
-            foreach (string line in corpusFileLines)
+            using (StreamReader r = new StreamReader(filteredCorpusPath))
             {
-                Match lineMatch = numberFinder.Match(line);
-                if (lineMatch.Success)
+                string line = null;
+                while ((line=r.ReadLine()) != null)
                 {
-                    int index = int.Parse(lineMatch.Groups[1].Value);
-                    string pattern = lineMatch.Groups[2].Value;
-                    regexMap.Add(index, new Regex(pattern));
-                    patternMap.Add(index, pattern);
+                    Match lineMatch = numberFinder.Match(line);
+                    if (lineMatch.Success)
+                    {
+                        int index = int.Parse(lineMatch.Groups[1].Value);
+                        string pattern = lineMatch.Groups[2].Value;
+                        regexMap.Add(index, new Regex(pattern));
+                    }
                 }
             }
+            List<int> keyList = new List<int>(regexMap.Keys);
+            keyList.Sort();
 
-            //List<int> keyList = new List<int>(patternMap.Keys);
-            int nKeys = keyList.Count;
-            Console.WriteLine("nKeys: " + nKeys);
-            Console.WriteLine("");
-
-            // I want to use 65536, but that could take very long (20 mins per regex).
-            // I chose 380 to save time but also still wash out some error
-            int nStringsPerPattern = 384;
-            //double minSimilarity = 0.70;
-
-            int originalSeed = int.MaxValue;
-            //Random gen = new Random(originalSeed);
-            WholeMatrix wholeMatrix = new WholeMatrix(nRows, minSimilarity);
-            Dictionary<int, int> keyConverter = Util.getKeyConverter(keyList);
+            //create some seeds so that different runs on the same data are the same
+            Random gen = new Random(int.MaxValue);
             int[] differentSeeds = Enumerable.Repeat(0, keyList.Count).Select(i => gen.Next(0, int.MaxValue)).ToArray();
+
+            //each of these will create 128 threads, so keep the paralelism down
             ParallelOptions options = new ParallelOptions();
             options.MaxDegreeOfParallelism = 4;
-            Parallel.For(0, keyList.Count, options, i => evaluateOneRow(i, differentSeeds[i], keyConverter, regexMap, patternMap, nStringsPerPattern, keyList, wholeMatrix, nKeys, minSimilarity));
 
-            return nRowsCreated;
+            //these do not have to be sequential or in order.
+            int[] batchIndices = getBatchOfIndices(allRowsBase,keyList.Count, batchSize);
+            Parallel.For(0, batchIndices.Length, options, i => evaluateOneRow(i, batchIndices,differentSeeds[i], rexStringsBase, regexMap, keyList, minSimilarity,allRowsBase));
         }
 
-        static void evaluateOneRow(int i, int differentSeed, Dictionary<int, int> keyConverter, Dictionary<int, Regex> regexMap, Dictionary<int, string> patternMap, int nStringsPerPattern, List<int> keyList, WholeMatrix wholeMatrix, int nKeys, double minSimilarity)
+
+        static void evaluateOneRow(int batchArrayIndex, int[] batchIndices, int differentSeed, string rexStringsBase, Dictionary<int, Regex> regexMap,List<int> keyList, double minSimilarity, string rowFileBase)
         {
-            Random gen = new Random(differentSeed);
-            int outerKey = keyList[i];
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            Regex regex_outer = regexMap[outerKey];
-            string pattern_outer = patternMap[outerKey];
-            string tempFilePath = @"C:\Users\IEUser\Desktop\tempFiles\temp" + i + ".txt";
 
-            //fudge
-            HashSet<string> matchingStrings_outer = new HashSet<string>();
-                //getMatchStrings(nStringsPerPattern, gen, pattern_outer, regex_outer, tempFilePath);
+            int rowIndex = batchIndices[batchArrayIndex];
+            int nKeys = keyList.Count;
+            double[] rowArray = new double[nKeys];
+            Random gen = new Random(differentSeed);
+
+            HashSet<string> matchingStrings_outer = getRexGeneratedStrings(rowIndex,nKeys,rexStringsBase);
             double nMatchingStrings = matchingStrings_outer.Count;
             int maxErrors = (int)((1 - minSimilarity) * nMatchingStrings) + 1;
 
             //in order to protect against exponential worst-case regexes we chunk the row,
             //and wait in powers of two for each chunk.  It's a mess but we cannot get inside of
-            //this system code: 'regex_inner.Match(matchingString)' to do propper cancelation
+            //this library code: 'regex_inner.Match(matchingString)' to do propper cancelation
             int[] nTimeouts = { 0 };
             int chunkSize = 128;
             int nChunks = nKeys / chunkSize;
@@ -100,34 +86,46 @@ namespace ConsoleApplication1
             {
                 int chunkStart = chunkIndex * chunkSize;
                 int chunkStop = chunkStart + chunkSize;
-                processChunk(i, chunkSize, chunkStart, chunkStop, matchingStrings_outer, regexMap, maxErrors, keyList, wholeMatrix, nTimeouts);
+                processChunk(rowIndex,rowArray, chunkStart, chunkStop, matchingStrings_outer, regexMap, maxErrors, keyList, nTimeouts);
             }
             if (remainder > 0)
             {
                 int chunkStart = nChunks * chunkSize;
                 int chunkStop = chunkStart + remainder;
-                processChunk(i, remainder, chunkStart, chunkStop, matchingStrings_outer, regexMap, maxErrors, keyList, wholeMatrix, nTimeouts);
+                processChunk(rowIndex,rowArray, chunkStart, chunkStop, matchingStrings_outer, regexMap, maxErrors, keyList,nTimeouts);
             }
+
+            writeRowToFile(rowIndex,rowArray,rowFileBase,minSimilarity);
+
             stopwatch.Stop();
             TimeSpan ts = stopwatch.Elapsed;
             string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-            Console.WriteLine("completed i: " + i + "/" + nKeys + " nTimeouts: " + nTimeouts[0] + " nMatchStrings:" + matchingStrings_outer.Count + " time taken: " + elapsedTime);
-
+            Console.WriteLine("completed i: " +rowIndex + "/" + nKeys + " nTimeouts: " + nTimeouts[0] + " nMatchStrings:" + matchingStrings_outer.Count + " time taken: " + elapsedTime);
         }
 
-        static void processChunk(int i, int chunkSize, int chunkStart, int chunkStop, HashSet<string> matchingStrings_outer, Dictionary<int, Regex> regexMap, int maxErrors, List<int> keyList, WholeMatrix wholeMatrix, int[] nTimeouts)
+        static void processChunk(int rowIndex,double[] rowArray, int chunkStart, int chunkStop, HashSet<string> matchingStrings_outer, Dictionary<int, Regex> regexMap,int maxErrors, List<int> keyList, int[] nTimeouts)
         {
+
             // rarely, a pathological regex can hang for a very long time.
             // but most of these finish within 120 microseconds (rate: 8300/sec)
             // usually should be able to do 128 in 16 milliseconds so start there
             int taskIndex = 0;
-            Task[] tasks = new Task[chunkSize];
+            Task[] tasks = new Task[chunkStop-chunkStart];
+            CancellationTokenSource tokenSource = new CancellationTokenSource();
             for (int keyIndex = chunkStart; keyIndex < chunkStop; keyIndex++)
             {
+                if (keyIndex > rowArray.Length)
+                {
+                    throw new Exception("the keyIndex: "+keyIndex+" will be outside of the array length: "+rowArray.Length);
+                }
+
+                //get the regex mapped to this cell within the chunk
                 int innerKey = keyList[keyIndex];
                 Regex regex_inner = regexMap[innerKey];
-                tasks[taskIndex] = Task.Factory.StartNew(() => populateMatrixCell(i, keyIndex, wholeMatrix, matchingStrings_outer, regex_inner, maxErrors));
-                taskIndex++;
+
+                //create a task to populate that row cell
+                //this task may hang and never die.
+                tasks[taskIndex++] = Task.Factory.StartNew(() => populateRowCell(rowIndex,keyIndex, rowArray, matchingStrings_outer, regex_inner, maxErrors, tokenSource.Token));
             }
             int overheadBuffer = 3;
             int exponent = 0;
@@ -148,35 +146,52 @@ namespace ConsoleApplication1
             }
             if (!chunkComplete)
             {
-                double incompleteFlag = 0.0000012345;
+                tokenSource.Cancel();
                 for (int j = chunkStart; j < chunkStop; j++)
                 {
-                    if (wholeMatrix.cellIsEmpty(i, j))
+                    double currentRowValue = rowArray[j];
+                    if (currentRowValue==incompleteFlag || currentRowValue==initializedFlag)
                     {
-                        wholeMatrix.set(i, j, incompleteFlag);
                         nTimeouts[0]++;
                     }
                 }
-
             }
-
         }
 
-        static void populateMatrixCell(int i, int j, WholeMatrix wholeMatrix, HashSet<string> matchingStrings_outer, Regex regex_inner, int maxErrors)
+        static void populateRowCell(int i, int j, double[] row, HashSet<string> matchingStrings_outer, Regex regex_inner, int maxErrors,CancellationToken ct)
         {
-            if (j >= wholeMatrix.getN() || i >= wholeMatrix.getN())
+            if (i == j)
             {
-                //Console.WriteLine("j: " + j);
-                //Console.WriteLine();
-
-                //tired of tracing this.  Not sure how j is getting one too large, but I will just skip it here.
+                row[j] = 1.0;
                 return;
             }
             double nMatchingStrings = matchingStrings_outer.Count;
             int alsoMatchingCounter = 0;
             int errorCounter = 0;
+
+            // for debugging - did we get this far?
+            row[j] = incompleteFlag;
+
             foreach (string matchingString in matchingStrings_outer)
             {
+
+                // free up resources ASAP if the task group has timed out
+                if (ct.IsCancellationRequested)
+                {
+                    row[j] = cancelledFlag;
+                    return;
+
+                    // after a certain number of errors, it is impossible to
+                    // be included anyway - give up early
+                    // this may drag down some corner cases when they are
+                    // averaged in the half-matrix, but will save a lot of time, 
+                    // since the vast majority of these comparisons have 0 similarity
+                    // anyway, maybe n^2 - n of them
+                }else if(errorCounter > maxErrors){
+                    break;
+                }
+
+
                 Match attemptMatch = regex_inner.Match(matchingString);
                 if (attemptMatch.Success)
                 {
@@ -186,20 +201,141 @@ namespace ConsoleApplication1
                 {
                     errorCounter++;
                 }
-
-                // after a certain number of errors, it is impossible to
-                // be included anyway - give up early
-                // this may drag down some corner cases when they are
-                // averaged in the half-matrix, but will save a lot of time, 
-                // since the vast majority of these comparisons have 0 similarity
-                // anyway, maybe n^2 - n of them
-                if (errorCounter > maxErrors)
-                {
-                    break;
-                }
             }
             double similarity = alsoMatchingCounter / nMatchingStrings;
-            wholeMatrix.set(i, j, similarity);
+            row[j] = similarity;
+        }
+
+        // helpers
+
+        private static void writeRowToFile(int rowIndex, double[] rowArray, string rowFileBase, double minSimilarity)
+        {
+            bool[] notFirstFlags = new bool[5];
+
+            StringBuilder initializedList = new StringBuilder();
+            StringBuilder incompleteList = new StringBuilder();
+            StringBuilder cancelledList = new StringBuilder();
+            StringBuilder belowMinimumList = new StringBuilder();
+            StringBuilder similarityValues = new StringBuilder();
+
+            initializedList.Append("initializedList: [");
+            incompleteList.Append("incompleteList: [");
+            cancelledList.Append("cancelledList: [");
+            belowMinimumList.Append("belowMinimumList: [");
+            similarityValues.Append("similarityValues: [");
+
+
+            for (int j = 0; j < rowArray.Length; j++)
+            {
+                double value_j = rowArray[j];
+                if (value_j == initializedFlag)
+                {
+                    if (notFirstFlags[0])
+                    {
+                        initializedList.Append(",");
+                    }
+                    initializedList.Append(j);
+                }
+                else if (value_j == incompleteFlag)
+                {
+                    if (notFirstFlags[1])
+                    {
+                        incompleteList.Append(",");
+                    }
+                    incompleteList.Append(j);
+                }
+                else if (value_j == cancelledFlag)
+                {
+                    if (notFirstFlags[2])
+                    {
+                        cancelledList.Append(",");
+                    }
+                    cancelledList.Append(j);
+                }
+                else if (value_j < minSimilarity)
+                {
+                    if (notFirstFlags[3])
+                    {
+                        belowMinimumList.Append(",");
+                    }
+                    belowMinimumList.Append(j);
+                }
+                else
+                {
+                    if (notFirstFlags[4])
+                    {
+                        belowMinimumList.Append(",");
+                    }
+                    similarityValues.Append("(");
+                    similarityValues.Append(j);
+                    similarityValues.Append(":");
+                    similarityValues.Append(String.Format("{0:0.0000}", value_j));
+                    similarityValues.Append(")");
+                }
+
+                //set not first to true - this is for comma neatness
+                if (!notFirstFlags[0])
+                {
+                    for (int x = 0; x < notFirstFlags.Length; x++)
+                    {
+                        notFirstFlags[x] = true;
+                    }
+                }
+            }
+            initializedList.Append("]\n");
+            incompleteList.Append("]\n");
+            cancelledList.Append("]\n");
+            belowMinimumList.Append("]\n");
+            similarityValues.Append("]\n");
+
+            StringBuilder rowFileContent = new StringBuilder();
+            rowFileContent.Append(initializedList.ToString());
+            rowFileContent.Append(incompleteList.ToString());
+            rowFileContent.Append(cancelledList.ToString());
+            rowFileContent.Append(belowMinimumList.ToString());
+            rowFileContent.Append(similarityValues.ToString());
+
+            string rowFilePath = Util.getRowFilePath(rowFileBase, rowArray.Length, rowIndex);
+            System.IO.File.WriteAllText(rowFilePath, rowFileContent.ToString());
+        }
+
+        private static HashSet<string> getRexGeneratedStrings(int rowIndex, int nKeys, string rexStringsBase)
+        {
+            string rexFilePath = Util.getRexFilePath(rexStringsBase, nKeys, rowIndex);
+            HashSet<string> generatedStrings = new HashSet<string>();
+            using (StreamReader r = new StreamReader(rexFilePath))
+            {
+                string line = null;
+                while ((line = r.ReadLine()) != null)
+                {
+                    if (line.Length > 0)
+                    {
+                        generatedStrings.Add(line);
+                    }
+                }
+            }
+            return generatedStrings;
+        }
+
+
+        private static int[] getBatchOfIndices(string allRowsBase, int nKeys, int batchSize)
+        {
+            int nAdded = 0;
+            List<int> indices = new List<int>();
+            for (int rowIndex = 0; rowIndex < nKeys; rowIndex++)
+            {
+                string rowPath = Util.getRowFilePath(allRowsBase, nKeys, rowIndex);
+                if (!File.Exists(rowPath))
+                {
+                    indices.Add(rowIndex);
+                    nAdded++;
+                }
+                if (nAdded >= batchSize)
+                {
+                    return indices.ToArray();
+                }
+            }
+            return indices.ToArray();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace ConsoleApplication1
             Console.WriteLine("PreProcess says hi");
         }
 
-        public static void generateFilteredCorpusAndRexFolders(string exportedCorpusPath, string filteredCorpusPath, string rexStringsBase)
+        public static void generateFilteredCorpusAndRexFolders(string exportedCorpusPath, string filteredCorpusPath, string rexStringsBase, int nRexGeneratedStringsPerRegex)
         {
             //throw new NotImplementedException();
         }

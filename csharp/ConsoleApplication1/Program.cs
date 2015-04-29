@@ -56,7 +56,7 @@ namespace ConsoleApplication1
                 // note the requirement to associate lines of the filteredCorpusPath files
                 // with the folders contianing rexStrings - a hazard but worth doing bc 
                 // it lets us look at the exact strings used in this evaluation.
-                PreProcess.generateFilteredCorpusAndRexFolders(exportedCorpusPath, filteredCorpusPath, rexStringsBase);
+                PreProcess.generateFilteredCorpusAndRexFolders(exportedCorpusPath, filteredCorpusPath, rexStringsBase, nRexGeneratedStringsPerRegex);
                 Console.WriteLine("filtered corpus and Rex folders complete");
             }
             
@@ -64,15 +64,15 @@ namespace ConsoleApplication1
             string allRowsBase = analysis_output_path+@"allRows\";
             Directory.CreateDirectory(allRowsBase);
             double minSimilarity = 0.75;
-            List<int> keyList = getKeyList(filteredCorpusPath);
 
 
             //determine nRows by inspecting the line numbers in filteredCorpus.txt
             int nRows = Util.countFileLines(filteredCorpusPath);
-            if (allRowFilesWritten(allRowsBase, nRows))
+            int nRowsBefore = nRowsExist(allRowsBase, nRows);
+            if (nRowsBefore==nRows)
             {
                 Console.WriteLine("all row files are present - creating matrices and abc file");
-                PostProcess.createMatricesAndABC(allRowsBase, nRows, minSimilarity, keyList);
+                PostProcess.createMatricesAndABC(allRowsBase, nRows, minSimilarity, filteredCorpusPath);
                 Console.WriteLine("matrix and abc files are written - exiting");
                 return;
             }
@@ -80,22 +80,17 @@ namespace ConsoleApplication1
             {
                 // we have to do batches bc runaway regex matchings never release memory
                 int batchSize = 2048;
-                Console.WriteLine("begin batch of writing " + batchSize + " row files");
-                int nRowsCreated = SimilarityMatrixBuilder.createBatchOfRows(batchSize, allRowsBase, rexStringsBase, nRows, minSimilarity, keyList);
-                Console.WriteLine("success writing batch of " + nRowsCreated + " files - please run again");
+
+                Console.WriteLine("batchSize: " + batchSize + " nRowsBefore: "+nRowsBefore+ " nRows: "+nRows);
+                SimilarityMatrixBuilder.createBatchOfRows(batchSize,allRowsBase,filteredCorpusPath, rexStringsBase, minSimilarity);
+                int nRowsAfter = nRowsExist(allRowsBase, nRows);
+                Console.WriteLine("nRowsAfter: "+nRowsAfter + " diff: "+(nRowsAfter-nRowsBefore)+" batchSize:"+batchSize );
                 return;
             }
         }
 
-        private static List<int> getKeyList(string filteredCorpusPath)
-        {
-           List<int> keyList = new List<int>();
-            //TODO - read the filtered corpus path and build the key list.
-           return keyList;
-        }
 
-
-        private static bool allRowFilesWritten(string allRowsBase, int nRows)
+        private static int nRowsExist(string allRowsBase, int nRows)
         {
 
             // create all the bucket directories if this is the first time here
@@ -108,19 +103,18 @@ namespace ConsoleApplication1
             }
 
             
-            //for each row, check if a file exists for that row in its bucket
+            //count the times a file exists for a row in its bucket
+            int numRowsExist = 0;
             for (int rowIndex = 0; rowIndex < nRows; rowIndex++)
             {
 
-                string rowFilePath = Util.getRowFilePath(allRowsBase,nBuckets,rowIndex);
-                if (!File.Exists(rowFilePath))
+                string rowFilePath = Util.getRowFilePath(allRowsBase,nRows,rowIndex);
+                if (File.Exists(rowFilePath))
                 {
-                    return false;
+                    numRowsExist++;
                 }
             }
-
-            // all rows have one file that exists - all row files are written
-            return true;
+            return numRowsExist;
         }
     }
 }

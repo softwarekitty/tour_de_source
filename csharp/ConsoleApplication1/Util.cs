@@ -9,13 +9,13 @@ namespace ConsoleApplication1
 {
     public static class Util
     {
-        public static List<string> getBucketList(int maxFiles)
+        public static List<string> getBucketList(int nKeys)
         {
             List<string> bucketNames = new List<string>();
 
             //number of buckets is close to number of files in buckets
             //this is just for ease of use when file exploring
-            int nBuckets = (int)Math.Sqrt(maxFiles) + 1;
+            int nBuckets = (int)Math.Sqrt(nKeys) + 1;
             int nChars = nBuckets.ToString().Length;
             for (int i = 0; i <= nBuckets; i++)
             {
@@ -72,10 +72,11 @@ namespace ConsoleApplication1
         }
 
         //in Util so that we get the same name when calling from different places
-        public static string getRowFilePath(string allRowsBase, int nBuckets, int rowIndex)
+        public static string getRowFilePath(string allRowsBase, int nKeys, int rowIndex)
         {
+            int nBuckets = (int)Math.Sqrt(nKeys) + 1;
             string bucketName = Util.decideBucket(rowIndex, nBuckets);
-            string rowFilePath = allRowsBase + bucketName + @"\" + rowIndex.ToString() + ".txt";
+            string rowFilePath = allRowsBase + bucketName + @"\row_" + rowIndex.ToString() + ".txt";
             return rowFilePath;
         }
 
@@ -88,6 +89,14 @@ namespace ConsoleApplication1
                 keyConverter.Add(i, keyList[i]);
             }
             return keyConverter;
+        }
+
+        internal static string getRexFilePath(string rexStringsBase, int nKeys, int rowIndex)
+        {
+            int nBuckets = (int)Math.Sqrt(nKeys) + 1;
+            string bucketName = Util.decideBucket(rowIndex, nBuckets);
+            string rowFilePath = rexStringsBase + bucketName + @"\rex_" + rowIndex.ToString() + ".txt";
+            return rowFilePath;
         }
     }
 }
