@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.Text;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
@@ -15,7 +17,95 @@ namespace ConsoleApplication1
 
         public static void generateFilteredCorpusAndRexFolders(string exportedCorpusPath, string filteredCorpusPath, string rexStringsBase, int nRexGeneratedStringsPerRegex)
         {
-            //throw new NotImplementedException();
+            Regex numberFinder = new Regex(@"(\d+)\t(.*)");
+            Random gen = new Random(int.MaxValue);
+            Dictionary<int, Regex> regexMap = new Dictionary<int, Regex>();
+            Dictionary<int, string> patternMap = new Dictionary<int, string>();
+            Dictionary<int, string> failureMap = new Dictionary<int, string>();
+            Dictionary<int, string> timeoutMap = new Dictionary<int, string>();
+            Dictionary<int, string> exceptionMap = new Dictionary<int, string>();
+
+            using (StreamReader r = new StreamReader(exportedCorpusPath))
+            {
+                string line = null;
+                while ((line = r.ReadLine()) != null)
+                {
+                    Match lineMatch = numberFinder.Match(line);
+                    if (lineMatch.Success)
+                    {
+                        int index = int.Parse(lineMatch.Groups[1].Value);
+                        string pattern = lineMatch.Groups[2].Value;
+
+                        //TODO
+                        string tempFilePath = Util.getTempFilePath(index);
+                        try
+                        {
+                            Regex regex = new Regex(pattern);
+                            int timeoutMS = 8000;
+                            var task = Task.Factory.StartNew(() => getMatchStrings(nRexGeneratedStringsPerRegex, gen, pattern, regex,tempFilePath));
+
+                            // rarely, a pathological regex can hang for a very long time.  
+                            if (!task.Wait(timeoutMS))
+                            {
+                                timeoutMap.Add(index, pattern);
+                                Console.WriteLine("pattern timed out: " + pattern);
+                                continue;
+                            }
+                            HashSet<string> matchingStrings = task.Result;
+
+                            // only add regexes to the regexMap if we can generate strings from Rex that their regex will match
+                            // I assume that if we can generate minStringsForViableStatistics items quickly, then we can generate nStringsPerPattern items eventually.
+                            // this will exclude patterns that require exact size matches like ^abc$, or have few matching strings
+                            // but how similar can these be to other patterns unless they are semantic clones?
+                            if (matchingStrings.Count == nRexGeneratedStringsPerRegex)
+                            {
+                                patternMap.Add(index, pattern);
+                                regexMap.Add(index,regex);
+                            }
+                            else
+                            {
+                                failureMap.Add(index, pattern);
+                                Console.WriteLine("pattern failed: " + pattern);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            exceptionMap.Add(index, pattern);
+                            Console.WriteLine("with pattern: " + pattern);
+                            Console.WriteLine("exception: " + e.Source);
+                        }
+                    }
+                }
+            }
+            System.IO.File.WriteAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\failureMap.txt", Util.mapToString(failureMap));
+            System.IO.File.WriteAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exceptionMap.txt", Util.mapToString(exceptionMap));
+            System.IO.File.WriteAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\timeoutMap", Util.mapToString(timeoutMap));
+            System.IO.File.WriteAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\filteredCorpus.txt", Util.mapToString(patternMap));
+
+
+            // now we have the keys of the filtered regexes
+            List<int> keyList = new List<int>(patternMap.Keys);
+            keyList.Sort();
+            int nKeys = keyList.Count;
+
+            // create all the bucket directories if this is the first time here
+            List<string> bucketList = Util.getBucketList(nKeys);
+            int nBuckets = bucketList.Count;
+            foreach (string bucketName in bucketList)
+            {
+                string rowBucketDirectory = rexStringsBase + bucketName;
+                Directory.CreateDirectory(rowBucketDirectory);
+            }
+
+            //populate the rex path files with strings chosen by Rex
+            //this could be remembered or done earlier, but this won't take that long
+            for (int i = 0; i < nKeys; i++)
+            {
+                int actualIndex = keyList[i];
+                string rexPath = Util.getRexFilePath(rexStringsBase,nKeys,i);
+                HashSet<string> matchingStrings = getMatchStrings(nRexGeneratedStringsPerRegex, gen, patternMap[actualIndex], regexMap[actualIndex], Util.getTempFilePath(i));
+                System.IO.File.WriteAllText(rexPath, Util.setToString(matchingStrings));
+            }
         }
 
 
@@ -46,6 +136,8 @@ namespace ConsoleApplication1
                     {
                         break;
                     }
+
+                    //this says it's okay for the one line to be blank...right?
                     if (rexOutLine.Equals("") && counter == 0)
                     {
                         counter++;

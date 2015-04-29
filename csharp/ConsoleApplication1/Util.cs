@@ -46,7 +46,7 @@ namespace ConsoleApplication1
             return bucketString.ToString();
         }
 
-        static string mapToString(Dictionary<int, string> sourceMap)
+        public static string mapToString(Dictionary<int, string> sourceMap)
         {
             StringBuilder sb = new StringBuilder();
             List<int> keyList = new List<int>(sourceMap.Keys);
@@ -55,6 +55,12 @@ namespace ConsoleApplication1
                 sb.Append(key + "\t" + sourceMap[key] + "\n");
             }
             return sb.ToString();
+        }
+
+        public static string getTempFilePath(int i)
+        {
+            string tempFileFolder = @"C:\Users\IEUser\Desktop\temp_files\";
+            return tempFileFolder + "temp_" + i + ".txt";
         }
 
         //credit Juliet: SO#496663
@@ -91,12 +97,22 @@ namespace ConsoleApplication1
             return keyConverter;
         }
 
-        internal static string getRexFilePath(string rexStringsBase, int nKeys, int rowIndex)
+        public static string getRexFilePath(string rexStringsBase, int nKeys, int rowIndex)
         {
             int nBuckets = (int)Math.Sqrt(nKeys) + 1;
             string bucketName = Util.decideBucket(rowIndex, nBuckets);
             string rowFilePath = rexStringsBase + bucketName + @"\rex_" + rowIndex.ToString() + ".txt";
             return rowFilePath;
+        }
+
+        public static string setToString(HashSet<string> matchingStrings)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (string ms in matchingStrings)
+            {
+                sb.Append(ms + "\n");
+            }
+            return sb.ToString();
         }
     }
 }
