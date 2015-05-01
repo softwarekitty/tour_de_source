@@ -1,0 +1,385 @@
+pixel_at(82,0)should_be_darker_than pixel_at(98,5)?
+pixel_at(4,9)Pshould_be_darker_than pixel_at(2,8491)+
+pixel_at(9,6)cshould_be_darker_than pixel_at(9,93696)
+pixel_at(68,126)should_be_darker_than pixel_at(4,528)
+pixel_at(4,25)should_be_darker_than pixel_at(2,9)#
+pixel_at(60,9)%should_be_darker_than pixel_at(796,9)
+pixel_at(13,39)should_be_darker_than pixel_at(83686,8)
+pixel_at(9,32)should_be_darker_than pixel_at(228,69)
+pixel_at(85,380)mshould_be_darker_than pixel_at(8,2)n
+pixel_at(9,0)should_be_darker_than pixel_at(8,6)o5
+pixel_at(988,9)Zshould_be_darker_than pixel_at(72,08)
+pixel_at(488,36)Yshould_be_darker_than pixel_at(833,8)
+pixel_at(5,7)]should_be_darker_than pixel_at(98,996)g
+pixel_at(875,2)should_be_darker_than pixel_at(967,3)
+pixel_at(9,9)9should_be_darker_than pixel_at(95,9)
+pixel_at(419,38889)pshould_be_darker_than pixel_at(0,981)g
+pixel_at(0,39)should_be_darker_than pixel_at(17,9)
+pixel_at(17,779)should_be_darker_than pixel_at(4998,5)
+pixel_at(9,9)bshould_be_darker_than pixel_at(8,98798388)
+pixel_at(3,289)#should_be_darker_than pixel_at(73,89)
+pixel_at(6869,7)oshould_be_darker_than pixel_at(294,2)#
+pixel_at(50,18)5should_be_darker_than pixel_at(99884,08)
+pixel_at(8,99)	should_be_darker_than pixel_at(818,085)
+pixel_at(4,9)7should_be_darker_than pixel_at(95,7)gH
+pixel_at(83,708)should_be_darker_than pixel_at(8,8)
+pixel_at(91,8)ishould_be_darker_than pixel_at(11568,598)
+pixel_at(8,8)`should_be_darker_than pixel_at(89,5)	
+pixel_at(5,1)Vshould_be_darker_than pixel_at(43,99)Q'0
+pixel_at(6,19)^should_be_darker_than pixel_at(8,9)&qM
+pixel_at(9,9)dshould_be_darker_than pixel_at(4,9)6\aWJ_
+pixel_at(10,0)Sshould_be_darker_than pixel_at(9999,9)
+pixel_at(2839,60)gshould_be_darker_than pixel_at(28,88)t
+pixel_at(69,3)>should_be_darker_than pixel_at(89,47)
+pixel_at(0,1)=should_be_darker_than pixel_at(858,0)q
+pixel_at(31,998)0should_be_darker_than pixel_at(86,88183)
+pixel_at(890070,8)should_be_darker_than pixel_at(78,88)
+pixel_at(29,8188)*should_be_darker_than pixel_at(9,96)
+pixel_at(188,6)9should_be_darker_than pixel_at(9,4)
+pixel_at(0,491)should_be_darker_than pixel_at(9,9)Ou
+pixel_at(9,92609)should_be_darker_than pixel_at(2,29)
+pixel_at(9,29593918)should_be_darker_than pixel_at(088,6)G
+pixel_at(8,5)}should_be_darker_than pixel_at(4,41388)(0p}
+pixel_at(6897,88)should_be_darker_than pixel_at(991,8)\"k
+pixel_at(8204,06)should_be_darker_than pixel_at(8891,4022)T
+pixel_at(9,9)~should_be_darker_than pixel_at(453,1)
+pixel_at(80,831)should_be_darker_than pixel_at(88599,97)+U(
+pixel_at(99,8844)should_be_darker_than pixel_at(81,6)
+pixel_at(9894,31)should_be_darker_than pixel_at(31,3)
+pixel_at(95,8)gshould_be_darker_than pixel_at(88,9)
+pixel_at(078,79)[should_be_darker_than pixel_at(0,8)
+pixel_at(85,83)should_be_darker_than pixel_at(76,28)
+pixel_at(8,8)should_be_darker_than pixel_at(08,8)
+pixel_at(6,60)&should_be_darker_than pixel_at(3,64)
+pixel_at(4821,4)@should_be_darker_than pixel_at(2,809)T
+pixel_at(89,4)rshould_be_darker_than pixel_at(9,147)s\a
+pixel_at(488,8698)should_be_darker_than pixel_at(848,99)
+pixel_at(02402,931)|should_be_darker_than pixel_at(7,7)
+pixel_at(2,4302)jshould_be_darker_than pixel_at(86,62)
+pixel_at(5,9)should_be_darker_than pixel_at(74,68188).(6*
+pixel_at(1,7)should_be_darker_than pixel_at(2,78)$\"
+pixel_at(36,302){should_be_darker_than pixel_at(60829,9)tJB
+pixel_at(89,8)Hshould_be_darker_than pixel_at(508,8)
+pixel_at(98,2399)5should_be_darker_than pixel_at(859,17862)l
+pixel_at(04925,3)*should_be_darker_than pixel_at(9,18808)Lr
+pixel_at(98883,68)should_be_darker_than pixel_at(98,9883)
+pixel_at(856,928)	should_be_darker_than pixel_at(10031,90769)
+pixel_at(8,1)dshould_be_darker_than pixel_at(8,478)
+pixel_at(9,5)hshould_be_darker_than pixel_at(9,8)
+pixel_at(8,08)/should_be_darker_than pixel_at(8,098):
+pixel_at(695,828)@should_be_darker_than pixel_at(59,998)
+pixel_at(9,3)<should_be_darker_than pixel_at(3,2)
+pixel_at(99,9)Lshould_be_darker_than pixel_at(95,989)
+pixel_at(196,6)should_be_darker_than pixel_at(3276,19)
+pixel_at(8,8)Oshould_be_darker_than pixel_at(16629,1)
+pixel_at(4,9)should_be_darker_than pixel_at(3,7)
+pixel_at(94,3)should_be_darker_than pixel_at(5,9)
+pixel_at(9,59)should_be_darker_than pixel_at(288426,76)
+pixel_at(6,58385)0should_be_darker_than pixel_at(908819980,8)
+pixel_at(033,168)'should_be_darker_than pixel_at(6,80)
+pixel_at(959293,51)should_be_darker_than pixel_at(9,58))
+pixel_at(8,7)=should_be_darker_than pixel_at(5,786)
+pixel_at(1991,7188)Hshould_be_darker_than pixel_at(8,1858)
+pixel_at(7,35330)6should_be_darker_than pixel_at(9,8)dtf
+pixel_at(8059,96)should_be_darker_than pixel_at(19,6)L
+pixel_at(5,9)lshould_be_darker_than pixel_at(8,881)?>g
+pixel_at(863,08343)nshould_be_darker_than pixel_at(8,88)t
+pixel_at(58,82)Tshould_be_darker_than pixel_at(08,69)M
+pixel_at(05,8398)*should_be_darker_than pixel_at(794,81)
+pixel_at(88,18)wshould_be_darker_than pixel_at(9,7) $
+pixel_at(1,499)Zshould_be_darker_than pixel_at(7,539)
+pixel_at(692,2)gshould_be_darker_than pixel_at(99,4)
+pixel_at(8,882)Wshould_be_darker_than pixel_at(98,96)
+pixel_at(87,8399)<should_be_darker_than pixel_at(78,811)Bo
+pixel_at(8,442)Rshould_be_darker_than pixel_at(9,89)
+pixel_at(5,8)2should_be_darker_than pixel_at(89798782820,6)(\a
+pixel_at(8993,585)&should_be_darker_than pixel_at(84,9)
+pixel_at(7,548968)[should_be_darker_than pixel_at(4,3)
+pixel_at(85,8)kshould_be_darker_than pixel_at(99,8)g;:\0eS
+pixel_at(890,84)should_be_darker_than pixel_at(8989,1)
+pixel_at(81188,8)?should_be_darker_than pixel_at(9,8)-
+pixel_at(59,98)should_be_darker_than pixel_at(49,83)
+pixel_at(488828,4)should_be_darker_than pixel_at(98,6)^{\0
+pixel_at(74939,968)Nshould_be_darker_than pixel_at(84,0)1L
+pixel_at(92,9)Lshould_be_darker_than pixel_at(8,78)7
+pixel_at(5,92)Sshould_be_darker_than pixel_at(69,8)Wn
+pixel_at(1,77)should_be_darker_than pixel_at(6,81)
+pixel_at(994,74)]should_be_darker_than pixel_at(87,4)a
+pixel_at(8,45)<should_be_darker_than pixel_at(8,9)N*_
+pixel_at(9,99).should_be_darker_than pixel_at(8,8)
+pixel_at(6,9)jshould_be_darker_than pixel_at(2,9)iz
+pixel_at(539,208)Mshould_be_darker_than pixel_at(9,47)'
+pixel_at(59,8)should_be_darker_than pixel_at(4043,878)qb
+pixel_at(7,96)7should_be_darker_than pixel_at(989,3)t	
+pixel_at(8988944,895)(should_be_darker_than pixel_at(0,998)gX
+pixel_at(27919,5)>should_be_darker_than pixel_at(4,9)'mt
+pixel_at(9,9632)should_be_darker_than pixel_at(5,9)
+pixel_at(6,8238)Cshould_be_darker_than pixel_at(932,1)i+z
+pixel_at(9,5697)xshould_be_darker_than pixel_at(922,19)
+pixel_at(7828,88)Ushould_be_darker_than pixel_at(8,789)
+pixel_at(89596988,3) should_be_darker_than pixel_at(5809,4)
+pixel_at(462,9)Mshould_be_darker_than pixel_at(9,1)?Z
+pixel_at(2209,38);should_be_darker_than pixel_at(9,9)
+pixel_at(8,499)jshould_be_darker_than pixel_at(0908,3)
+pixel_at(53,8)should_be_darker_than pixel_at(32,6489)4
+pixel_at(0,89)Dshould_be_darker_than pixel_at(054,04)
+pixel_at(1,48899)Pshould_be_darker_than pixel_at(87,4)Gxm
+pixel_at(99,65)should_be_darker_than pixel_at(81,8)
+pixel_at(8,91)_should_be_darker_than pixel_at(99,2)
+pixel_at(59869893588,1)$should_be_darker_than pixel_at(4,9)
+pixel_at(1,99)should_be_darker_than pixel_at(9218,8)e> F
+pixel_at(5,86)should_be_darker_than pixel_at(9,8789)x 
+pixel_at(839294,2)Cshould_be_darker_than pixel_at(1,0)
+pixel_at(91288,9)$should_be_darker_than pixel_at(8,98)@
+pixel_at(9,39)Oshould_be_darker_than pixel_at(48,989)
+pixel_at(49,9)5should_be_darker_than pixel_at(90490049,59)
+pixel_at(9,39)Fshould_be_darker_than pixel_at(3,959) 
+pixel_at(4,4)Xshould_be_darker_than pixel_at(8,935).
+pixel_at(8,798)1should_be_darker_than pixel_at(8,9)&2z
+pixel_at(918,8)should_be_darker_than pixel_at(8,18)S
+pixel_at(29,9)Ushould_be_darker_than pixel_at(8809,29814)
+pixel_at(2,9)jshould_be_darker_than pixel_at(09,9)
+pixel_at(9,1):should_be_darker_than pixel_at(49,75)y
+pixel_at(8,8988)Mshould_be_darker_than pixel_at(4,8)	
+pixel_at(6,8207)_should_be_darker_than pixel_at(99,4)=
+pixel_at(9,7)should_be_darker_than pixel_at(14817,85)
+pixel_at(8,917)^should_be_darker_than pixel_at(66,138)/
+pixel_at(775,8),should_be_darker_than pixel_at(9,9)
+pixel_at(8,1)should_be_darker_than pixel_at(8898,576)c&
+pixel_at(8,2)oshould_be_darker_than pixel_at(4,8)~
+pixel_at(89,285)sshould_be_darker_than pixel_at(05,59)3V
+pixel_at(9,5)should_be_darker_than pixel_at(419,9)
+pixel_at(68,9)Mshould_be_darker_than pixel_at(9,908)
+pixel_at(681,905)`should_be_darker_than pixel_at(18,989)
+pixel_at(9,8)should_be_darker_than pixel_at(3,983278)J
+pixel_at(7,3)should_be_darker_than pixel_at(88,2)
+pixel_at(8,8)1should_be_darker_than pixel_at(9,3)
+pixel_at(6,84)should_be_darker_than pixel_at(5,62)
+pixel_at(29,99)$should_be_darker_than pixel_at(28,9)
+pixel_at(83158,3)Cshould_be_darker_than pixel_at(8,8)
+pixel_at(8,78)^should_be_darker_than pixel_at(99,9)
+pixel_at(9,586971700982)-should_be_darker_than pixel_at(9,998)
+pixel_at(8,928){should_be_darker_than pixel_at(560,777)cn
+pixel_at(9,3893)	should_be_darker_than pixel_at(891,8)&\
+pixel_at(6,41)should_be_darker_than pixel_at(99,84)
+pixel_at(8,789)rshould_be_darker_than pixel_at(88,8635)
+pixel_at(9,9)+should_be_darker_than pixel_at(99,9999939).
+pixel_at(3,27399)should_be_darker_than pixel_at(0,9)
+pixel_at(88,41292549)Qshould_be_darker_than pixel_at(687,9)=
+pixel_at(7,89)should_be_darker_than pixel_at(59,9)4H
+pixel_at(9,9)5should_be_darker_than pixel_at(88,19)y
+pixel_at(5,9)8should_be_darker_than pixel_at(85,38)!
+pixel_at(80,9828)should_be_darker_than pixel_at(9,89)
+pixel_at(078109455,23)should_be_darker_than pixel_at(444,99)B
+pixel_at(8834,1585)}should_be_darker_than pixel_at(0,9)
+pixel_at(1,9)5should_be_darker_than pixel_at(823,9)
+pixel_at(4148,84)should_be_darker_than pixel_at(898,8891991)
+pixel_at(68988,6) should_be_darker_than pixel_at(72,5)
+pixel_at(88,8)ashould_be_darker_than pixel_at(238,0)
+pixel_at(2,9)lshould_be_darker_than pixel_at(8,452)=??C
+pixel_at(4,88)+should_be_darker_than pixel_at(8,4)
+pixel_at(083,759285)Vshould_be_darker_than pixel_at(868,2)W\a
+pixel_at(36,883)6should_be_darker_than pixel_at(99,25)
+pixel_at(39,8937)Wshould_be_darker_than pixel_at(30,88)<
+pixel_at(8339,7)<should_be_darker_than pixel_at(8,9)
+pixel_at(86,6)eshould_be_darker_than pixel_at(9,99)l
+pixel_at(80,5)ushould_be_darker_than pixel_at(510,888)
+pixel_at(8,9)should_be_darker_than pixel_at(9,4)
+pixel_at(9,8)Mshould_be_darker_than pixel_at(9,38)|
+pixel_at(158,89)should_be_darker_than pixel_at(488,589)
+pixel_at(81,1)>should_be_darker_than pixel_at(9,4)|\0
+pixel_at(8,88)(should_be_darker_than pixel_at(08,8)MG
+pixel_at(93,2)Eshould_be_darker_than pixel_at(587888,589)c!~
+pixel_at(16,697)should_be_darker_than pixel_at(08,3)ji;w
+pixel_at(929,1)^should_be_darker_than pixel_at(98,3)%
+pixel_at(5,98)Rshould_be_darker_than pixel_at(9,798)
+pixel_at(44,93)&should_be_darker_than pixel_at(1,69)L
+pixel_at(99888,0)`should_be_darker_than pixel_at(08,9)
+pixel_at(628,9)should_be_darker_than pixel_at(48,8998)sE
+pixel_at(49,8)`should_be_darker_than pixel_at(0,3)*R
+pixel_at(9,9)rshould_be_darker_than pixel_at(1,814)I
+pixel_at(2,8809)should_be_darker_than pixel_at(9355,38)
+pixel_at(8,6)should_be_darker_than pixel_at(839,9)
+pixel_at(650,90999)should_be_darker_than pixel_at(93,3)+
+pixel_at(4,6)(should_be_darker_than pixel_at(208,48879939)
+pixel_at(9,8)<should_be_darker_than pixel_at(824,9)*
+pixel_at(6,0)7should_be_darker_than pixel_at(68,3888) 
+pixel_at(83994,8)1should_be_darker_than pixel_at(7,8)
+pixel_at(6,9)kshould_be_darker_than pixel_at(43,6)
+pixel_at(2,96)Eshould_be_darker_than pixel_at(98,8)
+pixel_at(0,8)ushould_be_darker_than pixel_at(8,5)
+pixel_at(6,99)'should_be_darker_than pixel_at(0,38)
+pixel_at(8,7988888):should_be_darker_than pixel_at(6,5)
+pixel_at(004,6)yshould_be_darker_than pixel_at(88,8)
+pixel_at(2,6),should_be_darker_than pixel_at(8,9)|
+pixel_at(499,1)Xshould_be_darker_than pixel_at(80,835)
+pixel_at(6055,4)should_be_darker_than pixel_at(89899,1)
+pixel_at(7,61)Fshould_be_darker_than pixel_at(64,76){
+pixel_at(479,6)should_be_darker_than pixel_at(8,7)
+pixel_at(0,950)bshould_be_darker_than pixel_at(7,99593)8
+pixel_at(8,9)+should_be_darker_than pixel_at(4,3)
+pixel_at(9,8)|should_be_darker_than pixel_at(7,2817)
+pixel_at(8,485)8should_be_darker_than pixel_at(8,9)\e
+pixel_at(1696988,2)3should_be_darker_than pixel_at(8,85)-@
+pixel_at(5613,9)	should_be_darker_than pixel_at(9,7)
+pixel_at(3,04)tshould_be_darker_than pixel_at(9,2)4s
+pixel_at(89,1)Dshould_be_darker_than pixel_at(9,8)
+pixel_at(0,9)|should_be_darker_than pixel_at(568,3)
+pixel_at(89,89)$should_be_darker_than pixel_at(4,8094)
+pixel_at(8,9)should_be_darker_than pixel_at(2,992)#f
+
+pixel_at(88,18)should_be_darker_than pixel_at(86,898)p
+pixel_at(6,53)hshould_be_darker_than pixel_at(988,51)Y3
+pixel_at(8,8)should_be_darker_than pixel_at(6,9)wW
+pixel_at(5,943)should_be_darker_than pixel_at(9,71)T
+pixel_at(76081,905)Hshould_be_darker_than pixel_at(4,58)
+pixel_at(9,1)wshould_be_darker_than pixel_at(0,4)
+pixel_at(2,90)5should_be_darker_than pixel_at(2,959)\
+pixel_at(99,09)ushould_be_darker_than pixel_at(8,994)
+pixel_at(95,99)should_be_darker_than pixel_at(4,9)
+pixel_at(3,18))should_be_darker_than pixel_at(901,818)
+pixel_at(151,89)should_be_darker_than pixel_at(4,8)
+pixel_at(91,811098)*should_be_darker_than pixel_at(2,128)
+pixel_at(8,38)+should_be_darker_than pixel_at(9,8)'8
+pixel_at(9,1)	should_be_darker_than pixel_at(294,89)
+pixel_at(88,1)zshould_be_darker_than pixel_at(27,8)
+pixel_at(9,9)Wshould_be_darker_than pixel_at(2,9)I*
+pixel_at(3,8)lshould_be_darker_than pixel_at(8,958)VHp
+pixel_at(808,6)Ashould_be_darker_than pixel_at(18,88199))
+pixel_at(5,3)should_be_darker_than pixel_at(0,1)/
+pixel_at(822,9)0should_be_darker_than pixel_at(8,9)
+pixel_at(58,49)Ishould_be_darker_than pixel_at(8,3799)B
+pixel_at(368,88)should_be_darker_than pixel_at(9,97)
+pixel_at(8,9)Cshould_be_darker_than pixel_at(29,18)
+pixel_at(24,0423)Hshould_be_darker_than pixel_at(8,1)
+pixel_at(70,230)}should_be_darker_than pixel_at(7,958877)f\
+pixel_at(943,9)Pshould_be_darker_than pixel_at(9,9)
+pixel_at(1,8)should_be_darker_than pixel_at(2,9)
+pixel_at(6,7)Eshould_be_darker_than pixel_at(719472,28)
+pixel_at(4,4)^should_be_darker_than pixel_at(6,10)
+pixel_at(7,482)!should_be_darker_than pixel_at(89,9)*T$
+pixel_at(8,3)+should_be_darker_than pixel_at(08,9)s
+pixel_at(084,8983)should_be_darker_than pixel_at(3934,7)
+pixel_at(89,8)Kshould_be_darker_than pixel_at(38,02)B
+pixel_at(4,39)oshould_be_darker_than pixel_at(04,368)
+pixel_at(6,4)should_be_darker_than pixel_at(9,288)
+pixel_at(8,5499)rshould_be_darker_than pixel_at(8,5)
+pixel_at(6,4)oshould_be_darker_than pixel_at(2,187)N
+pixel_at(08,49)ishould_be_darker_than pixel_at(8,195799)!RR
+pixel_at(98,8)Dshould_be_darker_than pixel_at(8,0)
+pixel_at(32,86)eshould_be_darker_than pixel_at(9,78)
+pixel_at(488,8)Cshould_be_darker_than pixel_at(6,86966840868)9
+pixel_at(18,5)_should_be_darker_than pixel_at(4849,81)bQh
+pixel_at(7,31)should_be_darker_than pixel_at(97,8)R:
+pixel_at(6,9)Cshould_be_darker_than pixel_at(8,4445):
+pixel_at(2,58069)jshould_be_darker_than pixel_at(83,1893)
+pixel_at(97,98)Ishould_be_darker_than pixel_at(979,45199)G
+pixel_at(7,5)tshould_be_darker_than pixel_at(8,6)&
+pixel_at(792,113)6should_be_darker_than pixel_at(99,89)
+pixel_at(9,0889)>should_be_darker_than pixel_at(39,9888)(W
+pixel_at(1,199788)2should_be_darker_than pixel_at(9,95)
+pixel_at(887,82)qshould_be_darker_than pixel_at(95,891)mB
+pixel_at(4,9)should_be_darker_than pixel_at(8,9)
+pixel_at(3,4)]should_be_darker_than pixel_at(30601,8)
+pixel_at(7881993,0)Eshould_be_darker_than pixel_at(8,28)
+pixel_at(3979,2)5should_be_darker_than pixel_at(9,8)3?
+pixel_at(0,1)Zshould_be_darker_than pixel_at(5188,90)bw,\0<
+pixel_at(8,88)should_be_darker_than pixel_at(3,869)
+pixel_at(58,59)should_be_darker_than pixel_at(10899,8)
+pixel_at(5,98)]should_be_darker_than pixel_at(1,99763681)P
+pixel_at(77,19)should_be_darker_than pixel_at(6154,9)
+pixel_at(6,93)gshould_be_darker_than pixel_at(3,9887)
+pixel_at(0,1)Oshould_be_darker_than pixel_at(96,89)
+pixel_at(7,81)Pshould_be_darker_than pixel_at(96,198)
+pixel_at(05,89)tshould_be_darker_than pixel_at(8,288)0
+pixel_at(26,8)Rshould_be_darker_than pixel_at(9,88)
+pixel_at(3,6)mshould_be_darker_than pixel_at(8,5)I|
+pixel_at(5,17)vshould_be_darker_than pixel_at(98,59)
+pixel_at(29,78)+should_be_darker_than pixel_at(9,85)
+pixel_at(993,92)Fshould_be_darker_than pixel_at(985,801)p
+pixel_at(4,89)3should_be_darker_than pixel_at(9299,79663048)=
+pixel_at(2,88)Lshould_be_darker_than pixel_at(29,8)
+pixel_at(2,299098) should_be_darker_than pixel_at(3,48438)
+pixel_at(24,699)xshould_be_darker_than pixel_at(5,8)_J
+pixel_at(698,09)bshould_be_darker_than pixel_at(9,4)bA\0
+pixel_at(48,8)Mshould_be_darker_than pixel_at(48,8369881)
+pixel_at(1899,7)Eshould_be_darker_than pixel_at(859,5)
+pixel_at(91,9)kshould_be_darker_than pixel_at(018,848)
+pixel_at(4,8)should_be_darker_than pixel_at(882,6)
+pixel_at(9,1)Ushould_be_darker_than pixel_at(8,98)
+pixel_at(39129,128)Fshould_be_darker_than pixel_at(888,8)#X
+pixel_at(988,9)Zshould_be_darker_than pixel_at(81942937,99)g
+pixel_at(20,29)ushould_be_darker_than pixel_at(9,8)X
+pixel_at(1,5)Qshould_be_darker_than pixel_at(8,8)*2
+pixel_at(536,8)rshould_be_darker_than pixel_at(9,7)
+pixel_at(8,2)Cshould_be_darker_than pixel_at(9,8894)
+pixel_at(8879,98)should_be_darker_than pixel_at(84,8)
+pixel_at(99,89)Yshould_be_darker_than pixel_at(95,19)
+pixel_at(9,9)Ushould_be_darker_than pixel_at(8910,1)
+pixel_at(490,88)should_be_darker_than pixel_at(98,97)> h
+pixel_at(3,3)Kshould_be_darker_than pixel_at(588,629802)k$*	5*
+pixel_at(88,89)Yshould_be_darker_than pixel_at(980,64)3s
+pixel_at(74,1)should_be_darker_than pixel_at(8,9)	
+pixel_at(228,8).should_be_darker_than pixel_at(281,7076)
+pixel_at(857,01)should_be_darker_than pixel_at(49,8)<F
+pixel_at(39,09)9should_be_darker_than pixel_at(1,4)& 
+pixel_at(9,45)Jshould_be_darker_than pixel_at(8,1)
+pixel_at(87,0859)nshould_be_darker_than pixel_at(65,8)
+pixel_at(83,6)Lshould_be_darker_than pixel_at(801,9299)p
+pixel_at(889,8)should_be_darker_than pixel_at(0,834)K
+pixel_at(84,83)Ushould_be_darker_than pixel_at(2,0028)
+pixel_at(16,8)should_be_darker_than pixel_at(81,0)
+pixel_at(7,9)Pshould_be_darker_than pixel_at(5,8)
+pixel_at(3,9)~should_be_darker_than pixel_at(59,8018)
+pixel_at(3,898)\should_be_darker_than pixel_at(9999,8)
+pixel_at(6,92)should_be_darker_than pixel_at(6,10)
+pixel_at(39,6)Tshould_be_darker_than pixel_at(01,8)i
+pixel_at(7,99882)Rshould_be_darker_than pixel_at(82,2)\edk
+pixel_at(68,1)eshould_be_darker_than pixel_at(9,411)
+pixel_at(98085,85)bshould_be_darker_than pixel_at(6,3)>4
+pixel_at(7,498)}should_be_darker_than pixel_at(43,9)~dm
+pixel_at(5,19)should_be_darker_than pixel_at(28,25);
+pixel_at(2,9)Zshould_be_darker_than pixel_at(89,598)
+pixel_at(8,84968)Dshould_be_darker_than pixel_at(938,869)R
+pixel_at(1,9)vshould_be_darker_than pixel_at(79,72)
+pixel_at(6,5)7should_be_darker_than pixel_at(4,89)f.
+pixel_at(649,8)should_be_darker_than pixel_at(9,1619)?
+pixel_at(925,88){should_be_darker_than pixel_at(986,8)
+pixel_at(4,9)Cshould_be_darker_than pixel_at(5,44)
+pixel_at(339,67)9should_be_darker_than pixel_at(0,85)
+pixel_at(3,99)Hshould_be_darker_than pixel_at(89,72)
+pixel_at(489,4261)should_be_darker_than pixel_at(4,39)V
+pixel_at(114,99)dshould_be_darker_than pixel_at(8,58)!k8l
+pixel_at(7,9)hshould_be_darker_than pixel_at(8,8)I
+pixel_at(98,59)should_be_darker_than pixel_at(09,289)
+pixel_at(8,48085)lshould_be_darker_than pixel_at(8,7)Qt_C
+pixel_at(6,7)6should_be_darker_than pixel_at(99,81)
+pixel_at(8,4)Vshould_be_darker_than pixel_at(0,71)
+pixel_at(3,9)Mshould_be_darker_than pixel_at(87,648)
+pixel_at(43,8)ishould_be_darker_than pixel_at(9,0)W/~
+pixel_at(98984,99)Lshould_be_darker_than pixel_at(41,91)e@
+pixel_at(0,2)Dshould_be_darker_than pixel_at(269,7)y
+pixel_at(8,6)Qshould_be_darker_than pixel_at(89,8)
+pixel_at(92,898)8should_be_darker_than pixel_at(97,844)
+pixel_at(8,3)Kshould_be_darker_than pixel_at(84,7)8
+pixel_at(98,898)	should_be_darker_than pixel_at(9,8)/
+pixel_at(9,9)cshould_be_darker_than pixel_at(9,6)n
+pixel_at(8,21899)pshould_be_darker_than pixel_at(3,69819)q
+pixel_at(975,6)Dshould_be_darker_than pixel_at(9,55298)J
+pixel_at(7,9)^should_be_darker_than pixel_at(9,993)4
+pixel_at(890,4)should_be_darker_than pixel_at(51,09418)
+pixel_at(6,98998)8should_be_darker_than pixel_at(929,6)t
+pixel_at(99598,24)should_be_darker_than pixel_at(3,8)N
+pixel_at(901,3)wshould_be_darker_than pixel_at(8,14640)&
+pixel_at(4,99)should_be_darker_than pixel_at(0,0)m
+pixel_at(5,98)9should_be_darker_than pixel_at(8,9)
+pixel_at(6,95)Zshould_be_darker_than pixel_at(78,7)d
+pixel_at(43,95)gshould_be_darker_than pixel_at(68,795)x
+pixel_at(0,04)should_be_darker_than pixel_at(569,9)
+pixel_at(189,5998) should_be_darker_than pixel_at(731,127)
+pixel_at(8,87)should_be_darker_than pixel_at(1,4)T
+pixel_at(1,5)rshould_be_darker_than pixel_at(889,8)
+pixel_at(2,8)yshould_be_darker_than pixel_at(6,8)
+pixel_at(2,2)Hshould_be_darker_than pixel_at(9,25)
+pixel_at(9,8)Sshould_be_darker_than pixel_at(81,9)
+pixel_at(4,889298)Xshould_be_darker_than pixel_at(5,8)@\e

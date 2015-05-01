@@ -1,0 +1,674 @@
+voidoperator=(   const     &)  ; //Notimplemented3
+void   operator	=(const	&) ; 	//Not implemented
+voidoperator =(	 const& )	; //  Not
+ implemented..p~
+voidoperator =(const&)   ;//Notimplemented
+	void	operator=(const &) ;	 // Not   	implementedd
+    voidoperator
+=(const&	); //Not	Implemented...
+ 	voidoperator=( const&)   ;   //Not implemented.\0
+voidoperator	=(  const&);  //
+Notimplemented...WJXTI
+ voidoperator =(
+  const	&  ) ;// 
+Notimplemented.
+ void  operator=
+(const  &);//Not  implemented:
+voidoperator =	  ( 
+const &);//Not Implemented
+voidoperator=  (const &)	;//	  
+ Not Implemented..
+void operator = ( const
+&) ;// 		NotImplemented...z
+ voidoperator=(const	&)  ;//NotImplemented.
+  void operator=(  const  &);	  //	
+	Not ImplementedM
+  void   operator   =( const	 &   );//NotImplemented..,.
+voidoperator=(const	&);//NotImplemented..
+ voidoperator	=  (  const& );//NotImplemented.y.\a
+		void operator= (const
+  &);//Not	 implemented.k
+  void operator =(const &	) ;//NotImplemented
+ voidoperator=( const& );//	NotImplemented.
+ voidoperator =(	const&);	
+ //Notimplemented
+void	 operator  =(const  &);//  NotImplemented.
+voidoperator =(const & )
+ ;//NotImplemented...
+voidoperator=(const		& )   ;//	 NotImplemented
+void operator	=( const   	&) ;		 
+
+ //Not
+  implemented	2/
+void  operator=  (	 const &); //NotImplemented
+void   operator
+= (    
+const &);//Notimplemented.
+voidoperator = (const   & );//
+Not
+Implemented..I:
+voidoperator=( 	 const&);//  Not   implemented..
+voidoperator = (const    & ) ; //NotImplemented.>
+voidoperator 	=(const  	&) ; //Notimplemented
+voidoperator=(const 	    &) ;//Notimplemented.
+voidoperator =(const	&); //NotImplemented
+voidoperator 
+ =(const 	 & );//Notimplemented
+    voidoperator= 
+ (const	&  );	 //Not Implemented..BSm9s4
+  voidoperator
+= ( const&) 	;    
+		 //
+Not implemented.....G
+ voidoperator =(const		    &);  //	Not	implemented3`
+ void	operator=(const&
+); //  Notimplemented
+    voidoperator	= ( const&); // 	Notimplemented..
+void operator=	 (const  &);//  NotImplemented
+
+   void	operator=( const  	& 	)	 	;//Notimplemented
+	 	void 	 	 
+operator  =( const& ) ; //Not Implemented
+voidoperator= (	  
+ const&);
+// Not implemented...P
+
+void operator=(const & );//Not Implemented
+void operator=(const&);//Not	Implemented...s
+
+void operator	=(	const&   );
+// NotimplementedY
+voidoperator=    ( const
+&)
+; // Not	Implemented
+voidoperator=	(const&);//Not     implemented#0
+voidoperator		=(const	&) ;//NotImplemented\
+voidoperator=  	(const  &) ; 	//Not 	Implemented.8
+void operator= (  const
+& );
+ // NotImplementeddOT
+voidoperator=(const  &); //NotImplemented..
+voidoperator= 	 (	const&	  );//NotImplementede
+voidoperator=( const& );//Notimplemented
+voidoperator=(	const
+		& ) ;	 // Not Implemented.....
+void operator=( const&);//Notimplemented
+void  operator	=  (const&	) ;// NotimplementedW3
+	 void
+ operator		=  (const &);// Notimplemented..
+voidoperator=(const&) ;    //Not	Implemented..
+voidoperator =( const& );//NotImplemented
+voidoperator=  ( const&);  // NotImplemented..'x%
+  void operator
+= (const &);// Notimplemented5
+void operator  =(const&);//NotImplemented.4#CM
+voidoperator=(const	  
+& 	);//Notimplemented..
+void operator=  (const
+ & );  //NotImplemented
+void operator= (const &) ;//Notimplemented.
+voidoperator=(const & )   	  ;//
+NotImplemented.(s
+void operator =( 	const	&); //Not Implemented.
+void operator=( const&); //Not  implemented..
+  void operator= (const   	& );//NotImplemented.
+	void operator=  (const		&); // 	Notimplemented.vrt
+void operator=(const  &);	// Not	 implemented..
+  voidoperator=(  const 
+   & );//Not  ImplementedS
+
+ voidoperator=(const	&) ;// Notimplemented...
+void operator  = (const& );
+//NotImplemented
+voidoperator =   (const  &); // NotImplemented.	
+ voidoperator=(const&);// Not implemented.L
+ void  operator=
+(const &)  ;// Not  implemented
+	 voidoperator =(const   & 	 );	//	 Not	Implemented+r
+voidoperator=(	const	&); 	//Not	 Implemented...
+voidoperator 
+=(const &);		//  NotImplemented
+voidoperator=(const 	&   	);   //NotImplemented(u-t
+ 
+ void  operator=(const&);// 	  Not implemented..
+	void
+ operator =(const&);//Not	implemented....
+	void operator=(		const&) ;//Notimplemented
+voidoperator=   (const   &);//Notimplemented..
+void   operator
+=(const & )	;//Notimplemented...
+voidoperator  			= (const	&    );	 // NotimplementedT
+void operator=
+
+ (  
+const&)  ;//	Notimplemented.
+ void operator	 =( const   & ) ; 	//  Not	Implemented:\
+void 	 	
+operator =(const&);	 // Not implemented.
+ voidoperator 
+=(  	const	 & 
+) ;//Notimplementedy
+	 voidoperator=(
+   const    & );// Not
+ implemented..
+voidoperator=(const&);//  Notimplemented,t
+	voidoperator= (  const
+ &) ;//Notimplemented.:
+voidoperator= (const	 &); //Notimplemented..
+ voidoperator=(const& 	   );//   
+ NotImplemented.(
+voidoperator=(
+    const 	  &  );//Not  Implemented..
+
+  void operator=(const&) ;//Not Implemented.;
+
+void operator=( const	 
+  &  );//Notimplemented
+	 void  	operator=(   const&); // NotimplementedS}Y
+void   operator=( const   &);// 		Notimplemented...
+voidoperator	=(const& );//Notimplemented
+void	operator=(const&);// Notimplemented..^Q
+	voidoperator =(  const  &)  ;//Not Implemented
+voidoperator=( const
+     &); // Not 	 	Implemented
+	  voidoperator= ( const &	
+) ; //  Notimplemented
+   voidoperator=( const&  );//Not 
+
+
+	Implemented
+voidoperator
+  =  (	const &) ;//Not 	Implemented....
+voidoperator = (const	&);//Not Implemented}f^
+ voidoperator= (const& 	) 
+   ;// Not	Implemented~
+ 		void operator	= ( const &	);//NotImplemented.
+void	operator=(	 const&)	;// Not implemented...pu
+ 
+void operator= (const
+ &);//  NotImplemented
+voidoperator	=(	 const	 	&);	//NotImplemented.
+ 
+voidoperator=(const &);		//Not implemented:
+ void
+ operator = ( const&); // Notimplemented..
+voidoperator   =(const&)  ;//Not Implemented.9
+void operator 
+=(  const &)	;	//Notimplemented....
+ voidoperator =(  const& ) ;// Not implemented
+void    operator=(	const&); //	NotImplemented}
+voidoperator=(const	&);//NotImplemented
+voidoperator=(const&
+ 
+	  )   ;	//Notimplemented.
+ void		 operator= (
+const& )	 	;
+// NotImplementedk
+  voidoperator=(const   &);//NotImplemented.
+ voidoperator  = (const&  );//Notimplemented.
+ void operator = (	const  	&);//NotImplemented.....
+	 voidoperator =(const
+&);//NotImplemented
+voidoperator =	 (const &) ;//	Notimplemented.
+	void operator  =(const&	  ) ; //NotImplemented
+void
+operator 
+  =(const&);//NotImplementedm
+ voidoperator
+=(const	&)	;//Not  implemented
+voidoperator=  (const   &
+ )
+;//
+ NotImplemented...
+void operator	 
+=(const&);// 
+NotImplemented
+void  operator =	( 	const	&	 );	//Not
+Implemented
+voidoperator	=(const&);// NotImplemented
+ void  operator =  (const
+ &	);//Notimplementedm
+void   operator =(const 	& );//Notimplemented
+ void  operator=(const &) ;//Notimplemented
+  void operator =(const &) ;
+//Not	implemented.
+voidoperator =(
+const	& 
+);  //Not Implemented.E(
+voidoperator =		 (const	&);//Notimplemented....e
+ voidoperator=(   
+ const  &);	  //Notimplemented.
+
+voidoperator=(const	   &
+);//Not	implemented..
+void operator  =(const & );// Not
+implemented
+void	operator=(const& ) ; // Not  Implemented...
+voidoperator =(  	const   &
+ );//Not 	Implementedo
+void   operator    =( const
+  &   );//  Not implemented.Z
+
+voidoperator=(const 		&) ; //	Not Implemented.AG
+void operator	 =(     const & );  //NotImplemented...&`2S\e
+voidoperator   =(const   &); //Not	
+implemented..)
+	voidoperator=    (const& ) 	;//Not  Implementeds
+ void operator=   
+(const  
+   & ); //Notimplemented6
+  
+void	operator=(const	   &);//Not implemented..
+	    void operator= 	 ( const	
+&);//   Not
+
+Implemented
+voidoperator=( const  	  & );//NotImplemented_
+voidoperator  	=(const	 & ) 	; //	NotImplemented...N
+voidoperator=  ( const&  	);   //Notimplemented..'v
+ voidoperator=(const		&	);//NotImplemented
+void  operator=(const
+  &);
+  // NotImplemented
+ voidoperator=(const  &);//NotImplementedJ
+
+voidoperator   =(const&)	; //NotImplemented.
+	voidoperator=( const &) ; // Notimplemented...(
+voidoperator=(const&); // 		Notimplemented.#\"
+void operator=(  const 	&) ;
+//NotimplementedR
+
+voidoperator  =  ( const & ) ;//  
+Notimplemented
+voidoperator=(const   &);// NotimplementedV
+void  operator=	 	 (const& );// 
+NotImplemented
+voidoperator=( 
+    	const 	&) ;	//Not	Implemented
+  	voidoperator= ( const
+	&
+  ); //  Notimplemented.....
+voidoperator=(const & 	    ) ;//Notimplemented
+voidoperator=( 
+ const&)  ; 	 // NotImplemented
+void  operator=(const	
+	 	 
+&  );// Notimplementedg
+voidoperator=(const  	&   )  
+;  	//Not
+implemented..
+void operator=(const &) 	;	//Notimplemented.
+voidoperator=(const	&         );//Not  Implemented..!
+
+voidoperator= (const 	  &);//
+Not implemented
+	voidoperator =(const &);// Not implemented..d
+ 	voidoperator=(const&);// NotImplemented..
+voidoperator=
+(const	  
+ 	&) 	;//NotImplemented
+	  voidoperator=(const  	 &	)	;//Not implemented 
+	 voidoperator=	( const  &)
+ ;// Not  Implemented....
+
+void operator =
+(  const	& ) 		 ; // NotImplemented
+voidoperator = ( const
+& );//   	 Notimplemented...
+void operator =(const & );	
+//
+ NotImplemented
+voidoperator
+=( const&); 	//
+NotImplemented...
+voidoperator	= 	( const  
+    &
+   );//Not 
+implemented
+voidoperator=(const   &) 
+;// Not  implemented
+   void operator=(  const &  );//Not   implemented
+ voidoperator= 
+(  const &)	  ;//Not  	implemented.W
+ 	voidoperator=(const	&) ;//NotimplementedJ
+ voidoperator	  =	(  const&  );    
+//Not  Implemented
+void operator
+ =(const& 	 );//NotImplemented.....G
+voidoperator	=(const&);// NotImplemented
+voidoperator=(const & );//  	NotImplemented.....|Mh
+voidoperator= (const  &  )	; //NotImplemented!C-
+voidoperator= (
+const 
+ &)	  ;// Not	implemented..
+voidoperator =( const&);//  
+Notimplemented..
+ void operator=(const
+ &)	;  //NotImplemented.
+ voidoperator=(const  &) ;//Not
+
+Implemented..
+voidoperator=   (	const 
+	  &);//NotImplemented
+void operator=(const  & );  //Notimplemented.
+void  operator =( const  & ) ; //NotImplemented..\"
+ voidoperator=
+(  const &);//Notimplemented
+	 voidoperator=  (const & ); //Notimplemented..kq
+voidoperator	=(const&);//Not Implemented
+	  voidoperator=(const 	&)	;//  Not  	Implemented
+voidoperator=(const&   )	;//   	Notimplemented
+voidoperator  	 =(const& )  		;//  	NotImplemented
+voidoperator=( const&) 	;//Notimplemented..D
+ voidoperator=( 
+ const	&)
+;
+//NotImplemented
+voidoperator =( 	const&);
+ //NotImplemented......
+voidoperator= (const 	 	 & ) ;//Not Implemented
+voidoperator  = (const&);//NotImplemented..
+voidoperator=(const  &) ; //Not	implemented....
+void
+	operator=(const	
+	  & )	; //NotImplemented6p
+void 	operator=(const &  )  ;//Notimplemented.)
+ voidoperator= (const 
+
+&) 	; //NotimplementedF?F
+voidoperator= (const&);//Notimplemented...
+voidoperator =  (  const   
+ &)   ;
+ //
+Not 
+implemented
+void 	operator	= (const&   );	 //   
+	Not implemented
+voidoperator	= (const  &); //NotImplementedf
+ voidoperator=(const&	 );//Not Implemented
+ 	voidoperator = (const	&) ;//Not  implemented..
+
+ voidoperator=		   ( const
+&); // Not	implemented.
+	 voidoperator
+=(const
+& );//Not Implemented
+  voidoperator  	  = 
+(  
+const  &
+);//Not implemented..
+void
+operator=(const  &);//Notimplementedh
+   void  operator	=(	const&) ;//NotImplemented
+voidoperator=(	 const &) ;//NotImplemented
+ voidoperator=( 
+const 	 &) ;// Notimplemented\0
+voidoperator
+=( 	const	& ) ;//  NotImplemented
+ voidoperator    =  ( const& 	) ;//Not
+ Implemented
+	voidoperator 	=(const& );//NotImplemented
+ void  operator  =(const&) 	;	//Notimplemented..*a
+ 
+void
+	 operator=(const
+&); //			NotImplemented.
+ void operator=(const  	  &) ;//  Not  	 implementedF
+voidoperator =(  const &  );//Notimplementedg7L
+ void 	operator=(const  
+
+	&) 	;//NotImplementedx
+voidoperator  =(  	const &)  ;//Notimplemented
+
+void		 operator	=(const
+& );// NotImplemented
+void 		operator=( const&)    ;	 	// Not Implemented.....
+voidoperator=(const
+ 	& ) ;//Not  implemented.
+voidoperator = (const	&)	 ;//
+NotImplemented.
+ voidoperator   = (const &)	 ;// Notimplemented......\a
+voidoperator
+=  (const&  ) ;// NotImplemented.]?
+ void  	operator=   (const&);//	 	NotimplementedZ
+voidoperator=
+(const	   &);		// NotImplemented..
+
+void	operator =	(  
+const&);//Not implemented
+  	  	voidoperator  =
+(const&)	;//Not Implemented
+void	operator 
+=	  (  const& );  //Not	Implemented.
+ 	voidoperator=(
+const & );//Notimplemented.
+void operator= (const&
+);//Notimplemented
+void  operator=	   (const&	 ) ;//Not
+Implemented.N
+ voidoperator=(const &);//NotImplemented.....B
+ voidoperator	=(const 	  
+	&
+ );//NotImplemented
+voidoperator=	(const &
+ 
+) 	; //Not implemented
+voidoperator=(const&);//  Not implementedGn
+voidoperator=(const &
+	)
+;//Not   implemented.
+void operator=( 	const   & ) ;//Not
+Implemented.\azv(
+voidoperator =(const  &)	;  // Not 	implemented..
+voidoperator  =(const &);	//Not implementedaL0
+voidoperator= 
+( const	&)    ;		  //
+Not implemented
+ voidoperator  =(	 const &)
+ ;// Notimplemented
+	voidoperator
+=(const &)  ;	//Not 	Implemented..F
+voidoperator=(const &  );	//Not  implemented>
+void operator    =(const&);//	Notimplemented....
+	   void
+ operator =
+ (const &);// Notimplemented...v
+void	operator	=(const&	)	;//Not		implemented_%6s
+voidoperator=(	 const    &);//NotImplementedB
+voidoperator=   (const   &);//Not Implemented
+voidoperator=( const &    ) ;//Notimplemented
+voidoperator=(const&    	  ); //Notimplemented..>
+
+voidoperator=( const&)	;// Not   
+Implemented..
+void	operator=
+(const&);// NotImplemented..
+voidoperator = ( 	 	const&);//Notimplemented
+
+void operator=
+(const &); // NotImplementeda
+ 	  voidoperator=      (const 	& );	// NotImplemented.1
+void operator=
+(const&);	 //Notimplemented..<8}v	_X
+void operator=(const 
+ 
+ &); //
+Not Implemented.
+
+   voidoperator=( const&   ) ;  //NotImplemented. 
+voidoperator= (const     	 &);
+// 
+Notimplemented8
+
+ 	 voidoperator= (const &  ); //NotImplemented..!
+ void operator= (const &		); //Notimplemented..
+    voidoperator=(
+	    const&);//Not
+		implemented\0lr
+voidoperator   =	(const	 
+	&	);//Not  Implemented.
+	voidoperator=	 ( const  &);//    NotImplementedd
+void operator =(   const&) ; //Not
+ Implemented.
+ voidoperator =	( const &) ;  // Not Implemented
+ 	  void operator=(const & );//NotImplemented
+ voidoperator = (const   & )	;//Not implemented.Lt
+voidoperator=(const   & )  ;//NotImplementedj
+ voidoperator	= (	
+ const  &  )	 ; // Not	implemented.
+void	operator= (const &) 
+;//NotImplemented.Xo
+void  	   operator=(const &); //Not Implemented.GPw
+voidoperator=( const &) 	
+;  //Not
+	implemented
+ void operator= (  
+	const&);//Not
+implemented.
+  void operator =( const 
+&) ;//   NotImplemented..
+void  
+ operator=  (const&  );//NotImplemented
+voidoperator=(const     &);//Not implemented.
+voidoperator=	(const
+&   ) ;// NotImplemented
+ 	  voidoperator  =( const	 &  )  ; // NotImplemented.
+void	operator=(const 
+
+   &);//
+Notimplemented.
+voidoperator	 =( const &) ; //  Not  Implemented.
+  
+  	void
+operator= (const&)		; //Notimplemented:
+  voidoperator=(const&)  ; 	// Not	implemented
+voidoperator = (const  &)		;//	 Not  Implemented
+void  operator =(const&)  ;//  Notimplemented.
+voidoperator=   (const&) ;//NotImplemented
+voidoperator=(const	& );//NotImplemented...
+void operator =(const	  &);//  Not Implemented.
+void   operator = 
+( const&)    ;	 // 	Not		Implemented.Z9Gr
+ voidoperator =(  const &  ) ;	 //Notimplemented+H~
+voidoperator=(const& )
+;//Not
+   	implemented.T
+void operator	= (  const	&  ) ;  //Notimplemented
+  void operator   	 = 	(const& );//Not   Implemented..b
+voidoperator =( const&);// NotImplemented
+void
+operator=(const&    	) ;
+//Not   implemented. 
+ voidoperator 	=  (	 const 	&)	 ; 	 // Notimplemented
+ voidoperator=(const&);//   Notimplemented..9
+voidoperator=(const &	); //Not	Implemented......
+void operator=(const&);//Not	Implementedn
+voidoperator=(const&);//  Not 
+implemented._J?
+voidoperator
+ =(const&   )	;// Not implemented.
+    voidoperator= ( const& 		 );// Notimplemented
+void
+		operator=(const   & )
+	;//Notimplemented4
+void 
+
+ operator=	 (  const   &); //Not 	 implemented
+ void operator=( const	&);// 
+Notimplemented
+voidoperator =(const&  	)  ;//Notimplementedz\s0`
+	voidoperator=(const  &    );//Not	  Implemented.(
+ 	voidoperator	=		(const	& 	)
+;//NotImplemented...
+void	operator= (const 
+	&)		 ;//Not 	implemented
+voidoperator=  ( 
+	const&);//	Not Implemented
+  voidoperator  = ( const 
+&	
+);//Notimplemented
+ void operator=(const&);//Not	implemented...._&
+void operator=(const&); // 	 NotImplemented
+voidoperator=(const &	) ;// Notimplemented
+    
+voidoperator= (const	&)  ;//Not Implemented.
+
+voidoperator= (const&)  ;     
+// Notimplemented
+void  operator	= (const &);	//    
+Not	implementedMZzq
+ voidoperator =( 	const  &);  //NotImplementeddm'
+voidoperator=(const
+& 	)	 ;// NotImplemented
+   	voidoperator = ( 
+const   &) ;	//NotImplemented.
+ void  operator=(const   &); //Notimplemented..Y
+ voidoperator   = (const & );
+//Notimplemented
+ voidoperator=(       const  & ) ;//Not   	ImplementedBlB6o4<
+ voidoperator 
+=(const  &   );//Not	 implemented.o
+voidoperator =	(  
+const&  );//Notimplemented.
+voidoperator = 	(const  	&
+);//Not 	Implemented%q	Yp
+ void	operator	=(  const& )  ;//  	Not Implemented.y8
+  void  operator	=(const&);// Notimplemented
+  voidoperator= (const&);// NotImplemented
+voidoperator=(const &
+ ); //Notimplemented.
+void	operator=( 	const
+&	) 	  ; // NotimplementedU
+voidoperator =	( const&);// NotImplementedo
+void operator=( const	 & );	//Notimplemented.
+   void operator =(	
+const
+&  ); // Notimplemented$
+void  operator  = (const & 
+) ;// Not  implementedG
+voidoperator=(const 	&) ; //NotImplemented..
+voidoperator=(const    & 	) ; 	  //  NotImplemented..K
+void operator = (
+const
+&) ;// Notimplemented.
+ void	 operator= (const
+ &); //NotImplemented.<d
+  voidoperator=(const     &);	 
+
+//NotImplemented.
+voidoperator=(const &)	 
+  ;//
+Notimplemented.%
+void operator = (const&);//NotImplemented.
+ voidoperator=(	const& 	 );//NotImplemented.
+   	void operator=( const &);//Not implemented.
+ void operator=( const 	& );// NotImplemented.R
+
+ voidoperator=( const&);//
+NotImplemented..[EF
+voidoperator=(const& 	   );//Not  implementedV
+voidoperator=(const&);   //NotImplemented
+void operator		 
+=(const	& )	 ;// Notimplemented
+
+voidoperator		=(const
+&	  );//   Not Implementedv
+	 voidoperator=(const & );//
+Not   implemented9i
+void operator=(const&);//Not implemented.cR
+voidoperator  = 
+	(const &)  ; 
+ //Not	implemented
+ 	voidoperator	=	(	const 
+&) ;  //	 	NotImplemented
+ voidoperator=
+(const&) ; 		//NotImplemented(
+ voidoperator=(const&  	);//Notimplemented4u
+voidoperator=(   	const&);//      Not	implementedw~
+	void  operator  = (const
+ 	
+& ) ;//NotImplemented
+voidoperator =
+(const&);//NotImplemented
+voidoperator=(const  &  ) ;
+ //NotImplemented..

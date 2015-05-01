@@ -15,15 +15,15 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             PreProcess.sayHi();
-            string analysis_output_path = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\";
-            string filteredCorpusPath = analysis_output_path + "filteredCorpus.txt";
+            string output_path = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\";
+            string filteredCorpusPath = output_path + "filteredCorpus.txt";
 
-            string rexStringsBase = analysis_output_path + @"rexStrings\";
+            string rexStringsBase = output_path + @"rexStrings\";
             Directory.CreateDirectory(rexStringsBase);
 
             if(!File.Exists(filteredCorpusPath)){
 
-                string exportedCorpusPath = analysis_output_path + "exportedCorpus.txt";
+                string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exportedCorpus.txt";
                 if (!File.Exists(exportedCorpusPath))
                 {
                     Console.WriteLine("exiting because the file does not exist: " + exportedCorpusPath);
@@ -61,7 +61,7 @@ namespace ConsoleApplication1
             }
             
 
-            string allRowsBase = analysis_output_path+@"allRows\";
+            string allRowsBase = output_path+@"allRows\";
             Directory.CreateDirectory(allRowsBase);
             double minSimilarity = 0.75;
 
@@ -79,7 +79,7 @@ namespace ConsoleApplication1
             else
             {
                 // we have to do batches bc runaway regex matchings never release memory
-                int batchSize = 2048;
+                int batchSize = 1280;
 
                 Console.WriteLine("batchSize: " + batchSize + " nRowsBefore: "+nRowsBefore+ " nRows: "+nRows);
                 SimilarityMatrixBuilder.createBatchOfRows(batchSize,allRowsBase,filteredCorpusPath, rexStringsBase, minSimilarity);

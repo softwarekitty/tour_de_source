@@ -1,0 +1,426 @@
+6'#define __NR_A	 (__NR_SYSCALL_BASE+5)#[L ]_
+#define __NR_o(__NR_SYSCALL_BASE+)
+T#define __NR_8J(__NR_SYSCALL_BASE+)
+#define __NR_    
+(__NR_SYSCALL_BASE+ 
+  3wL)
+d#define __NR_(__NR_SYSCALL_BASE+)
+#define __NR_(__NR_SYSCALL_BASE+ )\e3
+#define __NR_f(__NR_SYSCALL_BASE+)
+#define __NR_2_(__NR_SYSCALL_BASE+ 5)
+s-#define __NR_   (__NR_SYSCALL_BASE+	Z)
+#define __NR_(__NR_SYSCALL_BASE+ _849)
+n#define __NR_0k9PFVD   (__NR_SYSCALL_BASE+87)|#^
+\"#define __NR__ (__NR_SYSCALL_BASE+	  	)<
+#define __NR_(__NR_SYSCALL_BASE+ )
+|#define __NR_M9y8846(__NR_SYSCALL_BASE+)d.
+!S#define __NR_(__NR_SYSCALL_BASE+)
+#define __NR_	(__NR_SYSCALL_BASE+  )YEL
+#define __NR_	(__NR_SYSCALL_BASE+)/
+#define __NR_(__NR_SYSCALL_BASE+0R)
+#define __NR_(__NR_SYSCALL_BASE+	)l6^I}3
+#define __NR_K  	(__NR_SYSCALL_BASE+);=m
+#define __NR_(__NR_SYSCALL_BASE+	P)*w	
+`#define __NR_G(__NR_SYSCALL_BASE+)gs
+#define __NR_ (__NR_SYSCALL_BASE+ 88689)
+#define __NR_9M(__NR_SYSCALL_BASE+)<
+!#define __NR_ (__NR_SYSCALL_BASE+ nk)
+#define __NR_(__NR_SYSCALL_BASE+9)
+#define __NR_(__NR_SYSCALL_BASE+ )
+#define __NR_ (__NR_SYSCALL_BASE+z)R#
+#define __NR_95(__NR_SYSCALL_BASE+)
+,xT#define __NR_     	 (__NR_SYSCALL_BASE+)
+#define __NR_(__NR_SYSCALL_BASE+8c)+
+#define __NR_9(__NR_SYSCALL_BASE+6p_P9)
+#define __NR_9JO(__NR_SYSCALL_BASE+ )
+#define __NR_i7(__NR_SYSCALL_BASE+)\
+#define __NR_MT6   (__NR_SYSCALL_BASE+)
+#define __NR_ (__NR_SYSCALL_BASE+7I)
+#define __NR_(__NR_SYSCALL_BASE+ )
+#define __NR_(__NR_SYSCALL_BASE+)
+ K#define __NR_3r   (__NR_SYSCALL_BASE+  e)
+#define __NR__z(__NR_SYSCALL_BASE+
+ 	
+ )
+j#define __NR_z9(__NR_SYSCALL_BASE+d)
+#define __NR_(__NR_SYSCALL_BASE+O)ii\e
+#define __NR_	(__NR_SYSCALL_BASE+)
+93##define __NR__00zl_	 (__NR_SYSCALL_BASE+)r
+#define __NR_ 
+(__NR_SYSCALL_BASE+)
+#define __NR_E(__NR_SYSCALL_BASE+)
+ghh#define __NR_6q(__NR_SYSCALL_BASE+)
+?#define __NR_(__NR_SYSCALL_BASE+)%
+5B#define __NR_9G(__NR_SYSCALL_BASE+)D
+#define __NR_(__NR_SYSCALL_BASE+19)
+\|#define __NR_90tU0n1(__NR_SYSCALL_BASE+  )
+#define __NR_5(__NR_SYSCALL_BASE+)H
+#define __NR_l(__NR_SYSCALL_BASE+)
+#define __NR_9yz3(__NR_SYSCALL_BASE+ 8a)T;7
+#define __NR_(__NR_SYSCALL_BASE+ v)
+#define __NR_rt9(__NR_SYSCALL_BASE+)o!
+j#define __NR_99(__NR_SYSCALL_BASE+)G
+#define __NR_ (__NR_SYSCALL_BASE+ )
+#define __NR_ (__NR_SYSCALL_BASE+)
+#define __NR_(__NR_SYSCALL_BASE+ u19)d
+&0
+G#define __NR_ (__NR_SYSCALL_BASE+  	5)v6
+#define __NR_Z	(__NR_SYSCALL_BASE+ )q<d
+#define __NR_034(__NR_SYSCALL_BASE+8)m
+#define __NR_(__NR_SYSCALL_BASE+	
+G)2C'
+'#define __NR_(__NR_SYSCALL_BASE+  el)b
+#define __NR_6 (__NR_SYSCALL_BASE+P)>\
+#define __NR_(__NR_SYSCALL_BASE+  )
+#define __NR_ (__NR_SYSCALL_BASE+)
+H#define __NR_(__NR_SYSCALL_BASE+  )*
+9#define __NR_z
+(__NR_SYSCALL_BASE+)
+#define __NR_9 (__NR_SYSCALL_BASE+9_sNp3)qp
+k#define __NR_5cr (__NR_SYSCALL_BASE+  )
+#define __NR_69(__NR_SYSCALL_BASE+)<N
+#define __NR_a(__NR_SYSCALL_BASE+)
+#define __NR_7(__NR_SYSCALL_BASE+)
+#define __NR_ (__NR_SYSCALL_BASE+H)
+#define __NR_ (__NR_SYSCALL_BASE+88)
+^#define __NR_G8(__NR_SYSCALL_BASE+pV19)
+#define __NR__(__NR_SYSCALL_BASE+ 03i)
+#define __NR_(__NR_SYSCALL_BASE+0)~
+#define __NR_ (__NR_SYSCALL_BASE+l)y
+#define __NR_0 (__NR_SYSCALL_BASE+)%
+#define __NR_a99A (__NR_SYSCALL_BASE+9)
+#define __NR_(__NR_SYSCALL_BASE+)t
+#define __NR_(__NR_SYSCALL_BASE+  
+ )
+t#define __NR_(__NR_SYSCALL_BASE+IHK)
+#define __NR_ (__NR_SYSCALL_BASE+)j
+8#define __NR_
+(__NR_SYSCALL_BASE+89u)
+;B#define __NR_ 		(__NR_SYSCALL_BASE+C97)1r
+4_#define __NR_(__NR_SYSCALL_BASE+ 18F8X)
+#define __NR_F7w(__NR_SYSCALL_BASE+	55_7)R
+#define __NR_(__NR_SYSCALL_BASE+)z
+#define __NR_H6(__NR_SYSCALL_BASE+ 9)
+%4#define __NR_ (__NR_SYSCALL_BASE+091)
+#define __NR_  
+(__NR_SYSCALL_BASE+ )
+#define __NR_9Q
+(__NR_SYSCALL_BASE+	  )
+K{3.#define __NR_  	(__NR_SYSCALL_BASE+)8
+#define __NR_F(__NR_SYSCALL_BASE+)
+C#define __NR_   	 (__NR_SYSCALL_BASE+)
+#define __NR_r9 
+ (__NR_SYSCALL_BASE+ )4
+l#define __NR_  (__NR_SYSCALL_BASE+ 	)f
+#define __NR_   (__NR_SYSCALL_BASE+ )
+`#define __NR_(__NR_SYSCALL_BASE+
+YcR)[
+#define __NR_bM(__NR_SYSCALL_BASE+)K
+bS\"PM#define __NR_8Y9(__NR_SYSCALL_BASE+z9Jp)TYEI\"
+uVa#define __NR_B (__NR_SYSCALL_BASE+)7?
+8#define __NR_9(__NR_SYSCALL_BASE+  4s)
+y#define __NR_(__NR_SYSCALL_BASE+	 	    )Bd
+Q`#define __NR_ez9(__NR_SYSCALL_BASE+8p)
+L#define __NR_N(__NR_SYSCALL_BASE+	2)v7[
+#define __NR_TD(__NR_SYSCALL_BASE+ 5)Z
+mCj#define __NR_(__NR_SYSCALL_BASE+  	)
+@c#define __NR_x(__NR_SYSCALL_BASE+
+ )J
+#define __NR_(__NR_SYSCALL_BASE+)*
+OHt/#define __NR_32	(__NR_SYSCALL_BASE+ yti)I
+D#define __NR_	(__NR_SYSCALL_BASE+0z)
+#define __NR_(__NR_SYSCALL_BASE+ )/
+?#define __NR_ (__NR_SYSCALL_BASE+A)|
+#define __NR_x (__NR_SYSCALL_BASE+ )Zg
+Ge#define __NR_ (__NR_SYSCALL_BASE+97n)o/
+#define __NR_6  (__NR_SYSCALL_BASE+1)
+1#define __NR_ (__NR_SYSCALL_BASE+L)
+7#define __NR_(__NR_SYSCALL_BASE+5J)H
+;#define __NR_(__NR_SYSCALL_BASE+)~
+#define __NR_(__NR_SYSCALL_BASE+)(
+#define __NR_(__NR_SYSCALL_BASE+9)mjs_pY
+#define __NR_z28fR1v_7(__NR_SYSCALL_BASE+)y
+#define __NR_A5a(__NR_SYSCALL_BASE+ 
+)
+#define __NR_(__NR_SYSCALL_BASE+l)&
+#define __NR_2(__NR_SYSCALL_BASE+	n)
+#define __NR_	(__NR_SYSCALL_BASE+9A)
++#define __NR_(__NR_SYSCALL_BASE+9)
+#define __NR_  (__NR_SYSCALL_BASE+
+ 9)
+$#define __NR_47(__NR_SYSCALL_BASE+)
+*#define __NR_59YL9(__NR_SYSCALL_BASE+6)>Q
+@#define __NR_r(__NR_SYSCALL_BASE+)#m
+#define __NR_  	(__NR_SYSCALL_BASE+)eg
+#define __NR_9942(__NR_SYSCALL_BASE+ )
+'Q#define __NR_(__NR_SYSCALL_BASE+ )
+#define __NR_	(__NR_SYSCALL_BASE+c)
+#define __NR_ (__NR_SYSCALL_BASE+)
+#define __NR_(__NR_SYSCALL_BASE+  ).0{
+!#define __NR_(__NR_SYSCALL_BASE+  	 )3
+#define __NR_7(__NR_SYSCALL_BASE+x)
+#define __NR_3 (__NR_SYSCALL_BASE+8)
+P#define __NR_86(__NR_SYSCALL_BASE+o)
+#define __NR_8	(__NR_SYSCALL_BASE+0)
+#define __NR_6      (__NR_SYSCALL_BASE+)
+`#define __NR_o8HI(__NR_SYSCALL_BASE+Ox7)`#
+f#define __NR_Iz2     (__NR_SYSCALL_BASE+)
+#define __NR_
+(__NR_SYSCALL_BASE+)
+#define __NR_2   (__NR_SYSCALL_BASE+0)U
+#define __NR_438(__NR_SYSCALL_BASE+7)
+#define __NR_	(__NR_SYSCALL_BASE+a0)P
+H#define __NR_8(__NR_SYSCALL_BASE+)
+#define __NR_C	 (__NR_SYSCALL_BASE+	)'
+x#define __NR_p2Nr3J(__NR_SYSCALL_BASE+)
+Y#define __NR_ (__NR_SYSCALL_BASE+
+_8SY)M2R
+#define __NR_89 (__NR_SYSCALL_BASE+Z)R
+#define __NR_(__NR_SYSCALL_BASE+S)}
+#define __NR_8(__NR_SYSCALL_BASE+  )
+#define __NR_(__NR_SYSCALL_BASE+2Zp)O
+ #define __NR_8h(__NR_SYSCALL_BASE+9)
+#define __NR_(__NR_SYSCALL_BASE+99)
+#define __NR_  (__NR_SYSCALL_BASE+ 	   J)
+R#define __NR_h25(__NR_SYSCALL_BASE+ NBe)}
+#define __NR_(__NR_SYSCALL_BASE+ )	V
+#define __NR_(__NR_SYSCALL_BASE+ gM9)
+#define __NR_88(__NR_SYSCALL_BASE+ 	)a
+#define __NR_(__NR_SYSCALL_BASE+),(
+#define __NR_H (__NR_SYSCALL_BASE+7)7
+#define __NR_(__NR_SYSCALL_BASE+ )
+#define __NR_A (__NR_SYSCALL_BASE+909)
+)#define __NR_j		(__NR_SYSCALL_BASE+ )
+e#define __NR_
+(__NR_SYSCALL_BASE+)
+|#define __NR_(__NR_SYSCALL_BASE+ W)
+#define __NR_(__NR_SYSCALL_BASE+   c)
+#define __NR_5(__NR_SYSCALL_BASE+83)T
+#define __NR_8g7    (__NR_SYSCALL_BASE+)&
+f#define __NR_ (__NR_SYSCALL_BASE+ 7N)@
+GG#define __NR_9 
+	 	 (__NR_SYSCALL_BASE+)
+#define __NR_(__NR_SYSCALL_BASE+ )
+#define __NR_ (__NR_SYSCALL_BASE+ 	4)#@R
+'#define __NR_(__NR_SYSCALL_BASE+8)[U
+n#define __NR_(__NR_SYSCALL_BASE+
+Ng)
+#define __NR_hc (__NR_SYSCALL_BASE+ 9B9h19)
+s#define __NR_9(__NR_SYSCALL_BASE+	)
+#define __NR_
+(__NR_SYSCALL_BASE+)P
+n#define __NR_
+(__NR_SYSCALL_BASE+).\odgi!
+#define __NR_11	
+(__NR_SYSCALL_BASE+)
+#define __NR_(__NR_SYSCALL_BASE+1P7z)
+$#define __NR_5Y (__NR_SYSCALL_BASE+  	 )
+#define __NR_(__NR_SYSCALL_BASE+  T98V)~
+ #define __NR_(__NR_SYSCALL_BASE+)
+#define __NR_NBS33(__NR_SYSCALL_BASE+)
+&#define __NR_4 (__NR_SYSCALL_BASE+ )<4$
+#define __NR_4Zq88(__NR_SYSCALL_BASE+9)
+#define __NR_Q (__NR_SYSCALL_BASE+h)
+#define __NR_(__NR_SYSCALL_BASE+)
+u#define __NR_(__NR_SYSCALL_BASE+_)!
+C1y*H#define __NR_ (__NR_SYSCALL_BASE+)
+#define __NR_(__NR_SYSCALL_BASE+  )bU3
+U*#define __NR_8    (__NR_SYSCALL_BASE+9)
+#define __NR_(__NR_SYSCALL_BASE+ G)
+#define __NR_5999 (__NR_SYSCALL_BASE+L85)
+#define __NR_3(__NR_SYSCALL_BASE+ )
+#define __NR_ (__NR_SYSCALL_BASE+ )av
+R#define __NR_9(__NR_SYSCALL_BASE+)7
+:#define __NR_b90(__NR_SYSCALL_BASE+  )_$
+b#define __NR_(__NR_SYSCALL_BASE+8)
+pj#define __NR_
+ 
+(__NR_SYSCALL_BASE+
+ )
+#define __NR_(__NR_SYSCALL_BASE+1) 
+t#define __NR_  (__NR_SYSCALL_BASE+X18PJ)0b
+\#define __NR_j(__NR_SYSCALL_BASE+8n)
+\#define __NR_8i9(__NR_SYSCALL_BASE+   )6
+#define __NR_c(__NR_SYSCALL_BASE+)}
+#define __NR_(__NR_SYSCALL_BASE+    )
+#define __NR_x339M1RW	 
+ (__NR_SYSCALL_BASE+)
+#define __NR_S 	  (__NR_SYSCALL_BASE+	3)
+#define __NR_4(__NR_SYSCALL_BASE+b7M8O7)
+&ZQ#define __NR_48 (__NR_SYSCALL_BASE+)2}r
+#define __NR_7t(__NR_SYSCALL_BASE+Ct)
+su#define __NR_(__NR_SYSCALL_BASE+9Q)`
+#define __NR_(__NR_SYSCALL_BASE+)-\0
+i#define __NR_7878m(__NR_SYSCALL_BASE+)!
+r K#define __NR_(__NR_SYSCALL_BASE+)b
+(6H0)#define __NR_g0 (__NR_SYSCALL_BASE+   ms28)
+ #define __NR_0  (__NR_SYSCALL_BASE+_ny)(
+U#define __NR_(__NR_SYSCALL_BASE+)T
+#define __NR_  	(__NR_SYSCALL_BASE+)6
+#define __NR_(__NR_SYSCALL_BASE+)&
+|k#define __NR_(__NR_SYSCALL_BASE+ 7)S
+c#define __NR_(__NR_SYSCALL_BASE+8)\'I
+\eI#define __NR_(__NR_SYSCALL_BASE+  	)
+#define __NR_9M(__NR_SYSCALL_BASE+O)
+\#define __NR_(__NR_SYSCALL_BASE+    	)nh
+]#define __NR_989(__NR_SYSCALL_BASE+ 9)\eT4!s
+#define __NR_8oq 
+(__NR_SYSCALL_BASE+   )
+v57#define __NR_a (__NR_SYSCALL_BASE+ 18)f
+#define __NR_L(__NR_SYSCALL_BASE+4w44Z)
+#define __NR_t  	
+  (__NR_SYSCALL_BASE+)\a
+#define __NR_18q(__NR_SYSCALL_BASE+ )
+3#define __NR_  (__NR_SYSCALL_BASE+)(
+]<#define __NR_90r8l(__NR_SYSCALL_BASE+9)&9
+#define __NR_0   (__NR_SYSCALL_BASE+	 )
+#define __NR_L98(__NR_SYSCALL_BASE+Zl9n)F\e
+#define __NR_FA0E6q(__NR_SYSCALL_BASE+)B
+#define __NR_vl(__NR_SYSCALL_BASE+)*
+#define __NR_(__NR_SYSCALL_BASE+H4j)
+#define __NR_ (__NR_SYSCALL_BASE+
+	 	  )
+Y#define __NR_ (__NR_SYSCALL_BASE+   )
+o#define __NR_9 (__NR_SYSCALL_BASE+ )
+#define __NR_MYh8y96(__NR_SYSCALL_BASE+)U
+>6]#define __NR_(__NR_SYSCALL_BASE+  dz)
+	#define __NR_8_G(__NR_SYSCALL_BASE+ )I
+#define __NR_(__NR_SYSCALL_BASE+ny8)
+#define __NR_(__NR_SYSCALL_BASE+0deL5)
+a#define __NR__(__NR_SYSCALL_BASE+ )
+2h#define __NR_R8(__NR_SYSCALL_BASE+
+p0))
+#define __NR_8_9(__NR_SYSCALL_BASE+)L&
+#define __NR_(__NR_SYSCALL_BASE+   2)U
+W#define __NR_2  (__NR_SYSCALL_BASE+)
+e#define __NR_am(__NR_SYSCALL_BASE+ )P
+n#define __NR_  (__NR_SYSCALL_BASE+	yk)
+,#define __NR_3zl2 (__NR_SYSCALL_BASE+ )
+#define __NR_34(__NR_SYSCALL_BASE+   )@P
+K#define __NR_(__NR_SYSCALL_BASE+)
+#define __NR_(__NR_SYSCALL_BASE+X8)
+#define __NR_
+  (__NR_SYSCALL_BASE+)o
+#define __NR_e
+(__NR_SYSCALL_BASE+8)
+#define __NR_9(__NR_SYSCALL_BASE+89y)
+#define __NR_mr(__NR_SYSCALL_BASE+4)
+m#define __NR_(__NR_SYSCALL_BASE+	K)T
+#define __NR_58F(__NR_SYSCALL_BASE+)
+
+3/#define __NR_USE (__NR_SYSCALL_BASE+9)D
+i#define __NR_(__NR_SYSCALL_BASE+  3Lk)T
+qHhL!{#define __NR_6z959R(__NR_SYSCALL_BASE+  );
+#define __NR_O (__NR_SYSCALL_BASE+8bc)
+#define __NR_(__NR_SYSCALL_BASE+P)&]!
+f&#define __NR_Rv(__NR_SYSCALL_BASE+  B)
+G*x\0#define __NR_2(__NR_SYSCALL_BASE+)
+>#define __NR_(__NR_SYSCALL_BASE+)
+'#define __NR_(__NR_SYSCALL_BASE+0)
+Zr#define __NR_I(__NR_SYSCALL_BASE+9) ;W
+#define __NR_89JV8LA5(__NR_SYSCALL_BASE+  )
+NycU#define __NR_(__NR_SYSCALL_BASE+)
+#define __NR_7 (__NR_SYSCALL_BASE+ )
+T]Tg1!#define __NR_Y(__NR_SYSCALL_BASE+	e)f
+#define __NR_wN(__NR_SYSCALL_BASE+8)
+]#define __NR_mK98 	(__NR_SYSCALL_BASE+8x)
+e#define __NR_(__NR_SYSCALL_BASE+)
+(P#define __NR_E  (__NR_SYSCALL_BASE+)\a
+#define __NR_(__NR_SYSCALL_BASE+  )$
+-~1M#define __NR_  (__NR_SYSCALL_BASE+ )OM
+9Qn#define __NR_(__NR_SYSCALL_BASE+)D/
+#define __NR_8W	(__NR_SYSCALL_BASE+ 99S)/
+Nf#define __NR_9	 	(__NR_SYSCALL_BASE+d)QO
+#define __NR_Z  (__NR_SYSCALL_BASE+)
+Eo#define __NR__ (__NR_SYSCALL_BASE+w).
+Y\"k#define __NR_(__NR_SYSCALL_BASE+J5)
+#define __NR_5	(__NR_SYSCALL_BASE+ 	):
+(e#define __NR_902(__NR_SYSCALL_BASE+ z3)%h@
+#define __NR_8Cj(__NR_SYSCALL_BASE+  )
+#define __NR_(__NR_SYSCALL_BASE+)N
+\el\"#define __NR_6I6_8_ (__NR_SYSCALL_BASE+v)Z,R
+#define __NR_0 (__NR_SYSCALL_BASE+)
+}K2+%#define __NR_(__NR_SYSCALL_BASE+ )^
+e#define __NR_(__NR_SYSCALL_BASE+
+)
+#define __NR_N98	 (__NR_SYSCALL_BASE+)Iv
+#define __NR_(__NR_SYSCALL_BASE+)h
+#define __NR_ (__NR_SYSCALL_BASE+	 	G)HF
+#define __NR_SE  (__NR_SYSCALL_BASE+925)
+$C#define __NR_9(__NR_SYSCALL_BASE+Id)
+#define __NR_ (__NR_SYSCALL_BASE+)
+#define __NR_ (__NR_SYSCALL_BASE+ o)1
+\0#define __NR_4IV9(__NR_SYSCALL_BASE+i9R)
+}\a#define __NR_(__NR_SYSCALL_BASE+F)oBh
+?#define __NR_8788(__NR_SYSCALL_BASE+9)
+#define __NR_(__NR_SYSCALL_BASE+ PsO)
+#define __NR_9(__NR_SYSCALL_BASE+)
+_#define __NR_(__NR_SYSCALL_BASE+ 	c7j)
+#define __NR_ (__NR_SYSCALL_BASE+ 9o1_9S8)R
+#define __NR_9(__NR_SYSCALL_BASE+ )R
+F#define __NR_(__NR_SYSCALL_BASE+S)
+#define __NR_ (__NR_SYSCALL_BASE+08)p
+#define __NR_(__NR_SYSCALL_BASE+ W_)WQ
+l#define __NR_0(__NR_SYSCALL_BASE+	)je
+exl#define __NR_
+  (__NR_SYSCALL_BASE+  9IV0)y5
+#define __NR_ (__NR_SYSCALL_BASE+	1)m(9
+#define __NR_(__NR_SYSCALL_BASE+ d9)
+j#define __NR_(__NR_SYSCALL_BASE+	)
+#define __NR_8(__NR_SYSCALL_BASE+     )
+E#define __NR_(__NR_SYSCALL_BASE+)
++#define __NR_W(__NR_SYSCALL_BASE+  )ri
+#define __NR_(__NR_SYSCALL_BASE+ 8z)?k
+#define __NR_8jI 
+(__NR_SYSCALL_BASE+)
+#define __NR__YMu(__NR_SYSCALL_BASE+)A+_
+FD7#define __NR_Uk(__NR_SYSCALL_BASE+9)
+#define __NR_ay(__NR_SYSCALL_BASE+)
+#define __NR_(__NR_SYSCALL_BASE+fy8)}]
+#define __NR_(__NR_SYSCALL_BASE+)
+#define __NR_2zOX88(__NR_SYSCALL_BASE+ 9ptT)
+\a]#define __NR_9(__NR_SYSCALL_BASE+ Wi)_xe4y
+#define __NR_z8	(__NR_SYSCALL_BASE+)
+c#define __NR_(__NR_SYSCALL_BASE+)
+#define __NR_19(__NR_SYSCALL_BASE+438)
+\a_#define __NR_c8g(__NR_SYSCALL_BASE+
+)\e1N
+#define __NR_(__NR_SYSCALL_BASE+)
+6{>#define __NR_(__NR_SYSCALL_BASE+)ok\0
+mT	j#define __NR_J	 (__NR_SYSCALL_BASE+)
+a#define __NR_Cn1 (__NR_SYSCALL_BASE+9)
+-#define __NR_5(__NR_SYSCALL_BASE+g2)I7+
+?#define __NR_(__NR_SYSCALL_BASE+ ).
+#define __NR_ 
+  (__NR_SYSCALL_BASE+6Zl)
+#define __NR_ (__NR_SYSCALL_BASE+79)'
+#define __NR_n(__NR_SYSCALL_BASE+2)Y;
+`d#define __NR_(__NR_SYSCALL_BASE+)*(
+#define __NR_G
+ (__NR_SYSCALL_BASE+8)
+#define __NR_	(__NR_SYSCALL_BASE+)G
+f#define __NR_(__NR_SYSCALL_BASE+Q9f)
+n_#define __NR_E9d(__NR_SYSCALL_BASE+2S)
+#define __NR_Sw(__NR_SYSCALL_BASE+8)
+f|#define __NR_(__NR_SYSCALL_BASE+)AE
+#define __NR_xAI(__NR_SYSCALL_BASE+ )
+i#define __NR_7W(__NR_SYSCALL_BASE+ )Z;
+oL#define __NR_s(__NR_SYSCALL_BASE+_4He94)a
+#define __NR_(__NR_SYSCALL_BASE+9)
+m|#define __NR_(__NR_SYSCALL_BASE+	 )49Z
+^1#define __NR_(__NR_SYSCALL_BASE+)
+#define __NR_5   (__NR_SYSCALL_BASE+e)
+#define __NR_(__NR_SYSCALL_BASE+Ub)K
+@#define __NR_kc(__NR_SYSCALL_BASE+)
+#define __NR_s88F (__NR_SYSCALL_BASE+ )
+\eJ#define __NR_1 (__NR_SYSCALL_BASE+ F)
+d#define __NR_  (__NR_SYSCALL_BASE+  )
+#define __NR_	 (__NR_SYSCALL_BASE+4)
+ll#define __NR_ (__NR_SYSCALL_BASE+ 8zz)
+Lnm#define __NR_0P8(__NR_SYSCALL_BASE+)
+\*#define __NR_ (__NR_SYSCALL_BASE+	)0
+#define __NR_a	  (__NR_SYSCALL_BASE+6)r	:l
+B#define __NR_(__NR_SYSCALL_BASE+  )
+o#define __NR_0(__NR_SYSCALL_BASE+2)
+*#define __NR_5O(__NR_SYSCALL_BASE+z)D
+#define __NR_2Ov9(__NR_SYSCALL_BASE+_u)E

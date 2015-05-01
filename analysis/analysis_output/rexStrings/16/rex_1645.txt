@@ -1,0 +1,706 @@
+
+==787910883==	malloc/free:      ,
+   	 allocs,	58  frees, ,	bytes allocatedK
+/==870== malloc/free:  9 allocs,
+58 
+frees, ,8 bytes allocatedJ_O
+ir==19==   	malloc/free:
+  ,allocs, ,    frees,5  bytes allocated
+==9== malloc/free:99, allocs,  8
+frees, 0 bytes allocatedL
+==8834== 
+malloc/free: 7 allocs,   ,
+frees,8,	bytes allocated!a
+4==8==	malloc/free: ,
+
+
+allocs,,92 	frees, 	  ,  bytes allocated#\a
+==9==  	malloc/free:,6, allocs,, frees, 38 bytes allocated/%SYt
+K%==84== malloc/free: 86,
+allocs,  8 frees,   ,  bytes allocated&
+mY==686==
+malloc/free:   9 	allocs,,8frees,   6	bytes allocated
+==841== malloc/free: 8,0 allocs, 1 frees, 	,, bytes allocatedG
+U4==8==  malloc/free:,
+allocs,  , frees,
+ 698 bytes allocatedVN
+==697==
+ malloc/free: 6 allocs,	8,, frees,    	,,69,,9 bytes allocated\aG
+B==70891648888== malloc/free: ,7,	allocs,	 
+2 frees, , bytes allocated4
+iw==831== malloc/free: 	
+, 	  
+	 allocs, 8frees,
+	,, bytes allocatedAe
+L==9==  malloc/free: 5
+
+allocs,9,	 frees,  1,bytes allocated6
+==3== 	malloc/free:  ,,98	 allocs,	, frees,  ,   		
+bytes allocatedA3
+==8== malloc/free: 9 allocs,   7frees,	,8,9 	bytes allocatedfW
+T\"==69997== malloc/free:	7,allocs, 
+,  frees, 8bytes allocated36
+EV]==2== 	malloc/free:	9  allocs,	59,,4frees, 56  	bytes allocatedh
+==899==
+ malloc/free: ,8,,86allocs, ,53 frees, , bytes allocatedXmoA
+B==61== malloc/free:  ,allocs,
+	 49	frees, 2, 	bytes allocated}
+==3==	 malloc/free: 	 5,,
+
+	allocs,, frees,   ,bytes allocatedo'H
+1.==9== malloc/free:
+ 97,   allocs, ,,3 frees,	     
+,8 bytes allocated>
+wYV==9==   malloc/free:,	allocs, ,  frees, 5  bytes allocatedbM
+e.S==5== malloc/free:	4  allocs,,88  frees, , bytes allocated):m
+==9==  malloc/free:	, allocs, 
+7frees, ,858	bytes allocatedH
+f==5== 	malloc/free: ,9 	allocs, ,80  frees, 	,,,,,9	bytes allocatedt
+Q1==88==  malloc/free: 9,allocs,,
+	 	frees, 4 bytes allocated'
+==0287==  
+  malloc/free:  ,452,01,	allocs, ,frees, 
+,5,
+       bytes allocated #
+==993==	malloc/free:98
+ allocs,
+      89, frees,  29 bytes allocated@
+*wr==289800==malloc/free: ,8allocs,,8     frees,	     ,bytes allocated/
+D==4== malloc/free: ,,	allocs,,frees,
+, 	 bytes allocated:2>UP
+5r==92== malloc/free:	8 allocs, 2,4946frees, 	8
+bytes allocated.	q
+`==18== malloc/free:  
+4	allocs, , frees,	  ,,
+  			 	 	bytes allocated(
+2<==987==	 malloc/free: 4 allocs, ,,
+	frees,
+99
+bytes allocatedbW
+_==7==	
+malloc/free: ,	 	
+ allocs,94  frees,
+76 bytes allocated9
+^f==8==   malloc/free:,allocs,  7	
+ 	frees,,,1	 bytes allocated3
+==62620== malloc/free:   ,,, allocs, 	 ,6	frees, ,7 bytes allocated#
+==99==malloc/free:  0,,3allocs,3   frees,	 4 bytes allocated;)
+>===1== malloc/free: 7,, allocs,   9frees,  7,,8    bytes allocated
+#==09==	malloc/free: 7,   	 allocs,	,	frees, , bytes allocatedH
+==8==
+	    malloc/free: 9,9	 allocs,	,  
+frees,	 , bytes allocated	W&
+==72==malloc/free: 8	allocs,,,  frees, ,49,03,,,  bytes allocated,(!
+Z==911091639== 
+ malloc/free:	,4,5 allocs,93frees,  ,	bytes allocated0k
+e9==9==   malloc/free:
+ ,,  allocs, 8,	frees, ,14
+bytes allocatedg
+==4== malloc/free:  ,
+
+allocs,	4	frees, ,  bytes allocatedi
+$==9730==malloc/free: 8	allocs, ,, frees, ,2,  	bytes allocatedbU
+==0== 
+malloc/free:, allocs, 51,,9,frees,   , bytes allocatedM
+==2== 	
+malloc/free:     6,999   	allocs,, frees,	 9   bytes allocated 
+==95==
+ malloc/free:  9,,,8 allocs, 5    
+frees, 1, bytes allocated
+==5==	malloc/free:9   allocs,  ,9, frees,2 bytes allocatedi$],,\"
+|==8==malloc/free:, 	allocs, 	
+1frees,	  , bytes allocated
+==1==malloc/free: 	,, allocs,272	 frees,,bytes allocated
+==7608==	 malloc/free: 61,,,,,	 allocs, ,,frees, ,,   bytes allocatedk\0
+_-==8== malloc/free:	,,	 
+  allocs, ,,,,  frees,	 23,5 bytes allocated}ok(#]X
+a#9==6== malloc/free:
+ 9 allocs, , frees,9
+   bytes allocated]
++N==6==malloc/free: 54 
+allocs, , 	frees,,,899  bytes allocated	
+\0==3==  malloc/free: ,	allocs, ,0  frees,	 18 bytes allocated/
+41==8==	malloc/free: 	, allocs,	89,
+ frees,
+8bytes allocatedf
+,===8== malloc/free: ,allocs,  	 6194frees,,	  bytes allocated
+==5== malloc/free:7 allocs,   ,,		frees, ,9bytes allocated
+H==2==malloc/free: ,allocs, 2
+frees,  , bytes allocated&;
+lH==898==	malloc/free:7allocs, 18	frees, ,, bytes allocated\"
+!==999==   malloc/free:		8,8,, allocs, 	6,,frees,  	66  bytes allocated}
+:==5629==	malloc/free:	 ,  allocs, 	,8 frees,
+ 	,,	 bytes allocatedJ
+==99== malloc/free:,,	 allocs, 6  frees, 941 bytes allocated&6
+5==8== 	malloc/free:	4,3 allocs,	,,, frees,	, bytes allocated\0
+m4==89== malloc/free:	7,	allocs,   09 frees,		     
+ ,bytes allocatedml4
+c\"?G==2==   malloc/free:   , allocs,83 frees, ,,7 bytes allocated;
+==881== malloc/free:	 ,   allocs,708	frees, ,   bytes allocated
+X==10== malloc/free:,  allocs,  888 frees, 9 	 	 bytes allocatedK
+==6==	malloc/free:  1   allocs, ,3 frees,  ,8 	bytes allocated/
+==718==malloc/free:  , allocs, 3
+  frees,	 0bytes allocated10(
+{==3856== malloc/free: , allocs, ,5 	 frees, 9    bytes allocated2#cWB
+p==1899== 
+ malloc/free: 3 allocs, 	8		frees, ,9
+ bytes allocatedX
+==1== malloc/free:    ,	allocs,  8 frees,,  bytes allocatedn
+==8== malloc/free: 3  		allocs,   ,,2  	frees,69 bytes allocated(
+;5==04== malloc/free:  8,,1,2 allocs, 9 frees, 159
+bytes allocated${
+#==429== malloc/free: ,,,allocs, 19,  frees,  588   bytes allocatedW
+ep==8== malloc/free: , allocs,,,9, frees, , bytes allocatedUv
+D==9==malloc/free:  ,  	allocs, ,   frees, ,31bytes allocated_i
+/i==81==  malloc/free:	7	allocs,  ,,6 frees, 84  bytes allocated
+@==84== malloc/free: ,24, allocs, ,,frees,	1 bytes allocatedc
+==86== malloc/free:   ,   allocs, 	, frees, 8981bytes allocated`
+N7Tc==297== malloc/free:  69,9allocs,, 
+frees,
+,bytes allocated	
+e==99==	malloc/free: ,allocs,  9 frees,	25833,   bytes allocated<M\e
+?m==86==malloc/free: 9,, allocs, , frees,2,5,,bytes allocated5M
+6==19== malloc/free:,,9 allocs,,2586, frees,  ,, 	bytes allocated
+==69==malloc/free:,allocs,  ,,5 frees,      , bytes allocated\e
+==5== malloc/free: 0,,4 allocs, 5 frees,,  bytes allocated	
+k==88166896==  malloc/free:9,,5 allocs, 	,,088 frees, , bytes allocated^
+==1==malloc/free:   ,4,,, allocs, 	,,, frees,   ,4,5 bytes allocated^l
+==02718==	 
+ malloc/free:, allocs, , 	frees,  ,13,  bytes allocated`${
+\0:7i==0== 	 malloc/free: ,,	allocs, 
+,5 frees,  ,bytes allocated|
+==8== malloc/free:, 	allocs, 	8,, frees,	9 bytes allocated9i
+==19==  malloc/free:
+99,		  allocs, 	,,	 frees,
+ 6,9 bytes allocated
+==9==  	malloc/free: 7 allocs,	,7frees, , bytes allocated6
+==5== malloc/free: 195,   allocs,		8	frees,  8    bytes allocated%
+==869==  malloc/free: 9,	   
+allocs,
+9,,35,	frees,, bytes allocated1
+~==6300== 	malloc/free:,8	    allocs,   ,frees,	 9,, bytes allocated/
+g==961== malloc/free:	 49
+allocs,4 
+ frees,   8, 
+bytes allocated}fO\0t
+==84596857==  malloc/free: 3 	allocs,  ,	frees,, 
+  bytes allocatedO
+==5==
+ malloc/free:   	, allocs,,	 	frees,  	  	 ,,831bytes allocated)=
+==6==
+malloc/free: 79 allocs, ,,9   frees,	,  bytes allocatedH
+==0859==	 malloc/free:,,2
+allocs, 
+8 frees, 9bytes allocated&< 
+!p==8686==malloc/free:  ,allocs,,	 	 frees, , bytes allocatedv
+\e==5== malloc/free:	,5,allocs,9, frees,8	 bytes allocated\e
+==9== malloc/free: 89allocs, 3,,8,, frees,	  	,,    bytes allocatedd%~
+==7==	malloc/free:  
+989,3 allocs, 
+,
+frees,    		9 bytes allocated|-./
+?==9==  malloc/free:	5 allocs,  , frees,,bytes allocatedz
+b==86== malloc/free:	7  
+ allocs,3  frees, , bytes allocated>
+$%==3008==malloc/free: 81allocs, 99,		frees, , bytes allocatedn([ 8
+==46==malloc/free: ,	  allocs, , frees,, bytes allocated!
+TX-==01== malloc/free:	
+
+76allocs,  4,,,  frees, 
+     8 bytes allocated]
+t==2==malloc/free:   , allocs, 98 frees,,	 bytes allocated%-Q-*
+w==988==
+malloc/free: ,1  allocs,6  		 frees, , bytes allocatedUt
+==8== malloc/free:,,,, allocs, 7frees, ,,,,8,	bytes allocated;
+^\"==4==  malloc/free:2	allocs, ,frees, ,bytes allocated5
++
+==161== malloc/free: ,
+allocs,
+ 6frees,  ,3  bytes allocated`x7
+==9== 	malloc/free:  61,8   allocs,	 ,,8 frees, ,8,,8, bytes allocated$'
+==9==	malloc/free:		 99allocs, ,,	frees, 2,  bytes allocated#
+==9==  malloc/free: ,,9allocs,	,,,	
+frees,,,0 	bytes allocated4
+==8== malloc/free:
+, allocs,	  8 frees,  , bytes allocated
+==1==
+ 
+ malloc/free:   	, allocs,  ,,,frees,	97	
+bytes allocatedY5D
+8.==98==   malloc/free:, allocs, 	8 frees,,,	 bytes allocatedUq
+1==5==	 malloc/free: ,95   	 allocs,  ,	 frees,9bytes allocatedv
+==9== malloc/free: 	4 
+
+
+allocs,  ,	 frees,   ,03 bytes allocated\a
+)<P!==058== 
+ 		malloc/free:	9allocs, ,,  
+ frees,
+, bytes allocated	
+==7==malloc/free:	,allocs,	 	, 	 frees, ,	bytes allocated9
+==8==malloc/free:	  ,, allocs, , frees, , 
+bytes allocated
+==836==malloc/free:  ,,0  allocs, ,41		 frees, ,,  bytes allocated/o'
+==288==   malloc/free:
+   ,allocs,  9 frees,	,	  	bytes allocatedh
+Ah==9== 		malloc/free:,, allocs, 6 	frees, 	 , bytes allocatednH(
+l==80910==malloc/free:5 allocs,,frees, 2, bytes allocatedCz
+qC=q+N==8==
+malloc/free:,allocs,	 , frees,2,  bytes allocated+
+m==5649==  	  malloc/free: 3allocs, ,6, frees,,,,,9  bytes allocated<Q
+
+Y==5096==malloc/free: 8 allocs, , frees,   703	 bytes allocated
+==725==   malloc/free: ,
+allocs,	  ,8 frees, , bytes allocated\a
+==1790== 	malloc/free: 1,allocs, ,,9frees,  0239 
+bytes allocated8
+> ==68==malloc/free:  3allocs, ,3,	frees, ,,68,,,bytes allocatedq
+==185899==
+  malloc/free:	 8,,7 allocs,  8	 frees,
+0 bytes allocated[S
+==9==malloc/free:  ,,,allocs, 
+8	frees, ,7,	bytes allocatedBV
+I==9==	malloc/free:  ,09,  allocs,
+, 
+frees,  ,1  
+ bytes allocated*^
+==4== malloc/free:5, allocs,,	  frees,  ,,bytes allocatedy
+==488288848== malloc/free: 87	 	allocs, , frees, ,	
+bytes allocated>*
+==4==
+ malloc/free:  1,9,	allocs,	   4 frees,  27	bytes allocatedPu
+-\0w==98== 	malloc/free: 
+2, allocs, ,9 frees, 9,98,91	bytes allocatedA
+==88==	malloc/free:
+389allocs,6	  frees, 7 bytes allocatedc1CS;
+6==8== malloc/free:,     allocs,,9frees,  , 
+bytes allocated(
+A$==1094== malloc/free:, allocs,	89frees, ,  bytes allocatedR
+Q0~==228== malloc/free: 27  allocs,  ,95,,	  frees, ,	bytes allocatede
+==8==malloc/free:  9 	
+		allocs,
+ , frees, , bytes allocated\"
+==5==
+malloc/free:8   allocs,  , frees, 7 bytes allocatedbE 
+==9==
+malloc/free:,,,, allocs,		,,  frees,   ,
+
+bytes allocated..
+==78==  malloc/free: ,allocs,	  25  frees, 0,,18	 bytes allocated
+==8==malloc/free: ,allocs,
+, frees, ,bytes allocated@u
+==4==   malloc/free:	 62 allocs,  	      964frees, ,  	bytes allocated=dG}
+==9==	malloc/free: ,,8allocs, ,9, frees,   ,,
+bytes allocatedF
+==88==   malloc/free: 41 allocs,  ,  frees,    9 	  bytes allocatedf
+==4==
+malloc/free:
+3,8 	allocs,885,	frees,
+8,	 bytes allocated.
+==7==	
+malloc/free:  ,,	allocs,  ,
+frees,	 8   	 	bytes allocated\e M
+8*==4==malloc/free:  ,88,, allocs,39 frees,	 , bytes allocated*\e
+:==0== 	malloc/free:  	,allocs,7 frees, ,9
+ bytes allocated0(\eE=
+==9==  malloc/free: ,,  allocs,	1    	frees, ,	bytes allocatedD\
+oec6\a==5==
+	malloc/free:	7	allocs,	 	,9 frees,  09 bytes allocatedG)
+==7== malloc/free: 	, allocs, 	, 	frees,
+,,,8  bytes allocated?P
+==9== malloc/free:	8,  allocs, ,,,9	frees, 8,2 	  bytes allocated[
+==346==malloc/free:	, allocs, , frees,   ,
+bytes allocated+
+==28== malloc/free: ,  allocs,	6, frees,
+ 3, bytes allocated4m
+==9==
+malloc/free:5  allocs,0,
+frees,,4
+
+bytes allocatedW
+,==8144==  	  malloc/free:
+,6	allocs,,259,  	frees,,,bytes allocatedf
+Z==94== malloc/free:  0,0  
+allocs,, 	frees,
+ ,99 bytes allocatedQ
+==9== malloc/free: 1,,allocs,
+,,6	frees, 
+ 9 bytes allocatedx
+==90== 
+ malloc/free: 
+,allocs,  97	frees,	9bytes allocatedF
+<[cp===98989==	malloc/free:    0, allocs, ,frees,,,,	bytes allocated<
+wC==8== 	malloc/free: ,16 allocs, 74, 	frees,  ,6 bytes allocated
+==7==	malloc/free: ,	
+
+
+  allocs,
+,9	frees, 89	bytes allocateda0
+==9==malloc/free:  98,allocs, ,9frees, 3,bytes allocatedL\"(#\eis8x
+==99== malloc/free:
+ ,,6,	allocs, 	3 frees,  ,9  bytes allocated,
+lnu==6782== 	 malloc/free: 	9 allocs, ,,  frees, ,
+bytes allocated>R
+==8==malloc/free: 	 	 ,4	allocs,  9 frees,	9,,,8,9, bytes allocatedr
+_==0== 	malloc/free: ,80	 allocs,   9, frees, 9 
+ bytes allocated\a
+==9==  	   	malloc/free: 4allocs,	,, frees,	,,   bytes allocated
+==4==  malloc/free:
+9allocs, ,86,,5   frees,		,,    	bytes allocated
+==2==  	malloc/free:  ,allocs, 30 frees,
+9 bytes allocated/l
+-==81==malloc/free:,679	allocs,3,  frees,,,, bytes allocated!
+==417== malloc/free: ,8 allocs,  ,,frees, ,,	 
+bytes allocated
+==985==	malloc/free: 99 allocs,
+ ,68	    
+   frees,		
+9bytes allocatedO
+==7804== malloc/free: 8,3 allocs,  ,  frees, 9bytes allocatedf
+==49928==  malloc/free: ,	 	 allocs,		 , frees,
+  ,,, 
+bytes allocated 
+/==38==	malloc/free:,,,,,allocs,7	  frees, 
+,89 	bytes allocated
+k==4== 
+	malloc/free:
+5
+ allocs,	,	frees,    ,8 bytes allocated#j8r=X
+==7==    malloc/free: 7,4 
+allocs,  , 
+frees, ,bytes allocated&qY
+^5z==94==   malloc/free:	,81  allocs, 6 frees,3	bytes allocated^8RE6g
+JvK2==4== malloc/free:,7,73allocs, ,		 frees,		,bytes allocatedY
+)==4==malloc/free:	,82allocs,	8 frees,	,
+ bytes allocatedP
+*d==7==   malloc/free:  ,89,  
+ allocs,   ,frees,86,8	 bytes allocatedQC
+z7==5800== malloc/free:		9,allocs,  	  	 ,,14frees, 1bytes allocated.
+==9== malloc/free: 8,,,,3allocs, ,frees, ,8 
+ bytes allocatedx
+==98== 
+malloc/free:5  allocs, 
+,,	frees,	, bytes allocated}
+n==78418==      malloc/free: ,  allocs,
+8,, 	 frees,
+ ,bytes allocated\0
+==85== malloc/free:	,		  allocs,	 	199 frees,  	 ,
+	bytes allocatedC#q
+==847==malloc/free: ,
+allocs,    ,, 
+frees,,7  bytes allocated
+==0== malloc/free:	 	,09
+allocs, 
+1,frees, 	9 bytes allocated,
+==995== malloc/free:,,  allocs,,99 frees,
+,, bytes allocatedk#
+==898==	malloc/free: 9 allocs,
+84frees, 5,, 	bytes allocated1
+==435976==  malloc/free: 7   allocs, , frees,	 
+ 9	bytes allocatedE
+	==80==	    malloc/free:	,,4,			allocs,  , frees,   2 bytes allocatedW
+==8==  malloc/free:  	9, allocs, 09,8,	frees, 9 bytes allocated
+V==7998==  malloc/free: ,,2allocs, 	 5 
+frees, 2,
+bytes allocatedE
+[==68907== malloc/free: 	8, allocs,
+3, frees, 8,
+bytes allocated'
+0==908== malloc/free: ,allocs,	, 	 frees,  	4, bytes allocatedy1
+p\ez%==77== malloc/free:	 , 		  allocs, 8	frees,	,bytes allocated
+==11==  malloc/free:28 allocs, 
+ 8frees,   	,,,bytes allocatedC
+==1==malloc/free:
+
+,, allocs,,, frees,  	, bytes allocated&
+<z==1820== malloc/free: ,8allocs,
+,88   frees, 1bytes allocated[%
+L==2==	   malloc/free: 8 allocs,  99 frees,  
+8	bytes allocated\D
+v==9== malloc/free: 882allocs, ,9	 	frees,	,	
+
+	 bytes allocated/F	
+Sj1==86==	malloc/free:, allocs,	,9 frees,85	bytes allocated\"
+==1==  malloc/free:
+3, allocs, ,8frees, ,bytes allocatede
+==82== malloc/free: , allocs,	 8,frees, 829 	bytes allocated)ROK
+==9==	 malloc/free: 	,
+ allocs,  ,8 frees, 9 bytes allocated-
+'3;==973==malloc/free:
+   ,6allocs,  
+4  frees, 
+,, bytes allocated}
+==2==malloc/free:
+, allocs,,8 	frees,  8bytes allocateds
+R==9==     malloc/free:,,allocs,
+	6, frees,   ,6,48,9,0 bytes allocated[
+==8==  malloc/free:  	8,89,allocs,
+ ,frees,
+8bytes allocatedi
+R==5== malloc/free:3 allocs,, frees,	   ,  bytes allocated<
+==2142==  malloc/free: ,2,		 
+allocs,  , frees,
+, bytes allocatedZ
+==829==   malloc/free: 7allocs, 9	frees,  ,9 bytes allocated;k.a
+==8== malloc/free:	 9389, allocs, 9 frees, ,90,  bytes allocated
+G==79== malloc/free: 25, 
+ allocs,9	
+frees,	,12,3 bytes allocatedLN
+==888==malloc/free: 49, allocs,	   , frees, , bytes allocated$
+==97==  malloc/free:  , allocs, 8
+frees,    	,
+ bytes allocated
+_U==8== malloc/free:	84   allocs,	 ,,58 frees,,9 bytes allocatedI}~
+-==95079== 	malloc/free: ,989 allocs,   ,	 frees,,  bytes allocated]
+==799==	malloc/free:   0 
+allocs, ,  		frees,  ,  bytes allocatedy
+y==9== malloc/free: 9,  allocs, ,5frees,,7 bytes allocated\ab
+'==2== malloc/free: 	9   allocs,	7	frees, ,bytes allocated
+9/==9==malloc/free:	8,1 allocs, 83 frees,1  bytes allocated!
+s==7== malloc/free:   70, allocs,  3	frees,,1,  	  	bytes allocated`g	$
+m==563==  malloc/free:,allocs,	8 frees,   90 bytes allocated
+==832== malloc/free: 9allocs,  2, frees,, bytes allocated(
+==9399==malloc/free: ,,8,,, allocs, , 
+frees,,,	bytes allocated'
+==44== malloc/free:	04,allocs, ,4	
+frees,6 bytes allocated#P
+==0==		malloc/free: ,
+allocs, ,,	frees,	    ,,, bytes allocated	l
+g\"i==90==  malloc/free:7,, allocs,	 6,8	 frees, 	849 bytes allocatedg
+0==1== malloc/free: 1   allocs,,4 frees, 8 bytes allocatedl
+/e==39==  malloc/free: 4, allocs,, 	frees, 80bytes allocatedg
+==88== malloc/free: 
+, allocs, , frees, 8     bytes allocatedq+
+==61==malloc/free:	8allocs,  
+98,   frees,
+,,4bytes allocated9k$
+==43==  malloc/free: 99985,  allocs, 8 frees, ,,  bytes allocateda
+@==8==	 malloc/free: 2 allocs,	,8,,2,,  frees, 78 bytes allocated<
+==0==  malloc/free:  	  , allocs,  92 	frees, ,  bytes allocated
+==8== malloc/free:,	 
+	allocs,
+09frees,   , bytes allocatedE
+==19== 	malloc/free: ,allocs,	8 frees,
+,998, bytes allocatedIG
+w==96==
+   malloc/free: ,,6, 	 allocs,	9 
+frees, ,8	 bytes allocatedDa
+==6==malloc/free: 86,7 allocs,,96  frees,,8	 
+bytes allocated5
+o==902== 	malloc/free: 53allocs,	 	,,,	 frees, 9,699 bytes allocatedK
+==94== malloc/free: ,		 allocs, , frees,  8,,,9, bytes allocatedeu7
+==768==	 malloc/free: 	 9	allocs,  ,8 
+   frees,	84
+  bytes allocatedd|
+==69==malloc/free:, allocs, 1, frees, 5 	 bytes allocatedS
+B5==98== malloc/free:8allocs, 	
+
+2frees,5,8	 bytes allocated/
+==58==  malloc/free:  89, allocs,
+ ,, 	frees,  1,,bytes allocatedv
+==887== malloc/free:
+, allocs, ,,  
+frees,	
+1	bytes allocatedvID8
+gw==4789== malloc/free: ,	   allocs, ,,,2,frees,9,  bytes allocated{
+==8== malloc/free:
+ ,8,3,, allocs,793,,82, frees,  ,,
+bytes allocated:_
+==868==	 malloc/free:8	 	  allocs, ,,, frees,0 bytes allocatedx
+==92== malloc/free:,,,,	allocs, 3 frees, 9   bytes allocatedx
+tr==2==  malloc/free:	 9	allocs,  	 8,5 frees,	  8,bytes allocated.j
+98B/==1== 
+malloc/free:	1	allocs, 9 frees, 8bytes allocated)
+vB1G==8== malloc/free:	,9, allocs, 9,
+frees, ,, bytes allocated 
+==2==malloc/free: ,
+allocs,	4 frees, 	  ,5, 	bytes allocatedi\4
+X
+e==39== malloc/free: ,allocs,,,  frees,  1	bytes allocated
+==89==malloc/free: 8, 	   allocs,
+ 4 frees, 	 , bytes allocatedJ
+==563==	 malloc/free:  ,,	allocs,	  ,	  frees, 	1bytes allocatedH&
+{\==9== malloc/free:	,9 allocs,  9,9 frees,, bytes allocated-eFv
+==86==malloc/free: ,  allocs,	,,8   frees,	,, bytes allocatedS
+T==8==  malloc/free:,9allocs, 9 frees,	
+,8,
+bytes allocated
+5:c==02==		 malloc/free:	    	  99 allocs, ,
+frees,  9 bytes allocated	x
+p==9== malloc/free:,allocs,88 frees, ,, bytes allocatedz
+7==869== malloc/free: ,8allocs, 2  frees,   ,bytes allocated6
+==90== malloc/free: , allocs,    ,  frees,  8,    bytes allocated7I[
+==888== malloc/free:	  1,,allocs,93 frees, , bytes allocated\a
+==8== malloc/free:88,67,allocs, ,	frees,  , bytes allocated/
+==8859==	malloc/free: 9allocs,  14,frees,  89 bytes allocated\;
+\==998== 	malloc/free:,	allocs,
+ ,, frees,	 
+5   bytes allocated+6s
+e==673== 
+malloc/free:,  allocs, , frees, 	87bytes allocatede
+0^==5==malloc/free:  3   allocs, ,	 frees,  	485,	 bytes allocated?
+==79937== malloc/free:	 ,8 	allocs,	7  frees, ,bytes allocatedXh*>
+)==4817==
+  malloc/free: ,  		allocs, ,,        frees,	 95  bytes allocated7
+0&==8== 
+ malloc/free:559 allocs,
+9 frees,	,,  	  bytes allocatedr>
+==8== malloc/free:, allocs,9 frees, , bytes allocated V
+e==8886== malloc/free:  , allocs, 	, frees, , bytes allocated
+,==90==malloc/free:	,	allocs, ,, 
+ frees,       , bytes allocated%K
+%\0M&EQb{(6==54==malloc/free:	  ,9 allocs, ,5, 	frees,,	bytes allocated51)2
+<q*r==9098==malloc/free: 8,, allocs,,,3,7,
+  frees,  8,  bytes allocated_
+7==0891998== malloc/free:	, allocs, 8 frees,
+   984,,86   bytes allocated
+X==0==malloc/free:	 8	allocs, 4 frees,40 bytes allocatedh
+U==262==  malloc/free: 1allocs,  90    frees, 0,bytes allocatedm
+==5==  malloc/free: ,allocs,, frees,   8bytes allocated,U\a
+==1==	malloc/free: 7 allocs, ,,frees, 9,,,bytes allocateds
+\e==9==malloc/free:	9allocs,	,	 	frees,	 ,  bytes allocatedH
+P==6==	 malloc/free:,4allocs, 
+	,	frees, 8bytes allocated)
+(==8==malloc/free:7allocs, 2frees,  ,  		bytes allocated*
+k&==0==
+  malloc/free:    , allocs,,
+frees, ,,    	bytes allocatedcSN
+$
+==9== malloc/free:
+,,,4,9allocs,,frees,,43,88bytes allocated
+==8894==
+malloc/free:,	 allocs,    79,frees,88	bytes allocated.
+[;7==1==malloc/free:	8,,1allocs,, frees,	6, bytes allocated
+==5== 	 malloc/free: , allocs,	1
+frees,	, bytes allocated|y
+==898== malloc/free:	8,,allocs, ,,, frees,  	9,9,
+bytes allocated[5sp
+==9765==	malloc/free: 8	allocs, , frees, 	,,bytes allocatedvd
+A==98==  malloc/free: ,0 allocs,  2	frees, 1	bytes allocatedd}
+==939==malloc/free:  ,allocs, ,2 frees, ,	bytes allocated
+Z==9== malloc/free:96,allocs, 	89 frees,	 8,bytes allocatedQa
+==9==malloc/free:7 allocs,
+ 
+,,89frees,	,, bytes allocatedn_
+{==9== 		malloc/free: 
+,,allocs, 	, 	 frees, 	48 bytes allocated>9
+==8== malloc/free:	  ,,4	allocs, 8
+frees, ,  bytes allocated<
+-==9== malloc/free: ,
+allocs,, frees, 5,,6,1,1    bytes allocated+
+==98==malloc/free: 9,
+allocs, ,,0frees, , bytes allocatedG
+==8==  malloc/free:   8    allocs, 90,0 frees,	,,,
+   bytes allocatedkl
+==0==	
+ malloc/free: 59399,allocs,
+, frees, 98   	 bytes allocated/e
+==99==malloc/free:,, allocs, 			1,8, frees,,bytes allocatedo
+J==8==  malloc/free:  ,,0	allocs,		    ,4,5 frees,8bytes allocated\a
+/&==99==		malloc/free:8  allocs,8, frees,96bytes allocatedd
+==432==	malloc/free: ,, allocs,
+7,,  frees, 10 bytes allocated&\
+\eV==990==  malloc/free:	
+,  allocs, ,frees, 26 bytes allocatedh
+R==09==malloc/free: 9 
+allocs,8 frees,  ,
+bytes allocatedn\e
+==75==malloc/free: 1
+allocs, 68	frees, ,bytes allocated=\e>f
+L==1== 
+malloc/free:   	,, allocs, 8	 frees, , bytes allocatedf\e@
+==09==	malloc/free: 3,888 allocs,9,
+frees, 	6 bytes allocatedwZ.
+==55==	 malloc/free: ,, allocs,, frees,, bytes allocatedG_
+==30== malloc/free:  8    allocs,	 ,4,,,4,, 	 frees,  2bytes allocated/
+^==87== malloc/free:	,, allocs,   4 frees,	0,,36,9 bytes allocated+\
+y==80== malloc/free: 	 9 allocs,4 frees,	, 	 bytes allocated&e%
+==8== malloc/free:,,5, allocs, 8  frees,3, bytes allocatedG*7
+A==9==
+malloc/free:  		
+,,allocs,  ,3,, frees,	9bytes allocated-
+K==93== malloc/free:   8,,8,6 allocs, , frees,   4 bytes allocated,OD
+TI==9==   malloc/free:	,	allocs,  1,   frees, , 
+	bytes allocatedk
+58#-==560958583699==  malloc/free:
+
+ ,   allocs, ,, frees,
+ 98 bytes allocatedQk\0y
+(==08==
+ malloc/free: 48allocs,	 78	frees,	 938,9,8,,bytes allocatedO 
+==01== malloc/free:    7 allocs, 8,9 frees,  4	 bytes allocateda
+==8==malloc/free: ,allocs,	 	,83 frees, 7 bytes allocated5a
+[5==959== 	malloc/free:, allocs,		62	frees, ,bytes allocated
+==808==  malloc/free:,5 allocs, 5	  frees,,	bytes allocated
+==98==malloc/free: ,  allocs,0 frees, 2  bytes allocatedt
+==6208==malloc/free: 3, allocs, ,, frees,	  3, bytes allocated
+==3==  malloc/free: ,	allocs, 	9 	frees, 	, bytes allocated/
+==696== malloc/free:  8,83allocs, 9frees,,
+bytes allocatedb
+==97==malloc/free:	89
+ allocs, ,,,3,, frees,	2 bytes allocated$
+\aY==0==malloc/free: ,38  allocs,,  frees,	3,bytes allocatedS 
+^==89== malloc/free: 18,  allocs, ,,, frees,  189 bytes allocatedH
+<==7==malloc/free: ,,, allocs,39386, frees, 5		bytes allocatedd
+
+!/a==1==
+malloc/free:  8 allocs, 8  frees,		286, bytes allocated!
+>7u==94==
+ malloc/free: 7
+allocs, 98	frees,  ,bytes allocatedP.
+==9== malloc/free:5,  allocs, 6,    frees, 7 bytes allocated~
+==3878== 	malloc/free:	8 allocs, 1  frees,9,2bytes allocated^'
+==86== malloc/free: 	,    allocs,987  frees,
+,, bytes allocatedn
+Z+\e==1== malloc/free:	  6,	allocs, 328	 frees,,,,,8bytes allocated-Xu0
+6!Ih==34099== malloc/free:	,7,,08  allocs,8886,5frees, 88bytes allocated
+==9== malloc/free: 929 allocs,
+9,, 	frees,	,   bytes allocatedm
+==58== malloc/free:  1	 allocs, 
+
+,9, frees,	51 bytes allocatedk
++==0== malloc/free: 		4,, allocs, 0,	frees,   5bytes allocated@p$
+==9== malloc/free:8,, allocs,
+99frees, ,
+ 	 bytes allocatedq+
+==1== malloc/free:,,0	allocs,     ,frees,  0,,,889 bytes allocated~]*
+==3==malloc/free:657allocs,	,34frees,  ,9 bytes allocatedvKkx
+==79==  	malloc/free:  	  	,allocs,98frees,	2708 bytes allocated)
+==6==	  malloc/free: , allocs,, frees,,04,,	bytes allocated~
+#.MX==0==	malloc/free:	      9  allocs,    ,,3992,97,	  	frees,,  
+  bytes allocatedF
+
+;q==83191687==	 	malloc/free: 
+,41,
+allocs, 
+,frees,5 bytes allocated!B4F
+.* ==9289== malloc/free: ,
+allocs,,3   frees, ,  bytes allocatedz&0
+==88==
+malloc/free: 7 allocs,   	, 	frees, 4 bytes allocated(*\a
+==68==	malloc/free:82 allocs, ,,6,  frees, 9 
+	bytes allocatedE
+==8== malloc/free:,allocs, 7,, frees,	7  bytes allocated0
+T==92==
+   malloc/free:  ,			
+ 
+allocs,	9 frees,  
+,9  bytes allocated7FG
+==88==		 malloc/free:  1 allocs, 7 frees,  ,9	bytes allocatedR
+==3888== malloc/free:	12 allocs, ,  frees,89bytes allocatedd
+%==7== malloc/free:,allocs,7 frees,	,3bytes allocatedn*
+4-tg==828== malloc/free: 8981, allocs, , frees,9bytes allocatedYM
+==9==malloc/free:	, allocs,
+3,  frees, 05
+	
+bytes allocated(
+==7==  malloc/free:,11		allocs, 	,3,249frees,	
+,43	bytes allocated
+T==9== malloc/free: 	  9,  allocs, 	  	,	frees,  ,9
+bytes allocated|
+==69==  malloc/free:   ,, allocs,,6  	frees,5 bytes allocatedZ
+<t/==428== malloc/free:
+5,,allocs,
+8 frees, , bytes allocatedC
+==836==	malloc/free: ,8 allocs,09frees,	 ,1,
+bytes allocatedM

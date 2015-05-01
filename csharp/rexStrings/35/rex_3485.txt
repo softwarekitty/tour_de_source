@@ -1,0 +1,386 @@
+{conffile-prompt : '' 'T'
+Fqi^conffile-prompt : '' '\0'
+mconffile-prompt : 'W' 't'
+Wx;DZconffile-prompt : 'zo' 'W_'
+conffile-prompt : 'f' 'v>z/Y'
+;m6S\0conffile-prompt : '' 'Z'L
+conffile-prompt : '{kCr' ''
+4(conffile-prompt : '5' 'ir't7
+K3)^Dconffile-prompt : '2' 'y'
+conffile-prompt : '?' 'Z'N[K\0q
+(au_conffile-prompt : 'L' 'O'-L
+O$)conffile-prompt : '?' ''B:
+vQconffile-prompt : 'K' 'Z'&
+ |TKconffile-prompt : 'o7' 'P'
+ conffile-prompt : 'T' 'V'
+0conffile-prompt : '' ''
+u conffile-prompt : '' '{'!
+8conffile-prompt : '}' '}6'
+WL2conffile-prompt : 'z' '='\Y
+_UlOconffile-prompt : '??' 'J'
+9Yconffile-prompt : 'K' ''X
+tEPconffile-prompt : '\0' 'u:'
+Dconffile-prompt : 'Y' '!u'
+Yaconffile-prompt : '' 'rg'
+^conffile-prompt : '}5%' ''
+%$%conffile-prompt : '9$' 'h'y
+Cdconffile-prompt : 'W?' '\ag54'
+U:Bconffile-prompt : '4' ''
+>&hconffile-prompt : 'M' ')'
+nconffile-prompt : '1X' '`'
+(kconffile-prompt : 'j' ''*Jp
+\"9Bconffile-prompt : 'd' ''
+skconffile-prompt : 'i)' 'O'
+S9conffile-prompt : '^' 'd'?
+Wconffile-prompt : 'z' ']'<e
+Econffile-prompt : '4u' 'l'
+~sconffile-prompt : 'T' '<'!v=
+^4^KQ/Nf@conffile-prompt : 'F' '3'Ny
+1Z|wSconffile-prompt : '-J' ':'
+conffile-prompt : '\a7O' 'T'
+ZwjKRconffile-prompt : '[' 'i'o$
+@Wconffile-prompt : '\0' '0G'
+\econffile-prompt : '2~=' 'fA^'u
+3JH_conffile-prompt : ';Z`' '^'
+/\"conffile-prompt : 'Cx\0' ''' 
+dyconffile-prompt : '#]' '\'
+Fconffile-prompt : 'd' 't''!
+yconffile-prompt : '^`|' '\'
+!?0:conffile-prompt : '!' 'qg:'\ 
+=oconffile-prompt : '~' '~'
+)conffile-prompt : 'p' '@D'|i
+//4(conffile-prompt : '=' 'qTOA>'
+.Uconffile-prompt : '\a' 'AS'hvY\e
+!'conffile-prompt : 'm.' 'ou'
+\econffile-prompt : 'f' '5'>#o
+n9:conffile-prompt : 'W' 'Yj\e'J
+wconffile-prompt : '_9' '&'
+,sconffile-prompt : '\' '6'
+m+wconffile-prompt : '' ''G~WwW
+i\conffile-prompt : '`	' 'By\0'~'
+.\aHconffile-prompt : 'N' 'Q'
+ <conffile-prompt : '>' 'M'I
+MLconffile-prompt : '|f' 'v@'
+conffile-prompt : '=' ''C
+aVconffile-prompt : 't8' 'e'\0?I
+vrconffile-prompt : '@' 'r'
+hconffile-prompt : '%' '2'5Ab
+7g'),tconffile-prompt : '' '.'
+RSJDconffile-prompt : '6' '\01'
+Cconffile-prompt : 'c' '1'
+conffile-prompt : 'ly' 'B'
+jconffile-prompt : '=M@' ' yS{93E'
+s,conffile-prompt : '$' 'i'
+lV'	e!conffile-prompt : '	0n&q' '5'
+O5{Cconffile-prompt : '#' ''
+SQconffile-prompt : '+' '{'N
+conffile-prompt : 'D' '='mo
+>^E`conffile-prompt : 'z' 'I/	k?'
+\a conffile-prompt : 'Fq' '\"'?`
+conffile-prompt : 'Vb_n' '8E'bS9R
+`conffile-prompt : '*,' '1'
+\0conffile-prompt : '}:' 'f'3~
+Cmxconffile-prompt : 'm' 'I'
+Tmtconffile-prompt : '$y<' '&'
+)nKconffile-prompt : 'VW<$\a' 'zD>URD'O
+conffile-prompt : 'N' '')
+ PfFconffile-prompt : 'r)5' '$'
+Bjconffile-prompt : 'EM	' 'v]'
+>conffile-prompt : '' '4'k[*
+conffile-prompt : '' 'C'\0
+conffile-prompt : 'Jo' ''G>
+(conffile-prompt : 'Ov' 'R*'
+\a&(conffile-prompt : 'V#@' 'o'
+BZhconffile-prompt : '' '2\e'aR
+ojZaiconffile-prompt : ' ' 'X'C
+,-rSconffile-prompt : '4=' 'W'
+#conffile-prompt : '' 'HZj'Lk.
+q~iconffile-prompt : 'w' '-;'K
+^conffile-prompt : '}=Q' 'QF_'
+zU;conffile-prompt : '8?|' '='!
+zconffile-prompt : '-' 'w'
+o7conffile-prompt : 'nXa' 'a'
+eKconffile-prompt : 'IJ' '['Q
+.k;-aconffile-prompt : 'y' ''
+zconffile-prompt : 'O.<' ''i
+gconffile-prompt : '' '8'
+bWpconffile-prompt : '' ''
+P_LX$conffile-prompt : 'a' '7M'
+conffile-prompt : '-' 'UU6qV'
+CDconffile-prompt : 'C(' 'u'
+GI-conffile-prompt : '~,	b' 's'
+zconffile-prompt : '' 'Sk'7
+5conffile-prompt : '9' '(s'
+conffile-prompt : '7`' 'P'
+J>conffile-prompt : '7' 'H?u'
+~conffile-prompt : 'z' 'c'R9
+9Pconffile-prompt : ':=Y' ')'Y\a
+C:W!~Dfconffile-prompt : '\e' '2n'q
+1Yconffile-prompt : 'D' ''
+?conffile-prompt : 'k' ''
+#nconffile-prompt : 'g4' '^'z
+8conffile-prompt : 's' ''
+RCconffile-prompt : '6' '#'
+(A[6yconffile-prompt : 'kR' '1Xp'.
+0conffile-prompt : 'v' 'g'
+conffile-prompt : '' '{'
+Fconffile-prompt : 'Q~' 'muh'cB
+=conffile-prompt : ']Cc' 'j'
+J	conffile-prompt : '~' '\0',
+PUconffile-prompt : 'TOd3' 'D'
+\0conffile-prompt : 'z' '&'
+=	ABXconffile-prompt : '3' ';4'
+conffile-prompt : 'tVb(1H;QR!~' 'r'
+6Sxhconffile-prompt : '1(' 't'\0
+Iconffile-prompt : 'e' 'FY']twHw
+Dconffile-prompt : 'G' 'I'
+conffile-prompt : '\0qP' '^O'
+;0tconffile-prompt : 's' ''
+{1_conffile-prompt : 'S' 'S'
+\"iKconffile-prompt : '9' 'Q4'
+Un]m_conffile-prompt : '\aNX' ''
+`dconffile-prompt : 'Y' '#'
+T)Wconffile-prompt : 'N' '\0U'
+8K,conffile-prompt : '' 'A:0'D
+B+aDconffile-prompt : '%q' '{*'
+^%#^conffile-prompt : '3' '='
+mconffile-prompt : 'u' 'R^ql'
+vconffile-prompt : '' 'ud'
+Q	XT~conffile-prompt : '\e7' 'W'Twd
+iconffile-prompt : '('V' '@'
+K96conffile-prompt : '+C' '>_%'
+*conffile-prompt : '' ''`
+Pconffile-prompt : 'z%~\"Udb' 'W$r'
+[xconffile-prompt : '' 'EpG'\
+qconffile-prompt : 'YDW' 'Z3'
+Sconffile-prompt : 'M}' ''7&\a^\aT
+Vconffile-prompt : '' '*/q'
+lconffile-prompt : '~<' 'x'
+=!conffile-prompt : 'e' 'C'
+tdU-conffile-prompt : '~' ''
+Occonffile-prompt : '&' 'CX'tp
+Oconffile-prompt : 'QN' '='FQu
+Yd&p(T*conffile-prompt : '0' 'k'
+w}N>4[Sconffile-prompt : 'r' 'Kq'v-`\0k
+{m!:Yconffile-prompt : 'q' '9'F
+conffile-prompt : '1U' 'G'
+y3Jconffile-prompt : '' ''FO
+FBconffile-prompt : '' ')'hg
+r5:)conffile-prompt : 'XfM' 'zV'@
+Cconffile-prompt : 'd(e' 'k'
+YsNq0PO0conffile-prompt : ',' ''df
+k.^conffile-prompt : '{' ''3t
+W07.conffile-prompt : 'B)' ''M
+\07Cconffile-prompt : '0' '@'
+S'conffile-prompt : 'S' '.f' 
+3conffile-prompt : 'Ic' '\'
++nkconffile-prompt : '_.' 'Yh'<,
+'conffile-prompt : 'nc' '\e'
+5j'conffile-prompt : '&N' 'O'
+<c@jconffile-prompt : '^' '}'
+gy]1QVconffile-prompt : '=' ';>'(M
+-conffile-prompt : 'h' 'E'
+4conffile-prompt : '&' '`'
+\"2conffile-prompt : '_' '4'
+gu4conffile-prompt : 'bG{' '0c\"'
+%conffile-prompt : '{' '\'n
+\a.2conffile-prompt : 'j' '\'v
+Jconffile-prompt : '<K&OA' '	'
+;wwconffile-prompt : '6' ';'
+/zconffile-prompt : 'Y' 'TMD'
+ikconffile-prompt : '.' '[f2.'
+oconffile-prompt : 'yk' 'u+'Z
+Rconffile-prompt : '' '_'8eV
+eX`Mconffile-prompt : 'iq;7' '$'3
+Mconffile-prompt : 'z' '%'
+ 'conffile-prompt : '	' ' '0;
+bconffile-prompt : 'R' '3'DX
+[conffile-prompt : 'G' ''
+conffile-prompt : '' '<'
+sconffile-prompt : '	{' '\00'i
+p?nfconffile-prompt : '$' '2wId'
+J/+conffile-prompt : '8' '\'\"Z
+\0<conffile-prompt : '.' 'h'H
+yHgP/conffile-prompt : '?' 'D'j
+&iconffile-prompt : 'sY?' '\K'V
+0,rVV_40Zconffile-prompt : '{' ' E'
+conffile-prompt : 'O*' '\e\'
+$+conffile-prompt : ']' 'h'7
+`iconffile-prompt : 'l' ')~\a\a'
+@xaK4conffile-prompt : '' 'pb'p.
+z\0conffile-prompt : 's5o' ''
+lconffile-prompt : 'J)' 'zW2C^'
+&b	conffile-prompt : '/' 'dGx'
+x fconffile-prompt : 'J' '2~'
+W}=<Yvconffile-prompt : '/[' 'ju'
+q}#conffile-prompt : '\%' '7#&'
+3{conffile-prompt : 'W\e' 'm'
+Oconffile-prompt : '' 'c'
+Vconffile-prompt : '()@' '\e('
+conffile-prompt : '6' '<'
+X[hj\"conffile-prompt : 'KPhT' '''0d
+'KxKconffile-prompt : 'e' '\"\e'.
+~	Aconffile-prompt : 'L' ')'F
+#~conffile-prompt : 'XU' 'i'&
+uI,conffile-prompt : 'z' ''
+conffile-prompt : '' 'dY'
+Dconffile-prompt : '' 'l'
+VCconffile-prompt : '1;' 'S,Z'=
+4FCS}conffile-prompt : '' ' ;'9B
+%$Hconffile-prompt : 'D' 'j'
+@wconffile-prompt : '?' 't'
+dW(]\econffile-prompt : 'm' '\e9'
+i\econffile-prompt : '{' '\a)'
+c(xconffile-prompt : '' 'c'Y
+Yconffile-prompt : '\"mu' 'T'
+#|5*<conffile-prompt : '' '='
+@conffile-prompt : '.' 'm;'T
+\alconffile-prompt : '[' 's:*e'j
+conffile-prompt : 'X' 'C{'e\"
++v\aconffile-prompt : '+#' 'xq11-4;'
+Zconffile-prompt : 'xwx41' 'E~'
+? conffile-prompt : 'f' '9X'
+q|UZconffile-prompt : '	-' 'x'Z
+<conffile-prompt : 'Cf' '9'zB
+~s<Kconffile-prompt : 'U' '6M'
+*xconffile-prompt : 'J' 'yc'
+,E/y9	conffile-prompt : '' '8n'?
+0\econffile-prompt : 'Jl' '9'
+2conffile-prompt : 'C' ''8)u
+|conffile-prompt : '(6' 'rF'
+Oconffile-prompt : '8KhL' '~'
+xSconffile-prompt : '1' 'k'
+81OTconffile-prompt : 'O' 'gvc'k
+5J+`conffile-prompt : 'w;' ' [7b'\a`C
+\aconffile-prompt : '9n{' 'kKp'R\0D[
+iconffile-prompt : 'w' 'qn!g'<
+Tj[conffile-prompt : 'E' 'k'
+34conffile-prompt : 'b' 'S'A
+conffile-prompt : '$U' '=\en:'
+QKconffile-prompt : '!rx' 'De'
+?conffile-prompt : ']Ou}' 'L'
+aconffile-prompt : ' C5' ''
+xFconffile-prompt : '&' 'nu'
+&conffile-prompt : 'A' 'X0'
+-J5l	RLC\Sconffile-prompt : ':' ''A8
+Bc\0conffile-prompt : 'd' 'z'
+zIconffile-prompt : 'a' '!c'$
+g,conffile-prompt : 'CR' 'ph'lm
+uconffile-prompt : ';' '_<''
+f%conffile-prompt : 'M' 'Y	a'
+Aconffile-prompt : '' '5'
+B.conffile-prompt : 'u' ''
+b)7\0conffile-prompt : '(' ''
+QlHconffile-prompt : 'G9' 'n'>x1
+ZMconffile-prompt : '_#' ''
+]rconffile-prompt : ':' '*1	'
+;;!conffile-prompt : ']' ''>
+3conffile-prompt : 'd' 'w]'%
+Vconffile-prompt : '.\e' ''\
+Tconffile-prompt : '	' '[1_'
+d\e_(conffile-prompt : 'h' 'I=9'z
+4conffile-prompt : 'B' 'd'I
+Xconffile-prompt : '92' '\e'
+p$conffile-prompt : '%* ' '9'$
+]}xJaconffile-prompt : '' 'N'
+Xconffile-prompt : ',' 'a'
+Tconffile-prompt : 'M' '-'
+~conffile-prompt : 'i' ''
+>H\aconffile-prompt : 't' '5q'kk>\0
+conffile-prompt : 'P' '7p'
+91conffile-prompt : '\' 'Q'
+4Iuconffile-prompt : 'U5' 'e'4~
+b\(@pconffile-prompt : '(0V' ''
+Lconffile-prompt : 's' '-'
+/tconffile-prompt : '\"=' '%X'
+Yconffile-prompt : 'K' '\"'
+`	conffile-prompt : '`' 'Bp'-@
+C4RZconffile-prompt : '7' 'b'
+P~conffile-prompt : '' '9cD'	
+wconffile-prompt : '$' 'Y^'J
+D3conffile-prompt : 'C' 'N'	
+GN,conffile-prompt : 's' 'V.'t
+|conffile-prompt : '' 't'u
+?Qjconffile-prompt : 'Qh' 'SV&'
+rmRtconffile-prompt : 'd' 'qCJ?'
+jnK/Econffile-prompt : '|N_z' 'A\a'I
+Sconffile-prompt : '3' 'm'  <
+3ZPconffile-prompt : '%N' '4.'
+4conffile-prompt : 'e' '1l'
+9NO=conffile-prompt : 'Q' 'n'j+
+%pconffile-prompt : 'Rw	' ''XT:
+'conffile-prompt : 'A1' '*'
+}conffile-prompt : 'T' 'sK'
+UPJ+conffile-prompt : 'w9K' 'S?GZ'
+bjconffile-prompt : '@' 'L=X'
+1pWcaconffile-prompt : 'D' '4'
+bconffile-prompt : 'V' '#'
+0conffile-prompt : '/' 'm\e'J
+V#conffile-prompt : '\"' '4U-39\a'
+Hconffile-prompt : ' 5;' '2'
+Snconffile-prompt : '_[' '2'>
+9:[%n\a~conffile-prompt : 'X m' 'H''
+\"
+2conffile-prompt : '<Z' ';'r
+fconffile-prompt : '' 'T'
+tconffile-prompt : '}' 'i'V
+x239A uconffile-prompt : 'r\0' ''
+conffile-prompt : '> ' 'q'
+x12o#conffile-prompt : '' 'a_'
+conffile-prompt : '|' 'r'_D
+7/conffile-prompt : 'e' ''
+Ualconffile-prompt : ':' 'I'S/
+6conffile-prompt : '' 'V'T
+v>nIconffile-prompt : '`' '1p..'
+lconffile-prompt : 'l' '\a'_
+uHJQconffile-prompt : 'Q]' 'v'Kt
+^.conffile-prompt : 'N' '0CC'
+D?)conffile-prompt : 'Y' 'X'
+Mconffile-prompt : ':' '!'
+conffile-prompt : 'c' 'Jz'
+}_conffile-prompt : '(|fp' ''
+lWconffile-prompt : ':' 'q n'
+4conffile-prompt : 'E' ''T?*3
+cconffile-prompt : 'jn' '8'
+o3S#conffile-prompt : '3:' 'l'
+D%conffile-prompt : 'Q\e' '	u'67
+Bconffile-prompt : '' 'O'f
+.
+	[conffile-prompt : '?p' 'q'
+jconffile-prompt : 'Z' '\e!$'
+6Xconffile-prompt : '$h\e' '5'v
+[cconffile-prompt : '>k' '%'
+xzconffile-prompt : '' '\e$'?'2
+Dc*6conffile-prompt : 'N' '/'Yi,Sby
+#conffile-prompt : ' ' 'x^4'~
+L}uVjconffile-prompt : 'w' 'd@'
+]conffile-prompt : 'n' 'EO't
+cconffile-prompt : '\' '\a'
+/Lconffile-prompt : 'R' 'jt3'2
+[\")awconffile-prompt : '&' '+'yj
+dsconffile-prompt : '' '&'
+Gtp+Uconffile-prompt : 'H' ''
+)lconffile-prompt : 'SH' ''K=
+n[>^conffile-prompt : '%' '6 'gAo
+mconffile-prompt : '' 'Qx'
+P	conffile-prompt : '\0' ''!
+I5conffile-prompt : 'qEP' '59)'
+j@conffile-prompt : '2' ';'0
+tconffile-prompt : '' '2'q-$
+;conffile-prompt : 't' '?'d
+15conffile-prompt : 'g' ','
+RYvslconffile-prompt : 'G' '1r]N~'
+Rconffile-prompt : '' '\a'2'm
+K I$qconffile-prompt : '|3' ''
+^conffile-prompt : 'B' '}'/
+Wconffile-prompt : 'U' '%'uC1C
+:*fconffile-prompt : '\0' '2'
+qconffile-prompt : 'oW' 'FF'
+JZ%nZTconffile-prompt : 'Y' '%'
+Fconffile-prompt : '\e' 'd'
+Yconffile-prompt : 'MX' 'I''
+bP4conffile-prompt : 'i' 'd'
+dconffile-prompt : 'S' '(|'
+	pconffile-prompt : '1D@' 'h'
+jhmconffile-prompt : '' ';'Q
+ljconffile-prompt : 'V' ';2'V

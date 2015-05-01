@@ -1,0 +1,447 @@
+Active:
+892kB1t_{M.
+MemFree: 9kB
+SwapTotal:2 kB
+MemFree:8982806	kB
+SwapCached:28kB}slf
+SwapFree:38kB.
+SwapFree:30kB
+SwapTotal: 6kB
+MemTotal:0 kBo
+VmallocTotal:0298kB
+SwapTotal:94
+ kB
+SwapCached:552kB
+Buffers:923kB}aogV
+MemTotal: 98kBh
+Inactive: 
+  8kBd
+SwapFree:9729kB
+SwapCached:99kBX2
+MemTotal:28888kB6
+VmallocChunk:	7 
+kB
+SwapCached:   8kB
+Cached:0kB
+Inactive:9kB
+SwapTotal:	9kB
+Active:89kB
+Buffers:9kB
+VmallocTotal:84009kBw
+SwapFree:  083kB
+Buffers:958   kB
+VmallocChunk:  918kB
+VmallocTotal: 9kB
+Buffers:  8 kBH
+Dirty: 99kB*
+Dirty:   7675kB
+SwapFree: 8kB9
+MemFree:51 
+kB
+MemFree:9kB
+Active:  59
+kB
+VmallocTotal:8kBQnl,
+MemFree:9 kBp
+SwapCached: 990
+kB
+Buffers: 2 kB
+Cached:9	kB
+SwapFree: 8 kB
+VmallocUser:
+  2kBV
+Dirty:1  kB\a
+Cached: 9kB
+Active:89kBz
+Cached: 
+  998kB7
+Cached: 19kBeI
+Cached: 3kB
+Cached:9 kB
+Active:83  kB
+VmallocUser:84kB
+Dirty:9kBk`.0
+MemTotal:8kBI8
+MemTotal:50 kBt pxo
+Active:90 kBL
+Inactive:98kBC+
+SwapCached:69 kB\e3K
+SwapCached:  991kB
+MemFree:2kB
+SwapFree:6kB
+MemFree:	 84 kB
+MemFree: 	 5kB
+Dirty:5 kBm
+
+VmallocChunk:9kB /
+VmallocUser:
+ 1kB
+Cached: 3   kB
+SwapTotal:6kB
+SwapTotal: 9759
+ kB
+Cached:3kBIE t
+VmallocUser:9kB
+SwapCached:	4   kB<z
+MemTotal:832kB
+Active:5kB
+MemFree:688   	kB<
+Dirty: 
+8	 kB
+SwapTotal:3kBg
+MemTotal: 98 kB
+Active:1 kB
+MemFree: 881kB
+Buffers:5 
+kB
+Active:45kB
+Dirty:8019  kB>XT
+SwapFree:69
+kBJ
+Dirty: 9618kB\0
+SwapFree:89kB
+MemTotal:9kB
+SwapTotal:	 2kB
+SwapFree:32681 kB
+VmallocTotal:379kBN\a
+SwapFree: 7kB
+VmallocChunk:3646 kBuJ
+Inactive:5138 kB
+MemFree: 097  kB\"
+Active: 49kBM
+VmallocUser: 3 kB
+MemFree:290kB
+Dirty: 99 kB
+Active:7kB
+VmallocChunk:91kB
+MemFree: 7kB
+MemFree:   1kB
+Inactive:0899 kB
+Dirty:72
+kB&
+SwapFree:		 95kB
+SwapCached: 35kB\0
+MemTotal:52 kB'
+SwapFree:  01394kB\0
+Cached:6 kB
+Cached: 0 kB
+MemFree:7kB
+Inactive: 8	kB
+VmallocTotal:
+99878	kB
+VmallocTotal:	 788kBX
+SwapCached:	 8kB
+MemFree:85kBv
+SwapCached: 699082488686kB~J
+Dirty:6498    kB
+Buffers:  6kB
+Dirty:	8kB
+SwapTotal:	7kB_m@z)
+MemFree:0kBj
+VmallocUser:	6kB
+SwapTotal:943kB}
+VmallocTotal:985  kB
+SwapCached:0 kB
+SwapTotal:088kB.
+
+Inactive:4kB\0
+Active:   9  
+kB
+Active:9 kB
+VmallocTotal:8kB
+Cached:6 
+ kB
+MemTotal:  0kB
+VmallocUser:9kBN
+VmallocChunk:99kB
+Buffers:0kB6
+Buffers: 8kB%
+Inactive:9
+kB+
+SwapCached:858   kB
+SwapTotal:58  kB_
+SwapCached:68kB!
+VmallocChunk: 0kBo\aSLF
+Buffers:
+8kB*n
+SwapCached:7kBn
+VmallocChunk: 69298588kBU
+MemTotal: 98kB
+Dirty:889354kBj
+Inactive:0kB
+VmallocChunk:	 4930  kB1
+SwapTotal: 86kB
+Dirty:9kBj
+Active:9 kBw.t
+MemTotal:  89kB8}
+SwapCached:2kB
+Buffers:	 7kB2
+MemTotal: 009kB
+SwapFree:		 9kBa`
+VmallocUser: 96kBjuS
+Buffers:	   5 kB
+fJ
+Dirty:  1 	kB
+SwapCached:98kB`:
+Inactive:285kB
+MemTotal:94734	
+kB
+Buffers:4kB
+VmallocTotal: 959kBUS
+MemTotal:8kB
+VmallocUser:5	kBq
+Buffers:8kBx\
+Buffers:991kBE
+Buffers:3275 kB
+SwapCached:9kB6
+VmallocUser: 
+6940  
+kB
+Active:	8kBz
+Active:9kB
+MemTotal:2kB
+MemFree:9kB
+SwapTotal:89917 
+ kB
+Dirty:6kB
+VmallocChunk:19
+kBL
+MemFree:9   kB|>
+Inactive: 9kBS
+SwapTotal:9
+   kB6\
+SwapTotal:  
+3kB
+Active: 9kB
+MemFree: 	8kB%
+Buffers:9	kB
+SwapFree:871994	 
+kBc
+SwapTotal:0  kBg&
+Cached:83kB
+VmallocTotal:395kB
+Cached:8 kBj\0Za
+Buffers:	 33kBN@
+SwapTotal: 9kBx
+MemTotal:
+9kB
+SwapFree:92 kB
+Active:1	kB
+SwapCached:71 kBY
+Active:	8   kB>N/e
+MemFree:5058 kB
+SwapCached:12 
+  kB
+MemTotal:   1199kB
+SwapTotal:85 kB`wQ
+Inactive:6kB8Jz?
+MemFree:5kB
+SwapFree:	89 kB
+VmallocUser: 9 kB
+SwapTotal:90kB
+SwapCached: 
+5kBz)
+Buffers:877kB<zfX@
+VmallocTotal:99kB0
+VmallocChunk:488kBM?
+Cached:6    kB
+VmallocTotal:
+
+ 895 kB\^
+Active: 9 kBb
+Dirty:	998kB
+Dirty:8kBC
+SwapCached: 03 kB
+Cached: 		9kB
+SwapTotal:920kB
+MemTotal:379kB
+Inactive:843kB
+SwapTotal: 99kB
+Cached: 68kB
+Dirty: 89kB
+Buffers:  82kB
+Inactive:219149kBT
+VmallocChunk:87kBb
+Buffers: 2 kB-
+SwapFree:8 	kBeo*i@+
+VmallocTotal: 4
+
+kB
+MemFree:05 	
+kB
+Inactive:9 kB0
+MemTotal:998kB&
+VmallocChunk:  6  kBL
+SwapFree:798	  kB
+VmallocUser:9  kB=i|
+Cached:    1kB
+VmallocChunk:	9kB
+VmallocChunk:0kB
+SwapTotal: 9kB
+MemFree:801kB7
+Buffers:9  kBp
+MemFree: 9kB
+Active:02kB
+Inactive:89889kB
+MemFree:54kB#
+Cached:	 9kB
+Cached:9
+kBW
+SwapCached:1 kBK~
+SwapTotal:8
+kB
+Active: 8kB
+MemFree:
+999 kB'%
+Active:98 kB
+SwapFree:9387kBA
+Active:2kB<
+SwapCached:45kBI
+MemTotal:8kBL
+Cached:1   kB
+VmallocUser:8963kB
+MemFree:2
+	kB
+Buffers:3kB
+Inactive:5kB
+SwapTotal:809 	  kB\0
+VmallocTotal:1kB^F
+SwapTotal: 94 kB
+VmallocUser:	 280	kB
+Active: 	 9kB
+VmallocUser: 0897kBf
+MemTotal: 2   kB
+VmallocChunk: 894040kBi
+SwapTotal:5    kB
+SwapTotal: 984379	kB
+MemFree:80 kB
+VmallocTotal:7kBk
+SwapTotal:	81kB
+MemTotal: 9kB
+MemFree:484 kB
+MemFree:6kB
+VmallocUser:9  kB
+SwapFree:  		  99
+    	kB?8Z
+VmallocUser:6 kBG
+SwapFree:0kB
+Active:8kBc'l
+MemTotal: 7825kBf
+Inactive:6kB
+VmallocUser:85kB
+VmallocChunk:8	  kBYR{
+VmallocTotal:89823 kB/
+Cached:708kB
+MemTotal:  8 kB,
+Cached:
+0 kB
+Dirty:8	kB
+VmallocTotal:888kBb)_
+MemTotal:
+44  kBc]
+VmallocTotal:82  kB
+SwapFree:4kB#
+VmallocUser: 6 kBs
+Dirty:  830kB
+Dirty:58kB
+VmallocUser:9 kB
+MemFree:293kBP
+Active:  7 
+	kB
+SwapFree: 8kBe
+Buffers:	 9395kB
+VmallocTotal:  889kBOl
+Cached: 9kB
+VmallocTotal:88
+
+kBp
+Active:2kB;4T[
+Dirty:	 7kB
+SwapTotal:	
+ 9kB
+Buffers:3  		  kB
+VmallocUser:8	 kB
+SwapFree:	94kB
+Active:8895kBg
+Dirty:	881kB
+Cached:
+691kB
+Active: 2kBPI
+VmallocTotal:190	kB
+VmallocTotal:	 
+ 0kB<,,.
+MemTotal:		0kB
+Inactive:80  kB
+Dirty:994kB
+VmallocUser:   3894
+ kBI
+SwapTotal:1kB
+VmallocTotal:06kBJ
+MemTotal:5kB
+SwapFree:8  kB@5
+VmallocTotal:	
+ 71kBN~
+Cached:8 kB
+VmallocTotal:9kB1
+Active:2		kB!Oh
+MemFree:67kB
+SwapCached:3 kB
+VmallocTotal:  8	kB2
+SwapTotal:61986kB
+MemFree:0kB
+MemFree:81816 kB
+SwapFree:984     	kB
+Active:2kB
+Dirty:6 kB=
+Cached:55 kB
+MemTotal:63861924 kB
+VmallocTotal: 2kB;
+SwapFree:918kBW
+VmallocTotal:0kBN
+Active:  35kBt>T
+
+Inactive: 	8  
+kBcG
+MemTotal: 889kB
+MemTotal: 143kB
+Dirty: 	   893kB
+SwapTotal:9kBx
+Inactive:8kB
+MemFree:2 kB
+Inactive:889kB
+Buffers:8kB
+Dirty:5 kBJ
+SwapFree: 97  kB
+Buffers:89   kB
+Inactive: 889
+kB]
+Dirty:7kBh
+Cached:451 kB\"
+MemFree:	83kB\"
+Active:94kBAR
+Inactive: 
+6kB
+Inactive:9  kB
+Buffers:6	kB
+SwapFree:359 kB'
+Cached:69	kBov
+VmallocTotal:858	 kB
+VmallocUser:86kB
+Inactive:  89
+kBr
+Active:	 8kB _
+SwapCached:589kBa
+VmallocUser:68972kB
+Active: 8
+		
+ kB
+SwapCached:
+6  kB
+Buffers:3 kBD
+SwapTotal:
+969746738 kB
+VmallocTotal:3kBZU
+Dirty: 06kB9}
+Active:9kBS
+Dirty:9kB
+VmallocTotal:8 kBU

@@ -1,0 +1,388 @@
+bd  demo-5.8-py4.2.egg
+d  demoneeded-9.3-py3.8-N.egg
+~d  demoneeded-9.4-py4.1-N.egg
+d  other-8.8-py7.8.egg
+rQd  demoneeded-1.0-py5.6.egg
+d  extdemo-9.9-py5.5.egg
+d  extdemo-8.1-py8.9.eggo
+Bnd  extdemoneeded-4.9-py9.9.egg
+d  other-8.9-py8.2.egg
+d  extdemo-1.9-py3.2-:.egg
+d  demoneeded-9.9-py9.2-U.eggG
+d  extdemoneeded-2.9-py8.2-~\"%j.egg!
+d  demo-2.4-py8.1.eggt
+d  extdemo-9.9-py8.2-MO~.egg
+kd  extdemoneeded-1.2-py8.4-G.egg
+>d  demoneeded-8.8-py8.9.egg|
+d  extdemo-9.8-py8.8.egg
+d  extdemo-5.8-py8.8-Z.eggr
+%d  demo-0.1-py5.0-Z.egg%sLS
+d  extdemoneeded-3.8-py9.8.egg
+-bd  demo-2.2-py9.1.egg
+@d  demo-8.1-py8.1.egg
+d  other-0.9-py9.1.egg
+d  demoneeded-8.8-py6.2-#!6.egg
+d  extdemoneeded-6.6-py0.4.egg
+d  demo-2.7-py7.9-+v7bq.eggmG
+6XJd  other-8.8-py8.9-:.egg
+d  other-4.4-py8.4.egg[O
+d  other-6.9-py9.8.eggO
+>Gd  demo-8.1-py8.3.eggk
+d  other-9.3-py7.3.egg#T
+d  demo-3.8-py0.9.egg9
+d  extdemoneeded-8.8-py5.3-d.egg\a
+xF5\0(r}td  demo-2.9-py8.8.egg
+d  other-9.0-py9.6.egg:
+d  demo-1.8-py9.9-O.egg
+C|d  extdemo-3.8-py0.8.egg;
+[Y\aIsd  other-8.5-py6.4-3.egg
+d  demoneeded-9.4-py8.8.egg
+G;7d  other-4.8-py8.0-.egg
+d  demo-0.9-py8.7.egg
+d  other-8.8-py6.9-*.eggKs
+d  demo-2.7-py9.9-V;.egg
+d  other-9.4-py8.2-DZ.egg
+yTd  extdemoneeded-7.5-py5.7.egg
+ud  other-8.1-py0.2-.egg
+d  demoneeded-2.8-py2.8-sH.egg?
+d  other-8.2-py8.9.egg
+d  other-1.9-py2.1.egg
+d  other-8.1-py3.6-~.eggN
+>d  other-3.5-py9.9.egg
+d  other-2.8-py9.2.egg~\0
+d  demoneeded-9.8-py3.8.egg
+d  demoneeded-2.4-py4.4.eggA
+Rd  demoneeded-9.3-py1.1.eggX
+ d  other-9.6-py4.6.egg#B|
+d  other-3.9-py8.9-.egg
+d  demoneeded-1.5-py8.8.egg2
+!vcd  demo-8.8-py3.3-y]:].egg
+vod  demoneeded-8.8-py0.2.egg
+\a$d  demoneeded-6.9-py9.9-Br-c.egg
+d  extdemoneeded-6.3-py8.7.egg
+Xd  demo-9.1-py8.8.egg
+d  demo-9.3-py8.2.egg
+d  other-1.8-py8.4-.egg
+Od  extdemoneeded-9.8-py8.8.egg
+Vd  extdemo-7.3-py8.0.egg{tJ@
+=d  other-9.5-py2.8.eggOC]Tt8
+\d  demoneeded-9.8-py5.9.egg
+d  other-8.8-py9.9.egg
+d  other-5.8-py3.3-E.eggIyK
+d  other-8.1-py1.9-#=_.egg{
+d  demo-2.0-py7.8-\"R.egg
+Wd  other-9.5-py4.6-BZ.eggz
+\ed  extdemoneeded-1.8-py9.4.eggh.
+d  demoneeded-9.6-py8.6-cR.egg
+|d  extdemoneeded-8.8-py9.8-s.egg
+d  other-0.9-py9.9.egg
+wRd  demoneeded-1.4-py1.5.egg
+d  other-9.4-py1.1.egg
+d  other-9.1-py9.6-w.eggY
+.;,d  extdemoneeded-7.9-py8.9-.egg
+vd  extdemo-5.2-py7.6-o.egg
+d  other-9.8-py9.8-U.eggs-
+d  extdemoneeded-1.9-py1.4.eggEH
+d  extdemo-9.9-py5.9-T.egg^~Gm
+d  demoneeded-8.9-py9.2.egg
+d  extdemo-2.5-py3.5.eggr	
+d  other-7.7-py8.8.egg
+Yd  demo-8.7-py2.8.egg
+d  extdemoneeded-5.8-py3.1.egg
+;Od  demo-8.8-py8.5.egg+$
+;K/d  other-8.2-py8.6.egg\0N!
+d  other-4.8-py5.9.egg
+d  other-3.2-py7.2.egg^$
+d  demoneeded-8.8-py8.2-D).eggg
+$&d  extdemo-5.7-py6.3.egg
+
+Ld  other-9.6-py4.8-E,.egg|KQ
+d  extdemoneeded-9.9-py2.3.egg;
+Pd  other-8.2-py8.8.egg
+d  extdemo-8.8-py8.8-i.egg
+d  demo-0.8-py9.7-2.eggk1I]p
+$d  demo-8.7-py9.2.eggW
+d  extdemoneeded-8.8-py8.9.egg
+d  demoneeded-3.7-py4.9->(.egg
+Sd  demoneeded-9.6-py9.4.egg
+d  demo-5.7-py9.8.egg+
+&Rd  demoneeded-6.2-py8.3.eggh
+k>d  demo-8.9-py2.9.egg
+d  extdemoneeded-8.5-py1.7.eggE\
+6d  other-9.5-py3.4.eggz7
+&d  extdemo-6.3-py9.4.egg
+d  extdemo-5.8-py9.6.egg
+Rd  extdemo-9.5-py9.8.egg
+Ld  other-8.4-py1.9.egg,
+-d  demoneeded-4.5-py3.9-%.egg
+d  extdemoneeded-7.9-py5.6.egg
+[d  other-3.5-py9.8.egg-
+pd  other-3.7-py8.8-|.egg
+d  extdemoneeded-0.8-py2.7-7&,.egg
+0LB>EJ}&d  extdemoneeded-7.9-py0.9.egg
+d  other-0.9-py9.8-'.eggO
+d  other-0.9-py3.2.egg$J,
+Md  demoneeded-7.9-py8.9-+.egg 7
+d  demo-8.8-py4.9-i,.egg;
+md  other-6.8-py3.0.egg\
+|d  demo-9.9-py8.9.eggl
+B-d  extdemo-8.0-py9.8.egg
+d  other-2.3-py9.4.egg
+d  demoneeded-2.1-py8.9.eggsg
+d  other-9.1-py2.8-Q!.egg
+Md  demoneeded-9.9-py6.8-.egg4
+ld  other-9.0-py9.8-@.egg.
+d  demoneeded-9.9-py8.9-TWA.eggB
+d  demoneeded-8.6-py4.7.egglg
+d  demo-8.8-py8.5.egg$
+Pd  extdemoneeded-9.8-py5.7.egg
+qd  other-6.5-py5.3-B.eggD
+d  other-9.2-py8.7-h.eggm\ah
+ld  extdemoneeded-8.8-py8.4-t.egg
+?
+d  demoneeded-5.7-py3.7.egg
+q
++d  extdemo-2.9-py1.7.eggU
+NF=d  other-2.8-py9.2-0g.eggy
+d  demo-7.6-py9.8-\a.eggw
+d  extdemoneeded-9.5-py8.4.egg
+d  demoneeded-8.9-py8.8.egg
+d  extdemo-3.9-py2.2-Dp.egg
+d  extdemoneeded-8.6-py5.8-.eggN
+)d  extdemo-5.9-py9.3.egg%
+\0kd  other-1.4-py2.8-le.egg*'
+d  other-4.5-py8.9-D+.egg@dzR
+,d  demo-5.5-py0.7.egg
+Hd  demo-8.6-py9.9-y.egg
+2d  extdemoneeded-9.9-py2.9.egg
+d  demoneeded-3.7-py6.8.egg
+ d  extdemo-9.6-py0.9-(.egga
+d  demoneeded-0.3-py3.8-\afxC.eggo
+Jd  demoneeded-0.9-py9.8.egg
+A(d  demo-5.8-py4.9-f.egg
+d  extdemoneeded-8.4-py4.2.eggr
+'Bd  extdemoneeded-3.4-py8.9-ul.eggx
+d  other-7.8-py6.8-$.egg
+d  demo-3.6-py9.9.egg
+'Ud  extdemo-8.3-py9.9.eggK
+gd  extdemo-9.3-py5.7-..eggp!dR
+)d  other-0.8-py8.1-a.egg
+d  demoneeded-7.5-py8.8-S.eggU
+	\d  demoneeded-0.8-py7.3->.egg
+d  other-5.4-py6.8.egg\"F
+1d  other-3.9-py0.1-@.egg\e
+-d  extdemoneeded-9.7-py2.2-$L.eggR
+gd  extdemoneeded-8.8-py9.8.egg0,E'Gx;d
+]d  demo-9.9-py4.9.egg
+d  extdemo-0.9-py8.8-W.egg
+d  other-4.3-py4.1-+.egg
+_)4-d  other-8.1-py2.5.egg
+Yd  extdemoneeded-9.9-py5.8-E.egg:
+d  extdemoneeded-4.8-py6.8.egg9
+*d  extdemo-1.9-py6.8-<.egg
+d  demoneeded-8.8-py8.8.egg
+Fd  extdemoneeded-9.8-py3.8.egg
+d  other-9.3-py6.4-.egg
+td  extdemo-3.9-py8.6-!.eggF
+id  demo-0.8-py9.8-!.egg\ani
+)d  extdemoneeded-6.9-py2.8-2_s.egg
+Gd  other-0.8-py8.9-R.egg
+d  extdemoneeded-8.3-py8.8-\.eggLWAs*
+ad  extdemoneeded-9.7-py8.4.eggD
+d  other-1.8-py4.8.egg0
+;Atd  extdemo-8.8-py6.8.egg
+d  other-9.9-py7.7.egg
+d  extdemo-4.9-py7.9-S.egg`{
+d  other-9.3-py4.4.egg
+d  other-8.1-py9.9.egg}
+Gd  demoneeded-0.7-py5.9.egg=
+:hcd  demoneeded-7.9-py9.8-sF\0.egg]E
+d  demoneeded-4.5-py8.8.egg&
+d  demo-7.8-py4.9.egg
+d  demoneeded-7.1-py8.9-],.eggQ1
+	ud  demo-9.9-py1.2.egg
+]d  demo-1.5-py1.9.egg
+d  extdemoneeded-9.9-py8.2-#).eggy
+d  other-8.8-py9.8.eggH
+d  demo-8.1-py8.6-{+m.eggv
+l&M9d  extdemoneeded-9.8-py9.8.egg
+d  demo-3.9-py3.4-Yt!$\".egg=*r!
+d  other-3.2-py4.8-a).egg
+d  demoneeded-5.5-py6.8.eggDF
+d  demo-9.6-py7.7-S.egg
+#ed  demo-8.8-py8.5.egg_
+d  demo-8.1-py2.1.egg
+MDd  demoneeded-8.3-py0.9-6]+{.egg
+,ld  demo-1.9-py2.2-^.egg;
+d  extdemo-9.8-py9.6.eggv_A
+d  extdemoneeded-9.8-py8.3-{.egg87^LX
+_.d  extdemo-2.8-py7.5.egg
+d  other-5.9-py0.9-I.egg
+sd  demo-6.5-py7.6.eggS
+8d  other-0.8-py0.9.egg
+d  other-9.6-py3.9-R.egg
+d  other-8.2-py2.8.egg
+'d  other-9.9-py8.2-x.egg
+Wd  other-9.8-py8.8.egg
+d  demoneeded-9.4-py9.7-mv.egg
+Kd  extdemo-8.9-py6.9.eggX
+d  extdemoneeded-8.8-py6.8-l.eggk
+d  extdemo-8.1-py5.1.egg
+d  demoneeded-8.4-py9.9.egg
+d  extdemo-9.9-py9.8-]|~o.egg|
+pd  demo-0.9-py9.3-.{cJ\eD.egg
+2d  other-9.2-py1.9.egg
++d  extdemoneeded-5.0-py9.3-p.egg
+d  extdemo-5.9-py3.8-.eggBy:
+4d  other-9.0-py8.8-p.egg
+ d  other-0.5-py9.8.egg
+Md  extdemoneeded-4.1-py1.8.eggoh8\"U
++Yd  extdemoneeded-1.7-py3.1.egg
+m)d  extdemo-8.8-py4.5-o.egg\eY
+ad  other-1.7-py9.9-t.egg
+7d  demoneeded-9.9-py8.8-![,.egg:@
+d  other-4.8-py0.8.egg
+d  demoneeded-8.5-py4.1.egg<
+ud  other-5.8-py9.6-\e.eggA
+}oWd  demoneeded-7.2-py9.2.eggE
+d  other-0.9-py1.9-E.egg^c
+E2d  other-2.2-py1.8-V.egg
+/Hd  extdemoneeded-9.1-py8.6-@.eggQ
+d  extdemo-8.3-py3.5.egg
+d  demoneeded-5.4-py3.9-1.eggo
+Ld  other-9.9-py5.4.egg
+d  demoneeded-8.5-py6.0.eggJ
+d  extdemoneeded-8.8-py3.8-'.eggS
+'$d  extdemoneeded-9.9-py9.8-.egg\
+d  extdemo-9.8-py5.5-d.eggR&C
+\ad  demo-5.9-py3.1-^-.egg
+d  demoneeded-6.8-py8.4.egg
+[3\"d  demoneeded-9.8-py5.8-oq.eggr'
+d  extdemoneeded-8.9-py9.9-\e.eggm
+3d  demo-8.1-py3.7-.eggV
+d  extdemoneeded-2.4-py8.9.egg?
+zd  demo-9.8-py7.8.eggm2
+jyAd  demoneeded-0.0-py9.8.eggn
+d  extdemoneeded-7.2-py8.0-%.egg
+F?>d  other-1.8-py3.2.egg:
++1d  demo-8.9-py8.3-L.egg+
+d  demo-5.2-py9.8-\a.egg3,
+Vd  other-8.0-py1.0.egg)
+!md  extdemoneeded-8.8-py3.0.egg[
+$
+d  other-9.3-py9.2.egg
+Kd  demo-2.8-py4.8.eggfME
+S9d  other-9.9-py7.9.eggTV
+d  other-6.9-py1.6.egg
+I\ed  other-8.5-py7.9-x.egg
+\0\ad  other-3.8-py9.7-\e.egg
+d  extdemo-9.9-py8.8.egga
+qG*Id  extdemo-0.9-py8.5-P.eggB
+d  demo-8.0-py4.1.egg
+d  extdemoneeded-9.8-py6.5-.egg
+d  demo-5.3-py9.3-\a.eggX
+d  demo-2.4-py0.9-D.egg
+d  demoneeded-2.9-py8.9-uNp.eggWI
+d  demo-7.6-py7.1.egg
+0`d  extdemo-1.0-py1.5-$}.eggZ
+d  demoneeded-9.8-py9.4.egg
+d  extdemoneeded-1.2-py8.9.egg
+d  extdemoneeded-8.7-py0.8.eggN
+ud  extdemo-1.1-py7.5-A.egg
+d  extdemoneeded-8.9-py4.3.egg
+d  extdemoneeded-8.1-py1.6-.egg
+id  demo-9.6-py6.1.egg
+d  extdemo-6.0-py9.9-,.egg
+d  demoneeded-8.3-py6.4-ki.egg
+d  demoneeded-8.3-py8.8-a.egg[
+ d  extdemoneeded-8.4-py8.0-L.egg
+>d  demoneeded-8.2-py5.7-}f.eggX
+d  demoneeded-5.8-py9.8-1p.egg
+=2d  extdemo-9.8-py6.9.egg
+\@pEd  extdemoneeded-9.3-py3.2-YT.egg
+d  other-1.7-py8.4.egg (~
+2 sRpld  other-2.1-py7.1.egg
+-=M\ad  other-8.4-py9.2-N.eggh
+d  demo-0.0-py9.5.egg#~
+.(d  other-9.9-py7.8.egg
+d  extdemo-9.6-py9.4--h^.eggjg
+d  other-7.8-py4.4-!.egg^
+&d  other-4.8-py7.5.egg(<
+d  demoneeded-9.2-py4.0.egg\e+/
+bd  other-9.9-py9.1-t\a.eggH3
+9d  demoneeded-9.9-py3.8.egg[
+w>kd  extdemoneeded-3.9-py9.9.eggB>
+d  extdemo-7.5-py9.8.eggZ
+>pd  other-9.9-py2.0.egg
+BrY=qd  demoneeded-7.0-py8.8-WSo.eggE:^k4@m&
+*d  demoneeded-0.0-py7.1.egg
+oTAT[d  demo-2.3-py8.8.egg
+d  extdemoneeded-3.0-py8.0.egg@
+#d  extdemoneeded-4.2-py9.6-.egg
+d  other-8.9-py0.0-X[n.egg\a
+J8d  demoneeded-8.8-py8.0.eggP
+d  extdemoneeded-9.9-py4.6.egg
+Sd  other-8.6-py6.8.eggS%
+_d  extdemoneeded-8.1-py6.8.egg
+d  demo-7.8-py9.8-5.egg83
+d  demo-8.0-py7.0-!L.egg
+`d  other-9.8-py9.6.egg
+d  other-0.2-py0.9.egg
+d  extdemoneeded-2.6-py8.8-5.egg%
+d  demo-9.1-py9.2-#.egg
+d  other-8.5-py4.9.egg
+qhd  other-0.8-py9.7-,\aoz.egg
+d  demoneeded-9.9-py8.9.egg=$
+Qd  demoneeded-3.5-py4.9.egg>
+d  demoneeded-5.6-py0.0.egg
+C3d  extdemoneeded-6.1-py1.1.egg
+d  demoneeded-4.7-py8.9-|.egg
+d  extdemoneeded-9.3-py2.0.egg
+d  demoneeded-7.9-py9.9-*y.egg
+d  extdemoneeded-9.9-py1.9.egg2
+I\?2d  extdemoneeded-8.9-py7.1-v.eggI\0&
+\ad  extdemoneeded-9.5-py1.9-Ik_.egg
+d  other-8.4-py4.4.egg
+(d  extdemo-4.8-py7.9.egg
+d  demoneeded-5.6-py7.9.egg
+ud  demo-8.8-py9.9.eggB
+pd  extdemo-8.0-py6.1.egg\0
+d  demoneeded-9.9-py2.8.eggQ\0
+d  demo-2.2-py2.1.egg
+d  extdemo-8.9-py9.8-I5.egg
+(d  extdemo-4.9-py8.2-.egg
+5Qd  other-8.9-py8.7-.egg@
+d  other-8.4-py9.8-.eggg
+}d  other-9.9-py9.4-r.egg>
+d  extdemo-4.5-py8.2.egg 
+d  extdemo-4.8-py8.8-Da.egg
+Hd  other-9.8-py9.8.egg
+v L\Td  extdemo-6.8-py0.0-y.egg)
+Id  demoneeded-9.0-py3.2.egg
+d  demoneeded-7.3-py9.8-P.egg
+MDd  extdemoneeded-8.4-py7.9-!.egg34IF
+d  extdemo-9.0-py1.8.eggt\"
+[d  demoneeded-8.8-py9.9.egg
+d  demo-4.5-py6.9.eggFv
+d  extdemo-7.6-py8.9-.eggO
+d  demo-1.2-py8.7.egg
+d  demoneeded-9.8-py2.8.egg
+d  extdemo-8.9-py8.6.egg1
+d  other-8.8-py8.8-1j.egg
+0d  other-2.2-py8.4-xO.egg
+d  extdemo-2.9-py7.8-9.egg
+Xe\d  demoneeded-1.6-py1.5.egg
+/d  extdemo-6.2-py0.9-70.egg
+Ord  demoneeded-8.8-py7.8.egg
+d  extdemo-2.1-py3.6-.V2.eggeZ
+d  extdemoneeded-2.3-py8.7-E.egg\"
+2yd  other-8.6-py4.9-i.egg
+d  other-9.9-py0.8.egg
+4bd  other-8.7-py8.7-.egg
+d  other-9.3-py2.6-'.egg
+d  other-5.8-py3.8.egg
+Id  extdemo-0.9-py8.0-_.egg
+;d  other-8.4-py4.8-\".egg
+f-d  other-9.8-py0.8-tF.egg
+pnG0d  other-0.8-py9.9.egg_
+d  other-1.1-py8.4-,.eggP

@@ -1,0 +1,389 @@
+[0:0] -A  -j ACCEPT -p icmp -s 192I168k11g0/24
++O[0:0] -A > -j ACCEPT -p icmp -s 192168f1180/24
+[0:0] -A R -j ACCEPT -p icmp -s 192C168p11J0/24
+Vq[0:0] -A C -j ACCEPT -p icmp -s 192/168~110/24y
+\0[0:0] -A ] -j ACCEPT -p icmp -s 192<168110/24+
+ad[0:0] -A ( -j ACCEPT -p icmp -s 192168311D0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192F168t1170/24
+W[0:0] -A  -j ACCEPT -p icmp -s 192w168o11.0/24+l6w
+\0[0:0] -A  -j ACCEPT -p icmp -s 192M168<110/24
+'[0:0] -A  -j ACCEPT -p icmp -s 192Y168/11?0/245
+1[0:0] -A *<> -j ACCEPT -p icmp -s 192v168r11u0/24p
+[0:0] -A  -j ACCEPT -p icmp -s 192168u11@0/24g6
+[0:0] -A  -j ACCEPT -p icmp -s 192u168W11N0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192F168>110/24
+C#[0:0] -A H -j ACCEPT -p icmp -s 192k168;11<0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192W168@11Y0/24\a
+[0:0] -A & -j ACCEPT -p icmp -s 192u168t110/24%
+[0:0] -A  -j ACCEPT -p icmp -s 192s168k11d0/24P
+[0:0] -A  -j ACCEPT -p icmp -s 192J16811^0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192s168G11Z0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168@11v0/24
+v5[0:0] -A  -j ACCEPT -p icmp -s 192l16811N0/24
+[0:0] -A X -j ACCEPT -p icmp -s 192i168j11a0/24vV
+Z}[0:0] -A | -j ACCEPT -p icmp -s 192168^11M0/24
+[0:0] -A X -j ACCEPT -p icmp -s 192D168:11=0/24%
+[0:0] -A $ -j ACCEPT -p icmp -s 192X168s11`0/24
+[0:0] -A J -j ACCEPT -p icmp -s 192>168>11}0/24EA
+5[0:0] -A  -j ACCEPT -p icmp -s 192f16811Y0/24
+[0:0] -A  -j ACCEPT -p icmp -s 19216811T0/24&
+[0:0] -A  -j ACCEPT -p icmp -s 192i16811.0/24
+Aq[0:0] -A  -j ACCEPT -p icmp -s 192168`11~0/24t(z
+[0:0] -A ' -j ACCEPT -p icmp -s 192 168[11e0/24
+E7[0:0] -A  -j ACCEPT -p icmp -s 192168N110/24
+nI[0:0] -A  -j ACCEPT -p icmp -s 1928168}11t0/24
+x[0:0] -A '1P -j ACCEPT -p icmp -s 192@168/11,0/24E/
+[0:0] -A 1 -j ACCEPT -p icmp -s 192X168o110/24
+ [0:0] -A  -j ACCEPT -p icmp -s 1921683110/24.
+[0:0] -A  -j ACCEPT -p icmp -s 192916811W0/24
+[0:0] -A } -j ACCEPT -p icmp -s 192*168110/24\0mD
+y#A8[0:0] -A  -j ACCEPT -p icmp -s 192f168B1160/24
+[0:0] -A  -j ACCEPT -p icmp -s 192k16811	0/24
+D[0:0] -A  -j ACCEPT -p icmp -s 192*168`11R0/24:
+_oJR[0:0] -A  -j ACCEPT -p icmp -s 192r16811;0/24)	
+[0:0] -A F -j ACCEPT -p icmp -s 192#1681110/24s3
+V[0:0] -A  -j ACCEPT -p icmp -s 192l168m11|0/24	B(
+n/[0:0] -A K -j ACCEPT -p icmp -s 192S168h11Q0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192'16811G0/24D
+l[0:0] -A d!N -j ACCEPT -p icmp -s 192!168)110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192f168^11c0/24BjD
+4>[0:0] -A 9 -j ACCEPT -p icmp -s 192U168110/24h
+[0:0] -A Q -j ACCEPT -p icmp -s 192j168:11&0/24<
+[0:0] -A f -j ACCEPT -p icmp -s 192O16811g0/24. 
+[0:0] -A  -j ACCEPT -p icmp -s 192d168@11s0/240>	v
+\0[0:0] -A  -j ACCEPT -p icmp -s 192q168b1160/24
+[0:0] -A ZU -j ACCEPT -p icmp -s 192+168;110/24
+ [[0:0] -A  -j ACCEPT -p icmp -s 192168h11?0/24t
+[0:0] -A  -j ACCEPT -p icmp -s 192168b11_0/24
+`[0:0] -A  -j ACCEPT -p icmp -s 192!168411v0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168k11G0/24
+HA_[0:0] -A  -j ACCEPT -p icmp -s 192168Y11C0/24
+[0:0] -A U$ -j ACCEPT -p icmp -s 192168f110/24
+ou[0:0] -A  -j ACCEPT -p icmp -s 192016811$0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192J16811(0/24`
+[0:0] -A . -j ACCEPT -p icmp -s 192I168S11K0/24
+R[0:0] -A  -j ACCEPT -p icmp -s 192G168L110/24
+L[0:0] -A  -j ACCEPT -p icmp -s 192X168B11j0/24\0
+[0:0] -A  -j ACCEPT -p icmp -s 192g1686110/24P
+[0:0] -A 5 -j ACCEPT -p icmp -s 192d168F11'0/245c
+[0:0] -A  -j ACCEPT -p icmp -s 192(168x11o0/24_.
+j[0:0] -A  -j ACCEPT -p icmp -s 192(16811U0/24q
+[0:0] -A  -j ACCEPT -p icmp -s 192U16811w0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168611i0/24
+>A[0:0] -A  -j ACCEPT -p icmp -s 192Y168e11h0/24
+[0:0] -A 4 -j ACCEPT -p icmp -s 192168n11&0/24PD
+[0:0] -A  -j ACCEPT -p icmp -s 19216811{0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192t168Z11Y0/24<ct](y
+h[0:0] -A h -j ACCEPT -p icmp -s 192{16811!0/24+
+[0:0] -A  -j ACCEPT -p icmp -s 1921168/11s0/24}[
+[0:0] -A KV -j ACCEPT -p icmp -s 192/168,110/24!W
+[0:0] -A  -j ACCEPT -p icmp -s 192a168d11Y0/24
+[0:0] -A  -j ACCEPT -p icmp -s 19216831100/24M
+[0:0] -A  -j ACCEPT -p icmp -s 192v168R11|0/24&_EI 
+[0:0] -A  -j ACCEPT -p icmp -s 192a168i11!0/24Q
+1J\"[0:0] -A  -j ACCEPT -p icmp -s 192A16811O0/24f
+[0:0] -A ! -j ACCEPT -p icmp -s 192)168|110/24
+F3[0:0] -A  -j ACCEPT -p icmp -s 192o168=11E0/24
+[0:0] -A Ue -j ACCEPT -p icmp -s 192168d11G0/242
+[0:0] -A { -j ACCEPT -p icmp -s 192M168_11z0/24Yhf_Zpd
+cXY[0:0] -A = -j ACCEPT -p icmp -s 1922168d110/24T%
+[0:0] -A  -j ACCEPT -p icmp -s 192168;11o0/24
+4[0:0] -A  -j ACCEPT -p icmp -s 192L168*11&0/24
+[0:0] -A U -j ACCEPT -p icmp -s 192M168]11O0/24
+[0:0] -A k -j ACCEPT -p icmp -s 192>168X11X0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192Q168>11z0/24
+[0:0] -A p -j ACCEPT -p icmp -s 192168j11I0/24
+2{E[0:0] -A %o$ -j ACCEPT -p icmp -s 192168q11$0/24r
+[0:0] -A sS -j ACCEPT -p icmp -s 192168f11R0/24
+[0:0] -A $w -j ACCEPT -p icmp -s 192168<11y0/24g(
+z7[0:0] -A  -j ACCEPT -p icmp -s 192&16811)0/24
+i[0:0] -A 5$ -j ACCEPT -p icmp -s 192a168s11/0/246
+[0:0] -A ] -j ACCEPT -p icmp -s 192;168w110/24
+'Mb[0:0] -A 0 -j ACCEPT -p icmp -s 192168}110/24 T
+[0:0] -A  -j ACCEPT -p icmp -s 192L168Y1100/24u,*Qy
+[0:0] -A  -j ACCEPT -p icmp -s 192168r11t0/24
+y[0:0] -A  -j ACCEPT -p icmp -s 192:168'11>0/24'#
+[0:0] -A u -j ACCEPT -p icmp -s 192L168Y11h0/24
+[0:0] -A V7Wx -j ACCEPT -p icmp -s 192`168c110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168G11}0/24@Gh8m>
+[0:0] -A 1T -j ACCEPT -p icmp -s 192#168g110/24
+[0:0] -A [B -j ACCEPT -p icmp -s 192|168W11^0/24
+[0:0] -A )u[2o -j ACCEPT -p icmp -s 192168)110/24
+[0:0] -A 6# -j ACCEPT -p icmp -s 192h16811.0/24Y'
+[0:0] -A qf# -j ACCEPT -p icmp -s 192{168!11<0/24
+g[0:0] -A 5 -j ACCEPT -p icmp -s 192+168r11!0/240
+
+g[0:0] -A  -j ACCEPT -p icmp -s 192H168$11%0/24k
+6\e[0:0] -A  -j ACCEPT -p icmp -s 192,168`11f0/24$9V
+|&t<h[0:0] -A 5 -j ACCEPT -p icmp -s 192(168M110/24
+$[0:0] -A  -j ACCEPT -p icmp -s 192<168110/24
+[0:0] -A 0 -j ACCEPT -p icmp -s 192H168)11w0/24*g
+[0:0] -A  -j ACCEPT -p icmp -s 192168110/24
+K?[0:0] -A WW -j ACCEPT -p icmp -s 192Y168411B0/24P
+1[0:0] -A o -j ACCEPT -p icmp -s 192G168<110/24\0
+[0:0] -A IfjlK} -j ACCEPT -p icmp -s 192K168b11e0/246sm
+Q[0:0] -A  -j ACCEPT -p icmp -s 192Y168A110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192\16811M0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192Y168611M0/24
+[0:0] -A g -j ACCEPT -p icmp -s 192 168w11e0/24?
+[0:0] -A %Jm` -j ACCEPT -p icmp -s 192R168!1110/24
+Zo[0:0] -A ! -j ACCEPT -p icmp -s 192C168l11`0/24
+[0:0] -A p -j ACCEPT -p icmp -s 192w168|11X0/246}sh$NO\e
+&[0:0] -A \0 -j ACCEPT -p icmp -s 192168s11{0/24
+d3jw[0:0] -A  -j ACCEPT -p icmp -s 192168'11f0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192m168a11+0/24mc{C
+[0:0] -A  -j ACCEPT -p icmp -s 192168c11P0/24s@
+@[0:0] -A  -j ACCEPT -p icmp -s 192168m11'0/24ALD
+[0:0] -A  -j ACCEPT -p icmp -s 192S168s11H0/24X
+r[0:0] -A  -j ACCEPT -p icmp -s 192S168	1120/24
+\0\[0:0] -A  -j ACCEPT -p icmp -s 192168c11l0/24A
+[0:0] -A B -j ACCEPT -p icmp -s 192p168s110/24
+\enR0[0:0] -A q -j ACCEPT -p icmp -s 192K16811=0/24B
+@[0:0] -A  -j ACCEPT -p icmp -s 192I16811b0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192?168}11A0/241!
+J[0:0] -A  -j ACCEPT -p icmp -s 1923168110/24TU
+[0:0] -A  -j ACCEPT -p icmp -s 192168<11O0/24
+j[0:0] -A  -j ACCEPT -p icmp -s 192916811S0/24a
+[0:0] -A 3 -j ACCEPT -p icmp -s 192168&11;0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192I168/11`0/24
+u[0:0] -A  -j ACCEPT -p icmp -s 1922168.1190/24
+[0:0] -A  -j ACCEPT -p icmp -s 192N168=1100/24
+1(]I/[0:0] -A  -j ACCEPT -p icmp -s 192:168	11T0/24 
+[0:0] -A MAJd -j ACCEPT -p icmp -s 192716811g0/24NP
+?[0:0] -A 'vYE -j ACCEPT -p icmp -s 192V16811B0/24
+[0:0] -A 0 -j ACCEPT -p icmp -s 192168`11K0/24
+0[0:0] -A  -j ACCEPT -p icmp -s 1923168511V0/24	p\"
+[0:0] -A  -j ACCEPT -p icmp -s 192c168S11%0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168+11;0/24k
+v$[0:0] -A  -j ACCEPT -p icmp -s 192-168N11g0/24
+M[0:0] -A z -j ACCEPT -p icmp -s 192`168110/24
+@[0:0] -A ~ -j ACCEPT -p icmp -s 1925168Q110/24
+s=[0:0] -A Y -j ACCEPT -p icmp -s 192168T110/24oH
+[0:0] -A n -j ACCEPT -p icmp -s 192i168011Z0/24Z
+[0:0] -A  -j ACCEPT -p icmp -s 192k168s11E0/244i\a
+[0:0] -A H -j ACCEPT -p icmp -s 192'168r11x0/24
+[0:0] -A m\"Qz -j ACCEPT -p icmp -s 192h168r11a0/24
+[0:0] -A _7!>q3 -j ACCEPT -p icmp -s 192168110/24
+[0:0] -A 2` -j ACCEPT -p icmp -s 19216811U0/24<Xm
+[0:0] -A  -j ACCEPT -p icmp -s 192168y1160/24\a
+$[0:0] -A  -j ACCEPT -p icmp -s 192?168<11#0/24
+[0:0] -A \ab -j ACCEPT -p icmp -s 192e168110/241
+`[0:0] -A L\e -j ACCEPT -p icmp -s 192O168^1110/24
+P[0:0] -A F -j ACCEPT -p icmp -s 192/168L11z0/24
+[0:0] -A 7e -j ACCEPT -p icmp -s 192168U11y0/242
+[0:0] -A  -j ACCEPT -p icmp -s 192X168S11(0/24!,
+Dku!.[0:0] -A  -j ACCEPT -p icmp -s 192168l11?0/24
+6[0:0] -A  -j ACCEPT -p icmp -s 192)168S11)0/24\a
+[0:0] -A  -j ACCEPT -p icmp -s 1922168@1140/24
+8<[0:0] -A  -j ACCEPT -p icmp -s 192o16811j0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168411^0/24k7
+d[0:0] -A 9E -j ACCEPT -p icmp -s 192m168110/24
+my.0[0:0] -A  -j ACCEPT -p icmp -s 192~16811~0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192Q168C110/24n
+[0:0] -A *t -j ACCEPT -p icmp -s 192x168~11H0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192:168h11W0/24
+[0:0] -A 7 -j ACCEPT -p icmp -s 1920168+11K0/24C
+[0:0] -A  -j ACCEPT -p icmp -s 192+1688110/24
+=[0:0] -A 5 -j ACCEPT -p icmp -s 192^168$11A0/24|?-
+l[0:0] -A |b -j ACCEPT -p icmp -s 192>168B11/0/24&
+0[0:0] -A  -j ACCEPT -p icmp -s 192168n110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192x168W11w0/24
+K[0:0] -A C2 -j ACCEPT -p icmp -s 192L16811W0/24GJ
+>[0:0] -A  -j ACCEPT -p icmp -s 192D16811W0/24
+q[0:0] -A ? -j ACCEPT -p icmp -s 192Q168110/24D
+D=[0:0] -A L~w -j ACCEPT -p icmp -s 192Z16811B0/24d
+[0:0] -A  -j ACCEPT -p icmp -s 192r16811+0/24F
+R[0:0] -A  -j ACCEPT -p icmp -s 192C168~11 0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192Y16811R0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168	11@0/24w
+[0:0] -A  -j ACCEPT -p icmp -s 192j168110/24
+[0:0] -A k -j ACCEPT -p icmp -s 192[168W11d0/24
+;[0:0] -A N -j ACCEPT -p icmp -s 192168B1180/24
+[0:0] -A \" -j ACCEPT -p icmp -s 192168Z11X0/246
+[0:0] -A  -j ACCEPT -p icmp -s 1925168{11-0/24
+d[0:0] -A 4[ -j ACCEPT -p icmp -s 192>168311	0/24
+2s[0:0] -A  -j ACCEPT -p icmp -s 192_168Z110/24/>
+[0:0] -A  -j ACCEPT -p icmp -s 192o168-110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192A1688110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192w168w11!0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192.168)11Z0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168i1100/24;
+>[0:0] -A  -j ACCEPT -p icmp -s 192Z168s11'0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192;168G110/24'\e@
+[0:0] -A A -j ACCEPT -p icmp -s 192E168i11S0/24
+[0:0] -A `4 -j ACCEPT -p icmp -s 1921681180/24@
+[0:0] -A \aVP~ -j ACCEPT -p icmp -s 19216811g0/24
+[0:0] -A  -j ACCEPT -p icmp -s 1927168Y11f0/24
+b[0:0] -A ^, -j ACCEPT -p icmp -s 192i168G11=0/24
+W[0:0] -A \;M_ -j ACCEPT -p icmp -s 19216811~0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192,168Q11M0/24
+u[0:0] -A  -j ACCEPT -p icmp -s 192F16811T0/24=
+g_![0:0] -A  -j ACCEPT -p icmp -s 192S168411?0/24
+4y[0:0] -A  -j ACCEPT -p icmp -s 192/168o110/24
+.D~[0:0] -A V -j ACCEPT -p icmp -s 192(168i11f0/24w6E
+[0:0] -A & -j ACCEPT -p icmp -s 192168)110/24p
+\D[0:0] -A P -j ACCEPT -p icmp -s 192168X11D0/24
+[0:0] -A 1?+F	S -j ACCEPT -p icmp -s 192g168_110/24
+g
+_{[0:0] -A S -j ACCEPT -p icmp -s 192X16811T0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192Q168:11F0/24
+vD[0:0] -A  -j ACCEPT -p icmp -s 192n168@11]0/24&
+[0:0] -A LnAZ\" -j ACCEPT -p icmp -s 192<168011i0/24
+\eFc[0:0] -A w -j ACCEPT -p icmp -s 192[168u1150/24
+ [0:0] -A  -j ACCEPT -p icmp -s 192168v1150/24D
+	u
+[0:0] -A  -j ACCEPT -p icmp -s 192168;11K0/24h/
+[0:0] -A d -j ACCEPT -p icmp -s 192P168J11s0/24
+hK[0:0] -A  -j ACCEPT -p icmp -s 192168x1190/24D^V
+[0:0] -A e -j ACCEPT -p icmp -s 192&168{110/24T
+Mn[0:0] -A  -j ACCEPT -p icmp -s 192f168M110/24G
+[0:0] -A ^k -j ACCEPT -p icmp -s 19216811%0/24;
+[0:0] -A  -j ACCEPT -p icmp -s 192m168110/24
+.p\"[0:0] -A  -j ACCEPT -p icmp -s 192168u11e0/24`>S
+\[0:0] -A  -j ACCEPT -p icmp -s 1920168S110/248
+[0:0] -A  -j ACCEPT -p icmp -s 192168A11&0/24GZbZ
+Z>[0:0] -A xQ -j ACCEPT -p icmp -s 192%16811m0/24
+K[0:0] -A  -j ACCEPT -p icmp -s 1921680110/24
+3[0:0] -A  -j ACCEPT -p icmp -s 192168K11w0/24&}
+_[0:0] -A  -j ACCEPT -p icmp -s 192&168N110/24Y
+[0:0] -A T -j ACCEPT -p icmp -s 19216811O0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168,11[0/24X
+[0:0] -A \ -j ACCEPT -p icmp -s 192E1681140/24d
+I4[0:0] -A  -j ACCEPT -p icmp -s 192s168211=0/24?
+[0:0] -A $ -j ACCEPT -p icmp -s 192d168R11}0/246
+[0:0] -A J -j ACCEPT -p icmp -s 192I168311V0/24
+>[0:0] -A  -j ACCEPT -p icmp -s 192	168V11-0/24I`
+[0:0] -A  -j ACCEPT -p icmp -s 192168t110/24
+[0:0] -A W -j ACCEPT -p icmp -s 192]168+1190/24?8c
+\0[0:0] -A  -j ACCEPT -p icmp -s 1923168h1150/24
+Bb[0:0] -A YeE -j ACCEPT -p icmp -s 192J168_1110/24PRks
+kU[0:0] -A \ -j ACCEPT -p icmp -s 192Y168<11_0/24
+1[0:0] -A  -j ACCEPT -p icmp -s 192168	11E0/24
+DmQi[j[0:0] -A S -j ACCEPT -p icmp -s 19216811&0/24
+<K[0:0] -A dd -j ACCEPT -p icmp -s 192N168)110/24}kg
+[0:0] -A  -j ACCEPT -p icmp -s 192W16811R0/24p
+[0:0] -A \a\"8 -j ACCEPT -p icmp -s 192b16811Y0/24P%
+[[0:0] -A T -j ACCEPT -p icmp -s 192j168r11%0/24j`p
+Z`x[0:0] -A  -j ACCEPT -p icmp -s 192	168110/24
+b[0:0] -A  -j ACCEPT -p icmp -s 192e168p11b0/24
+\[0:0] -A * -j ACCEPT -p icmp -s 192E168p11v0/24}
+[0:0] -A  -j ACCEPT -p icmp -s 192J168\11~0/24
+V[0:0] -A  -j ACCEPT -p icmp -s 192z1685110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192o168110/24q
+Z[0:0] -A  -j ACCEPT -p icmp -s 192H168a11D0/24
+[0:0] -A _r -j ACCEPT -p icmp -s 192G16811E0/24jt
+[0:0] -A  -j ACCEPT -p icmp -s 192168411/0/24GK
+[0:0] -A  -j ACCEPT -p icmp -s 192A168n11\0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192:168*11`0/24N
+[0:0] -A  -j ACCEPT -p icmp -s 192168U11:0/24:{
+-[0:0] -A  -j ACCEPT -p icmp -s 192168$11^0/24
+=\RM[0:0] -A  -j ACCEPT -p icmp -s 192O16811<0/24r
+w[0:0] -A , -j ACCEPT -p icmp -s 192e16811y0/24
+v[0:0] -A  -j ACCEPT -p icmp -s 192=168;11L0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168x11R0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192[168411g0/24
+I[0:0] -A  -j ACCEPT -p icmp -s 192168*11M0/24<
+[0:0] -A K -j ACCEPT -p icmp -s 192}168R11T0/24
+G[0:0] -A  -j ACCEPT -p icmp -s 192$16811+0/24
+a[0:0] -A 5 -j ACCEPT -p icmp -s 192(168'11y0/24hz/
+[0:0] -A kf -j ACCEPT -p icmp -s 192e16811a0/24F
+\a[0:0] -A W< -j ACCEPT -p icmp -s 192168{11e0/24E
+[0:0] -A _E_/ -j ACCEPT -p icmp -s 192q168Z11*0/24
+:[0:0] -A  -j ACCEPT -p icmp -s 192K16811b0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192s168A11Y0/24B+
+[0:0] -A y -j ACCEPT -p icmp -s 192g168K110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192\16811{0/24LUu
+[0:0] -A Ou -j ACCEPT -p icmp -s 192G16811K0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192z168T11S0/24
+[0:0] -A 6 -j ACCEPT -p icmp -s 192N168h11A0/24H
+#[0:0] -A (o -j ACCEPT -p icmp -s 192168x11I0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192u168d110/24
+a[0:0] -A  -j ACCEPT -p icmp -s 192~16811w0/24F
+[0:0] -A  -j ACCEPT -p icmp -s 192h16811y0/246u,
+_g[0:0] -A {$  -j ACCEPT -p icmp -s 192Z168110/24F>
+[0:0] -A  -j ACCEPT -p icmp -s 192J168	110/24
+[0:0] -A U -j ACCEPT -p icmp -s 192}168110/24-,
+OCB[0:0] -A  -j ACCEPT -p icmp -s 192|168g110/24
+[0:0] -A 4 -j ACCEPT -p icmp -s 192p168#11g0/24Pa1o?
+[0:0] -A  -j ACCEPT -p icmp -s 192'168s110/24Dl
+[0:0] -A +v -j ACCEPT -p icmp -s 192/1681160/24
+
+b[0:0] -A  -j ACCEPT -p icmp -s 192168&11z0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192|16811T0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168110/24P
+Eb	[0:0] -A  -j ACCEPT -p icmp -s 192N16811]0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192C168A11m0/24M4G
+[0:0] -A p -j ACCEPT -p icmp -s 192l168a11o0/24
+P\[0:0] -A  -j ACCEPT -p icmp -s 1921168F110/24
+[0:0] -A 4 -j ACCEPT -p icmp -s 1921681150/249
+[0:0] -A ( -j ACCEPT -p icmp -s 192b168^1180/24
+[0:0] -A % -j ACCEPT -p icmp -s 192L168G110/24Y=l
+Z~h[0:0] -A d -j ACCEPT -p icmp -s 192%168011D0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168i11V0/24
+[0:0] -A Qj -j ACCEPT -p icmp -s 192`168.1150/24W
+[0:0] -A  -j ACCEPT -p icmp -s 192A168U110/24P]
+=[0:0] -A  -j ACCEPT -p icmp -s 192168&11J0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192r168911(0/24&
+[0:0] -A = -j ACCEPT -p icmp -s 192168011_0/24a
+[0:0] -A R<6 -j ACCEPT -p icmp -s 192t168N11c0/24
+![0:0] -A O1 -j ACCEPT -p icmp -s 192#168p1140/24\I=
+m[0:0] -A , -j ACCEPT -p icmp -s 192316811:0/24Sv
+j$Ja[0:0] -A H -j ACCEPT -p icmp -s 192168z1170/24
+[0:0] -A  -j ACCEPT -p icmp -s 192<168711)0/24
+lv[0:0] -A <P -j ACCEPT -p icmp -s 192s16871120/24
+[0:0] -A / -j ACCEPT -p icmp -s 1928168D11'0/24A
+q[0:0] -A  -j ACCEPT -p icmp -s 192g168c11n0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192z16811u0/24
+%;\Gby[0:0] -A U -j ACCEPT -p icmp -s 192j168F1140/24
+[0:0] -A  -j ACCEPT -p icmp -s 192D168C11`0/24&a
+\e|[0:0] -A  -j ACCEPT -p icmp -s 192/168+11m0/24
+,[0:0] -A * -j ACCEPT -p icmp -s 192C168110/24U
+[0:0] -A . -j ACCEPT -p icmp -s 192g168i110/24
+;[0:0] -A  -j ACCEPT -p icmp -s 192Y1680110/24S
+z[0:0] -A  -j ACCEPT -p icmp -s 192B168z11%0/24
+	[0:0] -A ^XA -j ACCEPT -p icmp -s 192|168]110/245l
+[0:0] -A ]F`O -j ACCEPT -p icmp -s 192168!11}0/24
+[0:0] -A J -j ACCEPT -p icmp -s 192e168411h0/24
+_[0:0] -A  -j ACCEPT -p icmp -s 192`16811-0/24=
+w[0:0] -A  -j ACCEPT -p icmp -s 192g168!11<0/24`
+[0:0] -A ' -j ACCEPT -p icmp -s 192#168/11[0/24w
+[0:0] -A  -j ACCEPT -p icmp -s 192i168M11R0/24kM
+zM#$[0:0] -A ` -j ACCEPT -p icmp -s 192_168x11:0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192168c110/24~
+d7[0:0] -A  -j ACCEPT -p icmp -s 1929168d11 0/24
+[0:0] -A k7, -j ACCEPT -p icmp -s 192F168511|0/24
+&\-[0:0] -A ^6\ek7(l -j ACCEPT -p icmp -s 192168}110/24
+[0:0] -A  -j ACCEPT -p icmp -s 1929168.110/24?
+w[0:0] -A YG -j ACCEPT -p icmp -s 192s168&11V0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192T168=110/24
+@4[0:0] -A 3 -j ACCEPT -p icmp -s 192v168O11|0/24gB
+I[0:0] -A  -j ACCEPT -p icmp -s 192a16811`0/245W
+[0:0] -A f -j ACCEPT -p icmp -s 192U168)110/24
+B]n[0:0] -A h -j ACCEPT -p icmp -s 192)168W11e0/24
+5[0:0] -A )@ -j ACCEPT -p icmp -s 192k168p11l0/24
+?/[0:0] -A  -j ACCEPT -p icmp -s 192168m110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192m168 110/24El\0
+[0:0] -A o -j ACCEPT -p icmp -s 192q168>1150/24i
+[0:0] -A  -j ACCEPT -p icmp -s 192A168o11=0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192}168\11J0/24
+.[0:0] -A u -j ACCEPT -p icmp -s 192>16811b0/24z(
+[0:0] -A 0 -j ACCEPT -p icmp -s 192<168n110/24QV
+y*)[0:0] -A o\0 -j ACCEPT -p icmp -s 192	168S11a0/24*3
+}[0:0] -A g -j ACCEPT -p icmp -s 192:168n11Z0/24
+`t[0:0] -A  -j ACCEPT -p icmp -s 192168_11}0/24:
+[0:0] -A  -j ACCEPT -p icmp -s 192M168;11V0/24I1Ztl
+[0:0] -A  -j ACCEPT -p icmp -s 192:168:11q0/24
+[0:0] -A R[!/1 -j ACCEPT -p icmp -s 192}168D110/24>vqL
+[0:0] -A  -j ACCEPT -p icmp -s 192R168~11D0/24Vg1
+[0:0] -A h\"j -j ACCEPT -p icmp -s 192X168\110/24U
+ [0:0] -A  -j ACCEPT -p icmp -s 192168c110/24u
+[0:0] -A  -j ACCEPT -p icmp -s 192i168V11U0/24
+[0:0] -A  -j ACCEPT -p icmp -s 192#168J11B0/24h!OZ+
+
+A[0:0] -A  -j ACCEPT -p icmp -s 192t168B1110/24
+[0:0] -A  -j ACCEPT -p icmp -s 192e168011,0/24
+[0:0] -A : -j ACCEPT -p icmp -s 192<168~11`0/24
+ [0:0] -A  -j ACCEPT -p icmp -s 192:168o110/24
+{?[0:0] -A  -j ACCEPT -p icmp -s 192v168p11K0/24v
+[0:0] -A  -j ACCEPT -p icmp -s 192168R110/24`
+[0:0] -A  -j ACCEPT -p icmp -s 192168611J0/24\e

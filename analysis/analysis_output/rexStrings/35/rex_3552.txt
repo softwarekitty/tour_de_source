@@ -1,0 +1,387 @@
+area_at(8,8,781,58)should_contain_text ''h
+area_at(8,69,455950,88)Fshould_contain_text '_Z'
+area_at(4,9,9872,98)ashould_contain_text 'U'Dg
+area_at(83,57,64,9610)should_contain_text '*'^1\e.v
+area_at(28,037,859,4)should_contain_text ''/
+area_at(2,8,53,5)Qshould_contain_text ''fp
+area_at(9,83188,8,2)'should_contain_text ''_
+area_at(9,29,73,9);should_contain_text ''
+area_at(8,6,3,19894)tshould_contain_text 'V'B
+area_at(6,9,579,05)=should_contain_text ''*
+area_at(6,8,48,959)should_contain_text '')'0
+area_at(1,0,98,4)<should_contain_text ''
+area_at(8884,8,8,7)should_contain_text ''}I7
+area_at(9,3,8,708)}should_contain_text '^Y8',
+area_at(488,8,16,6)(should_contain_text ''bc
+area_at(888,4,87,3499)5should_contain_text ''
+area_at(0,3,99,99)should_contain_text 'P'nk
+area_at(9,505,3,08)~should_contain_text '5'
+area_at(33,98,6187,0651)@should_contain_text ''
+area_at(9,546,8,8)oshould_contain_text ''
+area_at(4,9,26,87)should_contain_text '.0'0:
+area_at(93,8,96,76)(should_contain_text ''
+area_at(859,1,69,096)ishould_contain_text ''
+area_at(04,9,53845,9)|should_contain_text ''
+area_at(89,1,081,9)Ushould_contain_text ''
+area_at(8,011218168,26,16)}should_contain_text 'Y'X
+area_at(26,67,9439,3)fshould_contain_text '$'
+area_at(8,2,81815,45)ishould_contain_text 'VNN'U
+area_at(394,4,98,4)#should_contain_text ''
+area_at(2,6,0,8)Sshould_contain_text ''
+area_at(79,8,94,1)pshould_contain_text 'jx'
+area_at(0,9,5,069)}should_contain_text ''T
+area_at(696,7,7,0)eshould_contain_text 'A=N')
+area_at(9,79,7,989)&should_contain_text ''
+area_at(2,49,89,9)should_contain_text '{'
+area_at(9,8,43,03)nshould_contain_text 'e'
+area_at(29,3,79,9)should_contain_text ''NT(P
+area_at(8,4,599,83)fshould_contain_text 'Gy'd \3
+area_at(34,3,128,55)Ushould_contain_text '\0GS~'
+area_at(2,1,9,8)Ashould_contain_text ''
+area_at(793,0,0,91)4should_contain_text ''H$p
+area_at(9,557,906,6)wshould_contain_text ''>-8
+area_at(0,9916,9,9)wshould_contain_text 'Tcg'~
+area_at(14,38,711,8)should_contain_text 'S1'
+area_at(98,59,5,38)}should_contain_text ''
+area_at(803,75,8,94)fshould_contain_text ''
+area_at(88,789,8,8)should_contain_text ''
+area_at(799,19,72,06)should_contain_text '\"'
+area_at(9,5,61,69)Pshould_contain_text '#'
+area_at(498,93,995,4)Bshould_contain_text ''8T
+area_at(8,88,9,3)should_contain_text '&'
+area_at(98,320998,6,99)should_contain_text '@'
+area_at(18,2,89,8)(should_contain_text 'E'9I
+area_at(08,9,1,9891)Gshould_contain_text '*'
+area_at(0,4,894,889)8should_contain_text ''
+area_at(78890,0,88,8)should_contain_text 'q'
+area_at(989,9,9,7)2should_contain_text ''
+area_at(8,88,8,988)[should_contain_text ''
+area_at(8,8,88,3)should_contain_text ''
+area_at(85,4,07,888)Fshould_contain_text ''
+area_at(79,43,3,1){should_contain_text ''Q
+area_at(3,890,8,9)should_contain_text ''
+area_at(89,0,2,586)should_contain_text ':'
+area_at(46,9399,0281,7)Kshould_contain_text 'R'
+area_at(9,6,9,6789)Wshould_contain_text ''
+area_at(440,9,8868,9)%should_contain_text ''
+area_at(3,8,1,6)should_contain_text 'NN'
+area_at(8,2,08154,3)fshould_contain_text ''
+area_at(1,8,3,289)vshould_contain_text ''1
+area_at(6,7958,17,98)7should_contain_text ''
+area_at(968856959,9,9,8)Zshould_contain_text '{g$[9'T
+area_at(29,9,8,1949)should_contain_text '}'o	
+area_at(9847,5,9,29361)!should_contain_text '6'R\
+area_at(5,6,88,5)Rshould_contain_text ''
+area_at(158,66,8,9328) should_contain_text '>q7<d'
+area_at(8,1,11,41)should_contain_text ''
+area_at(0,08,9,2)	should_contain_text '~'4
+area_at(1919,8,8,9785)should_contain_text 'l1F''
+area_at(3,3,6,3)=should_contain_text ''=
+area_at(4,9,67,29)_should_contain_text ''5
+area_at(891,90,933,893)2should_contain_text ''
+area_at(43,48,9,18):should_contain_text 'Z3gW'
+area_at(918,9,568273,82314)wshould_contain_text ''rW
+area_at(3,7,898,95)Cshould_contain_text ''
+area_at(74,9,086,8)yshould_contain_text 'P']
+area_at(88,9,8,51)tshould_contain_text '<'
+area_at(6,6,3364,6)should_contain_text ''
+area_at(817,7,9,847)Qshould_contain_text ''\.cd
+area_at(2,8,970,0)should_contain_text ''.
+area_at(573,47,1,67)oshould_contain_text 'Q'A
+area_at(88,49,9,9);should_contain_text ''
+area_at(98,9,87,4)>should_contain_text '#_'
+area_at(48,8,9,9)hshould_contain_text ''
+area_at(12,32989,8,89){should_contain_text ''pEbd
+area_at(99,9,0,5)Xshould_contain_text 'l`n03'
+area_at(8,7,719,8)]should_contain_text ''
+area_at(5359,8,59,3783)should_contain_text ''
+area_at(25991027,988,769,7)9should_contain_text 'P\@Om'
+area_at(263089801,648328,6,9)oshould_contain_text ''
+area_at(8589,82,6,9)should_contain_text ''
+area_at(948,93,9,8)should_contain_text ''
+area_at(5,7,8,8)should_contain_text ''
+area_at(3,78,2,8180)should_contain_text ''
+area_at(86,188,8,66)should_contain_text '?'?K
+area_at(9,1,1,427388)sshould_contain_text 'G'-
+area_at(8,5,4,38)'should_contain_text 'H'
+area_at(2,98,8,63)Tshould_contain_text '\a'*
+area_at(9480859,6,9,8)should_contain_text '&'
+area_at(85,9,83,88)tshould_contain_text '&'Q3e
+area_at(2,8,7,66)should_contain_text '\"D'%
+area_at(8,8,90,87)should_contain_text '''
+area_at(7,7,0,895)mshould_contain_text ''
+area_at(9,3,7,7)should_contain_text 'SG\0'
+area_at(32,2,8,8)Eshould_contain_text ''4
+area_at(4,7,5,74)vshould_contain_text ''P
+area_at(1,9,8,9999)should_contain_text ''
+area_at(68,8,99,8890){should_contain_text ''
+area_at(199,319,9,981849)should_contain_text ''
+area_at(8,9,8,6333)Mshould_contain_text ''1
+area_at(9789,99,99883,2)4should_contain_text ''
+area_at(9,98,73,19)sshould_contain_text 'w'
+area_at(84,82909832,0,7)should_contain_text ''
+area_at(40,3,9,3)Bshould_contain_text ''%'
+area_at(9,07,9,8)eshould_contain_text '1\"a'
+area_at(73989,9,23,9)oshould_contain_text ''
+area_at(4,9,4,98)should_contain_text '{'|
+area_at(89,89,8,85)6should_contain_text ''
+area_at(88,39,57,9)@should_contain_text ''
+area_at(22664,95,8,211)vshould_contain_text '7=w$'
+area_at(8,8,2,82)pshould_contain_text 'a'W
+area_at(3,2,18997,4)8should_contain_text '\"G.b'
+area_at(9,8,2,699)Ashould_contain_text ''
+area_at(30,99,9,5)should_contain_text 'z&&'T
+area_at(6,9,592,9913)oshould_contain_text ''<^
+area_at(7,41,5,2)	should_contain_text ''
+area_at(869,0,6,49),should_contain_text 'DkS'
+area_at(39,9237,98,0)Ashould_contain_text ''4~
+area_at(9,84789,2,4))should_contain_text ')I'
+area_at(0,9,985,9)zshould_contain_text ''
+area_at(9,387489,8,397)!should_contain_text ''
+area_at(96,788997,458,5)&should_contain_text 'zsd'
+area_at(818,9,69,36)Rshould_contain_text ''
+area_at(4,84,9498,8)_should_contain_text 'ST'
+area_at(59,4,4,19)wshould_contain_text ''w
+area_at(98,8,89,25)should_contain_text ''\
+area_at(0,9,9098,9)>should_contain_text ''
+area_at(34996,7,0,9)cshould_contain_text ''
+area_at(68,86,9,688)$should_contain_text ''k(
+area_at(8,5899,48598,473)	should_contain_text '#H'
+area_at(99,9,34,94)should_contain_text ''Z
+area_at(1,895,9,14)Dshould_contain_text ''
+area_at(86933,8,8360,8);should_contain_text 'o'
+area_at(869,9,8,88)'should_contain_text '	y''v{^
+area_at(8,8,68,86)Fshould_contain_text ''A>
+area_at(1,9389,2,9)Qshould_contain_text ''
+area_at(7,790,3,28)	should_contain_text ''`
+area_at(589,8,3,17)mshould_contain_text ''
+area_at(1,6,785,591933)ashould_contain_text ''i+\e
+area_at(977,947,9,969)should_contain_text ''
+area_at(8,8,0,8)should_contain_text ''
+area_at(98451,0,655,9)wshould_contain_text 'HzkR'
+area_at(978,98,3590,89)4should_contain_text ''
+area_at(529,63792,044,99)xshould_contain_text ''
+area_at(0,762,8,689)should_contain_text ''
+area_at(03,8,1,8587)#should_contain_text 'r'0
+area_at(35,936,89,1)	should_contain_text 'sse'
+area_at(9,18,8,8)<should_contain_text '%'2@
+area_at(0,8,22,9810)Fshould_contain_text ''
+area_at(7,8,6,6)Yshould_contain_text ')'i
+area_at(318,9,8,9)should_contain_text ''zA-
+area_at(9793,9580988,8,844)should_contain_text 'Z'
+area_at(69,88,51,8)9should_contain_text ''o
+area_at(808,9470,8,718)should_contain_text 'h'
+area_at(598,161,2,818)ashould_contain_text '[=<'x>u
+area_at(5,86,8,3299)Qshould_contain_text ''
+area_at(9,7,3,3))should_contain_text ''
+area_at(8,2,1,8)Qshould_contain_text ''
+area_at(7090,294,38,78)should_contain_text ''C
+area_at(5,68,5,9)should_contain_text '0'
+area_at(98,665,95158594,0)Oshould_contain_text ''
+area_at(9,07,6,2)Kshould_contain_text ''8
+area_at(1451829,1,0,38)Rshould_contain_text '3}IU'
+area_at(9,8948567,1,1)/should_contain_text ''
+area_at(99,61,8,9)Ashould_contain_text 'uZ'
+area_at(5,1,49,2)cshould_contain_text 'H'[]
+area_at(74,8,8,87887)Bshould_contain_text ''
+area_at(638,9,7,3)cshould_contain_text ''
+area_at(99,7,16,6)should_contain_text 'v'/
+area_at(126,9,5,139)Pshould_contain_text ''
+area_at(7,899,7,8168)Wshould_contain_text ' 'I
+area_at(1792,987,9,39)fshould_contain_text '\c@t'y>R
+area_at(9887,8618,53,4)6should_contain_text '\0^13'k
+area_at(7,54,9888,8)	should_contain_text ''
+area_at(885,9,793980,3)9should_contain_text '''
+area_at(889,9,8,1)should_contain_text 'G>WB'
+area_at(9,8999213987,0,2690)+should_contain_text '2'!cF
+area_at(4,9,39,98)should_contain_text '@V#'
+area_at(26,8,09,49)bshould_contain_text ''T
+area_at(9,2,1,6010)qshould_contain_text ''&D
+area_at(8,38,838,89)Vshould_contain_text ''
+area_at(93442,69,98,725788)5should_contain_text '}n'
+area_at(9,8,9,5)should_contain_text '/'
+area_at(9,8,4,85)yshould_contain_text ''
+area_at(39,982,8,3)eshould_contain_text ''
+area_at(98,9,9,873)qshould_contain_text ''
+area_at(5,1,8,9888)5should_contain_text 'o'
+area_at(9,0,76,9)yshould_contain_text ''
+area_at(819,699,89,9)2should_contain_text 'l#'fm\a
+area_at(895,3,9,7)Sshould_contain_text ''
+area_at(7511,6,8,445)should_contain_text ''X
+area_at(138942,573,968,1)Fshould_contain_text 'a`'|
+area_at(39,3,18,8)should_contain_text ''
+area_at(1,882,4,03749)qshould_contain_text ''
+area_at(8,5,1,8)`should_contain_text ''E
+area_at(71,4,7,45)Dshould_contain_text ''OQQbpK$
+area_at(9,28,683,638)dshould_contain_text ''
+area_at(98,99,2,9)rshould_contain_text ''
+area_at(028,466,8,79)should_contain_text '3Pc8'
+area_at(92,93920,9,1)should_contain_text ''p
+area_at(7,9,698,9)ashould_contain_text ''
+area_at(759,989,780,81)should_contain_text ']p'%!\%
+area_at(8,38,1,9)9should_contain_text ''
+area_at(927,99,9,95)should_contain_text 'C'{z
+area_at(8,8,8873,828)7should_contain_text ''
+area_at(9,095,1,6)should_contain_text ''CN5
+area_at(1,9,86,8)ishould_contain_text ''
+area_at(985,8,89,91)Mshould_contain_text ''{
+area_at(60,8569,48,5)]should_contain_text ''A
+area_at(88,7886,811,99888)4should_contain_text ''
+area_at(91,9,8,84)should_contain_text ''
+area_at(82,9,88,698)3should_contain_text '\"'
+area_at(9,35,94,24)should_contain_text '':
+area_at(89,0,888,69)[should_contain_text 'Q'
+area_at(8,939982880,049889,9)Hshould_contain_text ''A
+area_at(2,2,761,388)should_contain_text ''
+area_at(2,8,9,86)\should_contain_text 'u'
+area_at(7,8,1,43)|should_contain_text ''
+area_at(8,2,3,21)|should_contain_text ''4l
+area_at(28,9859,79,88)=should_contain_text 'h'zA
+area_at(9182,93092,77,9)should_contain_text ''<#;G
+area_at(36,8,672069,09)should_contain_text 'G 'R
+area_at(8,6,282,6)gshould_contain_text 'i'
+area_at(8,80,7,83999)ushould_contain_text ''~
+area_at(86323,1,8,895)should_contain_text ''
+area_at(899,8,0,8)Kshould_contain_text '\'
+area_at(98,1,6,88)should_contain_text '^+'
+area_at(990,9,9,98)should_contain_text 'Q'
+area_at(9999,6,67,8)should_contain_text ''
+area_at(2,91,5,7)should_contain_text ''
+area_at(58,179,9,19){should_contain_text 'NosT''
+area_at(6,89198,8129,9)6should_contain_text ''
+area_at(7999,1,839842984,98)Ashould_contain_text 'VJ'
+area_at(963,6,8,9)qshould_contain_text ''
+area_at(37,488399,7699,91)should_contain_text '/6'}i
+area_at(84,2,1317,88)mshould_contain_text 'C;'
+area_at(5,9,0,9) should_contain_text 'VOYu\0~'
+area_at(9,812,9,9)should_contain_text ''
+area_at(421,58,198,390){should_contain_text ''
+area_at(3,874,42,8)should_contain_text '?'~n@
+uKd:A\0
+area_at(04,8,295,8)nshould_contain_text ''\0
+area_at(0,4,999898,2)]should_contain_text 'AI'
+area_at(88,58,83199,6)_should_contain_text ''F
+area_at(6,9,9,9)should_contain_text ''
+area_at(6,3998,293,11)Ishould_contain_text ''ED
+area_at(4,97,65,9)9should_contain_text 'LU'
+area_at(939,889,62,88)oshould_contain_text 'm'
+area_at(8,8,8,98)\should_contain_text ''
+area_at(9996,6,81,9)2should_contain_text '#'g~4
+area_at(220,9,1,293)8should_contain_text ','h`
+area_at(0,36,9,91)_should_contain_text 'B^'
+area_at(8,98799,1,3)1should_contain_text '',
+area_at(778,29,90,594398)]should_contain_text '2'?
+area_at(8,6,8,1)cshould_contain_text 'v='f<
+area_at(0,8,511248897,19)should_contain_text ''t
+area_at(7,87,1889,99)should_contain_text 'T'Gm
+area_at(1,998,8,9) should_contain_text 'd'
+area_at(90,9,8,96)should_contain_text 'mgKl'
+area_at(8,9,8699,1981)Tshould_contain_text ''1PO
+area_at(1,8,4,60)should_contain_text ''
+area_at(70,3,9,4){should_contain_text ''
+area_at(98,0,6,9988)-should_contain_text 'rc6'
+area_at(798,79992,9,0)xshould_contain_text '^'
+area_at(480,09,8897,7)should_contain_text ''
+area_at(9,7,9,9)Gshould_contain_text 'HH'1
+area_at(5,95,4,4)should_contain_text ''1
+area_at(08,89,9,0)Pshould_contain_text ''
+area_at(4,22,898,7)should_contain_text ''
+area_at(5996,9,58,49)_should_contain_text ''
+area_at(5,1,71,9)should_contain_text 'Gp'g\0
+area_at(8,15,9,95)Eshould_contain_text ''>'%
+area_at(9,9,4,9390)should_contain_text '(W'
+area_at(7,2,31,4)qshould_contain_text '('
+area_at(8,58,83,0)should_contain_text ''	
+area_at(4,19,8,83)1should_contain_text '4'
+area_at(8,63,72729,9)should_contain_text ''49X
+area_at(5,393,68,5)Ishould_contain_text ''
+area_at(1,3784,791,8))should_contain_text ''
+area_at(2829,8,579,2)yshould_contain_text ''8
+area_at(59,1,2,1):should_contain_text 'W='UC
+area_at(9,686619,9,89)should_contain_text 'L)'s
+area_at(5428,893,88,16)Hshould_contain_text ''Z
+area_at(99,4,8,7)@should_contain_text '']
+area_at(988,8,8981996,5070)8should_contain_text '':MHE
+area_at(89981,283,7,9)>should_contain_text '/'.3
+area_at(892,0,928,99)Hshould_contain_text 'l '
+area_at(8,9,28338,8)[should_contain_text ''=^
+area_at(337789,48453899,89,99)Oshould_contain_text ''?~\"h
+area_at(8,2,822,8)should_contain_text ''
+area_at(9,86,1,28)Hshould_contain_text '+'
+area_at(9,8,9,8)should_contain_text ''
+area_at(974,392,5,9)'should_contain_text '\a'-$
+area_at(4,99,8,3682)1should_contain_text '1'
+area_at(1,9,39,94)`should_contain_text ':uai'bR
+area_at(99,91,8,9)Gshould_contain_text 'X1'
+area_at(8,7,9,42)jshould_contain_text ''2
+area_at(7,9,9,1)ishould_contain_text ''\
+area_at(51,1,0,90)yshould_contain_text ''0z!
+area_at(6867,2900818,33,6)0should_contain_text ''OE
+area_at(9,2,9,9)`should_contain_text '\avzb<+'
+area_at(37,7,67,792)0should_contain_text ''zL'r\0\0
+area_at(90,8844,8,296)kshould_contain_text 'oV9Q'7r\
+area_at(8,3,9,3)oshould_contain_text ''
+area_at(4,4,9,829)wshould_contain_text '3'
+area_at(89,9,18,8)xshould_contain_text ''&
+area_at(7,9,94,20)Rshould_contain_text ''*.
+area_at(963,39,92988509,8199)@should_contain_text ''e
+area_at(599,583,93,4)should_contain_text '^&'.
+area_at(6,538,49,88)Yshould_contain_text ''8
+area_at(13,199919,6,81)should_contain_text 'O\e'
+area_at(89,7,823,9)fshould_contain_text 'd'
+area_at(6,938,53,08)>should_contain_text ''
+area_at(892,825,7,9)should_contain_text ''lW
+area_at(488,191,6,698)Bshould_contain_text 'R'
+area_at(5,94,958,9)Fshould_contain_text ''
+area_at(29050,7,9,386)^should_contain_text '\e'
+area_at(8,525,9,8)hshould_contain_text 'P'us9
+area_at(888,707,912,1)Lshould_contain_text '4'(
+area_at(5,017,0,0)(should_contain_text 'B'
+
+area_at(92,9,76,392)2should_contain_text ''L
+area_at(86,98,99,69)Vshould_contain_text ''
+area_at(49,8,7,9):should_contain_text '|\a\a'<r.=
+area_at(9,58,888,45)vshould_contain_text 'T'j
+area_at(9,579,55,8)ashould_contain_text ''?
+area_at(2,8,0,2)Rshould_contain_text 'Sp'`
+
+area_at(15,9,64890,4)should_contain_text ''
+area_at(0,79,119,8)0should_contain_text ''
+area_at(5,8,83,9)$should_contain_text ''
+area_at(0,1,32,9)should_contain_text ''
+area_at(88,7,0,0)should_contain_text 'b='X4t
+area_at(81898289,9,8,9)bshould_contain_text 'F'
+area_at(94,196,14989228,694),should_contain_text ''ij-
+area_at(8,9,96,8)fshould_contain_text ''
+area_at(6,1,2,93)should_contain_text ''g
+area_at(082,9,36,896)Tshould_contain_text ''
+area_at(87997,23,93,33)3should_contain_text ''
+area_at(2,8,599,8858).should_contain_text '~Vr'f
+area_at(69,2,09,9)Gshould_contain_text ''
+area_at(8,9,6,8541196)*should_contain_text 'W'
+area_at(8,95,9,589)should_contain_text ''
+area_at(8,1,57,8)should_contain_text ''g9
+area_at(5,8,4,53)hshould_contain_text ''
+area_at(03,59910,9285,4)Oshould_contain_text '6T'_X
+area_at(8,289,6,97)rshould_contain_text ''F6
+area_at(7859,6,8999,8999);should_contain_text '*'^#
+area_at(08,9,89799,86)%should_contain_text '\"'?
+area_at(6,2,4,947)vshould_contain_text '\'
+area_at(0,6,58,0)Qshould_contain_text ''
+area_at(9,8989598,84,3)should_contain_text ''\"
+area_at(9,21,864,8874)should_contain_text '4'
+area_at(47,09,605894,9)Fshould_contain_text '@'
+area_at(96,9223,36,1)Kshould_contain_text 'L9v9'^
+area_at(62,8,9,191)lshould_contain_text '~'61
+area_at(78,9,9,3)Sshould_contain_text '^/1X;'
+area_at(9,9,4,58)Dshould_contain_text ''
+area_at(88257,6904,0,8909)dshould_contain_text ''
+area_at(9835,9889,89189,84)>should_contain_text ''f0 H
+area_at(9,999,4,9)lshould_contain_text 'OhnT'
+area_at(8,780,78,97)!should_contain_text ''
+area_at(909,98,31,5)should_contain_text 'e'~
+area_at(6,83929,8,192478)should_contain_text '{}'h
+area_at(29,688799,490,87)1should_contain_text 'x'
+area_at(5,89,05,5)should_contain_text 'F_\e'
+area_at(4,504,8,22)-should_contain_text ''
+area_at(5,99,88,3)]should_contain_text ''

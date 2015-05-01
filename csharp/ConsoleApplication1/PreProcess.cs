@@ -35,6 +35,7 @@ namespace ConsoleApplication1
                     {
                         int index = int.Parse(lineMatch.Groups[1].Value);
                         string pattern = lineMatch.Groups[2].Value;
+                        Console.WriteLine("i: "+index+" pattern: "+pattern);
 
                         //TODO
                         string tempFilePath = Util.getTempFilePath(index);

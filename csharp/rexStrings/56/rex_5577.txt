@@ -1,0 +1,391 @@
+	ySGObjectType:2 ID:9 ObjectState:1 PosX:ee PosY:0--- Area:0 Width:e Height:e- Orientation:eeeeY
+ObjectType:1 ID:0 ObjectState:1 PosX:. PosY:.8 Area:. Width:e Height:ee Orientation:eh
+ObjectType:0 ID:2 ObjectState:2 PosX:98ee PosY:e Area:- Width:. Height:e Orientation:..
+ObjectType:2 ID:721 ObjectState:3 PosX:. PosY:e Area:9- Width:e- Height:ee Orientation:e
+ObjectType:1 ID:8 ObjectState:2 PosX:e PosY:.e0 Area:e- Width:---e Height:. Orientation:e[G=
+ObjectType:3 ID:8 ObjectState:3 PosX:e PosY:ee9 Area:2- Width:e Height:e Orientation:e
+ObjectType:4 ID:9 ObjectState:3 PosX:eee6 PosY:eee Area:1 Width:-e.-8 Height:e8 Orientation:8i
+|ObjectType:4 ID:9 ObjectState:0 PosX:e PosY:e1 Area:e9 Width:9e Height:ee Orientation:e.
+xObjectType:5 ID:8 ObjectState:2 PosX:8- PosY:e Area:2 Width:8 Height:8 Orientation:ee[
+ObjectType:4 ID:8398 ObjectState:1 PosX:ee PosY:-9. Area:e6 Width:e. Height:e Orientation:-C
+ObjectType:0 ID:4 ObjectState:3 PosX:e PosY:e Area:2-9e Width:4e Height:7 Orientation:eeew9:
+ObjectType:5 ID:8 ObjectState:0 PosX:e2 PosY:e- Area:e Width:e Height:e Orientation:e9e0
+ObjectType:4 ID:402 ObjectState:0 PosX:e PosY:e Area:ee Width:e Height:- Orientation:9MH1
+ObjectType:4 ID:0 ObjectState:2 PosX:- PosY:e- Area:7- Width:9 Height:e Orientation:.
+ObjectType:3 ID:98 ObjectState:0 PosX:. PosY:e9e Area:. Width:. Height:4 Orientation:eee.
+ObjectType:5 ID:8 ObjectState:0 PosX:e PosY:e Area:e Width:e Height:805ee Orientation:4.-e
+ObjectType:4 ID:689 ObjectState:0 PosX:.e9 PosY:5e Area:9-2 Width:e Height:-4 Orientation:ees3
+?ObjectType:1 ID:9 ObjectState:1 PosX:ee PosY:.2 Area:e- Width:.82 Height:0e9 Orientation:e]2$YY
+fObjectType:5 ID:2 ObjectState:1 PosX:eeee PosY:3 Area:ee Width:e.e. Height:e17ee Orientation:0BJ
+ObjectType:3 ID:7 ObjectState:1 PosX:e PosY:e Area:5 Width:9 Height:8e Orientation:eeg
+ObjectType:1 ID:0 ObjectState:0 PosX:0eee PosY:..e0 Area:.e Width:e Height:e Orientation:0e-8
+kObjectType:5 ID:93 ObjectState:2 PosX:91 PosY:. Area:7 Width:e Height:e Orientation:ej
+ObjectType:4 ID:9 ObjectState:2 PosX:.e PosY:e. Area:- Width:ee89 Height:. Orientation:2.9
+ObjectType:5 ID:76 ObjectState:2 PosX:8e99e-e PosY:ee Area:.8 Width:- Height:e Orientation:ee
+ObjectType:3 ID:4 ObjectState:0 PosX:ee PosY:4e Area:eeeee Width:e Height:9. Orientation:-eq?
+lObjectType:4 ID:9 ObjectState:3 PosX:4 PosY:7ee Area:ee8e- Width:eeee Height:9- Orientation:8-
+ObjectType:1 ID:19 ObjectState:1 PosX:e PosY:-14e Area:e8 Width:58e9.e-. Height:e Orientation:ee
+ObjectType:4 ID:0 ObjectState:2 PosX:e PosY:3- Area:ee Width:e Height:- Orientation:9
+\edObjectType:1 ID:8 ObjectState:3 PosX:e39 PosY:4 Area:. Width:e Height:e Orientation:ee
+Sh?ObjectType:0 ID:8 ObjectState:1 PosX:e PosY:e8 Area:8e Width:.ee Height:0 Orientation:e1e
+\aObjectType:2 ID:9 ObjectState:2 PosX:ee PosY:12 Area:- Width:-e16--. Height:-8 Orientation:-
+ObjectType:2 ID:9 ObjectState:3 PosX:2 PosY:.ee Area:e Width:e Height:1e Orientation:eeI
+`&GObjectType:4 ID:3 ObjectState:2 PosX:- PosY:8 Area:e Width:ee Height:8 Orientation:8
+jObjectType:4 ID:2594 ObjectState:3 PosX:ee PosY:e Area:28 Width:8. Height:1e8.-e Orientation:5
+2ICQObjectType:4 ID:715 ObjectState:3 PosX:- PosY:9 Area:8ee Width:8-e Height:e Orientation:3e
+LObjectType:4 ID:9 ObjectState:2 PosX:e PosY:e. Area:-e Width:e Height:. Orientation:e
+
+ObjectType:3 ID:969 ObjectState:1 PosX:9 PosY:- Area:ee Width:e Height:e Orientation:e
+=ObjectType:1 ID:794 ObjectState:1 PosX:e9 PosY:e- Area:e Width:9 Height:e8 Orientation:-
+*ObjectType:1 ID:8 ObjectState:3 PosX:e PosY:ee Area:7ee Width:e Height:3.e9 Orientation:ee.99
+T|ZObjectType:5 ID:85 ObjectState:1 PosX:e889- PosY:0 Area:8 Width:.2 Height:. Orientation:-
+ObjectType:5 ID:0 ObjectState:2 PosX:eee PosY:0e Area:e8 Width:e Height:e Orientation:e
+LN:$&OZObjectType:0 ID:76 ObjectState:0 PosX:ee PosY:5 Area:. Width:e Height:e Orientation:9..e
+ObjectType:1 ID:7 ObjectState:3 PosX:239 PosY:ee- Area:e Width:ee Height:- Orientation:38
+ObjectType:3 ID:8 ObjectState:0 PosX:e.1 PosY:6 Area:-e Width:9e Height:- Orientation:e
+ObjectType:4 ID:8 ObjectState:0 PosX:e1e8 PosY:9 Area:.ee Width:e Height:9 Orientation:e
+ObjectType:4 ID:8 ObjectState:3 PosX:. PosY:ee Area:e Width:--e Height:e-.e8 Orientation:eM
+:ObjectType:5 ID:7 ObjectState:1 PosX:. PosY:5-e Area:.- Width:- Height:e Orientation:e0	]
+ObjectType:3 ID:88 ObjectState:2 PosX:eee PosY:. Area:.9 Width:e Height:e.8 Orientation:e/
+Z)ObjectType:4 ID:8 ObjectState:2 PosX:.e PosY:6 Area:- Width:e Height:e Orientation:.e
+ObjectType:1 ID:98 ObjectState:3 PosX:e PosY:e Area:e.8 Width:e9 Height:ee Orientation:e
+bObjectType:0 ID:8 ObjectState:3 PosX:eeee PosY:e7- Area:e Width:e Height:e8e Orientation:.-.
+ObjectType:2 ID:5 ObjectState:1 PosX:e PosY:1e Area:-8 Width:98. Height:e Orientation:-
+ObjectType:4 ID:1709 ObjectState:1 PosX:ee PosY:9 Area:e8 Width:- Height:- Orientation:e
+\aObjectType:4 ID:8688891 ObjectState:0 PosX:e PosY:e Area:1 Width:.ee Height:-e Orientation:.en1;
+.ObjectType:4 ID:8 ObjectState:2 PosX:e PosY:e Area:.e- Width:e3 Height:e Orientation:-e
+03ObjectType:3 ID:8 ObjectState:1 PosX:- PosY:e Area:e. Width:1e Height:e Orientation:eee.
+ObjectType:0 ID:0 ObjectState:2 PosX:e-e PosY:- Area:8 Width:ee Height:8.e.ee157e Orientation:ee.eNo-]`K
+/#WLO`ObjectType:2 ID:46 ObjectState:1 PosX:0 PosY:e7 Area:5 Width:9e9ee Height:e Orientation:.w
+hObjectType:0 ID:685 ObjectState:3 PosX:e PosY:e Area:e Width:e Height:6e-e Orientation:.
+{ObjectType:4 ID:9 ObjectState:1 PosX:4 PosY:e Area:5 Width:e Height:- Orientation:ee.
+ObjectType:2 ID:33 ObjectState:3 PosX:. PosY:e Area:ee Width:-ee- Height:e Orientation:ee
+\eObjectType:1 ID:9 ObjectState:3 PosX:- PosY:e Area:ee Width:9 Height:3ee Orientation:.ea`
+3ObjectType:4 ID:9198 ObjectState:2 PosX:97 PosY:3-.-ee-ee Area:eee Width:. Height:e Orientation:e-
+NObjectType:3 ID:3 ObjectState:1 PosX:. PosY:eee Area:.e Width:e- Height:e Orientation:-
+PObjectType:4 ID:93 ObjectState:1 PosX:.e- PosY:e Area:ee Width:- Height:e Orientation:e9e
+ObjectType:3 ID:254 ObjectState:1 PosX:e PosY:6 Area:e Width:8e Height:e Orientation:-.-.
+tObjectType:5 ID:9 ObjectState:1 PosX:-e PosY:.e Area:9 Width:268 Height:.ee Orientation:.8@
+ObjectType:5 ID:9992 ObjectState:3 PosX:- PosY:e Area:ee Width:e Height:8 Orientation:.e-?
+ObjectType:4 ID:4599 ObjectState:0 PosX:. PosY:. Area:ee Width:ee. Height:ee8e Orientation:ee
+ObjectType:4 ID:91 ObjectState:0 PosX:9ee PosY:ee Area:e7 Width:5e Height:e Orientation:e
+ObjectType:4 ID:888 ObjectState:1 PosX:e8. PosY:-e. Area:e-ee.e- Width:.e Height:3e Orientation:8e.2B 
+UWObjectType:0 ID:93690 ObjectState:1 PosX:e PosY:e Area:8 Width:e Height:e0 Orientation:9.
+PObjectType:5 ID:68 ObjectState:2 PosX:.e- PosY:8e9 Area:ee Width:9 Height:e Orientation:.e\D.
+.ObjectType:3 ID:896 ObjectState:0 PosX:6 PosY:9 Area:- Width:8e Height:.e-3 Orientation:eee
+ObjectType:2 ID:3 ObjectState:1 PosX:e PosY:.e Area:8-- Width:88 Height:- Orientation:1ep
+{YObjectType:5 ID:49 ObjectState:3 PosX:- PosY:63 Area:e54ee Width:. Height:e Orientation:6K*
+ObjectType:3 ID:63878 ObjectState:2 PosX:.ee PosY:. Area:. Width:e Height:1e Orientation:e
+\eObjectType:3 ID:9 ObjectState:3 PosX:e PosY:e Area:e. Width:- Height:e Orientation:0eV
+qObjectType:5 ID:499999 ObjectState:0 PosX:e PosY:.e Area:-.e Width:e Height:eee- Orientation:e
+ObjectType:1 ID:95 ObjectState:3 PosX:9.ee PosY:-2 Area:e9e1ee9e Width:ee.e Height:-. Orientation:2-eIpPY
+}ObjectType:5 ID:990 ObjectState:3 PosX:3 PosY:e Area:eeee Width:8. Height:e- Orientation:.e
+ObjectType:4 ID:8 ObjectState:1 PosX:e PosY:9 Area:e Width:23 Height:e9ee Orientation:7l
+ObjectType:0 ID:5499 ObjectState:2 PosX:99eee PosY:8 Area:e Width:2ee Height:ee Orientation:8e
+ObjectType:5 ID:99 ObjectState:2 PosX:e PosY:e Area:e Width:ee4 Height:- Orientation:ee9/S
+ObjectType:0 ID:5 ObjectState:0 PosX:eee PosY:ee Area:e Width:eeee03ee Height:9 Orientation:e
+ObjectType:5 ID:80 ObjectState:1 PosX:8-e- PosY:--e Area:ee Width:e Height:- Orientation:8e
+ObjectType:4 ID:14999 ObjectState:0 PosX:e PosY:- Area:eee47 Width:- Height:8 Orientation:.
+ObjectType:5 ID:80 ObjectState:1 PosX:e-6ee PosY:ee Area:ee5 Width:.. Height:ee2 Orientation:1
+jObjectType:4 ID:859 ObjectState:2 PosX:ee8 PosY:eeee9 Area:. Width:-e Height:-e- Orientation:8e\0
+?	ObjectType:4 ID:9980 ObjectState:3 PosX:.-5ee PosY:-e. Area:9.e8e Width:e Height:. Orientation:8y%
+ObjectType:5 ID:885 ObjectState:1 PosX:8. PosY:e Area:e--3e Width:e Height:e Orientation:e
+iObjectType:5 ID:89 ObjectState:1 PosX:5 PosY:e Area:e Width:ee Height:e Orientation:e-[mB?
+ObjectType:4 ID:2 ObjectState:2 PosX:ee9 PosY:. Area:. Width:e Height:-ee Orientation:-e.
+ObjectType:4 ID:800 ObjectState:0 PosX:2e PosY:8eee Area:. Width:e Height:ee Orientation:eeF
+ObjectType:5 ID:8 ObjectState:2 PosX:e9e PosY:. Area:e Width:ee99ee-.ee Height:ee Orientation:eP[
+ObjectType:5 ID:48 ObjectState:0 PosX:.e.6 PosY:- Area:e7e Width:. Height:3. Orientation:e
+ObjectType:5 ID:81 ObjectState:2 PosX:9 PosY:1e2-9 Area:1 Width:e Height:e88 Orientation:.-|
+ObjectType:4 ID:869 ObjectState:2 PosX:- PosY:ee-- Area:e5 Width:-. Height:-. Orientation:0
+ObjectType:2 ID:3 ObjectState:3 PosX:ee PosY:e Area:-- Width:e- Height:-e Orientation:e
+n\"ObjectType:1 ID:83 ObjectState:1 PosX:e9e8 PosY:2e Area:9 Width:e0 Height:-00-1 Orientation:8<
+
+ObjectType:3 ID:9 ObjectState:2 PosX:9e9- PosY:6 Area:e Width:e Height:-e Orientation:ee
+KObjectType:4 ID:2 ObjectState:1 PosX:-e.e.9e PosY:2-e Area:-1 Width:99 Height:eeeeee28 Orientation:2
+ObjectType:5 ID:49 ObjectState:3 PosX:8e-e.. PosY:e Area:e Width:e Height:ee Orientation:e
+ObjectType:5 ID:7 ObjectState:1 PosX:ee PosY:e Area:e Width:e Height:9e Orientation:e
+ObjectType:5 ID:8 ObjectState:1 PosX:0.-- PosY:e Area:7e Width:e Height:6-2 Orientation:9-e-e.
+ObjectType:3 ID:98896 ObjectState:1 PosX:ee PosY:-.9 Area:8 Width:.e.8 Height:. Orientation:8e
+ObjectType:4 ID:8 ObjectState:0 PosX:1- PosY:- Area:e Width:5 Height:eee Orientation:2e<
+ObjectType:2 ID:4 ObjectState:2 PosX:. PosY:. Area:e Width:e Height:e Orientation:8ea
+ObjectType:0 ID:98 ObjectState:1 PosX:ee PosY:e Area:5e.4ee Width:-- Height:ee Orientation:e
+F
+ObjectType:3 ID:708 ObjectState:2 PosX:ee-ee PosY:.e4 Area:e- Width:e- Height:3 Orientation:e
+IG(wObjectType:4 ID:82 ObjectState:2 PosX:-e PosY:. Area:- Width:e Height:ee Orientation:ega
+ObjectType:5 ID:50 ObjectState:3 PosX:.15e PosY:9 Area:e Width:5 Height:.e9e Orientation:ee
+ObjectType:0 ID:4 ObjectState:2 PosX:e- PosY:8- Area:e Width:8- Height:e Orientation:e
+
+ObjectType:0 ID:33 ObjectState:2 PosX:e9 PosY:8e Area:-.9e Width:- Height:e Orientation:e1	
+ObjectType:1 ID:9 ObjectState:0 PosX:e- PosY:e Area:ee Width:- Height:8 Orientation:e
+ObjectType:0 ID:86 ObjectState:3 PosX:ee PosY:e Area:e.e8 Width:- Height:. Orientation:4e
+$
+xObjectType:5 ID:7 ObjectState:3 PosX:1 PosY:.e Area:ee Width:8 Height:- Orientation:82ee.9
+ObjectType:1 ID:9880 ObjectState:3 PosX:e PosY:e1 Area:e Width:e Height:ee Orientation:e
+|qObjectType:5 ID:7 ObjectState:2 PosX:4e80 PosY:e Area:22 Width:8--. Height:ee Orientation:9e
+ObjectType:4 ID:65 ObjectState:3 PosX:e PosY:e Area:8e Width:- Height:e Orientation:8e.e>
+ObjectType:1 ID:89999 ObjectState:2 PosX:ee8 PosY:2 Area:29e Width:e8 Height:8 Orientation:7.hGD,
+eObjectType:2 ID:49 ObjectState:0 PosX:e.. PosY:e Area:-ee Width:eee Height:2ee Orientation:e8
+ObjectType:3 ID:46518 ObjectState:0 PosX:.e1 PosY:ee Area:7 Width:8 Height:.-8e Orientation:eeD
+HObjectType:5 ID:98 ObjectState:2 PosX:-- PosY:-. Area:ee69 Width:e Height:e Orientation:48ee
+<RObjectType:5 ID:8 ObjectState:0 PosX:- PosY:e Area:e Width:.e3e9 Height:. Orientation:5e
+ObjectType:2 ID:8 ObjectState:1 PosX:-e PosY:8e79eee0e8e Area:. Width:e Height:4 Orientation:-eX
+ObjectType:5 ID:9 ObjectState:3 PosX:- PosY:e Area:ee Width:e.9 Height:4 Orientation:4e
+ObjectType:5 ID:8588 ObjectState:3 PosX:3 PosY:0 Area:8e Width:. Height:e Orientation:1
+B\ObjectType:5 ID:9 ObjectState:3 PosX:86 PosY:e Area:.--e Width:e Height:9e Orientation:9
+cObjectType:0 ID:882 ObjectState:2 PosX:e PosY:. Area:e Width:-e Height:9 Orientation:-e<P
+\eba;ObjectType:2 ID:6 ObjectState:0 PosX:.e- PosY:e9e.. Area:e-9 Width:-e Height:e Orientation:e
+aObjectType:2 ID:2 ObjectState:2 PosX:e PosY:e Area:..- Width:24 Height:.e Orientation:3N
+9ObjectType:3 ID:33 ObjectState:0 PosX:e--e PosY:.- Area:- Width:e Height:e Orientation:3Z4- 
+ObjectType:5 ID:8798 ObjectState:0 PosX:5 PosY:e.9e Area:e Width:9. Height:8 Orientation:e8
+ObjectType:2 ID:40 ObjectState:3 PosX:-e5 PosY:- Area:9e- Width:ee Height:e-- Orientation:ee*
+|#ObjectType:3 ID:38 ObjectState:2 PosX:eee PosY:8. Area:e6 Width:8 Height:6 Orientation:e-e1/
+sObjectType:5 ID:20 ObjectState:0 PosX:e PosY:9 Area:e.e. Width:e Height:3. Orientation:1O
+ObjectType:4 ID:2 ObjectState:3 PosX:9e PosY:e Area:e Width:. Height:- Orientation:eB?c
+'$
+$ObjectType:5 ID:9 ObjectState:2 PosX:5 PosY:ee- Area:e- Width:9 Height:e Orientation:e#Z
+ObjectType:2 ID:7 ObjectState:2 PosX:3 PosY:e9 Area:e Width:ee Height:0 Orientation:9
+ObjectType:1 ID:91998 ObjectState:0 PosX:. PosY:ee Area:ee Width:e- Height:e71 Orientation:eb@7
+ObjectType:1 ID:706 ObjectState:1 PosX:e. PosY:9 Area:e Width:.e-7ee.-8 Height:-. Orientation:ee.e
+bObjectType:3 ID:505 ObjectState:0 PosX:e PosY:e49 Area:-e Width:ee Height:1e Orientation:4e
+cObjectType:4 ID:88786 ObjectState:1 PosX:e PosY:e Area:e Width:e8 Height:ee Orientation:e2b
+QObjectType:4 ID:64 ObjectState:0 PosX:e PosY:539e Area:eeee Width:3.9 Height:e Orientation:e
+KpObjectType:5 ID:8 ObjectState:2 PosX:9 PosY:6 Area:e Width:e Height:4- Orientation:...e,
+ObjectType:0 ID:86 ObjectState:1 PosX:eee. PosY:ee Area:e Width:-- Height:e Orientation:e
+ObjectType:2 ID:2 ObjectState:1 PosX:e PosY:e55-e Area:.5 Width:90ee Height:48 Orientation:e2e
+rObjectType:3 ID:4 ObjectState:2 PosX:9 PosY:-- Area:4.. Width:e Height:-97e6 Orientation:eTN
+UObjectType:4 ID:882 ObjectState:2 PosX:4-e PosY:e Area:ee Width:-e Height:5eee Orientation:5
+JObjectType:1 ID:884 ObjectState:1 PosX:.e7e PosY:- Area:. Width:. Height:. Orientation:e
+~Xb ObjectType:0 ID:89882 ObjectState:2 PosX:3e PosY:8..e Area:e Width:. Height:e Orientation:9
+$AObjectType:4 ID:0 ObjectState:2 PosX:e PosY:. Area:e Width:. Height:1. Orientation:9
+wObjectType:2 ID:8 ObjectState:1 PosX:e PosY:e6e Area:0ee.5 Width:eeee Height:9 Orientation:elV
+ObjectType:4 ID:8893 ObjectState:1 PosX:e PosY:e Area:e Width:e. Height:ee Orientation:9
+TObjectType:3 ID:567 ObjectState:1 PosX:e PosY:9 Area:. Width:8e Height:-- Orientation:-F
+ObjectType:5 ID:199 ObjectState:3 PosX:5 PosY:e Area:ee Width:- Height:.e Orientation:e)
+$ObjectType:2 ID:99 ObjectState:3 PosX:9 PosY:.e Area:e Width:7 Height:- Orientation:8
+PObjectType:2 ID:4 ObjectState:0 PosX:ee PosY:e Area:9 Width:- Height:e Orientation:e.e
+P9ObjectType:5 ID:0 ObjectState:3 PosX:ee9 PosY:. Area:eeee Width:9e7e Height:8 Orientation:.
+,zObjectType:5 ID:80 ObjectState:2 PosX:ee PosY:.e9 Area:e Width:7 Height:9 Orientation:ee
+ObjectType:1 ID:8 ObjectState:2 PosX:ee. PosY:e Area:e Width:e- Height:e Orientation:e
+QObjectType:0 ID:8994 ObjectState:0 PosX:9eee PosY:-7 Area:e8eee Width:9 Height:- Orientation:2
+ObjectType:3 ID:8889 ObjectState:1 PosX:. PosY:e98 Area:.e Width:e Height:8e Orientation:el
+D}yObjectType:5 ID:8 ObjectState:3 PosX:e PosY:e. Area:e Width:-e-e Height:ee- Orientation:.P
+ObjectType:2 ID:82 ObjectState:1 PosX:e PosY:8 Area:e9ee Width:45e.8ee Height:-ee Orientation:e
+ObjectType:3 ID:9 ObjectState:1 PosX:ee PosY:9 Area:7ee Width:6ee9e Height:e Orientation:en
+ObjectType:1 ID:8 ObjectState:2 PosX:8e PosY:e Area:e Width:e. Height:e Orientation:6..
+ObjectType:0 ID:79 ObjectState:3 PosX:e PosY:ee Area:e Width:e8.- Height:8 Orientation:e
+ObjectType:4 ID:9 ObjectState:0 PosX:e PosY:-e Area:.-88. Width:e Height:0.e Orientation:.C
+ObjectType:4 ID:2 ObjectState:0 PosX:8 PosY:ee Area:e4e. Width:e Height:e1 Orientation:e^u
+ObjectType:4 ID:09 ObjectState:0 PosX:-78 PosY:e Area:e5e- Width:- Height:e Orientation:5/
+giObjectType:4 ID:91 ObjectState:1 PosX:eeeee PosY:e Area:491 Width:. Height:- Orientation:e5
+ObjectType:1 ID:7 ObjectState:3 PosX:9 PosY:- Area:-e Width:e Height:.8 Orientation:3
+ObjectType:0 ID:0 ObjectState:2 PosX:e.e PosY:e Area:e8. Width:e9 Height:1 Orientation:3
+[ObjectType:4 ID:84 ObjectState:2 PosX:e8e1ee PosY:- Area:e- Width:0. Height:ee Orientation:81
+.ObjectType:5 ID:9 ObjectState:0 PosX:e PosY:e Area:8ee.-e Width:9- Height:e. Orientation:e6e1
+ObjectType:0 ID:5 ObjectState:1 PosX:ee9e- PosY:.e Area:9- Width:3 Height:e Orientation:e-
+ObjectType:3 ID:9 ObjectState:2 PosX:e7 PosY:ee8 Area:ee Width:7 Height:e- Orientation:e8eI4
+ObjectType:5 ID:5 ObjectState:0 PosX:---6 PosY:e Area:8 Width:e- Height:.-ee Orientation:8e
+KObjectType:5 ID:021 ObjectState:0 PosX:.e PosY:8. Area:e Width:..e. Height:e Orientation:e
+yObjectType:0 ID:38 ObjectState:2 PosX:e PosY:7 Area:e Width:- Height:. Orientation:.eeee
+a\"ObjectType:2 ID:5734 ObjectState:1 PosX:.-.- PosY:ee Area:- Width:eee. Height:. Orientation:e
+ObjectType:0 ID:8 ObjectState:0 PosX:eeee PosY:e Area:- Width:0 Height:e Orientation:ee
+ObjectType:4 ID:925 ObjectState:3 PosX:e PosY:e Area:e. Width:e Height:e Orientation:e9*
+bObjectType:3 ID:7 ObjectState:0 PosX:e PosY:8ee Area:ee Width:9 Height:e- Orientation:5.={t
+A8\0NObjectType:2 ID:0 ObjectState:2 PosX:e PosY:e-e. Area:ee..- Width:..-e9e2e-.- Height:2. Orientation:e\"
+?ObjectType:5 ID:888 ObjectState:0 PosX:8 PosY:e Area:ee- Width:2e5 Height:e- Orientation:.C
+ObjectType:3 ID:0 ObjectState:2 PosX:8 PosY:.e Area:8--9- Width:- Height:. Orientation:e8e
+ObjectType:5 ID:6 ObjectState:1 PosX:e PosY:- Area:e Width:e. Height:ee- Orientation:e880-00
+ObjectType:4 ID:56 ObjectState:1 PosX:-e PosY:ee- Area:8 Width:e Height:6. Orientation:e
+WObjectType:3 ID:90 ObjectState:2 PosX:08 PosY:e-7 Area:ee Width:. Height:. Orientation:8e
+ObjectType:5 ID:0504 ObjectState:0 PosX:8- PosY:- Area:8e5 Width:. Height:.ee3 Orientation:.ek
+ObjectType:2 ID:86 ObjectState:1 PosX:e PosY:eee Area:9e. Width:0 Height:2 Orientation:eaY.+L
+ohObjectType:5 ID:8 ObjectState:1 PosX:. PosY:- Area:. Width:88ee Height:e2 Orientation:e
+ObjectType:3 ID:8 ObjectState:0 PosX:e- PosY:eeee9e Area:-.9- Width:ee Height:e-e.e Orientation:eX
+~ObjectType:5 ID:8 ObjectState:3 PosX:9e PosY:e Area:.- Width:e- Height:e Orientation:.]
+ObjectType:5 ID:68 ObjectState:0 PosX:ee PosY:e Area:4 Width:82 Height:-4 Orientation:3!
+uBObjectType:4 ID:9 ObjectState:0 PosX:ee PosY:e Area:8 Width:e Height:-e9e Orientation:eee9
+gObjectType:5 ID:8 ObjectState:1 PosX:93 PosY:8 Area:e Width:ee Height:e0-... Orientation:4Y+
+UObjectType:3 ID:9 ObjectState:0 PosX:e PosY:9 Area:.- Width:-e Height:e.1e- Orientation:-[@
+?ObjectType:1 ID:0 ObjectState:2 PosX:9 PosY:-ee8e.e8 Area:e Width:e Height:e Orientation:e
+\e(ObjectType:4 ID:72 ObjectState:3 PosX:eeee PosY:e Area:.e Width:2- Height:9 Orientation:9ea@{T
+If*T:ObjectType:5 ID:2 ObjectState:2 PosX:e PosY:9 Area:e Width:e5e Height:e Orientation:--NG
++ObjectType:4 ID:49 ObjectState:1 PosX:.e PosY:e Area:. Width:e Height:e Orientation:99-e7.9999*v
+XUwObjectType:4 ID:391 ObjectState:3 PosX:ee0e PosY:9 Area:eeee Width:. Height:e9 Orientation:en
+>B?QObjectType:1 ID:28583 ObjectState:2 PosX:e- PosY:-e-- Area:0 Width:ee9 Height:8e Orientation:eq
+ObjectType:0 ID:6 ObjectState:2 PosX:e PosY:2. Area:e Width:8e9 Height:e Orientation:9MY
+ObjectType:5 ID:95 ObjectState:0 PosX:1e- PosY:2ee Area:e Width:e Height:e- Orientation:821
+ObjectType:4 ID:80 ObjectState:1 PosX:-7 PosY:- Area:e Width:e Height:5 Orientation:..
+ObjectType:5 ID:999 ObjectState:0 PosX:e PosY:e9 Area:9ee Width:e Height:e Orientation:38
+ObjectType:2 ID:8 ObjectState:2 PosX:. PosY:-e8 Area:ee-eee. Width:92 Height:e Orientation:.h9
+ObjectType:2 ID:9 ObjectState:0 PosX:4 PosY:.e Area:ee2 Width:8 Height:e Orientation:9<q
+ObjectType:0 ID:9 ObjectState:1 PosX:. PosY:e. Area:8e9 Width:e8e Height:9- Orientation:ee
+ObjectType:4 ID:3 ObjectState:3 PosX:5e PosY:e Area:-e-. Width:e- Height:e Orientation:5.Dd
+FObjectType:4 ID:98 ObjectState:0 PosX:e. PosY:ee Area:e. Width:eee. Height:ee..- Orientation:eK
+`;c)ObjectType:4 ID:28 ObjectState:2 PosX:e PosY:e Area:- Width:eee Height:. Orientation:9ee
+ObjectType:0 ID:9 ObjectState:3 PosX:. PosY:e- Area:ee9 Width:e Height:9 Orientation:e
+KObjectType:0 ID:2890688 ObjectState:2 PosX:9 PosY:e Area:ee Width:3e Height:8e Orientation:8R
+IObjectType:2 ID:88 ObjectState:3 PosX:e PosY:e0 Area:e. Width:e- Height:e Orientation:0
+ObjectType:5 ID:0 ObjectState:2 PosX:6 PosY:-ee Area:8 Width:- Height:e Orientation:eeXr
+ObjectType:0 ID:87995 ObjectState:0 PosX:e PosY:.e Area:2e.e Width:8 Height:e4 Orientation:e3'w
+60ObjectType:4 ID:29871 ObjectState:2 PosX:5 PosY:. Area:-8ee Width:8e Height:3 Orientation:.e9
+ObjectType:0 ID:263 ObjectState:3 PosX:eeee PosY:6e Area:ee59e Width:9 Height:e38 Orientation:88^
+=ObjectType:4 ID:5 ObjectState:3 PosX:5 PosY:- Area:e Width:8 Height:4e.. Orientation:e199e8e
+ObjectType:3 ID:386 ObjectState:2 PosX:.ee PosY:e Area:e Width:e86 Height:-.-. Orientation:.
+5{BObjectType:4 ID:89 ObjectState:0 PosX:ee PosY:.e Area:. Width:- Height:- Orientation:7-Vk)
+ObjectType:4 ID:6 ObjectState:1 PosX:ee PosY:8e Area:ee8e Width:ee8 Height:- Orientation:.L
+ObjectType:3 ID:099 ObjectState:1 PosX:1e PosY:e6 Area:9-- Width:9e Height:2 Orientation:.
+ObjectType:3 ID:7 ObjectState:3 PosX:eee9 PosY:e Area:.4ee- Width:4ee Height:e Orientation:e
+=/ObjectType:5 ID:931 ObjectState:3 PosX:5ee PosY:- Area:e Width:.e Height:e Orientation:8
+ObjectType:5 ID:1 ObjectState:3 PosX:e88ee4 PosY:e- Area:6- Width:e Height:. Orientation:9 
+/ObjectType:2 ID:9899 ObjectState:1 PosX:9 PosY:.eee Area:e Width:e Height:ee Orientation:ec
+ObjectType:2 ID:8 ObjectState:1 PosX:eeee1 PosY:e Area:7 Width:7 Height:. Orientation:e
+ObjectType:1 ID:05 ObjectState:0 PosX:e PosY:e Area:e Width:8ee- Height:-9e Orientation:6e
+ObjectType:1 ID:49 ObjectState:2 PosX:3 PosY:e Area:. Width:e Height:8 Orientation:.
+qOObjectType:1 ID:4199 ObjectState:2 PosX:.e PosY:ee Area:8e Width:e Height:ee Orientation:-.uW
+ObjectType:2 ID:1 ObjectState:0 PosX:ee6- PosY:e Area:e Width:e Height:308 Orientation:e
+ObjectType:4 ID:47 ObjectState:0 PosX:. PosY:8 Area:9 Width:e Height:ee Orientation:.-e-
+ObjectType:4 ID:9199 ObjectState:0 PosX:e PosY:8 Area:. Width:6e Height:ee Orientation:4
+ObjectType:2 ID:8 ObjectState:3 PosX:e PosY:7 Area:.1 Width:18. Height:e Orientation:.pv
+ObjectType:4 ID:49 ObjectState:1 PosX:. PosY:8e Area:.e Width:...5 Height:- Orientation:5i
+ObjectType:4 ID:8 ObjectState:2 PosX:9 PosY:6 Area:e Width:9e Height:e Orientation:e
+XObjectType:5 ID:58 ObjectState:0 PosX:e- PosY:e- Area:8e Width:ee Height:e Orientation:-
+dObjectType:1 ID:893 ObjectState:1 PosX:e2 PosY:e7 Area:eee Width:e9 Height:- Orientation:.e
+ObjectType:2 ID:29 ObjectState:1 PosX:. PosY:e Area:-ee Width:8. Height:ee Orientation:e-
+HObjectType:0 ID:9 ObjectState:3 PosX:3 PosY:- Area:- Width:. Height:-ee Orientation:ee
+ObjectType:5 ID:8 ObjectState:0 PosX:47 PosY:-. Area:ee Width:e9.e Height:ee Orientation:7
+GObjectType:5 ID:8 ObjectState:3 PosX:e PosY:4 Area:9eee Width:e Height:- Orientation:e
+ObjectType:2 ID:809889 ObjectState:0 PosX:e PosY:-ee Area:8 Width:- Height:e-e Orientation:-J#
+0/ObjectType:5 ID:96 ObjectState:0 PosX:97 PosY:. Area:- Width:e Height:0 Orientation:9M
+ObjectType:4 ID:7858 ObjectState:3 PosX:ee PosY:. Area:e Width:e Height:eee Orientation:eu
+ObjectType:0 ID:99 ObjectState:2 PosX:ee PosY:-e Area:-e Width:ee Height:8e Orientation:9
+!ObjectType:5 ID:62 ObjectState:2 PosX:-e-e-ee8. PosY:4. Area:4e--4 Width:-e Height:e.e. Orientation:eG
+ObjectType:4 ID:1 ObjectState:3 PosX:e PosY:e- Area:. Width:7 Height:e5 Orientation:ee9.
+?ObjectType:3 ID:8 ObjectState:3 PosX:e PosY:e Area:.- Width:ee Height:. Orientation:.7e
+<VObjectType:4 ID:0 ObjectState:2 PosX:e PosY:9e Area:e Width:71.. Height:e Orientation:-ee
+NObjectType:4 ID:13 ObjectState:3 PosX:eee.3 PosY:e Area:8e Width:8ee Height:e Orientation:.L
+IObjectType:3 ID:873 ObjectState:1 PosX:80 PosY:e Area:e Width:0 Height:ee Orientation:9ee.
+ObjectType:0 ID:6 ObjectState:3 PosX:e PosY:9- Area:e Width:- Height:9 Orientation:e
+ObjectType:1 ID:885 ObjectState:3 PosX:e PosY:8 Area:e.9 Width:.8 Height:-. Orientation:e-.33
+MObjectType:3 ID:72 ObjectState:0 PosX:.e PosY:- Area:e- Width:e.. Height:e Orientation:..
+uObjectType:5 ID:9 ObjectState:3 PosX:8e9ee PosY:.e Area:9 Width:ee Height:08e- Orientation:-
+ObjectType:1 ID:89 ObjectState:0 PosX:. PosY:e89 Area:. Width:e.-- Height:ee Orientation:e2e
+BObjectType:4 ID:9 ObjectState:0 PosX:e. PosY:.e Area:ee Width:71 Height:e4. Orientation:-
+ObjectType:0 ID:8 ObjectState:3 PosX:eee.. PosY:. Area:76 Width:e Height:- Orientation:89j
+ObjectType:1 ID:3 ObjectState:1 PosX:e PosY:5eee Area:- Width:e Height:eee Orientation:0e.-
+NObjectType:1 ID:4 ObjectState:2 PosX:. PosY:e Area:4 Width:.e Height:69e9.. Orientation:-A
+ObjectType:2 ID:94 ObjectState:2 PosX:88e PosY:e Area:e Width:e488 Height:e Orientation:e-28e
+ObjectType:5 ID:405 ObjectState:1 PosX:.e. PosY:e-8- Area:89- Width:e Height:e- Orientation:e
+ObjectType:5 ID:9 ObjectState:0 PosX:9 PosY:e7 Area:1.e Width:ee Height:e Orientation:e.9en
+ObjectType:1 ID:842189 ObjectState:1 PosX:9ee PosY:7 Area:e Width:8 Height:e Orientation:.9yJ:d
+nObjectType:4 ID:4912968 ObjectState:1 PosX:e PosY:e Area:4 Width:9 Height:. Orientation:..9
+iObjectType:4 ID:3 ObjectState:0 PosX:e PosY:e Area:e Width:.. Height:e Orientation:e8..M/
+ObjectType:1 ID:8 ObjectState:3 PosX:e PosY:93 Area:e640ee84 Width:e Height:9 Orientation:.eeeet]q
+ObjectType:3 ID:93 ObjectState:2 PosX:e-- PosY:2e Area:. Width:4e Height:-e Orientation:9#
+ObjectType:2 ID:4 ObjectState:0 PosX:9 PosY:.ee Area:e Width:e Height:-e Orientation:-,
+ObjectType:0 ID:6 ObjectState:1 PosX:8e8 PosY:- Area:e9e Width:.-- Height:6 Orientation:e!
+ObjectType:5 ID:88919910 ObjectState:2 PosX:9 PosY:. Area:e Width:. Height:e899 Orientation:e-e#F}\aH
+ObjectType:2 ID:7 ObjectState:1 PosX:8. PosY:1-- Area:.7 Width:9 Height:e Orientation:.-9eRu
+ObjectType:5 ID:4 ObjectState:3 PosX:.-4ee PosY:8e Area:8 Width:- Height:- Orientation:e=sDwq!
+@ObjectType:4 ID:910 ObjectState:1 PosX:e PosY:- Area:eeee4 Width:- Height:7 Orientation:.
+ObjectType:3 ID:8887 ObjectState:1 PosX:e2 PosY:eee.e Area:e. Width:- Height:eee9 Orientation:e
+ObjectType:0 ID:480 ObjectState:2 PosX:e PosY:- Area:e8e8 Width:e Height:e Orientation:8
+DvObjectType:5 ID:9 ObjectState:1 PosX:- PosY:.4ee Area:e.9 Width:. Height:-5e Orientation:e-.
+'ObjectType:4 ID:3 ObjectState:0 PosX:- PosY:e Area:7e Width:4 Height:ee3 Orientation:e.e
+ObjectType:0 ID:0 ObjectState:1 PosX:3 PosY:ee-8 Area:ee0 Width:e8ee.1 Height:ee Orientation:ee.E
+1RObjectType:2 ID:0 ObjectState:2 PosX:e PosY:e Area:9. Width:e Height:e. Orientation:ee
+ObjectType:2 ID:879 ObjectState:2 PosX:851 PosY:2e Area:e Width:e Height:8e-e Orientation:e
+8ObjectType:0 ID:9 ObjectState:3 PosX:e PosY:-. Area:- Width:ee Height:e Orientation:e
+ObjectType:4 ID:828 ObjectState:2 PosX:7e PosY:. Area:3 Width:e Height:e- Orientation:eR
+\a3ObjectType:5 ID:8 ObjectState:1 PosX:e. PosY:1 Area:e2 Width:- Height:7 Orientation:eee8e
+ObjectType:5 ID:98 ObjectState:0 PosX:8e PosY:ee Area:e6 Width:. Height:e Orientation:8-D
+ObjectType:3 ID:068 ObjectState:2 PosX:e9 PosY:ee- Area:e Width:e Height:e3ee88 Orientation:eV
+H&FCObjectType:1 ID:38 ObjectState:1 PosX:e--. PosY:.. Area:eee Width:ee Height:5. Orientation:e!
+mObjectType:5 ID:93 ObjectState:3 PosX:92 PosY:e Area:e Width:1 Height:0 Orientation:-
+ObjectType:3 ID:888 ObjectState:1 PosX:7e PosY:ee Area:-9. Width:8ee Height:eee Orientation:-
+F
+ObjectType:5 ID:99 ObjectState:0 PosX:0. PosY:-e. Area:e.-ee4 Width:e9e Height:ee3e Orientation:40emo
+ObjectType:0 ID:8 ObjectState:1 PosX:. PosY:- Area:. Width:0.-. Height:e.8-4 Orientation:.
+ObjectType:5 ID:5 ObjectState:1 PosX:. PosY:9 Area:. Width:9eee Height:e- Orientation:98
+ObjectType:3 ID:08708 ObjectState:1 PosX:7e. PosY:ee Area:ee Width:eee Height:1 Orientation:8
+.ObjectType:4 ID:9 ObjectState:1 PosX:ee PosY:e Area:e9- Width:eeeeee Height:e Orientation:-eR
+kObjectType:5 ID:88 ObjectState:1 PosX:e PosY:--e9 Area:.ee. Width:e.ee. Height:e Orientation:-.
+ObjectType:1 ID:789 ObjectState:3 PosX:4 PosY:8 Area:- Width:e Height:e Orientation:ee
+wObjectType:4 ID:83 ObjectState:2 PosX:.- PosY:- Area:ee Width:-ee Height:.e- Orientation:.4e-ee
+\0ObjectType:4 ID:39 ObjectState:1 PosX:. PosY:- Area:6 Width:9e5 Height:ee-0- Orientation:e.eey
+ObjectType:1 ID:88 ObjectState:1 PosX:e PosY:e Area:8 Width:eee Height:e Orientation:5
+YObjectType:5 ID:4 ObjectState:1 PosX:8e0 PosY:- Area:ee1-9- Width:- Height:ee6 Orientation:88
+NObjectType:2 ID:88 ObjectState:1 PosX:e.8e PosY:ee Area:- Width:e9e Height:8e Orientation:.0
+:ObjectType:3 ID:561892 ObjectState:0 PosX:e PosY:. Area:e Width:- Height:ee Orientation:-.e2
+LObjectType:1 ID:8 ObjectState:3 PosX:. PosY:581ee Area:8 Width:e Height:e Orientation:e.ee
+ObjectType:3 ID:988 ObjectState:0 PosX:eee PosY:.72e9 Area:e8 Width:e Height:e Orientation:94e4
+rs\"ObjectType:5 ID:98 ObjectState:3 PosX:.e8 PosY:e Area:. Width:3e Height:. Orientation:ee,\a
+ObjectType:4 ID:8 ObjectState:2 PosX:e PosY:4e Area:5e Width:-e Height:e Orientation:e
+ObjectType:3 ID:8 ObjectState:1 PosX:ee PosY:2 Area:8e-ee5 Width:eee Height:811 Orientation:e0e9
+ObjectType:4 ID:39 ObjectState:1 PosX:6 PosY:ee Area:.- Width:8 Height:- Orientation:eee
+ObjectType:0 ID:2 ObjectState:0 PosX:-9 PosY:e- Area:e- Width:e. Height:- Orientation:..
+ObjectType:5 ID:9 ObjectState:0 PosX:ee PosY:e Area:. Width:e Height:897- Orientation:e-
+ObjectType:5 ID:51 ObjectState:1 PosX:e PosY:9e. Area:eee55e Width:ee Height:e Orientation:9
+:ObjectType:5 ID:6 ObjectState:3 PosX:-e6ee PosY:4 Area:.-. Width:ee Height:e Orientation:e-
+ObjectType:4 ID:693 ObjectState:1 PosX:e PosY:ee Area:.- Width:e Height:-e Orientation:e/
+ObjectType:5 ID:9 ObjectState:0 PosX:e PosY:e Area:6 Width:-e Height:8.e Orientation:1\
+ObjectType:2 ID:2511 ObjectState:2 PosX:9e PosY:e. Area:ee Width:6. Height:ee Orientation:e
+ObjectType:2 ID:9 ObjectState:3 PosX:. PosY:e8--e- Area:34 Width:6ee Height:1e9 Orientation:40e
+P0ObjectType:5 ID:1 ObjectState:2 PosX:e PosY:e796 Area:e Width:e Height:. Orientation:ee1ei
+ObjectType:4 ID:6998 ObjectState:2 PosX:e PosY:9 Area:9 Width:e Height:. Orientation:e
+ew-W\ebObjectType:0 ID:7 ObjectState:0 PosX:ee.e PosY:6 Area:9 Width:e Height:ee.e Orientation:.-.
+ObjectType:4 ID:49 ObjectState:1 PosX:ee PosY:0 Area:98 Width:e Height:2 Orientation:ek+
+xObjectType:5 ID:4808592 ObjectState:1 PosX:e5e PosY:.eee.e-3 Area:8 Width:e.e Height:. Orientation:e.
+E])\eObjectType:1 ID:99 ObjectState:0 PosX:ee PosY:e Area:e Width:7ee8-ee Height:ee.3e Orientation:-T
+ObjectType:0 ID:8760 ObjectState:0 PosX:8 PosY:8ee Area:.-ee8 Width:7 Height:e Orientation:e1e\e
+sObjectType:2 ID:6 ObjectState:2 PosX:e PosY:e Area:ee Width:- Height:4 Orientation:e
+ObjectType:4 ID:492 ObjectState:1 PosX:e- PosY:e1- Area:9ee Width:8e Height:e- Orientation:ee
+2KObjectType:2 ID:99 ObjectState:2 PosX:e PosY:ee Area:. Width:e8 Height:-e Orientation:e2.`{
+UObjectType:3 ID:2 ObjectState:3 PosX:- PosY:2e- Area:2 Width:ee Height:- Orientation:eeeI(
+ObjectType:0 ID:0785 ObjectState:3 PosX:9e PosY:ee Area:e9. Width:8e Height:ee Orientation:ee
+ObjectType:4 ID:79 ObjectState:3 PosX:- PosY:e Area:5e Width:98e Height:8e Orientation:ee
+|PnObjectType:3 ID:4909 ObjectState:3 PosX:50 PosY:e Area:e Width:- Height:-9 Orientation:e
+ObjectType:3 ID:9 ObjectState:2 PosX:e PosY:e Area:e9 Width:e Height:5 Orientation:.8
+HObjectType:1 ID:18868 ObjectState:0 PosX:8 PosY:9 Area:.- Width:e Height:ee Orientation:eeee.9eee
+dObjectType:5 ID:394 ObjectState:2 PosX:e8e PosY:50 Area:e.e Width:2 Height:7. Orientation:--
+._ObjectType:4 ID:88 ObjectState:2 PosX:e PosY:. Area:e. Width:e Height:e Orientation:ec/
+ObjectType:4 ID:8 ObjectState:1 PosX:4 PosY:e Area:ee Width:e Height:ee Orientation:e
+RObjectType:5 ID:04 ObjectState:0 PosX:e9 PosY:-e Area:eee- Width:.-. Height:69. Orientation:8
+ObjectType:5 ID:2 ObjectState:1 PosX:.8 PosY:e1 Area:e4 Width:7- Height:. Orientation:-/:
+ObjectType:0 ID:799 ObjectState:0 PosX:e PosY:eee. Area:e Width:ee9 Height:e.- Orientation:8e.
+%QObjectType:5 ID:668 ObjectState:1 PosX:8e- PosY:-eee Area:e Width:e Height:- Orientation:-_
+kI6ObjectType:0 ID:8 ObjectState:3 PosX:9e PosY:8 Area:e Width:. Height:. Orientation:e2bo
+ObjectType:5 ID:0 ObjectState:2 PosX:. PosY:e Area:-e Width:e Height:6e Orientation:.
+,\a?ObjectType:2 ID:9816 ObjectState:3 PosX:e9ee PosY:ee Area:e8e Width:e Height:e Orientation:.e0e$yd`
+ObjectType:2 ID:51 ObjectState:0 PosX:e PosY:e- Area:. Width:e Height:8 Orientation:.ebuxhsM
+p;ObjectType:5 ID:0 ObjectState:1 PosX:5 PosY:e Area:-e. Width:. Height:. Orientation:-
+ObjectType:5 ID:9818 ObjectState:3 PosX:e PosY:e Area:4 Width:e..e Height:e Orientation:e6e4
+ObjectType:1 ID:8 ObjectState:1 PosX:5e PosY:e4 Area:ee Width:e2 Height:e Orientation:ee
+tlT.`76ObjectType:5 ID:2 ObjectState:0 PosX:e. PosY:e8-eee Area:e Width:0e.-.ee Height:9 Orientation:9.8
+^ObjectType:3 ID:8 ObjectState:2 PosX:ee PosY:ee. Area:e-e Width:e.e.. Height:5 Orientation:e!
+ObjectType:4 ID:9 ObjectState:0 PosX:. PosY:.e Area:e Width:e-e Height:e Orientation:ee
+ObjectType:5 ID:8 ObjectState:0 PosX:e PosY:9e-7e Area:78e Width:0 Height:eee Orientation:ee
+ObjectType:1 ID:8 ObjectState:0 PosX:-- PosY:. Area:e.1.9 Width:e Height:e Orientation:e*#
+ObjectType:3 ID:3 ObjectState:0 PosX:4 PosY:7e Area:ee- Width:.9 Height:e Orientation:8
+ObjectType:5 ID:6 ObjectState:2 PosX:3 PosY:e8.8 Area:ee Width:e6e99. Height:e Orientation:8edd\"
+1ObjectType:3 ID:93 ObjectState:1 PosX:e. PosY:8ee Area:e8 Width:ee Height:-e Orientation:eTs-
+ObjectType:3 ID:461 ObjectState:0 PosX:e PosY:.e Area:e Width:. Height:--ee Orientation:e
+_ObjectType:1 ID:880 ObjectState:0 PosX:6e PosY:eee Area:88 Width:e--e Height:9 Orientation:e2eee>\a
+|ObjectType:1 ID:5 ObjectState:0 PosX:e. PosY:ee. Area:8 Width:. Height:. Orientation:9.-4<
+ObjectType:4 ID:8 ObjectState:1 PosX:e PosY:e5 Area:e Width:e- Height:ee Orientation:e
+ObjectType:1 ID:8 ObjectState:0 PosX:e PosY:e Area:8 Width:- Height:8e- Orientation:3eee-8S&
+$ObjectType:4 ID:9 ObjectState:1 PosX:- PosY:e Area:8 Width:e1 Height:e9e8 Orientation:e6
+ObjectType:2 ID:31 ObjectState:2 PosX:e PosY:5ee Area:.e Width:e Height:. Orientation:1e,
+ObjectType:3 ID:4 ObjectState:0 PosX:e PosY:- Area:e9 Width:9 Height:e. Orientation:e.
+jBV~6ObjectType:2 ID:99 ObjectState:0 PosX:9 PosY:-e5 Area:5 Width:9 Height:eee Orientation:.
+ObjectType:3 ID:1 ObjectState:2 PosX:e. PosY:8 Area:-9 Width:4- Height:6e Orientation:eeeee-ee.e-e
+])h$f\aObjectType:1 ID:9699 ObjectState:3 PosX:3 PosY:. Area:e Width:e Height:e Orientation:eee
+ObjectType:1 ID:696 ObjectState:0 PosX:.8 PosY:- Area:e Width:- Height:e Orientation:-e9
+ObjectType:5 ID:4 ObjectState:3 PosX:.7 PosY:e- Area:e Width:ee Height:e Orientation:e48.e\"\a
+ObjectType:0 ID:871 ObjectState:2 PosX:. PosY:e Area:e Width:- Height:e Orientation:emi
+>cObjectType:0 ID:881 ObjectState:0 PosX:eee-. PosY:e2 Area:e Width:4eee Height:9e Orientation:6e.
+;uObjectType:1 ID:9 ObjectState:2 PosX:ee PosY:e5 Area:ee Width:e- Height:.e Orientation:3ey@
+yY+ObjectType:5 ID:8 ObjectState:2 PosX:. PosY:e6 Area:2ee6ee Width:ee Height:e. Orientation:e1
+ObjectType:4 ID:0919 ObjectState:0 PosX:e1 PosY:e Area:3 Width:6e Height:e Orientation:e
+ObjectType:0 ID:97 ObjectState:1 PosX:e PosY:e Area:ee Width:e Height:.ee-0 Orientation:-7-w
+qObjectType:5 ID:30 ObjectState:1 PosX:e2 PosY:8 Area:.- Width:e Height:- Orientation:52e
+<qm*ObjectType:4 ID:2 ObjectState:0 PosX:e PosY:1 Area:eee0 Width:9.. Height:e Orientation:e.
+ObjectType:2 ID:8 ObjectState:3 PosX:7-.- PosY:0- Area:e Width:e Height:e-9.e Orientation:e96

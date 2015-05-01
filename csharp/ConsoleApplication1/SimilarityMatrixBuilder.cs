@@ -16,6 +16,8 @@ namespace ConsoleApplication1
         public static double initializedFlag = 0.00000987654321;
         public static double incompleteFlag = 0.00000123456789;
         public static double cancelledFlag = 0.0000050101010101;
+        public static double verifiedTimeoutFlag = 0.00000701702703;
+        public static double belowMinFlag = 0.00000307207107;
 
         public static void vasquezSays()
         {
@@ -69,6 +71,10 @@ namespace ConsoleApplication1
             int rowIndex = batchIndices[batchArrayIndex];
             int nKeys = keyList.Count;
             double[] rowArray = new double[nKeys];
+            for (int rowArrayIndex = 0; rowArrayIndex < nKeys; rowArrayIndex++)
+            {
+                rowArray[rowArrayIndex] = initializedFlag;
+            }
             Random gen = new Random(differentSeed);
 
             HashSet<string> matchingStrings_outer = getRexGeneratedStrings(rowIndex,nKeys,rexStringsBase);
@@ -94,8 +100,8 @@ namespace ConsoleApplication1
                 int chunkStop = chunkStart + remainder;
                 processChunk(rowIndex,rowArray, chunkStart, chunkStop, matchingStrings_outer, regexMap, maxErrors, keyList,nTimeouts);
             }
-
-            writeRowToFile(rowIndex,rowArray,rowFileBase,minSimilarity);
+            MatrixRow mr = new MatrixRow(rowIndex,rowArray, nKeys);
+            mr.writeRowToFile(rowFileBase,minSimilarity);
 
             stopwatch.Stop();
             TimeSpan ts = stopwatch.Elapsed;
@@ -114,18 +120,24 @@ namespace ConsoleApplication1
             CancellationTokenSource tokenSource = new CancellationTokenSource();
             for (int keyIndex = chunkStart; keyIndex < chunkStop; keyIndex++)
             {
-                if (keyIndex > rowArray.Length)
-                {
-                    throw new Exception("the keyIndex: "+keyIndex+" will be outside of the array length: "+rowArray.Length);
-                }
 
                 //get the regex mapped to this cell within the chunk
                 int innerKey = keyList[keyIndex];
                 Regex regex_inner = regexMap[innerKey];
 
+                //wow, strange it looks like the keyIndex++
+                //triggered at the end of the loop passes into the 
+                //populateRowCell(...) code, so it gets the next value!
+                int j_dont_increment_me = keyIndex;
+                if (j_dont_increment_me >= rowArray.Length)
+                {
+                    Console.WriteLine();
+                    throw new Exception("the j_dont_increment_me: " + j_dont_increment_me + " will be outside of the array length: " + rowArray.Length);
+                }
+
                 //create a task to populate that row cell
                 //this task may hang and never die.
-                tasks[taskIndex++] = Task.Factory.StartNew(() => populateRowCell(rowIndex,keyIndex, rowArray, matchingStrings_outer, regex_inner, maxErrors, tokenSource.Token));
+                tasks[taskIndex++] = Task.Factory.StartNew(() => populateRowCell(rowIndex, j_dont_increment_me, rowArray, matchingStrings_outer, regex_inner, maxErrors, tokenSource.Token));
             }
             int overheadBuffer = 3;
             int exponent = 0;
@@ -150,7 +162,7 @@ namespace ConsoleApplication1
                 for (int j = chunkStart; j < chunkStop; j++)
                 {
                     double currentRowValue = rowArray[j];
-                    if (currentRowValue==incompleteFlag || currentRowValue==initializedFlag)
+                    if (currentRowValue==incompleteFlag || currentRowValue==initializedFlag || currentRowValue==cancelledFlag)
                     {
                         nTimeouts[0]++;
                     }
@@ -208,96 +220,7 @@ namespace ConsoleApplication1
 
         // helpers
 
-        private static void writeRowToFile(int rowIndex, double[] rowArray, string rowFileBase, double minSimilarity)
-        {
-            bool[] notFirstFlags = new bool[5];
 
-            StringBuilder initializedList = new StringBuilder();
-            StringBuilder incompleteList = new StringBuilder();
-            StringBuilder cancelledList = new StringBuilder();
-            StringBuilder belowMinimumList = new StringBuilder();
-            StringBuilder similarityValues = new StringBuilder();
-
-            initializedList.Append("initializedList: [");
-            incompleteList.Append("incompleteList: [");
-            cancelledList.Append("cancelledList: [");
-            belowMinimumList.Append("belowMinimumList: [");
-            similarityValues.Append("similarityValues: [");
-
-
-            for (int j = 0; j < rowArray.Length; j++)
-            {
-                double value_j = rowArray[j];
-                if (value_j == initializedFlag)
-                {
-                    if (notFirstFlags[0])
-                    {
-                        initializedList.Append(",");
-                    }
-                    initializedList.Append(j);
-                }
-                else if (value_j == incompleteFlag)
-                {
-                    if (notFirstFlags[1])
-                    {
-                        incompleteList.Append(",");
-                    }
-                    incompleteList.Append(j);
-                }
-                else if (value_j == cancelledFlag)
-                {
-                    if (notFirstFlags[2])
-                    {
-                        cancelledList.Append(",");
-                    }
-                    cancelledList.Append(j);
-                }
-                else if (value_j < minSimilarity)
-                {
-                    if (notFirstFlags[3])
-                    {
-                        belowMinimumList.Append(",");
-                    }
-                    belowMinimumList.Append(j);
-                }
-                else
-                {
-                    if (notFirstFlags[4])
-                    {
-                        belowMinimumList.Append(",");
-                    }
-                    similarityValues.Append("(");
-                    similarityValues.Append(j);
-                    similarityValues.Append(":");
-                    similarityValues.Append(String.Format("{0:0.0000}", value_j));
-                    similarityValues.Append(")");
-                }
-
-                //set not first to true - this is for comma neatness
-                if (!notFirstFlags[0])
-                {
-                    for (int x = 0; x < notFirstFlags.Length; x++)
-                    {
-                        notFirstFlags[x] = true;
-                    }
-                }
-            }
-            initializedList.Append("]\n");
-            incompleteList.Append("]\n");
-            cancelledList.Append("]\n");
-            belowMinimumList.Append("]\n");
-            similarityValues.Append("]\n");
-
-            StringBuilder rowFileContent = new StringBuilder();
-            rowFileContent.Append(initializedList.ToString());
-            rowFileContent.Append(incompleteList.ToString());
-            rowFileContent.Append(cancelledList.ToString());
-            rowFileContent.Append(belowMinimumList.ToString());
-            rowFileContent.Append(similarityValues.ToString());
-
-            string rowFilePath = Util.getRowFilePath(rowFileBase, rowArray.Length, rowIndex);
-            System.IO.File.WriteAllText(rowFilePath, rowFileContent.ToString());
-        }
 
         private static HashSet<string> getRexGeneratedStrings(int rowIndex, int nKeys, string rexStringsBase)
         {

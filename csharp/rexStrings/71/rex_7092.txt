@@ -1,0 +1,421 @@
+#synchronous_standby_names=&
+#synchronous_standby_names
+ =h4]
+#synchronous_standby_names=
+#synchronous_standby_names
+  =
+#synchronous_standby_names  =
+#synchronous_standby_names =N
+#synchronous_standby_names=]Z
+#synchronous_standby_names
+=
+#synchronous_standby_names=
+#synchronous_standby_names	=
+#synchronous_standby_names	  =
+#synchronous_standby_names  	
+ =
+#synchronous_standby_names=j
+#synchronous_standby_names =
+#synchronous_standby_names =
+#synchronous_standby_names=
+#synchronous_standby_names=oG
+#synchronous_standby_names=!
+#synchronous_standby_names =}
+#synchronous_standby_names =w
+#synchronous_standby_names=G
+#synchronous_standby_names=M
+#synchronous_standby_names =yovF
+#synchronous_standby_names=\a_
+#synchronous_standby_names=
+#synchronous_standby_names   =
+#synchronous_standby_names=]
+#synchronous_standby_names 
+	=
+#synchronous_standby_names    =
+#synchronous_standby_names =VXhb
+#synchronous_standby_names=G
+#synchronous_standby_names
+  =6
+#synchronous_standby_names =
+#synchronous_standby_names=
+#synchronous_standby_names=a
+#synchronous_standby_names =
+#synchronous_standby_names=
+#synchronous_standby_names=
+#synchronous_standby_names=l
+#synchronous_standby_names =q
+#synchronous_standby_names=
+#synchronous_standby_names=LH
+#synchronous_standby_names		
+=
+#synchronous_standby_names=
+#synchronous_standby_names	 =
+#synchronous_standby_names
+ =
+#synchronous_standby_names   =m\e;
+#synchronous_standby_names	=
+#synchronous_standby_names =Y
+#synchronous_standby_names=Y
+#synchronous_standby_names=[
+#synchronous_standby_names=?
+#synchronous_standby_names    =-
+#synchronous_standby_names=A
+#synchronous_standby_names=v
+#synchronous_standby_names   
+  	=
+#synchronous_standby_names =2
+#synchronous_standby_names =\ag
+#synchronous_standby_names   =W
+#synchronous_standby_names=Q
+#synchronous_standby_names=+
+#synchronous_standby_names  =K}
+#synchronous_standby_names  =zl
+#synchronous_standby_names=-
+#synchronous_standby_names=6
+#synchronous_standby_names 
+  =
+#synchronous_standby_names     =
+#synchronous_standby_names =)
+#synchronous_standby_names=.
+#synchronous_standby_names =W
+#synchronous_standby_names =D3F
+#synchronous_standby_names
+=
+#synchronous_standby_names
+   =^k
+#synchronous_standby_names=zz
+#synchronous_standby_names =;
+#synchronous_standby_names   	=C
+#synchronous_standby_names=M
+#synchronous_standby_names=L
+#synchronous_standby_names=}D
+#synchronous_standby_names  
+	=0YU
+#synchronous_standby_names =.
+#synchronous_standby_names=z
+#synchronous_standby_names=pfH
+#synchronous_standby_names==S
+#synchronous_standby_names=bLe
+#synchronous_standby_names=fOZ.0l3
+#synchronous_standby_names 
+=
+#synchronous_standby_names	  =
+#synchronous_standby_names=E
+#synchronous_standby_names=*O
+#synchronous_standby_names=J
+#synchronous_standby_names=8jf
+#synchronous_standby_names=N
+#synchronous_standby_names 
+ =`
+#synchronous_standby_names =
+#synchronous_standby_names=5
+#synchronous_standby_names=
+#synchronous_standby_names  =p
+#synchronous_standby_names=
+#synchronous_standby_names=
+#synchronous_standby_names =k
+#synchronous_standby_names		 =
+#synchronous_standby_names=<
+#synchronous_standby_names	=^
+#synchronous_standby_names=\$
+#synchronous_standby_names=jk
+#synchronous_standby_names =z
+#synchronous_standby_names=Af
+#synchronous_standby_names  =Y
+#synchronous_standby_names=fT
+#synchronous_standby_names 	=
+#synchronous_standby_names=
+#synchronous_standby_names=
+#synchronous_standby_names=#
+#synchronous_standby_names
+=2Z
+#synchronous_standby_names=
+#synchronous_standby_names=D
+#synchronous_standby_names=nn
+#synchronous_standby_names=8nW
+#synchronous_standby_names 
+=SsW
+#synchronous_standby_names  =g
+#synchronous_standby_names=
+#synchronous_standby_names  			  =*
+#synchronous_standby_names=LC`
+#synchronous_standby_names  =
+#synchronous_standby_names=B\a
+#synchronous_standby_names=pi
+#synchronous_standby_names=w
+#synchronous_standby_names  =f6/l@
+#synchronous_standby_names=
+#synchronous_standby_names  		   =
+#synchronous_standby_names  =
+#synchronous_standby_names	=
+#synchronous_standby_names=I
+#synchronous_standby_names=z
+#synchronous_standby_names =y=
+#synchronous_standby_names   =
+#synchronous_standby_names	=B
+#synchronous_standby_names=
+#synchronous_standby_names =\"\"
+#synchronous_standby_names=9?
+#synchronous_standby_names  	=m
+#synchronous_standby_names	
+
+=G
+#synchronous_standby_names=*:e
+#synchronous_standby_names 	  	=
+#synchronous_standby_names 	=]D
+#synchronous_standby_names =[
+#synchronous_standby_names=^
+#synchronous_standby_names=b9
+#synchronous_standby_names=A$
+#synchronous_standby_names
+	  =
+#synchronous_standby_names
+=
+#synchronous_standby_names =r
+#synchronous_standby_names	=s
+#synchronous_standby_names=V
+#synchronous_standby_names =P
+#synchronous_standby_names
+=
+#synchronous_standby_names  =
+#synchronous_standby_names=]\aa!
+#synchronous_standby_names =0
+#synchronous_standby_names  =
+#synchronous_standby_names  =
+#synchronous_standby_names=o
+#synchronous_standby_names=|
+#synchronous_standby_names=S\e
+#synchronous_standby_names=7
+#synchronous_standby_names =,(^E
+#synchronous_standby_names =
+#synchronous_standby_names=
+#synchronous_standby_names=
+#synchronous_standby_names=#H(
+#synchronous_standby_names=m
+#synchronous_standby_names 	=*
+#synchronous_standby_names=$9Vc)Z
+#synchronous_standby_names=y~
+#synchronous_standby_names =v.!?6x
+#synchronous_standby_names=68
+#synchronous_standby_names	 
+=
+#synchronous_standby_names=j\a
+#synchronous_standby_names =Pz
+#synchronous_standby_names=8
+#synchronous_standby_names=j
+#synchronous_standby_names	=n% bsW
+#synchronous_standby_names=\a
+#synchronous_standby_names=9H@
+#synchronous_standby_names=G
+#synchronous_standby_names=L
+#synchronous_standby_names	   =
+#synchronous_standby_names 		  
+ 	=%
+#synchronous_standby_names=8_l0
+#synchronous_standby_names=
+#synchronous_standby_names=(T
+#synchronous_standby_names  =Z
+#synchronous_standby_names=I
+#synchronous_standby_names=C
+#synchronous_standby_names =R
+#synchronous_standby_names=a*8
+#synchronous_standby_names=A^
+#synchronous_standby_names	  =g
+#synchronous_standby_names 	 
+=G
+#synchronous_standby_names	=
+#synchronous_standby_names =pJ
+#synchronous_standby_names 	 =
+#synchronous_standby_names
+=I<
+#synchronous_standby_names		= 
+#synchronous_standby_names  	 =
+#synchronous_standby_names = xb
+#synchronous_standby_names=$G
+#synchronous_standby_names =v
+#synchronous_standby_names=)
+#synchronous_standby_names =
+#synchronous_standby_names=
+#synchronous_standby_names=s
+#synchronous_standby_names=\aSJH
+#synchronous_standby_names	=:
+#synchronous_standby_names 		=^
+#synchronous_standby_names=9p
+#synchronous_standby_names	=
+#synchronous_standby_names=2
+#synchronous_standby_names			=
+#synchronous_standby_names	 =
+#synchronous_standby_names =
+#synchronous_standby_names  =
+#synchronous_standby_names=)
+#synchronous_standby_names =d
+#synchronous_standby_names=}[3s
+#synchronous_standby_names=<1
+#synchronous_standby_names   	=
+#synchronous_standby_names=
+#synchronous_standby_names  =
+#synchronous_standby_names=x
+#synchronous_standby_names=;
+#synchronous_standby_names
+ 	  =(y
+#synchronous_standby_names=
+#synchronous_standby_names    =`}
+#synchronous_standby_names 		 =s
+#synchronous_standby_names  	=e
+#synchronous_standby_names=u
+#synchronous_standby_names=0
+#synchronous_standby_names=aG&
+#synchronous_standby_names  =	
+#synchronous_standby_names =3
+#synchronous_standby_names=|[
+#synchronous_standby_names=f
+#synchronous_standby_names=mK
+#synchronous_standby_names =
+#synchronous_standby_names  =
+#synchronous_standby_names=q
+#synchronous_standby_names=i.ZS
+#synchronous_standby_names  =A
+#synchronous_standby_names=}%K@$\0Y
+#synchronous_standby_names=K2b~X
+#synchronous_standby_names=T
+#synchronous_standby_names=5
+#synchronous_standby_names==x
+#synchronous_standby_names=#*
+#synchronous_standby_names 	=D<19
+#synchronous_standby_names=
+#synchronous_standby_names=pV\a
+#synchronous_standby_names=S
+#synchronous_standby_names =M
+#synchronous_standby_names=p]
+#synchronous_standby_names=p4z
+#synchronous_standby_names=`<M)*i
+#synchronous_standby_names=%=
+#synchronous_standby_names	  	=
+#synchronous_standby_names=|
+#synchronous_standby_names=Z
+#synchronous_standby_names=(C!^5v
+#synchronous_standby_names=Uc
+#synchronous_standby_names=8f
+#synchronous_standby_names=X
+#synchronous_standby_names 	 =d:8
+#synchronous_standby_names=?
+#synchronous_standby_names	=1
+#synchronous_standby_names=b_
+#synchronous_standby_names    =
+#synchronous_standby_names  
+   =0-
+#synchronous_standby_names=6@
+#synchronous_standby_names=%
+#synchronous_standby_names=+-
+#synchronous_standby_names 
+=
+#synchronous_standby_names	=@
+#synchronous_standby_names  =9
+#synchronous_standby_names=>
+#synchronous_standby_names	=|A
+#synchronous_standby_names	=[
+#synchronous_standby_names	=k
+#synchronous_standby_names=o1
+#synchronous_standby_names	=\eo
+#synchronous_standby_names=
+#synchronous_standby_names	=$
+#synchronous_standby_names=H
+#synchronous_standby_names=5oA
+#synchronous_standby_names
+  =^
+#synchronous_standby_names=:)}'0~
+#synchronous_standby_names=zT
+#synchronous_standby_names  =Q
+#synchronous_standby_names =m
+#synchronous_standby_names=a
+#synchronous_standby_names =[J
+#synchronous_standby_names=W
+#synchronous_standby_names
+=4
+#synchronous_standby_names   =$2
+#synchronous_standby_names  =b.~dk
+#synchronous_standby_names =+
+#synchronous_standby_names	=3c
+#synchronous_standby_names=S
+#synchronous_standby_names=D@f
+#synchronous_standby_names=*1
+#synchronous_standby_names =Y>
+#synchronous_standby_names	 
+=
+#synchronous_standby_names=2
+#synchronous_standby_names=g
+#synchronous_standby_names=(mCt
+#synchronous_standby_names	 =t
+#synchronous_standby_names  =T
+#synchronous_standby_names=
+#synchronous_standby_names=,=<Q[:,
+#synchronous_standby_names=/
+#synchronous_standby_names=p@
+#synchronous_standby_names 	=
+#synchronous_standby_names	=`Z
+#synchronous_standby_names  =\"
+#synchronous_standby_names=y
+#synchronous_standby_names =3
+#synchronous_standby_names	=
+#synchronous_standby_names =}\eD
+#synchronous_standby_names=
+#synchronous_standby_names=J
+#synchronous_standby_names	=',
+#synchronous_standby_names=@
+#synchronous_standby_names=|N,g
+#synchronous_standby_names=,m
+#synchronous_standby_names=v&
+#synchronous_standby_names =
+#synchronous_standby_names=@o
+#synchronous_standby_names
+=r
+#synchronous_standby_names   =
+#synchronous_standby_names= 
+#synchronous_standby_names		=
+#synchronous_standby_names
+ =
+#synchronous_standby_names=
+#synchronous_standby_names=L	
+#synchronous_standby_names=Y
+#synchronous_standby_names=,
+#synchronous_standby_names=\0
+#synchronous_standby_names=a
+#synchronous_standby_names	=~
+#synchronous_standby_names =\a
+#synchronous_standby_names=^
+#synchronous_standby_names =C/;
+#synchronous_standby_names=
+#synchronous_standby_names=r
+#synchronous_standby_names=9*
+#synchronous_standby_names
+=
+#synchronous_standby_names=(8r
+#synchronous_standby_names=W
+#synchronous_standby_names=+C\0
+#synchronous_standby_names =a
+#synchronous_standby_names=cV
+#synchronous_standby_names=n\"
+#synchronous_standby_names=(
+#synchronous_standby_names
+=5W
+#synchronous_standby_names	=H
+#synchronous_standby_names  =
+#synchronous_standby_names
+=y
+#synchronous_standby_names=t<
+#synchronous_standby_names 	   =^
+#synchronous_standby_names=
+#synchronous_standby_names=[k
+#synchronous_standby_names =~)7R
+#synchronous_standby_names=&f
+#synchronous_standby_names	 =cB
+#synchronous_standby_names    =
+#synchronous_standby_names 	=
+#synchronous_standby_names=X
+#synchronous_standby_names=
+#synchronous_standby_names=`
+#synchronous_standby_names=
+#synchronous_standby_names =P
+#synchronous_standby_names  =4
+#synchronous_standby_names	=c
+#synchronous_standby_names=4

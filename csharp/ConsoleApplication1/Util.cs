@@ -59,7 +59,7 @@ namespace ConsoleApplication1
 
         public static string getTempFilePath(int i)
         {
-            string tempFileFolder = @"C:\Users\IEUser\Desktop\temp_files\";
+            string tempFileFolder = @"C:\Users\IEUser\Desktop\tempFiles\";
             return tempFileFolder + "temp_" + i + ".txt";
         }
 

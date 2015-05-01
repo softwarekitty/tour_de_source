@@ -1,0 +1,394 @@
+*>rRNA_DV88749.989_81-9_DIR+ /molecule=_rRNA /score=19y8
+f>rRNA_L895.863_45-979_DIR+ /molecule=_rRNA /score=8K9P
+&>rRNA_EL93.99990_4-8_DIR+ /molecule=_rRNA /score=1898878=
+>rRNA_BJ3.698078_892-48_DIR+ /molecule=._rRNA /score=838489@
+>rRNA_XU81.8_949-9_DIR- /molecule=*_rRNA /score=7838
+c>rRNA_E8.292_9-16_DIR- /molecule=?_rRNA /score=1De
+\0f>rRNA_T70.8284_0-9851_DIR- /molecule=W_rRNA /score=997
+>rRNA_ZXE890867.9_2-1_DIR- /molecule=_rRNA /score=98469259
+>rRNA_W868.9_4-9_DIR+ /molecule='!_rRNA /score=84	
+>rRNA_U8.888_18-6_DIR- /molecule=_rRNA /score=13p
+c>rRNA_A889.8_3-9_DIR- /molecule=:_rRNA /score=9999
+>rRNA_IF8.89_388-97_DIR+ /molecule=%I_rRNA /score=0893(
+}('>rRNA_W8.9_812-9_DIR+ /molecule=&d_rRNA /score=99C679(
+>rRNA_VX897.79987_8-84_DIR+ /molecule=R>%=&*g_rRNA /score=1886
+/>rRNA_L89896.98_75-65_DIR+ /molecule=_rRNA /score=699u
+S>rRNA_Z9994.7_4-840_DIR+ /molecule=_rRNA /score=689
+>rRNA_AY8.259_82-98_DIR- /molecule=:s_rRNA /score=868
+{\0>rRNA_CDO1.0_99-9_DIR+ /molecule=_rRNA /score=9\"99.|D
+>rRNA_YAWL789993.5_8-8_DIR+ /molecule=_rRNA /score=880
+>rRNA_I18.8_394-88_DIR- /molecule=B_rRNA /score=4928
+n%(>rRNA_TI9.4_4-9_DIR+ /molecule=_rRNA /score=908V1d
+V>rRNA_AM3.08_0-9_DIR+ /molecule=_rRNA /score=699
+>rRNA_R3.2921_99-9_DIR- /molecule=g_rRNA /score=17986
+>rRNA_UA9.12_9-366_DIR+ /molecule=+pBL([NC_rRNA /score=93:31|lO
+>rRNA_UN865.5_8808-70_DIR- /molecule=_rRNA /score=8
+>rRNA_Y8.9_8-9_DIR- /molecule=_rRNA /score=04958&
+>rRNA_TZX81.3_8349-3_DIR- /molecule='C_rRNA /score=4	&
+~`>rRNA_H5.9_85-9_DIR- /molecule=_rRNA /score=90929gW2
+>rRNA_Z90.1_8-35_DIR+ /molecule=4_rRNA /score=703
+7>rRNA_NPIVK8.6_8-913_DIR- /molecule=_/OP_rRNA /score=9298\a2
+,>rRNA_Z080.9_91-88_DIR+ /molecule=q_rRNA /score=8999wV
+>rRNA_WB170.9_80-4_DIR- /molecule=@D$_rRNA /score=082Q
+>rRNA_X4.9_2-9_DIR- /molecule=v_rRNA /score=05598jv(
+z^j>rRNA_AHU9.789_82-82_DIR- /molecule=_rRNA /score=309
+)q3!:9G>rRNA_AYK7.82_2-7_DIR+ /molecule=0_rRNA /score=8>3
+>rRNA_XX088.9_3-6_DIR- /molecule=[mmB_rRNA /score=83
+>rRNA_R7.9_3296-8_DIR- /molecule=k_rRNA /score=8p
+>rRNA_S21.8_4-898_DIR- /molecule=`g_rRNA /score=894988T2
+,>rRNA_L3.9_193-8_DIR+ /molecule=_rRNA /score=8
+>rRNA_EY9.85_38-3_DIR+ /molecule=[_rRNA /score=8
+>rRNA_EE92.9_9-3_DIR+ /molecule=)_rRNA /score=58
+Vq7>rRNA_A72.6_989968-81_DIR+ /molecule=_rRNA /score=6x
+h>rRNA_Y4797569.41868_499-6_DIR+ /molecule=_rRNA /score=8r
+>rRNA_SZ908991.19_80-6_DIR- /molecule=_rRNA /score=949518*
+>rRNA_ZIIU5.9890989_800-9_DIR- /molecule=2_rRNA /score=5881581lI
+>rRNA_C580.98_13-3_DIR+ /molecule=_rRNA /score=249
+~>rRNA_A92.74_8-52_DIR+ /molecule=)h_rRNA /score=885
+3>rRNA_BUXPCT86591078.98_75-898_DIR- /molecule=K_rRNA /score=2919
+&>rRNA_KQYLX9.98982_9-28_DIR+ /molecule=>_rRNA /score=60
+>rRNA_J9965.5_88-019_DIR- /molecule=_rRNA /score=887470Fq
+>rRNA_V9.9598_592-8_DIR- /molecule=_rRNA /score=9U
+>rRNA_XLAW8.90_2-4_DIR- /molecule=oAJ_rRNA /score=8	K
+j>rRNA_E80.890_1-75_DIR- /molecule= _rRNA /score=16ED|!h
+>rRNA_X7.9_937-8_DIR- /molecule=_rRNA /score=898194769
+\0>rRNA_YN8.6_78-29_DIR+ /molecule=DY_rRNA /score=584d4
+>rRNA_AP7886.80_9-8_DIR+ /molecule=&_rRNA /score=7798s9sc
+>rRNA_Z8.8_47-3_DIR- /molecule=	\a_rRNA /score=3999969
+J>rRNA_O4.9_86-1_DIR+ /molecule=_rRNA /score=87[eb
+>rRNA_XS6.8318_98-7898618_DIR+ /molecule=~}f_rRNA /score=0
+>rRNA_CX8.9_8-84_DIR- /molecule=_rRNA /score=624982@
+>rRNA_KFEJH8890.99_08-34_DIR+ /molecule=\_rRNA /score=9Z
+tB
+>rRNA_C928408.9831_9-790_DIR+ /molecule=C_rRNA /score=8898b
+>rRNA_C98805.822565_9-8089_DIR- /molecule=_rRNA /score=9980
+:8>rRNA_IT1.6_384-9785_DIR- /molecule=lF_rRNA /score=42609k
+E>rRNA_EZ89.890_8-889_DIR+ /molecule=:T4C=;_rRNA /score=9988
+>rRNA_J89.7855_1-8988_DIR- /molecule=x[W6\"_rRNA /score=9Q9
++o>rRNA_K7.83_0-819_DIR+ /molecule=_rRNA /score=8m9
+1u>rRNA_K5.8_588058-230_DIR+ /molecule=\a_rRNA /score=9d
+>rRNA_M8.88_684-9_DIR+ /molecule=r_rRNA /score=40I5t
+>rRNA_L81.998_69-49_DIR+ /molecule=|_rRNA /score=049
+K>rRNA_OSP998.1_3-9_DIR- /molecule=`_rRNA /score=5995Z`
+>rRNA_D530.9983_9-76_DIR+ /molecule=_rRNA /score=7X'
+>rRNA_L3.78_9-840_DIR+ /molecule=_rRNA /score=58.
++>rRNA_P30.8_84-9_DIR- /molecule=`b_rRNA /score=5{
+hV>rRNA_ROY558.99_8-119_DIR+ /molecule=_rRNA /score=92908
+>rRNA_CZG6.999_8-29_DIR- /molecule=_rRNA /score=9
+>rRNA_Q191.80860_8-85698_DIR- /molecule=_rRNA /score=05
+9>rRNA_V7.994_27-9_DIR+ /molecule=!rM_rRNA /score=497X
+Q>rRNA_D9.8_88-4998_DIR+ /molecule=cL_rRNA /score=9989950809179
+M>rRNA_L3.517_858-8_DIR- /molecule=_rRNA /score=24
+4<>rRNA_R854.81_13-9_DIR- /molecule=_rRNA /score=09F72
+>rRNA_A8.80_789-9_DIR- /molecule=_rRNA /score=9F0
+Y$>rRNA_H2.9_0-9_DIR- /molecule=R_rRNA /score=8}8I
+>rRNA_FG279.683_1-88_DIR+ /molecule=_rRNA /score=1C\)k
+>rRNA_TA2.8_18289998-8_DIR- /molecule=_rRNA /score=09F
+t>rRNA_AM2.91826_9-8_DIR+ /molecule=_rRNA /score=6eX
+~>rRNA_OZKZ89.61_4-9_DIR+ /molecule=_rRNA /score=990599:
+]eM>rRNA_K58.0_9-0_DIR- /molecule=	B_rRNA /score=4065r
+q>rRNA_WRP9.48088_9-6_DIR- /molecule=fX`_rRNA /score=2
+>rRNA_AN4.9_2-8_DIR- /molecule=_rRNA /score=796M
+%n>rRNA_BVQ2.8_88-3_DIR+ /molecule=_rRNA /score=98$42
+U>rRNA_IE8.4_9-8_DIR- /molecule=_rRNA /score=7|\
+>rRNA_FZBA3.1_68-9_DIR+ /molecule=0>_rRNA /score=5
+>rRNA_ZM2.7_298-8_DIR+ /molecule=_rRNA /score=9
+8V.>rRNA_I9.7_1-98_DIR- /molecule=E_rRNA /score=5489980
+ydcCl>rRNA_X1.3_021-9_DIR- /molecule=_rRNA /score=979
+u
+
+>rRNA_YC5.3_9-68_DIR- /molecule=_rRNA /score=990|
+>rRNA_Z8.2_99-9_DIR- /molecule=\e_rRNA /score=18893oJ
+>rRNA_A9.0_1298-0_DIR+ /molecule=_rRNA /score=1698289`X
+\K<7>rRNA_Y7.8_9-8_DIR+ /molecule=wa_rRNA /score=884
+>rRNA_XSW58834.8_926868852-5_DIR- /molecule=B_rRNA /score=70l`
+>rRNA_A99.590_4-2_DIR- /molecule=_rRNA /score=2
+%$+>rRNA_RMZI8.8_12-0_DIR- /molecule=tW41_rRNA /score=902
+r>rRNA_BY29.9_8-8_DIR- /molecule=_rRNA /score=3f
+>rRNA_K887899.69_7-8_DIR+ /molecule=0_rRNA /score=8H7 
+>rRNA_AGZ7774.9_88-79_DIR- /molecule=FR_rRNA /score=7w43^
+>rRNA_Z8724.8038_9-9989_DIR- /molecule=_rRNA /score=6_0n/J
+47>rRNA_CYX4.21_4-2_DIR- /molecule=_rRNA /score=1999@*
+>rRNA_Z299.1_9-83840786981_DIR- /molecule=8_rRNA /score=15
+>rRNA_REV981.4_8-19836_DIR+ /molecule=Ki\a_rRNA /score=8 1
+:n>rRNA_ZBZXW2.9_8-5_DIR+ /molecule=_rRNA /score=8
+B>rRNA_E1657.183_29-7_DIR+ /molecule=_rRNA /score=494U8
+>rRNA_WY6.591_95-7_DIR- /molecule=_rRNA /score=9096381]1(E
+>rRNA_C91516.6_8-63_DIR- /molecule=`_rRNA /score=0
+2>rRNA_QH9.728_0-6_DIR+ /molecule=,P_rRNA /score=4782889avV
+zC>rRNA_M5.999_36-99_DIR+ /molecule=W_rRNA /score=12#
+>rRNA_Y98897.98_2999-6_DIR+ /molecule=_rRNA /score=59
+S>rRNA_E88783881.0308_6-9_DIR+ /molecule=l_rRNA /score=88X5
+>rRNA_UCZFJ2.0_8781-180_DIR+ /molecule=H((NQ_rRNA /score=784
+h;Ob>rRNA_XQEZAN8.3_7-22_DIR- /molecule=_rRNA /score=921578
+#>rRNA_SAA995.87_0-94_DIR- /molecule=_rRNA /score=8p`-
+>rRNA_BFY88.288_0-399_DIR+ /molecule=_rRNA /score=78
+>rRNA_ZF9.08_9-9_DIR+ /molecule=_rRNA /score=3838 
+\0z>rRNA_SZ4.7_5-9_DIR+ /molecule==_rRNA /score=94
+
+>rRNA_ZS955.69_982-48_DIR+ /molecule=(_rRNA /score=6
+>rRNA_FO8.896_89-209_DIR- /molecule=_rRNA /score=6S9
+Ylb->rRNA_NDC87.19_8-3_DIR- /molecule=U_rRNA /score=88196
+>rRNA_YN0.29_76-5_DIR+ /molecule=^_rRNA /score=8bIi
+>rRNA_SRE889.8_2-8849_DIR+ /molecule=J_rRNA /score=7
+>rRNA_CUE70.7_8-93_DIR+ /molecule=3_rRNA /score=1
+$>rRNA_B9.8_10-8290843_DIR+ /molecule=Me7\E-e_rRNA /score=99938
+Q
+>rRNA_J8.95088_0-9_DIR+ /molecule=K_rRNA /score=33(693h
+>rRNA_COFIBQ42.68_8-8_DIR+ /molecule=_rRNA /score=29/98L
+4>rRNA_L3.0_6-1_DIR+ /molecule=V_rRNA /score=39
+>rRNA_RXS8.9_3-48_DIR+ /molecule=_rRNA /score=9
+>rRNA_Z22.92_438-17_DIR- /molecule=_rRNA /score=84
+>rRNA_B9.6_2-8_DIR+ /molecule=_rRNA /score=96
+>rRNA_Y84.83_8-8785_DIR- /molecule=Kx_rRNA /score=8n47c
+>rRNA_CM87910899.841_9-261_DIR- /molecule=_rRNA /score=1=5,
+wv>rRNA_DXQH182.9_8489-8339899_DIR- /molecule=_rRNA /score=9798eLCYtl
+\e>rRNA_X969.989_2-9_DIR+ /molecule=_rRNA /score=241059CV
+Q>rRNA_YY57.887510_93-901_DIR- /molecule=_rRNA /score=98P979
+>rRNA_J94.73_99-4_DIR- /molecule=e@<_rRNA /score=8
++>rRNA_VGDZ3.99_64-8_DIR+ /molecule=_rRNA /score=81985
+>rRNA_FZ2.6_393-889_DIR- /molecule=_rRNA /score=2552846929
+>rRNA_Z77.974_8-9_DIR- /molecule=82_rRNA /score=65
++>rRNA_TQ4.1_845-71_DIR- /molecule=`2\"K~_rRNA /score=439>
+>rRNA_K5.1072897_349-8_DIR+ /molecule=_rRNA /score=59892C
+|>rRNA_Y208.98_7-8_DIR- /molecule=_rRNA /score=411@
+>rRNA_V44.7_2-9_DIR+ /molecule=_rRNA /score=00
+L<5~>rRNA_AOX60.898_5-8_DIR+ /molecule=Y[]\a9_rRNA /score=840}?(
+>rRNA_Y1.0_6-1_DIR+ /molecule=)y_rRNA /score=810
+x\a>rRNA_BZ1.88_9-7_DIR+ /molecule=_rRNA /score=88584
+`>rRNA_CN7.11932_1-91_DIR+ /molecule=_rRNA /score=890
+>rRNA_Z4.956_99-11_DIR- /molecule=Vz!)_rRNA /score=0
+l>rRNA_LDNZK95.809_8-1_DIR+ /molecule=_rRNA /score=437:
+>rRNA_AA98.3_58-99_DIR+ /molecule=b_rRNA /score=378e99859
+	X>rRNA_L1.9998_46-7_DIR+ /molecule=4_rRNA /score=9980W
+>rRNA_J8899.41_89-9_DIR+ /molecule=_rRNA /score=888
+iH>rRNA_QZX7.82_851-86_DIR+ /molecule=_rRNA /score=66
+>rRNA_LA8.84_3-9722901_DIR+ /molecule=_rRNA /score=9119629738^
+>rRNA_H09.404_7-9943_DIR- /molecule=5_rRNA /score=88
+p1>rRNA_AI12.080_38-9_DIR+ /molecule=_rRNA /score=54q8988
+>rRNA_F0.9_6-98_DIR- /molecule=9os_rRNA /score=9f
+^>rRNA_QH9.3_38-5_DIR- /molecule=o\?_rRNA /score=8048
+>rRNA_Z376.9988999_6-8_DIR+ /molecule=_rRNA /score=89
+S>rRNA_L188843.9_8-8_DIR- /molecule=_rRNA /score=89883Dbd
+]>rRNA_ZMG5.9_9-30_DIR- /molecule=_rRNA /score=7|
+.>rRNA_L188.9_9-8_DIR+ /molecule=3_rRNA /score=0q
+>rRNA_YF8.8808371_0-1_DIR+ /molecule=+f_rRNA /score=459939\"-Q
+J->rRNA_N3.7_4-99499_DIR- /molecule=;_rRNA /score=9838
++>rRNA_AE8.9_2-1_DIR+ /molecule=\aW_rRNA /score=37
+]>rRNA_YLZ94.83_8-797_DIR+ /molecule=_rRNA /score=28986UM*\a
+|>rRNA_MY6.844_99-4_DIR+ /molecule=_rRNA /score=19
+>rRNA_PO88930.8803_9-715_DIR+ /molecule='_rRNA /score=51\3 m[
+-!pVu>rRNA_HXV989.598993_3-76_DIR+ /molecule=_rRNA /score=9806
+7\2>rRNA_YEI00.70_908-0_DIR+ /molecule=_rRNA /score=8	
+>rRNA_AZZIKFF09.8_88-181_DIR+ /molecule=c?1_rRNA /score=59803%z
+>rRNA_OU5.4_68-4_DIR- /molecule=_rRNA /score=97
+r;z>rRNA_EZQE3.89_4-5_DIR+ /molecule=_rRNA /score=803
+o>rRNA_O6.0_859-92_DIR- /molecule=_rRNA /score=61828918#*
+>rRNA_RZPDX7.1_2-9_DIR- /molecule=Yq_rRNA /score=89>
+p^>rRNA_K999.8149_9-2_DIR- /molecule=_rRNA /score=36995Orm
+>rRNA_D728.89_90199-8_DIR+ /molecule=_rRNA /score=7
+o_>rRNA_MB9.8_690-4_DIR- /molecule=_rRNA /score=7>8999941863
+~*O>rRNA_E4.5_6-586_DIR+ /molecule=l_rRNA /score=453
+Y>rRNA_D98995.1988_8988-8_DIR+ /molecule=_rRNA /score=450672
+kB>rRNA_GYY9.99_8-9_DIR+ /molecule=_rRNA /score=845
+>rRNA_Z93.1_94-8965_DIR+ /molecule=p_rRNA /score=68
+iF>rRNA_E94.31_7-2_DIR+ /molecule=_rRNA /score=7368488919
+>rRNA_IAR3.8_9-9085_DIR+ /molecule=\"_rRNA /score=869\a61)qu
+x~>rRNA_F8.88_8-9_DIR+ /molecule=_rRNA /score=809+
+>rRNA_X9.0_688-298_DIR- /molecule=\aDi_rRNA /score=7h07
+I>rRNA_S6.9_57-8_DIR- /molecule=_rRNA /score=09*
+>rRNA_B8.6_89-3_DIR+ /molecule=ft_rRNA /score=9!
+z\e4/>rRNA_A9728.28_8-1_DIR+ /molecule=N_rRNA /score=89839284,
+>rRNA_G30.99996_47-7_DIR- /molecule=_rRNA /score=8999
+D>rRNA_OV8.891_2-8899942398_DIR- /molecule=I1_rRNA /score=8509
+>rRNA_P9.9788_8-8_DIR- /molecule=H~\a_rRNA /score=95>
+>rRNA_UY9.6_2977-1_DIR+ /molecule=_rRNA /score=9988n
+3>rRNA_ST999.8391_2-95450_DIR+ /molecule=_rRNA /score=848w20
+>rRNA_ZT29.978_15027-9_DIR- /molecule=}f8-_rRNA /score=994]
+>rRNA_J385.0_22-9_DIR+ /molecule=d_rRNA /score=8
+9>rRNA_AJ991.76_6-55_DIR+ /molecule=_rRNA /score=885x
+>rRNA_Z82971.92_05-8_DIR- /molecule=4t_rRNA /score=090k8
+R>rRNA_O8.0_42-14_DIR+ /molecule=_rRNA /score=8487
+>rRNA_LABF3.62_813-8_DIR- /molecule=_rRNA /score=9Ie
+j>rRNA_TD82.44_4-3_DIR- /molecule=B_rRNA /score=88
+>rRNA_GCS8.8_5-0_DIR+ /molecule=I~\_rRNA /score=58<z
+_>rRNA_DAVY949.1_078-84879_DIR- /molecule=5_rRNA /score=78
+(>rRNA_J84.6469_8-6931_DIR- /molecule=7_rRNA /score=4H
+>rRNA_Q6.8_85-4_DIR- /molecule=C_rRNA /score=8?
+>rRNA_SX89.9_989-784_DIR+ /molecule=GG_rRNA /score=88E7
+>rRNA_BA5.99_0-913_DIR- /molecule=_rRNA /score=2
+>rRNA_XZYCHY6.9834528_3-8_DIR+ /molecule=	C_rRNA /score=3
+s>rRNA_P9.91_39-88_DIR+ /molecule=n;D_rRNA /score=9869c193
+>rRNA_Z8.894_9-944_DIR+ /molecule=nS;_rRNA /score=1830578
+>rRNA_B48059.8_9-8_DIR- /molecule==_rRNA /score=8
+d>rRNA_X57.38_5-18_DIR- /molecule=L_rRNA /score=99101S
+5>rRNA_K92.99_9450548-979_DIR+ /molecule=_rRNA /score=68%
+>rRNA_AZG3.8_88-5_DIR- /molecule=C2Vm_rRNA /score=4992-\e
+>rRNA_MXNYZ4.47_9-9_DIR- /molecule=m-_rRNA /score=238?
+
+\0>rRNA_WW7.6_28-8_DIR+ /molecule=_rRNA /score=8
+>rRNA_YC78.984849939_55-9_DIR- /molecule=iO'|\aj_rRNA /score=6/uh
+I>rRNA_B59.0_0-9_DIR- /molecule=_rRNA /score=68+
+>rRNA_GNTT981.8_87-270_DIR- /molecule=w_rRNA /score=2142{`
+.>rRNA_WE996.9_98-73_DIR+ /molecule=_rRNA /score=39
+=>rRNA_N8464.480_6-618321_DIR+ /molecule=_rRNA /score=99894
+ n>rRNA_ZJ7.8_991-385970_DIR+ /molecule=-w_rRNA /score=2F
+>rRNA_XW88798.9_9-48_DIR+ /molecule=_rRNA /score=969937598#g
+z`\0\e>rRNA_KI1.5_9-1_DIR+ /molecule=P_rRNA /score=08705028m
+L>rRNA_AYJT2.9_099-978_DIR- /molecule=\a_rRNA /score=95995)3<
+>rRNA_ZGEXA918.5_4-968_DIR+ /molecule=_rRNA /score=9
+>rRNA_BAA127.088_2-94_DIR- /molecule=mh_rRNA /score=578b8
+>rRNA_DE8.99946_4-0_DIR- /molecule=_rRNA /score=7894HKA
+k>rRNA_ZR88.8_9-9_DIR+ /molecule=_rRNA /score=969\0
+X\">rRNA_NSKP968861.54975_11-98_DIR- /molecule=A_rRNA /score=78R)
+>rRNA_O18.958235_96-2_DIR- /molecule=_rRNA /score=09v
+>rRNA_PW81.7_98-8_DIR+ /molecule=I_rRNA /score=209939A
+>rRNA_J29.4_96956-9_DIR- /molecule=AI&Di~;_rRNA /score=99q
+>rRNA_C9.08_7-5_DIR- /molecule=@V_rRNA /score=9y4
+g>rRNA_TJ9.09_59-478348696_DIR- /molecule=_rRNA /score=89898
+
+X@K>rRNA_VUL9.95986_998-88_DIR- /molecule=_rRNA /score=8)
+
+>rRNA_NZ3.8_9-1789828_DIR+ /molecule=s2l'U_rRNA /score=9880
+>rRNA_AC8.4_4-86_DIR+ /molecule=T_rRNA /score=58@k
+>rRNA_E8.8_1-4_DIR- /molecule=_rRNA /score=5
+>rRNA_T8.8818_1-89_DIR+ /molecule=+_rRNA /score=90
+>rRNA_V8.3_088-6_DIR+ /molecule=2qa<_rRNA /score=94=
+>rRNA_R9.2_6967-8_DIR+ /molecule=_CQ0D_rRNA /score=219&
+,>rRNA_I818863939.1_5-9_DIR- /molecule=_rRNA /score=98L
+>rRNA_NJ68.988_8-498_DIR- /molecule=3_rRNA /score=29?2
+>rRNA_QKR19105.74_899-8_DIR+ /molecule=_rRNA /score=83289
+>rRNA_B41.0_9-3_DIR- /molecule=_rRNA /score=4899_
+>rRNA_K80.98_958-269_DIR- /molecule=_rRNA /score=99`
+8>rRNA_Z860.6_6-89_DIR+ /molecule=_rRNA /score=993919
+:>rRNA_X9823.298626_86-9_DIR+ /molecule=_rRNA /score=8983808
+>rRNA_Z8.8_925-91_DIR+ /molecule=_rRNA /score=49_9
+9gkOF>rRNA_A25783991.3_08-863_DIR+ /molecule=_rRNA /score=89v
+>rRNA_J89.9_83-85_DIR- /molecule=_rRNA /score=891.
+>rRNA_CR568.7_88-2_DIR+ /molecule=_rRNA /score=915
+_>rRNA_W78.9_8-59_DIR+ /molecule=_rRNA /score=78K:
+7>rRNA_F90.23_9-5_DIR- /molecule=_rRNA /score=691
+Mq\eJ>rRNA_W7.279_90-9_DIR- /molecule=,_rRNA /score=8888}
+w:>rRNA_OGU49.6_98-98_DIR+ /molecule=_rRNA /score=30167
+>rRNA_ZD69690.79_398890-38_DIR+ /molecule=_rRNA /score=83OQY|
+=Gg>rRNA_ZSE8.5_29-3_DIR- /molecule=_rRNA /score=0b849968\s
+>rRNA_J5.8676411_4-12_DIR+ /molecule=_rRNA /score=909898u49885
+>rRNA_NLG7.7_49-981888959_DIR+ /molecule=_rRNA /score=0
+t^D>rRNA_M190.871_71-2785_DIR+ /molecule=_rRNA /score=06;
+X>rRNA_Z576.88_9-9028_DIR+ /molecule=_rRNA /score=80718
+>rRNA_XPM8.82_9-8_DIR+ /molecule=v_rRNA /score=9j8
+Z>rRNA_YRCHEADZFQ70.19435_8478-83_DIR- /molecule=_rRNA /score=880^\"
+Uk>rRNA_K575.9_8-8_DIR+ /molecule=\_rRNA /score=9j
+>rRNA_OVAUP998.5_8-9_DIR- /molecule=_rRNA /score=95/99
+F>rRNA_N7.193_9-4_DIR- /molecule=I_rRNA /score=67ah
+>rRNA_HT8.8_6-39_DIR+ /molecule=_rRNA /score=9d39
+>rRNA_UX932.8_855-88_DIR- /molecule=_rRNA /score=20s
+>rRNA_YJ931.8_178-298_DIR- /molecule=_rRNA /score=6
+UV%>rRNA_ZOFA3.77_3-5_DIR+ /molecule=_rRNA /score=2
+(\0rGk3g	>rRNA_Z995484.9_9-8_DIR+ /molecule=|g_rRNA /score=88PF7Yb\l
+>rRNA_ZZHW88.8_3-84_DIR- /molecule=,o_rRNA /score=312
+>rRNA_T49.6_7-89_DIR+ /molecule=_rRNA /score=992v
+>rRNA_Y2.939_0-3_DIR+ /molecule=_rRNA /score=881687883539
+>rRNA_D859.3_8-9_DIR- /molecule=&_rRNA /score=6943X
+>rRNA_X98.999_9-9_DIR- /molecule=n<_rRNA /score=8
+R>rRNA_O8.55_2-71_DIR- /molecule==_rRNA /score=08533
+>rRNA_X8.78_7-71_DIR- /molecule=V_rRNA /score=8us
+m4\eF>rRNA_AZACAZ0.3_44187268-28_DIR+ /molecule=g_rRNA /score=28094
+R>rRNA_X8.98189894999989_9-8_DIR+ /molecule=_rRNA /score=93	
+-?\a>rRNA_XD0.7_85-88_DIR+ /molecule=_rRNA /score=90!1
+>rRNA_QB93.9_8-999_DIR- /molecule=_rRNA /score=8\8.
+>rRNA_Z85.2_858-59_DIR- /molecule=O_rRNA /score=396
+d>rRNA_Z879889.6_3-4_DIR- /molecule=_rRNA /score=19`
+>rRNA_E82.8_87-89363_DIR+ /molecule=_rRNA /score=484
+\08>rRNA_ADA1.28_45-8_DIR- /molecule=_rRNA /score=49991P
+->rRNA_N9.3_327-1_DIR+ /molecule=t_rRNA /score=87J8
+>rRNA_V1.19_99-92123_DIR+ /molecule=_rRNA /score=8k29
+>rRNA_Z583.88_163-7_DIR- /molecule=vx_rRNA /score=8804
+Go>rRNA_E99878.11_9382-2_DIR+ /molecule=_rRNA /score=2881
+>rRNA_X8742.09688185999_68-028_DIR- /molecule=_rRNA /score=084
+l>rRNA_X18.68_4699133-85_DIR- /molecule={_rRNA /score=6%
+qh>rRNA_TJ39.9269_0-841_DIR- /molecule=_rRNA /score=2967849105
+
+H>rRNA_DZ4828.66_6-4750438_DIR- /molecule=_rRNA /score=2/798
+zd>rRNA_A299.69_99-2_DIR+ /molecule=_rRNA /score=91
+>rRNA_WL7.9_8-6698859_DIR- /molecule=1_rRNA /score=9
+.U+o>rRNA_O6.9_38-0_DIR- /molecule=_rRNA /score=9OsU
+Q>rRNA_ZW98609.2_7-13_DIR+ /molecule=_rRNA /score=9896=
+M>rRNA_TLZ9.8_7-3923_DIR- /molecule=m_rRNA /score=5E
+>rRNA_EBW8.89_7-9_DIR- /molecule=\eq^0sl_rRNA /score=63M
+>rRNA_Y1.9_95-4_DIR+ /molecule=I_rRNA /score=8883#
+NRE+O>rRNA_AY1.50_2819598-6_DIR- /molecule=D_rRNA /score=4)8P
+C>rRNA_ZZLUVZZ3.218_64-79_DIR+ /molecule=_rRNA /score=99889
+\eB]>rRNA_A8.6_8-9_DIR+ /molecule=_rRNA /score=64898
+>rRNA_E1858.9_8148-42_DIR+ /molecule=_rRNA /score=6
+>rRNA_Z83.9_989649-8_DIR+ /molecule=I2B_rRNA /score=108F
+`!0>rRNA_OFY1.8_6-19_DIR- /molecule=?_rRNA /score=8t7
+	>rRNA_Z6.52_89-81859_DIR+ /molecule=#_rRNA /score=05
+>rRNA_IO81.99166_9-8_DIR+ /molecule=_rRNA /score=8H
+>rRNA_NK90.989_8-04_DIR+ /molecule=\an_rRNA /score=9862064
+>rRNA_YJ9.883_9-3_DIR+ /molecule=_rRNA /score=21891
+>rRNA_P7.56_7-7_DIR- /molecule=_rRNA /score=525T
+Z>rRNA_HK79.8_4-818983_DIR+ /molecule=CK_rRNA /score=489
+>rRNA_Z1.3897_384-8_DIR- /molecule=_rRNA /score=19~
+*>rRNA_LTB3.8_288-8_DIR- /molecule=_rRNA /score=4L67
+>rRNA_Z82.9_8-88_DIR+ /molecule=A_rRNA /score=6(F
+>rRNA_PGX27.54788_89-8445_DIR- /molecule=_rRNA /score=78?
+>rRNA_ZE9.8983927809_3-269_DIR- /molecule=_rRNA /score=886939
+@! >rRNA_YYA86.99_9-94_DIR- /molecule=_rRNA /score=639039
+Q>rRNA_NCP98.9_71827987-34_DIR+ /molecule=_rRNA /score=62614y
+\a>rRNA_L5.84_4-2_DIR- /molecule=_rRNA /score=7I?Q
+>rRNA_YX5.0_3389-33_DIR+ /molecule=_rRNA /score=6[
+a
+#>rRNA_T858.7_8-9_DIR- /molecule=_rRNA /score=882dG= 
+>rRNA_I8089.7_9885-2_DIR- /molecule=_rRNA /score=988Lk
+O1>rRNA_BKP8.38_998-75_DIR+ /molecule=_rRNA /score=9+^\"5
+>rRNA_Z82.2091_3-518_DIR+ /molecule=_rRNA /score=9\34
+Zh>rRNA_ES46.05_9489-8889_DIR+ /molecule=_rRNA /score=576|m
+E>rRNA_HJ34.983_18-555_DIR+ /molecule=Fm_rRNA /score=9l
+>rRNA_L9.88076_4-948_DIR- /molecule=_rRNA /score=2
+>rRNA_Z5.90_92-7_DIR- /molecule=Xe=1l4e+_rRNA /score=19909141
+U+>rRNA_FQZ85699.248_8-8_DIR+ /molecule=2_rRNA /score=1{
+>rRNA_DZZLWA7.622_6-284_DIR+ /molecule=_rRNA /score=0
+>rRNA_Z9.9_28-7149_DIR- /molecule=_rRNA /score=16/
+>rRNA_RKF8.4_2-659_DIR- /molecule=!_rRNA /score=481
+>rRNA_T8597.38_9-7_DIR- /molecule=b'?_rRNA /score=9792478
+>rRNA_FZTY8.2_8-89_DIR+ /molecule=_rRNA /score=983)h
+'>rRNA_YOZKIXZHN8.9_4-088_DIR- /molecule=_rRNA /score=79\"?
+>rRNA_QY8989.6_93-29_DIR- /molecule=_rRNA /score=88838
+/p7>rRNA_O8.098_695-9_DIR+ /molecule=_rRNA /score=287
+>rRNA_FGU7.685698_23-8_DIR+ /molecule=L_rRNA /score=7231!
+>rRNA_DL9893.719_7-948_DIR- /molecule=UF_rRNA /score=89
+>rRNA_A5.45_4-90_DIR+ /molecule=_rRNA /score=5^
+>rRNA_PPZ9.8_8188-8_DIR+ /molecule=_rRNA /score=07T1
+>rRNA_J299.4_8359-878299_DIR- /molecule=_rRNA /score=2790f
+$>rRNA_T6.69031_68-6_DIR+ /molecule={Ew_rRNA /score=3g
+>rRNA_Z5.98528_84898909-0_DIR+ /molecule=T38p_rRNA /score=946
+Z]>rRNA_GTD8.4_88808-98_DIR+ /molecule=_rRNA /score=8G8\a
+	>rRNA_RU6.48_58-0_DIR- /molecule=_rRNA /score=1n
+iFt>rRNA_L1.8_16-628_DIR+ /molecule=_rRNA /score=8N55
+ >rRNA_Z9.92999298_98850-2_DIR+ /molecule=_rRNA /score=68
+~>rRNA_OSKXBIQS98.9_1899-89_DIR- /molecule=_rRNA /score=61
+t'n>rRNA_P0.88_893-2_DIR+ /molecule=_rRNA /score=298h
+~t?>rRNA_AP82399.686_10-19_DIR- /molecule=_rRNA /score=8
+.>rRNA_U829.8_75-0_DIR- /molecule=C*_rRNA /score=93998
+>rRNA_Z9.6_48-9_DIR- /molecule=_rRNA /score=9n708
+>rRNA_IN5.9_28-5_DIR- /molecule=_rRNA /score=26668
+>rRNA_ZL1.83_0-98_DIR- /molecule=_rRNA /score=0Y996938
+g>rRNA_XT896.0_8-287_DIR- /molecule=<2_rRNA /score=989987
+>rRNA_T9.09_7-9_DIR- /molecule=G3O_rRNA /score=383984
+[>rRNA_EYDXW8.91_8-878_DIR+ /molecule=b_rRNA /score=5i\"
+RP>rRNA_VI4.7_8-2_DIR+ /molecule=03x_rRNA /score=88l|
+>rRNA_RIKQ5.81_68-9_DIR+ /molecule=_rRNA /score=5\54
+>rRNA_BH08.4_0-86_DIR+ /molecule=~&m_rRNA /score=32B	
+>rRNA_Y81.982_88-74_DIR- /molecule=S_rRNA /score=3998688
+>rRNA_Z998997890.945_588-6_DIR- /molecule=_rRNA /score=02992949Q6
+^>rRNA_NR38.491_8-9_DIR- /molecule=c_rRNA /score=784898888
+V>Z>rRNA_ULXK1.8_4-9_DIR- /molecule=_rRNA /score=85=58
+>rRNA_A4.88_8-34_DIR+ /molecule=_rRNA /score=83w9\a
+>rRNA_YDYIZMRO7.18_96-93_DIR+ /molecule=f_rRNA /score=4\e
+>rRNA_V2.9_0-9_DIR+ /molecule=_rRNA /score=89QALq
+$>rRNA_N4.97_63-09_DIR- /molecule=_rRNA /score=9
+z\eBHM?0_>rRNA_C5.3_4-69978989_DIR- /molecule=_rRNA /score=5}9_
+>rRNA_O02.5_9-3_DIR- /molecule=_rRNA /score=5899
+>rRNA_Z86.2988_64-38_DIR+ /molecule=Y_rRNA /score=2709589
+m}^%>rRNA_N9.78_9-91_DIR- /molecule=J_rRNA /score=188680189

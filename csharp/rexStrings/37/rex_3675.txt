@@ -1,0 +1,571 @@
+# Query_time:	.9Lock_time:
+.08Rows_sent: Rows_examined:85
+# Query_time:	.8296 Lock_time: .684Rows_sent:   Rows_examined:26T
+#Query_time: .4Lock_time:1.994999 Rows_sent: 3Rows_examined: 
+\e# Query_time:	.8558Lock_time:8.9Rows_sent: 8  Rows_examined: 890
+# Query_time: .49Lock_time:.3 Rows_sent:Rows_examined: 
+@/# Query_time: .209			Lock_time:	.942 Rows_sent:8997Rows_examined:
+408]
+|## Query_time: .2Lock_time: .786851 
+Rows_sent:Rows_examined:
+
+#	Query_time:	09.9Lock_time: .5 Rows_sent:Rows_examined: 
+# Query_time:	6.95866Lock_time:28.0
+Rows_sent:	93Rows_examined:4
+# Query_time:.99 Lock_time:.8Rows_sent: 88931Rows_examined: e
+#	Query_time:.628Lock_time:.8   Rows_sent:  
+	Rows_examined:08
+^#Query_time: .2 Lock_time:0.56 Rows_sent:
+0 Rows_examined:%B:
+8# Query_time: 9.38Lock_time: .0  Rows_sent: 888Rows_examined:0B7,8
+#	Query_time:	030198.48Lock_time:	7.891958 Rows_sent: Rows_examined: 8a&
+ts(#	Query_time:.98Lock_time:.2Rows_sent:9
+ Rows_examined: 7
+# Query_time: .3514Lock_time:4.811399 	 Rows_sent:Rows_examined:81239898JL
+<# Query_time: 4.9	Lock_time:5.886Rows_sent:  Rows_examined: 97
+# Query_time: .88Lock_time: 7.44 Rows_sent:Rows_examined: 8
+#Query_time: 991.9 Lock_time:
+9.27Rows_sent:
+26 	
+Rows_examined:
+=w
+M# Query_time:4.7 Lock_time: .982588
+
+ Rows_sent: 8249958Rows_examined:	6
+#Query_time:5.0  Lock_time: .91 	Rows_sent: 7Rows_examined: 
+# Query_time: 8.8Lock_time:
+.49  Rows_sent: 	Rows_examined: 
+B#
+Query_time:	139.28Lock_time:82.3
+Rows_sent:
+Rows_examined:	
+# Query_time:	92.62Lock_time:98321.8Rows_sent:Rows_examined:984298CH
+~
+# Query_time:.4Lock_time: .99Rows_sent: 9Rows_examined:
+#Query_time:	.6
+Lock_time: 858.441Rows_sent:	4Rows_examined:	3
+l]# Query_time:	.99Lock_time:	.88Rows_sent: 2 Rows_examined:[+
+# Query_time: 551.70Lock_time: .9	Rows_sent:
+78 Rows_examined:69
+#Query_time: 81.918Lock_time:9.7Rows_sent: 99Rows_examined:	
+Ab# Query_time:	.83Lock_time: .36898Rows_sent: 	Rows_examined:
+,z/#Query_time: 26.8				Lock_time:7.8Rows_sent: Rows_examined:	
+E# Query_time: 9.952Lock_time: .7594 Rows_sent:642 Rows_examined:	
+iB?rq\X#Query_time:	.7Lock_time:.79Rows_sent:92  Rows_examined: 
+# Query_time:.947Lock_time:9393.9  Rows_sent: 8Rows_examined: 98,
+# Query_time:	1.86  Lock_time: 9.978196 	Rows_sent:83Rows_examined: 3Q
+# Query_time:66.896689Lock_time:	.4  	 Rows_sent:	Rows_examined: 63949
+#
+Query_time:9.949 Lock_time:	6092.99 Rows_sent:	Rows_examined: G
+# Query_time:
+89.6Lock_time: .9Rows_sent:	 Rows_examined: 59z
+#	Query_time:.9Lock_time:	95.3Rows_sent: 8823Rows_examined:22Rzy
+#Query_time: .04 Lock_time: 5.940  Rows_sent:	 Rows_examined:
+# Query_time: 87888.1	Lock_time: .0Rows_sent: 6688Rows_examined: D
+#	Query_time: 948.1Lock_time:9.72Rows_sent:
+ Rows_examined:	426
+# Query_time: 9.1Lock_time: 2.94 Rows_sent: 77	Rows_examined: 
+# Query_time:	899188.9Lock_time: .9 	Rows_sent:Rows_examined:	79
+# Query_time:	98.1Lock_time: .4Rows_sent:83    	 Rows_examined:
+59U]f3
+#Query_time:.1 	  Lock_time:	.82
+ Rows_sent:    Rows_examined:5:
+# Query_time:22.99  Lock_time:
+.89223 Rows_sent:9Rows_examined: 
+# Query_time:68899786.9984Lock_time:	21832.71Rows_sent:9 Rows_examined: 3
+O# Query_time: 81.328Lock_time: 5.09 Rows_sent:	99Rows_examined: 8q$M
+#
+Query_time: 98.5
+	Lock_time:.3Rows_sent:Rows_examined: 7=
+L#Query_time:2.399963 	Lock_time: 4.90 	Rows_sent:Rows_examined: 82
+#Query_time:
+88.6892Lock_time: 99.87 Rows_sent: Rows_examined: 9885\0Y
+#Query_time:
+9.846Lock_time: .694  Rows_sent:59Rows_examined: 59)
+#Query_time: 0.8Lock_time: 880299.387  	Rows_sent: 4Rows_examined:7
+# Query_time:38.69Lock_time:.09  Rows_sent: 9189Rows_examined: 8
+# Query_time:	.6Lock_time: .28	Rows_sent: 89 Rows_examined:
+
+T\"#Query_time: 3247.295Lock_time: 28.925895 Rows_sent:	Rows_examined: 94
+# Query_time:	9498.2Lock_time:	.6	Rows_sent:	8Rows_examined: 
+# Query_time:66.889 Lock_time: 0.1 Rows_sent: Rows_examined: 4
+#	Query_time: .98Lock_time: .89Rows_sent: 9Rows_examined:	6
+#Query_time:0.9 Lock_time:.85Rows_sent:   Rows_examined: 379LRw9
+#Query_time: .61	Lock_time:0.86Rows_sent:6Rows_examined: 122
+#Query_time:9310.48Lock_time:.2Rows_sent:41 Rows_examined:3
+9xJX9#
+Query_time:97.8 Lock_time:.4Rows_sent: 4    	Rows_examined:9
+# Query_time: .29Lock_time: 798.59    Rows_sent:  Rows_examined:	37u
+#Query_time:
+8.8828 
+ Lock_time: .7 Rows_sent: 9Rows_examined:4b\0SB
+# Query_time: .5Lock_time: 1.79 Rows_sent: Rows_examined:9
+I#Query_time:	.0Lock_time: 8.8 Rows_sent:Rows_examined:	
+#Query_time: 6658244.8Lock_time:	0.9792Rows_sent: 86988Rows_examined: 0
+# Query_time:
+91.92 Lock_time: .886  Rows_sent: Rows_examined:	16
+#Query_time: .99988 Lock_time: .7Rows_sent:	9		Rows_examined: 
+w#Query_time:	98.8685Lock_time: 9.5Rows_sent:8Rows_examined: 6
+# Query_time: .71  	 Lock_time:.679 Rows_sent:Rows_examined: WL
+#Query_time: 6018.920809Lock_time: 9878.8Rows_sent:   Rows_examined: 
+#Query_time: 5.194 Lock_time:18.87Rows_sent: 6 Rows_examined: 8
+# Query_time:	762.0Lock_time:2.989 Rows_sent: 	Rows_examined:09
+|#Query_time:.0	 Lock_time:	9.7944Rows_sent: Rows_examined:l
+#	Query_time: 09.8682Lock_time: .1Rows_sent: Rows_examined: 4
+# Query_time: .9Lock_time:.5
+ Rows_sent:9Rows_examined: O
+&# Query_time:	7.28Lock_time:628.4 Rows_sent: 1184  Rows_examined: s
+#
+Query_time:.99888Lock_time:31.7Rows_sent:	434	Rows_examined:
+#
+Query_time:8.1Lock_time:
+.889Rows_sent:  Rows_examined:	2]
+d#Query_time: .97 Lock_time:.1 
+Rows_sent: 
+Rows_examined:
+# Query_time: .99 	Lock_time:912.8826Rows_sent:
+38Rows_examined:<eic
+4#
+Query_time:	0.9  Lock_time:.88 Rows_sent: 982 Rows_examined: 3[(
+#	Query_time:.7Lock_time: 1.9Rows_sent:7659 Rows_examined: 7882
+qz$# Query_time:	7.89	 Lock_time: .96Rows_sent: Rows_examined: 
+# Query_time:.9	  Lock_time:.889	 
+Rows_sent:	57
+Rows_examined: 
+#Query_time: 0.99 Lock_time:.1Rows_sent:Rows_examined:
+# Query_time:	197.8891Lock_time: 4.1	Rows_sent:	087Rows_examined:8
+# Query_time: .4819 	Lock_time: .9	Rows_sent:Rows_examined: 
+# Query_time: .9	 	
+
+Lock_time:51.3Rows_sent: 	Rows_examined:8-IyY
+j#	Query_time: .64 
+Lock_time: 692.72	Rows_sent: 3 Rows_examined: Z
+# Query_time: 2.4Lock_time: .998Rows_sent:Rows_examined: \0
+q
+o# Query_time:99.818Lock_time: .5980Rows_sent: 93Rows_examined: 8>9,L^
+#	Query_time:.8Lock_time: 892.594958Rows_sent:
+
+Rows_examined:0
+#Query_time: .96209Lock_time:90493.3Rows_sent:
+	Rows_examined:	(
+#	Query_time: 8.0718Lock_time: 3.717Rows_sent:Rows_examined: 
+P@Cx#	Query_time: 98.9Lock_time: 995.10Rows_sent: Rows_examined: 8
+?# Query_time:
+8.59Lock_time:
+946.489Rows_sent: Rows_examined: 90\Z):H
+# Query_time:
+925.8Lock_time: 1.9Rows_sent: 6 Rows_examined:	839
+#
+Query_time: .2Lock_time: 81.98	  Rows_sent: Rows_examined: 
+p#Query_time:1.110Lock_time:899.9
+Rows_sent: Rows_examined: 
+	|# Query_time:699.91Lock_time:
+.2Rows_sent: 992Rows_examined:	
+VN#Query_time: .4 Lock_time:	.9Rows_sent: 3Rows_examined:
+
+# Query_time: .3	 Lock_time: 88.5Rows_sent: 2Rows_examined: 69L
+6u# Query_time:97385.7Lock_time: 99.3Rows_sent: 	Rows_examined: 2
+U#Query_time:.852Lock_time:8.998 Rows_sent:997Rows_examined:91998
+`h#Query_time:8.3Lock_time:
+1.8Rows_sent: Rows_examined:	98
+#Query_time: .9	Lock_time: .85Rows_sent:	958  Rows_examined:89^s
+d# Query_time:
+0414.96  Lock_time:766.9	Rows_sent: 	Rows_examined:
+#	Query_time: .2Lock_time: .699
+  Rows_sent:3Rows_examined:18e
+mH# Query_time:	266.1Lock_time: 9.9Rows_sent:Rows_examined: 
+y#Query_time:	6.8Lock_time: .8993Rows_sent:352 Rows_examined:UMc
+# Query_time:.5  Lock_time:	951.8Rows_sent:9Rows_examined:0V
+#	Query_time: 3828.83Lock_time: 85.54Rows_sent:
+ Rows_examined:6
+Ll#	Query_time: .29Lock_time: .99 Rows_sent:Rows_examined:c
+# Query_time: 19.83 Lock_time: .91 Rows_sent: Rows_examined: Y9\l4'
+#	Query_time:681.9Lock_time:	.2Rows_sent: Rows_examined:8
+#Query_time:894.2	Lock_time:.20Rows_sent:9490Rows_examined: 8d
+#Query_time: 998.7Lock_time: .4Rows_sent:	7Rows_examined:B
+# Query_time:9.970Lock_time:302.0Rows_sent: 28Rows_examined: 
+#
+Query_time: 2.1Lock_time: .9Rows_sent: 
+ Rows_examined: 5t
+#	Query_time:2.886 Lock_time: .3Rows_sent:
+Rows_examined:0L
+# Query_time: .04Lock_time: .839Rows_sent:Rows_examined:8918
+#Query_time: 2.1Lock_time: 67.5Rows_sent:Rows_examined:	912W
+K#Query_time: .70Lock_time: .789 Rows_sent:   Rows_examined: -
+# Query_time: .29Lock_time:59.9Rows_sent:3Rows_examined:I
+#Query_time:5.9Lock_time:	33.18Rows_sent: 1Rows_examined:8
+O7#Query_time:.91Lock_time: .97Rows_sent:   Rows_examined:	2
+# Query_time:5.4Lock_time:2.0219Rows_sent:
+4Rows_examined:1019
+# Query_time:.2 Lock_time:	.291  Rows_sent: 78Rows_examined:8984
+#Query_time: .17988Lock_time: .7 Rows_sent: Rows_examined: 2R
+# Query_time: .88
+	 Lock_time: 8398.38 Rows_sent:	Rows_examined: 9
+#	Query_time: 7.98Lock_time:	78.8   Rows_sent: Rows_examined: 90
+#Query_time: 4.89 Lock_time: .1
+
+Rows_sent: Rows_examined:Q
+#Query_time: 58.8781  Lock_time: .98	Rows_sent:79Rows_examined:9
+#Query_time:.61 Lock_time:9.8Rows_sent:	 Rows_examined:a
+# Query_time: 89.0Lock_time: 92.9Rows_sent:8	  Rows_examined: 
+9 # Query_time: .88Lock_time:8.99  Rows_sent:	99Rows_examined: 8e
+s2%# Query_time: 98.69Lock_time:	.9   Rows_sent: Rows_examined:	9799
+)# Query_time: 0.22
+Lock_time: 2832.0Rows_sent:74  	Rows_examined:	8
+# Query_time:.0Lock_time: .8 Rows_sent: Rows_examined: 99;
+# Query_time: 0.88 Lock_time:1.05Rows_sent:  		  Rows_examined: 6039
+# Query_time:.9784    Lock_time: 8.119Rows_sent:Rows_examined:
+# Query_time:
+8.69Lock_time:	0.41Rows_sent:  		Rows_examined: 9xsDM[
+\a# Query_time: .8111 Lock_time: 80.8Rows_sent: Rows_examined:8
+#Query_time: 94.73Lock_time: .2 Rows_sent:
+	   Rows_examined:
+
+# Query_time: .19Lock_time:.8Rows_sent:6 Rows_examined:9
+# Query_time: .98    Lock_time: 0.838Rows_sent: 8Rows_examined:
+#E*Q# Query_time: .916Lock_time: .9      Rows_sent: 6Rows_examined: 52
+E#Query_time:.8Lock_time: .3Rows_sent:8Rows_examined: 8	
+#	Query_time:.8Lock_time:	8.0 Rows_sent:  
+  Rows_examined: 26
+#
+Query_time: .8Lock_time:
+.94 Rows_sent: Rows_examined:4;GH
+d# Query_time: .485Lock_time: .0
+Rows_sent: 2699Rows_examined:8
+# Query_time:	.4Lock_time: 9.9Rows_sent:Rows_examined: 
+#Query_time:.44Lock_time:.9Rows_sent:	4Rows_examined: 88|
+#Query_time: 9.92Lock_time: 206.9Rows_sent:Rows_examined:	
+#	Query_time: 9.4  Lock_time: 59.409817Rows_sent:019 Rows_examined:
+1089iT
+0	#Query_time:.9 Lock_time: 998.84Rows_sent: 5638Rows_examined:98
+#
+Query_time:.2 
+Lock_time: .7987  Rows_sent:	 Rows_examined:688
+# Query_time:	.8930Lock_time: 21.9  Rows_sent: 8 Rows_examined: Z
+*v# Query_time:	.698 Lock_time:2.18Rows_sent: 
+Rows_examined: n
+4C# Query_time: .928Lock_time: .9Rows_sent: 9Rows_examined:	
+#
+Query_time: 8998.90 Lock_time: 4838.8 Rows_sent:  	Rows_examined:
+49f
+l#	Query_time: .18Lock_time:.88Rows_sent:  	Rows_examined:
+9
+#Query_time: 99.57Lock_time: .9	  Rows_sent: 8Rows_examined:
+b# Query_time:.9Lock_time: 4.5Rows_sent: 8Rows_examined: 9U
+# Query_time:7.901Lock_time: .88 Rows_sent:   Rows_examined:99t
+Gp# Query_time: .93	
+ Lock_time: 4.9Rows_sent: Rows_examined: 
+#Query_time:.26Lock_time: 2.88Rows_sent:	888 Rows_examined:99988x
+;#Query_time: .9095Lock_time:.4Rows_sent:  Rows_examined: 2
+l# Query_time:.86  Lock_time:	.54Rows_sent: 6Rows_examined: 8 
+@1R#Query_time: 889888.88Lock_time: 7.7	Rows_sent: Rows_examined:	
+_\0# Query_time:9.4Lock_time: .1Rows_sent: 5 	Rows_examined:98m
+G#Query_time: 8.2Lock_time:.99Rows_sent: 3Rows_examined:p
+#Query_time:68.6Lock_time: 994.79869 Rows_sent: 9	Rows_examined:9Q@4
+#	Query_time:	.19 Lock_time:	988.31   	Rows_sent: Rows_examined:q
+#Query_time:.4Lock_time:	.5 Rows_sent:97Rows_examined: 02
+#Query_time: .97Lock_time: .8Rows_sent:88782Rows_examined: 04
+# Query_time: 9.8 Lock_time:.097888Rows_sent:5 Rows_examined:	T
+Vg#Query_time:2.8Lock_time:.9Rows_sent:  	 Rows_examined:Q
+#
+Query_time: .242Lock_time: 65.5Rows_sent: Rows_examined:26_
+# Query_time:	.09 Lock_time:	.86Rows_sent:	Rows_examined:8
+#	Query_time: .9 Lock_time:09.2Rows_sent:	Rows_examined: 
+2#Query_time: 169838.9Lock_time:
+.89		 Rows_sent: Rows_examined:c
+# Query_time:
+72.989988Lock_time:.9Rows_sent: 
+Rows_examined: 
+#Query_time: .8 	  Lock_time:.5 Rows_sent:
+Rows_examined: 94
+%%5#Query_time:
+668.8 Lock_time: 92.8Rows_sent:855 Rows_examined:	*
+nB#Query_time: 9.631 Lock_time: 828.6Rows_sent:9Rows_examined: 
+#Query_time: .9Lock_time: .820Rows_sent: 48108Rows_examined: 2A
+}|8#	Query_time:.9Lock_time: .294	 Rows_sent:7 Rows_examined: 692'\K
+#	Query_time: 3.886Lock_time: .13Rows_sent:
+2 	Rows_examined:
+H
+/i # Query_time: .4Lock_time: .5 Rows_sent:	2Rows_examined: 
+)# Query_time: 790.88   Lock_time: 648.9Rows_sent:08Rows_examined: 8E
+#	Query_time: 7.88Lock_time: 69.89Rows_sent:
+Rows_examined:
+# Query_time: .99 Lock_time:	.89	Rows_sent:	61749 Rows_examined: 695
+2Ze#Query_time:	.38Lock_time:	.59Rows_sent:9Rows_examined:274
+# Query_time:.9Lock_time: 3.06Rows_sent: 183Rows_examined: 8:
+V# Query_time: 94.1970Lock_time:.9Rows_sent:889	Rows_examined:	8_
+6o>#Query_time: 8.5Lock_time: 8.30370Rows_sent: Rows_examined:8<'
+N#Query_time: .8Lock_time:	.8Rows_sent:9Rows_examined: 
+#Query_time:.5Lock_time: .40 Rows_sent:	Rows_examined:
+#Query_time:
+.8
+Lock_time: 956.9Rows_sent:98Rows_examined: 
+#Query_time: 88.933 
+	Lock_time: .9  	Rows_sent:89Rows_examined: 0[e
+3\0Y# Query_time:	82921.0Lock_time: 8.8Rows_sent:	95921 Rows_examined: 8&/
+#	Query_time: .13684Lock_time:	.92Rows_sent:57	  Rows_examined:2943
+AR#Query_time:	.1 	
+ Lock_time:5.96	 Rows_sent:Rows_examined:
+
+(#Query_time:8.29Lock_time:.9Rows_sent:
+9Rows_examined: 
+|otx-\"#
+Query_time: 778.355833Lock_time:91.398090  	 Rows_sent:	  Rows_examined:1
+x#Query_time: .94 Lock_time:.95Rows_sent: 186Rows_examined:8>
+# Query_time: .19 Lock_time: 984.039489 	 	Rows_sent: 78Rows_examined:?j
+# Query_time:58.1178Lock_time:.69Rows_sent: 98619    
+	Rows_examined:9343
+# Query_time:.1Lock_time:.8 Rows_sent: 9Rows_examined:
+59
+#Query_time: 635.9Lock_time: .93Rows_sent:91 Rows_examined:
+G#Query_time: .1066Lock_time: .84 Rows_sent:		 Rows_examined:2GZs
+(# Query_time:13.25Lock_time:.9671 Rows_sent: 8 
+ 
+Rows_examined:$
+#Query_time:	5892.99	
+ Lock_time: 3597.58938Rows_sent: 
+Rows_examined: 93
+#Query_time:185.5Lock_time:1.1 	Rows_sent: Rows_examined:	85
+
+
+# Query_time: 71.8Lock_time:	.8 Rows_sent: Rows_examined: 
+
+SU#Query_time: .7Lock_time:	948.8Rows_sent:   Rows_examined:
+^
+zc# Query_time: .89   Lock_time: .39Rows_sent: Rows_examined:	4
+#	Query_time: .85899
+Lock_time:959.9 Rows_sent: 8989Rows_examined: 8.
+#Query_time:2.0Lock_time:586.7Rows_sent: 0Rows_examined:
+# Query_time:.0	Lock_time:.88Rows_sent: 8
+Rows_examined:	86
+# Query_time: .809Lock_time:096.84Rows_sent: 8Rows_examined:E
+#Query_time:	8.999 	 	Lock_time: .91  Rows_sent: 2Rows_examined:94
+# Query_time:	9.3Lock_time:	8.6 Rows_sent:   Rows_examined: 9?]X
+
+t#Query_time: 9.6  Lock_time: 6.8Rows_sent: 38Rows_examined: 9
+8:U# Query_time:.03Lock_time: .3Rows_sent: Rows_examined:	
+#Query_time:5.9Lock_time:8.5Rows_sent: 9Rows_examined:~
+# Query_time: .88  Lock_time: 4.9	 Rows_sent: 975		Rows_examined: 89
+# Query_time: 38.9959Lock_time:.919	   Rows_sent: Rows_examined: 
+,Y# Query_time:	8873.9Lock_time:	.8
+ Rows_sent: 43Rows_examined:	
+# Query_time:	.888	Lock_time:887.5989Rows_sent: 5 Rows_examined:
+84
+nK# Query_time:.8 
+		Lock_time:92.4Rows_sent: 	 Rows_examined:	So|'E78
+/#Query_time: 8.59 Lock_time:83.998888 Rows_sent: 	Rows_examined:
+`8\0c
+#Query_time: 9.9774Lock_time: 7.8Rows_sent: 6 Rows_examined:9r-
+#
+Query_time: 5.82Lock_time:	.1  Rows_sent: Rows_examined:896#
+# Query_time: 314.148Lock_time: .898Rows_sent:	Rows_examined:	
+# Query_time: .4Lock_time: 8.9Rows_sent:18971  Rows_examined: sl
+hX#
+Query_time: 9899.888Lock_time: 2.28Rows_sent:	 Rows_examined:
+# Query_time: 59.7Lock_time: 29.5048Rows_sent: 252Rows_examined: 04
+#Query_time: .1 	Lock_time: .8Rows_sent: 938Rows_examined:	19
+,2#	Query_time: 689899.35 Lock_time:9.880Rows_sent:Rows_examined: 6779
+HMA#	Query_time:.5817 Lock_time:.58Rows_sent: 7Rows_examined: 1;
+#
+Query_time:	.0 Lock_time: 038.88999  	Rows_sent: 5Rows_examined:177988
++# Query_time:88.4Lock_time: .2Rows_sent: Rows_examined: Z
+N%# Query_time: .9Lock_time: 7.971763Rows_sent:9Rows_examined: 
+#Query_time: 99.11Lock_time: .7Rows_sent:Rows_examined:
+
+#
+Query_time: .8Lock_time: 7.398     Rows_sent:Rows_examined: 528^
+w#Query_time: .86Lock_time:
+.89Rows_sent: Rows_examined:~e
+|#Query_time: .2
+Lock_time:	.429 
+Rows_sent:   Rows_examined:98
+#Query_time: 5.9Lock_time: .990Rows_sent: Rows_examined: 73
+ #
+Query_time:	.8Lock_time:.59Rows_sent: 86 Rows_examined: s
+# Query_time: 119.2 
+Lock_time:.85Rows_sent:	8Rows_examined: 9
+r#Query_time:589.5Lock_time: 5.999Rows_sent: Rows_examined: 1085\0{Cs
+# Query_time: .8Lock_time: .7Rows_sent: 78580Rows_examined: 705
+i#Query_time:	58802982.3 Lock_time:.514508Rows_sent:Rows_examined: 3z
+y7#Query_time: .3Lock_time:
+8.69
+ Rows_sent: 5	 Rows_examined:	0
+># Query_time:.8	 Lock_time: 97.9Rows_sent:Rows_examined: _
+j# Query_time:397.89  Lock_time: .2Rows_sent:8Rows_examined:U
+# Query_time:	1.1
+ Lock_time:5.96 Rows_sent: Rows_examined: 85
+(#Query_time: .81994Lock_time: 8.896 Rows_sent:   
+Rows_examined: i
+K#	Query_time: .88	Lock_time:.8Rows_sent: Rows_examined:89\V
+x#	Query_time:	2.8Lock_time:988.8Rows_sent:8	Rows_examined: 
+;4%## Query_time: 8.449 Lock_time:	.9490Rows_sent: Rows_examined:
+# Query_time: 0.04	Lock_time:.9Rows_sent:Rows_examined:	6/
+## Query_time:.73Lock_time:2906.6810Rows_sent: 152Rows_examined:dW
+#Query_time:.599897Lock_time:.598Rows_sent: 859Rows_examined:8`CT>
+# Query_time:.670Lock_time: 8981.6Rows_sent:  Rows_examined:4998T
+# Query_time:.88Lock_time: .1  Rows_sent:
+Rows_examined: 098
+\0HM# Query_time:.6 Lock_time: .19891 Rows_sent: Rows_examined: 89
+# Query_time:.96Lock_time: .3 Rows_sent: 39Rows_examined:
+q#	Query_time: 0005.4  Lock_time: .0Rows_sent:6Rows_examined:
+# Query_time: .6808Lock_time:69.19
+ Rows_sent:
+8Rows_examined: 3
+# Query_time: .9  Lock_time:.8 
+Rows_sent:	8Rows_examined:8
+#Query_time: 0.9  Lock_time: .04797Rows_sent: 2Rows_examined:
+9139;s
+:/# Query_time: .90Lock_time: .39Rows_sent: Rows_examined:V+
+#Query_time:	.9Lock_time: .72 Rows_sent:	Rows_examined:49
+[#
+Query_time:	11.9Lock_time: .5Rows_sent:
+09	Rows_examined:1
+#Query_time:.9379Lock_time:84998.999Rows_sent: 8Rows_examined: y\e
+I=#
+Query_time:	8410402.8	  Lock_time: .7Rows_sent: 280 Rows_examined: 947
+#Query_time:
+.9	 Lock_time:.38Rows_sent:	8	Rows_examined: 23:
+#Query_time:
+.0Lock_time:	8.58 Rows_sent:Rows_examined:H1
+# Query_time: .88Lock_time: .5Rows_sent:Rows_examined: '
+#Query_time: .0Lock_time:.8Rows_sent: 3 Rows_examined: 
+v#Query_time:6.86	Lock_time: .02 Rows_sent: 87Rows_examined:	C
+.#	Query_time:.81Lock_time: .81 Rows_sent: Rows_examined:
+=FK#Query_time: 4.9Lock_time:	.44
+ Rows_sent:
+881Rows_examined:	
+x#Query_time:	.8	Lock_time: .89Rows_sent:	Rows_examined: 
+9#
+Query_time:	.8Lock_time:	1.8 	Rows_sent:  	 Rows_examined:9
+#
+Query_time: 988.999608Lock_time: 869.9Rows_sent:24Rows_examined: 97
+x2@# Query_time:
+70.838Lock_time: .9 	 Rows_sent: 
+Rows_examined:1
+#
+Query_time: .26 Lock_time: 6.49 	 Rows_sent: 9Rows_examined: 
+# Query_time: .8	 Lock_time:.2 Rows_sent:   Rows_examined: y
+#
+Query_time: 9.5	 Lock_time: 80.8Rows_sent:9397    Rows_examined: 898
+# Query_time:
+87.6Lock_time: .818	 Rows_sent: 8 Rows_examined: 86
+=$t0# Query_time:	95.8243Lock_time:
+132.329	Rows_sent:  Rows_examined: 492-
+#Query_time: .8904Lock_time:	9.9	    Rows_sent: 99
+Rows_examined: \0`S
+#Query_time:0.00409 	Lock_time: 342.58Rows_sent: 89 Rows_examined:99
+# Query_time:.816 Lock_time: 8.9 
+Rows_sent:Rows_examined: 8
+#Query_time:.8Lock_time: .8Rows_sent:4    
+Rows_examined: 4
+ OW# Query_time: .1Lock_time:	9.9 	Rows_sent: 2Rows_examined: 4Q
+# Query_time: 8.99	
+ Lock_time: .02Rows_sent: Rows_examined:
+#	Query_time:8.9Lock_time:7.95098Rows_sent:  Rows_examined: 18$S
+6#Query_time: 69.28Lock_time:	.0Rows_sent: 4359Rows_examined:	
+# Query_time: .89Lock_time:.2Rows_sent:  Rows_examined:8891
+# Query_time:
+5.82
+Lock_time: .258890Rows_sent:82Rows_examined: 5]
+Qx#Query_time: 688.029Lock_time: .9Rows_sent:824Rows_examined: 62fW
+E# Query_time: .0999Lock_time:.7 Rows_sent:  Rows_examined:989
+#Query_time:.98 Lock_time: .983	Rows_sent:	8 Rows_examined: 6\e
+-# Query_time:68.8Lock_time: 8.6 Rows_sent:5Rows_examined: 682
+#	Query_time:4853.8851 	  Lock_time:8.89  Rows_sent: 2 	 Rows_examined:	8
+# Query_time:.87Lock_time:
+9.78Rows_sent:Rows_examined:	8Y
+R#Query_time:	361.7Lock_time:	.8
+Rows_sent: Rows_examined: 8
+W# Query_time: .88Lock_time: 49.9Rows_sent:  Rows_examined: 4
+c# Query_time: 7.9Lock_time:	.8Rows_sent:9Rows_examined:nECG
+Uw/# Query_time:.8    Lock_time:4.6Rows_sent:
+Rows_examined:
+# Query_time: .4Lock_time: 8589.849Rows_sent:9 Rows_examined:	86
+j#
+Query_time: 5.5  Lock_time:	.88
+Rows_sent: 8498    Rows_examined:j
+*o#Query_time: 08.99Lock_time: .8Rows_sent:9Rows_examined: 871!s
+# Query_time:	.0  Lock_time:808820.9 Rows_sent:  	 Rows_examined: 
+#Query_time:.895Lock_time:	.7994  Rows_sent:	0   Rows_examined:	
+Uy`V#	Query_time: 38689.3Lock_time:78933.268938Rows_sent:Rows_examined: 1i
+#	Query_time: .1   Lock_time: 239.286Rows_sent:	8	 Rows_examined: T\
+H#Query_time:	2.3 Lock_time: .4Rows_sent:189Rows_examined:
+en# Query_time: 89.9 Lock_time: 0819.4Rows_sent: 1Rows_examined:	
+=_\e# Query_time: .5Lock_time:0991.9 Rows_sent: 0 Rows_examined:
+# Query_time:	.18Lock_time:	98.7708Rows_sent:0	Rows_examined:fWs{
+#
+Query_time:	697.88Lock_time:.118Rows_sent:  Rows_examined:
+#	Query_time:
+8.6Lock_time:995.5042Rows_sent: 9Rows_examined: -
+c# Query_time:9.5Lock_time:	.9Rows_sent:
+4Rows_examined: 61
+#Query_time:	.9Lock_time:	99.9	Rows_sent:	99Rows_examined: =j
+#Query_time: .19Lock_time:2.1Rows_sent:	Rows_examined: 8
+# Query_time: 195186.499Lock_time:	.17  Rows_sent:	9Rows_examined: 7553
+wl# Query_time: .5Lock_time: .975Rows_sent: Rows_examined: 
+# Query_time: .9 Lock_time:	.4088Rows_sent: 	Rows_examined:07
+#	Query_time:	3.65 	Lock_time:	98.5	 Rows_sent: Rows_examined: 7
+# Query_time: 4.8973Lock_time:
+17.95 Rows_sent: Rows_examined: 6
+X# Query_time: 0.8Lock_time:.3Rows_sent: Rows_examined: Hjc
+# Query_time: 5814.5Lock_time: .55  Rows_sent: Rows_examined: 
+#
+Query_time:3198.2
+Lock_time:
+109.8Rows_sent: 430 Rows_examined:
+6
+sx# Query_time:.8	Lock_time: .4Rows_sent:	Rows_examined:995
+Y#	Query_time:	.6Lock_time: .079Rows_sent: Rows_examined:	8
+# Query_time: .7Lock_time: 494.83Rows_sent:
+Rows_examined:	M
+9X#Query_time:12.9899    Lock_time: 5.89Rows_sent: Rows_examined:\0
+f# Query_time: 88.0	 Lock_time: 8.91Rows_sent:	98Rows_examined:-&
+# Query_time:5.089178Lock_time: .089 		Rows_sent:	998990985889 Rows_examined:812
+# Query_time:.8Lock_time:9.9 Rows_sent: 8Rows_examined:
+93
+ # Query_time:.82 Lock_time:.874 Rows_sent: 9Rows_examined: 
+\o#Query_time:50.6 Lock_time: 49.1Rows_sent:Rows_examined:700
+ec#	Query_time:8.90 Lock_time: .27  Rows_sent:		Rows_examined: 9
+# Query_time:	.67Lock_time:.1Rows_sent: 98  	Rows_examined: 9
+H!# Query_time:.8Lock_time:	.2Rows_sent: 64 Rows_examined:	
+# Query_time:095.390	Lock_time: 2.759Rows_sent: Rows_examined:0X<
+# Query_time: .89	 Lock_time: 3.8Rows_sent:Rows_examined: 366398\"
+# Query_time:	26.9Lock_time:	98.9Rows_sent:3  Rows_examined:	0tL
+# Query_time: .998994Lock_time: 7.9Rows_sent:416 Rows_examined:
+Nfv#Query_time: 7878.9949Lock_time: 2897.9Rows_sent: 879 	Rows_examined:5:M
+1#Query_time:	9.86	Lock_time:
+8.360Rows_sent:Rows_examined: 297
+# Query_time:	889.2Lock_time: 7.9Rows_sent:96Rows_examined:
+w# Query_time: 79.89Lock_time:	.2 Rows_sent:	Rows_examined: 8.D\e1
+S# Query_time:.8 Lock_time:.8Rows_sent:   Rows_examined::u!
+# Query_time:	.88Lock_time: .23081  Rows_sent: 18 Rows_examined: 87T
+# Query_time:2.8 Lock_time:.8Rows_sent: Rows_examined: 
+#Query_time: 88.078Lock_time: .868 
+Rows_sent: Rows_examined: 54
+#	Query_time: 8.98Lock_time: 593.889  Rows_sent:089		  Rows_examined:181
+#
+Query_time:22.7Lock_time: 66.8Rows_sent:4 Rows_examined: fUC
+!#
+Query_time: .4 Lock_time:1.8 Rows_sent:Rows_examined: 54468
+#Query_time:	.94889Lock_time:	.89Rows_sent:3Rows_examined: ,
+# Query_time:.8	 Lock_time:
+8.5 Rows_sent:6Rows_examined:
+98
+#Query_time: .9Lock_time:	38.8Rows_sent:Rows_examined: 8
+ 
+;81# Query_time: 8.22	Lock_time: .048776Rows_sent: Rows_examined:	*r
+y8h(\{d~#Query_time:8838.9
+  Lock_time:.88	
+  Rows_sent:78 Rows_examined: b
+&#	Query_time: .7Lock_time: .9 Rows_sent: 08		Rows_examined: +
+!# Query_time: 999.9Lock_time:.800012Rows_sent: 9Rows_examined: 
+={4# Query_time: .116697 Lock_time: 7844.14Rows_sent: 9   Rows_examined: 
+fr#	Query_time:	9088.8888Lock_time:
+19.6Rows_sent: 
+Rows_examined:
+#Query_time:98.6 Lock_time:.809 Rows_sent:Rows_examined:
+#Query_time:.9Lock_time:	.9395Rows_sent: Rows_examined:96
+# Query_time: 8.88Lock_time:	.4 Rows_sent: 931   Rows_examined:5%f
+k,# Query_time: .53Lock_time:88.97529Rows_sent:Rows_examined: 59
+# Query_time: 81.1Lock_time:9.8
+Rows_sent: Rows_examined: 
