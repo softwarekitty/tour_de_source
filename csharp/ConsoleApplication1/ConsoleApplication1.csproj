@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MatrixRow.cs" />
+    <Compile Include="TimeoutVerifier.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="HalfMatrix.cs" />
     <Compile Include="PostProcess.cs" />

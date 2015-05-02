@@ -69,17 +69,30 @@ namespace ConsoleApplication1
             //determine nRows by inspecting the line numbers in filteredCorpus.txt
             int nRows = Util.countFileLines(filteredCorpusPath);
             int nRowsBefore = nRowsExist(allRowsBase, nRows);
+
+            // we have to do batches bc runaway regex matchings never release memory
+            int batchSize = 256;
             if (nRowsBefore==nRows)
             {
-                Console.WriteLine("all row files are present - creating matrices and abc file");
+                Console.WriteLine("all row files are present! Counting unverified rows");
+                int unverifiedTimeoutRows = Util.countUnverifiedRows(allRowsBase, nRows);
+                if(unverifiedTimeoutRows > 0)
+                 {
+                    int nRunnawaysWithoutStress = 1024;
+                    Console.WriteLine(unverifiedTimeoutRows+ " rows have unverified timeouts.  verifying a chunk of up to "+nRunnawaysWithoutStress+" cells with timeouts.");
+                    TimeoutVerifier.verifyRows(allRowsBase,nRows,minSimilarity, filteredCorpusPath,nRunnawaysWithoutStress, batchSize, rexStringsBase);
+                    Console.WriteLine("chunk of timeout verification complete");
+                }
+                else
+                {
+                Console.WriteLine("all cells are valid - creating matrices and abc file");
                 PostProcess.createMatricesAndABC(allRowsBase, nRows, minSimilarity, filteredCorpusPath);
                 Console.WriteLine("matrix and abc files are written - exiting");
                 return;
+                }
             }
             else
             {
-                // we have to do batches bc runaway regex matchings never release memory
-                int batchSize = 1280;
 
                 Console.WriteLine("batchSize: " + batchSize + " nRowsBefore: "+nRowsBefore+ " nRows: "+nRows);
                 SimilarityMatrixBuilder.createBatchOfRows(batchSize,allRowsBase,filteredCorpusPath, rexStringsBase, minSimilarity);

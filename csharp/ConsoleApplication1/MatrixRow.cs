@@ -30,6 +30,16 @@ namespace ConsoleApplication1
             this.values = computeValuesFromFileContents(rowFileBase);
         }
 
+        public double[] getValues()
+        {
+            return values;
+        }
+
+        public void setValues(double[] vals)
+        {
+            this.values = vals;
+        }
+
         private double[] computeValuesFromFileContents(string rowFileBase)
         {
             double[] valuesFromFile = new double[nCols];
@@ -154,6 +164,7 @@ namespace ConsoleApplication1
                 {
                     if (notFirstFlags[4])
                     {
+                        //oops I'd like to correct this to similarityValues.Append(",");
                         belowMinimumList.Append(",");
                     }
                     similarityValues.Append("(");

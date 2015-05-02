@@ -77,7 +77,7 @@ namespace ConsoleApplication1
             }
             Random gen = new Random(differentSeed);
 
-            HashSet<string> matchingStrings_outer = getRexGeneratedStrings(rowIndex,nKeys,rexStringsBase);
+            HashSet<string> matchingStrings_outer = Util.getRexGeneratedStrings(rowIndex,nKeys,rexStringsBase);
             double nMatchingStrings = matchingStrings_outer.Count;
             int maxErrors = (int)((1 - minSimilarity) * nMatchingStrings) + 1;
 
@@ -139,30 +139,14 @@ namespace ConsoleApplication1
                 //this task may hang and never die.
                 tasks[taskIndex++] = Task.Factory.StartNew(() => populateRowCell(rowIndex, j_dont_increment_me, rowArray, matchingStrings_outer, regex_inner, maxErrors, tokenSource.Token));
             }
-            int overheadBuffer = 3;
-            int exponent = 0;
-            int maxExponent = 13;
-            bool chunkComplete = false;
-            while (exponent < maxExponent)
-            {
-                // 20MS, 21MS, 23MS, 27MS, 35MS, 42MS, 83MS, 147MS, 275MS, 531MS, 1042MS, 2067MS, 4115MS
-                // so if after 8428 ms, the 128 cells are not complete, set remaining cells to the flag value.
-                double balloon = Math.Pow(2, exponent);
-                if (Task.WaitAll(tasks, TimeSpan.FromMilliseconds(16 + balloon + overheadBuffer)))
-                {
-                    //all tasks in this chunk have completed, exit
-                    chunkComplete = true;
-                    break;
-                }
-                exponent++;
-            }
+            bool chunkComplete = Util.waitForTasks(tasks);
             if (!chunkComplete)
             {
                 tokenSource.Cancel();
                 for (int j = chunkStart; j < chunkStop; j++)
                 {
                     double currentRowValue = rowArray[j];
-                    if (currentRowValue==incompleteFlag || currentRowValue==initializedFlag || currentRowValue==cancelledFlag)
+                    if (currentRowValue == incompleteFlag || currentRowValue == initializedFlag || currentRowValue == cancelledFlag)
                     {
                         nTimeouts[0]++;
                     }
@@ -222,23 +206,6 @@ namespace ConsoleApplication1
 
 
 
-        private static HashSet<string> getRexGeneratedStrings(int rowIndex, int nKeys, string rexStringsBase)
-        {
-            string rexFilePath = Util.getRexFilePath(rexStringsBase, nKeys, rowIndex);
-            HashSet<string> generatedStrings = new HashSet<string>();
-            using (StreamReader r = new StreamReader(rexFilePath))
-            {
-                string line = null;
-                while ((line = r.ReadLine()) != null)
-                {
-                    if (line.Length > 0)
-                    {
-                        generatedStrings.Add(line);
-                    }
-                }
-            }
-            return generatedStrings;
-        }
 
 
         private static int[] getBatchOfIndices(string allRowsBase, int nKeys, int batchSize)
