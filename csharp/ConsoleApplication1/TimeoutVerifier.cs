@@ -14,6 +14,8 @@ namespace ConsoleApplication1
     {
         internal static void verifyRows(string allRowsBase, int nRows, double minSimilarity, string filteredCorpusPath, int nRunnawaysWithoutStress, int batchSize, string rexStringsBase)
         {
+            AppDomain domain = AppDomain.CurrentDomain;
+            domain.SetData("REGEX_DEFAULT_MATCH_TIMEOUT",TimeSpan.FromSeconds(9));
             // create regexMap and keyList
             Dictionary<int, Regex> regexMap = new Dictionary<int, Regex>();
             Regex numberFinder = new Regex(@"(\d+)\t(.*)");
@@ -58,13 +60,14 @@ namespace ConsoleApplication1
             double[] values = mr.getValues();
             int nTimeouts = 0;
 
-            //remember this keyList was built from the filteredCorpus,
-            //with keys added in order
-            int innerKey = keyList[rowIndex];
-            Regex regex_inner = regexMap[innerKey];
+
 
             for (int j = 0; j < values.Length; j++)
             {
+                //remember this keyList was built from the filteredCorpus,
+                //with keys added in order
+                int innerKey = keyList[j];
+                Regex regex_inner = regexMap[innerKey];
                 double similarity = values[j];
 
                 // note that when reading the row from file, everything that
@@ -76,19 +79,18 @@ namespace ConsoleApplication1
                 // so this will mean we only do a small fraction of most rows
                 if (similarity == SimilarityMatrixBuilder.verifiedTimeoutFlag)
                 {
-
-                    CancellationTokenSource tokenSource = new CancellationTokenSource();
-                    Task[] task = new Task[1];
-                    task[0] = Task.Factory.StartNew(() => validateCell(j, values, matchingStrings_outer,regex_inner, maxErrors, tokenSource.Token));
-                    bool completed = Util.waitForTasks(task);
-                    if (!completed)
+                    try
                     {
-                        tokenSource.Cancel();
+                        validateCell(j, values, matchingStrings_outer, regex_inner, maxErrors);
+                    }
+                    catch (RegexMatchTimeoutException e)
+                    {
                         nTimeouts++;
                         stressCounter[0]++;
                     }
                 }
             }
+            mr.writeRowToFile(allRowsBase,minSimilarity);
             stopwatch.Stop();
             TimeSpan ts = stopwatch.Elapsed;
             string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
@@ -96,7 +98,7 @@ namespace ConsoleApplication1
         }
 
         //TODO - tie this with a task that times out.
-        static void validateCell(int j, double[] row, HashSet<string> matchingStrings_outer, Regex regex_inner, int maxErrors, CancellationToken ct)
+        static void validateCell(int j, double[] row, HashSet<string> matchingStrings_outer, Regex regex_inner, int maxErrors)
         {
             double nMatchingStrings = matchingStrings_outer.Count;
             int alsoMatchingCounter = 0;
@@ -105,12 +107,7 @@ namespace ConsoleApplication1
             foreach (string matchingString in matchingStrings_outer)
             {
 
-                // free up resources ASAP if the task group has timed out
-                if (ct.IsCancellationRequested)
-                {
-                    return;
-                }
-                else if (errorCounter > maxErrors)
+                if (errorCounter > maxErrors)
                 {
                     row[j] = SimilarityMatrixBuilder.belowMinFlag;
                 }

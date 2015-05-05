@@ -11,12 +11,14 @@ public class FeatureDictionary {
 	HashMap<Integer, String> intToNameMap;
 	HashMap<Integer, String> intToCodeMap;
 	HashMap<Integer, String> intToDescMap;
+	HashMap<Integer, String> intToVerbMap;
 
 	public FeatureDictionary() {
 		initializeNameToIntMap();
 		initializeIntToNameMap();
 		initializeIntToCodeMap();
 		initializeIntToDescMap();
+		initializeIntToVerbMap();
 	}
 
 	public String getCode(int index) {
@@ -31,7 +33,15 @@ public class FeatureDictionary {
 		Integer index = nameToIntMap.get(name);
 		return index==null? -1:index;
 	}
+	
+	public String getDescription(int featureIndex) {
+		return intToDescMap.get(featureIndex);
+	}
 
+	public String getVerbatim(int featureIndex) {
+		return intToVerbMap.get(featureIndex);
+	}
+	
 	public int getSize() {
 		return intToNameMap.size();
 	}
@@ -41,7 +51,7 @@ public class FeatureDictionary {
 	}
 
 	private void initializeNameToIntMap() {
-		nameToIntMap = new HashMap<String,Integer>(32);
+		nameToIntMap = new HashMap<String,Integer>(34);
 		nameToIntMap.put(CC_DECIMAL,I_CC_DECIMAL);
 		nameToIntMap.put(CC_NDECIMAL,I_CC_NDECIMAL);
 		nameToIntMap.put(CC_NWHITESPACE,I_CC_NWHITESPACE);
@@ -87,7 +97,7 @@ public class FeatureDictionary {
 	}
 
 	private void initializeIntToNameMap() {
-		intToNameMap = new HashMap<Integer,String>(32);		
+		intToNameMap = new HashMap<Integer,String>(34);		
 		intToNameMap.put(I_CC_DECIMAL,CC_DECIMAL);
 		intToNameMap.put(I_CC_NDECIMAL,CC_NDECIMAL);
 		intToNameMap.put(I_CC_NWHITESPACE,CC_NWHITESPACE);
@@ -133,53 +143,104 @@ public class FeatureDictionary {
 	
 
 	private void initializeIntToDescMap() {
-		intToDescMap = new HashMap<Integer,String>(32);	
+		intToDescMap = new HashMap<Integer,String>(34);	
 		intToDescMap.put(I_CC_DECIMAL,"any of: 0123456789");
-		intToDescMap.put(I_CC_NDECIMAL,"any non-decimal character");
+		intToDescMap.put(I_CC_NDECIMAL,"any non-decimal");
 		intToDescMap.put(I_CC_NWHITESPACE,"any non-whitespace");
-		intToDescMap.put(I_CC_NWORD,"any non-word character");
-		intToDescMap.put(I_CC_RANGE,"for example a-z is all lowercase letters");
-		intToDescMap.put(I_CC_WHITESPACE,"tab, newline, return, vertical-tab space or form-feed");
-		intToDescMap.put(I_CC_WORD,"upper and lowercase letters, underscore and digits");
+		intToDescMap.put(I_CC_NWORD,"non-word chars");
+		intToDescMap.put(I_CC_RANGE,"chars within a range");
+		intToDescMap.put(I_CC_WHITESPACE,"\\textbackslash t \\textbackslash n \\textbackslash r \\textbackslash b \\textbackslash f or space");
+		intToDescMap.put(I_CC_WORD,"[a-zA-Z0-9\\_]");
 
-		intToDescMap.put(I_LOOK_AHEAD,"require a matching sequence to the right");
-		intToDescMap.put(I_LOOK_AHEAD_NEGATIVE,"reject if there is a matching sequence to the right");
-		intToDescMap.put(I_LOOK_BEHIND,"require a matching sequence to the left");
-		intToDescMap.put(I_LOOK_BEHIND_NEGATIVE,"reject if there is a matching sequence to the left");
-		intToDescMap.put(I_LOOK_NON_CAPTURE,"require this sequence but do not capture it");
+		intToDescMap.put(I_LOOK_AHEAD,"matching sequence follows");
+		intToDescMap.put(I_LOOK_AHEAD_NEGATIVE,"sequence doesn't follow ");
+		intToDescMap.put(I_LOOK_BEHIND,"matching sequence precedes");
+		intToDescMap.put(I_LOOK_BEHIND_NEGATIVE,"sequence doesn't precede");
+		intToDescMap.put(I_LOOK_NON_CAPTURE,"group without capturing");
 		
-		intToDescMap.put(I_META_CC,"a custom character class");
-		intToDescMap.put(I_META_CAPTURING_GROUP,"a capture group / logical grouping");
-		intToDescMap.put(I_META_DOT_ANY,"a character class matching everything but newline");
+		intToDescMap.put(I_META_CC,"custom character class");
+		intToDescMap.put(I_META_CAPTURING_GROUP,"a capture group");
+		intToDescMap.put(I_META_DOT_ANY,"any non-newline char");
 		intToDescMap.put(I_META_LITERAL,"a literal character");
-		intToDescMap.put(I_META_NCC,"a negated custom character class");
-		intToDescMap.put(I_META_NUMBERED_BACKREFERENCE,"require what was captured by the ith capture group");
+		intToDescMap.put(I_META_NCC,"negated CCC");
+		intToDescMap.put(I_META_NUMBERED_BACKREFERENCE,"match the $i^{th}$ CG");
 		intToDescMap.put(I_META_OR,"logical or");
 		
-		intToDescMap.put(I_POS_END_ANCHOR,"match the end of the string");
-		intToDescMap.put(I_POS_NONWORD,"negated word/non-word boundary");
-		intToDescMap.put(I_POS_START_ANCHOR,"match the start of the string");
+		intToDescMap.put(I_POS_END_ANCHOR,"end-of-line");
+		intToDescMap.put(I_POS_NONWORD,"negated WNW");
+		intToDescMap.put(I_POS_START_ANCHOR,"start-of-line");
 		intToDescMap.put(I_POS_WORD,"word/non-word boundary");
 		
 		intToDescMap.put(I_REP_ADDITIONAL,"one-or-more repetition");
-		intToDescMap.put(I_REP_DOUBLEBOUNDED,"at least n, at most m repetition");
+		intToDescMap.put(I_REP_DOUBLEBOUNDED,"$n\\le x \\le m$ repetition");
 		intToDescMap.put(I_REP_KLEENISH,"zero-or-more repetition");
 		intToDescMap.put(I_REP_LOWERBOUNDED,"at least n repetition");
 		intToDescMap.put(I_REP_QUESTIONABLE,"zero-or-one repetition");
 		intToDescMap.put(I_REP_SINGLEEXACTLY,"exactly n repetition");
-		intToDescMap.put(I_REP_LAZY,"lazy repetition modifier");
+		intToDescMap.put(I_REP_LAZY,"as few reps as possible");
 		
 		intToDescMap.put(I_XTRA_NAMED_GROUP_PYTHON,"named capture group");
 		intToDescMap.put(I_XTRA_END_SUBJECTLINE,"absolute end of string");
 		intToDescMap.put(I_XTRA_VERTICAL_WHITESPACE,"matches U+000B");
 		intToDescMap.put(I_XTRA_OPTIONS,"options wrapper");
-		intToDescMap.put(I_XTRA_NAMED_BACKREFERENCE,"references named capture group");
+		intToDescMap.put(I_XTRA_NAMED_BACKREFERENCE,"references NCG");
+	}
+	
+	private void initializeIntToVerbMap() {
 
+		intToVerbMap = new HashMap<Integer,String>(34);	
+		
+		intToVerbMap.put(I_CC_DECIMAL,pad("\\d"));
+		intToVerbMap.put(I_CC_NDECIMAL,pad("\\D"));
+		intToVerbMap.put(I_CC_NWHITESPACE,pad("\\S"));
+		intToVerbMap.put(I_CC_NWORD,pad("\\W"));
+		intToVerbMap.put(I_CC_RANGE,pad("[a-z]"));
+		intToVerbMap.put(I_CC_WHITESPACE,pad("\\s"));
+		intToVerbMap.put(I_CC_WORD,pad("\\w"));
+		
+		intToVerbMap.put(I_LOOK_AHEAD,pad("a(?=bc)"));
+		intToVerbMap.put(I_LOOK_AHEAD_NEGATIVE,pad("a(?!yz)"));
+		intToVerbMap.put(I_LOOK_BEHIND,pad("(?<=a)bc"));
+		intToVerbMap.put(I_LOOK_BEHIND_NEGATIVE,pad("(?<!x)yz"));
+		intToVerbMap.put(I_LOOK_NON_CAPTURE,pad("a(?:b)c"));
+		
+		intToVerbMap.put(I_META_CC,pad("[aeiou]"));
+		intToVerbMap.put(I_META_CAPTURING_GROUP,pad("(caught)"));
+		intToVerbMap.put(I_META_DOT_ANY,pad("."));
+		intToVerbMap.put(I_META_LITERAL,pad("a"));
+		intToVerbMap.put(I_META_NCC,pad("[^qwxf]"));
+		intToVerbMap.put(I_META_NUMBERED_BACKREFERENCE,pad("\\1"));
+		intToVerbMap.put(I_META_OR,pad("a|b"));
+		
+		intToVerbMap.put(I_POS_END_ANCHOR,pad("$"));
+		intToVerbMap.put(I_POS_NONWORD,pad("\\B"));
+		intToVerbMap.put(I_POS_START_ANCHOR,pad("^"));
+		intToVerbMap.put(I_POS_WORD,pad("\\b"));
+		
+		intToVerbMap.put(I_REP_ADDITIONAL,pad("z+"));
+		intToVerbMap.put(I_REP_DOUBLEBOUNDED,pad("z{3,8}"));
+		intToVerbMap.put(I_REP_KLEENISH,pad(".*"));
+		intToVerbMap.put(I_REP_LOWERBOUNDED,pad("z{15,}"));
+		intToVerbMap.put(I_REP_QUESTIONABLE,pad("z?"));
+		intToVerbMap.put(I_REP_SINGLEEXACTLY,pad("z{8}"));
+		intToVerbMap.put(I_REP_LAZY,pad("z+?"));
+		
+		intToVerbMap.put(I_XTRA_NAMED_GROUP_PYTHON,pad("(?P<name>x)"));
+		intToVerbMap.put(I_XTRA_END_SUBJECTLINE,pad("\\Z"));
+		intToVerbMap.put(I_XTRA_VERTICAL_WHITESPACE,pad("\\v"));
+		intToVerbMap.put(I_XTRA_OPTIONS,pad("(?i)CasE"));
+		intToVerbMap.put(I_XTRA_NAMED_BACKREFERENCE,pad("\\g<name>"));
+	}
+	
+	private String pad(String s){
+		String pre = "\\begin{minipage}{0.5in}\\begin{verbatim}";
+		String suf = "\\end{verbatim}\\end{minipage}";
+		return pre + s + suf;
 	}
 	
 
 	private void initializeIntToCodeMap() {
-		intToCodeMap = new HashMap<Integer,String>(32);		
+		intToCodeMap = new HashMap<Integer,String>(34);		
 		intToCodeMap.put(I_CC_DECIMAL,"DEC");
 		intToCodeMap.put(I_CC_NDECIMAL,"NDEC");
 		intToCodeMap.put(I_CC_NWHITESPACE,"NWSP");
@@ -348,6 +409,7 @@ public class FeatureDictionary {
 	public static final int I_XTRA_VERTICAL_WHITESPACE = 32;
 	public static final int I_XTRA_OPTIONS = 33;
 	public static final int I_XTRA_NAMED_BACKREFERENCE = 34;
+
 
 
 }

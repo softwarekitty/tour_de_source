@@ -1,6 +1,7 @@
 0	\s+
 1	\s
 2	\d+
+3	[\x80-\xff]
 4	\nmd5_data = {\n([^}]+)}
 5	\\(.)
 6	([\\"]|[^\ -~])
@@ -19,6 +20,7 @@
 25	^[ ]*(#.*)?$
 28	[^:]*:
 29	^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?
+30	([\x80-\x9f])
 31	^\w+$
 32	\(\*
 33	alloc_fabric_acl\)\(
@@ -79,6 +81,7 @@
 91	 
 92	&(#\d+|#x[0-9a-fA-F]+|\w+);
 94	[?/:|]+
+95	[\x80-\xff]
 100	_
 101	"
 102	[*?[]
@@ -136,6 +139,8 @@
 177	\s*(#.*)?$
 178	\s*\[
 182	^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$
+185	committed-rev="(\d+)"
+186	url="([^"]+)"
 187	x
 188	#
 189	#egg=([^&]*)
@@ -159,6 +164,7 @@
 209	^running .*
 211	"([^"]+)"
 212	#.*
+213	&(?!(\w+|#\d+);)
 214	&([a-zA-Z][a-zA-Z0-9]*|#[0-9]*)?|<([a-zA-Z][^<>]*|/([a-zA-Z][^<>]*)?|![^<>]*)?
 218	([0-9a-f][0-9a-f]-){5}[0-9a-f][0-9a-f]
 219	([A-Z])
@@ -223,12 +229,15 @@
 289	^(\s*)
 290	^(\s+)?\{[\s\w,\[\]\{\}\-\."\\':]+\}(\s+)?$
 291	^-?\d+(\.\d+)?$
+292	^<gml:Point srsName="EPSG:4326"><gml:coordinates>-104\.60925\d+,38\.255001</gml:coordinates></gml:Point>
+293	^<gml:Point srsName="SDO:4326" xmlns:gml="http://www.opengis.net/gml"><gml:coordinates decimal="\." cs="," ts=" ">-104.60925\d+,38.25500\d+ </gml:coordinates></gml:Point>
 294	^[-\w]+$
 295	^[SMTWF][a-z][a-z], (\d\d) ([JFMASOND][a-z][a-z]) (\d\d\d\d) (\d\d):(\d\d):(\d\d) GMT$
 296	^\s*
 297	^\s*([^=\s;,]+)
 298	^\s*=\s*([^\s;,]*)
 300	^\s*\n
+301	realm="([^"]*)"
 302	^\d+$
 303	 +$
 305	&#([0-9]+)[^0-9]
@@ -281,11 +290,13 @@
 369	Cancel
 370	Control-
 371	Key-
+372	[ \t]*([^ \t]+)[ \t]+realm="([^"]*)"
 373	[-]
 374	[A-Z]
 375	[A-Z][A-Z0-9_]+$
 376	[\041-\176]+:$
 377	[\?|><:/*"+,;=\[\]]
+378	[\?|><:/*]"
 379	[\x00-\x19\\"\b\f\n\r\t]
 380	[\x00\x01\x02\x03\x04\x05\x06\x07\x08\x0b\x0c\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f]
 381	[]&<]
@@ -313,6 +324,7 @@
 411	coding[:=]\s*([-\w_.]+)
 412	cygwin.*
 413	raise\s+\w+\s*(,)
+414	--.*([\n\Z]|$)
 415	[^\w!#$%&'*+,.:;<=>?^`|~-]
 416	l_ngettext, u?'\%\(num\)s apple', u?'\%\(num\)s apples', 3
 417	 (\d+\.\d+(\.\d+)*)
@@ -339,6 +351,7 @@
 449	[a-zA-Z][-_.a-zA-Z0-9]*
 450	\$([a-zA-Z_][a-zA-Z_0-9]*)
 453	\?
+455	\r(?!\n)
 456	\s+$
 457	\s\s+
 468	^(From |[\041-\071\073-\176]{1,}:|[\t ])
@@ -348,6 +361,7 @@
 472	^(\d{2})[-\.]?(\d{4})[-\.]?(\d{4})$
 473	^(\d{3})-(\d{3})-(\d{3})$
 474	^(\d{4})[ -]?(\d{4})[ -]?(\d{2})[ -]?(\d{10})$
+475	^(content-type:.*charset=")(us-ascii|iso-8859-[0-9]+)(".*)
 476	^-*\n
 477	^0([1-9]{1})\d{8}$
 478	^0\d(\s|\.)?(\d{2}(\s|\.)?){3}\d{2}$
@@ -358,7 +372,9 @@
 484	^\d{9}$
 485	^\s*(#.*)?$
 486	^content-type:.*multipart/.*boundary="?([^;"\n]*)
+487	^name="(.*)"\s+certificate="(.*)"\s+private_key="(.*)"$
 489	a
+490	%(?!\()
 491	^[^(]*
 492	^\s*[#*=]{4,}\n[a-z0-9 -]+\n[#*=]{4,}\s*
 493	^'([^']+)'(\|.*$)
@@ -417,6 +433,7 @@
 557	^@@ -(\d+),?(\d*) \+(\d+),?(\d*) @@$
 558	^[1-9]\d{2} ?\d{2}$
 559	^[1-9]\d{4}$
+560	^[A-Z]{,3}$
 561	^[\d,]+$
 562	^[a-z0-9]+$
 563	^\[\-+\] \d+ tests? from (\w+(/\w+)?)
@@ -425,10 +442,12 @@
 566	^\d{12}$
 567	^\d{16}$
 568	^\r?\n\r?\n
+569	^\s*#\s*include\s*"(src/.+)"
 570	^\s*(>>>|\.\.\.) (.*)$
 571	^const\s+([a-zA-Z0-9_]+)\s*=\s*([^;]*);$
 572	^macro\s+([a-zA-Z0-9_]+)\s*\(([^)]*)\)\s*=\s*([^;]*);$
 573	^python\s+macro\s+([a-zA-Z0-9_]+)\s*\(([^)]*)\)\s*=\s*([^;]*);$
+574	^{"type":"Point","coordinates":\[-95.363151,29.763374,18(\.0+)?\]}$
 575	encoding\s*=\s*[\'"]([^"\']+)["\']
 576	md5=([a-f0-9]+)
 577	unsigned int
@@ -443,8 +462,11 @@
 590	/usr/local/bin/python
 591	0x([0-9a-fA-F]+)L?
 593	<url>(.*)</url>
+594	Customer="?WILE_E_COYOTE"?;\s*\$Path="\/acme"
 595	PART_NUMBER=RIDING_ROCKET_0023;\s*PART_NUMBER=ROCKET_LAUNCHER_0001
+596	Part_Number="?Rocket_Launcher_0001"?;\s*\$Path="\/acme"
 597	Riding_Rocket_0023.*Rocket_Launcher_0001
+598	Shipping="?FedEx"?;\s*\$Path="\/acme"
 599	[.-]
 600	[0-9]+(\.[0-9]+)+
 601	[^A-Z0-9_]
@@ -454,6 +476,7 @@
 605	\$Port([^=]|$)
 608	\s*#
 609	\s*#.*
+610	\s*revision="(\d+)"
 611	\s+\n+
 612	\w
 613	^#! */usr/local/bin/python
@@ -467,9 +490,11 @@
 622	^[\t ]*#[\t ]*define[\t ]+([a-zA-Z0-9_]+)\(([_a-zA-Z][_a-zA-Z0-9]*)\)[\t ]+
 623	^[\t ]*#[\t ]*include[\t ]+<([a-zA-Z0-9_/\.]+)
 624	^[a-zA-Z0-9_-]+$
+625	^\$Version="?1"?; Customer="?WILE_E_COYOTE"?; \$Path="/acme"$
 626	^\$Version="?1"?;
 627	^\d{4}-\d\d-\d\d \d\d:\d\d:\d\dZ$
 628	foo
+629	name="([^"]+)" value="([^"]+)"
 630	'.'
 631	'.*'$
 632	 {2,}
@@ -477,6 +502,7 @@
 634	#define\WDB_VERSION_MAJOR\W(\d+)
 635	#define\WDB_VERSION_MINOR\W(\d+)
 636	#define\s+ETS_VER\s+([0-9]+)
+637	#include +"[^/]+\.h"
 639	(.)
 640	(.)([A-Z][a-z]+)
 641	(.*)\|(.*)
@@ -488,11 +514,13 @@
 652	([a-zA-Z\d]+) \[(\d+)\] (.*)
 653	(\033|~{)
 654	(\W+)
+655	(\\*)(\(\?P<[^>]*>|\((?!\?))
 657	(\d+\.\d+)(.*)
 658	(\s)@\s*([^\s]+)
 663	({)|(})
 665	-py([123]\.[0-9])$
 666	/.+/$
+667	/\.(?![^.]*$)/
 668	:\d+$
 670	<[^>]+>
 673	<title>([^- ]+ - )?Revision \d+:
@@ -507,7 +535,9 @@
 683	[@{} ]
 684	[Hh][123456]
 685	[\000-\037]
+686	[\t ]+(?![^{]*})
 687	[\x00-\x08\x0b\x0c\x0e-\x1f]
+688	[\x80-\xFF]
 689	[\n@{}&<>]
 690	[\r\n]+
 691	[_a-zA-Z]\w*$
@@ -543,7 +573,10 @@
 729	^(\s+)
 730	^-?\d+$
 731	^/
+732	^<>$
 733	^@([a-z]+)([ \t]|$)
+734	^Remaining object addresses:$
+735	^Remaining objects:$
 736	^[^-_.]+
 737	^[a-zA-Z][a-zA-Z0-9\-_]*$
 738	^\$([_a-zA-Z]\w*|{[_a-zA-Z]\w*})$
@@ -551,6 +584,7 @@
 740	^\d{4}-\d{1,2}-\d{1,2}$
 742	^\s*#\s*include\s*([<"])([^>"]*)[>"].*$
 744	^\s*\*\w+(\+\+|--);
+745	^\s*prefix\s+([\w\_\.\-\/]+)$
 746	^_imp__(.*) in python\d+\.dll
 747	^def\s*(\w+)\s*=(.*)$
 748	^egg=([-A-Za-z0-9_.]+)$
@@ -572,9 +606,11 @@
 765	#define[ \t]+([A-Z0-9a-z_]+)[ \t]+([0-9]+)[ \t]*/\*[ \t]*(.*)[ \t]*\*/
 766	#s*define\s+HASHVERSION\s+2\s*
 767	#s*define\s+WITH_LIBINTL\s+1\s*
+768	$(\w+)
 769	&#(x?[0-9A-Fa-f]+)[^0-9A-Fa-f]
 771	(((((((((((x)))))))))))
 772	((((((((((y))))))))))(.)
+773	(([a-zA-Z0-9\_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?))
 774	((\w|\.)+)\((\d+)\):
 775	((a)|(b))(c)?
 776	(:)
@@ -596,7 +632,10 @@
 807	(\w+)=([-\w]+)
 808	(\x1b|~{)
 809	(^|\n)[ ]{0,3}>[ ]?(.*)
+810	(a(?!\s[^a]))
+811	(a(?!\s[abc]))
 816	(a)
+817	(a)(?!\s(abc|a))
 822	(a|(b))
 823	(b)|(:+)
 824	(sha1|sha224|sha384|sha256|sha512|md5)=([a-f0-9]+)
@@ -619,7 +658,10 @@
 841	:+
 843	</(\w+)>
 844	</?xsl:([^>]*)/?>?
+846	<\?(?!xml)
+847	<a href="([^"]*)"[^>]* id="lookup_id_inquisition"
 850	<dl><dd>
+851	<li>Plot: <a href=".+/admin_views/plot/1/">World Domination</a>\s*<ul>\s*<li>Plot details: <a href=".+/admin_views/plotdetails/1/">almost finished</a>
 852	Copyright [\d-]*20[0-1][0-9] the V8 project authors. All rights reserved.
 853	EndProjectSection$
 854	In \[(\d+)\]:\s?(.*)\s*
@@ -661,6 +703,7 @@
 896	\{% csrf_token
 897	\{%\s*(block|extends)
 905	\n+
+906	\x1b\[(0;3\d)?m
 907	^(.*)=([-+]?[0-9]+)
 909	^(0x)?[0-9]+$
 910	^(0|-?[1-9][0-9]*)$
@@ -674,18 +717,28 @@
 924	^(\w){1,2}$
 926	^(\w){1,3}$
 928	^(\w){1,4}$
+930	^(\w){1}$
 933	^(\w){3}$
 939	^DYNAMIC SYMBOL TABLE
+940	^EndProject$
+941	^Project\("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}"\) = "(.*)", "(.*)", "(.*)"$
 942	^[0-9.]+$
 943	^[A-F0-9\-]+$
 944	^[A-Za-z0-9$./_]+$
 945	^\$\((.*)\)(/(.*)|)$
 947	^\?(.*)
 948	^\d[A-F]\d$
+949	^\s*#\s*include\s*"(gtest/.+)"
 950	^\s*@?#
 951	^\s*\$\$.*\n
 952	^\s*\d+\s(\.\S+)\s+[a-f0-9]
 953	^cat 
+954	^x{1,2}$
+956	^x{1,3}$
+958	^x{1,4}$
+960	^x{1}$
+963	^x{3}$
+965	^x{}$
 966	___
 967	a*
 968	a+
@@ -705,6 +758,7 @@
 985	%([0-9A-Fa-f]{2})
 986	%+ ?(.*)\n[ \t]*
 987	&#(x?[0-9a-fA-F]+)[^0-9a-fA-F]
+991	&(?!#\d+;|#x[0-9a-fA-F]+;|\w+;)
 993	&(\w+);
 994	( |\n|^)\.\. 
 995	(.*)\x01(.*)###(.*)$
@@ -722,6 +776,7 @@
 1027	(a)|(b)
 1028	,?\s+
 1029	-[ -]*$
+1031	.+\s+"([^\s]+)\s+([^\s]+)\s+HTTP/\d+\.\d+"\s+200\s+.*
 1032	0x[0-9a-fA-F]+
 1033	50*$
 1034	:(\d+)$
@@ -742,6 +797,7 @@
 1053	[<>\'"]
 1054	[\.0-9]+
 1055	[\\]([a-zA-Z]+[*]?) ?({|\s*\n?)
+1056	[\\]begin{([^}]*)}
 1057	[\\]end{([^}]*)}
 1058	[\x00-\x20]
 1059	[^\\][^\\]*
@@ -761,7 +817,9 @@
 1074	\A\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ
 1075	\[.*$
 1076	\\([a-zA-Z])+\s+
+1084	\\\\
 1085	\\hackscore\s*{[^}]*}
+1086	\\raisebox\s*{[^}]*}
 1087	\]
 1092	\s([^a])
 1093	\s([^a]*)
@@ -776,29 +834,37 @@
 1102	\|
 1104	\n\s+
 1105	\t
+1106	^$
 1109	^([A-Za-z]:)?[/\\\\]*
 1110	^([^/]+)(/.*)$
 1111	^([^@]*@)?([^:]*)(:.*)?
 1112	^(acc|borland|como|cw|dmc|darwin|gcc|hp_cxx|intel|kylix|vc|mgw|qcc|sun|vacpp)\d*$
+1114	^<gml:Point SrsName="EPSG::4326"><gml:coordinates decimal="\." cs="," ts=" ">-104.609251\d+,38.255001</gml:coordinates></gml:Point>
 1115	^[ \t]*(#|%:)[ \t]*(ifdef|ifndef|if|else|elif|endif|include|import|define|undef|pragma)[ \t]*(.*)\r*$
 1116	^[ ]{0,3}((\d+\.)|[*+-])[ ](.*)
 1117	^[ ]{0,3}[*+-][ ](.*)
 1118	^[ ]{0,3}\d+\.[ ](.*)
 1119	^[ ]{4,7}((\d+\.)|[*+-])[ ].*
 1120	^[-0-9]+|-+$
+1121	^[1-5]$
+1122	^[A-Za-z]:$
 1123	^[a-zA-Z_][a-zA-Z0-9_]*[(]
 1124	^[a-zA-Z_]\w*
 1125	^[sgydpn]+$
 1126	^\-l
 1127	^\d+_\d+_?\d*$
 1130	^columns .* are not unique$
+1131	^createdb: database creation failed: ERROR:  database ".+" already exists
+1132	^mt$
 1133	^ns:((\w+\.)*(\w+))$
+1134	^py[0-9]{2}$
 1135	^scale:\d+\-\d+\:$
 1137	a\s
 1138	coding[=:]\s*([-\w.]+)
 1139	foo\d
 1140	md5=[0-9a-f]{32}$
 1141	p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|ins|del|hr|hr/|style|li|dt|dd|thead|tbody|tr|th|td
+1142	snapshot-code-name,(\d+),\"(.*)\"
 1143	{
 1144	}
 1145	~$|\.bak$|#$|\.cvsignore$
@@ -815,10 +881,12 @@
 1161	((a))
 1172	([0-9]*) planes
 1173	([0-9]{4}-[0-9]{2}-[0-9]{2})  ([0-9]{4,5}) {1,2}(.*)
+1174	([<>]|&(?!#\d+;|#x[0-9a-fA-F]+;|\w+;))
 1175	([A-Z]{3}_ERROR_[A-Z_0-9]+)\s+=?\s*\(?([A-Z_0-9-][A-Z_0-9-+ ]+[A-Z_0-9])
 1176	([\"\\])
 1177	([\w.+]+)\s*\(#(\d+),\s*([\w ]+),\s*([\w :]+)\)\s*\[([^\]]+)\]?
 1179	([^:]+):(.*)
+1182	([sS][eE][tT]\s*\()\s*([^\s]+)\s+"([^"]+)"\)
 1185	(plugins.*|scripts.*)$
 1187	--[^>]*>
 1188	-.*
@@ -836,7 +904,12 @@
 1203	<!--|-->
 1205	<[^>]*>
 1206	<\/([\w\:\-]+)[^>]*>
+1208	<a class="ot-profile-link-2" href="/u/[^/]+/">([^<]+)</a></span>
+1209	<a class="ot-revision-link" href="/p/[^/]+/source/detail\?r=[0-9]+">([^<]+)</a>
+1214	<li><a href="([^"]*)">([^"]*)</a></li>
 1215	<root>([^<]*)</root>
+1216	<span class="date below-more" title="([^"]+)"
+1217	<structure name="([^"]+)" noffset="([^"]+)" install="([^"]*)" ioffset="([^"]+)" voffset="([^"]+)"
 1218	<title>\([^<]*\)</title>
 1219	<url>([^<]+)</url>
 1220	@(\w*)(.*)
@@ -878,6 +951,7 @@
 1262	\.lib$
 1263	\\(\\'|\"|\\|[abfnrtv]|x.{0,2}|[0-7]{1,3})
 1264	\\\n|\\(\\|<%)
+1265	\\n
 1266	\n$
 1267	\n+
 1268	\r[ \t]+def 
@@ -892,11 +966,13 @@
 1284	^([A-Z][A-Z][A-Z])([-+]?[0-9]+)([A-Z][A-Z][A-Z]);([0-9]+)/([0-9]+),([0-9]+)/([0-9]+)$
 1286	^(def|class)\s+
 1287	^(https?)://([^/]+)(/.*)$
+1288	^--+$
 1289	^.*\.(c|cpp)$
 1290	^.*\.h$
 1291	^...?.?\....?.?
 1292	^..?\...?
 1293	^//([^/]*)(.*)$
+1296	^Expected$
 1297	^[ 0-9a-zA-Z\._\+/\$-]{1,256}$
 1298	^[ \t]*(#|%:)[ \t]*(include)[ \t]*(.*)\r*$
 1299	^[-\w/]+$
@@ -927,6 +1003,7 @@
 1326	return.*[ \(]..._FAILURE
 1328	''
 1329	'.*
+1331	([^'\\]|\\(.|$))+
 1333	^'(.*)'$
 1334	 {2,}\n
 1335	"([0-9]*) ([0-9]*) ([0-9]*) ([0-9]*)
@@ -949,12 +1026,20 @@
 1356	(.{60})
 1357	(;?)$
 1358	(<[^>]+>)
+1359	(<|>|\+(?!\s*\+|$))
 1360	(></)|("")|(\n\s+)\n|(.|\s)
+1361	(?![\.\-])dev$
+1362	(?![^%])%s
 1369	([ ]+_)|(_[ ]+)|([ ]+)
 1370	([&<"\\'>])
 1371	([\$\|\\])
 1372	([\w-]+)([.#])(\w+)
 1373	([\w.+]+)\s*\(#?([^,]+),\s*([\w ]+),\s*([\w :]+)\)\s*\[([^\]]+)\]?
+1374	([\w\-]+\s*:)(?!:)\s*
+1375	([^"\\]|\\(.|$))+
+1376	([^*]|\*(?!/))+
+1377	([^*{}\s]@|[^*{}@\s]|\*(?!/))+
+1378	([^*{}\s]@|[^*{}@]|\*(?!/))+
 1380	([^\\] )
 1381	([a-zA-Z-]+):\s*$
 1382	([a-z]*) ([^ \r\n]*)
@@ -1037,13 +1122,16 @@
 1468	\.o$
 1470	\[(.*)\]
 1471	\[([^\]]*)\]
+1472	\\\n
 1473	\^
 1478	\d{3} 
 1480	\s$
 1482	\s*$
 1484	\s*=.*
+1485	\s*\*(\s+|(?!/))
 1487	\s+(\d+)$
 1488	\s+(\d+),$
+1489	\s+{(\d+), "(\w+)", (\d+), (\d+), states_(\d+),$
 1490	\s+{(\d+), (0|"\w+")},$
 1491	\s+{(\d+), (\d+)},$
 1492	\s+{(\d+), arcs_(\d+)_(\d+)},$
@@ -1057,6 +1145,7 @@
 1505	^#define\s+(\w+)\s+(\d+)$
 1506	^%%([^:]*):[ \t]*(.*)[ \t]*$
 1507	^%[%!\w]([^:]*)[ \t]*$
+1508	^((-){80}|)$
 1509	^(.*)_([0-9]+)$
 1514	^([A-Za-z][^:]*):[ \t]*(.*)[ \t]*$
 1515	^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]) *(\d[ABCEGHJKLMNPRSTVWXYZ]\d)$
@@ -1129,8 +1218,11 @@
 1596	#define __NR_(\w*)\s*\(__NR_timer_create\+(\w*)\)
 1597	#x([\d|A-F]{4,4})
 1598	%
+1599	%(?![0-9A-Fa-f]{2})
 1600	%[^\r\n\v]*
+1601	&(?!\#)
 1604	((User|Msg|MsgAssertion)Exceptio(n))\(( *)(\d+)
+1605	(([a-zA-Z0-9\_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?))(\?subject=\S+)?
 1606	((\d|\w|_)+)
 1607	(.*) \(([0-9]+)\)$
 1608	(.*)\((.*)\)
@@ -1143,6 +1235,7 @@
 1638	([!{}:;>+\(\[,])\s+
 1639	([+\-&|!(){}\[\]\^"~*?:\\])
 1640	([0-9.]+)
+1641	([<>]|&(?![^\s]+;))
 1642	([=!]=)\s*(None|False|True)
 1643	([=\(\)|\-!@~\"&/\\\^\$\=])
 1644	([A-Z]+)
@@ -1169,6 +1262,8 @@
 1668	(\d+)\.(\d+)(\.(\d+))?(b(\d+))?
 1669	(\s*)$
 1671	(\w+)://(.*)
+1672	(\x1b[^m]+m)
+1674	(\x1b\[[0-9;]+VK)
 1675	(^[ \t]*>>> |^[ \t]*\.\.\. )
 1677	(^|\})(([^\{\:])+\:)+([^\{]*\{)
 1678	(centos|redhat|fedora)
@@ -1206,6 +1301,7 @@
 1713	<\?.*\?>
 1714	<a href=[^>]*>([^<]+)<
 1715	<base\s+href\s*=\s*[\'"]?([^\'">]+)
+1719	<option value="">
 1720	<p[^/>]*>\s*</p>
 1721	<title>(.*)</title>
 1722	@
@@ -1267,6 +1363,7 @@
 1783	\(|\)
 1784	\-\-?\w+[\-\w]*$
 1785	\-\-[A-Za-z][\w\-]*(\.[\w\-]+)*\=.*
+1786	\.(?![^.]*$)
 1787	\.([hc]|py|txt|sln|vcproj)$
 1788	\.[svn|git|hg|scc|vssscc]
 1789	\.\.|^\./|\.$|/\./|^-|^_ah/
@@ -1309,6 +1406,8 @@
 1833	\s+in\s+
 1834	\sSONAME\s+([^\s]+)
 1835	\sassert *\(
+1836	\x00
+1837	\x00\x01
 1838	\{([^\}]*)\}
 1840	\}\}
 1845	\n\s*
@@ -1321,6 +1420,7 @@
 1852	^#
 1854	^%
 1855	^(#[0-9a-f]+|rgb\(\d+%?,\d*%?,?\d*%?\)?|\d{0,2}\.?\d{0,2}(cm|em|ex|in|mm|pc|pt|px|%|,|\))?)$
+1856	^(.*)(@charset \"[^\"]*\";)
 1857	^(.+):(\d+)$
 1861	^(CONFIG_\w+)=(.*)$
 1863	^(WebSocket-Protocol: [\x20-\x7e]+\r\n)?(Cookie: [^\r]*\r\n)*(Cookie2: [^\r]*\r\n)?(Cookie: [^\r]*\r\n)*\r\n
@@ -1339,6 +1439,7 @@
 1876	^(\w+)
 1877	^(centos|redhat|fedora)
 1878	^(debian|ubuntu)
+1879	^.*"([\d\w_\+\.\-/]+)".*$
 1880	^.*::
 1882	^.+\.js$
 1883	^.{3,20}$
@@ -1356,6 +1457,7 @@
 1896	^[\t ]*\n
 1897	^[\w\d_]+\.[\w\d_]+\.\d+$
 1898	^[\w_]+$
+1899	^[\x01-\x0f]$
 1900	^[^(\[]*
 1901	^[a-z0-9][a-z0-9\._-]{1,253}[a-z0-9]$
 1902	^[a-zA-Z0-9-]{1,100}$
@@ -1369,6 +1471,7 @@
 1911	^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$
 1912	^\s*#(\d+)\s*(.*) \[(0x[0-9A-Za-z]+)\]$
 1913	^\s*#.*$
+1915	^\s*([-\w]+\s*:[^:;]*(;\s*|$))*$
 1916	^\s*(def|class|else|elif|except|finally)
 1917	^\s*(else|elif|except|finally).*\:
 1918	^\s*(import |from .+ import)
@@ -1377,6 +1480,11 @@
 1921	^\s*\#
 1924	^\s+<spontaneous>\s*$|^.*\((\d+)\)$
 1925	^\w(\-?\w)*$
+1926	^\x1b#
+1927	^\x1b.$
+1928	^\x1b[()]
+1929	^\x1b\[
+1930	^\x1b\]
 1931	^_|_$
 1932	^gemsets for ([^ ]+)
 1933	^http://testserver/somewhere/else/\?c=\d+#baz$
@@ -1424,10 +1532,12 @@
 1975	([a-z])'([A-Z])
 1976	[^ \r\na-zA-Z0-9\-'()+,./:=?;!*#@$_%]
 1977	^'([^']+)'(\|.*$)
+1978	  File "[^"]+", line \d+\n$
 1979	 *, *
 1980	 +
 1981	#x([\d|A-F]{4,4})
 1982	%[^0-9A-Fa-f]|%[0-9A-Fa-f][^0-9A-Fa-f]
+1984	&(?!(\w+|#\d+);)
 1994	([-\w]+)\s*:\s*([^:;]*)
 1995	(\d{1,2})\.(\d{1,2})\.(\d{1,2})
 1996	(\d{4})-(\d\d?)-(\d\d?)$
@@ -1454,9 +1564,11 @@
 2021	^<Point><coordinates>-95.363\d+,29.763\d+,18</coordinates></Point>$
 2022	^[a-z0-9][-+.a-z0-9]*:
 2023	^\S+@\S+\.\S+$
+2024	^\s*([-\w]+\s*:[^:;]*(;\s*|$))*$
 2025	^\s*[^#\s].*
 2027	^\s*endblocktrans$
 2028	^\s*plural$
+2031	^{"type":"Point","coordinates":\[-95.363151,29.763374,18(\.0+)?\]}$
 2033	extra\s*==\s*("([^"]+)"|\'([^\']+)\')
 2036	{([^}]*)}(.*)
 2037	'(..+)'\s+(..+$)
@@ -1471,6 +1583,7 @@
 2049	\\'
 2050	\s+\(default:\s+\'(.*)\'\)$
 2052	invalid literal for int().*: '?'?
+2056	    # mere offset\n                ^\n                &?                                          # possible ampersand\n                (       0                                       # just zero\n                |       [1-9]{1,1}[0-9]*        # decimal\n                |       0[0-7]+                         # octal\n                |       0x[0-9a-f]+                     # hex\n                )\n                $\n                
 2057	  
 2058	 DELETED ---$
 2060	"([^"]*)",?
@@ -1489,6 +1602,7 @@
 2074	&#([xX]?[0-9a-fA-F]+)[^0-9a-fA-F]
 2077	&\w+;
 2078	&quot;
+2079	(""")\s*$
 2080	(#.*)?$
 2081	(&&)
 2083	(([^-/]+)-?([^/]+)?)/?.*
@@ -1548,6 +1662,7 @@
 2179	(\/+[a-z]*\/[a-z]*$)
 2180	(\S+): (\S+)
 2181	(\S+);.*
+2182	(\S+);\s*filename="([^"]+)"
 2183	(\S+)\s+(..+$)
 2184	(\S.+):$
 2186	(\d)
@@ -1570,6 +1685,8 @@
 2208	(\w+)-(\w+)\ : (.*)
 2209	(\w+)\|(\w+)
 2210	(\w{,3}), (\d{,4})/(\d{,2})/(\d{2}) (\d{,2}):(\d{2}):(\d{2}) (\w{,3})
+2211	(\x01?\x1b\[[0-9;]*m\x02?)
+2212	(\x01?\x1b\[[0-9;]+m\x02?)
 2213	(^\s+Invalid read of size )\d+
 2214	(^\s+Invalid write of size )\d+
 2215	(^|/)Change[Ll]og$
@@ -1635,6 +1752,8 @@
 2292	</*key>
 2293	</dict>
 2294	<H[13]
+2297	<a u="([A-F0-9]{4})" b="([0-9A-F ]+)"/>
+2298	<a\s*href="(.*)"\s*>(.*)</a>
 2299	<ci.*</ci>
 2300	<dict>
 2302	<files>\s*</files>
@@ -1766,6 +1885,7 @@
 2456	\/\* Begin PBXBuildFile section \*\/\n
 2458	\/\* Begin PBXFileReference section \*\/\n
 2459	\/\* END LOOP \*\/
+2461	\<[a-zA-Z0-9\-\_\.\="\'\/\\%\!\@\#\$\^\&\*\(\) ]*\>
 2463	\A\s\s\S+,
 2464	\S+\s(\S+)\t(.+)
 2466	\[.*\]
@@ -1773,6 +1893,8 @@
 2470	\[[^]]+]$
 2471	\[\]
 2472	\[|\]|\n+|\s+
+2473	\\(?! )
+2474	\\(?!\s$)
 2475	\\([0-3][0-7][0-7])
 2476	\\([0-9a-fA-F]{1,6})\s?
 2477	\\*\#
@@ -1809,13 +1931,17 @@
 2523	\s+\((.*)\)$
 2524	\s?((["][^"]*["]|[\'][^\']*[\'])\s+dluohs)
 2525	\s?([a-zA-Z_\d]+tset)\s+fed
+2526	\sfile:\s+"([^"]*)"
 2527	\w*:\w*:\w*:\w*:\w*:\w*
 2528	\w+:
 2529	\w+\(
 2530	\w+\.erb
 2531	\w+\.feature
 2532	\w+\.rb
+2533	\w+\_spec.rb
+2534	\w+\_test.rb
 2535	\w+\s+\[?(\w+)\]?
+2536	\x1b\[[^h]+h
 2537	\{
 2538	\{([^}]*)\}
 2539	\{\{|\}\}
@@ -1830,6 +1956,9 @@
 2553	\npci_add
 2555	\r|\n
 2556	\tobjectVersion = ([0-9]+);
+2557	\x00
+2558	\x01?\x1b\[([0-9;]*)m\x02?
+2559	\x01?\x1b\[([0-9;]+)m\x02?
 2560	^ *(.*) *( *) *$
 2562	^#!(.*)
 2563	^##AGENT-WARNING##.*
@@ -1837,6 +1966,7 @@
 2566	^#[0-9A-Fa-f]{6}$
 2567	^#define ([A-Z]+)\s+(\d+)$
 2568	^#define ASYNC_PROTOCOL_MAJOR\t*(.*)
+2569	^#define.*ENGINE_VERSION\t*"DOOM (.*)"
 2570	^$|^\s*#
 2572	^(.*)<(.*)>(.*)$
 2573	^(.*)\[(.*)\](.*)$
@@ -1849,6 +1979,8 @@
 2585	^(.+)[:(]\d+[:)]
 2586	^(.+)\.([^\.])*
 2596	^(MemTotal|MemFree|Buffers|Cached|SwapCached|Active|Inactive|SwapTotal|SwapFree|Dirty|VmallocTotal|VmallocUser|VmallocChunk):\s*(\d+)\s*kB
+2597	^([ \t]*>>> |^[ \t]*\.\.\. )
+2598	^([ \t]*In \[\d+\]: |^[ \t]*\ \ \ \.\.\.+: )
 2599	^([ \|0-9-]*)
 2600	^([ \t]*class +[a-zA-Z0-9_]+) *( *) *((=.*)?):
 2601	^([ ]*)
@@ -1881,6 +2013,7 @@
 2632	^(pgpgin|pgpgout|pswpin|pswpout)\s(\d+)
 2633	^(syn keyword vimCommand contained|syn keyword vimOption contained|syn keyword vimAutoEvent contained)\s+(.*)
 2634	^--- NEW FILE
+2635	^--\d+-- run: /usr/bin/dsymutil \"shell/js\"$
 2636	^--out-xml=(.*)$
 2637	^-?\d
 2639	^.*:\$
@@ -1895,6 +2028,7 @@
 2648	^6\.
 2649	^<(.*)>$
 2651	^<type [\'"](.+)[\'"]>$
+2652	^=+$
 2653	^==\d+==
 2654	^>(.*)$
 2655	^@(.*)
@@ -1933,12 +2067,14 @@
 2689	^[a-zA-Z0-9_=.\\/-]+$
 2690	^[a-zA-Z]+(\s|$)
 2691	^[a-zA-Z_][a-zA-Z0-9_]*$
+2693	^[ab]$
 2694	^[cC](\:[\\\/]+)
 2695	^[http|file|chrome|about].*
 2696	^\$\d+
 2697	^\${\d+[:}]
 2698	^\${\d+\/
 2700	^\*\*\d+\*\*
+2701	^\.\.(/\.\.)*$
 2703	^\/\w\/
 2704	^\[.*\]
 2706	^\d+(\.\d+)*$
@@ -1959,18 +2095,22 @@
 2723	^\s*public static final int ([A-Z_]+) = (\d+);$
 2726	^\s+.*
 2727	^\s+File .* in runUntilCurrent
+2728	^\s+File .*erroneous\.py", line \d+, in go
 2729	^\s+File .*erroneous\.py., line \d+, in setUp$
 2730	^\s+File .*erroneous\.py., line \d+, in testHiddenException$
 2731	^\s+File .*erroneous\.py., line \d+, in test_fail$
 2732	^\s+at 0x[0-9A-Fa-f]+: 
 2733	^\s+by 0x[0-9A-Fa-f]+: 
 2734	^\s+raise RuntimeError\(self.hiddenExceptionMsg\)
+2735	^\s+self\.fail\("Deliberate failure to mask the hidden exception"\)$
+2736	^\s+self\.fail\("I fail"\)$
 2737	^\t*
 2739	^\w+:
 2741	^_+
 2742	^_ZThn[0-9]+_
 2743	^`!p\s
 2744	^`!v\s
+2745	^a+$
 2746	^begin [0-7]{3}
 2747	^const int ASYNC_PROTOCOL_MINOR\t*= (.*);
 2748	^content-range: bytes ([0-9]+)-([0-9]+)/([0-9]+)$
@@ -1980,6 +2120,7 @@
 2752	^https?://github.com/([^/]+)/?$
 2753	^https?://github.com/[^/]+/[^/]+/tree/([^/]+)/?$
 2754	^js\(\d+,0x[0-9a-f]+\) malloc: \*\*\* error for object 0x[0-9a-f]+: pointer being freed was not allocated\n\*\*\* set a breakppoint in malloc_error_break to debug\n$
+2755	^multipart/byteranges; boundary="(.*)"$
 2756	^pull .*$
 2757	^push .*$
 2758	^quit.*
@@ -2016,10 +2157,12 @@
 2791	errors=(\d+)
 2792	expectedFailures=(\d+)
 2793	failures=(\d+)
+2794	filename="([^"]+)"
 2796	get_ipython\(\)\.magic\(u?["\\']%?autopx
 2797	goog\.provide\s*\(\s*[\'"]([^\)]+)[\'"]\s*\)
 2798	goog\.require\s*\(\s*[\'"]([^\)]+)[\'"]\s*\)
 2800	h[23]$
+2801	href\s*=\s*"([^>"]*)"[^>]*title\s*=\s*"View larger image"
 2802	http://
 2803	http://example.com/login\?next=http%3A%2F%2Flocalhost%3A[0-9]+%2Fabsolute
 2804	id:(\d{1}):initdefault:
@@ -2027,6 +2170,7 @@
 2807	ip(engine|controller)z-\d+\.(log|err|out)
 2808	join_mcast_pid:(\d+)
 2809	ks\=[\w\d\:\.\/]+
+2810	label(\s*)=(\s*)"\s%tmp(.\w*)*(\s*)"
 2811	length (\d*):
 2812	lib(.*)\.so
 2813	lsi53c895a
@@ -2062,15 +2206,18 @@
 2848	unexpectedSuccesses=(\d+)
 2850	unknown operand
 2851	unzip: exiting
+2852	user_pref\("(.*)",\s(.*)\)
 2853	ustar *\x00|[ \x00]*$
 2854	vecLib
 2855	vport[0-9]p[0-9]+
 2857	wg_hcyl_pin_(\d*).*_h(\d*).*
+2858	window.location.replace\("(.*)"\);
 2859	wrong|error
 2860	x86_64
 2861	xvd
 2862	{(..+)}
 2863	{([^}]+)}
+2867	(([a-zA-Z0-9\_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?))(\?subject=\S+)?
 2874	([^,]+),\s+(\d{2})\s+([^\s]+)\s+(\d{4})\s+(\d{2}):(\d{2}):(\d{2})\s+([^\s]+)
 2875	([^\t -~])
 2876	(\(|\)|\s+)
@@ -2086,6 +2233,7 @@
 2887	0{6,}\d
 2888	<(/?)\s*b\s*>
 2889	<(/?)\s*i\s*>
+2891	<option value="">
 2892	API|TOKEN|KEY|SECRET|PASS|PROFANITIES_LIST|SIGNATURE
 2893	[-/\.]
 2894	[-\.]
@@ -2099,6 +2247,7 @@
 2902	\.models$
 2903	\.py$
 2905	\r\n|\r|\n
+2907	\s*/\*.*(?!\*/\s*)$
 2909	\w*
 2910	\{\{ plugin_object (\d+) \}\}
 2911	^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$
@@ -2119,6 +2268,7 @@
 2943	^[-a-zA-Z0-9_]+$
 2944	^[1-9]\d{2} ?\d{2}$
 2945	^[1-9]\d{4}$
+2946	^[A-Z]{,3}$
 2947	^[\d,]+$
 2948	^[\w.@+-]+$
 2949	^[\w/:+-]+$
@@ -2158,6 +2308,7 @@
 3004	  ([^:]*):  (.*)
 3005	  (\S+) \((\d+)\)
 3006	  (http://.*)
+3007	  File "[^"]+", line \d+\n$
 3008	  http://
 3014	 (SENATOR|REPRESENTATIVE)\([Ss]\) ([^,]+(,[^,]+){0,})
 3015	 ([a|b])/
@@ -2168,8 +2319,10 @@
 3022	 failed: (.*)$
 3024	 {2,}\n
 3026	"(.*)"(\s*\[.*\])
+3027	"(.*)"\s*->\s*"(.*)"
 3028	"([^"]*)"
 3029	"(\\\\|\\"|[^"])*"
+3031	"QOOXDOO_PATH"\s*:\s*"([^"]*)"\s*,?
 3035	# Command: [/\w_]+ (.*)
 3036	# Fadvise: ([\w]+)
 3037	# Iterations: ([0-9]+)
@@ -2185,6 +2338,7 @@
 3050	#\s*-\*-\s+coding:\s+(\w+)\s+-\*-
 3051	#d8e8ff
 3052	#define NODE_VERSION_IS_RELEASE
+3053	#define\s+ZLIB_VERSION\s+"([^"]*)"
 3054	#define\sSET_(\S*)\(
 3055	%(.)
 3057	%([0-9]+)
@@ -2206,6 +2360,8 @@
 3075	&#8230;
 3076	&#\d+;
 3077	&(#?)(x?)(\w+);
+3078	&(#[0-9][0-9]*)(?![0-9;])
+3079	&(?![A-Za-z]+;)
 3080	&([a-zA-Z][a-zA-Z0-9]*)[^a-zA-Z0-9]
 3081	&(\S*)\s*(.*)
 3082	&amp;
@@ -2221,6 +2377,7 @@
 3101	(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
 3102	(([umsg]asser(t|ted))) *\(( *)(\d+)
 3103	(([umsgf]asser(t|ted))) *\(( *)(\d+)
+3104	(([wum]asser(t|ted))) *\(( *)(\d+) *,\s*("\S[^"]+\S")\s*,?.*
 3105	(([wum]asser(t|ted))) *\(( *)(\d+) *,\s*([\S\s+<\(\)"]+) *,?.*
 3106	(([wum]asser(t|ted)))\s*\(([^\d]*)(\d+)\s*,?()
 3109	((^|\n)\s*)-
@@ -2230,7 +2387,9 @@
 3113	((fassertFailed)()) *\(( *)(\d+)
 3114	((fassertFailed)()) *\(( *)(\d+)()
 3115	((final|abstract)[ \t]+)?((public|private|protected)[ \t]+)?(static[ \t]+)?class[ \t]+\w+((implements|extends)\w+)?
+3116	((msgasser(t|ted))) *\(( *)(\d+) *, *("\S[^,^"]+\S") *,?
 3117	((msgasser(t|ted)))\s*\(([^\d]*)(\d+)\s*,?()
+3118	((msgasser(t|ted)NoTrace)) *\(( *)(\d+) *, *("\S[^,^"]+\S") *,?
 3119	((msgasser(t|ted)NoTrace))\s*\(([^\d]*)(\d+)\s*,?()
 3120	()(  +)
 3123	(-?\d+)(\d{3})
@@ -2257,6 +2416,7 @@
 3158	(<\?xml version.*\?>)
 3159	(<\w+ object at )0x\w+>
 3160	(<function \w+ at )0x\w+>
+3161	(="[^"]+")([a-zA-Z])
 3162	(>(\s*>)+)(,|\n$)
 3269	(BlackBerry|HTC|LG|MOT|Nokia|NOKIAN|PLAYSTATION|PSP|SAMSUNG|SonyEricsson)
 3270	(ERROR|FATAL):
@@ -2286,8 +2446,10 @@
 3297	([\-0-9])|([\-0-9]/[0-9])
 3299	([\w-]+[\w]+)\s+(\w+)\s+(\w+)
 3300	([\w.+]+)\s*\(#?([^,]+),\s*([\w ]+),\s*([\w :]+)\)\s*\[PyPy [^\]]+\]?
+3301	([\w\-\.]+)="([^"]+)"
 3302	([\w]*)([^:=]*:?=?)([sif]?)
 3303	([\x20\x21\x23-\x5B\x5D-\x7E]+)
+3304	([\x80-\xFF])
 3305	([\x00-\x08\x0b\x0c\x0e-\x1f])
 3306	([^#:]*#)(.*)
 3307	([^,;]+[,;]?)
@@ -2313,6 +2475,8 @@
 3333	(\.[\d]+)?$
 3335	(\.|::)
 3337	(\D)(\d{4})$
+3338	(\D)\.(?!\s)
+3339	(\D)\.(?!\s)(\D)
 3340	(\S*)\s*RHEL\s
 3341	(\S+)$
 3342	(\S+)
@@ -2363,6 +2527,8 @@
 3396	(\{[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}\} |  # GUID\n                   [a-z0-9-\.\+_]*\@[a-z0-9-\._]+)  # Email format
 3397	(\r\n)|\r|(\n\r)
 3399	(^/dev/x{0,1}[a-z]{0,1}d{0,1})([a-z]+)[0-9]*$
+3400	(^RuntimeError:.* naughty.*){2}
+3401	(^TypeError:.* return an int.*){2}
 3402	(^[ \t]*In \[\d+\]: |^[ \t]*\ \ \ \.\.\.+: )
 3403	(^[ ]*[+]?[\(\)0-9/\/\.\- ]+$)
 3404	(^[a-zA-Z]+)([0-9]+)$
@@ -2453,6 +2619,7 @@
 3513	/dev/vda
 3514	/plugin-container\s*$
 3515	/projects/([-\w]+)/([-\w]+)/
+3516	/pypi\?\:action=doap\&amp;name=[a-zA-Z0-9\.\-\_]+\&amp;version=[a-zA-Z0-9\.\-\_]+
 3517	/status/object/([0-9]+)/.*
 3518	/usr/bin/qemu-system-x86_64 -machine accel=kvm
 3519	00000000
@@ -2462,6 +2629,7 @@
 3523	127.0.0.1:0
 3524	:   
 3525	: 
+3526	:"([0-9]+)"
 3527	:( *\n     \|\n)\x02
 3529	:([a-zA-Z][a-zA-Z0-9_-]*)
 3530	:([a-zA-Z_\-]+):(.*)$
@@ -2477,6 +2645,7 @@
 3541	<!--.*
 3542	<![^>]*>
 3543	<(.+)>
+3546	<(?![a-z/?\$!])
 3547	<([^ ]+)(>| ).*
 3548	<([^/!])>\s+</
 3549	<([^/!][^>]*[^/])>\s+</
@@ -2488,25 +2657,43 @@
 3558	</[a-z]*>
 3559	</p>
 3561	<ErrorCode>(.+)</ErrorCode>
+3562	<STREAM APP="(http://.*)" FULLPATH="/?(/.*\.flv\?[^"]*)"
 3563	<TestThread\(.*, initial\)>
 3564	<Timeout>(.+)</Timeout>
 3565	<WSSID>(.+)</WSSID>
 3567	<[^>]+>|[^\s<]+
 3569	<[a-zA-Z][a-zA-Z0-9]*/
+3573	<a href="([^"]*)"[^>]* id="lookup_id_defendant0"
+3574	<a href="([^"]*)"[^>]* id="lookup_id_defendant1"
 3577	<a[^>]*\shref
 3579	<b>Added:</b> (\d{4}-\d\d-\d\d \d\d:\d\d:\d\d)
 3581	<br[^>]*>
 3582	<code>(.*)</code><description>(.*)</description>
+3583	<div class=\'lyricbox\'><span style="padding:1em"><a href="/Category:Instrumental" title="Instrumental">
+3585	<form(.*)name="login"(.*)</form>
 3586	<graphic.*passwd=.*>
+3588	<h2 class="ti-5"><a href="http://video\.yahoo\.com/(people|profile)/[0-9]+" beacon=".*">(.*)</a></h2>
 3590	<id>([^<]+)</id>
+3593	<link rel="image_src" href="(.*)" />
+3594	<link rel="pingback" href="([^"]+)" ?/?>
+3595	<link rel="video_src" href=".*\?file=([^"]+)" />
+3597	<meta name="description" content="(.*)" />
+3599	<meta name="title" content="(.*)" />
+3600	<meta name="video_height" content="([0-9]+)" />
+3601	<meta name="video_width" content="([0-9]+)" />
 3602	<meta[^>]*content\s*=\s*[\'"]?text/html;\s*charset\s*=\s*([^ \'">]+)\s*[\'"]?[^>]*>
 3604	<param([^<>]+)>
 3606	<replaceable>[^<]+</replaceable>
+3607	<revision>[a-zA-Z0-9\.\-\_]+</revision>
 3610	<span id=short-desc-content>([^<]*)</span>
+3611	<td style="text-align: right;">[0-9]{1,}</td>
 3612	<title>(.*) video by (.*) - Photobucket</title>
+3617	<tt class="[\w+]"></tt>
 3618	=...=
 3619	==END TEST==
+3620	=\s*"(.*)"
 3622	>[ \r\n]+<
+3623	@"([^"]+)"
 3624	@%\(([a-zA-Z][a-zA-Z0-9_-]*)\)s
 3626	@([^\'"\s]+)
 3627	@([a-zA-Z0-9_][a-zA-Z0-9_]*)\.route
@@ -2529,6 +2716,7 @@
 3646	Bill Status
 3647	Bill Text
 3648	BillID=(\d*)
+3649	BuildID\s*=\s*"(\d{10})"
 3650	CONSTRAINT (\w+) UNIQUE \(([^\)]+)\)
 3651	CPU Affinity: +[-y]+
 3652	CPU\d+:
@@ -2577,6 +2765,7 @@
 3698	Interim result: *(\S+)
 3699	KAthJax-[0-9a-f]{32}
 3700	LC_ALL.[^\s]\s
+3701	LL_CHANNEL\s=\s"(.+)";\s*$
 3702	LR Number:
 3703	LUN
 3704	Last Changed Rev: (\d+)
@@ -2631,6 +2820,9 @@
 3761	URL: (\S+)
 3762	Ubuntu
 3763	Usage:
+3764	Username="(\w+)"
+3765	UsernameToken Username="([^"]+)", PasswordDigest="([^"]+)", Nonce="([^"]+)", Created="([^"]+)"
+3766	VERSION\s*=\s*"([^"]+)"
 3767	Vector<(.+)>
 3768	Versi&oacute;n (.+) ([0-9]+).([0-9])+ megabytes
 3769	Versi.+n (.+) ([0-9]+).([0-9])+ megabytes
@@ -2699,7 +2891,10 @@
 3836	[\'"\\]
 3837	[\*\?]
 3838	[\.\-\ ]
+3839	[\.\-\/\!\@\#\$\%\^\&\*\(\)\+\-"\'\,\;\:\[\]\{\}\<\>\=\_]
+3840	[\.\-\/\_]
 3841	[\.\-\/]
+3842	[\.\-\_]
 3843	[\.\-_ ]?[Ee](\d+)
 3844	[\._-]
 3846	[\D]*(\d+)\w*$
@@ -2742,6 +2937,7 @@
 3884	[^\w\d_]
 3885	[^_\w]
 3886	[^a-zA-Z0-9.]
+3887	[^a-zA-Z0-9\_\.]
 3888	[^aeiouy]*[aeiouy]+[^aeiouy](\w*)
 3889	[_\s]+
 3890	[a-f0-9]+$
@@ -2774,6 +2970,8 @@
 3919	\$\((\w+)\)
 3920	\$\{(.*)\}
 3922	\%(-?\w+)
+3923	\("id", "([0-9]+)"\);
+3924	\("vid", "([0-9]+)"\);
 3925	\((.*)\)$
 3927	\((H|S)\)
 3928	\(.*\)$
@@ -2789,6 +2987,7 @@
 3940	\-
 3942	\-|\s|T|t|:|\.|Z
 3943	\. \. \.
+3944	\.(?!\s)(\D)
 3945	\.(\d+)$
 3947	\.1$
 3948	\.[0-9]+
@@ -2808,6 +3007,7 @@
 3968	\A#!.*node.*$
 3969	\A#!.*perl.*$
 3970	\A#!.*php.*$
+3971	\A#!.*python(?!3).*$
 3972	\A#!.*python3.*$
 3973	\A#!.*ruby.*$
 3978	\S* *\d*-\d*-\d* \d*:\d*:\d* [+-]\d* \w*
@@ -2816,6 +3016,7 @@
 3981	\S+\s\((\d+)\s\S+\)
 3982	\S\s
 3983	\W%\W
+3984	\W*File "(.*)", line ([0-9]+)
 3985	\W+$
 3986	\W_\(
 3992	\[.* test environment .*\n
@@ -2854,6 +3055,7 @@
 4053	\d+(\.\d*)?
 4054	\d+-\d+-\d+([\s|T|t]\d+:\d+:\d+.\d+(Z|(\s?[\-|\+]\d+:\d+)))?
 4055	\d+: (eth\d+):
+4056	\d+\.\d*(?!\d*d)
 4057	\d+\.\d+\.\d+\.\d+
 4059	\d\.htm$
 4060	\d\d-[a-zA-Z]{3,3}-\d\d\d\d \d\d:\d\d
@@ -2870,6 +3072,7 @@
 4071	\n[\t ]*$
 4072	\n[\t ]*\n[\t ]*$
 4073	\n\r?[\t ]*$
+4074	\n\s*(\n|$).*
 4075	\n\s*\n*
 4077	\n{3,}
 4078	\s*#(.*)$
@@ -2896,8 +3099,10 @@
 4101	\s*/\s*
 4102	\s*:?\s*([\w\.]+\s*,?\s*)*
 4104	\s*</table>
+4105	\s*<AccessControlList>\s*<Entries>\s*<Entry>\s*<Scope type="GroupById"><ID>[0-9a-fA-F]+</ID></Scope>\s*<Permission>FULL_CONTROL</Permission>\s*</Entry>\s*<Entry>\s*<Scope type="GroupById"><ID>[0-9a-fA-F]+</ID></Scope>\s*<Permission>FULL_CONTROL</Permission>\s*</Entry>\s*<Entry>\s*<Scope type="GroupById"><ID>[0-9a-fA-F]+</ID></Scope>\s*<Permission>READ</Permission></Entry>\s*</Entries>\s*</AccessControlList>\s*
 4106	\s*<entry><token>([^<]+)</token></entry>\s*<entry>([^<]+)</entry>
 4107	\s*<entry><type>([^<]+)</></entry>
+4108	\s*<table id="datatype-pseudotypes-table">
 4110	\s*[^\s]+\s*=
 4111	\s*\((\d+)\)\s*
 4112	\s*\(.*\)\s*$
@@ -2913,6 +3118,7 @@
 4123	\s*__version__\s*=\s*(("([^"]|\\")*"|\'([^\']|\\\')*\'))
 4124	\s*import\s+(\S+)\.([^\s.]+)\s+as\s+(\S+)(\s+for\s+(\S+))?
 4125	\s*modtime:\s*(.*)
+4126	\s*set\s+default\s*=\s*"+(\d+)"+
 4127	\s*{
 4129	\s+([A-Z])\s+.*CDFS.*\n
 4130	\s+([a-z0-9-]+)\s+
@@ -2931,6 +3137,8 @@
 4148	\w+@(\w+)(\.\w+)*
 4149	\w\w*\d\d\d\d\d.htm
 4150	\w{12}
+4152	\x1b\[[^m]*m
+4153	\xf6
 4154	\{([-\w]+)\}
 4155	\{(http:\/\/[A-Za-z0-9_\.\/]+\/nzb)\}file
 4159	\|(.*)\|
@@ -2949,9 +3157,14 @@
 4182	\t+
 4183	\x01
 4184	\x03[0-9]{1,2}(,[0-9]{1,2})?
+4185	\x1b
+4186	\x1b\[(\d\d;){0,2}\d\dm
+4189	^     Page [1-9][0-9]*[ \t]+\|^.*Last change:.*[1-9][0-9]*\n
 4190	^ (.*)$
 4191	^ *(0x[0-9a-f]+) +0x([0-9a-f]+): +eax=0x([0-9a-f]+) ebx=0x([0-9a-f]+) ecx=0x([0-9a-f]+) edx=0x([0-9a-f]+)$
 4192	^ *([0-9]+)
+4193	^"
+4194	^"(.*)"$
 4195	^### 
 4196	^#(ifndef|define|endif\s*//)\s*[\w_]+\s*$
 4197	^#\s*next_offset=(\S+)\s*$
@@ -2991,12 +3204,15 @@
 4269	^(Q|QQ)\<(.+)\>$
 4270	^(Win|Linux|PPC Mac OS X)
 4271	^(Win|PPC Mac OS X)
+4272	^(Win|PPC Mac OS X|Linux(?! x86_64))
+4273	^(X|A)$
 4274	^(Y|X|A|N) ([\S ]+)$
 4275	^(Z|ZZ|Q|QQ)\((.+)\)$
 4276	^(Z|ZZ|Q|QQ)\[(.+)\]$
 4277	^([ \|0-9-]*)(.*) ?\[([^ ]*) \+(0x[0-9A-F]{1,8})\](.*)$
 4278	^([+-]) (.*)$
 4279	^([+-])(\d{2}):?(\d{2})$
+4280	^([-]+BEGIN CERTIFICATE[-]+[\r]*\n.*[\r]*^[-]+END CERTIFICATE[-]+)$
 4281	^([0-7]{6}) ([a-z]+) ([0-9a-f]{40})\t(.*)$
 4282	^([0-9]+)$
 4284	^([0-9]{1,3}\.){0,3}[0-9]{1,3}(/[0-9]{1,2}){1}$
@@ -3021,7 +3237,9 @@
 4305	^([a-zA-Z_][a-zA-Z0-9_]*)\s*=\s*(.*)$
 4307	^([a-zA-Z_]\w*)(\.[a-zA-Z_]\w*)*$
 4308	^([a-z]\w*)\s*:?(\s*\(.*\)\s*){0,2}\s*$
+4310	^(\+2|\+{2})$
 4311	^(\+[3-9]{1,}|\+{3,}|\+[1-9][0-9]+)$
+4312	^(\-2|\-{2})$
 4313	^(\-[3-9]{1,}|\-{3,}|\-[1-9][0-9]+)$
 4314	^(\S+ \S+ \S+ \S+: )?(.*)$
 4315	^(\S+) \(in ([^)]+)\) \((.+)\)$
@@ -3053,11 +3271,14 @@
 4347	^(\w+)\s+(\w+)\s+(\w+)\s+(\S+)\s+(([a-fA-F0-9]{2}:?){6})
 4348	^(\w+|/|\.|\(|\"|\\')
 4349	^(\w+|/|\.|\*|\"|\\')
+4351	^(application/(asx|x-(mplayer2|ms-wmp))|video/x-ms-(asf(-plugin)?|wm(p|v|x)?|wvx)|audio/x-ms-w(ax|ma))$
+4352	^(application/(sdp|x-(mpeg|rtsp|sdp))|audio/(3gpp(2)?|AMR|aiff|basic|mid(i)?|mp4|mpeg|vnd\.qcelp|wav|x-(aiff|m4(a|b|p)|midi|mpeg|wav))|image/(pict|png|tiff|x-(macpaint|pict|png|quicktime|sgi|targa|tiff))|video/(3gpp(2)?|flc|mp4|mpeg|quicktime|sd-video|x-mpeg))$
 4353	^(dict|dictionary|map|mapping) from ([\w\.]+) to ([\w\.]+)$
 4354	^(dict|dictionary|map|mapping) from ([\w\.]+) to (list|set|sequence|tuple|collection) of ([\w\.]+)$
 4355	^(fails|needs-focus|random|skip|asserts|fuzzy)
 4356	^(https://nodeload.github.com/[^/]+/[^/]+/)zipball(/.*)$
 4357	^(list|set|sequence|tuple|collection) of ([\w\.]+)$
+4358	^(unit)?tests?$
 4359	^(}|struct\s+\w+);\s*$
 4360	^-+
 4362	^.(.*).$
@@ -3076,10 +3297,12 @@
 4381	^// See .* for documentation.$
 4382	^/admin
 4383	^/dev/[a-z]+$
+4385	^0+$
 4386	^<!-- ##### (\w+) (\w+) ##### -->$
 4387	^<([\w\.]+)>$
 4388	^<p( [^>]+)?>
 4389	^== Rolled over to ChangeLog-\d{4}-\d{2}-\d{2} ==$
+4390	^==+$
 4391	^@(\S+)\s*:(.*\n?)$
 4392	^@(\w+)
 4393	^@@ -(\d+),(\d+) \+(\d+),(\d+) @@.*
@@ -3087,6 +3310,7 @@
 4395	^Attached scsi disk (.+) at scsi(.+), channel (.+), id (.+), lun (.+)$
 4396	^Gui
 4397	^META\-INF/(\w+)\.(rsa|sf)$
+4398	^N$
 4399	^P(\d)
 4402	^Pull: (.*)\n$
 4403	^SCSI error : <(.+)> return code = (.+)$
@@ -3095,6 +3319,7 @@
 4406	^VPATH\s*=
 4407	^Vendor:
 4408	^Working file: (.*)$
+4409	^Y$
 4410	^You have \d+ new
 4411	^[ \t]*Traceback \(most recent call last\):.*
 4412	^[ \t]*[Xv!_][Xv!_ \t]*\n
@@ -3114,6 +3339,7 @@
 4426	^[0-9]
 4427	^[0-9]+-(.*)$
 4428	^[0-9]+.[0-9]*$
+4429	^[0-9]{2}$
 4430	^[0-9]{4}$
 4431	^[0-9a-f]{40} refs/heads/(.+)$
 4432	^[0-9a-f]{40}$
@@ -3143,6 +3369,7 @@
 4456	^[a-zA-Z_]\w*(\.[a-zA-Z_]\w*)*$
 4457	^[a-z][a-z0-9_$()+-/]*$
 4458	^[aeiouy][^aeiouy]$
+4459	^[hs]d[a-p]$
 4460	^[modprobe|insmod].*xen-vbd.*
 4461	^[~a-zA-Z_]
 4462	^\"|\"$
@@ -3163,6 +3390,7 @@
 4480	^\s
 4481	^\s*#.*
 4482	^\s*#\s*([0-9]+).*
+4483	^\s*#\s*include\s*"(gmock/.+)"
 4484	^\s*(#|//[^/]|////).*$
 4485	^\s*(>>> )?(\.\.\. )?from .* import .*\*
 4486	^\s*(>>> )?(\.\.\. )?raise((\s*\(\s*)|\s+)\w+\s*,
@@ -3214,6 +3442,7 @@
 4546	^_[_A-Za-z0-9]*$
 4547	^__[A-Za-z0-9]+[A-Za-z0-9_]*__$
 4548	^__[_A-Za-z0-9]*[A-Za-z0-9]+_?$
+4549	^application/x-java-((applet|bean)(;jpi-version=1\.5|;version=(1\.(1(\.[1-3])?|(2|4)(\.[1-2])?|3(\.1)?|5)))?|vm)$
 4550	^audio
 4551	^bob
 4552	^class ([^,]*), addr (\d\d:\d\d.\d+), pci id (\w{4}:\w{4}) \(sub (\w{4}:\w{4})\)
@@ -3254,6 +3483,8 @@
 4591	^v?(\d+!)?(\d+(\.\d+)*)((a|b|c|rc)(\d+))?(\.(post)(\d+))?(\.(dev)(\d+))?(\+([a-zA-Z\d]+(\.[a-zA-Z\d]+)?))?$
 4592	^v[0-9]
 4593	^var _0x[a-f0-9]+ ?\= ?\[
+4594	^www\.|^(?!http)\w[^@]+\.(com|edu|gov|int|mil|net|org)$
+4595	^x?vd[a-p]$
 4596	^yt-(.*)$
 4597	_.*
 4598	_:([A-Za-z][A-Za-z0-9]*)
@@ -3293,6 +3524,7 @@
 4636	clocksource=[a-z \-_]+
 4637	clocksource=[a-z\- ]+
 4640	commit [\da-f]{40}$
+4641	const char \* const LL_CHANNEL = "(.+)";
 4642	content
 4643	count
 4644	date
@@ -3330,6 +3562,8 @@
 4680	h$
 4681	h(e)l[A-Z]lo.*th[^e]*e(r)e
 4682	hdc
+4683	href="(\S*)"
+4684	href="/pypi/([^/"]*)
 4686	href\s*=\s*[\'"]?<([\w\.]+)>[\'"]?\s*(,?)
 4687	http(s)?\://([\w\.-]*)(\:(\d+))?(/.*)?
 4688	http://([^/]+)(/\S*)\s*
@@ -3350,12 +3584,14 @@
 4707	irb\([a-zA-Z_][a-zA-Z0-9_]*\):\d{3}:\d+[>*] 
 4708	libs/([^/]+)
 4709	line \d+
+4710	locate-root\s+"(.*)"
 4711	lost
 4712	lost: 0 bytes in 0 blocks.
 4713	mac=
 4714	mac=00:00:00:00:00:00
 4715	mapper/
 4716	messages -> ([A-Za-z_0-9]+) {
+4717	method "(.*)" is not supported
 4718	mode=readline
 4722	monitor_result
 4723	n( mod \d+)? (is|in|within|(not in))( not)? ([^\s]+)
@@ -3407,6 +3643,9 @@
 4776	test_file_commit2
 4777	the LaTeX files are in (.*)\.
 4778	thread_id=(\d+)
+4779	time="\d+\.\d+"
+4780	timestamp="(.*)"
+4781	timestamp="[^"]+"
 4783	total
 4785	tray.*open
 4786	type=(B|R|)
@@ -3427,8 +3666,10 @@
 4806	zip$
 4810	{([^}]*)}
 4812	{[^}]*}
+4813	{\s*"name"\s*:\s*"([^"]+)"\s*}
 4814	{\w+}
 4815	'
+4816	%(?![0-9A-Fa-f]{2})
 4818	--cols=[0-9]+
 4819	--rows=[0-9]+
 4821	.*\$\{.+\}.*
@@ -3448,6 +3689,8 @@
 4837	\d+
 4838	\s*,?\s*
 4839	\s+$
+4841	\n            ([a-zA-Z]+        #Tag\n            \s?[0-9]+):       #Tag number\n            \s+[+-]           #Temp signed\n            ([0-9]+\.[0-9]+)  #Temp value\n            (\xc2\xb0         #\xb0 match\n            [CF])             #Celsius or Fahrenheit\n            
+4842	\x1b\[[0-9]+m
 4844	^([0-9]+x)*[0-9]*[*]?(s\W)?$
 4846	^[ -~]*$
 4847	^[ -~]{0,200}[!-~]$
@@ -3521,6 +3764,8 @@
 4957	\`(Tr|IX)\' not defined|No such file or directory|(can\'t break|cannot adjust) line
 4961	\s*index.append\('(.+)'\)\s*
 4962	\{([a-zA-Z\']+)\}
+4965	\n    (                       # Wrap whole match in $1\n     (\n       ^[ \t]*&gt;[ \t]?       # '>' at the start of a line\n       .+\n                 # rest of the first line\n       (.+\n)*              # subsequent consecutive lines\n       \n*                  # blanks\n      )+\n    )
+4966	\n    (                       # Wrap whole match in $1\n     (\n       ^[ \t]*>[ \t]?       # '>' at the start of a line\n       .+\n                 # rest of the first line\n       (.+\n)*              # subsequent consecutive lines\n       \n*                  # blanks\n      )+\n    )
 4967	\nUnused options for buildout: '(distribute|setuptools)\-version'\.
 4968	^     Sources: '
 4969	^    version='(...+)',$
@@ -3576,6 +3821,7 @@
 5026	        Log text 1 \(issue 321\).
 5028	    (\S+)
 5030	   
+5031	  (NIST|BLEU) score using \d+-grams = ([0-9.]+) for system "(.*)" on segment (\d+) of document "(.*)" \((\d+) words\)
 5032	  *
 5033	  </node>
 5036	  [ ]*
@@ -3584,6 +3830,7 @@
 5040	 $
 5042	 ( +)|^ 
 5043	 (Allocated at|Reported( again)? at)
+5045	 *Member\("
 5047	 *[0-9]+ + [0-9]+
 5048	 *[0-9]+: +[1-9][0-9a-z]{3,3}
 5049	 *[;#!]
@@ -3613,23 +3860,36 @@
 5077	 at -?0x[^>]+
 5078	 at 0x[0-9a-f]{6,}(>+)$
 5079	 b=(.+)
+5080	 border-color : #e7d796;margin-bottom : 1em; color : #9a8c59;">Article note: (.*)</div>
 5083	 load averages?: ([0-9.]+),? ([0-9.]+),? ([0-9.]+)$
 5085	 sslmode=.+
+5087	 xmlns:xi="http://www.w3.org/2001/XInclude"
 5088	 {3}
 5089	 |,|"|=|[|]
 5090	 |/|\|\.|-
 5091	!=
 5092	!?((((2(5[0-5]|[0-4][0-9])|[01]?[0-9][0-9]?)\.){3}(2(5[0-5]|[0-4][0-9])|[01]?[0-9][0-9]?))(/(3[012]|[12]?[0-9])))
+5093	"""
 5095	"(.*)"$
 5096	"(.*)".*PRIMARY KEY( AUTOINCREMENT)?$
+5097	"(.+[a-zA-Z])"
 5104	"([^"]+)"\s*(0x[0-9a-fA-F]+)
+5105	"([^\\"]+|\\.)*"
+5106	"(png|jpeg|csv|netcdf|tiff)"
 5107	", .*
 5108	".*"
+5109	".+"\."(.+)"
 5111	"?([a-zA-Z0-9_-]+)"?
 5113	"VTK_DATA_ROOT/
+5114	"[\s]*"
 5115	"[^"]*"|\'[^\']*
 5116	"[^"]+"|\\'[^\\']+\\'
+5117	"[^=]*=\s*"([^"]*)";
 5118	"[^\n]*Q_OBJECT[^\n]*"
+5119	"[a-zA-Z0-9]+"
+5123	"v8_revision": "123455"
+5124	"volume" ?: ?([0-9]{1,3})
+5125	"{(\S+-\S+-\S+-\S+-\S+)}"
 5126	"|(/\*)|(\*/)|(//)|\n|\r
 5127	"|\'|<\?|<!--|\]|<!\[
 5128	"}
@@ -3683,9 +3943,11 @@
 5194	#define BUILD_NUMBER\s+5
 5195	#define BUILD_NUMBER\s+6
 5196	#define IS_CANDIDATE_VERSION\s+0
+5197	#define JAXER_BUILD_ID "([0-9]+)\.([0-9]+)\.([0-9]+)\.([x0-9]+)(.*)"
 5198	#define MINOR_VERSION\s+22
 5199	#define PATCH_LEVEL\s+0
 5200	#define PATCH_LEVEL\s+1
+5201	#define PYSQLITE_VERSION "(.*)"
 5202	#define Py_([a-z_]+) ([0-9]+)
 5203	#define __NR_(\w*)\s*\(__NR_Linux\s*\+\s*([0-9]*)\)
 5204	#define[ \t]+([A-Za-z0-9_]+)
@@ -3695,12 +3957,16 @@
 5210	#define\swxMAJOR_VERSION\s+(\d+)
 5211	#define\swxMINOR_VERSION\s+(\d+)
 5212	#define\swxRELEASE_NUMBER\s+(\d+)
+5214	#include "([^"]+)"
 5215	#include *["<](.*)[">]
+5216	#include \<boost\/for\_each.hpp\>
+5217	#include\s+"(.+)"
 5218	#include\s+<([^>]+)>
 5219	#loadfactor(\s+(\S+))?\s+(\d+\.?\d*)
 5220	#o3d\s+PixelShaderEntryPoint\s+(\w+)
 5221	#o3d\s+VertexShaderEntryPoint\s+(\w+)
 5222	#slipfactor\s+(\d+\.?\d*)
+5223	${(\w+)}
 5224	%%([a-zA-Z0-9\-]+)%%
 5226	%%BoundingBox:\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)
 5227	%%\w+\?
@@ -3737,6 +4003,9 @@
 5266	&#[xX]([a-fA-F0-9]+);
 5267	&#[xX][a-fA-F0-9]+;
 5270	&(#?\w+);
+5272	&(?!([#\w]*;))
+5273	&(?![^a-zA-Z0-9_#]{1,5};)
+5274	&(?!amp|gt|lt|apos|quot)
 5275	&([^;\s]+);
 5276	&([a-zA-Z]+);
 5277	&([a-zA-Z][-.a-zA-Z0-9]*);
@@ -3757,6 +4026,7 @@
 5293	( {2,})
 5294	( |\n)
 5295	(! Emergency stop|Error:)
+5297	("(\\.|[^"\\])*")
 5298	(")
 5301	("[^"]*")
 5302	("[^"]*"|0x[0-9A-Fa-f]{1,4}|\d+)
@@ -3765,6 +4035,7 @@
 5307	(#\tmodified:\s+|#\tnew file:\s+|#\tdeleted:\s+)
 5311	(%(\([^\)]+\))?([\d\.]+)?[a-zA-Z])
 5312	(%(\([^\s\)]*\))?[sd])
+5313	(%23\d+">)
 5314	(%?\d+\$)
 5315	(%\w)
 5316	(%\w+%)
@@ -3790,6 +4061,7 @@
 5375	((_workers)?$)
 5376	((https?):((//)|(\\\\))+[\w\d:#@%/;$()~_?\+-=\\\.&]*)
 5378	((the|a|an)\s+)?[0-9]+
+5379	(,"[^,"]+),([^,"])
 5380	(,\n|[^\n-])+
 5384	(-----BEGIN \w*\s*CERTIFICATE-----(\w|\W)+-----END \w*\s*CERTIFICATE-----)
 5385	(-----BEGIN \w*\s*PRIVATE KEY-----(\w|\W)+-----END \w*\s*PRIVATE KEY-----)
@@ -3806,6 +4078,8 @@
 5399	(.*) [^ ]
 5400	(.*) \([0-9]+\)
 5401	(.*)#(.*)
+5403	(.*)(DEFAULT_DB_PREFIX="\$\(echo ~\)/)intel(.*)
+5404	(.*)(NONRPM_DB_PREFIX="\$HOME/)intel(.*)
 5405	(.*)([\(\[]([0-9]+)[\]\)])$
 5406	(.*)(pop=&|&pop=|pop=|pop&|&pop|pop)(.*)
 5407	(.*),REV=(.*)
@@ -3852,6 +4126,7 @@
 5482	(.+):(\d+): (.+)$
 5483	(.+);\s*(.*)
 5484	(.+);\s*([0-9\-\.]+)?\s*(.*)
+5485	(.+)=(".*")\n
 5486	(.+)?\s+(.+)$
 5487	(.+)[-_]([0-9a-fA-F]{40,40})
 5488	(.+)[-_](\d+)\.(\d+)(\w?)
@@ -3866,6 +4141,7 @@
 5497	(.+)\s{5,15}
 5498	(.+)__init__\.py
 5499	(.+){{{(\d+)}}}
+5505	(.+\n.+\n.+)\s\S+\n[\s\S]+(?!$)
 5507	(..):..:..:..
 5508	(....)-(..)-(..)T(..):(..):(..)....([+-])(..):(..)
 5509	(....)-(..)-(..)T(..):(..):(..)....Z
@@ -3904,25 +4180,36 @@
 5549	(<[^<]*snum=)([^">]+)>
 5551	(<\s*[a-z]+\s*[\w"=\.]+>)
 5554	(<br/>\n?)+
+5555	(<div id="tn15bot">)
 5556	(<font face=arial size=2>)(.*)(<\/font><br></td><td*)
 5558	(<h5><a name="?akas"?.*</table>)
 5565	(<pre>\s*)<br />
+5568	(<span class="k">[^<>]+</span>\s*)<br />(<span class="k">)
 5570	(<title>Lyrics: )([^<]*)
+5571	(<tr><td bgcolor="#BBBBBB".*)(More Songs &gt)
 5573	(>>>|\.\.\.) 
+5574	(?!\\)(\\\\)*"
+5575	(?!__init__).*\.py$
+5576	(?!__init__)[0-9a-zA-Z_]*(\.py)?$
+5577	(?!__init__)[0-9a-zA-Z_]*(\.pyc?)?$
 5985	(@)(\w+)
 5986	(@|<|>|-|!)
 5988	(AIX version: .*) TCP
 5990	(ATOM|HETATM)
+5992	(ATTR|ENV|IMPORT|RUN){([a-zA-Z0-9/_.*%-]+)}\s*(=|\+=)\s*"([^"]*)"$
 5993	(AVERAGE|MIN|MAX|LAST)
 5994	(AppKit|Foundation)\.doc
+5995	(Artist:.*html">)([^<]*)
 5996	(BUG:.*---\[ end trace .* \]---)
 5997	(CONECT|MASTER)
 5998	(DN)[0-9]{4,}
+5999	(E?%0?E(?![._]?N))
 6000	(ErrorReturnCode|SignalException)_((\d+)|SIG\w+)
 6001	(GAUGE|COUNTER|DERIVE|ABSOLUTE)
 6002	(HWPREDICT|SEASONAL|DEVSEASONAL|DEVPREDICT|FAILURES)
 6003	(Input \#.*)\n(Must|At\sleast)
 6005	(MODEL|ENDMDL)
+6007	(NIST|BLEU) score using\s+\d+-grams = ([0-9.]+) for system "(.*)" on document "(.*)" \((\d+) segments, (\d+) words\)
 6008	(NS\S+)Pointer
 6009	(Notification|Undelivered Message|Delivery Report)
 6010	(Numeric/arrayobject.h)
@@ -3999,6 +4286,7 @@
 6093	([A-Z0-9])at([A-Z0-9])
 6094	([A-Z0-9])dot([A-Z0-9])
 6095	([A-Z0-9]+)([a-z0-9]*)
+6096	([A-Z0-9][a-z]+|[A-Z0-9]+(?![a-z])|[a-z]+)
 6098	([A-Z]+_[a-z0-9]+\.txt)
 6099	([A-Z][0-9]{2})([0-9]{3})
 6100	([A-Z][A-Z]) \d\d\d\d\d
@@ -4069,12 +4357,14 @@
 6172	([\x00-\x08\x0B-\x0C\x0E-\x1F\x80-\x9F])
 6173	([\x0D])
 6174	([\x7F])
+6175	([\x80-\xff])
 6176	([\{-\~\[-\` -\&\(-\+\:-\@\/])
 6177	([\{\}])
 6178	([\|\{\}\\\.\+\[\]\(\)])
 6179	([\r\n.]*)\r\n# 
 6180	([\r]?\n)+[ \t]{1}
 6181	([\x00-\x7f]+)
+6182	([\xc0-\xc3])([\x80-\xbf])
 6183	([^ \t\n\r\x0c\x0b\{\}]+)\s
 6185	([^!])=?\|\|
 6186	([^!]*)!?([^@]*)@?(.*)
@@ -4114,6 +4404,7 @@
 6226	([^\s]*)\s*(\t|  )\s*([^\s]*)
 6227	([^\s]+)\s*<->\s*([^\s]+)
 6229	([^\w.@+-/]|[,;?!])*
+6230	([^\x00-\x7f])
 6231	([^\{])<
 6232	([^\n])\n([^\n])
 6234	([^a-z0-9\.-])
@@ -4293,6 +4584,7 @@
 6430	(\d+)\s+\w+\s+(\w+)\s+(\w+)\s+\w+\s+(\w+).*
 6431	(\d+)x(\d+)$
 6432	(\d+)x(\d+)
+6434	(\d+.\d+.\d+.\d+)"
 6435	(\d+/\d+\/\d+)\s+(\w+):\s+(.*)
 6436	(\d+:)*(.*)(_.*)*
 6437	(\d+[dwhms])
@@ -4356,10 +4648,15 @@
 6502	(\s)+self\.(\w)+\(\)
 6503	(\s)--
 6504	(\s)---
+6505	(\s*"float_value": -?\d+)\.[^\d]
 6507	(\s*(>>>|\.\.\.)?\s*)from werkzeug import\s+
 6508	(\s*)#\!([\w+-][\w+-/]*)
 6509	(\s*)(.*)$
+6510	(\s*)(File "(.*))\n
 6511	(\s*)([A-F0-9]*) /\* ([^ ]+) \*/
+6512	(\s*DRI_CONF_DESC\s*\(\s*)([a-z]+)(\s*,\s*)(gettext\s*\(\s*")(.*)("\s*\))(\s*\)[ \t]*\\?)$
+6513	(\s*DRI_CONF_DESC_BEGIN\s*\(\s*)([a-z]+)(\s*,\s*)(gettext\s*\(\s*")(.*)("\s*\))(\s*\)[ \t]*\\?)$
+6514	(\s*DRI_CONF_ENUM\s*\([^,]+,\s*)(gettext\s*\(\s*")(.*)("\s*\))(\s*\)[ \t]*\\?)$
 6516	(\s*\t*location)\=(.*)
 6517	(\s*\t*max_filesize)\=(\d+[kKMmGgTt]?)
 6518	(\s*\t*num_files)\=(.*)
@@ -4390,6 +4687,7 @@
 6555	(\w+): 
 6556	(\w+):(.*$)
 6558	(\w+):\s+(\d+)
+6560	(\w+)="([^"]+)"
 6561	(\w+)=(\w+)
 6562	(\w+)[ ]+- ([\w /,]+)
 6563	(\w+)[^>]*>
@@ -4418,6 +4716,7 @@
 6587	(\w+|[-\.\d]+| |\n|.|,|:|!|\?)
 6588	(\w:)?(\w*)-?(\w*)
 6589	(\w:[/\\])(.*)
+6590	(\w\w:\w\w.\w) "[^"]+ \[\w{4}\]" "[^"]+ \[(\w{4})\]" "[^"]+ \[(\w{4})\].*
 6591	(\w{1,4}\s+\d{1,2}\s+\d\d:\d\d:\d\d)(\s+[\w\d\.\/\@]+)
 6592	(\x0d\x0a|[\x0d\x0a])$
 6593	(\{.+\})
@@ -4428,10 +4727,74 @@
 6600	(\n\s*)(built on.*)(\n)
 6601	(\n\r)|(\r\n)
 6602	(\n|^)\s*\*\s*
+6603	(\xd0\xb0\xd0\xb2\xd1\x82\xd0\xbe\xd0\xb2\xd0\xbe)
+6604	(\xd0\xb0\xd0\xba\xd0\xb0\xd0\xb4\xd0\xb5\xd0\xbc\xd0\xb8\xd1\x87\xd0\xb5\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6605	(\xd0\xb1\xd0\xb0\xd0\xbb\xd1\x82\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6606	(\xd0\xb1\xd1\x83\xd0\xbb\xd1\x8c\xd0\xb2\xd0\xb0\xd1\x80|\xd0\xb1-\xd1\x80\.?)\s?(\xd0\xb0\xd0\xb4\xd0\xbc.|\xd0\xb0\xd0\xb4\xd0\xbc\xd0\xb8\xd1\x80\xd0\xb0\xd0\xbb\xd0\xb0) \xd1\x83\xd1\x88\xd0\xb0\xd0\xba\xd0\xbe\xd0\xb2\xd0\xb0
+6607	(\xd0\xb1\xd1\x83\xd0\xbb\xd1\x8c\xd0\xb2\xd0\xb0\xd1\x80|\xd0\xb1-\xd1\x80\.?)\s?(\xd0\xb4\xd0\xbc\.?|\xd0\xb4\xd0\xbc\xd0\xb8\xd1\x82\xd1\x80\xd0\xb8\xd1\x8f) \xd0\xb4\xd0\xbe\xd0\xbd\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe
+6608	(\xd0\xb1\xd1\x83\xd0\xbd\xd0\xbd\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f \xd0\xb0\xd0\xbb\xd0\xbb\xd0\xb5\xd1\x8f|\xd0\xb1\xd1\x83\xd0\xbd\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f \xd0\xb0\xd0\xbb\xd0\xbb\xd0\xb5\xd1\x8f)
+6609	(\xd0\xb2 \xd1\x86\xd0\xb5\xd0\xbd\xd1\x82\xd1\x80)
+6610	(\xd0\xb2\xd0\xb0\xd1\x81\xd0\xb8\xd0\xbb\xd0\xb5\xd0\xbe\xd1\x81\xd1\x82\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6611	(\xd0\xb2\xd0\xb5\xd1\x82\xd0\xb5\xd1\x80\xd0\xb0\xd0\xbd\xd0\xbe\xd0\xb2)
+6612	(\xd0\xb2\xd0\xbb\xd0\xb0\xd0\xb4\xd0\xb8\xd0\xbc\xd0\xb8\xd1\x80\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6613	(\xd0\xb2\xd1\x8b\xd0\xb1\xd0\xbe\xd1\x80\xd0\xb3\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6614	(\xd0\xb3\xd0\xbe\xd1\x80\xd1\x8c\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6615	(\xd0\xb3\xd0\xbe\xd1\x81\xd1\x82\xd0\xb8\xd0\xbd\xd1\x8b\xd0\xb9 \xd0\xb4\xd0\xb2\xd0\xbe\xd1\x80)
+6616	(\xd0\xb3\xd1\x80\xd0\xb0\xd0\xb6\xd0\xb4\xd0\xb0\xd0\xbd\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9|\xd0\xb3\xd1\x80\xd0\xb0\xd0\xb6\xd0\xb4\xd0\xb0\xd0\xbd\xd1\x81\xd0\xba\.)
+6617	(\xd0\xb4\xd0\xb5\xd0\xb2\xd1\x8f\xd1\x82\xd0\xba\xd0\xb8\xd0\xbd\xd0\xbe)
+6618	(\xd0\xb4\xd0\xbe\xd1\x81\xd1\x82\xd0\xbe\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6619	(\xd0\xb4\xd1\x8b\xd0\xb1\xd0\xb5\xd0\xbd\xd0\xba\xd0\xbe)
+6620	(\xd0\xb5\xd0\xbb\xd0\xb8\xd0\xb7\xd0\xb0\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6621	(\xd0\xb7\xd0\xb2\xd0\xb5\xd0\xb7\xd0\xb4\xd0\xbd\xd0\xb0\xd1\x8f|\xd0\xb7\xd0\xb2\xd0\xb5\xd0\xb7\xd0\xb4\xd0\xbd\xd0\xbe\xd0\xb9|\xd0\xb7\xd0\xb2\xd1\x91\xd0\xb7\xd0\xb4\xd0\xbd\xd0\xb0\xd1\x8f|\xd0\xb7\xd0\xb2\xd1\x91\xd0\xb7\xd0\xb4\xd0\xbd\xd0\xbe\xd0\xb9)
+6622	(\xd0\xba\xd0\xb8\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xb7\xd0\xb0\xd0\xb2\xd0\xbe\xd0\xb4)
+6623	(\xd0\xba\xd1\x83\xd0\xbf\xd1\x87\xd0\xb8\xd0\xbd\xd0\xbe)
+6624	(\xd0\xbb\xd0\xb0\xd0\xb4\xd0\xbe\xd0\xb6\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6625	(\xd0\xbb\xd0\xb5\xd1\x81\xd0\xbd\xd0\xb0\xd1\x8f)
+6626	(\xd0\xbb\xd0\xbe\xd0\xbc\xd0\xbe\xd0\xbd\xd0\xbe\xd1\x81\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6627	(\xd0\xbb\xd1\x8e\xd0\xb1\xd0\xbe\xd0\xb9|\xd0\xbb\xd1\x8e\xd0\xb1\xd0\xbe\xd0\xbc)
+6628	(\xd0\xbc\xd0\xb0\xd1\x8f\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6629	(\xd0\xbc\xd0\xbe\xd1\x81\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6630	(\xd0\xbc\xd0\xbe\xd1\x81\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb8\xd0\xb5 \xd0\xb2\xd0\xbe\xd1\x80\xd0\xbe\xd1\x82\xd0\xb0)
+6631	(\xd0\xbd\xd0\xb0\xd1\x80\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6632	(\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbe\xd0\xb3\xd0\xb8\xd1\x80\xd0\xb5\xd0\xb2\xd0\xbe|\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbe\xd0\xb3\xd0\xb8\xd1\x80\xd0\xb5\xd0\xb5\xd0\xb2\xd0\xbe)
+6633	(\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbe\xd1\x87\xd0\xb5\xd1\x80\xd0\xba\xd0\xb0\xd1\x81\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6634	(\xd0\xbe\xd0\xb1\xd1\x83\xd1\x85\xd0\xbe\xd0\xb2\xd0\xbe)
+6635	(\xd0\xbe\xd0\xb7\xd0\xb5\xd1\x80\xd0\xba\xd0\xb8)
+6636	(\xd0\xbf\.?|\xd0\xbf\xd0\xb0\xd1\x80\xd0\xba) \xd0\xbf\xd0\xbe\xd0\xb1\xd0\xb5\xd0\xb4\xd1\x8b
+6637	(\xd0\xbf\xd0\xb0\xd1\x80\xd0\xbd\xd0\xb0\xd1\x81)
+6638	(\xd0\xbf\xd0\xb5\xd1\x82\xd1\x80\xd0\xbe\xd0\xb3\xd1\x80\xd0\xb0\xd0\xb4\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6639	(\xd0\xbf\xd0\xb8\xd0\xbe\xd0\xbd\xd0\xb5\xd1\x80\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6640	(\xd0\xbf\xd0\xbb\xd0\xbe\xd1\x89\xd0\xb0\xd0\xb4\xd1\x8c \xd0\xb0\xd0\xbb\xd0\xb5\xd0\xba\xd1\x81\xd0\xb0\xd0\xbd\xd0\xb4\xd1\x80\xd0\xb0|\xd0\xbf\xd0\xbb\xd0\xbe\xd1\x89\xd0\xb0\xd0\xb4\xd1\x8c \xd0\xb0.|\xd0\xbf\.?\s?\xd0\xb0\.?|\xd0\xbf\.?\xd0\xb0\xd0\xbb\xd0\xb5\xd0\xba\xd1\x81\xd0\xb0\xd0\xbd\xd0\xb4\xd1\x80\xd0\xb0)\s?\xd0\xbd\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe
+6641	(\xd0\xbf\xd0\xbb\xd0\xbe\xd1\x89\xd0\xb0\xd0\xb4\xd1\x8c \xd0\xb2\xd0\xbe\xd1\x81\xd1\x81\xd1\x82\xd0\xb0\xd0\xbd\xd0\xb8\xd1\x8f|\xd0\xbf\.?\s?\xd0\xb2\xd0\xbe\xd1\x81\xd1\x81\xd1\x82\xd0\xb0\xd0\xbd\xd0\xb8\xd1\x8f|\xd0\xbf\xd0\xbb\.?\s?\xd0\xb2\xd0\xbe\xd1\x81\xd1\x81\xd1\x82\xd0\xb0\xd0\xbd\xd0\xb8\xd1\x8f)
+6642	(\xd0\xbf\xd0\xbb\xd0\xbe\xd1\x89\xd0\xb0\xd0\xb4\xd1\x8c \xd0\xbb\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xbd\xd0\xb0|\xd0\xbf\.?\s?\xd0\xbb\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xbd\xd0\xb0)
+6643	(\xd0\xbf\xd0\xbb\xd0\xbe\xd1\x89\xd0\xb0\xd0\xb4\xd1\x8c \xd0\xbc\xd1\x83\xd0\xb6\xd0\xb5\xd1\x81\xd1\x82\xd0\xb2\xd0\xb0|\xd0\xbf\.?\s?\xd0\xbc\xd1\x83\xd0\xb6\xd0\xb5\xd1\x81\xd1\x82\xd0\xb2\xd0\xb0)
+6644	(\xd0\xbf\xd0\xbe\xd0\xbb\xd0\xb8\xd1\x82\xd0\xb5\xd1\x85\xd0\xbd\xd0\xb8\xd1\x87\xd0\xb5\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6645	(\xd0\xbf\xd1\x80\xd0\xb8\xd0\xbc\xd0\xbe\xd1\x80\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6646	(\xd0\xbf\xd1\x80\xd0\xbe\xd0\xbb\xd0\xb5\xd1\x82\xd0\xb0\xd1\x80\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6647	(\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82|\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf|\xd0\xbf|\xd0\xbf\xd1\x80\xd1\x82|\xd0\xbf\xd1\x80-\xd1\x82)\.?\s?\xd0\xb1\xd0\xbe\xd0\xbb\xd1\x8c\xd1\x88\xd0\xb5\xd0\xb2\xd0\xb8\xd0\xba\xd0\xbe\xd0\xb2
+6648	(\xd0\xbf\xd1\x83\xd1\x88\xd0\xba\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6649	(\xd1\x80\xd1\x8b\xd0\xb1\xd0\xb0\xd1\x86\xd0\xba\xd0\xbe\xd0\xb5)
+6650	(\xd1\x81\xd0\xb5\xd0\xbd\xd0\xbd\xd0\xb0\xd1\x8f)
+6651	(\xd1\x81\xd0\xbd\xd0\xb8\xd0\xbc\xd1\x83|\xd1\x81\xd0\xbd\xd0\xb8\xd0\xbc\xd0\xb5\xd0\xbc|\xd1\x81\xd0\xbd\xd0\xb8\xd0\xbc\xd0\xb5\xd1\x82|\xd0\xb0\xd1\x80\xd0\xb5\xd0\xbd\xd0\xb4\xd1\x83\xd0\xb5\xd0\xbc|\xd0\xb8\xd1\x89\xd0\xb5\xd0\xbc|\xd0\xb8\xd1\x89\xd1\x83 \d-?\xd0\xba|\xd0\xb8\xd1\x89\xd1\x83 \xd0\xbe\xd0\xb4\xd0\xbd\xd0\xbe\xd0\xba|\xd0\xb8\xd1\x89\xd1\x83 \xd0\xba\xd0\xb2\xd0\xb0\xd1\x80\xd1\x82\xd0\xb8\xd1\x80\xd1\x83|\xd0\xb8\xd1\x89\xd1\x83 \xd1\x82\xd1\x80\xd0\xb5\xd1\x85\xd0\xba)
+6652	(\xd1\x81\xd0\xbf\xd0\xb0\xd1\x81\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6653	(\xd1\x82\xd0\xb5\xd1\x85\xd0\xbd\xd0\xbe\xd0\xbb\xd0\xbe\xd0\xb3\xd0\xb8\xd1\x87\xd0\xb5\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9|\xd1\x82\xd0\xb5\xd1\x85\.?\s?\xd0\xb8\xd0\xbd\xd1\x81\xd1\x82\xd0\xb8\xd1\x82\xd1\x83\xd1\x82|\xd1\x82\xd0\xb5\xd1\x85\xd0\xbd\.?\s?\xd0\xb8\xd0\xbd\xd1\x82\xd1\x81\xd1\x82\xd0\xb8\xd1\x82\xd1\x83\xd1\x82|\xd1\x82\xd0\xb5\xd1\x85\xd0\xbd\xd0\xbe\xd0\xbb\xd0\xbe\xd0\xb6\xd0\xba\xd0\xb0)
+6654	(\xd1\x83\xd0\xb4\xd0\xb5\xd0\xbb\xd1\x8c\xd0\xbd\xd0\xb0\xd1\x8f)
+6655	(\xd1\x83\xd0\xbb\xd0\xb8\xd1\x86\xd0\xb0|\xd1\x83\xd0\xbb.|\xd1\x83\xd0\xbb) \xd0\xb3\xd0\xbe\xd1\x80\xd1\x87\xd0\xb0\xd0\xba\xd0\xbe\xd0\xb2\xd0\xb0
+6656	(\xd1\x83\xd0\xbb\xd0\xb8\xd1\x86\xd0\xb0|\xd1\x83\xd0\xbb.|\xd1\x83\xd0\xbb) \xd0\xbf\xd0\xbe\xd0\xb4\xd0\xb1\xd0\xb5\xd0\xbb\xd1\x8c\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe
+6657	(\xd1\x83\xd0\xbb\xd0\xb8\xd1\x86\xd0\xb0|\xd1\x83\xd0\xbb.|\xd1\x83\xd0\xbb) \xd1\x81\xd0\xba\xd0\xbe\xd0\xb1\xd0\xb5\xd0\xbb\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+6658	(\xd1\x83\xd0\xbb\xd0\xb8\xd1\x86\xd0\xb0|\xd1\x83\xd0\xbb.|\xd1\x83\xd0\xbb) \xd1\x81\xd1\x82\xd0\xb0\xd1\x80\xd0\xbe\xd0\xba\xd0\xb0\xd1\x87\xd0\xb0\xd0\xbb\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+6659	(\xd1\x84\xd1\x80\xd1\x83\xd0\xbd\xd0\xb7\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6660	(\xd1\x85\xd0\xbe\xd0\xb7\xd1\x8f\xd0\xb8\xd0\xbd\xd0\xb0|\xd1\x85\xd0\xbe\xd0\xb7\xd1\x8f\xd0\xb8\xd0\xbd|\xd0\xb1\xd0\xb5\xd0\xb7 \xd0\xba\xd0\xbe\xd0\xbc\xd0\xb8\xd1\x81\xd1\x81\xd0\xb8\xd0\xb8|\xd0\xb1\xd0\xb5\xd0\xb7 \xd0\xb0\xd0\xb3\xd0\xb5\xd0\xbd\xd1\x81\xd1\x82\xd0\xb2\xd0\xb0|\xd0\xb0\xd0\xb3\xd0\xb5\xd0\xbd\xd1\x81\xd1\x82\xd0\xb2\xd0\xb0 \xd0\xbd\xd0\xb5|\xd1\x87\xd0\xb0\xd1\x81\xd1\x82\xd0\xbd\xd0\xbe\xd0\xb5|\xd0\xb0\xd0\xb3\xd0\xb5\xd0\xbd\xd1\x82\xd0\xb0\xd0\xbc \xd0\xbd\xd0\xb5|\xd0\xb1\xd0\xb5\xd0\xb7 \xd0\xbf\xd0\xbe\xd1\x81\xd1\x80\xd0\xb5\xd0\xb4\xd0\xbd\xd0\xb8\xd0\xba\xd0\xbe\xd0\xb2|\xd0\xbd\xd0\xb5 \xd0\xb0\xd0\xb3\xd0\xb5\xd0\xbd\xd1\x81\xd1\x82\xd0\xb2\xd0\xbe)
+6661	(\xd1\x87\xd0\xb5\xd1\x80\xd0\xbd\xd0\xb0\xd1\x8f \xd1\x80\xd0\xb5\xd1\x87\xd0\xba\xd0\xb0|\xd1\x87\xd1\x91\xd1\x80\xd0\xbd\xd0\xb0\xd1\x8f \xd1\x80\xd0\xb5\xd1\x87\xd0\xba\xd0\xb0)
+6662	(\xd1\x87\xd0\xb5\xd1\x80\xd0\xbd\xd1\x8b\xd1\x88\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)
+6663	(\xd1\x8d\xd0\xbb\xd0\xb5\xd0\xba\xd1\x82\xd1\x80\xd0\xbe\xd1\x81\xd0\xb8\xd0\xbb\xd0\xb0|\xd1\x8d\xd0\xbb\xd0\xb5\xd0\xba\xd1\x82\xd1\x80\xd0\xbe-\xd1\x81\xd0\xb8\xd0\xbb\xd0\xb0)
 6664	(^#[0-9]+$|^#[0-9]+\s|\s#[0-9]+\s|\s#[0-9]+$|\s#[0-9]+.|\s#[0-9]+\?$)
 6665	(^(\x00|\n|\r| |:|<)|[\x00\n\r\x80-\xff]+|[ ]+$)
+6666	(^.*[^a-z0-9\n])?setprop +.*
 6667	(^.+)\s+\([^\)]+\)$
 6669	(^0x[\da-f]{8})\s*=\s*([\da-f]{32})
+6670	(^==$)|(^!=$)|(^>=$)|(^<=$)|(^\&\&$)|(^\|\|$)
+6671	(^True$|^False$)
 6672	(^[\d].*) \n
 6674	(^[^a-zA-Z\._]+)|([^a-zA-Z\._0-9]+)
 6675	(^\(?(\d{3})\)?[- .]?(\d{3})[- .]?(\d{4})$)
@@ -4441,6 +4804,7 @@
 6679	(^\s*)\+
 6680	(^\s*)\-
 6681	(^\s*\d*)\.
+6682	(^\w+:)?.*/
 6683	(^build|[^/]+\.egg-info|.*.py[co]$)
 6686	(^|/)/+
 6687	(^|[\W_])fanart|backdrop\d*[\W_]
@@ -4452,6 +4816,7 @@
 6693	(^|\s)(::)
 6694	(^|\s)([\w]+)(\++)($|\s|\,)
 6695	(^|\s)(or|and|not|OR|AND|NOT)($|\s)
+6696	(^|\s)+#.*$
 6697	(^|\s)-
 6698	(^|\s)M\d?(\s)
 6699	(^|\s+|[^\\])@
@@ -4465,6 +4830,7 @@
 6712	(bin|\.sh)
 6713	(block|unblock) (\d+) (\d+)$
 6714	(browser|test)_.+\.(xul|html|js|xhtml)
+6715	(build_git_sha = ")(\w)*
 6716	(case\s+.+|default)\:
 6717	(commands/[a-zA-Z0-9/]*Command.java)
 6718	(d  ((ext)?demo(needed)?|other)-\d[.]\d-py)\d[.]\d(-\S+)?[.]egg
@@ -4501,6 +4867,7 @@
 6751	(r\:\s\w+)$
 6752	(remote: )?([\w\s]+):\s+()(\d+)()(.*)
 6753	(remote: )?([\w\s]+):\s+(\d+)% \((\d+)/(\d+)\)(.*)
+6754	(request|response|session|cache|redirect|local_import|HTTP|TR|XML|URL|BEAUTIFY|A|BODY|BR|B|CAT|CENTER|CODE|COL|COLGROUP|DIV|EM|EMBED|FIELDSET|LEGEND|FORM|H1|H2|H3|H4|H5|H6|IFRAME|HEAD|HR|HTML|I|IMG|INPUT|LABEL|LI|LINK|MARKMIN|MENU|META|OBJECT|OL|ON|OPTION|P|PRE|SCRIPT|SELECT|SPAN|STYLE|TABLE|THEAD|TBODY|TFOOT|TAG|TD|TEXTAREA|TH|TITLE|TT|T|UL|XHTML|IS_SLUG|IS_STRONG|IS_LOWER|IS_UPPER|IS_ALPHANUMERIC|IS_DATETIME|IS_DATETIME_IN_RANGE|IS_DATE|IS_DATE_IN_RANGE|IS_DECIMAL_IN_RANGE|IS_EMAIL|IS_EXPR|IS_FLOAT_IN_RANGE|IS_IMAGE|IS_INT_IN_RANGE|IS_IN_SET|IS_IPV4|IS_LIST_OF|IS_LENGTH|IS_MATCH|IS_EQUAL_TO|IS_EMPTY_OR|IS_NULL_OR|IS_NOT_EMPTY|IS_TIME|IS_UPLOAD_FILENAME|IS_URL|CLEANUP|CRYPT|IS_IN_DB|IS_NOT_IN_DB|DAL|Field|SQLFORM|SQLTABLE|xmlescape|embed64)(?![a-zA-Z0-9_])
 6755	(run\s+)([^\s]*)(\s*)
 6756	(screendump\S*_[0-9]+)
 6757	(setenv WIEN_MPIRUN\s*).*
@@ -4508,6 +4875,7 @@
 6759	(setuptools|pkg_resources|distutils)(\.|$)
 6760	(slando.spb.ru|slando.ru)
 6761	(slap|kick|smack|hit|beat|poke|push|hurl|backhand|punch)
+6762	(sobid|\xd0\xb0\xd0\xb3\xd0\xb5\xd0\xbd\xd1\x82\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9|\xd0\xb0\xd0\xb3\xd0\xb5\xd0\xbd\xd1\x82\xd1\x81\xd0\xba\xd0\xb8\xd0\xb5|\xd1\x81\xd0\xba\xd0\xb8\xd0\xb4\xd0\xba\xd0\xb8|\xd0\xb0\xd0\xb3\xd0\xb5\xd0\xbd\xd1\x81\xd1\x82\xd0\xb2\xd0\xbe|\xd1\x80\xd0\xb8\xd1\x8d\xd0\xbb\xd1\x82\xd0\xbe\xd1\x80\xd1\x81\xd0\xba\xd0\xb8\xd0\xb5|\xd0\xb2\xd0\xbe\xd0\xb7\xd0\xbd\xd0\xb0\xd0\xb3\xd1\x80\xd0\xb0\xd0\xb6\xd0\xb4|\xd0\xb0\xd0\xb3\xd0\xb5\xd0\xbd\xd1\x82\xd1\x81\xd1\x82\xd0\xb2\xd0\xbe|\xd0\xba\xd0\xbe\xd0\xbc\xd0\xb8\xd1\x81\xd1\x81\xd0\xb8\xd1\x8f|\xd0\xba\xd0\xbe\xd0\xbc\xd0\xbc\xd0\xb8\xd1\x81\xd1\x81\xd0\xb8\xd1\x8f|\xd0\xba\xd0\xbe\xd0\xbc\xd0\xb8\xd1\x81\xd1\x81\xd0\xb8\xd0\xbe\xd0\xbd|\xd0\xba\xd0\xbe\xd0\xbc\xd0\xbc\xd0\xb8\xd1\x81\xd0\xb8\xd1\x8f|\xd0\xba\xd0\xbe\xd0\xbc\xd0\xbc\xd0\xb8\xd1\x81\xd0\xb8\xd1\x8f|\xd1\x81\xd0\xba\xd0\xb8\xd0\xb4\xd0\xba\xd0\xb0 \xd0\xbf\xd0\xbe \xd0\xba\xd0\xbe\xd0\xbc\xd0\xb8\xd1\x81|\xd1\x81\xd0\xba\xd0\xb8\xd0\xb4\xd0\xba\xd0\xb8 \xd0\xbf\xd0\xbe \xd0\xba\xd0\xbe\xd0\xbc\xd0\xb8\xd1\x81|\xd0\xba\xd0\xbe\xd0\xbc\xd0\xb8\xd1\x81\xd1\x81\xd0\xb8\xd1\x8e|\xd0\xba\xd0\xbe\xd0\xbc\xd0\xb8\xd1\x81\xd1\x81\xd0\xb8\xd1\x8f \xd0\xb0\xd0\xb3\xd0\xb5\xd0\xbd\xd1\x81\xd1\x82\xd0\xb2\xd0\xb0)
 6764	(src|href)\=([\\'"]?)/?files/
 6765	(string.)|(comment.)
 6766	(takes [\w ]+ )(\d+)( arguments? \()(\d+)( given\))
@@ -4524,12 +4892,14 @@
 6777	(vote|vote:|topic|topic:)(\s)
 6778	(vtk.*\.h)
 6780	(writes in|writes:|wrote:|says:|said:|^In article|^Quoted from|^\||^>)
+6781	(www\.(?!\.)|[a-z][a-z0-9+.-]*://)[^\s<>\'\"]+[^!,\.\s<>\)\'\"\]]
 6782	(x|i[3-6])86
 6783	(zc.buildout|setuptools)( version)? \d+[.]\d+\S*
 6784	(zc.buildout|setuptools)-\d+[.]\d+\S*-py\d.\d.egg
 6785	({)(.+)(})(.+)
 6789	(|__doc__\s*=(\s*|\s*\\\s*\n))("""([^"]*)"""|\\'\\'\\'([^\\']*)\\'\\'\\'|"([^"]*)"|\\'([^\\']*)\\')
 6790	(~|\#[^/]+\#|\.orig|\.rej)$
+6791	, "t": "([^"]+)"
 6792	, ([0-9]+\.[0-9]+) fps
 6794	, +
 6796	, |,| 
@@ -4593,6 +4963,7 @@
 6856	-actual\..*$
 6857	-autotest$
 6858	-autotest
+6859	-c\x00(\d+)
 6860	-clone[1-9]*$
 6861	-debug(info)?$
 6862	-expected\..*$
@@ -4603,6 +4974,7 @@
 6867	-part[0-9]+$
 6868	-py2[.][0-35-9][.]
 6869	-py\d[.]\d(-\S+)?.egg
+6870	-q develop -mxN -d "/sample-buildout/develop-eggs
 6871	-rc\d+$
 6872	-t ([/\w]+)
 6873	-t
@@ -4680,6 +5052,8 @@
 7013	.*Short Description.*
 7014	.*Sun-Fire
 7015	.*Test.(java|scala)
+7016	.*UTS_RELEASE\s+"([^"]+)".*
+7017	.*UTS_VERSION\s+"([^"]+)".*
 7018	.*Ultra
 7019	.*Ultra-1
 7020	.*Ultra-2
@@ -4711,6 +5085,7 @@
 7048	.*[\/]
 7049	.*[a-z]
 7050	.*[sS][0-9]{2}[eE][0-9]{2}.*\.(mkv|avi|mpg|mp4)$
+7051	.*\$\>\x00
 7052	.*\(
 7054	.*\((.*\.tex)
 7055	.*\((.+)\)\r?$
@@ -4774,6 +5149,7 @@
 7124	.*mozilla\.(org|net|ru|co|it|me|de|hu|pt|at|uk|rs|la|tv)$
 7125	.*pdfTeX warning.*
 7126	.*perl.*/(\.packlist|perllocal\.pod)$
+7127	.*pion_session_id="([^"]+)".*
 7128	.*ri\/.*\.ri$
 7129	.*scientific.*
 7130	.*stderr$
@@ -4805,6 +5181,7 @@
 7167	..:..:..:(..)
 7168	..:..:..:..:..:..
 7169	..?.?
+7170	.?<\?xml[^<>]+encoding="(.+)"
 7171	.?A[\W0-9_]*$
 7172	.PD( \d+)
 7173	.\d+\.\d+\.\d+\.\d+
@@ -4857,7 +5234,9 @@
 7236	/[*]\s*f2py\s.*[*]/
 7237	/[.]svn
 7238	/[.]svn|.*26.*
+7239	/\'""
 7240	/\(.*\)/
+7241	/\* ".*/mtrand.pyx":
 7242	/\* Begin PBXBuildFile section \*/\n
 7243	/\* Begin PBXFileReference section \*/\n
 7244	/\* IWYU pragma: 
@@ -4869,6 +5248,7 @@
 7252	/\\|\/|\||\:|\?|\*/
 7253	/\d+
 7254	/\d+/
+7255	/^http:\/\/github.com/
 7256	/_ah/img/([-\w:]+)([=]*)([-\w]+)?
 7257	/_ah/img/([-\w]+)([=]*)([-\w]+)?
 7260	/browser(/.*|$)
@@ -4932,6 +5312,7 @@
 7333	12,12,12,12
 7334	1234567890
 7335	150 .* \((\d+) bytes\)
+7336	1905 \xd0\xb3\xd0\xbe\xd0\xb4\xd0\xb0
 7337	1999\-04\-05: Version 3\.22\.4
 7338	1gs.ru
 7339	2012.*cc.csv
@@ -4947,8 +5328,10 @@
 7351	99[.]99
 7352	: (\S+\.[^\.]+):(\d+)
 7353	: *
+7354	:"(["|\{])
 7355	:$
 7356	:(.+)!(.+)@.+ PRIVMSG ([^:]+) :(.+)$
+7357	:(?![\\/])
 7360	:([^:()|]+):([^:()|]+)
 7362	:(\d+):initdefault:
 7363	:(\w+)
@@ -4980,6 +5363,7 @@
 7392	;|&|-r
 7393	<!-- ([^#]+)#([^\s]+) -->
 7394	<!-- BUG([^ ]*) (.*) -->
+7395	<!-- REPORTBUG id="report-(.*)\.html" -->
 7396	<!-- REPORTBUGCOL -->
 7397	<!-- REPORTHEADER -->
 7399	<!-- REPORTSUMMARYEXTRA -->
@@ -4994,9 +5378,13 @@
 7412	<!ELEMENT\s+([^\s]+)
 7413	<![ \r\n\t]*(--([^\-]|[\r\n]|-[^\-])*--[ \r\n\t]*)>
 7414	<!\[|\]\]>
+7415	<%[\=\-\#]?(?!.*%>)
 7416	<&\w+ \.>
 7417	<(![^-\[]|\?)
+7422	<(.+)>; rel="next"
 7423	<(/?)div>?
+7424	<(?!!)[^>]+>
+7425	<(?!/?TEXT)[^>]+>
 7428	<(@|/?p)>
 7430	<([\w ]+(,\s*[\w]+)+)>
 7431	<([\w]*)=([, \w]*)>
@@ -5043,10 +5431,12 @@
 7483	<AssemblyName>([^"]*)</AssemblyName>
 7485	<CHECKHERE>
 7488	<City>([\w ]+)<
+7489	<Compile Include="([^"]*)"*
 7490	<Count>(-?\d+)</Count>
 7491	<CountryName>([\w ]+)<
 7494	<EMAIL>[^<]*(<\/EMAIL>|$)
 7495	<ERROR>([^>]+)</ERROR>
+7496	<EmbeddedResource Include="([^"]*)">
 7498	<FONT SIZE=-1>(\d+) EDMs and Amendments
 7502	<Foo\(an_attr=<Foo\(an_attr=<\.\.\.>\) at remote 0x-?[0-9a-f]+>\) at remote 0x-?[0-9a-f]+>
 7503	<Foo\(an_attr=<\.\.\.>\) at remote 0x-?[0-9a-f]+>
@@ -5054,6 +5444,7 @@
 7507	<Hostip>\s*<gml:name>(\w+)</gml:name>
 7508	<Id>(\d+)</Id>
 7509	<Latitude>([\d\-\.]+)</Latitude>\s*<Longitude>([\d\-\.]+)<
+7510	<MEMBER name="\??([^"]+)" wn="([^"]*)"[^>]+>|<VNSUBCLASS ID="([^"]+)"/?>
 7511	<OutputType>([^"]*)</OutputType>
 7512	<PATH>(.*)</PATH>
 7514	<QueryKey>(\d+)</QueryKey>
@@ -5062,6 +5453,7 @@
 7520	<TestThread\(.*, \w+ -?\d+\)>
 7521	<TestThread\(.*, stopped -?\d+\)>
 7522	<Top10CatchUps>
+7523	<VideoID>(.*)</VideoID>\s*.*\s*.*\s*.*\s*.*<ProgrammeName>(.*)</ProgrammeName>\s*.*\s*.*\s*<EpisodeTitle>(.*)</EpisodeTitle>\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*.*\s*<ItemMediaUrl>(.*)</ItemMediaUrl>
 7524	<WebEnv>([^>]+)</WebEnv>
 7525	<[A-Za-z_:]
 7526	<[Bb][Rr]/>
@@ -5076,12 +5468,24 @@
 7547	<\&frasl>\s*<p[^>]*>
 7548	<\/strong><br>([^<]*)
 7549	<\?
+7552	<\?xml version="[^"]*" encoding="([^"]*)"\?>
 7554	<\[\/?[^>]+\]*>
 7557	<\s*(\w[\w\d]*)\s*>
 7558	<\s*/?\s*([^\s>]+)
 7559	<\s*[a-z]+\s*[\w"=\.]*>
 7563	<\w
 7564	<_Helper at remote 0x-?[0-9a-f]+>
+7571	<a href="(?!http|ftp|mailto|/).*</a>
+7572	<a href="(CoursePage.php\?[^"]+)">
+7573	<a href="(VideoPage.php\?[^"]+)">
+7574	<a href="(\w+)/">([\w /]+)<\/a>
+7575	<a href="(http://\w+.craigslist.org/)">([\w ]+)</a>
+7576	<a href="(http://\w+.craigslist.org/)">([\w ]+)\W*[/-]+\W*([\w ]+)</a>
+7577	<a href="(http://\w+.craigslist.org/)"><b>([\w ]+)</b></a>
+7578	<a href="(http://geo.craigslist.org/iso/us/\w+)">([\w ]+)</a>
+7579	<a href="/(\w+)/" title="([\w ]+)">
+7580	<a href="/cgi-bin/personals.cgi\?category=(\w+)">([\w ]+)</a>
+7581	<a href="/tasklist/index/(\d+)">
 7582	<a href="?([^\s^"]+)
 7586	<applet 
 7587	<applet
@@ -5091,6 +5495,7 @@
 7592	<blockquote><H1>.*</H1>(.*)<p></blockquote>|<H1>.*</H1>(.*)</BODY>
 7593	<body>(.*)</body>
 7594	<body>(.+)<\/body>
+7595	<br />(<span class="k">(IN|LIKE)</span>)
 7596	<br />\s*([^<]+)<br />\s*([^<]+)<
 7597	<br/>(.*)
 7598	<br>
@@ -5102,6 +5507,14 @@
 7605	<countryName>([\w ,\.]+)</countryName>
 7608	<description>([^<]+)</description>
 7609	<description>\S+</description>
+7614	<div class="idh">(\xe5\xb7\xb2\xe8\xbf\x9e\xe7\xbb\xad\xe7\xad\xbe\xe5\x88\xb0\d+\xe5\xa4\xa9)</div>
+7615	<div class="m">(.*),
+7617	<div class="published">\D+\s*(\d+)\s(\D+)\s(\d{4}).*</span>
+7618	<div id="letra">
+7619	<div id="result"><div style="padding:0.6em;">([^<]*)
+7622	<dt class="quote">(.*)<\/dt><dd class="author">(.*)<\/dd>
+7623	<em [^<>]*id="speed\d+">([^<>]*)</em>
+7624	<em class="loadnum"[^<>]*>([^<>]*)</em>
 7625	<entry>
 7626	<false/>
 7628	<font.*>.*</font>
@@ -5109,14 +5522,30 @@
 7632	<h2>(.*)<\/h2>
 7634	<h3>
 7635	<h3>(.+) tests failed.
+7636	<h3><a href="([^"]+)"
 7638	<h\d[^>]*>presenter notes</h\d>
 7639	<h\d\>(.*)\<\/h\d>
 7641	<head>
+7642	<hostname name="([^"]*)"
 7644	<hr.+>
+7650	<img src="(http://images.craigslist.org/[\S]*\.jpg)" alt
+7663	<input id="authenticator" name="authenticator" type="hidden" value="(\w+)" />
+7664	<input type="hidden" name="crumb" value="([^"]*)" />
+7665	<input type="hidden" name="monthSMS" value="(\d+)">
+7666	<input type="hidden" name="todaySMS" value="(\d+)">
 7668	<input[^<>]+/>
 7669	<ipython\-input\-(\d+)-[a-z\d]+>$
 7670	<item>(.*)</item>
 7671	<key>system.privilege.taskport</key>\s*\n\s*<dict>\n\s*<key>allow-root</key>\n\s*(<[^>]+>)
+7673	<li class="next"><a href="([^"]+)">[^<>]*</a></li>
+7675	<li><a href="([^"]+)/"
+7679	<link\s*rel=[\'"]stylesheet[\'"]\s*href=[\'"]([^=>]*)[\'"]>
+7684	<meta name="description" content="([^"]*)"
+7685	<meta name="mtv_an" content="([^"]+)"/>
+7686	<meta name="mtv_vt" content="([^"]+)"/>
+7687	<meta name="mtvn_uri" content="([^"]+)"/>
+7690	<meta property="og:image" content="([^"]*)"
+7692	<meta property="og:video" content="([^"]*)"
 7693	<meta.*charset\W*=\W*([\w_-]+)
 7697	<name>.*</name>
 7698	<name>\S+</name>
@@ -5124,17 +5553,33 @@
 7700	<nobr>\((\d+)/(\d+)/(\d+)\)</nobr>
 7701	<noindex\/?>
 7702	<object object at 0x[0-9a-fA-F]+>
+7703	<option value="(\d+)">([\w /-]+)
 7706	<p>
 7709	<p><hr
+7710	<p>Raw output: <a href="(.*)">(.*)</a>
+7714	<pre><a name="foo-1">
+7715	<pre><a name="foo-5">
 7716	<pre><span
 7717	<pre>\s+1\s+2\s+3
 7718	<pre>\s+5\s+6\s+7
+7721	<property\s+name="([^>]+)">
+7732	<script>document\.domain="xunlei\.com";var btResult =(\{.*\});</script>
 7733	<script\s*src=[\'"](.*)\.js[\'"]>\s*</script>
 7734	<sentence>.*</sentence>
 7735	<skipped>
+7736	<source src="([^"]+)"
+7739	<span class="c_addtime">([^<>]*)</span>
+7740	<span class="p">,</span>
 7743	<status>100</status>
+7745	<strong id="sms_left" name="sms_left">\s?(\d+)\s?/\s?(\d+)\s?</strong>
+7748	<sync start="(\d+)">([^<]*)</sync>
 7751	<table
+7752	<td class="Day" bgcolor="#990000" >\s+\xf1\xe3\xf8 \xe4\xe9\xe5\xed \xec(.+), <span style=color:#c0c0c0>
+7753	<td class="Day" bgcolor="#990000" >\s+\xf1\xe3\xf8 \xe4\xe9\xe5\xed \xec.+, <span style=color:#c0c0c0>
+7754	<td class="LawText1">(.*)
+7755	<td class="checkbox"
 7756	<td v[^>]+>([^<]*)</td>
+7757	<textarea name="text"[\W]*rows="25"[\W]id="text"
 7758	<th[^>]*>Elapsed time \(sec\)</th>\n\s*<td[^>]*>([^<]*)
 7759	<th[^>]*>Tests failed</th>\n\s*<td[^>]*>([^<]*)
 7760	<th[^>]*>Tests passed</th>\n\s*<td[^>]*>([^<]*)
@@ -5146,8 +5591,17 @@
 7767	<title>.*Log in to Bugzilla</title>
 7768	<title>Changes Submitted</title>
 7769	<tr valign
+7771	<tr><td bgcolor="#BBBBBB"
+7773	<tr>\s*<td><a href="lookup2\.php\?strID=(C\d+)">[^<]+</a>\s*</td><td>\s*<a href="/politicians/summary\.php\?cid=(N\d+)&cycle=2008">
+7774	<tr[^>]*id\s*=\s*"task_(\d+)"
+7775	<tr[^>]*status\s*=\s*"not%20done"
 7777	<uid>(\w+)</uid>
+7778	<updatecheck Version="\d+\.\d+\.(\d+)\.\d+"
 7782	<uuid>.*</uuid>
+7783	<viewer version_major="(\d+)" />
+7784	<viewer version_minor="(\d+)" />
+7785	<viewer version_patch="(\d+)" />
+7786	<viewer version_test="(.*)" />
 7787	<watts>[0-9]{5}</watts>
 7791	<{([^}]+)}>
 7792	<|&|"
@@ -5166,6 +5620,7 @@
 7808	> +
 7809	> <
 7810	>(.+)
+7811	>(?!\})
 7812	>([^<]*)<
 7813	>([^<]+)</a>
 7814	>(\d+)$
@@ -5194,6 +5649,7 @@
 7843	@\w*
 7844	@\w+{([^,]+),$
 7845	@\w+{.*
+7847	@oplist.push\("(.*)"\)
 7848	@param\s+[a-zA-Z0-9_]+:
 7849	@requires (.*)\n
 7850	@requires:? (.*)\n
@@ -5257,6 +5713,7 @@
 7918	BTN([0-9]+)
 7919	BUG=(.*)$
 7920	BUG=v8:(.*)$
+7921	BUNDLE_ID\s*=\s*"([^"]*)"
 7922	BYTE
 7923	Basic (\S+)
 7924	Beautiful is better than ugly
@@ -5326,6 +5783,7 @@
 7992	DEFINE_PROPERTYKEY\(PKEY_(\w+), ([0-9A-Fx, ]+)\)
 7993	DIGITAL_SIGNATURE_STEAL=
 7994	DISTRIB_CODENAME=(.*)
+7995	DISTRIB_DESCRIPTION=\"(.*)\"
 7996	DNSSPOOF_PATH=
 7997	DOMAIN NUMBER: *(\d+) \(coloured (\w+)
 7998	DOT
@@ -5372,9 +5830,11 @@
 8044	ETTERCAP_PATH=
 8045	EXPORT_FUNCTIONS\s+(.+)
 8046	EXPR 
+8047	EXTRA\s*=\s*"([^"]*)"
 8048	Email|email|login|logon|Logon|Login|user|username|Username
 8049	End run of OMNeT
 8050	Episode dated (\d+) (\w+) (\d+)
+8051	Error .* "(.+)" on line ([0-9]+) 
 8052	Error \d+ in (.*.tex) line (\d+):(.*)
 8053	Error occured:([^<]+)
 8054	Error
@@ -5385,9 +5845,14 @@
 8059	FAIL:
 8060	FILE:
 8061	FLOAT
+8062	FPKM \"([\d\s\w\.]+)\"
 8063	Failed \d+ of \d+ tests
 8064	Failures: (\d+)
 8065	Fatal\\? error\\?:.*
+8066	File "(.+)", line (.+), characters .+:
+8067	File "(.+)", line ([0-9]+)
+8068	File "([^"]*)", line (\d+)
+8069	File "\S+one.py"
 8070	File (.*) changed from revision (.*) to (.*)
 8071	File (.*) is new; current revision (.*)
 8072	File (.*) is removed;
@@ -5396,6 +5861,7 @@
 8075	Firefox|Thunderbird
 8076	FocusedApplication(.+)/
 8077	Foo: 0\..s, 0\.0min\nFoo: 0\..s, 0.0min\nFoo: .\..s, 0.0min\n
+8078	FooDeathTest\.\n  Test1\nFoo\.\n  Bar1\n  Bar2\n  DISABLED_Bar3\nAbc\.\n  Xyz\n  Def\nFooBar\.\n  Baz\nFooTest\.\n  Test1\n  DISABLED_Test2\n  Test3\nTypedTest/0\.  # TypeParam = (VeryLo{245}|class VeryLo{239})\.\.\.\n  TestA\n  TestB\nTypedTest/1\.  # TypeParam = int\s*\*\n  TestA\n  TestB\nTypedTest/2\.  # TypeParam = .*MyArray<bool,\s*42>\n  TestA\n  TestB\nMy/TypeParamTest/0\.  # TypeParam = (VeryLo{245}|class VeryLo{239})\.\.\.\n  TestA\n  TestB\nMy/TypeParamTest/1\.  # TypeParam = int\s*\*\n  TestA\n  TestB\nMy/TypeParamTest/2\.  # TypeParam = .*MyArray<bool,\s*42>\n  TestA\n  TestB\nMyInstantiation/ValueParamTest\.\n  TestA/0  # GetParam\(\) = one line\n  TestA/1  # GetParam\(\) = two\\nlines\n  TestA/2  # GetParam\(\) = a very\\nlo{241}\.\.\.\n  TestB/0  # GetParam\(\) = one line\n  TestB/1  # GetParam\(\) = two\\nlines\n  TestB/2  # GetParam\(\) = a very\\nlo{241}\.\.\.\n
 8079	FooDeathTest\.\n  Test1\nFoo\.\n  Bar1\n  Bar2\n  DISABLED_Bar3\nFooBar\.\n  Baz\nFooTest\.\n  Test1\n  DISABLED_Test2\n  Test3\n
 8081	Form F3
 8082	Forwarding device port (\d+) to host (\d+):
@@ -5415,6 +5881,7 @@
 8097	GNTP/1.0 (-OK|-ERROR|-CALLBACK) NONE
 8098	GNU Fortran
 8101	GPU\s([\d.-]+)
+8102	GREENLET_VERSION "(.*)"
 8103	GROUP
 8104	Game
 8105	Gene\s+([0-9]+)\s+.+
@@ -5477,6 +5944,7 @@
 8169	KEYTABLE
 8170	KSM_PATH
 8171	KVM_TEST_VIRTIO_NETWORK_INSTALLER
+8172	L"\\0(\d)" L"([^"]*)"
 8174	L([0-9]+)
 8175	LAPW1\s+END
 8176	LATEST: +([0-9.\w]+)
@@ -5495,6 +5963,7 @@
 8192	Leaks: (\d+) bytes, (\d+) allocations
 8193	Library Persistent ID
 8194	Lieutenant Governor
+8195	Line ([0-9]*) of "([^"]*)".*
 8196	Local
 8197	Locus: (.+)
 8198	M&uacute;sica n&atilde;o encontrada
@@ -5524,6 +5993,7 @@
 8226	MemTotal:\s+(\d+)
 8227	Member Data Documentation
 8228	Member Function Documentation
+8229	Member\(".*", .*RunTimeEnvironment
 8231	Merge: +([0-9a-f]+ *){2,}
 8232	Microsoft \(R\) (32-bit |)C/C\+\+ Optimizing Compiler
 8233	Microsoft
@@ -5543,13 +6013,16 @@
 8248	N=25: ([.0-9]+)
 8249	N=50: ([.0-9]+)
 8250	NAME
+8251	NAME\s*=\s*"([^"]*)"
 8252	NERD_tree_\d+
 8253	NE|NN
 8254	NIPAP database - schema version: ([0-9]+)
+8255	NIST score = ([0-9.]+)\s+BLEU score = ([0-9.]+)\s+for system "(.*)"
 8256	NOTIFY (\d{1,3})
 8257	NPY_NO_EXPORT\s+(.*)$
 8258	NUMA node\(s\):\s+(\d+)
 8259	Name: (.*)$
+8260	Name="(\S+)"
 8261	Name=([\w\.]+)
 8262	Namespaces are one honking great idea
 8263	Next nothing is (\d*)
@@ -5605,6 +6078,7 @@
 8321	Picked: (\S+) = \S+
 8322	Picked: (setuptools|distribute) = \S+
 8323	Player
+8324	Playstring="file:(.+)"
 8326	Possible data race
 8328	PostgreSQL (\d+)\.(\d+)\.(\d+)
 8329	PostgreSQL[a-zA-Z\s]*(\d+\.\d+)
@@ -5631,7 +6105,9 @@
 8353	Real/event = [0-9\.]+
 8354	Recent Games
 8355	Ref1\=(http.*)\s
+8359	Release:</th><td class="field-body">(.*)</td>\n
 8360	Remote Device Error
+8361	Repairing file:  </td>\n<td width="102">([^<]+)
 8362	ReportCrash
 8363	Representative ([\w\s\.\,\"\-]+)\s*<br
 8366	Resolution: \d{1,4}x\d{1,4}
@@ -5659,6 +6135,7 @@
 8392	SENDMAIL=
 8393	SENDMAIL=ON
 8394	SEQUENCE_WAVEFORM_NAME_CH_(\d)_(\d+)
+8395	SERVER|CLIENT\_JOB\.[\d]
 8396	SET_INTERACTIVE_SHELL=
 8397	SET_INTERACTIVE_SHELL=OFF
 8398	SET_INTERACTIVE_SHELL=ON
@@ -5694,6 +6171,7 @@
 8431	Smith-Waterman score = (\S+)\s+Evalue = (\S+)
 8432	Socket\(s\):\s+(\d+)
 8433	Sockets=(\S+)
+8434	Source/WebKit2/UIProcess/API/gtk/WebKit(?!.*Private\.h).*\.h$
 8435	SourceMod v\.<b>([\d\.]+)</td>
 8436	Sp.
 8437	Spanish Inquisition
@@ -5707,6 +6185,7 @@
 8449	Summary in:\s*(\S*)
 8450	Summary
 8452	System
+8453	SystemName="([A-Fa-f0-9]{16})",DeviceID="([A-Fa-f0-9]{40})".*InstanceID="(.{56})"
 8454	TA
 8455	TEMPLATE=
 8456	TER
@@ -5915,6 +6394,7 @@
 8681	[- \n\t\ra-zA-Z0-9()+,./:=?;!*#@$_%]*
 8682	[- \t:;,!+/\"\'`]+
 8683	[- ]
+8684	[-!"#$%&\\'\(\)\*\+,\./:;<=>^\?@\[\]\\\_`{\|}~]
 8685	[-+*!&|^~/%\=<>\[\]{}(),.:]
 8686	[-+*!|&^~/%\=<>\[\]{}(),.:]
 8687	[-+*/!@$%^&=.?a-zA-Z0-9_]+
@@ -6048,6 +6528,7 @@
 8824	[A-Za-z_]+
 8825	[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)*$
 8826	[A-z\*]
+8827	[A-z]+.*\_[0-9]+
 8829	[Ee]rror
 8830	[Ff]ile(\d+)=(.+)
 8831	[INFO|FILTER|FORMAT]
@@ -6105,6 +6586,7 @@
 8884	[\\/\?"]|^\.
 8885	[\\\"\$`]
 8886	[\\\r\n\"]
+8887	[\\][\n]
 8888	[\\{}]
 8889	[\]\}]
 8890	[\d+.\-]+$
@@ -6147,6 +6629,7 @@
 8932	[\w-]+\..+
 8933	[\w.]+\(
 8934	[\w/]+
+8935	[\w0-9\.\_\-]+
 8936	[\w\-:]+(\.[\w\-]+)*\.?
 8937	[\w\-][\w\-\.]+@[\w\-][\w\-\.]+[a-zA-Z]{1,4}
 8938	[\w\.\-]+@[\w\.\-]+\.\w\w\w
@@ -6159,6 +6642,7 @@
 8945	[\w\d]*
 8946	[\w\d]+
 8947	[\w\d_\.\-]+
+8948	[\w]+="[^"]+"
 8949	[\w_]+\.[\w_]+
 8950	[\w|\W]*financial.*
 8951	[\w|\W]*quarter.*
@@ -6191,6 +6675,7 @@
 8978	[][\()<>@,:;".]
 8979	[^ -~]
 8980	[^ \t\n\r\f\v"\\']+
+8981	[^ \t\n\r\f\v"\\']+\s*\=\s*"[^"]*"
 8982	[^ \t\n\r\f\v"\\']+\s*\=\s*[^ \t\n\r\f\v"\\']*
 8983	[^ \t\n\r\f\v"\\']+\s*\=\s*\\'[^\\']*\\'
 8984	[^ \t\n\r\f\v\\]+
@@ -6315,6 +6800,7 @@
 9111	[a-zA-Z0-9-]+=.*
 9112	[a-zA-Z0-9.+_\-]+$
 9113	[a-zA-Z0-9\-]+
+9114	[a-zA-Z0-9\.\_\%\-\+]+@[a-zA-Z0-9\.\_\%\-]+.[a-zA-Z]{2,6}
 9115	[a-zA-Z0-9]
 9116	[a-zA-Z0-9]+
 9117	[a-zA-Z0-9]+(-[a-zA-Z0-9]+)?
@@ -6331,6 +6817,7 @@
 9128	[a-zA-Z]+=
 9129	[a-zA-Z]+|\d+
 9130	[a-zA-Z]:(/|\\)
+9131	[a-zA-Z]:\\\\foo\\\\bar
 9132	[a-zA-Z][.][a-zA-Z]
 9133	[a-zA-Z][^\t\n\r\x0c />\x00]*
 9134	[a-zA-Z][a-zA-Z0-9_-]*$
@@ -6367,6 +6854,7 @@
 9169	[d|D](ebu|b)g
 9170	[igpv\-][fpn\-][pob\-][3\-][ap\-]$
 9171	[nN]ew (.*)
+9172	[name|class]="([^"]*)"
 9173	[pP]ylot
 9174	[r][g][b][(]\d{1,3}[,][ ]*\d{1,3}[,][ ]*\d{1,3}[)]
 9175	[r][g][b][a][(]\d{1,3}[,][ ]*\d{1,3}[,][ ]*\d{1,3}[,][ ]*(\d+|\d*\.\d+)[)]
@@ -6386,6 +6874,8 @@
 9189	\! LaTeX Error:
 9190	\!.*
 9191	\!\s*(.*)
+9192	\"[a-z0-9]{32}\"
+9193	\"hostname\": \"[a-zA-Z0-9-_\.]*\"
 9194	\"|\\'
 9195	\# On branch (.*)$
 9197	\#.*\r?\n
@@ -6488,6 +6978,7 @@
 9309	\(\w*\)$
 9310	\(applications/\(.*
 9311	\(c\)
+9312	\(file "(.+)" line ([0-9]+)\)
 9313	\(function (.+)\n
 9314	\(pid (\d+)\)
 9315	\(pymacs-(defun|python) [0-9]*
@@ -6520,6 +7011,7 @@
 9350	\. *(\n|$)
 9351	\.((dll)|(DLL)|(drv)|(DRV))$
 9352	\.(.)I
+9353	\.(?!\\(\\\\)*($|[^\\]))
 9355	\.([\w\-]+)
 9356	\.([^/]+)$
 9357	\.([a-zA-Z]+) instance
@@ -6604,6 +7096,8 @@
 9446	\;.*
 9448	\;\s*\}
 9449	\;|\(
+9450	\<%inherit file="([^"]+)" /\>
+9451	\<%namespace file="([^"]+)" import="[^"]+" /\>
 9452	\<(.*)\>\; rel\=shorturl
 9454	\<(and|for|of|s|set|the|vs)\>
 9455	\</?strong\>
@@ -6611,6 +7105,7 @@
 9458	\<\?[^\>]*\?\>
 9459	\<\s*([a-zA-Z][a-zA-Z0-9]*)
 9464	\<doctest (.*\.rst)\[(.*)\]\>
+9466	\<link [^>]*rel="stylesheet"[^>]*\${portal_url}/([^"]*)"
 9467	\<opt.*
 9468	\<script [^>]*\${portal_url}/([^"]*)"
 9471	\=+|\!\=|\<\=|\<|\>\=|\>
@@ -6650,6 +7145,16 @@
 9530	\W*\.\W*|\W+dot\W+|\W+d0t\W+
 9531	\W+(\w)
 9532	\W+|_
+9533	\W\xd0\xb2\xd0\xb0\xd0\xbe\W
+9534	\W\xd0\xb7\xd0\xb0\xd0\xbe\W
+9535	\W\xd0\xb7\xd0\xb5\xd0\xbb\xd0\xb0\xd0\xbe\W
+9536	\W\xd1\x81\xd0\xb0\xd0\xbe\W
+9537	\W\xd1\x81\xd0\xb2\xd0\xb0\xd0\xbe\W
+9538	\W\xd1\x81\xd0\xb7\xd0\xb0\xd0\xbe\W
+9539	\W\xd1\x86\xd0\xb0\xd0\xbe\W
+9540	\W\xd1\x8e\xd0\xb0\xd0\xbe\W
+9541	\W\xd1\x8e\xd0\xb2\xd0\xb0\xd0\xbe\W
+9542	\W\xd1\x8e\xd0\xb7\xd0\xb0\xd0\xbe\W
 9543	\[       OK \] ?(.*)\r\n
 9545	\[  FAILED  \] ?(.*)\r\n
 9546	\[  PASSED  \] ?(.*)\r\n
@@ -6712,8 +7217,10 @@
 9630	\[|\]
 9631	\[|\]|[^\[\]\s]+
 9632	\\#
+9633	\\((?![enr\d]))
 9634	\\(.)?
 9635	\\(0\d\d)
+9636	\\(?![nrt])
 9638	\\([ \tn\\]|[0-7]{3,3})
 9639	\\([0-3][0-7][0-7]|.)
 9640	\\([0-7]{1,3}|.)
@@ -6729,15 +7236,24 @@
 9650	\\[\\]?
 9651	\\[^\s]+\s+
 9652	\\[natbv"]?
+9653	\\\\([^ \\/?:]+\\)+
 9654	\\\s*$
 9655	\\\w+ 
+9656	\\\n
 9657	\\_\w*\.(eps|png|jpg|gif)
+9658	\\begin{sidewaystable}
+9659	\\begin{table}
+9660	\\begin{tabularx}
+9661	\\begin{tabular}
 9662	\\c ([^ ,;\.]+)
 9663	\\centering
+9664	\\end\{itemize\}\s+\\begin\{itemize\}
 9665	\\end{tabularx}
 9666	\\end{tabular}
 9667	\\g<([a-zA-Z_][a-zA-Z_]*)>
+9668	\\n|\\\\
 9669	\\s*$
+9670	\\textbackslashzzz
 9671	\\u
 9672	\\u([0-9a-zA-Z]{4})
 9673	\\x
@@ -6819,7 +7335,9 @@
 9826	\s([^\s\(\)]+)
 9827	\s(\d+\.\.\d+)
 9828	\s*!important
+9830	\s*"\s*<p=\\'"\\'/>
 9833	\s*#\s*define (\S+) (.*)
+9835	\s*#\s*include\s+"([^"]*)"
 9836	\s*#\s*include\s+<([^>]*)>
 9838	\s*(((if|while)\s*\(|else\s*|else\s+if\s*\(|for\s*\(.*\))[^{;]*)
 9839	\s*(((if|while|else\s*(if)?|for(each)?|switch|declare)\s*\(.*\)[^{:;]*)|(do\s*[^\({:;]*))
@@ -6859,6 +7377,7 @@
 9885	\s*(class|def)\s+[a-zA-Z_][a-zA-Z0-9_]*
 9887	\s*({|}|\[|]|//|/|\.|\\\\|\\|<==|==>|<=|=>|<--|-->|<-|->|@|or|and|not|\(|\)|>=|=|<>|like|_|\*|\+|\?)\s*
 9888	\s*-\s*
+9889	\s*.*#\s*.*define\s.*SQLITE_VERSION\W*"([\d\.]*)"
 9890	\s*//.*\n
 9892	\s*/?>
 9893	\s*:.*
@@ -6878,6 +7397,7 @@
 9918	\s*Add\(ExternalReference::([^(]+)\(
 9919	\s*DRI_CONF_DESC_END
 9920	\s*District (\d+)
+9922	\s*Project\("{(\S+)}"\) = "(\S+)", "tools\\\S+.vcproj", "\{(\S+)\}"\s*
 9925	\s*[,/&.]\s*|\s+and\s+|\s{2,}|\n
 9926	\s*[:_\t]+\s*|\s{2,}|\n
 9927	\s*[A-Z]+\s[A-Z ]+$
@@ -6894,6 +7414,7 @@
 9939	\s*\:\s*
 9940	\s*\;\s*
 9941	\s*\S+
+9944	\s*\[\s*(\d*)\s*:\s*(\d*)\s*\]\s*"([^"]+)"\s*:\s*"([^"]+)"\s*;\s*
 9945	\s*\n\s*\n
 9946	\s*\t*\[{1}filesystem(\d+)\]{1}
 9947	\s*\w+
@@ -6924,11 +7445,13 @@
 9976	\s+((\d+\.){3}\d+)\s+
 9981	\s+(\d+)\s+(\d+)
 9982	\s+(\d+\.\.\d+)[\s+\d+\.\d+]+
+9983	\s+(\w+)\s+"(&#\w+;|[^&"]*)"
 9984	\s+(eth\d+):(.*)
 9985	\s+---?\s+
 9986	\s+/.*
 9987	\s+<
 9988	\s+ANGSTROM.*
+9989	\s+ASSERT_EQUALS\(\"(.*)\"
 9990	\s+AS\s+(\S+)
 9991	\s+\(\d{4}\)$
 9993	\s+\(feat. [^)]*\)
@@ -6939,6 +7462,8 @@
 10003	\s+def 
 10004	\s+def\s*(\w+)\s*\(
 10005	\s+of\s+
+10006	\s+src set ".*" \(([0-9.]+) docs, \d+ segs\)
+10007	\s+src set ".*" \(\d+ docs, ([0-9.]+) segs\)
 10008	\s+}
 10009	\s<br/>\s*\S*<br/>
 10010	\s?
@@ -6952,6 +7477,7 @@
 10024	\s{2,}|[\t\n\r\x0c\x0b]
 10025	\s|$
 10026	\s|,|;|:
+10027	\s|=|,|:|\((?!.*\))|\[(?!.*\])|\{(?!.*\})
 10028	\s|\(
 10030	\s|\(|\)
 10031	\t(.*)\((.*):(.*)\)
@@ -6973,6 +7499,8 @@
 10050	\w+\.info
 10051	\w+\.js
 10052	\w+\.{1}(\w+)
+10053	\w+\_spec.js
+10054	\w+\_steps.rb
 10055	\w+\d+-cd\d+: .*file=(\S*) 
 10056	\w+\s
 10057	\w+\s*:
@@ -7006,6 +7534,8 @@
 10093	\n                <.*>_CODE\n                |\s.*_ID\n        
 10095	\n            <.*>_CODE\n            |\s.*_ID\n    
 10101	\n        \(CODE .*\)\n        |\(ID .*\d\)\n    
+10104	\n        ^[ ]*:\w+:.*\n                     # :option:\n        (.*\S.*)*                          # non-blank lines\n        
+10105	\n        ^[ ]*:\w+:.*\n                     # :option:\n        (.*\S.*\n)*                          # non-blank lines\n        
 10109	\n     #
 10110	\n    
 10121	\n( )+
@@ -7013,6 +7543,7 @@
 10124	\n([^\r]*)\r
 10125	\n(\s*\*\s*)
 10126	\n(\s*\*\s*\n)+
+10127	\n(^|\s) # start of string or has whitespace before it\n(https?://[:/.?=&;a-zA-Z0-9_-]+) # the URL itself, http or https only\n(\s|$) # trailing whitespace or end of string\n
 10128	\n----
 10129	\n.*
 10130	\n?(\w*)\:\s(.*)\n
@@ -7039,7 +7570,251 @@
 10156	\r\n|\n|\r
 10157	\tDLL Name: (\S+)
 10158	\ttimestamp=(\d+)
+10159	\x00([^\x00]*libreadline[^\x00]*)\x00
+10160	\x01\x12\x00\x03\x00\x00\x00\x01\x00(.)\x00\x00
 10161	\x08.
+10162	\x12\x01\x03\x00\x01\x00\x00\x00(.)\x00\x00\x00
+10163	\x1b[^m]*m
+10164	\x1b\[([0-9]+)(;[0-9]+)*m
+10165	\x1b\[([^m]*)m
+10166	\x1b\[3[0-9]m
+10167	\x1b\[[0-9;]*m
+10168	\x1b\[[0-9]+m
+10169	\x1b\[[0]{0,1}m
+10170	\x1b\[[34][0-9];01m
+10172	\x1b\[\d+m
+10173	\xa7.
+10174	\xa7.{1}
+10175	\xc2([^\xc2])
+10176	\xc5\x9b|\xc5\x9a
+10177	\xd0\x98\xd0\xb7\xd0\xb1\xd1\x80\xd0\xb0\xd0\xbd\xd0\xbd\xd0\xbe\xd0\xb5 \((.*)\)<\/a>
+10178	\xd0\xb0\xd0\xb2\xd0\xb8\xd0\xb0\xd0\xbc\xd0\xbe\xd1\x82\xd0\xbe\xd1\x80\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10179	\xd0\xb0\xd0\xb2\xd1\x82\xd0\xbe\xd0\xb7\xd0\xb0\xd0\xb2\xd0\xbe\xd0\xb4\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10180	\xd0\xb0\xd0\xba\xd0\xb0\xd0\xb4\xd0\xb5\xd0\xbc\xd0\xb8\xd0\xba\xd0\xb0 \xd1\x8f\xd0\xbd\xd0\xb3\xd0\xb5\xd0\xbb\xd1\x8f
+10181	\xd0\xb0\xd0\xba\xd0\xb0\xd0\xb4\xd0\xb5\xd0\xbc\xd0\xb8\xd1\x87\xd0\xb5\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10182	\xd0\xb0\xd0\xbb\xd0\xb5\xd0\xba\xd1\x81\xd0\xb0\xd0\xbd\xd0\xb4\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd1\x81\xd0\xb0\xd0\xb4
+10183	\xd0\xb0\xd0\xbb\xd0\xb5\xd0\xba\xd1\x81\xd0\xb5\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10184	\xd0\xb0\xd0\xbb\xd1\x82\xd1\x83\xd1\x84\xd1\x8c\xd0\xb5\xd0\xb2\xd0\xbe
+10185	\xd0\xb0\xd0\xbd\xd0\xbd\xd0\xb8\xd0\xbd\xd0\xbe
+10186	\xd0\xb0\xd1\x80\xd0\xb1\xd0\xb0\xd1\x82\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10187	\xd0\xb0\xd1\x8d\xd1\x80\xd0\xbe\xd0\xbf\xd0\xbe\xd1\x80\xd1\x82
+10188	\xd0\xb1\xd0\xb0\xd0\xb1\xd1\x83\xd1\x88\xd0\xba\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10189	\xd0\xb1\xd0\xb0\xd0\xb3\xd1\x80\xd0\xb0\xd1\x82\xd0\xb8\xd0\xbe\xd0\xbd\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10190	\xd0\xb1\xd0\xb0\xd0\xbb\xd0\xb0\xd1\x88\xd0\xb8\xd1\x85\xd0\xb0
+10191	\xd0\xb1\xd0\xb0\xd1\x80\xd1\x80\xd0\xb8\xd0\xba\xd0\xb0\xd0\xb4\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10192	\xd0\xb1\xd0\xb0\xd1\x83\xd0\xbc\xd0\xb0\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10193	\xd0\xb1\xd0\xb5\xd0\xb3\xd0\xbe\xd0\xb2(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10194	\xd0\xb1\xd0\xb5\xd0\xbb\xd0\xbe\xd1\x80\xd1\x83\xd1\x81\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10195	\xd0\xb1\xd0\xb5\xd0\xbb\xd1\x8f\xd0\xb5\xd0\xb2\xd0\xbe
+10196	\xd0\xb1\xd0\xb8\xd0\xb1\xd0\xb8\xd1\x80\xd0\xb5\xd0\xb2\xd0\xbe
+10197	\xd0\xb1\xd0\xb8\xd0\xb1\xd0\xbb\xd0\xb8\xd0\xbe\xd1\x82\xd0\xb5\xd0\xba\xd0\xb0 \xd0\xb8\xd0\xbc. \xd0\xbb\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xbd\xd0\xb0
+10198	\xd0\xb1\xd0\xb8\xd1\x82\xd1\x86\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xbf\xd0\xb0\xd1\x80\xd0\xba
+10199	\xd0\xb1\xd0\xbe\xd1\x80\xd0\xb8\xd1\x81\xd0\xbe\xd0\xb2\xd0\xbe
+10200	\xd0\xb1\xd0\xbe\xd1\x80\xd0\xbe\xd0\xb2\xd0\xb8\xd1\x86\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10201	\xd0\xb1\xd0\xbe\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xbe\xd0\xb5 \xd1\x88\xd0\xbe\xd1\x81\xd1\x81\xd0\xb5
+10202	\xd0\xb1\xd0\xbe\xd1\x82\xd0\xb0\xd0\xbd\xd0\xb8\xd1\x87\xd0\xb5\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd1\x81\xd0\xb0\xd0\xb4
+10203	\xd0\xb1\xd1\x80\xd0\xb0\xd1\x82\xd0\xb5\xd0\xb5\xd0\xb2\xd0\xbe
+10204	\xd0\xb1\xd1\x80\xd0\xb0\xd1\x82\xd0\xb8\xd1\x81\xd0\xbb\xd0\xb0\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10205	\xd0\xb2\xd0\xb0\xd1\x80\xd1\x88\xd0\xb0\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10206	\xd0\xb2\xd0\xb0\xd1\x81\xd0\xb8\xd0\xbb\xd0\xb5\xd0\xbe\xd1\x81\xd1\x82\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10207	\xd0\xb2\xd0\xb4\xd0\xbd\xd1\x85
+10208	\xd0\xb2\xd0\xbb\xd0\xb0\xd0\xb4\xd1\x8b\xd0\xba\xd0\xb8\xd0\xbd\xd0\xbe
+10209	\xd0\xb2\xd0\xbe\xd0\xb4\xd0\xbd\xd1\x8b\xd0\xb9 \xd1\x81\xd1\x82\xd0\xb0\xd0\xb4\xd0\xb8\xd0\xbe\xd0\xbd
+10210	\xd0\xb2\xd0\xbe\xd0\xb9\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10211	\xd0\xb2\xd0\xbe\xd0\xbb\xd0\xb3\xd0\xbe\xd0\xb3\xd1\x80\xd0\xb0\xd0\xb4\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82
+10212	\xd0\xb2\xd0\xbe\xd0\xbb\xd0\xb6\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10213	\xd0\xb2\xd0\xbe\xd0\xbb\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f
+10214	\xd0\xb2\xd0\xbe\xd0\xbb\xd0\xbe\xd0\xba\xd0\xbe\xd0\xbb\xd0\xb0\xd0\xbc\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10215	\xd0\xb2\xd0\xbe\xd1\x80\xd0\xbe\xd0\xb1\xd1\x8c\xd0\xb5\xd0\xb2\xd1\x8b \xd0\xb3\xd0\xbe\xd1\x80\xd1\x8b
+10216	\xd0\xb2\xd0\xbe\xd1\x81\xd1\x82\xd1\x80\xd1\x8f\xd0\xba\xd0\xbe\xd0\xb2\xd0\xbe
+10217	\xd0\xb2\xd1\x8b\xd0\xb1\xd0\xbe\xd1\x80\xd0\xb3\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10218	\xd0\xb2\xd1\x8b\xd1\x85\xd0\xb8\xd0\xbd\xd0\xbe
+10219	\xd0\xb4\xd0\xb5\xd0\xbb\xd0\xbe\xd0\xb2\xd0\xbe\xd0\xb9 \xd1\x86\xd0\xb5\xd0\xbd\xd1\x82\xd1\x80
+10220	\xd0\xb4\xd0\xb8\xd0\xbd\xd0\xb0\xd0\xbc\xd0\xbe
+10221	\xd0\xb4\xd0\xbc\xd0\xb8\xd1\x82\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10222	\xd0\xb4\xd0\xbe\xd0\xb1\xd1\x80\xd1\x8b\xd0\xbd\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10223	\xd0\xb4\xd0\xbe\xd0\xbc\xd0\xbe\xd0\xb4\xd0\xb5\xd0\xb4\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10224	\xd0\xb4\xd0\xbe\xd1\x81\xd1\x82\xd0\xbe\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10225	\xd0\xb4\xd1\x83\xd0\xb1\xd1\x80\xd0\xbe\xd0\xb2\xd0\xba\xd0\xb0
+10226	\xd0\xb7\xd0\xb2\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xb3\xd0\xbe\xd1\x80\xd0\xbe\xd0\xb4\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f
+10227	\xd0\xb7\xd0\xb5\xd0\xbb\xd0\xb5\xd0\xbd\xd0\xbe\xd0\xb3\xd1\x80\xd0\xb0\xd0\xb4
+10228	\xd0\xb7\xd1\x8f\xd0\xb1\xd0\xbb\xd0\xb8\xd0\xba\xd0\xbe\xd0\xb2\xd0\xbe
+10229	\xd0\xb8\xd0\xb7\xd0\xbc\xd0\xb0\xd0\xb9\xd0\xbb\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10230	\xd0\xba\xd0\xb0\xd0\xbb\xd0\xb8\xd0\xbd\xd0\xb8\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10231	\xd0\xba\xd0\xb0\xd0\xbb\xd1\x83\xd0\xb6\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10232	\xd0\xba\xd0\xb0\xd0\xbd\xd1\x82\xd0\xb5\xd0\xbc\xd0\xb8\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10233	\xd0\xba\xd0\xb0\xd1\x85\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10234	\xd0\xba\xd0\xb0\xd1\x88\xd0\xb8\xd1\x80\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10235	\xd0\xba\xd0\xb8\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10236	\xd0\xba\xd0\xb8\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10237	\xd0\xba\xd0\xb8\xd1\x82\xd0\xb0\xd0\xb9 \xd0\xb3\xd0\xbe\xd1\x80\xd0\xbe\xd0\xb4
+10238	\xd0\xba\xd0\xbe\xd0\xb6\xd1\x83\xd1\x85\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10239	\xd0\xba\xd0\xbe\xd0\xbb\xd0\xbe\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10240	\xd0\xba\xd0\xbe\xd0\xbb\xd0\xbf\xd0\xb8\xd0\xbd\xd0\xbe
+10241	\xd0\xba\xd0\xbe\xd0\xbb\xd0\xbf\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10242	\xd0\xba\xd0\xbe\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xb4\xd0\xb0\xd0\xbd\xd1\x82\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9\s(\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82|\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf|\xd0\xbf|\xd0\xbf\xd1\x80\xd1\x82|\xd0\xbf\xd1\x80-\xd1\x82)
+10243	\xd0\xba\xd0\xbe\xd0\xbc\xd1\x81\xd0\xbe\xd0\xbc\xd0\xbe\xd0\xbb\xd1\x8c\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10244	\xd0\xba\xd0\xbe\xd0\xbd\xd1\x8c\xd0\xba\xd0\xbe\xd0\xb2\xd0\xbe
+10245	\xd0\xba\xd1\x80\xd0\xb0\xd1\x81\xd0\xbd\xd0\xbe\xd0\xb3\xd0\xb2\xd0\xb0\xd1\x80\xd0\xb4\xd0\xb5\xd0\xb9\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10246	\xd0\xba\xd1\x80\xd0\xb0\xd1\x81\xd0\xbd\xd0\xbe\xd0\xb3\xd0\xb2\xd0\xb0\xd1\x80\xd0\xb4\xd0\xb5\xd0\xb9\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10247	\xd0\xba\xd1\x80\xd0\xb0\xd1\x81\xd0\xbd\xd0\xbe\xd0\xb3\xd0\xbe\xd1\x80\xd1\x81\xd0\xba
+10248	\xd0\xba\xd1\x80\xd0\xb0\xd1\x81\xd0\xbd\xd0\xbe\xd0\xbf\xd1\x80\xd0\xb5\xd1\x81\xd0\xbd\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10249	\xd0\xba\xd1\x80\xd0\xb0\xd1\x81\xd0\xbd\xd0\xbe\xd1\x81\xd0\xb5\xd0\xbb\xd1\x8c\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10250	\xd0\xba\xd1\x80\xd0\xb0\xd1\x81\xd0\xbd\xd0\xbe\xd1\x81\xd0\xb5\xd0\xbb\xd1\x8c\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10251	\xd0\xba\xd1\x80\xd0\xb0\xd1\x81\xd0\xbd\xd1\x8b\xd0\xb5 \xd0\xb2\xd0\xbe\xd1\x80\xd0\xbe\xd1\x82\xd0\xb0
+10252	\xd0\xba\xd1\x80\xd0\xb5\xd1\x81\xd1\x82\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xbe\xd1\x81\xd1\x82\xd1\x80\xd0\xbe\xd0\xb2
+10253	\xd0\xba\xd1\x80\xd0\xb5\xd1\x81\xd1\x82\xd1\x8c\xd1\x8f\xd0\xbd\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f \xd0\xb7\xd0\xb0\xd1\x81\xd1\x82\xd0\xb0\xd0\xb2\xd0\xb0
+10254	\xd0\xba\xd1\x80\xd0\xbe\xd0\xbd\xd1\x88\xd1\x82\xd0\xb0\xd0\xb4\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10255	\xd0\xba\xd1\x80\xd0\xbe\xd0\xbf\xd0\xbe\xd1\x82\xd0\xba\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10256	\xd0\xba\xd1\x80\xd1\x8b\xd0\xbb\xd0\xb0\xd1\x82\xd1\x81\xd0\xba\xd0\xbe\xd0\xb5
+10257	\xd0\xba\xd1\x83\xd0\xb7\xd0\xbd\xd0\xb5\xd1\x86\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xbc\xd0\xbe\xd1\x81\xd1\x82
+10258	\xd0\xba\xd1\x83\xd0\xb7\xd1\x8c\xd0\xbc\xd0\xb8\xd0\xbd\xd0\xba\xd0\xb8
+10259	\xd0\xba\xd1\x83\xd0\xbd\xd1\x86\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10260	\xd0\xba\xd1\x83\xd1\x80\xd0\xbe\xd1\x80\xd1\x82\xd0\xbd(\xd1\x8b\xd0\xb9|\xd0\xbe\xd0\xbc)
+10261	\xd0\xba\xd1\x83\xd1\x80\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10262	\xd0\xba\xd1\x83\xd1\x82\xd1\x83\xd0\xb7\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10263	\xd0\xbb\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82
+10264	\xd0\xbb\xd0\xb5\xd0\xbd\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9\s(\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82|\xd0\xbf\xd1\x80|\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf|\xd0\xbf\.|\xd0\xbf\xd1\x80\xd1\x82|\xd0\xbf\xd1\x80-\xd1\x82)
+10265	\xd0\xbb\xd0\xb8\xd0\xb3\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9\s(\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82|\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf|\xd0\xbf|\xd0\xbf\xd1\x80\xd1\x82|\xd0\xbf\xd1\x80-\xd1\x82)
+10266	\xd0\xbb\xd0\xb8\xd1\x85\xd0\xbe\xd0\xb1\xd0\xbe\xd1\x80\xd1\x8b
+10267	\xd0\xbb\xd1\x83\xd0\xb1\xd1\x8f\xd0\xbd\xd0\xba\xd0\xb0
+10268	\xd0\xbb\xd1\x8e\xd0\xb1\xd0\xbb\xd0\xb8\xd0\xbd\xd0\xbe
+10269	\xd0\xbc(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10270	\xd0\xbc\xd0\xb0\xd1\x80\xd0\xba\xd1\x81\xd0\xb8\xd1\x81\xd1\x82\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10271	\xd0\xbc\xd0\xb0\xd1\x80\xd1\x8c\xd0\xb8\xd0\xbd\xd0\xb0 \xd1\x80\xd0\xbe\xd1\x89\xd0\xb0
+10272	\xd0\xbc\xd0\xb0\xd1\x80\xd1\x8c\xd0\xb8\xd0\xbd\xd0\xbe
+10273	\xd0\xbc\xd0\xb5\xd0\xb4\xd0\xb2\xd0\xb5\xd0\xb4\xd0\xba\xd0\xbe\xd0\xb2\xd0\xbe
+10274	\xd0\xbc\xd0\xb5\xd0\xb6\xd0\xb4\xd1\x83\xd0\xbd\xd0\xb0\xd1\x80\xd0\xbe\xd0\xb4\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10275	\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xb4\xd0\xb5\xd0\xbb\xd0\xb5\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10276	\xd0\xbc\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10277	\xd0\xbc\xd0\xb8\xd1\x82\xd0\xb8\xd0\xbd\xd0\xbe
+10278	\xd0\xbc\xd0\xbe\xd0\xbb\xd0\xbe\xd0\xb4\xd0\xb5\xd0\xb6\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10279	\xd0\xbc\xd0\xbe\xd1\x81\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10280	\xd0\xbc\xd1\x8b\xd1\x82\xd0\xb8\xd1\x89
+10281	\xd0\xbd\xd0\xb0\xd0\xb3\xd0\xb0\xd1\x82\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10282	\xd0\xbd\xd0\xb0\xd0\xb3\xd0\xbe\xd1\x80\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10283	\xd0\xbd\xd0\xb0\xd1\x80\xd0\xbe-\xd1\x84\xd0\xbe\xd0\xbc\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba
+10284	\xd0\xbd\xd0\xb0\xd1\x85\xd0\xb8\xd0\xbc\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82
+10285	\xd0\xbd\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10286	\xd0\xbd\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9\s(\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82|\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf|\xd0\xbf|\xd0\xbf\xd1\x80\xd1\x82|\xd0\xbf\xd1\x80-\xd1\x82)
+10287	\xd0\xbd\xd0\xb8\xd0\xba\xd1\x83\xd0\xbb\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10288	\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbe\xd0\xba\xd0\xbe\xd1\x81\xd0\xb8\xd0\xbd\xd0\xbe
+10289	\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbe\xd0\xba\xd1\x83\xd0\xb7\xd0\xbd\xd0\xb5\xd1\x86\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10290	\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbe\xd0\xbf\xd0\xb5\xd1\x80\xd0\xb5\xd0\xb4\xd0\xb5\xd0\xbb\xd0\xba\xd0\xb8\xd0\xbd\xd0\xbe
+10291	\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbe\xd1\x81\xd0\xbb\xd0\xbe\xd0\xb1\xd0\xbe\xd0\xb4\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10292	\xd0\xbd\xd0\xbe\xd0\xb2\xd1\x8b\xd0\xb5 \xd1\x87\xd0\xb5\xd1\x80\xd0\xb5\xd0\xbc\xd1\x83\xd1\x88\xd0\xba\xd0\xb8
+10293	\xd0\xbd\xd0\xbe\xd0\xb3\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba
+10294	\xd0\xbe\xd0\xb1\xd0\xb2\xd0\xbe\xd0\xb4\xd0\xbd\xd1\x8b\xd0\xb9 \xd0\xba\xd0\xb0\xd0\xbd\xd0\xb0\xd0\xbb
+10295	\xd0\xbe\xd0\xba\xd1\x82\xd1\x8f\xd0\xb1\xd1\x80\xd1\x8c\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10296	\xd0\xbe\xd0\xba\xd1\x82\xd1\x8f\xd0\xb1\xd1\x80\xd1\x8c\xd1\x81\xd0\xba\xd0\xbe\xd0\xb5 \xd0\xbf\xd0\xbe\xd0\xbb\xd0\xb5
+10297	\xd0\xbe\xd0\xbb\xd0\xb8\xd0\xbc\xd0\xbf\xd0\xb8\xd0\xb9\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f \xd0\xb4\xd0\xb5\xd1\x80\xd0\xb5\xd0\xb2\xd0\xbd\xd1\x8f
+10298	\xd0\xbe\xd1\x80\xd0\xb5\xd1\x85\xd0\xbe\xd0\xb2\xd0\xbe
+10299	\xd0\xbe\xd1\x81\xd1\x82\xd0\xb0\xd0\xbd\xd0\xba\xd0\xb8\xd0\xbd\xd0\xbe
+10300	\xd0\xbe\xd1\x82\xd1\x80\xd0\xb0\xd0\xb4\xd0\xbd\xd0\xbe\xd0\xb5
+10301	\xd0\xbe\xd1\x85\xd0\xbe\xd1\x82\xd0\xbd\xd1\x8b\xd0\xb9 \xd1\x80\xd1\x8f\xd0\xb4
+10302	\xd0\xbf\xd0\xb0\xd0\xb2\xd0\xb5\xd0\xbb\xd0\xb5\xd1\x86\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10303	\xd0\xbf\xd0\xb0\xd1\x80\xd0\xba \xd0\xba\xd1\x83\xd0\xbb\xd1\x8c\xd1\x82\xd1\x83\xd1\x80\xd1\x8b
+10304	\xd0\xbf\xd0\xb0\xd1\x80\xd0\xba \xd0\xbf\xd0\xbe\xd0\xb1\xd0\xb5\xd0\xb4\xd1\x8b
+10305	\xd0\xbf\xd0\xb0\xd1\x80\xd1\x82\xd0\xb8\xd0\xb7\xd0\xb0\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10306	\xd0\xbf\xd0\xb5\xd1\x80\xd0\xb2\xd0\xbe\xd0\xbc\xd0\xb0\xd0\xb9\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10307	\xd0\xbf\xd0\xb5\xd1\x80\xd0\xbe\xd0\xb2\xd0\xbe
+10308	\xd0\xbf\xd0\xb5\xd1\x82\xd1\x80\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xbe-\xd1\x80\xd0\xb0\xd0\xb7\xd1\x83\xd0\xbc\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10309	\xd0\xbf\xd0\xb5\xd1\x82\xd1\x80\xd0\xbe\xd0\xb3\xd1\x80\xd0\xb0\xd0\xb4\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10310	\xd0\xbf\xd0\xb5\xd1\x82\xd1\x80\xd0\xbe\xd0\xb4\xd0\xb2\xd0\xbe\xd1\x80\xd1\x86\xd0\xbe\xd0\xb2(\xd1\x8b\xd0\xb9|\xd0\xbe\xd0\xbc)
+10311	\xd0\xbf\xd0\xb5\xd1\x87\xd0\xb0\xd1\x82\xd0\xbd\xd0\xb8\xd0\xba\xd0\xb8
+10312	\xd0\xbf\xd0\xb8\xd0\xbe\xd0\xbd\xd0\xb5\xd1\x80\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10313	\xd0\xbf\xd0\xbb\xd0\xb0\xd0\xbd\xd0\xb5\xd1\x80\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10314	\xd0\xbf\xd0\xbb\xd0\xbe\xd1\x89\xd0\xb0\xd0\xb4\xd1\x8c \xd0\xb8\xd0\xbb\xd1\x8c\xd0\xb8\xd1\x87\xd0\xb0
+10315	\xd0\xbf\xd0\xbb\xd0\xbe\xd1\x89\xd0\xb0\xd0\xb4\xd1\x8c \xd1\x80\xd0\xb5\xd0\xb2\xd0\xbe\xd0\xbb\xd1\x8e\xd1\x86\xd0\xb8\xd0\xb8
+10316	\xd0\xbf\xd0\xbb\xd0\xbe\xd1\x89\xd0\xb0\xd0\xb4\xd1\x8c \xd1\x81\xd1\x83\xd0\xb2\xd0\xbe\xd1\x80\xd0\xbe\xd0\xb2\xd0\xb0
+10317	\xd0\xbf\xd0\xbe\xd0\xbb\xd0\xb5\xd0\xb6\xd0\xb0\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10318	\xd0\xbf\xd0\xbe\xd0\xbb\xd1\x8f\xd0\xbd\xd0\xba\xd0\xb0
+10319	\xd0\xbf\xd1\x80\xd0\xb0\xd0\xb6\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10320	\xd0\xbf\xd1\x80\xd0\xb5\xd0\xbe\xd0\xb1\xd1\x80\xd0\xb0\xd0\xb6\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f \xd0\xbf
+10321	\xd0\xbf\xd1\x80\xd0\xb8\xd0\xbc\xd0\xbe\xd1\x80\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10322	\xd0\xbf\xd1\x80\xd0\xbe\xd0\xbb\xd0\xb5\xd1\x82\xd0\xb0\xd1\x80\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10323	\xd0\xbf\xd1\x80\xd0\xbe\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10324	\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xb2\xd0\xb5\xd1\x89\xd0\xb5\xd0\xbd\xd0\xb8\xd1\x8f
+10325	\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82 \xd0\xb2\xd0\xb5\xd1\x80\xd0\xbd\xd0\xb0\xd0\xb4\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe
+10326	\xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82 \xd0\xbc\xd0\xb8\xd1\x80\xd0\xb0
+10327	\xd0\xbf\xd1\x80\xd0\xbe\xd1\x84\xd1\x81\xd0\xbe\xd1\x8e\xd0\xb7\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10328	\xd0\xbf\xd1\x83\xd1\x88\xd0\xba\xd0\xb8\xd0\xbd[e .\n]
+10329	\xd0\xbf\xd1\x83\xd1\x88\xd0\xba\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10330	\xd0\xbf\xd1\x83\xd1\x88\xd0\xba\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10331	\xd1\x80\xd0\xb0\xd0\xbc\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba\xd0\xbe\xd0\xb5
+10332	\xd1\x80\xd0\xb5\xd1\x83\xd1\x82\xd0\xbe\xd0\xb2
+10333	\xd1\x80\xd0\xb5\xd1\x87\xd0\xbd\xd0\xbe\xd0\xb9 \xd0\xb2\xd0\xbe\xd0\xba\xd0\xb7\xd0\xb0\xd0\xbb
+10334	\xd1\x80\xd0\xb8\xd0\xb6\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10335	\xd1\x80\xd0\xb8\xd0\xbc\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10336	\xd1\x80\xd1\x8f\xd0\xb7\xd0\xb0\xd0\xbd\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xbf\xd1\x80\xd0\xbe\xd1\x81\xd0\xbf\xd0\xb5\xd0\xba\xd1\x82
+10337	\xd1\x81\xd0\xb0\xd0\xb2\xd0\xb5\xd0\xbb\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10338	\xd1\x81\xd0\xb0\xd0\xb4\xd0\xbe\xd0\xb2\xd0\xb0\xd1\x8f
+10339	\xd1\x81\xd0\xb2\xd0\xb8\xd0\xb1\xd0\xbb\xd0\xbe\xd0\xb2\xd0\xbe
+10340	\xd1\x81\xd0\xb5\xd0\xb2\xd0\xb0\xd1\x81\xd1\x82\xd0\xbe\xd0\xbf\xd0\xbe\xd0\xbb\xd1\x8c\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10341	\xd1\x81\xd0\xb5\xd0\xbb\xd0\xb8\xd0\xb3\xd0\xb5\xd1\x80\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10342	\xd1\x81\xd0\xb5\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10343	\xd1\x81\xd0\xb5\xd1\x80\xd0\xbf\xd1\x83\xd1\x85\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10344	\xd1\x81\xd0\xb5\xd1\x81\xd1\x82\xd1\x80\xd0\xbe\xd0\xb8\xd1\x86\xd0\xba
+10345	\xd1\x81\xd0\xbb\xd0\xb0\xd0\xb2\xd1\x8f\xd0\xbd\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xb1\xd1\x83\xd0\xbb\xd1\x8c\xd0\xb2\xd0\xb0\xd1\x80
+10346	\xd1\x81\xd0\xbc\xd0\xbe\xd0\xbb\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f.
+10347	\xd1\x81\xd0\xbe\xd0\xba\xd0\xbe\xd0\xbb
+10348	\xd1\x81\xd0\xbe\xd0\xba\xd0\xbe\xd0\xbb\xd1\x8c\xd0\xbd\xd0\xb8\xd0\xba\xd0\xb8
+10349	\xd1\x81\xd0\xbe\xd0\xbb\xd0\xbd\xd1\x86\xd0\xb5\xd0\xb2\xd0\xbe
+10350	\xd1\x81\xd0\xbf\xd0\xbe\xd1\x80\xd1\x82\xd0\xb8\xd0\xb2\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10351	\xd1\x81\xd0\xbf\xd0\xbe\xd1\x80\xd1\x82\xd0\xb8\xd0\xb2\xd0\xbd\xd0\xb0\xd1\x8f
+10352	\xd1\x81\xd1\x80\xd0\xb5\xd1\x82\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xb1\xd1\x83\xd0\xbb\xd1\x8c\xd0\xb2\xd0\xb0\xd1\x80
+10353	\xd1\x81\xd1\x82\xd0\xb0\xd1\x80\xd0\xb0\xd1\x8f \xd0\xb4\xd0\xb5\xd1\x80\xd0\xb5\xd0\xb2\xd0\xbd\xd1\x8f
+10354	\xd1\x81\xd1\x82\xd1\x80\xd0\xbe\xd0\xb3\xd0\xb8\xd0\xbd\xd0\xbe
+10355	\xd1\x81\xd1\x82\xd1\x83\xd0\xb4\xd0\xb5\xd0\xbd\xd1\x87\xd0\xb5\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10356	\xd1\x81\xd1\x83\xd1\x85\xd0\xb0\xd1\x80\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10357	\xd1\x81\xd1\x85\xd0\xbe\xd0\xb4\xd0\xbd\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10358	\xd1\x82\xd0\xb0\xd0\xb3\xd0\xb0\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10359	\xd1\x82\xd0\xb2\xd0\xb5\xd1\x80\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10360	\xd1\x82\xd0\xb5\xd0\xb0\xd1\x82\xd1\x80\xd0\xb0\xd0\xbb\xd1\x8c\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10361	\xd1\x82\xd0\xb5\xd0\xba\xd1\x81\xd1\x82\xd0\xb8\xd0\xbb\xd1\x8c\xd1\x89\xd0\xb8\xd0\xba\xd0\xb8
+10362	\xd1\x82\xd0\xb5\xd0\xbf\xd0\xbb\xd1\x8b\xd0\xb9 \xd1\x81\xd1\x82\xd0\xb0\xd0\xbd
+10363	\xd1\x82\xd0\xb5\xd1\x80\xd0\xb5\xd1\x88\xd0\xba\xd0\xbe\xd0\xb2\xd0\xbe
+10364	\xd1\x82\xd0\xb5\xd1\x81\xd0\xba\xd1\x82\xd0\xb8\xd0\xbb\xd1\x8c\xd1\x89\xd0\xb8\xd0\xba\xd0\xb8
+10365	\xd1\x82\xd0\xb8\xd0\xbc\xd0\xb8\xd1\x80\xd1\x8f\xd0\xb7\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10366	\xd1\x82\xd1\x80\xd0\xb5\xd1\x82\xd1\x8c\xd1\x8f\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10367	\xd1\x82\xd1\x80\xd1\x83\xd0\xb1\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10368	\xd1\x82\xd1\x83\xd0\xbb\xd1\x8c\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10369	\xd1\x82\xd1\x83\xd1\x80\xd0\xb3\xd0\xb5\xd0\xbd\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10370	\xd1\x82\xd1\x83\xd1\x88\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10371	\xd1\x83\xd0\xbd\xd0\xb8\xd0\xb2\xd0\xb5\xd1\x80\xd1\x81\xd0\xb8\xd1\x82\xd0\xb5\xd1\x82
+10372	\xd1\x84\xd0\xb8\xd0\xbb\xd0\xb5\xd0\xb2\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xbf\xd0\xb0\xd1\x80\xd0\xba
+10373	\xd1\x84\xd0\xb8\xd0\xbb\xd0\xb8
+10374	\xd1\x84\xd1\x80\xd1\x83\xd0\xbd\xd0\xb7\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10375	\xd1\x84\xd1\x80\xd1\x83\xd0\xbd\xd0\xb7\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)
+10376	\xd1\x85\xd0\xb8\xd0\xbc\xd0\xba\xd0\xb8
+10377	\xd1\x86\xd0\xb0\xd1\x80\xd0\xb8\xd1\x86\xd1\x8b\xd0\xbd\xd0\xbe
+10378	\xd1\x86\xd0\xb2\xd0\xb5\xd1\x82\xd0\xbd\xd0\xbe\xd0\xb9 \xd0\xb1\xd1\x83\xd0\xbb\xd1\x8c\xd0\xb2\xd0\xb0\xd1\x80
+10379	\xd1\x86\xd0\xb5\xd0\xbd\xd1\x82\xd1\x80\xd0\xb0\xd0\xbb\xd1\x8c\xd0\xbd(\xd1\x8b\xd0\xb9|\xd0\xbe\xd0\xbc)
+10380	\xd1\x87\xd0\xb5\xd1\x80\xd0\xba\xd0\xb8\xd0\xb7\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10381	\xd1\x87\xd0\xb5\xd1\x80\xd1\x82\xd0\xb0\xd0\xbd\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10382	\xd1\x87\xd0\xb5\xd1\x85\xd0\xbe\xd0\xb2
+10383	\xd1\x87\xd0\xb5\xd1\x85\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10384	\xd1\x87\xd0\xb8\xd1\x81\xd1\x82\xd1\x8b\xd0\xb5 \xd0\xbf\xd1\x80\xd1\x83\xd0\xb4\xd1\x8b
+10385	\xd1\x87\xd0\xba\xd0\xb0\xd0\xbb\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10386	\xd1\x87\xd0\xba\xd0\xb0\xd0\xbb\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f
+10387	\xd1\x88\xd0\xb0\xd0\xb1\xd0\xbe\xd0\xbb\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10388	\xd1\x88\xd0\xb8\xd0\xbf\xd0\xb8\xd0\xbb\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10389	\xd1\x88\xd0\xbe\xd1\x81\xd1\x81\xd0\xb5 \xd1\x8d\xd0\xbd\xd1\x82\xd1\x83\xd0\xb7\xd0\xb8\xd0\xb0\xd1\x81\xd1\x82\xd0\xbe\xd0\xb2
+10390	\xd1\x89\xd0\xb5\xd0\xbb\xd0\xba\xd0\xbe\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10391	\xd1\x89\xd1\x83\xd0\xba\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10392	\xd1\x8d\xd0\xbb\xd0\xb5\xd0\xba\xd1\x82\xd1\x80\xd0\xbe\xd0\xb7\xd0\xb0\xd0\xb2\xd0\xbe\xd0\xb4\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10393	\xd1\x8e\xd0\xb1\xd0\xb8\xd0\xbb\xd0\xb5\xd0\xb9\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10394	\xd1\x8e\xd0\xb3\xd0\xbe-\xd0\xb7\xd0\xb0\xd0\xbf\xd0\xb0\xd0\xb4\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10395	\xd1\x8e\xd0\xb6\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)
+10396	\xd1\x8f\xd1\x81\xd0\xb5\xd0\xbd\xd0\xb5\xd0\xb2\xd0\xbe
+10397	\xd7\x9e\xd7\xa1\xd7\xa4\xd7\xa8 \xd7\x94\xd7\xa6\xd7\x91\xd7\xa2\xd7\x94: </td>[^<]*<[^>]*>([^<]*)<
+10398	\xd7\x9e\xd7\xa1\xd7\xa4\xd7\xa8 \xd7\x99\xd7\xa9\xd7\x99\xd7\x91\xd7\x94: </td>[^<]*<[^>]*>([^<]*)<
+10400	\xd7\xa9\xd7\x9d \xd7\x94\xd7\x97\xd7\x95\xd7\xa7: </td>[^<]*<[^>]*>([^<]*)<
+10401	\xd7\xaa\xd7\x90\xd7\xa8\xd7\x99\xd7\x9a: </td>[^<]*<[^>]*>([^<]*)<
+10402	\xe1\xf9\xf2\xe4&nbsp;(\d\d):(\d\d)
+10406	\xff\x00
+10407	\xff\x00([\xe0-\xff])
+10408	\xff\x00\x00
 10409	^    \w(\w)+.*$
 10410	^   (\S+)
 10411	^  
@@ -7054,9 +7829,14 @@
 10425	^ {4}
 10426	^! (((2(5[0-5]|[0-4][0-9])|[01]?[0-9][0-9]?)\.){3}(2(5[0-5]|[0-4][0-9])|[01]?[0-9][0-9]?)(/(3[12]|[12]?[0-9])))[\t\s]+([^\t]+)$
 10427	^!!NSFW!! -> http://rule34\.xxx/.* <- !!NSFW!!$
+10428	^!$
 10429	^!(\w+)$
 10430	^!-?[0-9]+$
+10431	^"(.*)"\s*$
 10433	^"?(Sch|S)(A|B)
+10434	^"I\'m fine" \(es to en, .*\)$
+10435	^"[a-zA-Z0-9_]+"$
+10436	^"my dog" \(fr to en, .*\)$
 10437	^# 
 10439	^# dbdump v(\d+) - (\d+) objects$
 10441	^#!/.*python
@@ -7085,18 +7865,28 @@
 10467	^#archive_mode\s*=.*$
 10468	^#date\s+(.+)$
 10469	^#define ([^ ]+)\(([^)]*)\) *([^\\]*)\\?\n$
+10470	^#define PACKAGE_VERSION "([^"]*)"
 10471	^#define __.*
 10472	^#define\s*(FR_\w*)\s*(\w*)(.*)$
 10473	^#define\s*(bitno\w*)\s*(\w*)(.*)$
 10474	^#define\s*(bm\w*)\s*(\w*)(.*)$
+10475	^#include "(Config/.*)"
+10476	^#include "(Support/.*)"
+10477	^#include "gtest/(.*)"
+10478	^#include "llvm/(.*)"
 10479	^#include <(.*)>
 10480	^#readline readline.c.*
 10481	^#synchronous_standby_names\s*=.*$
 10482	^#wal_level\s*=.*$
 10489	^$|^-$|[/ \t\r\n]
 10490	^%!TEX\s+([\w-]+)\s?=\s?(.*)
+10491	^%\w$
+10492	^%include\s"([^"]+)"
 10493	^%include\s+(.*)
 10494	^&[a-zA-Z0-9][a-zA-Z0-9_\.]*$
+10495	^(!)$
+10498	^((?!\.).)*$
+10499	^((?!\.).)*\.(py|sh)$
 10506	^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$
 10507	^(([0-9a-z_]{2,}\.)|\.)*([0-9a-z_]{2,})?$
 10508	^(([A-Z])[a-z]+)(([A-Z])[a-z]+)?(([A-Z])[a-z]+)?(([A-Z])[a-z]+)?
@@ -7118,6 +7908,7 @@
 10528	^(.*) ?\[([^ ]*) \+(0x[0-9A-F]{1,16})\](.*)$
 10529	^(.*) ?\[([^ ]*) \+(0x[0-9a-fA-F]{1,8})\](.*)$
 10530	^(.*) Transfer Syntax PS ?[0-9].1?[0-9]$
+10531	^(.*)"""$
 10532	^(.*)#(.*)$
 10533	^(.*)#{(\w+)}(.*)$
 10534	^(.*)$
@@ -7157,6 +7948,7 @@
 10577	^(.+)[&](.+)$
 10578	^(.+)[|](.+)$
 10580	^(.+)\(([0-9]+)\,([0-9]+)\)\: (.+)$
+10582	^(.+)\t(\S+)\t/\^(.*)\$/;"\t(.*)\n
 10593	^(.{2}|.{2}_.{2})$
 10594	^(/\S+) \d+ \d+ ([0-9a-f]+) (0\d+) \S+ \S+ \d \d \d (\S+)$
 10595	^(/etc/\S+) \d+ \d+ ([0-9a-f]+) (0\d+) \S+ \S+ \d \d \d (\S+)$
@@ -7173,6 +7965,8 @@
 10608	^(<stream:stream [^>]*>)\s*
 10609	^(=|-|~|`|#|"|\^|\+|\*)+
 10610	^(>>>|\.\.\.)( |$)
+10612	^(?!.*(Win64|x64))Win.*$
+10613	^(?!^(PRN|AUX|CLOCK\$|NUL|CON|COM\d|LPT\d|\..*)(\..+)?$)[^\x00-\x1f\\?*:\";|/]+$
 10720	^(@|<|>|-|!|\.)(\s)*
 10721	^(Added |Removed )?(.+Sponsor) (Rep|Sen). (.+)$
 10722	^(All tests successful)|(\d+)/(\d+) subtests failed|Files=\d+, Tests=(\d+),
@@ -7195,6 +7989,8 @@
 10740	^(N+)
 10741	^(R|RR)(_(\d+))?$
 10742	^(Sch|S)A
+10743	^(T|t)ypo(graphy)?$
+10744	^(X|E)$
 10745	^([ >]*)(import|from) +nifti
 10746	^([ \t]*#*)
 10747	^([#*]+)\s.*
@@ -7221,6 +8017,7 @@
 10772	^([0-9a-fA-F]+) ([0-9a-fA-F]+)xx(.*)$
 10773	^([0-9a-fA-F]+) xx([0-9a-fA-F]+)(.*)$
 10774	^([0-9a-fA-F]{1,2}:){5}[0-9a-fA-F]{1,2}$
+10775	^([0-9a-fA-F]{2}(:|$)){6}$
 10776	^([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}$
 10777	^([0-9a-fA-F]{2}[:-]){5}[0-9a-fA-F]{2}$
 10778	^([0-9a-fA-F]{2}[:\-]){6}[0-9a-fA-F]{2}$
@@ -7257,6 +8054,8 @@
 10810	^([\w:\.]+)\s+([A-Z]+):(.*)$
 10811	^([\w\-]+/)?[\w\-\.]+$
 10812	^([\w\-_]+\.)+[\w]+$
+10813	^([\w\_\:]+)
+10814	^([\w\d\s\_\-]+):(.*)$
 10815	^([\w\d]+[\w\d\-]*[\w\d]+\.?)+$
 10816	^([\w\d_]+)
 10817	^([^ \t]+)[ \t]*
@@ -7299,6 +8098,7 @@
 10858	^([a-zA-Z0-9]\w+).py$
 10859	^([a-zA-Z0-9_\-]+)([\.][a-zA-Z0-9_\-]+)+([:][/][a-zA-Z0-9\~\(\)_\-]*)+([\.][a-zA-Z0-9\(\)_\-]+)*
 10860	^([a-zA-Z0-9_\-]+)([\.][a-zA-Z0-9_\-]+)+([:][0-9\~\(\)_\-]*)+([\.][0-9]+)*$
+10861	^([a-zA-Z0-9_\\[\]\{\}\^`\|]+)([\+|\-]{2}(?![\+|\-])).*
 10862	^([a-zA-Z0-9_]*) *=.*$
 10863	^([a-zA-Z0-9_]+)=(\S+)$
 10864	^([a-zA-Z]+)(.*)$
@@ -7314,12 +8114,14 @@
 10874	^([acguACGU]+)$
 10875	^([cku]?)x(.*)
 10876	^(\((\w+)\)(-\[(\w*):(\w+)\]->\((\w+)\))?)(\s+(.*))?
+10877	^(\()$
 10878	^(\(*\d+\s*[<>=!]+\s*\d+\)*\s*(and|or)?\s*)+$
 10879	^(\(*time|(.*\s+time))\s+<=\s+(\d+)
 10880	^(\(*time|(.*\s+time))\s+<\s+(\d+)
 10881	^(\(*time|(.*\s+time))\s+>=\s+(\d+)
 10882	^(\(*time|(.*\s+time))\s+>\s+(\d+)
 10883	^(\([0-9a-fA-F]+,[0-9a-fA-F]+\))(.*)$
+10884	^(\))$
 10885	^(\+|\-)\s*(.*)$
 10886	^(\-l)
 10887	^(\./)?(linden/?)?
@@ -7333,6 +8135,7 @@
 10895	^(\d*)\scalls
 10897	^(\d+(\.\d+)*)((a|b|c|rc)(\d+))?(\.(post)(\d+))?(\.(dev)(\d+))?(-(\d+(\.\d+)?))?$
 10898	^(\d+) (.*)\((\d+)\.(\d+)\),(.*)\((\d+)\.(\d+)\) > (.*)\((\d+)\.(\d+)\),(.*)\((\d+)\.(\d+)\)$
+10899	^(\d+) (\d+) "(.*)"
 10900	^(\d+) \. (\d+) (\. (\d+))? ([ab](\d+))?$
 10901	^(\d+)$
 10902	^(\d+)(.*)$
@@ -7381,6 +8184,8 @@
 10949	^(\s*(\[\[image((\(.*\))|())\]\])\s*)+$
 10950	^(\s*(\[\[include((\(.*\))|())\]\])\s*)+$
 10951	^(\s*) [#\*-] (.*)
+10952	^(\s*)"""(.*)"""$
+10953	^(\s*)"""(.*)$
 10956	^(\s*)(-)?[\w]*
 10957	^(\s*)(\*|0|o|-) 
 10958	^(\s*)(\d+\.\s+|\-\s+|\+\s+|\*\s+)?(.*)$
@@ -7432,6 +8237,8 @@
 11007	^(\{[^}]+\})
 11008	^(\r\n|\r|\n)+
 11009	^(and)|(or)$
+11010	^(and|del|from|not|while|as|elif|global|or|with|assert|else|if|pass|yield|break|except|import|print|class|exec|in|raise|continue|finally|is|return|def|for|lambda|try)$
+11011	^(author|committer)$
 11012	^(author|committer)
 11013	^(boot(\.\d+)?$|kernel\.)
 11014	^(bp-)?([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$
@@ -7447,10 +8254,12 @@
 11028	^(http|ftp):\/\/[\w.\-]+\/(\S*)
 11029	^(http|ftp):\/\/[\w.]+\/(\S*)
 11030	^(http|https)://
+11031	^(ip)$
 11032	^(ip_tables|iptable_filter|iptable_nat)[ \t]
 11033	^(join|order)\((.*)\)$
 11034	^(kv|timers|counts|gauges|sets)\.(.+)$
 11035	^(lib|.+-libs)
+11036	^(local1|local2)$
 11037	^(mgmt|nic)\d+$
 11038	^(my_gnu\s*=\s*).*$
 11039	^(my_installroot\s*=\s*).*$
@@ -7458,10 +8267,16 @@
 11041	^(my_readonly\s*=\s*).*$
 11042	^(news|telnet|nttp|file|http|ftp|https)
 11043	^(opensuse[0-9]+)\.([0-9]+)$
+11045	^(parameter)$
+11047	^(phys|full|para)$
+11049	^(p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|hr|hr/|style|li|dt|dd|thead|tbody|tr|th|td|section|footer|header|group|figure|figcaption|aside|article|canvas|output|progress|video)$
 11050	^(scsi|ide)([0-9]+):([0-9]+)\.
 11051	^(scsi|ide)[0-9]+[^:]
+11052	^(started|finished|success|failure|exception|warnings|(success|warnings|exception|failure)To(Failure|Success|Warnings|Exception))$
 11054	^(svn\+ssh|http|https|svn)://([-a-zA-Z0-9.]*@)(.*)$
 11055	^(test_.+)\.py$
+11056	^(test|xen|kvm|vmware)$
+11057	^(unsigned)? ?(int|long)$
 11058	^(var )?sc_project\=\d+;$
 11059	^(variable\w*)$
 11060	^(variable\w*|parameter|options|notebook)$
@@ -7474,6 +8289,7 @@
 11068	^-?[-0-9.e\+]+$
 11069	^-?[\.,]?\d[\d,\.-]*\.?$
 11070	^-?\d*\.\d+$
+11072	^-[LRuYz]$
 11073	^-[RL]
 11074	^-{1,2}
 11075	^.* +resolv.conf.*
@@ -7484,6 +8300,7 @@
 11080	^.* \(#[0-9]+\)$
 11081	^.* \(.*\): .* http://imdb.com/title/[a-z\d]+$
 11082	^.* vim: set .*:.*$
+11083	^.*"(\d{10})\/".*$
 11086	^.*(#-{3})
 11087	^.*(#{4})
 11089	^.*(HEAD|GET|POST|PATCH|PUT|DELETE)\s+(/[^ \n]*).*$
@@ -7543,6 +8360,7 @@
 11173	^./
 11174	^.__
 11175	^.const
+11176	^.htaccess$
 11177	^.{1,21}$
 11178	^.{15}(.+)
 11179	^.{15}(\S+)
@@ -7564,8 +8382,10 @@
 11204	^/dev/+
 11205	^/domain/(([-\w]+\.)+[\w]+)
 11206	^/etc/(bash_completion\.d|profile\.d)/
+11207	^/etc/(g?shadow-?|securetty)$
 11208	^/etc/logrotate\.d/(.*)
 11209	^/etc/security/console\.apps/|/\.nosearch$|/__init__\.py$
+11210	^/favicon\.ico$
 11211	^/intertrac/(.*)
 11213	^/machines/\w+
 11214	^/r/([^/]{2,})
@@ -7585,18 +8405,24 @@
 11231	^/{2,}
 11232	^0 \w+ [01]\.[0-9]* \?\s*$
 11233	^0
+11234	^0*$
 11235	^0000.*1111.*$
 11236	^0000\s+(\w+):$
+11237	^01$
 11238	^01\s*$
+11239	^03$
 11240	^03\s*$
 11241	^0[xX][0-9a-fA-F]+$
 11242	^0x([0-9a-z]+)$
 11243	^0x[a-fA-F0-9]{6}$
+11244	^0{40}$
 11245	^1.2.840.10008.[0-9.]+ (.*) PS ?[0-9].1?[0-9]$
 11246	^1.2.840.10008.[0-9.]+ (.*) Well-known frame of reference$
 11247	^1.2.840.10008.[0-9.]+ (.*) \(Retired\)$
 11248	^1.2.840.10008.[0-9.]+ (.*)$
 11249	^100
+11250	^11111*$
+11251	^11111*22222*$
 11252	^1900|^1[2-9]\d\d976
 11253	^1[2-9]\d\d[2-9]\d{6}$
 11254	^254\d*$
@@ -7605,11 +8431,15 @@
 11258	^:([0-7]+) ([0-7]+) ([0-9a-f]{40}) ([0-9a-f]{40}) R([0-9]*)$
 11259	^:.*[MAD]\s*(.+)$
 11260	^:.*[MAD]\s+(.+)$
+11261	^::comment$
 11265	^<([a-z][a-z0-9_]*):([a-z]*)>$
 11266	^<([a-z][a-z0-9_]*)>$
+11267	^</dict>$
 11268	^<Actions>(.+)$
 11269	^<Actions>/(.+)/(.+)$
 11270	^<[\?%](php)?
+11272	^<dict/>$
+11273	^<dict>$
 11276	^=== ([A-Z_]+)
 11277	^==== ([^#]+)#(\d+) ==([AMD])== (.*) ====$
 11278	^==== ([^\s]+) \(([^\)]+)\) ==([ACIMR])==$
@@ -7621,6 +8451,7 @@
 11286	^@(interface|implementation|class|protocol)
 11287	^@@ -([0-9]+),([0-9]+) \+([0-9]+),([0-9]+) @@
 11289	^@@.*\+(\d+)(,(\d+))?
+11290	^@[A-Z0-9\_]+$
 11291	^@[a-zA-Z0-9][a-zA-Z0-9_\.]*$
 11292	^@[a-zA-Z]+$
 11293	^@\w+$
@@ -7634,6 +8465,7 @@
 11301	^A[0-9][^ ]+$
 11302	^Accession Number:
 11303	^Artists
+11304	^Attribute Name Tag VR VM$
 11305	^Author: (\S+)
 11306	^Author:\s+(.+)$
 11307	^B
@@ -7647,6 +8479,7 @@
 11316	^CCD\s*=.*$
 11317	^CCP\s*=.*$
 11318	^CCS\s*=.*$
+11319	^COMMIT$
 11320	^COMPND
 11321	^CPU.[0-9]:.(.*)$
 11322	^Capacity:.(.*)$
@@ -7667,6 +8500,8 @@
 11338	^E1100[01] duplicate key
 11339	^E:
 11340	^END .*\t----\t----\t.*$
+11341	^ENDSEC$
+11342	^ENTITIES$
 11343	^EXPR 
 11344	^Error #([0-9]+): (.*)
 11345	^Error
@@ -7704,6 +8539,7 @@
 11379	^GlueSiteUniqueID=(.*)
 11380	^H3C (\S+) uptime is 
 11381	^HEADER
+11382	^HPHP::(TypedValue|VM::Cell|Variant|VarNR)$
 11383	^HTTP/([\d.]+) (\d+) (.+)$
 11384	^HTTP/1.[0-1] [0-9]{1,3} OK\r\n
 11385	^HTTP/\d\.\d\s+
@@ -7716,9 +8552,14 @@
 11393	^INSTALL_FER_DIR =.*
 11394	^INSTALL_LIB =
 11395	^IP Address:.(.*)$
+11396	^Icon.{1}$
 11397	^Imported ([0-9]+) contacts$
+11398	^Imported one contact$
 11399	^In\-Band.IPv4.Address:.(.*)$
 11400	^Item ([^ ]+) depends on missing item ([^ ]+).*
+11401	^JSC::Identifier$
+11402	^JSC::JSString$
+11403	^JSC::UString$
 11404	^KEY.*
 11405	^KEY_
 11406	^L
@@ -7729,6 +8570,7 @@
 11412	^Latest checkpoint location:\s+([0-9A-F]+)/([0-9A-F]+)
 11413	^Latexmk
 11416	^Local Variables +Routines
+11417	^M?C?R?$
 11418	^MAPADDR 
 11419	^MC
 11420	^M\d+
@@ -7749,6 +8591,7 @@
 11435	^Name:\s+(\w+)$
 11436	^Name\s*:\s*(\S+)
 11437	^New Revision: (\d+)
+11438	^No contacts detected on SIM to import$
 11439	^No contacts detected on SIM to import$|^Imported one contact$|^Imported [0-9]+ contacts$
 11440	^No disassembly errors
 11442	^Note :.*$
@@ -7761,6 +8604,7 @@
 11450	^PID\s*([0-9]+)
 11451	^PING :(.+)
 11452	^PMAKE\s*=.*$
+11453	^PMC$
 11454	^PPid:\s+(\d+)$
 11455	^Page [0-9]+$
 11456	^Part.Number:.(.*)$
@@ -7797,6 +8641,7 @@
 11495	^Signed-[Oo]ff-[Bb]y: (.+)$
 11497	^Spare.Part.Number:.(.*)$
 11498	^Status:.(.*)$
+11499	^Subject: [^\n]+$(.*)
 11500	^Synset\([\'"]([^\)]*)[\'"]\)
 11501	^System.Board.Spare.Part.Number:.(.*)$
 11502	^TEST-(PASS|EXPECTED-FAIL).*
@@ -7822,8 +8667,13 @@
 11522	^W:
 11523	^W:\s*[0-9,]*:[A-Za-z0-9_]*.configure: Arguments number differs from overridden method
 11524	^W:\s*[0-9,]*:[A-Za-z0-9_]*.make: Arguments number differs from overridden method
+11525	^WTF::AtomicString$
+11526	^WTF::CString$
+11527	^WTF::String$
 11528	^WTF::Vector<.*>$
 11529	^W[A-Z0-9][A-Z0-9][A-Z0-9]$
+11530	^WebCore::KURLGooglePrivate$
+11531	^WebCore::QualifiedName$
 11532	^[ -/:-@[-`{-\x7f]*$
 11534	^[ MADRCU?!]{1,2}\s+.*
 11535	^[ \n\t\r]
@@ -7841,6 +8691,7 @@
 11550	^[ ]{0,3}\d+\.[ ]+(.*)
 11551	^[ ]{4,7}((\d+\.)|[*+-])[ ]+.*
 11552	^["\']?/
+11553	^["]([^"]+)["]$
 11554	^[$]?([A-Z]+)[$]?(\d+)$
 11555	^[$]?([A-Z]+)[$]?(\d+)(:[$]?([A-Z]+)[$]?(\d+))?$
 11556	^[$_]
@@ -7851,6 +8702,7 @@
 11561	^[,.?!"()\\']
 11562	^[,.]*
 11563	^[,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]+$
+11564	^[-+*.\w]{,32}$
 11565	^[-+]\s+\([^\)]+\)\s+[A-Za-z0-9_]+[^;]*$
 11566	^[-\.\w]+$
 11567	^[-\.\w]+=
@@ -7918,6 +8770,7 @@
 11629	^[0-9x]+ [0-9xA-F]+ .* [A-Z][A-Z] [0-9].*$
 11630	^[0-9x]+ [0-9xA-F]+ .*$
 11631	^[1-9][0-9]+$
+11632	^[1|2]$
 11633	^[2-9]\d\d[2-9]\d{6}$
 11634	^[87]
 11635	^[>|\s]*[-_]+\s*$
@@ -7962,6 +8815,7 @@
 11675	^[\< ]+
 11676	^[\S]+\[[\S]+\]$
 11677	^[\d.:]+$
+11678	^[\d\.]+ meV\xe2\x80\xbd .* \- .*$
 11679	^[\s\!|"|\#|\$|\(|\)|\*|\+|\-|\;|\<|\=|\>|\@|\|\^|\`|\{|\||\}|\~]
 11681	^[\w ]+$
 11682	^[\w,./=-]*$
@@ -7971,6 +8825,7 @@
 11687	^[\w\-\+\.]+/[\w\-\+\.]+$
 11688	^[\w\-\:%]+$
 11689	^[\w\-\:]+
+11690	^[\w\-\_]+$
 11691	^[\w\.\-]+$
 11692	^[\w\<][^\n]*(\n+)
 11693	^[\w\d\.]+@[\w\d\.]+
@@ -7992,6 +8847,7 @@
 11710	^[^:/]+://.*$
 11711	^[^:]*://
 11712	^[^:]*[\d:]+$
+11713	^[^A-Za-z_]$
 11714	^[^\'"]*[\'"]([^\'"]*)[\'"]\s*:\s*[\'"]([^\'"]*)[\'"].*$
 11715	^[^\$]+$
 11716	^[^\(\[]+[^\s](\+|\-|\*|/|%|\^|&|\||=|<|>|>>|<<|\+=|\-=|\*=|/=|%=|\^=|&=|\|=|==|<=|>=|>>=|<<=|!=|<>)[^\s][^\)\]]+$
@@ -8015,6 +8871,7 @@
 11734	^[a-z,0-9]+$
 11735	^[a-z0-9-]+$
 11736	^[a-z0-9\-._]*[a-z0-9]\.[a-z]{2,}$
+11737	^[a-z0-9]$|^minus$|^equal$|^bracketleft$|^bracketright$|^semicolon$|^backslash$|^apostrophe$|^comma$|^period$|^slash$|^grave$
 11738	^[a-z0-9]([a-z0-9-]*[a-z0-9])?$
 11739	^[a-z0-9][a-z0-9\.\-]{2,}$
 11740	^[a-z0-9]{3,24}$
@@ -8029,9 +8886,11 @@
 11749	^[a-zA-Z0-9._-]+$
 11750	^[a-zA-Z0-9\-]{1,100}$
 11751	^[a-zA-Z0-9\./_-]{1,}@[a-zA-Z0-9\./-]{4,}$
+11752	^[a-zA-Z0-9\.\_\%\-\+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
 11753	^[a-zA-Z0-9]
 11754	^[a-zA-Z0-9]+\/[a-zA-Z0-9\-]+$
 11755	^[a-zA-Z0-9][-_\.0-9a-z]*$
+11756	^[a-zA-Z0-9][a-zA-Z0-9\_\.\:\-]{0,251}$
 11757	^[a-zA-Z0-9][a-zA-Z0-9_\.]*$
 11758	^[a-zA-Z0-9]{14}$
 11759	^[a-zA-Z0-9]{40}$
@@ -8043,6 +8902,7 @@
 11765	^[a-zA-Z0-9_\-\.]+$
 11766	^[a-zA-Z0-9_]*$
 11767	^[a-zA-Z0-9_][a-zA-Z0-9_\.]*$
+11768	^[a-zA-Z\_][a-zA-Z0-9\-\_]*$
 11769	^[a-zA-Z\d]+$
 11770	^[a-zA-Z]*$
 11771	^[a-zA-Z]*
@@ -8088,6 +8948,7 @@
 11812	^[|+` -]+[0-9]+:[0-9]+:[0-9]+:[0-9]+ ([a-zA-Z0-9!/]+)
 11813	^[|+` -]+policy
 11814	^\!?([^,]+),(.+)$
+11815	^\"(.*)\"$
 11816	^\# Regexp Chunk Parsing Grammar[\s\S]*F-score:.*\n
 11820	^\$[\w=]+$
 11821	^\$[a-zA-Z0-9_]+ *= *
@@ -8098,10 +8959,12 @@
 11827	^\(([0-9a-fA-F]+)xx,([0-9a-fA-F]+)\)(.*)$
 11828	^\(([0-9a-fA-Fx]+),([0-9a-fA-F]+)\)\s+(.*)\s+([A-Z][A-Z])\s+([0-9n-]+)\s*$
 11829	^\(([0-9a-fA-Fx]+),([0-9a-fA-F]+)\)\s+(.*)\s+([A-Z][A-Z])\s+([0-9n-]+)\s+(RET)\s*$
+11830	^\(([0-9a-f]+),([0-9a-f]+)\)\s+VERS=".*"\s+VR="([A-Z][A-Z])"\s+VM="(.*)"\s+Owner=".*"\s+Keyword=".*"\s+Name="(.*)"$
 11831	^\(([0-9a-fx]+),([0-9a-fx]+)\) (.*) (RET|Retired)$
 11832	^\(([0-9a-fx]+),([0-9a-fx]+)\) (.*) ([A-Zor ]+) ([1-9n-]+) (RET|Retired)$
 11833	^\(([0-9a-fx]+),([0-9a-fx]+)\) (.*) ([A-Zor ]+) ([1-9n-]+)$
 11834	^\(([0-9a-fx]+),([0-9a-fx]+)\) (.*) ([US/]+) ([1-9n-]+)$
+11835	^\(([0-9a-fx]+),([0-9a-fx]+)\)[ \t]+VERS=.*[ \t]+VR="(.*)"[ \t]+VM="(.*)"[ \t]+Keyword=.*[ \t]+Name="(.*)"$
 11836	^\(([A-Z])\) 
 11837	^\(([IVXLCDM]+)\)$
 11838	^\((\?P<[^>]*>)?$
@@ -8111,20 +8974,25 @@
 11842	^\([0-9a-fA-Fx]+,[0-9a-fA-F]+\) (.*)$
 11843	^\([0-9a-fA-Fx]+,[0-9a-fA-F]+\)\s+(.*)\s+[A-Z][A-Z]\s+([0-9n-]+)\s*$
 11844	^\([0-9a-fA-Fx]+,[0-9a-fA-F]+\)\s+(.*)\s+[A-Z][A-Z]\s+([0-9n-]+)\s+RET\s*$
+11845	^\([0-9a-f]+,[0-9a-f]+\)\s+VERS=".*"\s+VR="[A-Z][A-Z]"\s+VM=".*"\s+Owner=".*"\s+Keyword=".*"\s+Name=".*".*$
 11846	^\([A-Z]\) 
 11847	^\(\[(\S+)\],\[(\S+)\],\[(\S+)\]\)$
 11848	^\* (.*): (.*)\n$
 11849	^\* \w+$
 11850	^\*(/.+)$
 11852	^\+(.*)$
+11853	^\++$
 11854	^\+.*VTK_LEGACY\((.*)\).*\n
+11855	^\+.*VTK_LEGACY_BODY\((.*),\s*"(.*)"\).*\n
 11856	^\+\+\+ (.*)$
 11857	^\+\+\+\s+.*\s+\(.*\)
 11858	^\+init=epsg:\d+$
 11859	^\+proj=.*$
+11860	^\-+\+\-+$
 11861	^\-?([0-9]+\.?[0-9]*|[0-9]*\.?[0-9]+)((E|e)\-?[0-9]+)?$
 11862	^\-?[0-9]*\.?[0-9]*\s?\%$
 11863	^\-?\d+$
+11866	^\.$
 11867	^\..*
 11868	^\..*\.swp$
 11869	^\./|\.\./
@@ -8156,6 +9024,7 @@
 11896	^\[([^:]+):[^\[]+\[([^:]+):
 11897	^\[([^\]]+)\]
 11898	^\[BGN\] (Copying|Deleting|Updating) 
+11899	^\[BGN\] Copying (?!properties)
 11900	^\[BGN\] Copying properties for 
 11901	^\[BGN\] Deleting 
 11902	^\[BGN\] Updating (file )?
@@ -8178,6 +9047,8 @@
 11923	^\d+\.\d+([ab]\d+)?$
 11924	^\d+\.\d+\.\d+
 11925	^\d+\.\d+\w*
+11926	^\d+\xc2\xb0C\xe2\x80\xbd .* \- .*$
+11927	^\d+\xc2\xb0F\xe2\x80\xbd .* \- .*$
 11928	^\d\.*\d*\s+\d\.*\d*\s+\d\.*\d*\s+\d\.*\d*\s+cmyk
 11929	^\d\d/\d\d/\d\d\d\d$
 11930	^\d\d\d\d\-\d+\-\d+: Version 3\.22\.5
@@ -8192,9 +9063,11 @@
 11939	^\d{8}T\d{6}\-[a-zA-Z0-9\-]+\.py$
 11941	^\s* ([#\*-]) 
 11942	^\s*!
+11943	^\s*"
 11945	^\s*##(.*)$
 11946	^\s*#\s*end\s+wxGlade\s*$
 11947	^\s*#\s*include\s*["<]([^>"]+)
+11948	^\s*#\s*include\s+"([\./\\a-zA-Z0-9]+)"
 11949	^\s*#\s*include\s+<([\./\\a-zA-Z0-9]+)>
 11950	^\s*#\s*tcollector.(\w+)\s*=\s*(.+)$
 11951	^\s*$|^#.*$
@@ -8203,6 +9076,7 @@
 11956	^\s*((public|static|private|protected)\s+)*(class|struct)\s+([A-Za-z0-9_])+
 11957	^\s*((public|static|private|protected|internal|abstract|partial)\s+)*(class|struct)\s+([A-Za-z0-9_])+
 11958	^\s*(- Standard -)\s*
+11959	^\s*(.) (\[?[\w\s\.]+\]?)\s+(.+) -> ([/\w_\+\.-]+)(\t \(.*\)?$)?
 11960	^\s*(.*)\([0-9A-Fx]+,[0-9A-F]+\)\s+([1-3C]+).*\s*$
 11961	^\s*(.*)\s+(include|script)\s+(\S+)$
 11977	^\s*([-_a-zA-Z0-9?.*]+)\s*:\s*(.*)$
@@ -8274,6 +9148,8 @@
 12056	^\s*[STUDYSERIES]+\s+\(([0-9]+),([0-9]+)\)\s+([A-Za-z ]+)\s*$
 12057	^\s*[\d\.]+\w{0,3}\s*$
 12058	^\s*[\w-]+\s*$
+12059	^\s*\"(.+)\"\s*,\s*\"(.+)\"\s*$
+12060	^\s*\"(.+)\"\s*,\s*\"(.+)\"\s*,\s*\"(.+)\"\s*$
 12062	^\s*\$INCLUDE\s*([^;\s]*)\s*
 12064	^\s*\(([0-9A-Z]+),([0-9A-Zx]+)\)\s+([A-Za-z0-9./:_ -]+)\s+\|\s+([A-Za-z0-9 ()._,/#>-]+)\s+([A-Z][A-Z]_?O?W?)\s+([0-9n-]+)\s*$
 12068	^\s*\.*\w+(\.\w+)*\s*$
@@ -8304,6 +9180,9 @@
 12098	^\s*git-svn-id:\s+(\S+)@(\d+)
 12099	^\s*if\s+(\w+)
 12100	^\s*include\s+(\w+)
+12102	^\s*msgid\s+"
+12103	^\s*msgid_plural\s+"
+12104	^\s*msgstr(\[\d\])?\s+"
 12105	^\s*package\s+([^\s;]+)\s*;.*
 12106	^\s*package\s+([a-zA-Z_][\w:]*)\s*;.*$
 12108	^\s*sub [A-Za-z0-9_]+
@@ -8362,6 +9241,7 @@
 12172	^\w{64}$
 12174	^\{(\d+)\}\{(\d*)\}\s*(.*)
 12175	^\{.+\}
+12179	^\xff+\x00\xff*$
 12181	^_.+__(.*)
 12182	^_[A-Z]|__
 12183	^_[^_]
@@ -8377,7 +9257,9 @@
 12194	^area_at\(([0-9]+),([0-9]+),([0-9]+),([0-9]+)\).should_be_plain_colored
 12195	^area_at\(([0-9]+),([0-9]+),([0-9]+),([0-9]+)\).should_not_be_plain_colored
 12196	^ascii\.
+12197	^asdf$
 12198	^atest-(\w+)$
+12199	^attachment; filename="(.*)"$
 12200	^attr_\d+$
 12202	^branch\s*=[^=].*
 12203	^bytes=(\d{1,})-(\d*)
@@ -8399,6 +9281,7 @@
 12223	^complement\((.*)\)$
 12224	^config.version\s+=
 12225	^control
+12226	^convert_file \"([^\"]*)\"
 12227	^core = "?(\d+\.x)"?$
 12228	^d\d{1,3}:
 12229	^data
@@ -8406,15 +9289,22 @@
 12231	^db\.
 12233	^def ([a-zA-Z0-9_]*)\((.*)\)
 12234	^def .+
+12235	^def\s+(?!(_|test))[^(]*\(\s*\)\s*:$
 12237	^define
 12238	^deleted file mode (.+)$
 12239	^deleted file
+12240	^describe \"pdf conversion\"
 12241	^dhcp\.dns_server\.\d+$
 12242	^dhcp\.option\.ntp_server\.\d+$
 12243	^dhcp\.option\.subnet_mask\.\d+$
 12244	^dhcp\.option_router\.\d+$
 12245	^dhcp\.pool\.allow_booting\.\d+$
 12246	^dhcp\.pool\.allow_bootp\.\d+$
+12247	^dhcp\.pool\.end$
+12248	^dhcp\.pool\.start$
+12249	^dhcp\.scope\.end$
+12250	^dhcp\.scope\.netmask$
+12251	^dhcp\.scope\.start$
 12252	^diff --git a
 12253	^diff --git a/(\S+) b/(\S+)$
 12254	^diff --git
@@ -8429,7 +9319,10 @@
 12263	^e\d*$
 12264	^ehlo\s*$
 12265	^emulator-(\d+)(\s*)(.*)$
+12266	^end$
 12267	^enum
+12268	^eth$
+12269	^eth[0-9]$
 12270	^eth[0-9]+
 12271	^eth|br[0-9]$
 12272	^fatal:
@@ -8439,11 +9332,14 @@
 12276	^fill_bt_list\((.+)\)\s*$
 12277	^fish_color_(\S+) ?(.*)
 12278	^flf2.
+12279	^folder.jpg$
 12280	^func_i\d\d\d\d$
+12281	^function\("([^"\\]+)"\)$
 12282	^function\s*(\w+)\s*\(
 12283	^gr_
 12284	^group__\w*\..*$
 12286	^h(\d)
+12287	^hd[a-z]$
 12288	^height.should be ([0-9]+)
 12289	^helo\s*$
 12290	^help\s*$
@@ -8474,13 +9370,16 @@
 12323	^invalid_
 12324	^invalid_netmask
 12325	^iqn\.(\d{4}-\d{2})\.([^:]+):
+12326	^is_dhcp_scope$
 12327	^issuer= 
 12328	^issuer=\s*
+12329	^ja_JP$
 12330	^java\.cli\.([^\.]+)\.(.+)$
 12331	^jdbc:oracle
 12332	^jsonrpc:\/\/(.*):(\d*)$
 12333	^kernel(22)?(-)?(smp|enterprise|bigmem|secure|BOOT|i686-up-4GB|p3-smp-64GB)?
 12334	^key[0-9]+\.db$
+12335	^ko_KR$
 12336	^let g:(\w+)\s*=\s*(.*)
 12337	^lib(.*).a$
 12338	^lib.*\.so$
@@ -8490,11 +9389,14 @@
 12342	^logcat_(\w+)_(\d+)$
 12343	^m_([0-9]+)
 12344	^m_([0-9]+)_([0-9]+)
+12345	^mal\.nfo$
 12346	^mark2\.format\.(.*)$
 12347	^message:\s*$
+12348	^mgmt$
 12349	^mode-(\S+).js$
 12350	^modified:\s*$
 12351	^module is a function\s*\nmodule\s*()
+12356	^name$
 12357	^net_(.*)$
 12358	^new file mode (.+)
 12359	^new file
@@ -8523,6 +9425,7 @@
 12383	^p4/
 12384	^pad\d*
 12385	^parent
+12386	^parrot_string_t$
 12387	^part(\d+)$
 12389	^pg_control version number:\s+(\d+)
 12390	^pixel_at\(([0-9]+),([0-9]+)\).should_be_brighter_than pixel_at\(([0-9]+),([0-9]+)\)
@@ -8532,6 +9435,8 @@
 12395	^plugin\.(.+)\.(.+)$
 12396	^plural_rules-[a-zA-Z]{2}(-[a-zA-Z]{2})?\.py$
 12397	^private_
+12398	^profiles/void$
+12399	^project = "(\w+)"$
 12400	^pylint\s*
 12401	^python(\d+\.\d+)
 12402	^queryCid(\(.+\))\s*$
@@ -8550,7 +9455,12 @@
 12420	^s3://([A-Za-z0-9-\.]+)/(.*)$
 12422	^scores\s*$
 12423	^scores\s+(\S+)\s*$
+12424	^secmod\.db$
 12425	^service_
+12426	^settings$
+12427	^sites$
+12428	^space$
+12429	^spam$
 12431	^ssh: connect to host .* port .*: Connection timed out\r$
 12433	^std::_Deque_const_iterator<.*>$
 12434	^std::_Deque_iterator<.*>$
@@ -8608,16 +9518,19 @@
 12486	^subject=\s*
 12487	^summary
 12488	^svn/tags/[\d+\.]+$
+12489	^test \xe2\x80\x94 noun: .*$
 12490	^test
 12491	^test_
 12492	^test_([a-zA-Z0-9]+)
 12493	^test_.*\.py$
 12494	^text/html(;.*)$
+12495	^text/plain;\scharset="([\w\-\d]+)"$
 12496	^theme-(\S+).js$
 12497	^tick_0*([0-9]+)\.sql$
 12498	^timeout.*/
 12499	^timers\.
 12500	^timestamp: [a-zA-Z]{3} (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) ([-+])(\d{2})(\d{2})$
+12501	^translator[-_]credits$
 12502	^trellis_
 12503	^true$|false$
 12504	^try[0-9][0-9]*
@@ -8631,13 +9544,17 @@
 12513	^valid_
 12514	^valid_netmask
 12515	^vendor_id.*
+12516	^version = "([^"]+)"$
 12517	^which \d+\.\d+\.\d+$
 12518	^width.should be ([0-9]+)
 12519	^wsj/\d\d/
 12520	^wx
+12521	^zh_CN$
+12522	^zh_TW$
 12525	^{.*}$
 12526	^{SSHA512}(.*)$
 12527	^{[^\.]+\.[^\.]+(\.(lt|gt|le|ge|eq|ne|contains|startswith|year|month|day|hour|minute|second))?(\.not)?}$
+12528	^{\s*\"([^\"]+)\",\s*(\S*)\s*}
 12529	^|\n
 12530	^|\n
 12532	_$
@@ -8667,6 +9584,7 @@
 12557	_[^,]*,
 12558	_[^_]+$
 12559	_\d*$
+12561	_^
 12562	__
 12563	__IMG__
 12564	__[^_]+__
@@ -8696,6 +9614,9 @@
 12591	abort: Connection reset by peer
 12592	abort: HTTP Error 5\d{2}
 12593	act=view&id=(\d+)
+12594	action="*"
+12595	action="[\w\.\-/]*"
+12596	action="http?\w://[\w.\?=/&]*/
 12597	active IAX channel
 12598	active SIP channels
 12599	active channels
@@ -8708,8 +9629,11 @@
 12610	all_FA\.
 12611	all_FA_skeletonised\.
 12612	alpha
+12613	amazon-affiliates""
 12615	amp.*(\d+\.\d+).*(\d+\.\d+)
 12617	ancestor|ancestor-or-self|attribute|child|descendant|descendant-or-self|following|following-sibling|namespace|parent|preceding|preceding-sibling|self
+12618	android:versionCode="(\d+)"
+12619	android:versionName="([^"]+)"
 12620	api_server
 12622	app(\/|\\)|(lib|extras)$
 12623	app_(.*).qm
@@ -8720,6 +9644,7 @@
 12628	arg
 12629	arm.*
 12630	arrResume\[\d*\]
+12631	artist="([^"]*)"
 12632	as\s+[\w.]+
 12633	asm-(\w+)
 12634	assets|views|vendor
@@ -8782,12 +9707,16 @@
 12696	charset=(.+);?
 12697	charset=([^;\s]+)
 12698	charset=([^;]*)
+12699	charset\s*=\s*"([^"]+)"
 12701	checksum: \s*(.*)\n
 12702	child *::
 12703	child$
 12704	chromosomes_order
 12705	city=
 12707	class |def |u?r?["\\']
+12708	class="Agenda"
+12709	class="FAILURE">([^<]+)</li>
+12710	class="blog">(.*)<\/a>\D*\s*&rarr;\s*\D*\s+<a \D*href="(.*)"\D* class="topic">(.*)<\/a>
 12712	class\s([A-Za-z][A-Za-z0-9_]*)
 12713	class\s*(\w+)\s*
 12714	cli/job_unittest.py
@@ -8814,6 +9743,7 @@
 12737	const S32 LL_VERSION_MINOR = (\d+);
 12738	const S32 LL_VERSION_PATCH = (\d+);
 12739	const boost::array\<boost::array\<T, (\d+)\>, (\d+)\> ([a-zA-Z_\d]+)
+12740	const char \* const IMP_VERSION_TEST = "(.*)";
 12741	const\s+
 12742	const\s+([a-zA-Z0-9_]+)\s*=\s*([^;\n]+)[;\n]
 12745	control
@@ -8839,6 +9769,7 @@
 12768	defined\s*\(\s*(\w+)\s*\)
 12769	deleted
 12770	demerged
+12771	detailkey="([^"]+)
 12773	device_add ([^,\s]+)
 12774	device_del ([^,\s]+)
 12775	devicemanager.DMError
@@ -8876,6 +9807,7 @@
 12809	ed2k://[^\s<>]+
 12810	ed2k://\|file\|([^|]*)\|(\d+)\|([a-fA-F0-9]{32})\|
 12811	egent.ru
+12812	eggs\\\\demo
 12813	emailfrom=
 12814	emailfrom_relay=
 12815	emailto=
@@ -8883,6 +9815,8 @@
 12817	empty
 12818	enable_problem_impacts_states_change
 12819	enabled\s*=\s*false
+12820	encoding="([^"]+)"
+12821	encoding=".*"
 12822	encoding=
 12823	endfacet
 12824	endloop
@@ -8908,6 +9842,7 @@
 12845	exec
 12846	exp=(\d+\.\d+)&data=(.+)&digest=(\S*)
 12847	export\s+(.+)
+12848	extdemo.c\n.+\extdemo.exp\n
 12849	extdemo[.]pyd
 12850	externalip=
 12851	f[lie]=.+
@@ -8937,12 +9872,19 @@
 12877	frame=.*time=([0-9\:\.]+)
 12878	frame=\s+\d+
 12881	fw-
+12882	gaphor-version="[^"]*"
 12883	gcc version (\d+\.\d+)
 12884	gcc version
 12885	gcc-.*
 12886	gems/([^/]+)/gems
 12887	gene # (\d+)
+12888	gene="(.+)"
+12890	gene_id \"([\w+\.]+)\"
+12891	gene_id \"([\w\.]+)\"
+12892	gene_name \"([^\"]+)\"
+12893	gene_name \"([a-zA-Z-_\/|.0-9]+)\"
 12894	geo\.(\w+)
+12895	get_ipython\(\)\.magic\(u?"%?autopx
 12897	gettys are handled by
 12898	gettys are handled by|inittab is no longer used when using systemd
 12899	gi\|(\w+)\|
@@ -8980,6 +9922,11 @@
 12937	hidraw:(.*)
 12938	host test_host_9
 12939	host:.*
+12940	hostname=\"[a-zA-Z0-9-_\.]*\"
+12941	href="(.*)"
+12946	href="/
+12948	href="[^"]*.in"
+12949	href="[^"]*.py"
 12952	http(s)?://(.*).(jpg|jpeg|png|gif|tiff|bmp)
 12953	http(s)?://(www.)?((e621)|(e926)).net/post/show/
 12954	http(s)?://(www.)?bad-dragon.com/
@@ -9043,6 +9990,9 @@
 13026	i\d86$
 13027	iax2 peers \[
 13028	id
+13029	id="__EVENTVALIDATION" value="([^"]*)"
+13030	id="__VIEWSTATE" value="([^"]*)"
+13031	id="cok" value="([^"]+)"
 13034	id\(([^\)]+)\)
 13035	id_.*=(\d+)
 13036	if\s*\(
@@ -9073,8 +10023,11 @@
 13063	install_dir .+\n
 13064	int.* unsigned
 13065	int\s*[(][^)]*[)]
+13066	interface[\s]*\[[^\]]*Conditional=([\_0-9a-zA-Z&|]*)
 13067	internal log
 13068	internal::
+13069	invalid cidr value: "([^"]+)"
+13070	invalid input syntax for type (cidr|inet): "([^"]+)"
 13071	ip(engine|controller)-.+\.(log|err|out)
 13072	ipaddrhere
 13073	irr.ru
@@ -9096,6 +10049,7 @@
 13090	l([eo])af$
 13091	l[eo]af$
 13092	langCode=([a-z]{2})
+13093	lang_code="([\w\-]+)"
 13094	lantern-net-installer_([a-z]+)_(.*)\.[a-z]+
 13095	launched child process (\d+)$
 13096	layer
@@ -9119,6 +10073,7 @@
 13118	linden/
 13119	line (\d+), col (\d+)
 13120	line [0-9]+
+13123	link="([^"]*)"
 13124	linux-.*
 13125	listen_address:.*
 13126	lnL\(ntime:\s+\d+\s+np:\s+(\d+)\)
@@ -9169,6 +10124,8 @@
 13183	mom(\d+)
 13184	mozilla\.[com|net|org]
 13185	msf.exe
+13186	msgid "(.*)"
+13187	msgid\s"(.*)"
 13188	multiattack1=
 13189	multiattack2=
 13190	multiattack3=
@@ -9181,6 +10138,11 @@
 13197	mycnx
 13198	mysql_fetch_array()
 13203	name,url
+13204	name="[\w\.\-/]*"
+13205	name="base\.version" value="([0-9.]+)[^"]*"
+13206	name=\"(.*)\"
+13207	name=\"q\">([^<]*)
+13208	name\s+"(.*)",
 13209	nameserver_(\d+)
 13210	nc
 13211	needs (\d+)MB on the (\S+) filesystem
@@ -9199,9 +10161,11 @@
 13225	nodif_brain\.
 13226	nodif_brain_mask\.
 13227	nodif_brain_mask\s+does\s+not\s+exist\s*$
+13229	nonce="([^"]+)"
 13230	nopush|no push
 13231	not logged in
 13232	novoebenevo.ru
+13233	oauth_token" value="(.*)"
 13234	objectname\=(\d{4}\-\w\w\-\d+-\d+\-\d+)
 13235	obsolete
 13236	olx.ru
@@ -9250,6 +10214,7 @@
 13283	power_(.*).template
 13284	ppc
 13285	ppc.*
+13286	pref\(\"([^\"]+)\"\s*,\s*(\S*)\s*\)
 13287	primary
 13288	private(.*)\$
 13289	private(.*)function
@@ -9257,10 +10222,12 @@
 13291	processor\s+: \d
 13292	procfs.d
 13293	productReference\s*=\s*(\S*)
+13294	productType\s*=\s*"([^"]*)"
 13295	profile_([0-9]+)_(.+)\.sym
 13296	program finished with exit code 80
 13297	program_junk
 13299	project.[^=]*=(.*)$
+13300	property="(video:release_date|og:title)" content="([^"]*)"
 13301	protected(.*)\$
 13302	protected(.*)function
 13303	pseudo
@@ -9273,6 +10240,7 @@
 13310	python\s*module\s*\S*
 13311	p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|ins|del|hr|hr/|style|li|dt|dd|thead|tbody|tr|th|td|section|footer|header|group|figure|figcaption|aside|article|canvas|output|progress|video
 13312	q=(http[^&]+)&
+13313	qop="([^"]+)"
 13314	qt_(.*).qm
 13315	query ([\w ]*\w+)[ \r\n]+- ([\w /,]+)
 13316	queryUrl(\(1,.*\))\s*$
@@ -9285,6 +10253,7 @@
 13324	range ([^ ]+) ([^ ]+) ([^ ]+) ([0-9]+) ([0-9]+)
 13328	rc([0-9]+)$
 13329	rc(\d)
+13330	realm="([^"]+)"
 13331	red hat
 13332	ref:\s*refs/heads/(.+)
 13333	refused
@@ -9298,6 +10267,8 @@
 13342	repomd
 13343	reporter:counter:([^,]*),([^,]*),(-?\d+)$
 13344	reporter:status:(.*)$
+13345	require\("citeproc_js\.([^"]+)"\)
+13346	require\("std\.([^"]+)"\)
 13347	require\s+(.+)
 13348	res/\d+
 13350	result_qt_WITH_
@@ -9346,6 +10317,7 @@
 13398	spam
 13399	sparc
 13400	species
+13403	src="([^"]*)"
 13407	st([axyz]).b tcc__([rf][0-9]*h?)$
 13408	st([xy]).b tcc__([rf][0-9]*h?)$
 13409	st_
@@ -9360,6 +10332,7 @@
 13419	subject=
 13420	subprocess\.call\(argv, env=environ\)
 13422	subsection{
+13423	summary\.php\?cid=([A-Z0-9]+)&cycle=\d+\" ?>([^<]+)
 13424	sun
 13425	sun4u
 13426	suppressions.*\.txt$
@@ -9384,6 +10357,7 @@
 13446	ticket: .+ - (.*)
 13447	tid=([^&]+)
 13448	time=\d+.\d+
+13450	title="([^"]*)"
 13452	tmpl/[^ ]*_js.cs
 13453	tmux (\d+).(\d+)
 13454	torrent-details
@@ -9393,6 +10367,8 @@
 13459	tracking_id=[a-f0-9]{32}
 13460	transaction abort!
 13461	transactions:\s+\d+\s+\((\S+) per sec.\)
+13462	transcript_id \"([\w\.]+)\"
+13463	transcript_id \"([a-zA-Z-_\/|.0-9]+)\"
 13464	tree=
 13465	truth:.*
 13466	try
@@ -9411,6 +10387,7 @@
 13485	up failures today: (\w+)
 13486	update_(smoke)?test_(.*)\.py$
 13487	url
+13488	url="
 13491	url\([\\'"]?([^\s)]+\.[a-z]+)[\\'"]?\)
 13492	url\([\\'"]?([^\s)]+\.[a-z]+[\?\#\d\w]*)[\\'"]?\)
 13494	urn:btih:([\w]{32,40})
@@ -9426,7 +10403,11 @@
 13505	v=([0-9a-zA-Z_]*)&
 13506	v=([^&]+)
 13507	v\d{2}$
+13508	value="([^"]+)"
+13509	value="(\w+)"\s+name="selectemule"
+13510	value="(ed2k://[^"]+)"
 13511	value=[\\'"]([^\\'"]+)[\\'"]
+13512	var thunder_url = "([^"]+)";
 13514	var(.*)\$
 13515	var-bind=[\'"](.*)["\']
 13516	vcard
@@ -9459,6 +10440,7 @@
 13546	x:([0-9]+) y:([0-9]+)
 13547	xApMon_(.*)
 13549	xml
+13550	xmlns=".*"
 13551	xmlns=[^>]+
 13552	xyz
 13553	y$
@@ -9473,6 +10455,7 @@
 13562	zc.buildout[.]egg-link
 13563	{$
 13564	{(.*)}$
+13566	{(0x..),\s*"([^"]*)"\s*,\s*"([^"]*)"[^}]*}\s*
 13569	{([^}^{]*)}
 13570	{([a-zA-Z_ 0-9]+)}
 13571	{([a-z_]+)}
@@ -9506,6 +10489,7 @@
 13608	!\w+
 13609	"
 13611	".*"
+13612	"id" ([^,]+),
 13613	"}
 13614	#?}|>|%}
 13615	%%HiResBoundingBox: .*
@@ -9539,6 +10523,9 @@
 13664	(\s)
 13665	(\w\w\w) (\d{1,2}) (\d{1,2})
 13666	(\{|<|%{)$
+13667	(\x01?\x1b\[[0-9;]*m\x02?)
+13668	(\x01?\x1b\[[0-9;]+m\x02?)
+13669	(\xef|\xbb|\xbf)
 13670	(__Pyx_X?(GOT|GIVE)REF|__Pyx_RefNanny[A-Za-z]+)
 13671	(__Pyx_[A-Z][A-Z_]+)\(
 13672	(__Pyx_[A-Z][a-z_][A-Za-z_]+)\(
@@ -9558,6 +10545,7 @@
 13688	.*/([^?#]*)
 13690	.*\.imdb\.com/title/tt\d+/
 13691	.+,\s*$
+13693	/\'""
 13694	/data[^ ]*/hphp
 13695	/title/tt\d+
 13696	/var/cache/dnf/[a-zA-Z0-9_]+/x
@@ -9577,6 +10565,7 @@
 13719	MatplotlibBox:\(([\d.]+)pt\+([\d.]+)pt\)x([\d.]+)pt
 13721	Out\[(\d+)\]:\s?(.*)\s*
 13722	Python ([a-z0-9\.]+)
+13723	Size ([\.\d]+)\xa0([GMK])iB
 13724	UNSEEN (\d+)
 13725	[ ,]+
 13726	[ \(\)\-_\[\]\.]+
@@ -9657,6 +10646,7 @@
 13806	\[\[Category
 13807	\\.|.
 13808	\\\\|\\_|_
+13809	\\version\s*"(\d+\.\d+(\.\d+)*)"
 13810	\^{2}([0-9a-f]{2})
 13814	\d+\.\d+(.\d+)?
 13816	\n\s*\n
@@ -9673,20 +10663,34 @@
 13832	\w
 13833	\w+$
 13834	\w+
+13836	\x1b\[[\d;]+m
+13837	\xa0
+13838	\xa7([0-9a-zA-Z])
+13840	\n    \x00 | # NULL\n\n    # Bidi control characters\n    \u202a | # LRE\n    \u202b | # RLE\n    \u202c | # PDF\n    \u202d | # LRM\n    \u202e   # RLM\n    
 13841	\n
 13842	\r?\n
 13843	\r\n?
 13844	\r\n?|\n
+13845	\x01?\x1b\[([0-9;]*)m\x02?
+13846	\x01?\x1b\[([0-9;]+)m\x02?
+13847	\x1b\[([0-9]+)(;[0-9]+)*m
+13848	\xa0([^\xa0]|$)
+13849	\xa7(.)
 13850	^ *
 13851	^#.*coding[:=]\s*([-\w.]+)
 13852	^#\s*-\*-\s*coding:\s*.*-\*-$
 13853	^(\d+):(\d+)$
+13854	^(\d{1,2})$
 13855	^(display|(border_[a-z]+|outline)_(width|color))$
 13856	^(https?|s?ftp)://
 13857	^.+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,3}|[0-9]{1,3})(\]?)$
 13858	^/var/cache/dnf/[a-zA-Z0-9_]+/[0-9]+$
 13859	^/var/tmp/dnf-[a-zA-Z0-9_-]+/[a-zA-Z0-9_]+/[0-9]+$
 13860	^/year/\d+
+13861	^<gml:Point SrsName="EPSG::4326"><gml:coordinates decimal="\." cs="," ts=" ">-104.609251\d+,38.255001</gml:coordinates></gml:Point>
+13862	^<gml:Point srsName="EPSG:4326"><gml:coordinates>-104\.60925\d+,38\.255001</gml:coordinates></gml:Point>
+13863	^<gml:Point srsName="SDO:4326" xmlns:gml="http://www.opengis.net/gml"><gml:coordinates decimal="\." cs="," ts=" ">-104.60925\d+,38.25500\d+ </gml:coordinates></gml:Point>
+13864	^<html><a href="http://example.com/reset/[\w/-]+/">Link</a></html>$
 13865	^Bruker:UKBot/Sandkasse
 13866	^VERSION\s*=\s*[\\'"]{1,3}
 13867	^Wikipedia:Ukens konkurranse/Ukens konkurranse
@@ -9696,11 +10700,13 @@
 13873	^[A-Za-z_]+$
 13874	^[A-Za-z_][A-Za-z0-9_\.\-]*$
 13875	^[\s]*==([^=]+)==
+13876	^[^A-Za-z_]$
 13877	^[a-zA-Z0-9_]+$
 13878	^[a-zA-Z][a-zA-Z0-9\-_]*$
 13879	^[a-zA-Z_][a-zA-Z0-9_]*$
 13880	^\d+_
 13881	^\s*(>>>|\.\.\.) (.*)$
+13882	^attachment; filename="(.*)"$
 13883	^d\d{1,3}:
 13884	^http://example.com/reset/[\w+/-]
 13885	^http://example.com/reset/[\w/-]+
@@ -9710,6 +10716,7 @@
 13890	__|try\s*:|lambda
 13891	_h?480p\.mov$
 13892	a
+13893	amazon-affiliates""
 13894	coding[:=]\s*([-\w.]+)
 13895	descargar/torrent/
 13896	down.php

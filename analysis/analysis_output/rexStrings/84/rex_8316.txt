@@ -1,528 +1,0 @@
-};	 // wxGlade:			  end class  
- 	 }; // wxGlade:end class
-}; // wxGlade: end class
-}; // wxGlade: end class 
-};//wxGlade:    end class
-
-
-
-};// wxGlade:end class
- };//	wxGlade: end class
- };// wxGlade:end class 
-};// wxGlade: end class 
-
-};// wxGlade: end class
-
-};//wxGlade: end class
-}; //    wxGlade:end class   
-}; //
-wxGlade: end class 
-};// wxGlade:  end class 
-};//
- wxGlade:end class
-};// 
-wxGlade: end class	 
-};//  wxGlade:
-end class
-};// wxGlade:end class
-  };// wxGlade:  end class
- };//  wxGlade:  end class
-  };  //wxGlade: end class
-	 }; //  wxGlade:	end class
-
-
- };//	
-wxGlade: end class   
-	
-};
-//
-wxGlade:end class
-};//	 wxGlade:end class   
-};// wxGlade: 
- end class
-};//	wxGlade:  end class
- };// 	wxGlade: end class
-};// wxGlade:	end class
-}; //
-  wxGlade: end class
-};// wxGlade:	end class
-};// 
-wxGlade:	 	end class
-};//	wxGlade:
-  end class
- 
-}; //wxGlade: end class
-
-		};// wxGlade:	end class   
-
-}; // wxGlade:end class
-  };//wxGlade:end class  
-}; //   wxGlade:	end class 
-};// wxGlade: end class 
- 	 };// wxGlade:end class 
-};//   wxGlade: 	end class
-}; //			 wxGlade:  end class
-}; //wxGlade:    end class
-};// 
- wxGlade:	end class 
-  };// 
-   wxGlade:	 end class	 
- };	//  	wxGlade:	  end class 		
- };  // wxGlade:		 end class
-};//	 wxGlade:end class 
- 	 };	 //  wxGlade:end class
-};    //	wxGlade:  end class
-	
- };
-// wxGlade: end class
- };//	wxGlade: end class
- };//wxGlade:end class
-	};//    wxGlade:end class
-}; //wxGlade: end class
-	};// wxGlade:	
-end class
-};//	wxGlade: 
-end class
-		 };  //	 	
-
-wxGlade:end class
-
-
-};//		wxGlade:	end class 
-};// wxGlade: end class
-};// wxGlade:
-end class
-}; // 	wxGlade:	end class	
- };// 
- wxGlade:	end class
-};  //
- 	   wxGlade: end class
- };// wxGlade: 	end class
-};//  wxGlade:end class
- 		};//	wxGlade:end class
-};// wxGlade:	end class 
-	};//wxGlade:	end class
- }; //	wxGlade:   end class   
-   };// wxGlade: end class
-	};//  wxGlade:	end class 
- 	  };//  wxGlade: 
-end class
-	}; // 	wxGlade:   end class
- 	};// wxGlade:end class
-}; //wxGlade: 	end class
- };//wxGlade:  end class		
-
-};//wxGlade:  end class
-};  // wxGlade:end class
- }; // 	
-
-wxGlade:end class 
-};//wxGlade:	 end class
- };// wxGlade: end class  
-};// wxGlade: end class
-};// wxGlade: end class 
-	
-  };	// wxGlade:
- end class
-};	//		wxGlade:  	end class
- 
-  };//wxGlade: end class
-
-  }; //    wxGlade:  end class
-};//  wxGlade:	end class
-   };// wxGlade:  end class
-};//  wxGlade:end class
-};//wxGlade:	  end class	
-};//wxGlade: end class
-	 };//	 wxGlade:	 	end class 
-}; // wxGlade: end class
-};// wxGlade:  end class  
-};//  wxGlade:  end class 
-
-};   	
-//wxGlade:	end class
-	};	//
- wxGlade:	 end class
- };  // wxGlade:  end class
-   };//  wxGlade: end class
-	 };   //	  wxGlade:
-  	end class
-};//wxGlade:end class 
-};//  wxGlade: end class
-  };//  wxGlade:
- end class
-
-	 };// wxGlade:end class
-  };//wxGlade:	 	end class
-};//wxGlade:	 end class
-};//wxGlade:end class
- };//   wxGlade: end class 
-};// 	 wxGlade:  end class
-};//wxGlade:end class
-};// wxGlade:end class
-};//wxGlade:  end class   
- };//wxGlade: end class
-};//	wxGlade: 
-end class
-}; //	
-wxGlade:	end class
-};//    wxGlade:	end class	
-};  // wxGlade:
-end class
-};//	  wxGlade:	end class 
- };// wxGlade: end class
-};// wxGlade:	end class   
-	  };// wxGlade: end class 
-};//  wxGlade: end class	   
-};//	 
-wxGlade:end class 
- };// wxGlade:	end class	
- };    // wxGlade: end class 
-  };//	   wxGlade: end class
-};//wxGlade:end class 	
-};// wxGlade: end class
-	}; 	// wxGlade:   end class
-  	
- 	};// wxGlade:end class  
-};	// wxGlade:  end class 
-};// wxGlade:  end class
-};// wxGlade:       end class  
-}; // wxGlade:	end class
- };// wxGlade:end class	 
- };// wxGlade: end class
-};// 
-
-  wxGlade:	end class
-};  //wxGlade: end class
- };  	//wxGlade:	 end class
-}; //wxGlade:     end class  
-};//   	wxGlade: 	end class
-};//	wxGlade:
-end class 
-}; // wxGlade:   end class
- };//wxGlade:end class   
-};//  wxGlade:  end class
-}; // 	 wxGlade: 
-end class
-};
-  //   wxGlade: end class 
-};// wxGlade: end class   
-	};//  wxGlade: end class
-};  // wxGlade: end class
-};// wxGlade: end class
-}; 	 //  wxGlade:  end class	
-};//
-wxGlade:end class
-}; // wxGlade:end class 
-
-};//wxGlade:  end class
-  }; // wxGlade: 	end class
-};//	 wxGlade:	end class   
-}; 	// wxGlade: end class
-};//wxGlade: end class
-	};	//	   	 wxGlade:  end class  
-};//wxGlade: end class
-		 }; //	wxGlade:end class
-};// wxGlade:end class 
-
-};  
-//
-wxGlade:  end class 
-  
-  };//wxGlade:end class
-
-};//   wxGlade:
-  end class	  
-};  //  		  wxGlade: end class
-};// wxGlade: 	end class
-};// 	 	wxGlade: end class	
-};
-  //wxGlade:
-end class
-};//wxGlade: end class   
-};// wxGlade:	 end class
-   
-};// wxGlade: end class
-}; // 	wxGlade: 	end class
-};//  wxGlade: 
- end class
-}; 	//
-wxGlade:end class
-	   };// wxGlade: end class 
-}; //wxGlade:  	end class
- };// wxGlade: end class
- 	};		//wxGlade:	 	end class
-};//
- wxGlade: end class 
-
-};// wxGlade: 
-end class
-};  //wxGlade: end class
-}; // wxGlade:end class
- };//wxGlade:  end class
-	 	}; //	wxGlade:  end class 
-}; 
-//	 wxGlade:  end class
-};// wxGlade:end class
-	};
-// 
-wxGlade: end class 
- };  //    wxGlade:    end class
-};  //   wxGlade:end class
- }; //wxGlade: end class
- }; //wxGlade:end class
-};// wxGlade: end class
-};//   wxGlade:end class
-};
-//	 wxGlade: end class  	
-	    };	// wxGlade:  end class
-}; // wxGlade:end class 
-
-};//  wxGlade: end class
-};//	wxGlade: end class	  
- };//  wxGlade:  end class
- }; // wxGlade: end class 	
-};//wxGlade:	end class
- }; //wxGlade: end class
-}; //	 wxGlade: end class
-};// 
-  wxGlade:	end class
-   };//
-wxGlade:end class
-};// wxGlade: end class
-  };   //		wxGlade: end class  
-};// wxGlade: end class	
-  }; //  	wxGlade: end class
-
- };// wxGlade: end class 
-	};// 	wxGlade:	end class
-  };// wxGlade:end class   
-};// wxGlade:
- end class  
-  }; //wxGlade: end class   
- };
- // wxGlade: 
-end class
- 
-};// wxGlade: end class
-};//
-wxGlade: end class 	
- 
-
- };// wxGlade: 		end class 
- };// 	wxGlade:	 end class
-  };//wxGlade: end class
-	};// wxGlade: end class 
-};//  wxGlade:   end class	
-};// 	wxGlade: end class  
- };//	 wxGlade: end class
-
-  };//	wxGlade:	end class
-
-};//	wxGlade: end class
-};//
-
-wxGlade: end class  
-};//	 wxGlade:
-end class
-}; //
- wxGlade: end class
-  };  //	  wxGlade: end class
- };// wxGlade:  end class
-};  //wxGlade:	end class
-}; //wxGlade: end class 
-};
-// wxGlade: end class	
-	}; // wxGlade: end class
-  };//wxGlade: end class
-}; // wxGlade: 	end class 
-};//   
-  wxGlade: end class
-};
-//  wxGlade:	end class
-   };// wxGlade: end class	   
-};//wxGlade:	 end class 
-		};// wxGlade:
- end class	   
-}; // wxGlade:end class
- };   //wxGlade:    end class 
-};//wxGlade:end class 
-}; //wxGlade: end class 
-
-};//wxGlade: end class 
-};
-// wxGlade:end class
-};// wxGlade: end class
-  };// wxGlade:end class   
-};	 // wxGlade: end class 
-};// 	wxGlade:  end class  
-};   
-// wxGlade:end class
-};// wxGlade: end class   
- }; // wxGlade: end class
-};
-//	wxGlade:  end class
-};//	wxGlade:  end class
-};// wxGlade: end class
- };	     //
-wxGlade:		end class
-}; //wxGlade: 	end class
-};	// wxGlade:	end class 
-  };// wxGlade:	end class
-  };// wxGlade:
-end class
-}; //  wxGlade: end class 
-		 
-
- }; // wxGlade: end class	
-};// wxGlade: 	 end class	 	 	
-	};//   wxGlade:    end class
-}; //  wxGlade: end class
- };   //wxGlade: end class  
-		};  //
-  wxGlade:	end class 	
-};// 	 wxGlade: end class
- }; //	     wxGlade:
-end class
- }; 	//wxGlade:			end class
-};//    wxGlade: end class
-}; //  
-wxGlade:	end class 
-};//wxGlade:end class  
-};// 	wxGlade:	end class
-  }; //  	 wxGlade:end class
-}; //wxGlade:end class
-};//  wxGlade: end class
-}; //  wxGlade: end class 
- };// wxGlade:end class   
-};
- 	//wxGlade:end class
-
-};// 		wxGlade: end class 
-};//	wxGlade:  end class   
-};	//	wxGlade:   end class	
-};//     wxGlade: end class
-   }; // wxGlade:  
-end class
-};	// 
-  wxGlade: end class	
-}; 
-	// wxGlade:  end class
- };// wxGlade: end class
-
-};//wxGlade:  end class 
-}; //	wxGlade:end class
-}; //   wxGlade:  end class    
-};//	wxGlade: 	end class 
-
-};//  wxGlade: end class
-	};//	   wxGlade:  end class
-
-};//   wxGlade: end class
-};      //	wxGlade:
-end class
-		};//wxGlade:end class
-};// wxGlade: 	end class
-};//wxGlade:end class
- };// wxGlade:
-end class 
-};//wxGlade:	end class	
- };// wxGlade: end class	
-};// wxGlade:
-end class
-};// wxGlade: end class
-};//wxGlade:
-end class
-};//wxGlade: end class
-};//  wxGlade:  end class
-}; //wxGlade: end class
-};//	wxGlade: end class 
-  	};//  
-wxGlade: end class 				
-};  // wxGlade:  end class 
- };//  wxGlade:end class 
-
-};//	wxGlade:    end class
-};// wxGlade:end class 
-};	//  wxGlade: end class
-    };//wxGlade:end class  
-  };// wxGlade:  end class
- };// wxGlade:   end class
-};// 
- wxGlade:  end class
- }; // wxGlade:	end class
-};//  wxGlade:end class
- };//   wxGlade:end class
- 	}; // wxGlade: end class	
-};
-//	wxGlade:	  end class
-};// wxGlade:	 end class 
-};//	wxGlade:  end class
-
-
-	};//	wxGlade:  end class 
-};// wxGlade: end class	 
-};   // 	 
-wxGlade:end class
-};//wxGlade: 	end class
-};  	 // wxGlade: end class 
- 	 };
-	// wxGlade: end class	
-}; //	wxGlade: end class
-};//
-wxGlade:end class  
-};// wxGlade:	end class 
-};//	wxGlade:end class   
-	};	// wxGlade:end class
-};//	wxGlade:end class  		 
-};// 	 wxGlade:end class 
-};//  
-wxGlade:	end class
-};
-// 	wxGlade:   
-end class
-	};	//wxGlade:end class
-};// wxGlade:	end class
-
-};//wxGlade: end class  
-}; //		wxGlade:end class
- }; //	  	wxGlade:  end class
-};// wxGlade: end class 
-};//wxGlade: end class
-};//wxGlade:	end class
-};// wxGlade:  end class
- }; 	// wxGlade:	   end class
-}; //	
-wxGlade: end class	
-};//	wxGlade: end class
-};//wxGlade:end class
-};	//wxGlade: end class
-	};// wxGlade: end class 
-};//  wxGlade:end class
-};// wxGlade:
-end class
-};  // wxGlade:end class
- }; //  		wxGlade:end class	
-}; //wxGlade: end class    
-}; // wxGlade:	end class
-};//
-wxGlade: end class
-		 };//	 wxGlade:	end class 
-};  	// wxGlade:	end class
-
-}; //wxGlade:end class
-};//	wxGlade:	end class
-};//
-	wxGlade: 	 	end class 	
-};//wxGlade:  end class
-}; 	//  wxGlade: end class 
-};//	wxGlade: end class   	
-};// wxGlade: end class
-};//wxGlade:
- end class  
-};// 		wxGlade:
-end class 
-};//  wxGlade: end class
-	    };// wxGlade: end class  
-};//	wxGlade:
-end class 

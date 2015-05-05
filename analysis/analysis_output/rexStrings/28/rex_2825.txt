@@ -1,387 +1,0 @@
-[0:0] -A = -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192^168U10{0/24
-}D[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168:10	0/24tXK
-[0:0] -A +s)1=>0 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192=168100/24\e
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192!168o10_0/24@l
-[0:0] -A (u -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1924168e10l0/242
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192v168100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192p16810,0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192X168u10D0/24
-*[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168610i0/24uJ]
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192k16810D0/24G
-[0:0] -A y; -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810r0/24t
-4.[0:0] -A u -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192D168*10k0/24sNZ
-r[0:0] -A >X -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Y168100/24
-[0:0] -A ^O[ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168810>0/24:a
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192L168100/24
-A[0:0] -A # -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192y1686100/248J
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192#1686100/24$
-m[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168B10l0/24
-tT>[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192D1686100/24
-[0:0] -A a(E -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192&168C10u0/24d
-[0:0] -A U -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192U168d100/24Hk
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810M0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192h16810r0/24y
-[0:0] -A ` -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192v16810)0/24vv
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168v10%0/24`,
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192F168|10_0/24
-[0:0] -A q -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192/168C100/24I
-Z[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1921681050/24;
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192R168m10&0/24F
->[0:0] -A PY -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192V168~10#0/24P
-TE[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192$168N10O0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1924168100/24
-[0:0] -A o -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192J168q100/24
-[0:0] -A t -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168@10{0/24
-\0Q-[0:0] -A B\a -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168r100/24$
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192;16810)0/24
-[0:0] -A } -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192x168D100/24
-J[0:0] -A ^B| -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192-168}100/24
-@[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168J10N0/247
-F[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810h0/24
-[0:0] -A + -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192!168310S0/24
-s[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810d0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192H168100/24o3
-|[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192V168m10g0/24}
-#[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192y168M10i0/24
- [0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192S168R10W0/24
-;[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192*168f10b0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192;168V10]0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168n10K0/24&
-[0:0] -A UE -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810w0/24D6
-\a[0:0] -A =^ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192[168S100/24
-+M[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192O168j10*0/24
-[0:0] -A V -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192I168*10&0/24K
-T*[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192l16861090/24
-[0:0] -A fDA[!SUG? -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192&168:100/24
-5#[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168w10(0/24I
-\"MCA[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168X100/24
-[0:0] -A yX^O -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192r1681020/24:
-[0:0] -A f -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192i1681070/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192D168V10L0/24	
-([0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1920168m100/24\a
-[0:0] -A g -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168D10%0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19241681020/24P
-n[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192S168 10s0/248)
-[0:0] -A A -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168_10G0/24
-\0wF[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1922168r100/24o
-[0:0] -A h -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192}168B10X0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1925168E10o0/24
-)9[0:0] -A ro\" -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1922168610l0/24\0
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192)16810Y0/246S
-qU0[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192(168 10c0/24
-qwvp[0:0] -A \0g -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192*168^10)0/24?
-F[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192/168J10b0/24
-2[0:0] -A x -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168^10n0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168100/24=7P\
-[0:0] -A f -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192]16810h0/24
-R[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168,10c0/24
-Sz[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192S168p10+0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1921168h10p0/24
-,[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192M16810C0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168M1050/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810j0/24n/y
-<Ax[0:0] -A S.w -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192?168=1010/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1921168|10Q0/24
-5[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192d168v100/24e
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192R168[10S0/24
-[0:0] -A A -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168x10/0/24
-,[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192|16810K0/24
-[0:0] -A 4 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192@168k10i0/24Y
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168I100/24
-2[0:0] -A N -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192u16810:0/24>
-![0:0] -A \03 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1926168100/24
-[0:0] -A j -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192n168=10/0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192\168/100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192?168j100/24E8YB
-Rq[0:0] -A i -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192c16810N0/24` 
-^h8[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192	16810X0/24
-[0:0] -A | -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192@16810x0/24\"G
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192P16810<0/24
-][0:0] -A 5Xd -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192	168E100/24
-x[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192R168n10'0/24hr
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168{10J0/24He
-%[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192\168<1080/24VE
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192V168100/2444
-[0:0] -A n -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810Q0/24?
-*'3[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192M168_10u0/24p
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192O168Q10[0/24S
-[0:0] -A F -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192<168y10g0/24e
-gD[0:0] -A } -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192b168l100/24H
-[0:0] -A H -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192)168j100/24p
-QP[0:0] -A er -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192m168?10B0/24
--[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192=168o10*0/24nR
-p[0:0] -A ax -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192!16810'0/24
-4[0:0] -A h -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1926168P10l0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192d1684100/24
-\[0:0] -A } -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192v168n10#0/24iL
-[0:0] -A \? -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810j0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810i0/24?
-/[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192S168100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810j0/24-
-[0:0] -A KfN -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192C16810@0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192&168910-0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192\168100/24ZG
-[0:0] -A u -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192[168|10&0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192[168K10^0/24|
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192<168$10x0/24
-a0[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192i168c10N0/243)y:
-[0:0] -A GMp:RG -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810e0/24x
-=[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192~168C10B0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192c168w10R0/24
-m[0:0] -A 0s# -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168k100/24f
-[0:0] -A p. -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168R100/24@|j
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168610'0/24U
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168100/24]
-f[0:0] -A q -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192O168t10A0/24
-U[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Y168r10[0/24
-1[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192z16810	0/24:
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19201687100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810}0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192(168w1060/24
-E[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192N168>100/24z'
-x3[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192m168k10\0/24
-g[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168610(0/24
-9R_[0:0] -A [ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192n168410d0/24,
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192i168/100/24'.
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192/168100/24_
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192I168I10P0/24P8
-g[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168-10@0/24
-Mq[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192U168:10n0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168J10|0/24;
-d[0:0] -A f -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192|16831020/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192(168F1050/24
-[0:0] -A B -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192X168m10.0/24&
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192c168J10H0/24
-&SN][0:0] -A 7>HE[ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192*168g10l0/24|
-[0:0] -A f -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192B168e10M0/24a
-|8[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192$168a10v0/24KE
-!wUf5[0:0] -A \o -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192g168M10n0/24:B
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192G168Y10F0/24
-][0:0] -A RJ*R -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192 168L10J0/24{
-[0:0] -A d -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192=168'100/24
-[0:0] -A EY -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192A168)100/24
-[0:0] -A o -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192[1687100/24S`
-[0:0] -A )6L -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192X16810/0/24w
-[0:0] -A Ze -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168J10<0/24dG
-[0:0] -A 5 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168N10C0/24k
-6[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168R100/24
-Hh[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192~16810F0/24^
-l[0:0] -A bK -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192i168A10[0/24
-D[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Q168Y100/24
-[0:0] -A gV -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192I168w10$0/24
-][0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192O168e10z0/24+9L
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168>10B0/24
-[0:0] -A J -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168V10D0/24
-tJ[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192n168#10I0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192>16810I0/24
- S[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168G10*0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168100/24O
-2[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192&16810`0/24
-	nj:*[0:0] -A %+ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1924168F10(0/24
-m}[0:0] -A ) -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Y168|10&0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168T100/24
-i[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192616810a0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168%10b0/24}\"
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168100/24W|n'
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192`168100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168100/24	ex
-.'[0:0] -A (+O -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192m168M10K0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192*168k10 0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168Q1020/24+w
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192z168110;0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168g10z0/24
-&1[0:0] -A E -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192S16810,0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192i168)10_0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192.168510b0/24D
-0[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192+168R10#0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168)10U0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192=16810 0/24
-[0:0] -A ~ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168Q10m0/24
-6[0:0] -A E -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192w168q1040/24\e%p
-[0:0] -A ~EQ\aupm -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192P16810M0/24x
-[0:0] -A ?j -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192A168-10k0/24
-}[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192=168m10p0/24&P,j
-[0:0] -A  R} -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192^168[10E0/24[	
-7VD[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192#168k10=0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192W168o100/24
-_[0:0] -A td -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192 168I10w0/244[i`
-[0:0] -A s -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192\168s10O0/24r
-g[0:0] -A 	 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192g168p10S0/24P
-[0:0] -A y= -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192|168T10	0/24
-@)T[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192w168100/24
-&B[0:0] -A - -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192B168j10k0/24H
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192C168V100/24
-%I%[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192}16810s0/24J
-[0:0] -A ? -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168?10D0/241
-[0:0] -A H -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168'10=0/24^1Q
-+b[0:0] -A [2 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192}168_10*0/24>
-M
-eE[0:0] -A i3 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Z168F10{0/24
-9[0:0] -A ? -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192{168#10(0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168i10-0/24
-[0:0] -A c| -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192;16810k0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192o168u10S0/246
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192k168F10r0/24w
-Q[0:0] -A I -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192<168c1080/24
-[0:0] -A F -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192w168510Z0/24'Xc*
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192o168o10)0/24c
-@H47}[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192@168?1030/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810j0/24Bj
-i[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192u168?10,0/24k.SqV
-F'[0:0] -A F -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192:16810P0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192:168e10*0/24
-\x[0:0] -A } -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192E16810:0/24P$x*
-Xis??A8[0:0] -A Q3s -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192[168c10Q0/24
-z[0:0] -A vW -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192y168&10s0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192#168b10U0/24m
-[0:0] -A p -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192C168100/245
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1924168\10.0/24\0
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192~16851080/24
-%`[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192y16810T0/24
-f[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192E168910D0/24Xx
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192a168#10E0/24O
-[0:0] -A G -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192w168210?0/24)
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192*168T10,0/24
-[0:0] -A A -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192N168|1010/24
-l}[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192|1681080/24
-,[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192G16810%0/24p
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192l168>10[0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810`0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192V16810N0/24Z
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192z16810h0/24
-[0:0] -A H\eA -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1929168o10m0/24
-V[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192	168\10#0/24a\ar:
-sz2[0:0] -A OD -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168`100/24D
-[0:0] -A V -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192l168Y1010/247^H
->E[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192E168+10Z0/24
-[0:0] -A ;=t -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Z168b100/24
-uG[0:0] -A j\a -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810p0/24Vd,K
-)jK![0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Z16810n0/24
-[0:0] -A : -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192{16810>0/24
-z[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192b16810d0/24
-D;[0:0] -A ~] -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1922168\10E0/24
-[0:0] -A I(4 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216891040/24o
-$[0:0] -A % -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192`168Z10j0/24$-
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192r168W10	0/24
-[0:0] -A G -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Y168)10z0/24?
-A[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192 168>10@0/244*V
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192K168y10,0/240
-@[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168Q1090/24
-'[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192t168{100/24O7
-QGm[0:0] -A Wg -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1925168l10[0/24AS
-IPCx[0:0] -A & -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192E168100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192z168'10/0/24n
-[0:0] -A u@ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192\16810)0/248
-[0:0] -A 5kz -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192z168c10\0/24Om
-3cFd[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192@168<100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192{168Z100/24@
-[0:0] -A U -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1922168S10j0/24
-{[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810]0/24
-[0:0] -A e! -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192L168l10$0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192#168Y10e0/24/
-I.^.o[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192T168;100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192#168T10T0/24
-LL[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168e10\0/24
-:G[0:0] -A Z -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168V10'0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168x10(0/24Z
-Q[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1929168L10l0/24B
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192)168c10\0/24
-?[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192{16810s0/24,V+M{
-xr[0:0] -A L -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168x10_0/24MK
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192t16810J0/24
-[0:0] -A nx -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192S16810B0/24|^=
-[0:0] -A m -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192.168G100/24gb
-4[0:0] -A B -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168c10`0/24
-$PKqtu=[0:0] -A ^ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192w168}10e0/24\|~
-m[0:0] -A R -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168_10i0/24!
-@9-Kh[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192O168V10!0/24~Nt?4
-K%[0:0] -A D -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168f100/24	
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192@1681020/24}[\
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192'168a10W0/24
-+J'[0:0] -A (+c} -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192s16810~0/24?
-x[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168100/24
-[0:0] -A $ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192'168G100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192F168u10a0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810L0/24$
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192q168110Z0/24
-f,[0:0] -A c -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192-168Y10D0/24
-,C
-CS[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168710p0/24(
-Y[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192f168m10w0/24
-[0:0] -A w[N -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192X168)10V0/24?
-gby
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168y10c0/24#
-uCUi1[0:0] -A ^ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192t16810d0/24 njy
-[0:0] -A GsW -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192b168`10Y0/24
-\a[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192h168c10r0/24
-_[0:0] -A \J\e	0 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168l10?0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192?168r10~0/24
-o[0:0] -A 0 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192.168D100/24
-M[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192J168c1060/24zRp
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168]10<0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168510V0/24\"GL\"
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192+16810k0/24\
-*[0:0] -A + -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192a168=10(0/24s
-/dv[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192G168310F0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192&168f1070/24\av
-[0:0] -A ,v -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192a168&10	0/24
-[0:0] -A B -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168 100/24
-[0:0] -A o -j ACCEPT -p tcp -m multiport --dports 80:81 -s 19216810F0/24
-i[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168h10t0/24
--bV[0:0] -A # -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168 10\0/24
-1[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192*168E100/24
-5[0:0] -A N -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192#16810s0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192\168L10k0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1922168s100/24
-([0:0] -A XBX -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192|168[10[0/24Xc
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192r168h10t0/24[A
-[0:0] -A : -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168s1060/24
-I[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192[1681030/24G
-X3[0:0] -A i -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192'168910R0/24b
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192v16810L0/24!
-[0:0] -A vW@ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192k168;10D0/24\a9W
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168,1010/24
-[0:0] -A 8 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168U100/24>
-[0:0] -A Z& -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Q168?1030/24
-I%[0:0] -A z -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168-100/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168O100/24	
-c[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192O16810I0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192K1681040/24
-+[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192*168010(0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168g10@0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192M16810)0/24|u
->g[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1923168}10a0/24
-[0:0] -A 9 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192E168L100/24
-{[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168(10s0/24o
-p[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192/168L100/24_
-[0:0] -A ' -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192H168 10g0/24q8#xb0}*
-;S[0:0] -A ` -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192d168310P0/24D
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1922168V10E0/24<P
-[0:0] -A }v -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192u168X100/24K)
-[0:0] -A ^j -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192d168x10d0/24
-[0:0] -A ^ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192u168s10$0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168-10X0/24'
-[0:0] -A [ -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1921681000/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192#16810C0/243
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192,168@10X0/24I
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192I16810=0/24U
-=[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192f168l10W0/24
-e#[0:0] -A F -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168)10W0/24#@
-[0:0] -A j -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192$16810(0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192k1681060/24?!C|>
-Yo[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168#100/24\
-\"[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192J168-100/24
-s-Z+\"[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1921681000/24
-'H[0:0] -A ZhPa -j ACCEPT -p tcp -m multiport --dports 80:81 -s 1926168.100/24~
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168E10E0/24
-Q[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192*1685100/24h
-6[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Z1681080/24
-\a4[0:0] -A # -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192(168G10F0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192\168100/24	
-h[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192c168110`0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192!168%10P0/24
-[0:0] -A wo -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192Z168B1070/24
-9[0:0] -A 	 -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192^168j10=0/24
-X[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192168100/24y
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192J168,10F0/24
-[0:0] -A  -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192+168Y10X0/24 

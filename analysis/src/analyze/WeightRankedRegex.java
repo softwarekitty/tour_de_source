@@ -1,13 +1,16 @@
 package analyze;
 
+import java.text.DecimalFormat;
+
 import metric.FeatureCount;
 
 import org.antlr.runtime.tree.CommonTree;
+import org.apache.commons.lang3.StringUtils;
 import org.python.util.PythonInterpreter;
 
+import pcre.PCRE;
 import analyze.exceptions.PythonParsingException;
 import analyze.exceptions.QuoteRuleException;
-import pcre.PCRE;
 
 public final class WeightRankedRegex implements RankableContent {
 	private final String pattern;
@@ -89,6 +92,10 @@ public final class WeightRankedRegex implements RankableContent {
 		return "WeightRankedRegex [pattern=" + pattern + "]";
 	}
 
+	public String dump(int index, int paddedSize) {
+		return StringUtils.leftPad(String.valueOf(index), paddedSize, "0")  + " | "+StringUtils.leftPad(String.valueOf(weight), paddedSize, "0")+" | "+pattern +"\n";
+	}
+
 	@Override
 	public String getContent() {
 		return pattern;
@@ -96,6 +103,11 @@ public final class WeightRankedRegex implements RankableContent {
 	
 	public String getUnescapedPattern(){
 		return this.unescaped;
+	}
+	
+	public static String getEscapedPythonPattern(String unescapedPattern){
+		String escaped= unescapedPattern.replaceAll("\\\\", "\\\\\\\\");
+		return "'" + escaped + "'";
 	}
 
 	private static String getUnescapedPythonPattern(String pat) throws QuoteRuleException {

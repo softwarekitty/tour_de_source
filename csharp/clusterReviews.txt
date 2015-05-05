@@ -1,0 +1,85 @@
+2.6
+
+2.9
+
+3.2
+
+3.5
+
+3.8
+
+4.1
+
+4.4
+
+4.7
+
+5.0
+
+5.3
+Cluster 0 - it's reasonable to wonder why these odd guys all cluster, but I think I know why.
+Look at this regex:
+0003 | 0042 | ' *$'
+It is the 'permissive' group.  Everything matches this regex, and 
+
+So I liked cluster 3 from this group - a clear whitespace cluster - the second most popular feature in this cluster
+cluster 3 stats:
+nPatterns: 168.0
+combinedWeight: 902
+top 10 Features:
+
+LIT|a literal character | 2.886904761904762
+WSP|tab, newline, return, vertical-tab space or form-feed | 0.8035714285714286
+CCC|a custom character class | 0.6130952380952381
+ADD|one-or-more repetition | 0.5476190476190477
+CG|a capture group / logical grouping | 0.39285714285714285
+KLE|zero-or-more repetition | 0.35714285714285715
+OR|logical or | 0.24404761904761904
+END|match the end of the string | 0.13095238095238096
+STR|match the start of the string | 0.07738095238095238
+NCCC|a negated custom character class | 0.07142857142857142
+
+
+0000 | 0181 | '\\s+'
+0001 | 0078 | '\\s'
+0002 | 0045 | '(\\s+)'
+0003 | 0025 | ' '
+0004 | 0022 | ' +'
+0005 | 0022 | '[\\s,]'
+0006 | 0017 | '\\s*#?\\s*$'
+0007 | 0017 | '(\\(|\\)|\\s+)'
+0008 | 0015 | '( +|-+)'
+0009 | 0014 | ' +$'
+0010 | 0014 | '^[ \\t]*'
+0011 | 0014 | ',\\s*|\\s+'
+0012 | 0014 | '[ \t\\)].*$'
+0013 | 0012 | '\\s+$'
+0014 | 0012 | '\\s\\s+'
+0015 | 0012 | '(\\.|\\s)'
+0016 | 0012 | '(\\.|\\s|/|-)'
+0017 | 0012 | '[\\-\\s\\(\\)]'
+0018 | 0011 | '[\\s.]'
+0019 | 0009 | '[@{} ]'
+0020 | 0008 | '[-./\\s]'
+0021 | 0008 | '\\s|\\+|\\-|\\*|\\/|<<|>>]'
+0022 | 0007 | '(\\s)'
+0023 | 0007 | '[ ,]+'
+0024 | 0007 | ',?\\s+'
+0025 | 0007 | '([\\t ]+)'
+0026 | 0007 | '\\s([^a]*)'
+0027 | 0007 | '[\\x00-\\x20]'
+0028 | 0006 | '( +)'
+0029 | 0006 | '^\\W+'
+0030 | 0006 | '[ \\t]+'
+0031 | 0006 | '[\\s,]+'
+0032 | 0006 | '^ | $|/ | /'
+0033 | 0005 | '\\s$'
+0034 | 0005 | '[, ]+'
+0035 | 0005 | u'\\s+'
+0036 | 0005 | '[\\s]+'
+0037 | 0005 | '[\\-\\s]'
+0038 | 0005 | '(}?\\s*)$'
+0039 | 0005 | '([^\\\\] )'
+0040 | 0005 | '([ ]+_)|(_[ ]+)|([ ]+)'
+
+

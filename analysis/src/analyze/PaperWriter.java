@@ -30,6 +30,9 @@ public class PaperWriter {
 
 	// the delimiter character for our 'csv' files used by latex
 	private static char d = '•';
+	public static final String homePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/";
+	public static final String connectionString = "jdbc:sqlite:" + homePath +
+			"tools/merged/merged_report.db";
 
 	public static void main(String[] args) throws ClassNotFoundException,
 			SQLException, ValueMissingException, IOException,
@@ -37,11 +40,6 @@ public class PaperWriter {
 		System.out.println("begin paper writer");
 		corpus = new ArrayList<WeightRankedRegex>(1024);
 		alienFeatureCount = new HashMap<String, Integer>();
-
-		// initialize
-		String homePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/";
-		String connectionString = "jdbc:sqlite:" + homePath +
-			"tools/merged/merged_report.db";
 
 		// populate the map with keys for the Latex database
 		HashMap<String, String> databaseFileContent = new HashMap<String, String>();

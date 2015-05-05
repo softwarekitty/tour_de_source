@@ -31,26 +31,11 @@ namespace ConsoleApplication1
         {
             WholeMatrix wholeMatrix = new WholeMatrix(nRows, minSimilarity);
             for(int rowIndex =0;rowIndex<nRows;rowIndex++){
-                string rowFilePath = Util.getRowFilePath(allRowsBase, nRows, rowIndex);
-                using (StreamReader r = new StreamReader(rowFilePath))
+                MatrixRow mr = new MatrixRow(allRowsBase, rowIndex, nRows);
+                double[] rowValues = mr.getValues();
+                for (int j = 0; j < nRows; j++)
                 {
-                    string line = null;
-                    while ((line = r.ReadLine()) != null)
-                    {
-                        if(line.StartsWith("similarityValues")){
-                            int start = line.IndexOf("[");
-                            int end = line.LastIndexOf("]");
-                            string listContent = line.Substring(start+1,(end-start-1));
-                            string[] similarityEntries = listContent.Split(',');
-                            foreach(string entry in similarityEntries){
-                                string entryContent = entry.Substring(1,entry.Length-2);
-                                string[] index_value = entryContent.Split(':');
-                                int colIndex = int.Parse(index_value[0]);
-                                double similarityValue = double.Parse(index_value[1]);
-                                wholeMatrix.set(rowIndex,colIndex,similarityValue);
-                            }
-                        }
-                    }
+                    wholeMatrix.set(rowIndex, j, rowValues[j]);
                 }
 
             }

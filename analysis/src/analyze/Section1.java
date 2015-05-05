@@ -80,7 +80,7 @@ public class Section1 {
 		return rScriptContent.toString();
 	}
 
-	private static void initializeCorpus(String connectionString,
+	public static void initializeCorpus(String connectionString,
 			int[] allPatterns, List<WeightRankedRegex> corpus,
 			int[] errorPatterns, int[] alienPatterns, int[] unicodePatterns,
 			HashMap<String, Integer> alienFeatureCount)

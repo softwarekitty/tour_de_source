@@ -55,7 +55,7 @@ public class Section3 {
 			halfMatrix = StringSimilarity.getJaccardSimilarityMatrix(corpus);
 		}
 		String graphName = C.functionames[functionSwitch] + "SimilarityGraph.abc";
-		return IOUtil.getClusters(outputPath, graphName, halfMatrix.getABC(minSimilarity), corpus, topN);
+		return IOUtil.getClusters(outputPath, graphName, halfMatrix.getABC(minSimilarity), corpus, topN, 2.0);
 	}
 	
 	private static void printClusters(TreeSet<Cluster> clusters){

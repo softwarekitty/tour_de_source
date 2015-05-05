@@ -1,7 +1,11 @@
 package analyze;
 
+import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TreeSet;
 
 public class Section5 {
 
@@ -18,4 +22,25 @@ public class Section5 {
 		return "";
 	}
 
+	// after getting the behavioral graph in csharp,
+	// output a human-readable dump of clusters found.
+	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException, InterruptedException {
+		String analysis_output_path = PaperWriter.homePath +
+			"analysis/analysis_output/";
+		ArrayList<WeightRankedRegex> corpus = new ArrayList<WeightRankedRegex>();
+		HashMap<String, Integer> dummyCounter = new HashMap<String, Integer>();
+		int[] dummyTracker = {0};
+		Section1.initializeCorpus(PaperWriter.connectionString, dummyTracker, corpus, dummyTracker, dummyTracker, dummyTracker, dummyCounter);
+
+		String fullInputFilePath = analysis_output_path + "behavioralSimilarityGraph.abc";
+		DecimalFormat df = new DecimalFormat("0.00");
+		double base_i = 2.6;
+		double increment = 0.3;
+		for(int i=0;i<10;i++){
+			double i_value = base_i + i*increment;
+			String fullOutputFilePath = analysis_output_path + "behavioralSimilarityClusters_i_"+df.format(i_value)+"_"+".txt";
+			TreeSet<Cluster> behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, Integer.MAX_VALUE, i_value);
+			IOUtil.dumpAllClusters(analysis_output_path, behavioralClusters, corpus,"behavioralSimilarityClusterDump_i_"+df.format(i_value)+"_"+".txt", i_value);
+		}
+	}
 }

@@ -57,11 +57,11 @@ namespace ConsoleApplication1
                 {
                     if (line.StartsWith("belowMinimumList"))
                     {
-                        setBelowMinValues(line);
+                        setBelowMinValues(line,valuesFromFile);
                     }
                     else if (line.StartsWith("similarityValues:"))
                     {
-                        setSimilarityValues(line);
+                        setSimilarityValues(line,valuesFromFile);
                     }
                     //do nothing for other rows - these cols can use the verifiedTimeoutFlag they already have
                     //we will set these to belowMinimum if they exceed nErrors
@@ -71,22 +71,22 @@ namespace ConsoleApplication1
             return valuesFromFile;
         }
 
-        private void setSimilarityValues(string line)
+        private void setSimilarityValues(string line, double[] vals)
         {
             string similarityValueList = removeBrackets(line);
             MatchCollection matches = Regex.Matches(similarityValueList, @"(\((.*?)\))");
             foreach (Match match in matches)
             {
                 string pair = match.Groups[2].Value;
-                string[] splitPair = pair.Split(',');
+                string[] splitPair = pair.Split(':');
                 int colIndex = Convert.ToInt32(splitPair[0]);
                 double colValue = Convert.ToDouble(splitPair[1]);
-                values[colIndex] = colValue;
+                vals[colIndex] = colValue;
             }
 
         }
 
-        private void setBelowMinValues(string line)
+        private void setBelowMinValues(string line, double[] vals)
         {
             string[] indices = removeBrackets(line).Split(',');
 
@@ -96,7 +96,7 @@ namespace ConsoleApplication1
                 if (indexString.Length > 0)
                 {
                     int colIndex = Convert.ToInt32(indexString);
-                    values[colIndex] = SimilarityMatrixBuilder.belowMinFlag;
+                    vals[colIndex] = SimilarityMatrixBuilder.belowMinFlag;
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace ConsoleApplication1
         {
             int startIndex = line.IndexOf("[");
             int endIndex = line.IndexOf("]");
-            return line.Substring(startIndex + 1, endIndex);
+            return line.Substring(startIndex + 1, (endIndex-startIndex-1));
         }
 
         public void writeRowToFile(string rowFileBase, double minSimilarity)
@@ -165,6 +165,8 @@ namespace ConsoleApplication1
                     if (notFirstFlags[4])
                     {
                         //oops I'd like to correct this to similarityValues.Append(",");
+                        //but so many already look like this, perhaps best just leave it 
+                        //until it becomes important
                         belowMinimumList.Append(",");
                     }
                     similarityValues.Append("(");
