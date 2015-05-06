@@ -12,8 +12,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.TreeSet;
 
 import metric.FeatureDictionary;
@@ -86,7 +90,7 @@ public class IOUtil {
 	//
 	public static TreeSet<Cluster> getClusters(
 			String outputPath, String filename, String contents,
-			List<WeightRankedRegex> corpus, int topN, double i_value) throws IOException,
+			ArrayList<WeightRankedRegex> corpus, int topN, double i_value) throws IOException,
 			InterruptedException {
 		String fullInputFilePath = outputPath + filename;
 		String fullOutputFilePath = outputPath + "mclOutput_"+filename;
@@ -101,9 +105,20 @@ public class IOUtil {
 	}
 	
 	public static TreeSet<Cluster> getClustersFromFile(
-			String fullInputFilePath, List<WeightRankedRegex> corpus,
+			String fullInputFilePath, ArrayList<WeightRankedRegex> corpus,
 			String fulloutputFilePath, int topN, double i_value) throws IOException,
 			InterruptedException {
+		HashMap<Integer,WeightRankedRegex> lookup = getLookup(corpus);
+//		for(Entry<String, Integer> entry : reverseLookup.entrySet()){
+//			String key= entry.getKey();
+//			for(WeightRankedRegex wrr : corpus){
+//				String unescaped = wrr.getUnescapedPattern();
+//				if(unescaped.equals(key)){
+//					lookup.put(entry.getValue(), wrr);
+//					break;
+//				}
+//			}
+//		}
 		
 		// run the mcl script
 		DecimalFormat df = new DecimalFormat("0.00");
@@ -115,6 +130,7 @@ public class IOUtil {
 		TreeSet<Cluster> clusters = new TreeSet<Cluster>();
 		File outputFile = new File(fulloutputFilePath);
 		List<String> lines = FileUtils.readLines(outputFile, "UTF-8");
+		int lineNumber = 0;
 		for(String line : lines){
 			String[] indices = line.split("\t");
 			if(indices.length==0){
@@ -122,9 +138,14 @@ public class IOUtil {
 			}
 			Cluster cluster = new Cluster(topN);
 			for(String index : indices){
-				cluster.add(corpus.get(Integer.parseInt(index)));
+				int indexValue = Integer.parseInt(index);
+				WeightRankedRegex wrr = lookup.get(indexValue);
+				System.out.print("lineNumber: "+lineNumber+" index: "+index+" indexValue: "+indexValue);
+				System.out.println(" pattern: "+wrr.getContent());
+				cluster.add(wrr);
 			}
 			clusters.add(cluster);
+			lineNumber++;
 		}
 		return clusters;
 	}
@@ -186,5 +207,37 @@ public class IOUtil {
 		sb.insert(0, "Cluster stats:\n\nnClusters: "+i+"\nTotalPatterns: "+totalPatterns+"\ntotalWeight: "+totalWeight+"\ni_value: "+df.format(i_value)+"\n\n\n");
 		File output = new File(analysis_output_path,filename);
 		createAndWrite(output, sb.toString());
+	}
+	
+	public static HashMap<Integer,WeightRankedRegex> getLookup(ArrayList<WeightRankedRegex> corpus){
+		String filtered_corpus_path = PaperWriter.homePath +
+				"csharp/filteredCorpus.txt";
+		String content = IOUtil.getFileContents(filtered_corpus_path);
+		
+		HashMap<Integer,WeightRankedRegex> lookup = new HashMap<Integer,WeightRankedRegex>();
+		Pattern finder = Pattern.compile("(\\d+)\\t(.*)");
+		Matcher pairMatcher = finder.matcher(content);
+		while(pairMatcher.find()){
+
+			Integer index = Integer.parseInt(pairMatcher.group(1));
+			String pattern = pairMatcher.group(2);
+			for(WeightRankedRegex wrr : corpus){
+				String unesc = wrr.getUnescapedPattern();
+				//System.out.print(":::,:::"+unesc);
+				if(unesc.equals(pattern)){
+					lookup.put(index, wrr);
+					break;
+				}
+			}
+			if(lookup.get(index)==null){
+				System.out.println("getLookup why did this fail?- index: "+index+" pattern:::"+pattern+":::");
+				try {
+					Thread.sleep(10000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return lookup;
 	}
 }

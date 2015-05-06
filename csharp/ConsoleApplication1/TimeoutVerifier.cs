@@ -15,7 +15,7 @@ namespace ConsoleApplication1
         internal static void verifyRows(string allRowsBase, int nRows, double minSimilarity, string filteredCorpusPath, int nRunnawaysWithoutStress, int batchSize, string rexStringsBase)
         {
             AppDomain domain = AppDomain.CurrentDomain;
-            domain.SetData("REGEX_DEFAULT_MATCH_TIMEOUT",TimeSpan.FromSeconds(9));
+            domain.SetData("REGEX_DEFAULT_MATCH_TIMEOUT",TimeSpan.FromMilliseconds(1200));
             // create regexMap and keyList
             Dictionary<int, Regex> regexMap = new Dictionary<int, Regex>();
             Regex numberFinder = new Regex(@"(\d+)\t(.*)");
@@ -97,9 +97,11 @@ namespace ConsoleApplication1
             Console.WriteLine("verified i: " + rowIndex + "/" + nRows + " nTimeouts: " + nTimeouts + " nMatchStrings:" + matchingStrings_outer.Count + " time taken: " + elapsedTime);
         }
 
-        //TODO - tie this with a task that times out.
         static void validateCell(int j, double[] row, HashSet<string> matchingStrings_outer, Regex regex_inner, int maxErrors)
         {
+            AppDomain domain = AppDomain.CurrentDomain;
+            domain.SetData("REGEX_DEFAULT_MATCH_TIMEOUT", TimeSpan.FromMilliseconds(1200));
+
             double nMatchingStrings = matchingStrings_outer.Count;
             int alsoMatchingCounter = 0;
             int errorCounter = 0;
@@ -110,6 +112,7 @@ namespace ConsoleApplication1
                 if (errorCounter > maxErrors)
                 {
                     row[j] = SimilarityMatrixBuilder.belowMinFlag;
+                    return;
                 }
 
 

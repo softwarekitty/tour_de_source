@@ -75,7 +75,7 @@ public class PaperWriter {
 		filesToMake.add(new NameContentsPair("alienFeatures.txt", stringifyAlienFeatures()));
 
 		// stats about how features are used
-		filesToMake.add(new NameContentsPair("featureStats.tex", Section2.featureStats(corpus, databaseFileContent)));
+		filesToMake.add(new NameContentsPair("featureStats.tex", Section2.featureStats(corpus, databaseFileContent, connectionString)));
 
 		// a table for the top N feature coAppearances
 		filesToMake.add(new NameContentsPair("coApp.tex", Section2.coAppearances(corpus, databaseFileContent, 10)));
@@ -149,7 +149,7 @@ public class PaperWriter {
 	// named groups, lookahead, lookbehind, as-few-as-possible quantifiers,
 	// backreferences,
 	// conditional alternation, substitution
-	private static String exportCorpus(ArrayList<WeightRankedRegex> corpusList) {
+	public static String exportCorpus(ArrayList<WeightRankedRegex> corpusList) {
 		StringBuilder sb = new StringBuilder();
 		Iterator<WeightRankedRegex> it = corpusList.iterator();
 		int i = 0;

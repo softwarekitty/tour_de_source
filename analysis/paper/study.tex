@@ -1,5 +1,8 @@
 \section{Study}
 \subsection{\centerline{RECORDING REGEX USAGES}}
+
+Fun fact: while creating similarity matrix, row 5464 took 2 hours, or almost 1 second per cell avg, only suffering 18 timeouts (1.2 secs).  What is this pesky pattern?
+
 Using GHTorrent, we found the clone urls of \DTLfetch{data}{key}{nCloneURL}{value} github projects that had Python listed as the main language.  After consulting with github about the polite way to mine their service, we used 3 separate machines to clone projects in parallel.  On each machine, one attempt was made to clone each project into a unique directory.  \DTLfetch{data}{key}{nAborted}{value} of these attempts failed, so a total of \DTLfetch{data}{key}{nProjScanned}{value} projects were scanned overall.  For each of these projects, the java program launched a Python process that used `Astroid' to build the AST of each python file in the unique directory, recording uses of the `re' module.  Here is an example Python code using the `re' module:
 
 Placeholder for several examples of useage of the `re' module...image?  Shows example of function, flags pattern.
