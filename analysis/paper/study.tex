@@ -13,8 +13,32 @@
 % \end{tabular}
 % \end{center}
 
-\subsection{\centerline{RECORDING REGEX USAGES}}
+To understand how programmers use regular expressions in Python projects and the syntactic and semantic diversity among the regular expressions, we scraped X projects from GitHub, as described in Section~\ref{study:corpus}. Next, we logged all unique regular expressions 
 
+We aim to answer the following research questions:
+
+\textbf{RQ1:} How is the {\tt re module} used in python projects?
+
+To address this research question, we measure the frequency of usage for calls to the {\tt re.compile} and {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub}, {\tt re.subn} in Python projects scraped from GitHub. 
+
+\textbf{RQ2:} How frequently are regexes used in python projects?
+
+To address this question, we measure how often  calls to the {\tt re module} are made per file and per project in Python projects. 
+
+\textbf{RQ3:} Which regex language features are used most commonly in python?
+
+Regex features are components of the regex language, such as capture groups, literals, and the kleene star. To measure feature usage, we use the X library, as described in Section~\ref{study:features}. 
+
+\textbf{RQ4:} How syntactically diverse are regexes used in python?
+
+
+\textbf{RQ5:} How semantically diverse are regexes used in python?
+
+
+
+
+\subsection{Building the Corpus}
+\label{study:corpus}
 We used the github api to page through all repositories, cloning projects that contain Python code, stopping when the scraper ran out of memory\footnote{\url{www.details.#better_parser}}.  For each project, we used Astroid[X] to build the AST of each Python file and find uses of Python's 're' module.  Here is an example of one regex \emph{usage}, with key components labeled:
 
 \begin{figure}[htb]
@@ -26,17 +50,21 @@ We used the github api to page through all repositories, cloning projects that c
 
 Within each project, duplicate usages (same function, pattern and flags) within the same file (same relative path) were ignored.  Using git, each project was scanned at 20 evenly-spaced commits (or all commits if there were less than 20) in its history.  We observed and recorded \DTLfetch{data}{key}{nUsages}{value} regex usages in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
-\subsection{\centerline{SELECTING PATTERNS}}
+\subsection{Selecting Patterns}
 Our analysis focuses on the patterns found, so we ignored the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of usages using flags that can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of usages contained patterns that could not be compiled because the pattern was non-static (used some runtime variable), or because of other unknown parsing failures.
 
 The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) usages were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings.  The resulting set of patten strings were parsed using an antlr-based, open source PCRE parser released by Bart Kiers\footnote{\url{https://github.com/bkiers/pcre-parser}}.  This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we have chosen to exclude in this study\footnote{\url{www.details.#thistopic}}.  The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We will refer to this set of weighted, distinct pattern strings as the \emph{collection}.
 
-\subsection{\centerline{ANALYZING FEATURES}}
+\subsection{Analyzing Features}
+\label{study:features}
 
-After picking four large regex research projects, the big table with the features was created in order to decide which unsupported features are used most often.  Then our analysis breaks into two branches, basically the positive and negative perspective on feature usage.
+After picking four large regex research projects, the big table with the features was created in order to decide which unsupported features are used most often.  
+Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity. 
 
+\subsubsection{Syntactic Diversity}
 For the negative perspective, we picked three features: LZY, NCG, WNW that are unsupported by Rex and other projects.  For each of these features, we created a subset of the \emph{collection} where all the patterns contain that feature.  Then we used syntactic analysis...to create a similarity matrix.  We then used markov clustering [X] (MCL) to find clusters in the subset.  We used these clusters to assist our manual search for some common use cases for the unsupported feature.
 
+\subsubsection{Semantic Diversity}
 For the positive perspective, we created another subset of patterns (XYZ patterns) where Rex was able to generate strings that the pattern matched.  We then created a similarity graph with weighted, undirected edges as follows:
 \begin{description}
 \setlength{\parskip}{0pt} % block paragraphs
@@ -66,17 +94,10 @@ For the positive perspective, we created another subset of patterns (XYZ pattern
 Again we used MCL to find clusters that aided a manual search for use cases strongly associated with particular features.
 
 
-TODO - list research questions (metrics and how they are computed?)
 
-RQ1: How is the {\tt re module} used in python projects?
-RQ2: How frequently are regexes used in python projects?
-RQ3: Which regex language features are used most commonly in python?
-RQ4: How syntactically diverse are regexes used in python?
-RQ5: How semangically diverse are regexes used in python?
-
-\subsubsection{\centerline{FEATURES}}
-
-Here is a table showing all the features included in this study and which features are supported by four popular regex research projects/tools:
+%\subsubsection{Features}
+%
+%Here is a table showing all the features included in this study and which features are supported by four popular regex research projects/tools:
 
 %\input{featuresAndProjectsTable}
 
