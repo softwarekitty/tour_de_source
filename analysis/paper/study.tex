@@ -31,10 +31,12 @@ To address this research question, we measure the frequency of usage for calls t
 
 Regex features are components of the regex language, such as capture groups, literals, and the kleene star. To measure feature usage, we use the X library, as described in Section~\ref{study:features}. 
 
-\textbf{RQ4:} How syntactically diverse are regexes used in python?
+\textbf{RQ4:} How semantically diverse are regexes used in python?
 
+\textbf{RQ5:} What is the impact of \emph{not} supporting various regex features  on tool designers and users? 
 
-\textbf{RQ5:} How semantically diverse are regexes used in python?
+We map the regex features to each of four research tools that are commonly used for regular expressions research. 
+To address this research question, we looked at the most popular regular expression features that Rex does not support. As Rex is used for our semantic analysis in RQ4, we were interested in the impact of not supporting these features. 
 
 
 
@@ -67,7 +69,9 @@ Our semantic analysis is dependent on the use of Rex to generate strings so we c
 For the negative perspective, we picked three features: LZY, NCG, WNW that are unsupported by Rex and other projects.  For each of these features, we created a subset of the \emph{collection} where all the patterns contain that feature.  Then we used syntactic analysis...to create a similarity matrix.  We then used markov clustering [X] (MCL) to find clusters in the subset.  We used these clusters to assist our manual search for some common use cases for the unsupported feature.
 
 \subsubsection{Semantic Diversity}
-For the positive perspective, we created another subset of patterns (XYZ patterns) where Rex was able to generate strings that the pattern matched.  We then created a similarity graph with weighted, undirected edges as follows:
+For the positive perspective, we created another subset of patterns (XYZ patterns) where Rex was able to generate strings that the pattern matched.  We then created a similarity graph with weighted, undirected edges as shown in Figure~\ref{fig:similarityConstruction}.
+
+\begin{figure}
 \begin{description}
 \setlength{\parskip}{0pt} % block paragraphs
 \setlength{\itemindent}{0in}
@@ -92,6 +96,8 @@ For the positive perspective, we created another subset of patterns (XYZ pattern
 \setlength{\itemindent}{0in}
 \setlength{\parskip}{10pt} % block paragraphs
 \end{description}
+\caption{Constructing Similarity Graph \label{fig:similarityConstruction}}
+\end{figure}
 
 Again we used MCL to find clusters that aided a manual search for use cases strongly associated with particular features.
 
