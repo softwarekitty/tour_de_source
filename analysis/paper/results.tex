@@ -14,7 +14,7 @@ From the above figure/table, we see that on average each project had \DTLfetch{d
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\columnwidth]{../analysis_output/partFunctions.eps}
-\caption{How often are the 8 re functions used?}
+\caption{How often are the 8 re functions used? (RQ2)}
 \label{fig:partFunctions}
 \end{figure}
 
@@ -23,13 +23,13 @@ As seen in Figure~\ref{fig:partFunctions} The `compile' function encompasses \DT
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\columnwidth]{../analysis_output/partFlags.eps}
-\caption{Which behavioral flags are used?}
+\caption{Which behavioral flags are used? (RQ2)}
 \label{fig:digraph}
 \end{figure}
 
 \DTLfetch{data}{key}{percentFlags0}{value}\% of all regex usages did not use a flag or specified a non-behavioral flag (default or debug).  Of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed. (remove this last part if it is observed later)
 
-\subsubsection{{GENERAL CHARACTERISTICS OF REGEXES FOUND}}
+\subsubsection{{General Characteristics of Regexes Found}}
 
 ...TODO
 
