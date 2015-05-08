@@ -48,6 +48,7 @@ public class Section1 {
 		String percentAlien = Composer.percentify(nAlien, nDistinctPatterns);
 		databaseFileContent.put(C.N_ALIEN, Composer.commafy(nAlien));
 		databaseFileContent.put(C.N_UNICODE, Composer.commafy(nUnicode));
+		databaseFileContent.put(C.P_UNICODE, Composer.percentify(nUnicode, nDistinctPatterns));
 		databaseFileContent.put(C.P_ALIEN, percentAlien);
 
 		int nRC = emptyCorpus.size();

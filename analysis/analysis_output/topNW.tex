@@ -6,63 +6,63 @@ pattern & weight \\
 \midrule
 \begin{minipage}{2.3in}
 \begin{verbatim}
-'.*?\n'\end{verbatim}
-\end{minipage}
-& 482 \\ 
-\midrule
-\begin{minipage}{2.3in}
-\begin{verbatim}
-'[0-9]+'\end{verbatim}
-\end{minipage}
-& 475 \\ 
-\midrule
-\begin{minipage}{2.3in}
-\begin{verbatim}
-'^([\\w., ]+=)?\\s*[\\w\\.]+\\(.*\\)$'\end{verbatim}
-\end{minipage}
-& 471 \\ 
-\midrule
-\begin{minipage}{2.3in}
-\begin{verbatim}
 '\\s+'\end{verbatim}
 \end{minipage}
-& 467 \\ 
+& 181 \\ 
 \midrule
 \begin{minipage}{2.3in}
 \begin{verbatim}
-'^[^(]*'\end{verbatim}
+'\\s'\end{verbatim}
 \end{minipage}
-& 464 \\ 
+& 78 \\ 
 \midrule
 \begin{minipage}{2.3in}
 \begin{verbatim}
-'   \\.\\.\\.+:'\end{verbatim}
+'\\d+'\end{verbatim}
 \end{minipage}
-& 461 \\ 
+& 70 \\ 
 \midrule
 \begin{minipage}{2.3in}
 \begin{verbatim}
-'(In \\[[0-9]+\\]: )|(   \\.\\.\\.+:)'\end{verbatim}
+'[\\x80-\\xff]'\end{verbatim}
 \end{minipage}
-& 461 \\ 
+& 69 \\ 
 \midrule
 \begin{minipage}{2.3in}
 \begin{verbatim}
-'(Out\\[[0-9]+\\]: )|(   \\.\\.\\.+:)'\end{verbatim}
+'\nmd5_data = {\n([^}]+)}'\end{verbatim}
 \end{minipage}
-& 461 \\ 
+& 69 \\ 
 \midrule
 \begin{minipage}{2.3in}
 \begin{verbatim}
-'\\-+'\end{verbatim}
+'\\\\(.)'\end{verbatim}
 \end{minipage}
-& 461 \\ 
+& 67 \\ 
 \midrule
 \begin{minipage}{2.3in}
 \begin{verbatim}
-'^\\s*[#*=]{4,}\\n[a-z0-9 -]+\\n[#*=]{4,}\\s*'\end{verbatim}
+'([\\\\"]|[^\\ -~])'\end{verbatim}
 \end{minipage}
-& 454 \\ 
+& 66 \\ 
+\midrule
+\begin{minipage}{2.3in}
+\begin{verbatim}
+'(-?(?:0|[1-9]\\d*))(\\.\\d+)?([eE][-+]?\\d+)?'\end{verbatim}
+\end{minipage}
+& 61 \\ 
+\midrule
+\begin{minipage}{2.3in}
+\begin{verbatim}
+'[^]]+?\\] +([0-9.]+): (\\w+) <-(\\w+)'\end{verbatim}
+\end{minipage}
+& 60 \\ 
+\midrule
+\begin{minipage}{2.3in}
+\begin{verbatim}
+'.*rlen=([0-9]+)'\end{verbatim}
+\end{minipage}
+& 57 \\ 
 \bottomrule
 \end{tabular}
 \end{center}

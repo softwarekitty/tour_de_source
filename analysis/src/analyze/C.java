@@ -28,6 +28,10 @@ public class C {
 	public static final String P_LITERAL_TOKENS = "P_LITERAL_TOKENS";
 	public static final String S3_SCRIPTNAME = "syntaxClusterInput.abc";
 	public static final String S3_OUTPUT = "syntaxClusterOutput.abc";
+	public static final String P_BAD_FLAGS = "percentBadFlags";
+	public static final String P_INVALID_PATTERN = "percentInvalidPattern";
+	public static final String P_CLEAN_USAGES = "percentCleanUsages";
+	public static final String P_UNICODE = "percentUnicode";
 
 	//Study.RECORDING REGEX USAGES
 	public static String N_CLONE_URL = "nCloneURL";

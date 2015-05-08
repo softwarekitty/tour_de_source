@@ -44,6 +44,23 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements RankableConte
 		}
 		return sb.toString();
 	}
+	
+	public String getShortest(){
+		Iterator<WeightRankedRegex> it = this.iterator();
+		String smallest = null;
+		if(it.hasNext()){
+			
+			//should always get here - no empty clusters
+			smallest = it.next().getUnescapedPattern();
+		}
+		while(it.hasNext()){
+			String smaller = it.next().getUnescapedPattern();
+			if(smaller.length() < smallest.length()){
+				smallest = smaller;
+			}
+		}
+		return smallest;
+	}
 
 	@Override
 	public int compareTo(RankableContent other) {

@@ -145,7 +145,9 @@ public class Section0 {
 			Composer.intify(databaseFileContent.get(C.FLAGS_64)) +
 			Composer.intify(databaseFileContent.get(C.FLAGS_255));
 
+		int nUsages = Composer.intify(databaseFileContent.get(C.N_USAGES));
 		databaseFileContent.put(C.N_BAD_FLAGS, Composer.commafy(nBadFlags));
+		databaseFileContent.put(C.P_BAD_FLAGS, Composer.percentify(nBadFlags, nUsages));
 
 		//
 		// count how many flagless regex usages have patterns that python can
@@ -155,6 +157,8 @@ public class Section0 {
 		getNFlaglessInvalidClean(connectionString, nInvalid, nClean);
 		databaseFileContent.put(C.N_CLEAN_USAGES, Composer.commafy(nClean[0]));
 		databaseFileContent.put(C.N_INVALID_PATTERN, Composer.commafy(nInvalid[0]));
+		databaseFileContent.put(C.P_INVALID_PATTERN, Composer.percentify(nInvalid[0],nUsages));
+		databaseFileContent.put(C.P_CLEAN_USAGES, Composer.percentify(nClean[0],nUsages));
 
 		// Results.CONTEXT.SATURATION
 		int nProjScanned = Composer.intify(databaseFileContent.get(C.N_PROJ_SCANNED));
@@ -166,7 +170,7 @@ public class Section0 {
 		String percentFilesUsingRegex = Composer.percentify(nFilesWithRegex, nFilesScanned);
 		databaseFileContent.put(C.P_FILES_USING_REGEX, percentFilesUsingRegex);
 
-		int nUsages = Composer.intify(databaseFileContent.get(C.N_USAGES));
+
 
 		// Results.FUNCTIONS AND FLAGS
 		// note: the regexFunction mapping uses indices from this array:

@@ -192,7 +192,7 @@ public class IOUtil {
 				topNString.append(rF.dump());
 				n++;
 			}
-			sb.append("cluster "+i+" stats:\nnPatterns: "+nPatterns+"\ncombinedWeight: "+combinedWeight+"\ntop "+topN+" Features:\n\n"+topNString.toString()+"\n\n");
+			sb.append("cluster "+i+" stats:\nnPatterns: "+nPatterns+"\ncombinedWeight: "+combinedWeight+"\nshortest: "+cluster.getShortest()+"\ntop "+topN+" Features:\n\n"+topNString.toString()+"\n\n");
 			
 			int j=0;
 			for(WeightRankedRegex wrr : cluster){

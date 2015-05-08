@@ -1,20 +1,70 @@
 \section{Study}
+% \subsection{\centerline{DEFINITIONS}}
+
+% \begin{center}
+% \begin{tabular}
+% {lcc}
+% term & meaning & example  \\
+% \toprule
+% pattern & a composition of regex tokens & 'ab*c' \\
+% \midrule
+% usage & distinct function, pattern and flags within one filepath of one project & re.compile('ab*c') \\
+% \midrule
+% \end{tabular}
+% \end{center}
+
 \subsection{\centerline{RECORDING REGEX USAGES}}
 
-Fun fact: while creating similarity matrix, row 5464 took 2 hours, or almost 1 second per cell avg, only suffering 18 timeouts (1.2 secs).  What is this pesky pattern?
+We used the github api to page through all repositories, cloning projects that contain Python code, stopping when the scraper ran out of memory\footnote{\url{www.details.#better_parser}}.  For each project, we used Astroid[X] to build the AST of each Python file and find uses of Python's 're' module.  Here is an example of one regex \emph{usage}, with key components labeled:
 
-Using GHTorrent, we found the clone urls of \DTLfetch{data}{key}{nCloneURL}{value} github projects that had Python listed as the main language.  After consulting with github about the polite way to mine their service, we used 3 separate machines to clone projects in parallel.  On each machine, one attempt was made to clone each project into a unique directory.  \DTLfetch{data}{key}{nAborted}{value} of these attempts failed, so a total of \DTLfetch{data}{key}{nProjScanned}{value} projects were scanned overall.  For each of these projects, the java program launched a Python process that used `Astroid' to build the AST of each python file in the unique directory, recording uses of the `re' module.  Here is an example Python code using the `re' module:
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/exampleUsage.eps}
+\caption{example of one regex usage}
+\label{fig:exampleUsage}
+\end{figure}
 
-Placeholder for several examples of useage of the `re' module...image?  Shows example of function, flags pattern.
+Within each project, duplicate usages (same function, pattern and flags) within the same file (same relative path) were ignored.  Using git, each project was scanned at 20 evenly-spaced commits (or all commits if there were less than 20) in its history.  We observed and recorded \DTLfetch{data}{key}{nUsages}{value} regex usages in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
-TODO...mention rewinding, duplicate skipping, exact criteria for citing a usage...For each of the \DTLfetch{data}{key}{nUsages}{value} regex usages observed, we recorded which `re' function was used, what flags (if any) were used, and what pattern was found.
+\subsection{\centerline{SELECTING PATTERNS}}
+Our analysis focuses on the patterns found, so we ignored the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of usages using flags that can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of usages contained patterns that could not be compiled because the pattern was non-static (used some runtime variable), or because of other unknown parsing failures.
 
-\subsection{\centerline{FILTERING REGEX USAGES}}
-Because we want to let regex patterns alone define behavior later in our analysis, all regex usages where behavioral flags are used are discarded, along with all invalid pattern strings.   TODO - change to percents \DTLfetch{data}{key}{nBadFlags}{value} usages were discarded because they used behavior-altering flags, and \DTLfetch{data}{key}{nInvalidPattern}{value} without flags were discarded because their pattern strings were invalid (could not be compiled by Python into a regex object).
+The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) usages were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings.  The resulting set of patten strings were parsed using an antlr-based, open source PCRE parser released by Bart Kiers\footnote{\url{https://github.com/bkiers/pcre-parser}}.  This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we have chosen to exclude in this study\footnote{\url{www.details.#thistopic}}.  The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We will refer to this set of weighted, distinct pattern strings as the \emph{collection}.
 
-\DTLfetch{data}{key}{nCleanUsages}{value} regex usages remain (meow percent), which are then condensed to \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings.  The number of distinct pattern strings is much smaller because the same pattern string is often used in many distinct files and projects by different functions with different flags and these all count as separate usages.  The resulting set of patten strings were parsed using TODO - \footnote{\url{www.source}} PCRE parser.  \DTLfetch{data}{key}{percentPCREError}{value}\% of the strings caused the PCRE parser to raise an error.  Another \DTLfetch{data}{key}{percentAlien}{value}\% used regex features that we have chosen to exclude in this study (most notably named capturing groups).  The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain are given a weight based upon how many projects the pattern appeared in (FYI no forked projects were scanned).
+\subsection{\centerline{ANALYZING FEATURES}}
 
-TODO - clean this: So then we use the following 4? techniques to try and best represent the entire corpus using a few regexes: 1. weight (frequency of usage across projects) 2. features (matching properties of feature usage) 3. syntactic clustering 4. semantic clustering ...and also we give the topN clones by weight, and a list that tries to include information from all 4 lists?  That will be all.  Future work: mine more projects and compare that result with this result.  Compare across languages (java, javascript,ruby,etc.).
+After picking four large regex research projects, the big table with the features was created in order to decide which unsupported features are used most often.  Then our analysis breaks into two branches, basically the positive and negative perspective on feature usage.
+
+For the negative perspective, we picked three features: LZY, NCG, WNW that are unsupported by Rex and other projects.  For each of these features, we created a subset of the \emph{collection} where all the patterns contain that feature.  Then we used syntactic analysis...to create a similarity matrix.  We then used markov clustering [X] (MCL) to find clusters in the subset.  We used these clusters to assist our manual search for some common use cases for the unsupported feature.
+
+For the positive perspective, we created another subset of patterns (XYZ patterns) where Rex was able to generate strings that the pattern matched.  We then created a similarity graph with weighted, undirected edges as follows:
+\begin{description}
+\setlength{\parskip}{0pt} % block paragraphs
+\setlength{\itemindent}{0in}
+\item for each row i:
+\setlength{\itemindent}{0.2in}
+\item obtain set of Rex-generated strings Ri from pattern at index i
+\item sRi = size of Ri
+\item for each col j:
+\setlength{\itemindent}{0.4in}
+\item Nij = number of strings in Ri matched by pattern at index j
+\item M[i][j] = Nij/sRi
+\setlength{\itemindent}{0in}
+\item G = empty graph
+\item for each row i:
+\setlength{\itemindent}{0.2in}
+\item for each col j:
+\setlength{\itemindent}{0.4in}
+\item SIMij = (M[i][j]+M[j][i])/2
+\item if SIMij > 0.75:
+\setlength{\itemindent}{0.6in}
+\item add edge (i,j)=SIMij to G
+\setlength{\itemindent}{0in}
+\setlength{\parskip}{10pt} % block paragraphs
+\end{description}
+
+Again we used MCL to find clusters that aided a manual search for use cases strongly associated with particular features.
+
 
 TODO - list research questions (metrics and how they are computed?)
 
@@ -29,6 +79,10 @@ RQ5: How semangically diverse are regexes used in python?
 Here is a table showing all the features included in this study and which features are supported by four popular regex research projects/tools:
 
 %\input{featuresAndProjectsTable}
+
+
+
+
 
 
 
