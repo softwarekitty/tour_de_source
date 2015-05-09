@@ -65,6 +65,15 @@ In the end, we scraped XYZ projects that contained at least some Python code. Of
 
 Within each relevant project, duplicate usages (same function, pattern and flags) within the same file (same relative path) were ignored. \todo{why were duplicates ignored?} Using git, each project was scanned at 20 evenly-spaced commits (or all commits if there were less than 20) in its history.  We observed and recorded \DTLfetch{data}{key}{nUsages}{value} regex usages in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
+Throughout the rest of the paper, we use the following definitions:
+
+\noindent \textbf{Usage}: A regex \emph{usage} is a single instance of a regular expression found in a project file. 
+
+\noindent \textbf{Pattern}: A regex \emph{pattern} is a unique regular expression found in the study and may represent many usages. 
+
+That is, the set of patterns is collected by collapsing on duplicate usages. We use patterns as opposed to usages because \todo{Carl: why is this?}
+
+
 \subsection{Selecting Patterns}
 Our analysis focuses on the patterns found, so we ignored the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of usages using flags that can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of usages contained patterns that could not be compiled because the pattern was non-static (used some runtime variable), or because of other unknown parsing failures.
 
