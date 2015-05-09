@@ -20,6 +20,10 @@ public class RankedFeature implements RankableContent{
 		return featureText;
 	}
 	
+	public double getFrequency(){
+		return frequency;
+	}
+	
 
 	public String dump(int rank) {
 		return rank + ": " + featureText + " | "+frequency + "\n";

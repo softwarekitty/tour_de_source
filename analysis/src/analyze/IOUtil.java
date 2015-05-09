@@ -229,6 +229,9 @@ public class IOUtil {
 			boolean listAll = true;
 			while (it.hasNext() && (listAll || n<=topN)) {
 				RankedFeature rF = it.next();
+				if(rF.getFrequency()==0){
+					break;
+				}
 				topNString.append(rF.dump(n));
 				n++;
 			}
