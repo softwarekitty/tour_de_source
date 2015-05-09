@@ -21,8 +21,8 @@ public class RankedFeature implements RankableContent{
 	}
 	
 
-	public String dump() {
-		return featureText + " | "+frequency + "\n";
+	public String dump(int rank) {
+		return rank + ": " + featureText + " | "+frequency + "\n";
 	}
 
 	@Override

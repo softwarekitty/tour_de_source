@@ -32,7 +32,7 @@ public class PaperWriter {
 	private static char d = '•';
 	public static final String homePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/";
 	public static final String connectionString = "jdbc:sqlite:" + homePath +
-			"tools/merged/merged_report.db";
+		"tools/merged/merged_report.db";
 
 	public static void main(String[] args) throws ClassNotFoundException,
 			SQLException, ValueMissingException, IOException,
@@ -66,7 +66,10 @@ public class PaperWriter {
 
 		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
 		// distinct features, token count and pattern length
-		filesToMake.add(new NameContentsPair("exportedCorpus.txt", exportCorpus(corpus)));
+		filesToMake.add(new NameContentsPair("exportedCorpusRaw.txt", exportCorpusRaw(corpus)));
+
+		// distinct features, token count and pattern length
+		filesToMake.add(new NameContentsPair("exportedCorpusRex.txt", exportCorpusRex(corpus)));
 
 		// the key value database for strings in the paper
 		filesToMake.add(new NameContentsPair("database.csv", stringifyMap(databaseFileContent)));
@@ -149,7 +152,8 @@ public class PaperWriter {
 	// named groups, lookahead, lookbehind, as-few-as-possible quantifiers,
 	// backreferences,
 	// conditional alternation, substitution
-	public static String exportCorpus(ArrayList<WeightRankedRegex> corpusList) {
+	public static String exportCorpusRex(
+			ArrayList<WeightRankedRegex> corpusList) {
 		StringBuilder sb = new StringBuilder();
 		Iterator<WeightRankedRegex> it = corpusList.iterator();
 		int i = 0;
@@ -165,13 +169,34 @@ public class PaperWriter {
 		return sb.toString();
 	}
 
+	// This export is so that other steps can skip computing the corpus from
+	// database
+	public static String exportCorpusRaw(
+			ArrayList<WeightRankedRegex> corpusList) {
+		StringBuilder sb = new StringBuilder();
+		Iterator<WeightRankedRegex> it = corpusList.iterator();
+		int i = 0;
+		while (it.hasNext()) {
+			WeightRankedRegex wrr = it.next();
+			sb.append(i + "\t" + wrr.getRankableValue()+"\t"+wrr.getContent() + "\n");
+			i++;
+		}
+		return sb.toString();
+	}
+
 	private static boolean rexCompatible(WeightRankedRegex wrr) {
 		int[] features = wrr.getFeatures().getFeatureCountArray();
-		int[] incompatibleIndices = { FeatureDictionary.I_REP_LAZY, FeatureDictionary.I_LOOK_AHEAD,
-				FeatureDictionary.I_LOOK_AHEAD, FeatureDictionary.I_LOOK_BEHIND, FeatureDictionary.I_LOOK_BEHIND_NEGATIVE,
-				FeatureDictionary.I_LOOK_NON_CAPTURE, FeatureDictionary.I_META_NUMBERED_BACKREFERENCE,
-				FeatureDictionary.I_XTRA_NAMED_BACKREFERENCE, FeatureDictionary.I_POS_NONWORD, FeatureDictionary.I_POS_WORD,
-				FeatureDictionary.I_XTRA_NAMED_GROUP_PYTHON, FeatureDictionary.I_XTRA_OPTIONS, FeatureDictionary.I_XTRA_END_SUBJECTLINE};
+		int[] incompatibleIndices = { FeatureDictionary.I_REP_LAZY,
+				FeatureDictionary.I_LOOK_AHEAD, FeatureDictionary.I_LOOK_AHEAD,
+				FeatureDictionary.I_LOOK_BEHIND,
+				FeatureDictionary.I_LOOK_BEHIND_NEGATIVE,
+				FeatureDictionary.I_LOOK_NON_CAPTURE,
+				FeatureDictionary.I_META_NUMBERED_BACKREFERENCE,
+				FeatureDictionary.I_XTRA_NAMED_BACKREFERENCE,
+				FeatureDictionary.I_POS_NONWORD, FeatureDictionary.I_POS_WORD,
+				FeatureDictionary.I_XTRA_NAMED_GROUP_PYTHON,
+				FeatureDictionary.I_XTRA_OPTIONS,
+				FeatureDictionary.I_XTRA_END_SUBJECTLINE };
 		for (int i : incompatibleIndices) {
 			if (features[i] != 0) {
 				return false;
