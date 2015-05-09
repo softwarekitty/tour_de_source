@@ -58,8 +58,7 @@ public class Section5 {
 				for(int k_value : kVals){
 					String suffix = "_i"+df.format(i_value)+"_p"+df.format(p_value)+"_k"+k_value+"_";
 					String fullOutputFilePath = behavioral_analysis_path + "behavioralSimilarityClusters"+suffix+".txt";
-					String newOptions = " -tf 'gq("+df.format(p_value)+")' -tf '#knn("+k_value+")'";
-					newOptions = "";
+					String newOptions = " -tf gq("+df.format(p_value)+") -tf #knn("+k_value+")";
 					//String[] mclInput = {fullInputFilePath,"-I",df.format(i_value), "--abc","-o", fullOutputFilePath};
 					String mclInput = fullInputFilePath+" -I "+df.format(i_value)+newOptions+" --abc -o " +fullOutputFilePath;
 					TreeSet<Cluster> behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, Integer.MAX_VALUE, mclInput);

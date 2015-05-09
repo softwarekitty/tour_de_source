@@ -3,7 +3,7 @@ Cluster stats:
 nClusters: 515
 TotalPatterns: 2122
 totalWeight: 7880
-suffix: _i1.40_p0.75_k20_
+suffix: _i1.40_p0.86_k20_
 
 
 cluster 0 stats:
