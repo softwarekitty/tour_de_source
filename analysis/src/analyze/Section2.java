@@ -170,7 +170,10 @@ public class Section2 {
 			sb.append(" \\\\ \n\\midrule\n");
 			rankIndex++;
 		}
-		sb.append("\\bottomrule\n\\end{tabular}\n\\end{table*}\n\\end{center}\n");
+		sb.append("\\bottomrule\n\\end{tabular}\n" +
+			"\\caption{How Frequently do Features Appear in Projects, and Which Features are Supported By Four Major Regex Projects? (RQ2)}\n" +
+			"\\label{table:featureStats}\n" +
+			"\\end{table*}\n\\end{center}\n");
 		return sb.toString();
 	}
 

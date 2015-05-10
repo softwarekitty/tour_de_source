@@ -144,7 +144,7 @@ public class Composer {
 	}
 
 	public static String composeRankTable(int tableSize,
-			Iterator<? extends RankableContent> it, double width, String contentsName, String rankName) {
+			Iterator<? extends RankableContent> it, double width, String contentsName, String rankName, String caption, String label) {
 		StringBuilder sb = new StringBuilder();
 		DecimalFormat df = new DecimalFormat("#0.#");
 		String widthS = df.format(width);
@@ -164,7 +164,11 @@ public class Composer {
 				sb.append(afterWeight);
 			}
 		}
-		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n\\end{table*}\n");
+		//\caption{What are the most frequently used Patterns?}\label{table:topNW}
+		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n" +
+			"\\caption{"+caption+"}\n" +
+			"\\label{"+label+"}\n" +
+			"\\end{table*}\n");
 		return sb.toString();
 	}
 

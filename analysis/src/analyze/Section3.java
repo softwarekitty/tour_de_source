@@ -26,7 +26,7 @@ public class Section3 {
 	
 	static String getSyntaxClusteringTableContent(int nRows, String outputPath,ArrayList<WeightRankedRegex> corpus, int functionSwitch, double minSimilarity, int topN, double width) throws IOException, InterruptedException, ClassNotFoundException, SQLException{
 		TreeSet<Cluster> clusters = syntacticClustering(outputPath, corpus, functionSwitch, minSimilarity, topN);
-		return Composer.composeRankTable(nRows,clusters.iterator(), width, "top "+ topN+ " regexes", "clusterWeight");
+		return Composer.composeRankTable(nRows,clusters.iterator(), width, "top "+ topN+ " regexes", "clusterWeight","syntaxClusteringCaption","table:syntax");
 	}
 	
 	static TreeSet<Cluster> syntacticClustering(String outputPath,ArrayList<WeightRankedRegex> corpus, int functionSwitch, double minSimilarity, int topN) throws IOException, InterruptedException, ClassNotFoundException, SQLException{

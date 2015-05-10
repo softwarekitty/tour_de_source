@@ -19,6 +19,7 @@ percentI•43.8
 percentM•25.8
 nFilesUsingRegex•18,547
 FUNC_0•31054
+P_LITERAL_TOKENS•70.6
 FUNC_2•5788
 FUNC_1•7116
 FLAGS_128•0
@@ -47,6 +48,7 @@ percentInvalidPattern•6.5
 nDistinctPatterns•14,113
 q3FilePerProj•21
 maxRFilePerProj•541
+P_LITERAL_PRESENT•97.5
 FLAGS_64•943
 nExpectedUsages•23,388
 nBadFlags•6,835

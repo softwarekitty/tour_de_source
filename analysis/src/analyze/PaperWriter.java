@@ -58,7 +58,7 @@ public class PaperWriter {
 		filesToMake.add(new NameContentsPair("contextHistogram.tex", Composer.composeHistogramTable(3, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent))));
 
 		// make a latex table with the top N regexes by weight.
-		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.3, "pattern", "weight")));
+		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.3, "pattern", "nProjects", "Top 10 Regexes","table:topNW")));
 
 		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
 		// distinct features, token count and pattern length
@@ -71,8 +71,7 @@ public class PaperWriter {
 		// distinct features, token count and pattern length
 		filesToMake.add(new NameContentsPair("exportedCorpusRex.txt", exportCorpusRex(corpus)));
 
-		// the key value database for strings in the paper
-		filesToMake.add(new NameContentsPair("database.csv", stringifyMap(databaseFileContent)));
+
 
 		// list of alien features excluded
 		filesToMake.add(new NameContentsPair("alienFeatures.txt", stringifyAlienFeatures()));
@@ -82,6 +81,11 @@ public class PaperWriter {
 
 		// a table for the top N feature coAppearances
 		filesToMake.add(new NameContentsPair("coApp.tex", Section2.coAppearances(corpus, databaseFileContent, 10)));
+		
+		
+		// ALWAYS DO THIS LAST (so that above straggler functions can add data)
+		// the key value database for strings in the paper
+		filesToMake.add(new NameContentsPair("database.csv", stringifyMap(databaseFileContent)));
 
 		// a table for the top N syntax clusters, using different string
 		// similarities

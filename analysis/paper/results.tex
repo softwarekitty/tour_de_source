@@ -1,69 +1,53 @@
 \section{Results}
 \label{sec:results}
-\subsection{Frequency of Regex Usage in Python Projects}
-
-Out of the \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one \emph{utilization}.  For context about how saturated these projects were with regex \emph{utilizations}, we consider how many files the average project scanned contained, how many of those files contained \emph{utilizations}, and how many \emph{utilizations} occurred per file.
+\subsection{Frequency of Regex \emph{Utilizations} in Python Projects}
+\subsubsection{Saturation of Projects with Regex \emph{Utilizations}}
+Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one \emph{utilization}.  For context about how saturated these projects were with regex \emph{utilizations}, we consider how many files the average project scanned contained, how many of those files contained \emph{utilizations}, and how many \emph{utilizations} occurred per file in table~\ref{table:contextHistogram}.
 
 \begin{table}[tb]
 \centering
-\includegraphics[width=\columnwidth]{../analysis_output/contextHistogram}
-\caption{How saturated are projects with \emph{utilizations}? (RQ2)}
-\label{fig:contextHistogram}
+\input{../analysis_output/contextHistogram}
+\caption{How saturated are projects with \emph{utilizations}? (RQ1)}
+\label{table:contextHistogram}
 \end{table}
 
+\subsubsection{Usage Frequency of {\tt re} Module Functions and Flags}
 
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\columnwidth]{../analysis_output/partFunctions.eps}
+\caption{How often are the 8 re functions used? (RQ1)}
+\label{fig:partFunctions}
+\end{figure}
 
-Although  of the projects observed had at least one regex usage, only \DTLfetch{data}{key}{percentFilesUsingRegex}{value}\% (\DTLfetch{data}{key}{nFilesUsingRegex}{value}) of the files observed had at least one regex usage.
+As seen in Figure~\ref{fig:partFunctions} The `compile' function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all \emph{utilizations}, presumably because each usage of those functions could accept the compiled regex as an argument.
 
-\subsection{Usage Frequency of {\tt re} Module Functions and Flags}
-\todo{comments, labels on graph below}
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\columnwidth]{../analysis_output/partFlags.eps}
+\caption{Which behavioral flags are used? (RQ1)}
+\label{fig:partFlags}
+\end{figure}
 
+When considering flag use, we excluded non-behavioral flags (default and debug), which account for \DTLfetch{data}{key}{percentFlags0}{value}\% of all \emph{utilizations}.
 
-% \subsubsection{Saturation}Although \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% of the projects observed had at least one regex usage, only \DTLfetch{data}{key}{percentFilesUsingRegex}{value}\% of the files observed had at least one regex usage.
+ As shown in figure ~\ref{fig:partFlags}, of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
 
-% From the above figure/table, we see that on average each project had \DTLfetch{data}{key}{medRFilePerProj}{value} files containing any regex usage, out of an average of \DTLfetch{data}{key}{medFilePerProj}{value} files.  Each of the files that did have a regex usage had an average of \DTLfetch{data}{key}{medRPerFile}{value} regex usages.  Because we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen \DTLfetch{data}{key}{nExpectedUsages}{value} regex usages, which is lower than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed.
-
-% \subsubsection{Regex Functions and Flags}
-
-% \begin{figure}[tb]
-% \centering
-% \includegraphics[width=\columnwidth]{../analysis_output/partFunctions.eps}
-% \caption{How often are the 8 re functions used? (RQ2)}
-% \label{fig:partFunctions}
-% \end{figure}
-
-% As seen in Figure~\ref{fig:partFunctions} The `compile' function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all usages, even though every compiled regex object can only be used by calling other functions.  (TODO-Why?)
-
-% \begin{figure}[tb]
-% \centering
-% \includegraphics[width=\columnwidth]{../analysis_output/partFlags.eps}
-% \caption{Which behavioral flags are used? (RQ2)}
-% \label{fig:digraph}
-% \end{figure}
-
-% \DTLfetch{data}{key}{percentFlags0}{value}\% of all regex usages did not use a flag or specified a non-behavioral flag (default or debug).  Of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed. (remove this last part if it is observed later)
-
+\todo{topNW table?}
 % \subsubsection{{General Characteristics of Regexes Found}}
-
-% ...TODO
-
-% \subsubsection{{Top 10 Regex Patterns by weight}}
-
-
+% \todo{could the top 10 regexes be a pop-out?}
 % \input{../analysis_output/topNW}
 
-% \subsubsection{All Features}
+\subsection{Frequency of Feature Usage}
 
-% Literal tokens were found in (TODO) 101\% of patterns, and accounted for 75\% of all tokens.  Excluding literal tokens and features that were not present in any pattern, the following stats...make a sentence, these are some stats about the features:
+Literal tokens were found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of patterns, and accounted for \DTLfetch{data}{key}{P_LITERAL_TOKENS}{value}\% of all tokens.  We consider literal tokens to be ubiquitous in all \emph{utilizations}, and necessary for any regex related tool, and so exclude them from the rest of the feature analysis.  In table~\ref{table:featureStats}, we display a large body of information about feature usage and relate it to four major regex related projects.
 
 \input{../analysis_output/featureStats}
+%note captions and label are in external file
+% use:\label{table:featureStats}
 
-% some more text, IDK
+\subsection{What Features Are Used For}
 
-% \input{../analysis_output/coApp}
-
-
-% OK now that is all for section 2.  Now in section 3 I want to look at clustering by string similarity using mcl clustering algorithm.  Here are the top 6 clusters using various string similarity metrics:
 
 % TODO - multiple boxplots for all 5-6 demonstrating cluster size and then also have \# of clusters, pick smallest number of clusters and then use that.
 

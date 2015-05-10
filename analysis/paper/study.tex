@@ -7,15 +7,20 @@ Using this data, we intend to answer the following research questions:
 
 \textbf{RQ1:} How often is the {\tt re} module used in Python projects?
 
-To address this research question, we measure how often any calls are made to the {\tt re} module per file and per project in Python projects.  Furthermore, we measure the frequency of usage for calls to the 8 functions of the {\tt re} module ({\tt re.compile}, {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub} and {\tt re.subn}) in Python projects scraped from GitHub.  We also measure usage of the 8 flags ({\tt re.DEFAULT}, {\tt re.IGNORECASE}, {\tt re.LOCALE}, {\tt re.MULTILINE}, {\tt re.DOTALL}, {\tt re.UNICODE}, {\tt re.VERBOSE} and {\tt re.DEBUG}) of the {\tt re} module.
+To address this research question, we measure how often any calls are made to the {\tt re} module per file and per project in Python projects.
+
+Furthermore, we measure the frequency of usage for calls to the 8 functions of the {\tt re} module ({\tt re.compile}, {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub} and {\tt re.subn}) in Python projects scraped from GitHub.
+
+We also measure usage of the 8 flags ({\tt re.DEFAULT}, {\tt re.IGNORECASE}, {\tt re.LOCALE}, {\tt re.MULTILINE}, {\tt re.DOTALL}, {\tt re.UNICODE}, {\tt re.VERBOSE} and {\tt re.DEBUG}) of the {\tt re} module.
 
 \textbf{RQ2:} Which regex language features are most commonly used in python?
 
-We consider regex language features to be tokens that change the matching behavior of a regex pattern, like the {\tt +} in {\tt ab+}.  All studied features are coded and described in~\ref{study:corpus} with examples.
+We consider regex language features to be tokens that specify the matching behavior of a regex pattern, like the {\tt +} in {\tt ab+}.  All studied features are coded and described in~\ref{study:corpus} with examples.
 
 To measure feature usage, we parse Python regular expression patterns using Bart Kiers' PCRE parser, as described in Section~\ref{study:corpus}.  We then count the number of usages of each feature per project, per file and as a percent of all distinct regex patterns.
 
-\textbf{RQ3:} What is the impact of \emph{not} supporting various regex features on tool designers and users?
+\textbf{RQ3:} What are Features being used for, and so what is the impact of \emph{not} supporting various regex features on tool designers and users?
+%\textbf{RQ3:} What is the impact of \emph{not} supporting various regex features on tool designers and users?
 
 We use semantic analysis to illustrate the impact of missing features on a tool's applicability, identifying what each feature (or group of features) is commonly used for.
 
@@ -44,19 +49,20 @@ Throughout the rest of this paper, we will employ the following terminology:
 Github is a popular project hosting site containing over 100,000 Python projects.
 We used the GitHub api to page through all repositories, cloning projects that contain Python code.
 
-For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find uses of Python's {\tt re} module.
+For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find \emph{utilizations} of Python's {\tt re} module.
 
 Using git, each project was scanned at 20 evenly-spaced commits (or all commits if there were less than 20) in its history.
-Within one project, we define a duplicate usage as a usage having the same function, pattern and flags within the same file (same relative path).  We ignored duplicate usages to protect against over-counting the same usage as we rewind the commit through its history.  We observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex usages in \DTLfetch{data}{key}{nProjScanned}{value} projects.
+Within one project, we define a duplicate \emph{utilization} as a \emph{utilization} having the same function, pattern and flags within the same file (same relative path).  We ignored duplicate \emph{utilizations} to protect against over-counting the same \emph{utilization} as we rewind the project through its history.  We observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex \emph{utilizations} in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
 \subsection{Selecting Patterns}
-Because the focus of this study is regex features,  analysis focuses on the patterns found, so we ignored the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of usages using flags that can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of usages contained patterns that could not be compiled because the pattern was non-static (used some runtime variable), or because of other unknown parsing failures.
+Because the focus of this study is regex features,  analysis focuses on the patterns found, so we ignored the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of \emph{utilizations} using flags that can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of \emph{utilizations} contained patterns that could not be compiled because the pattern was non-static (used some runtime variable), or because of other unknown parsing failures.
 
-The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) usages were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings.  The resulting set of patten strings were parsed using an antlr-based, open source PCRE parser released by Bart Kiers\footnote{\url{https://github.com/bkiers/pcre-parser}}.  This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we have chosen to exclude in this study\footnote{\url{www.details.#thistopic}}.  The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We will refer to this set of weighted, distinct pattern strings as the \emph{collection}.
+The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) \emph{utilizations} were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings.  The resulting set of patten strings were parsed using an antlr-based, open source PCRE parser released by Bart Kiers\footnote{\url{https://github.com/bkiers/pcre-parser}}.  This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we have chosen to exclude in this study\footnote{\url{www.details.#thistopic}}.  The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We will refer to this set of weighted, distinct pattern strings as the \emph{corpus}.
 
 \subsection{Analyzing Features}
 \label{study:features}
 
+\todo{revise this subsection}
 After picking four large regex research projects, the big table with the features was created in order to decide which unsupported features are used most often.
 Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
 

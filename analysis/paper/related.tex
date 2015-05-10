@@ -13,10 +13,10 @@ Tools like Hampi, Kudzu, brics\footnote{\url{http://www.brics.dk/automaton/}}, M
 To improve test coverage for code using regular expressions, and to generate strings from regular expressions for whatever other reasons, projects like Reggae, Rex, JST, regex-tester\footnote{\url{https://github.com/nickawatts/regex-tester}}, regldg\footnote{\url{http://regldg.com/}},
 uttool\footnote{\url{http://uttool.com/text/regexstr/default.aspx}}, xeger\footnote{\url{https://code.google.com/p/xeger/}}, Generex\footnote{\url{https://github.com/mifmif/Generex}}, Hoa/Regex\footnote{\url{https://github.com/hoaproject/Regex/}}, Genex\footnote{\url{http://search.cpan.org/~bowmanbs/Regexp-Genex-0.07/lib/Regexp/Genex.pm}}, Randexp\footnote{\url{https://www.ruby-toolbox.com/projects/randexp}}, txt2re\footnote{\url{http://txt2re.com/}}, Pex\footnote{\url{http://research.microsoft.com/en-us/projects/pex/}} (and countless others) have been developed.
 
-Going the other direction, a few projects have attempted to take a set of strings and generate a good regular expression that matches them like RegexGenerator++\footnote{\url{http://regex.inginf.units.it/}}, Regex-PreSuf\footnote{\url{http://search.cpan.org/~jhi/Regex-PreSuf-1.17/PreSuf.pm}} (a problem that suffers from overmatching).
+Going the other direction, a few projects have attempted to take a set of strings and generate a good regular expression that matches them like RegexGenerator++\footnote{\url{http://regex.inginf.units.it/}} and Regex-PreSuf\footnote{\url{http://search.cpan.org/~jhi/Regex-PreSuf-1.17/PreSuf.pm}} (a problem that suffers from overmatching).
 %Tools to help developers write correct regular expressions, tools like RegexBuddy, Expresso, Pythex, The Regex Coach, Regex Widget, Regex magic, RegE xr, reWork, Rubular, Txt2re and....
 
-One common misconception is that all regular expression languages can be represented using deterministic finite automata (DFA), and so they are easy to model, easy to describe formally and execute in O(n) time.  In fact, most regular expression matching engines run in exponential time\footnote{\url{https://swtch.com/~rsc/regexp/regexp1.html}} in order to support useful features such as lazy quantifiers, capturing groups, look-aheads and back-references\footnote{\url{https://msdn.microsoft.com/en-us/library/0yzc2yb0.aspx}}.  In the RE2\footnote{\url{https://github.com/google/re2}} project, Russ Cox aimed to use DFAs as much as possible (maximizing speed) while supporting as many useful features as possible.
+One common misconception is that all regular expression languages are \emph{regular languages} which can be represented using deterministic finite automata (DFA), and so they are easy to model, easy to describe formally and execute in O(n) time.  In fact, most regular expression matching engines run in exponential time\footnote{\url{https://swtch.com/~rsc/regexp/regexp1.html}} in order to support useful features such as lazy quantifiers, capturing groups, look-aheads and back-references\footnote{\url{https://msdn.microsoft.com/en-us/library/0yzc2yb0.aspx}}.  In the RE2\footnote{\url{https://github.com/google/re2}} project, Russ Cox aimed to use DFAs as much as possible (maximizing speed) while supporting as many useful features as possible.
 
 Thousands of research papers have focused on various other regular expression-related investigations.  Because regular expression languages vary somewhat in their syntax and feature set, these papers have typically had to describe a particular language to reason about and have had to pick what features to include or exclude.
 
@@ -26,16 +26,16 @@ The authors of this paper have their own Regex-related tool that they want to im
 
 
 
+\todo{incorporate references}
+% \subsection{Research on Regular Expressions}
+% Visual debugging of regular expressions~\cite{Beck:2014:RVD:2591062.2591111}
 
-\subsection{Research on Regular Expressions}
-Visual debugging of regular expressions~\cite{Beck:2014:RVD:2591062.2591111}
+% %the related work section in the Spishak section is very good re: regex tools like those that represent regexes as automata or grammars
+% Static analysis to reduce errors in building regular expressions by using a type system to identify errors like {\tt PatternSyntaxExceptions} and {\tt IndexOutOfBoundsExceptions} at compile time~\cite{Spishak:2012:TSR:2318202.2318207}.
 
-%the related work section in the Spishak section is very good re: regex tools like those that represent regexes as automata or grammars
-Static analysis to reduce errors in building regular expressions by using a type system to identify errors like {\tt PatternSyntaxExceptions} and {\tt IndexOutOfBoundsExceptions} at compile time~\cite{Spishak:2012:TSR:2318202.2318207}.
+% \subsection{Research on Regular Expressions}
+% Visual debugging of regular expressions~\cite{Beck:2014:RVD:2591062.2591111}
 
-\subsection{Research on Regular Expressions}
-Visual debugging of regular expressions~\cite{Beck:2014:RVD:2591062.2591111}
-
-\subsection{Research that Depends on Regular Expression Usage}
-Regular expressions are used as queries in a data mining framework~\cite{Begel:2010:CDE:1806799.1806821}
+% \subsection{Research that Depends on Regular Expression Usage}
+% Regular expressions are used as queries in a data mining framework~\cite{Begel:2010:CDE:1806799.1806821}
 

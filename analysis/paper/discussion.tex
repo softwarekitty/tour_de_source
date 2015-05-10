@@ -1,6 +1,13 @@
 \section{Discussion}
 \label{sec:discussion}
+
+\subsection{Frequency of {\tt re} Module Usage}
 ...only \DTLfetch{data}{key}{percentFilesUsingRegex}{value}\% of the files observed had at least one regex usage.  This indicates that regex usage may usually be concentrated in just a few files.
+
+
+From table~\ref{table:contextHistogram}, we see that on average each project had \DTLfetch{data}{key}{medRFilePerProj}{value} files containing any regex usage, out of an average of \DTLfetch{data}{key}{medFilePerProj}{value} files.  Each of the files that did have a regex usage had an average of \DTLfetch{data}{key}{medRPerFile}{value} regex usages.  Because we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen \DTLfetch{data}{key}{nExpectedUsages}{value} regex usages, which is lower than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed.
+\subsubsection{Saturation}Although \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% of the projects observed had at least one regex usage, only \DTLfetch{data}{key}{percentFilesUsingRegex}{value}\% of the files observed had at least one regex usage.
+
 
 
 Fun fact: while creating similarity matrix, row 5464 took 2 hours, or almost 1 second per cell avg, only suffering 18 timeouts (1.2 secs).  What is this pesky pattern?
@@ -36,7 +43,6 @@ LZY gets its own show and is special.
 OPT - I have no idea, look into it.
 
 VWSP - super rare, maybe ignore it.
-
 
 
 
