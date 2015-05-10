@@ -2,7 +2,25 @@
 \label{sec:motivation}
 Bugs related to regular expressions are common, resulting in tens of thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}.
 
-With regexes, there is a common saying 'now you have two problems'
+\section{Motivation}
+
+With regexes, there is a common saying: 'now you have two problems'.
+A skilled programmer can quickly solve many problems using regular expressions, but they can be hard to understand and maintain[back me up somebody - joke guy].
+Regular expression languages enable an irreplaceable search technique used within all kinds of text editors and command line tools.
+Regexes are also employed in critical missions like mysql injection prevention , malicious packet filtering  and web form validation.
+
+Tools like Hampi, Kudzu, brics\footnote{\url{http://www.brics.dk/automaton/}}, Microsoft's Rex, Automata and the z3-based QF\_VRE projects, all attempt to support modeling some subset of regular expression language features.
+To improve test coverage for code using regular expressions, and to generate strings from regular expressions for whatever other reasons, projects like Reggae, Rex, JST, regex-tester\footnote{\url{https://github.com/nickawatts/regex-tester}}, regldg\footnote{\url{http://regldg.com/}},
+uttool\footnote{\url{http://uttool.com/text/regexstr/default.aspx}}, xeger\footnote{\url{https://code.google.com/p/xeger/}}, Generex\footnote{\url{https://github.com/mifmif/Generex}}, Hoa/Regex\footnote{\url{https://github.com/hoaproject/Regex/}}, Genex\footnote{\url{http://search.cpan.org/~bowmanbs/Regexp-Genex-0.07/lib/Regexp/Genex.pm}}, Randexp\footnote{\url{https://www.ruby-toolbox.com/projects/randexp}}, txt2re\footnote{\url{http://txt2re.com/}}, Pex\footnote{\url{http://research.microsoft.com/en-us/projects/pex/}} have been developed.
+Going the other direction, many projects attempt to take a set of strings and generate a good regular expression that matches them like RegexGenerator++\footnote{\url{http://regex.inginf.units.it/}}, ,Regex-PreSuf\footnote{\url{http://search.cpan.org/~jhi/Regex-PreSuf-1.17/PreSuf.pm}}.
+Countless research papers have focused on various other regular expression-related investigations, too many to list.
+
+One common misconception is that all regular expression languages can be represented using finite state automata.  Some regular expression languages
+
+But most regular expression languages are not just regular languages that can be represented by finite state automata anymore, they have .  In many regular expression languages
+
+%Tools to help developers write correct regular expressions, tools like RegexBuddy, Expresso, Pythex, The Regex Coach, Regex Widget, Regex magic, RegE xr, reWork, Rubular, Txt2re and....
+
 
 
 
@@ -10,7 +28,7 @@ With regexes, there is a common saying 'now you have two problems'
 Visual debugging of regular expressions~\cite{Beck:2014:RVD:2591062.2591111}
 
 %the related work section in the Spishak section is very good re: regex tools like those that represent regexes as automata or grammars
-Static analysis to reduce errors in building regular expressions by using a type system to identify errors like {\tt PatternSyntaxExceptions} and {\tt IndexOutOfBoundsExceptions} at compile time~\cite{Spishak:2012:TSR:2318202.2318207}. 
+Static analysis to reduce errors in building regular expressions by using a type system to identify errors like {\tt PatternSyntaxExceptions} and {\tt IndexOutOfBoundsExceptions} at compile time~\cite{Spishak:2012:TSR:2318202.2318207}.
 
 \subsection{Research on Regular Expressions}
 Visual debugging of regular expressions~\cite{Beck:2014:RVD:2591062.2591111}
