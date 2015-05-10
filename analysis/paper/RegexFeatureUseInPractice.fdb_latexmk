@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex RegexFeatureUseInPractice"] 1431228396 "RegexFeatureUseInPractice.aux" "RegexFeatureUseInPractice.bbl" "RegexFeatureUseInPractice" 1431228398
+["bibtex RegexFeatureUseInPractice"] 1431232296 "RegexFeatureUseInPractice.aux" "RegexFeatureUseInPractice.bbl" "RegexFeatureUseInPractice" 1431232298
   "/usr/local/texlive/2014/texmf-dist/bibtex/bst/base/abbrv.bst" 1292289607 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "RegexFeatureUseInPractice.aux" 1431228397 3677 ba0f35bc9d59cc6ac0f2a936f8c5497e ""
+  "RegexFeatureUseInPractice.aux" 1431232298 3614 9fde3e67c648ed26eea18b9bb376b9ef ""
   "RegexFeatureUseInPractice.bcf" 0 -1 0 ""
   "biblio.bib" 1427998339 2763 ee1a100db81eebb3cebf391e0030206a ""
   (generated)
   "RegexFeatureUseInPractice.blg"
   "RegexFeatureUseInPractice.bbl"
-["pdflatex"] 1431228396 "RegexFeatureUseInPractice.tex" "RegexFeatureUseInPractice.pdf" "RegexFeatureUseInPractice" 1431228398
+["pdflatex"] 1431232297 "RegexFeatureUseInPractice.tex" "RegexFeatureUseInPractice.pdf" "RegexFeatureUseInPractice" 1431232298
   "../analysis_output/coApp.tex" 1431190661 1179 bda30b5290c5e9f84c51950fe716d921 ""
   "../analysis_output/featureStats.tex" 1431190661 6571 7a2ba162c8a57452cf4055dd649dbc87 ""
   "../analysis_output/partFlags.eps" 1431190661 5062 3295710707ed35a75a5f20db871961d8 ""
@@ -138,21 +138,21 @@
   "/usr/local/texlive/2014/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1417732693 4962 9c1069474ff71dbc47d5006555e352d3 ""
   "/usr/local/texlive/2014/texmf-dist/tex/latex/xtab/xtab.sty" 1312313272 20106 cec6cadeaa62ca1707a316e38d65a9eb ""
   "IEEEtran.cls" 1354041132 207390 d653df0f34cc52792528fb4a3b56093b ""
-  "RegexFeatureUseInPractice.aux" 1431228397 3677 ba0f35bc9d59cc6ac0f2a936f8c5497e ""
-  "RegexFeatureUseInPractice.bbl" 1431228396 1228 5d1b583342031de94d5af90e0cb50029 "bibtex RegexFeatureUseInPractice"
+  "RegexFeatureUseInPractice.aux" 1431232298 3614 9fde3e67c648ed26eea18b9bb376b9ef ""
+  "RegexFeatureUseInPractice.bbl" 1431232297 1228 5d1b583342031de94d5af90e0cb50029 "bibtex RegexFeatureUseInPractice"
   "RegexFeatureUseInPractice.tex" 1431228392 2874 dae73e2aaebf2c69a03a6ad0c031830c ""
   "discussion.tex" 1431221313 410 4dd07f30e2467f522f59adc579219ab4 ""
   "introduction.tex" 1431221313 2819 46dc7c188c92bf5641c8df26710c64c7 ""
-  "related.tex" 1431228380 3489 95e321206c6a3a7c0bf2db0a2fc85f81 ""
+  "related.tex" 1431232291 5065 3a0f4b9e81a3d8bd63f1ab177744747b ""
   "results.tex" 1431221313 3062 000e155b42af62c12e1952ea08a86fbd ""
   "study.tex" 1431221313 8591 8abc9f89561f54363dce698dcf6b1bc2 ""
   (generated)
-  "RegexFeatureUseInPractice.log"
-  "RegexFeatureUseInPractice.aux"
-  "./partFlags-eps-converted-to.pdf"
-  "./partFunctions-eps-converted-to.pdf"
-  "./exampleFunction-eps-converted-to.pdf"
   "./testBox-eps-converted-to.pdf"
+  "RegexFeatureUseInPractice.log"
+  "./partFunctions-eps-converted-to.pdf"
   "./exampleUsage-eps-converted-to.pdf"
-  "./exampleFunc-eps-converted-to.pdf"
   "RegexFeatureUseInPractice.pdf"
+  "./exampleFunction-eps-converted-to.pdf"
+  "./exampleFunc-eps-converted-to.pdf"
+  "./partFlags-eps-converted-to.pdf"
+  "RegexFeatureUseInPractice.aux"
