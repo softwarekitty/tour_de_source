@@ -50,11 +50,11 @@ public class Section5 {
 		DecimalFormat df = new DecimalFormat("0.00");
 		
 		//recommended values to try for i:
-		double[] iVals ={1.1,1.2,1.3,1.4};
+		double[] iVals ={1.8};
 		for(double i_value : iVals){
 			double pVals[] = {0.75};
 			for(double p_value : pVals){
-				int[] kVals = {100};
+				int[] kVals = {83};
 				for(int k_value : kVals){
 					String suffix = "_i"+df.format(i_value)+"_p"+df.format(p_value)+"_k"+k_value+"_";
 					String fullOutputFilePath = behavioral_analysis_path + "behavioralSimilarityClusters"+suffix+".txt";
