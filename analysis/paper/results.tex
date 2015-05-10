@@ -2,9 +2,18 @@
 \label{sec:results}
 \subsection{Frequency of Regex Usage in Python Projects}
 
-Although \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% of the projects observed had at least one regex usage, only \DTLfetch{data}{key}{percentFilesUsingRegex}{value}\% of the files observed had at least one regex usage. \todo{comments, labels on graph below}
+Out of the \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one \emph{utilization}.  For context about how saturated these projects were with regex \emph{utilizations}, we consider how many files the average project scanned contained, how many of those files contained \emph{utilizations}, and how many \emph{utilizations} occurred per file.
 
-\input{../analysis_output/contextHistogram}
+\begin{table}[tb]
+\centering
+\includegraphics[width=\columnwidth]{../analysis_output/contextHistogram}
+\caption{How saturated are projects with \emph{utilizations}? (RQ2)}
+\label{fig:contextHistogram}
+\end{table}
+
+
+
+Although  of the projects observed had at least one regex usage, only \DTLfetch{data}{key}{percentFilesUsingRegex}{value}\% (\DTLfetch{data}{key}{nFilesUsingRegex}{value}) of the files observed had at least one regex usage.
 
 \subsection{Usage Frequency of {\tt re} Module Functions and Flags}
 \todo{comments, labels on graph below}

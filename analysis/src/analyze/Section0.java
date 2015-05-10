@@ -169,6 +169,10 @@ public class Section0 {
 		databaseFileContent.put(C.P_PROJECTS_USING_REGEX, percentProjectsUsingRegex);
 		String percentFilesUsingRegex = Composer.percentify(nFilesWithRegex, nFilesScanned);
 		databaseFileContent.put(C.P_FILES_USING_REGEX, percentFilesUsingRegex);
+		String nProjectsUsingRegex = Composer.commafy(nProjWithRegex);
+		databaseFileContent.put(C.N_PROJECTS_USING_REGEX, nProjectsUsingRegex);
+		String nFilesUsingRegex = Composer.commafy(nFilesWithRegex);
+		databaseFileContent.put(C.N_FILES_USING_REGEX, nFilesUsingRegex);
 
 
 
@@ -425,7 +429,7 @@ public class Section0 {
 		DescriptiveStatistics regexPerFileStats = statsFromListQuery(connectionString, "select count(filePath) as ct from RegexCitationMerged group by uniqueSourceID, filePath;", "ct");
 		nsList.add(new NamedStats("files per project",filesPerProjectStats));
 		nsList.add(new NamedStats("files with regex per project",rFilesPerProjectStats));
-		nsList.add(new NamedStats("regex usages per file",regexPerFileStats));
+		nsList.add(new NamedStats("regex utilizations per file",regexPerFileStats));
 		
 		databaseFileContent.put(C.Q1_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
 			rFilesPerProjectStats.getPercentile(25))));

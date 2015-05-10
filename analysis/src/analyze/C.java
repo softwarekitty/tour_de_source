@@ -32,6 +32,8 @@ public class C {
 	public static final String P_INVALID_PATTERN = "percentInvalidPattern";
 	public static final String P_CLEAN_USAGES = "percentCleanUsages";
 	public static final String P_UNICODE = "percentUnicode";
+	public static final String N_PROJECTS_USING_REGEX = "nProjectsUsingRegex";
+	public static final String N_FILES_USING_REGEX = "nFilesUsingRegex";
 
 	//Study.RECORDING REGEX USAGES
 	public static String N_CLONE_URL = "nCloneURL";
