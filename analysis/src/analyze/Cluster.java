@@ -1,29 +1,79 @@
 package analyze;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeSet;
 
 @SuppressWarnings("serial")
 public class Cluster extends TreeSet<WeightRankedRegex> implements RankableContent{
 	
-	private int combinedWeight;
 	private int topN;
+	private TreeSet<Integer> projectIDs;
 	
 	public Cluster(int topN){
 		super();
 		this.topN = topN;
-		combinedWeight =0;
+		projectIDs = new TreeSet<Integer>();
 	}
 	
 	@Override
 	public boolean add(WeightRankedRegex x){
-		combinedWeight += x.getRankableValue();
 		return super.add(x);
 	}
 
 	@Override
 	public int getRankableValue() {
-		return combinedWeight;
+		return projectIDs.size();
+	}
+	
+	public TreeSet<Integer> getProjectIDs(){
+		return projectIDs;
+	}
+	
+	public void initialzeNProjects() throws ClassNotFoundException, SQLException{
+		TreeSet<Integer> projectIDSet = new TreeSet<Integer>();
+		Iterator<WeightRankedRegex> it = iterator();
+		while(it.hasNext()){
+			WeightRankedRegex wrr = it.next();
+			ArrayList<Integer> projectIDs = getProjectIDsHavingPattern(wrr.getContent());
+			projectIDSet.addAll(projectIDs);
+		}
+		this.projectIDs = projectIDSet;
+	}
+	
+	
+	public static ArrayList<Integer> getProjectIDsHavingPattern(String pattern)
+			throws SQLException, ClassNotFoundException {
+		ArrayList<Integer> projectIDList = new ArrayList<Integer>(32);
+
+		// prepare sql
+		Connection c = null;
+		Statement stmt = null;
+		Class.forName("org.sqlite.JDBC");
+		c = DriverManager.getConnection(PaperWriter.connectionString);
+		c.setAutoCommit(false);
+		
+		PreparedStatement ps = c.prepareStatement("select uniqueSourceID as ID from RegexCitationMerged where pattern=?");
+		ps.setString(1, pattern);
+
+		// the query needs to return a relation,
+		// the first string is a key, second the pattern
+		ResultSet rs = ps.executeQuery();
+		while (rs.next()) {
+			int ID = rs.getInt("ID");
+			projectIDList.add(ID);
+		}
+
+		// wind down sql
+		rs.close();
+		c.close();
+		return projectIDList;
 	}
 
 	@Override
@@ -69,10 +119,12 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements RankableConte
 			return 1;
 		}
 		Cluster cOther = (Cluster)other;
+		int nProjectsThis = this.getRankableValue();
+		int nProjectsOther = cOther.getRankableValue();
 		//higher weight is earlier
-		if(this.combinedWeight > cOther.combinedWeight){
+		if(nProjectsThis > nProjectsOther){
 			return -1;
-		}else if(this.combinedWeight < cOther.combinedWeight){
+		}else if(nProjectsThis < nProjectsOther){
 			return 1;
 		}else{
 			String myContent = this.getContent();

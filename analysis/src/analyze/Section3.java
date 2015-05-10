@@ -24,12 +24,12 @@ public class Section3 {
 		return "";
 	}
 	
-	static String getSyntaxClusteringTableContent(int nRows, String outputPath,ArrayList<WeightRankedRegex> corpus, int functionSwitch, double minSimilarity, int topN, double width) throws IOException, InterruptedException{
+	static String getSyntaxClusteringTableContent(int nRows, String outputPath,ArrayList<WeightRankedRegex> corpus, int functionSwitch, double minSimilarity, int topN, double width) throws IOException, InterruptedException, ClassNotFoundException, SQLException{
 		TreeSet<Cluster> clusters = syntacticClustering(outputPath, corpus, functionSwitch, minSimilarity, topN);
 		return Composer.composeRankTable(nRows,clusters.iterator(), width, "top "+ topN+ " regexes", "clusterWeight");
 	}
 	
-	static TreeSet<Cluster> syntacticClustering(String outputPath,ArrayList<WeightRankedRegex> corpus, int functionSwitch, double minSimilarity, int topN) throws IOException, InterruptedException{
+	static TreeSet<Cluster> syntacticClustering(String outputPath,ArrayList<WeightRankedRegex> corpus, int functionSwitch, double minSimilarity, int topN) throws IOException, InterruptedException, ClassNotFoundException, SQLException{
 		
 		HalfMatrix halfMatrix;
 		switch(functionSwitch){
@@ -70,7 +70,7 @@ public class Section3 {
 		}
 	}
 
-	public static void main(String[] args) throws IOException, InterruptedException, IllegalArgumentException, QuoteRuleException, PythonParsingException {
+	public static void main(String[] args) throws IOException, InterruptedException, IllegalArgumentException, QuoteRuleException, PythonParsingException, ClassNotFoundException, SQLException {
 		// TODO - couldn't we do this same similarity matrix using feature
 		// vectors - why not?
 		ArrayList<WeightRankedRegex> corpus = new ArrayList<WeightRankedRegex>();

@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -122,7 +123,7 @@ public class IOUtil {
 	public static TreeSet<Cluster> getClusters(String outputPath,
 			String filename, String contents,
 			ArrayList<WeightRankedRegex> corpus, int topN, double i_value)
-			throws IOException, InterruptedException {
+			throws IOException, InterruptedException, ClassNotFoundException, SQLException {
 		String fullInputFilePath = outputPath + filename;
 		String fullOutputFilePath = outputPath + "mclOutput_" + filename;
 
@@ -141,7 +142,7 @@ public class IOUtil {
 	public static TreeSet<Cluster> getClustersFromFile(
 			String fullInputFilePath, ArrayList<WeightRankedRegex> corpus,
 			String fullOutputFilePath, int topN, String mclInput)
-			throws IOException, InterruptedException {
+			throws IOException, InterruptedException, ClassNotFoundException, SQLException {
 		HashMap<Integer, WeightRankedRegex> lookup = getLookup(corpus);
 
 		File outFile = new File(fullOutputFilePath);
@@ -181,6 +182,7 @@ public class IOUtil {
 				// System.out.println(" pattern: "+wrr.getContent());
 				cluster.add(wrr);
 			}
+			cluster.initialzeNProjects();
 			clusters.add(cluster);
 			lineNumber++;
 		}
@@ -189,7 +191,7 @@ public class IOUtil {
 
 	public static void dumpAllClusters(String analysis_output_path,
 			TreeSet<Cluster> behavioralClusters,
-			ArrayList<WeightRankedRegex> corpus, String filename, String suffix) {
+			ArrayList<WeightRankedRegex> corpus, String filename, String suffix) throws ClassNotFoundException, SQLException {
 		FeatureDictionary fd = new FeatureDictionary();
 		int totalPatterns = 0;
 		int totalWeight = 0;
@@ -197,6 +199,7 @@ public class IOUtil {
 		DecimalFormat df = new DecimalFormat("0.00");
 
 		int i = 0;
+		TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
 		for (Cluster cluster : behavioralClusters) {
 			if (cluster.size() == 1) {
 				continue;
@@ -204,11 +207,9 @@ public class IOUtil {
 
 			int[] featureCounter = new int[fd.getSize()];
 			double nPatterns = 0;
-			int combinedWeight = 0;
 
 			for (WeightRankedRegex wrr : cluster) {
 				nPatterns++;
-				combinedWeight += wrr.getRankableValue();
 				int[] fc = wrr.getFeatures().getFeatureCountArray();
 				for (int featureIndex = 0; featureIndex < featureCounter.length; featureIndex++) {
 					featureCounter[featureIndex] += fc[featureIndex];
@@ -236,7 +237,7 @@ public class IOUtil {
 				n++;
 			}
 			sb.append("cluster " + i + " stats:\nnPatterns: " + nPatterns +
-				"\ncombinedWeight: " + combinedWeight + "\nshortest: " +
+				"\nnProjects: " + cluster.getRankableValue() + "\nshortest: " +
 				cluster.getShortest() + "\nFeatures:\n\n" +
 				topNString.toString() + "\n\n");
 
@@ -248,10 +249,10 @@ public class IOUtil {
 			sb.append("\n\n\n");
 			i++;
 			totalPatterns += nPatterns;
-			totalWeight += combinedWeight;
+			allProjectIDs.addAll(cluster.getProjectIDs());
 		}
 		sb.insert(0, "Cluster stats:\n\nnClusters: " + i + "\nTotalPatterns: " +
-			totalPatterns + "\ntotalWeight: " + totalWeight + "\nsuffix: " +
+			totalPatterns + "\ntotalnProjects: " + allProjectIDs.size() + "\nsuffix: " +
 			suffix + "\n\n\n");
 		File output = new File(analysis_output_path, filename);
 

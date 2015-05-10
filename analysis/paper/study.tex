@@ -13,33 +13,33 @@
 % \end{tabular}
 % \end{center}
 
-To understand how programmers use regular expressions in Python projects and the syntactic and semantic diversity among the regular expressions, we scraped X projects from GitHub, as described in Section~\ref{study:corpus}. Next, we logged all unique regular expressions 
+To understand how programmers use regular expressions in Python projects (and the syntactic and semantic diversity among the regular expressions), we scraped X projects from GitHub, as described in Section~\ref{study:corpus}. Next, we logged all unique regular expressions
 
 We aim to answer the following research questions:
 
 \textbf{RQ1:} How frequently are regexes used in python projects?
 
-To address this question, we measure how often  calls to the {\tt re module} are made per file and per project in Python projects. 
+To address this question, we measure how often calls to the {\tt re module} are made per file and per project in Python projects.
 
 
-\textbf{RQ2:} How is the {\tt re module} used in python projects?
+\textbf{RQ2:} How is the {\tt re module} \todo{this font looks a little too big - can we make it smaller?} used in python projects?
 
-To address this research question, we measure the frequency of usage for calls to the {\tt re.compile} and {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub}, {\tt re.subn} in Python projects scraped from GitHub. 
-
+To address this research question, we measure the frequency of usage for calls to the 8 functions \todo{link to the diagram?} of the re module({\tt re.compile}, {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub} and {\tt re.subn}) in Python projects scraped from GitHub.
+%
 
 \textbf{RQ3:} Which regex language features are used most commonly in python?
 
-Regex features are components of the regex language, such as capture groups, literals, and the kleene star. To measure feature usage, we use the X library, as described in Section~\ref{study:features}. 
+Regex features are components of the regex language, such as capture groups, literals, and the kleene star. To measure feature usage, we parse Python regular expression patterns using Bart Kiers' PCRE parser, as described in Section~\ref{study:corpus}.
 
 \textbf{RQ4:} What is the impact of \emph{not} supporting various regex features on tool designers and users?
 
 \todo{clean this up}
-Use semantic analysis to illustrate the impact of missing features on a tool's applicability. Since our semantic analysis is based on Rex, we use syntactic analysis to observe the impact of not supporting various features on this, and other, research. 
+Use semantic analysis to illustrate the impact of missing features on a tool's applicability. Since our semantic analysis is based on Rex, we use syntactic analysis to observe the impact of not supporting various features on this, and other, research.
 
-%\textbf{RQ5:} What is the impact of \emph{not} supporting various regex features  on tool designers and users? 
+%\textbf{RQ5:} What is the impact of \emph{not} supporting various regex features  on tool designers and users?
 
-We map the regex features to each of four research tools that are commonly used for regular expressions research. 
-To address this research question, we looked at the most popular regular expression features that Rex does not support. As Rex is used for our semantic analysis in RQ4, we were interested in the impact of not supporting these features. 
+We map the regex features to each of four research tools that are commonly used for regular expressions research.
+To address this research question, we looked at the most popular regular expression features that Rex does not support. As Rex is used for our semantic analysis in RQ4, we were interested in the impact of not supporting these features.
 
 
 
@@ -65,8 +65,8 @@ The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}
 \subsection{Analyzing Features}
 \label{study:features}
 
-After picking four large regex research projects, the big table with the features was created in order to decide which unsupported features are used most often.  
-Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity. 
+After picking four large regex research projects, the big table with the features was created in order to decide which unsupported features are used most often.
+Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
 
 \subsubsection{Syntactic Diversity}
 For the negative perspective, we picked three features: LZY, NCG, WNW that are unsupported by Rex and other projects.  For each of these features, we created a subset of the \emph{collection} where all the patterns contain that feature.  Then we used syntactic analysis...to create a similarity matrix.  We then used markov clustering [X] (MCL) to find clusters in the subset.  We used these clusters to assist our manual search for some common use cases for the unsupported feature.
