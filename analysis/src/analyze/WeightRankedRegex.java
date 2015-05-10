@@ -1,7 +1,5 @@
 package analyze;
 
-import java.text.DecimalFormat;
-
 import metric.FeatureCount;
 
 import org.antlr.runtime.tree.CommonTree;
@@ -47,6 +45,10 @@ public final class WeightRankedRegex implements RankableContent {
 			this.rootTree = new PCRE(getUnescapedPattern()).getCommonTree();
 			this.features = new FeatureCount(rootTree,pattern);
 		}
+	}
+	
+	public boolean hasFeature(int featureIndex){
+		return features.getFeatureCountArray()[featureIndex]!=0;
 	}
 
 	public CommonTree getRootTree() {

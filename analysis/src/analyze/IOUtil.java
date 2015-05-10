@@ -120,28 +120,22 @@ public class IOUtil {
 	}
 
 	//
-	public static TreeSet<Cluster> getClusters(String outputPath,
-			String filename, String contents,
-			ArrayList<WeightRankedRegex> corpus, int topN, double i_value)
+	public static TreeSet<Cluster> getClusters(String fullInputFilePath,String fullOutputFilePath,
+			String contents,
+			ArrayList<WeightRankedRegex> corpus, String mclInput)
 			throws IOException, InterruptedException, ClassNotFoundException, SQLException {
-		String fullInputFilePath = outputPath + filename;
-		String fullOutputFilePath = outputPath + "mclOutput_" + filename;
 
 		// create the file for mcl to use as input
 		File f = new File(fullInputFilePath);
 		IOUtil.createAndWrite(f, contents);
 
-		DecimalFormat df = new DecimalFormat("0.00");
-		String mclInput = fullInputFilePath + " -I " + df.format(i_value) +
-			" --abc -o " + fullOutputFilePath;
-
-		return getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, topN, mclInput);
+		return getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput);
 
 	}
 
 	public static TreeSet<Cluster> getClustersFromFile(
 			String fullInputFilePath, ArrayList<WeightRankedRegex> corpus,
-			String fullOutputFilePath, int topN, String mclInput)
+			String fullOutputFilePath, String mclInput)
 			throws IOException, InterruptedException, ClassNotFoundException, SQLException {
 		HashMap<Integer, WeightRankedRegex> lookup = getLookup(corpus);
 
@@ -159,8 +153,6 @@ public class IOUtil {
 		Process p = pb.start();
 		int x = p.waitFor();
 		System.out.println("process int: "+x);
-//		Process p = Runtime.getRuntime().exec("/usr/local/bin/mcl " + mclInput);
-//		p.waitFor();
 		
 		
 
@@ -174,7 +166,7 @@ public class IOUtil {
 			if (indices.length == 0) {
 				continue;
 			}
-			Cluster cluster = new Cluster(topN);
+			Cluster cluster = new Cluster(Integer.MAX_VALUE);
 			for (String index : indices) {
 				int indexValue = Integer.parseInt(index);
 				WeightRankedRegex wrr = lookup.get(indexValue);
@@ -182,7 +174,7 @@ public class IOUtil {
 				// System.out.println(" pattern: "+wrr.getContent());
 				cluster.add(wrr);
 			}
-			cluster.initialzeNProjects();
+			cluster.initialzeStats();
 			clusters.add(cluster);
 			lineNumber++;
 		}
@@ -201,28 +193,8 @@ public class IOUtil {
 		int i = 0;
 		TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
 		for (Cluster cluster : behavioralClusters) {
-			if (cluster.size() == 1) {
-				continue;
-			}
 
-			int[] featureCounter = new int[fd.getSize()];
-			double nPatterns = 0;
-
-			for (WeightRankedRegex wrr : cluster) {
-				nPatterns++;
-				int[] fc = wrr.getFeatures().getFeatureCountArray();
-				for (int featureIndex = 0; featureIndex < featureCounter.length; featureIndex++) {
-					featureCounter[featureIndex] += fc[featureIndex];
-				}
-			}
-
-			TreeSet<RankedFeature> featurePile = new TreeSet<RankedFeature>();
-			for (int featureIndex = 0; featureIndex < featureCounter.length; featureIndex++) {
-				String featureText = fd.getCode(featureIndex) + "|" +
-					fd.getDescription(featureIndex);
-				featurePile.add(new RankedFeature(featureText, featureCounter[featureIndex] /
-					nPatterns));
-			}
+			TreeSet<RankedFeature> featurePile = cluster.getFeaturePile();
 			StringBuilder topNString = new StringBuilder();
 			Iterator<RankedFeature> it = featurePile.iterator();
 			int n=1;
@@ -236,6 +208,7 @@ public class IOUtil {
 				topNString.append(rF.dump(n));
 				n++;
 			}
+			double nPatterns = cluster.size();
 			sb.append("cluster " + i + " stats:\nnPatterns: " + nPatterns +
 				"\nnProjects: " + cluster.getRankableValue() + "\nshortest: " +
 				cluster.getShortest() + "\nFeatures:\n\n" +

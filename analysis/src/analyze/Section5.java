@@ -2,20 +2,14 @@ package analyze;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Iterator;
 import java.util.TreeSet;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
+import metric.FeatureDictionary;
 import analyze.exceptions.PythonParsingException;
 import analyze.exceptions.QuoteRuleException;
 
@@ -40,11 +34,15 @@ public class Section5 {
 			SQLException, IOException, InterruptedException,
 			IllegalArgumentException, QuoteRuleException,
 			PythonParsingException {
+		
+		//don't run this again - got what we needed
+		System.exit(0);
 		String behavioral_analysis_path = PaperWriter.homePath +
 			"analysis/behavioral_clustering/";
 
 		ArrayList<WeightRankedRegex> corpus = IOUtil.importCorpus(PaperWriter.homePath +
 			"analysis/analysis_output/exportedCorpusRaw.txt");
+		System.out.println("corpus size: "+corpus.size());
 		// HashMap<String, Integer> dummyCounter = new HashMap<String,
 		// Integer>();
 		// int[] dummyTracker = {0};
@@ -59,8 +57,8 @@ public class Section5 {
 		String fullInputFilePath = behavioral_analysis_path +
 			"behavioralSimilarityGraph.abc";
 		DecimalFormat df = new DecimalFormat("0.00");
+		TreeSet<Cluster> behavioralClusters = null;
 
-		// recommended values to try for i:
 		double[] iVals = { 1.8 };
 		for (double i_value : iVals) {
 			double pVals[] = { 0.75 };
@@ -76,11 +74,89 @@ public class Section5 {
 					String mclInput = fullInputFilePath + " -I " +
 						df.format(i_value) + newOptions + " --abc -o " +
 						fullOutputFilePath;
-					TreeSet<Cluster> behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, Integer.MAX_VALUE, mclInput);
+					behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput);
 					IOUtil.dumpAllClusters(behavioral_analysis_path, behavioralClusters, corpus, "behavioralSimilarityClusterDump" +
 						suffix + ".txt", suffix);
 				}
 			}
 		}
+
+
+		int[][] supportedFeatureGroups = {
+				{ FeatureDictionary.I_META_CAPTURING_GROUP },
+				{ FeatureDictionary.I_META_OR },
+				{ FeatureDictionary.I_REP_ADDITIONAL,
+						FeatureDictionary.I_REP_KLEENISH,
+						FeatureDictionary.I_REP_QUESTIONABLE },
+				{ FeatureDictionary.I_REP_DOUBLEBOUNDED,
+						FeatureDictionary.I_REP_LOWERBOUNDED,
+						FeatureDictionary.I_REP_SINGLEEXACTLY },
+				{ FeatureDictionary.I_META_CC, FeatureDictionary.I_META_NCC,
+						FeatureDictionary.I_CC_RANGE },
+				{ FeatureDictionary.I_CC_WHITESPACE,
+						FeatureDictionary.I_CC_NWHITESPACE },
+				{ FeatureDictionary.I_CC_DECIMAL,
+						FeatureDictionary.I_CC_NDECIMAL },
+				{ FeatureDictionary.I_CC_WORD, FeatureDictionary.I_CC_NWORD },
+				{ FeatureDictionary.I_META_DOT_ANY },
+				{ FeatureDictionary.I_POS_END_ANCHOR,
+						FeatureDictionary.I_POS_START_ANCHOR } };
+
+		String featureDetailFilePrefix = "supportedFeatureDetail_";
+		for (int[] group : supportedFeatureGroups) {
+			StringBuilder supportedContentSB = new StringBuilder();
+			String groupString = getGroupString(group, FeaturePile.fd);
+			TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
+			TreeSet<Cluster> realClustersContainingAny = new TreeSet<Cluster>();
+			Cluster singleClusters = new Cluster(Integer.MAX_VALUE);
+			for (Cluster cluster : behavioralClusters) {
+				if (cluster.containsAnyFeatures(group)) {
+					allProjectIDs.addAll(cluster.computeProjectIDs());
+					if (cluster.size() > 1) {
+						realClustersContainingAny.add(cluster);
+					} else if (cluster.size() > 0) {
+						singleClusters.add(cluster.first());
+					} else {
+						System.err.println("empty cluster found");
+					}
+				}
+			}
+			singleClusters.initialzeStats();
+			String realClusterString = getRealClusterSample(realClustersContainingAny, 30, group);
+			supportedContentSB.append(groupString + "\ntotalNProjectIDs: " +
+				allProjectIDs.size() + "\n\nrealClusters:\n" +
+				realClusterString + "\nnProjects with single pattern: " +
+				singleClusters.getProjectIDs().size() + "\n");
+			IOUtil.createAndWrite(new File(behavioral_analysis_path +
+				featureDetailFilePrefix + groupString + ".txt"), supportedContentSB.toString());
+		}
+
+
+	}
+
+	public static String getRealClusterSample(
+			TreeSet<Cluster> realClustersContainingAny, int limit, int[] featureIndices) {
+		StringBuilder sb = new StringBuilder();
+		int counter = 0;
+		Iterator<Cluster> it = realClustersContainingAny.iterator();
+		while (it.hasNext() && counter < limit) {
+			Cluster cluster = it.next();
+			sb.append("(");
+			sb.append(cluster.getShortestWithFeature(featureIndices));
+			sb.append(":");
+			sb.append(cluster.getProjectIDs().size());
+			sb.append(")\n");
+			counter++;
+		}
+		return sb.toString();
+	}
+
+	public static String getGroupString(int[] group, FeatureDictionary fd) {
+		StringBuilder sb = new StringBuilder();
+		for (int i : group) {
+			sb.append(fd.getCode(i));
+			sb.append("_");
+		}
+		return sb.toString();
 	}
 }

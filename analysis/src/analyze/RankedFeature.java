@@ -4,10 +4,15 @@ public class RankedFeature implements RankableContent{
 	
 	private final String featureText;
 	private final double frequency;
+	private final int index;
 	
-	public RankedFeature(String featureText,double frequency){
+	public RankedFeature(int index, String featureText,double frequency){
+		this.index = index;
 		this.featureText = featureText;
 		this.frequency = frequency;
+	}
+	public int getIndex(){
+		return index;
 	}
 
 	@Override

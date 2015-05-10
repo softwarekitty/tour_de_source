@@ -1,0 +1,36 @@
+OR_
+totalNProjectIDs: 759
+
+realClusters:
+(',\\s*|\\s+':277) \s cluster - making a CCC using OR to finding space between words, which may have a comma.
+('(^[^a-zA-Z\\._]+)|([^a-zA-Z\\._0-9]+)':208) \W cluster - to make very specific behavior: 9a does not match but a9 does match.  Looks like it is looking for a non-word string that does not start with a number
+('((the|a|an)\\s+)?[0-9]+':193) - a choice between sequences: zero or one of any of these english articles, then one or more digits.
+('\\s*([a-zA-Z_][-.a-zA-Z_0-9]*)(\\s*=\\s*(\\\'[^\\\']*\\\'|"[^"]*"|[^ \\t\\n<>]*))?':138) [a-zA-Z] cluster - some variable name equal to either a string in double or single quotes, or any bunch of not-tabs, not newlines, not brackets or spaces text.
+('[\\\\"]|[^ -~]':122) another example of building a CCC using OR
+('[a-z]+|\\d+':114)
+('"|\\\\':110)
+('([^: \t\n]*)\\s*:\\s*(".*"|[^ \t\n]*)':91)
+('^(\\d+|\\*)$':78)
+('(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$':71)
+('([ ]+_)|(_[ ]+)|([ ]+)':66)
+('<.*>|</.*>':63) (opening or closing) xml tags
+('(^|[^\\\\])\\.':61)
+('"([^"]+)"|(\\S+)':53)
+('(^|/)/+':51)
+("<|&|'":50)
+('^([_A-Za-z][_A-Za-z0-9]*|\\.|\\.\\.)$':43)
+('"(\\\\\\\\|\\\\"|[^"])*"':42)
+('^$|^\\s*#':39)
+('^(0[xX][0-9a-fA-F]+|[0-9]+)':39)
+('(0|[1-9]\\d*)$':38)
+('(\\+|\\s|%20)+':37)
+('(^|\\s+|[^\\\\])@':36)
+(u'\\\\\\\\|\\\\_|_':36)
+('/|-':36)
+('\\\\(t|n|r|"|\\\\)':33)
+('/|\\\\':31)
+('[ \n]*{(([^{}}]|{[^}]*})*)}':31)
+('\\s*(\\w*|\\w(\\w|\\.)*\\w)\\s*::':30)
+('/\\*([^*]+|\\*+[^/])*(\\*+/)?':29)
+
+nProjects with single pattern: 138
