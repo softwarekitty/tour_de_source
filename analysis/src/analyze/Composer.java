@@ -176,7 +176,7 @@ public class Composer {
 		String after = " \\\\ \n";
 
 		//
-		sb.append("\\begin{center}\n\\begin{tablular}{l|ccccc}\n\\toprule\n");
+		sb.append("\\begin{center}\n\\begin{tabular}{l|ccccc}\n\\toprule\n");
 		sb.append("source & Q1 & Avg & Med & Q3 & Max \\\\ \n");
 		for (int i = 0; i < tableSize; i++) {
 			if (it.hasNext()) {
@@ -197,7 +197,7 @@ public class Composer {
 				sb.append(after);
 			}
 		}
-		sb.append("\\bottomrule\n\\end{tabluar}\n\\end{center}\n");
+		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n");
 		return sb.toString();
 	}
 	

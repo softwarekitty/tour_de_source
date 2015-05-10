@@ -4,3 +4,44 @@
 
 
 Fun fact: while creating similarity matrix, row 5464 took 2 hours, or almost 1 second per cell avg, only suffering 18 timeouts (1.2 secs).  What is this pesky pattern?
+
+We do not assume that Python projects represent a perfect sample of regular expression usage in all environments, but to make the work of collecting data for the paper reasonable, we had to choose one language to focus on (we hope to compare results across languages in future work).  Python is an attractive choice because the culture of Python programming makes it seem likely that someone would write the pattern directly in the function, not trying to over-complicate things with some extra Classes or functions.  Other attractive choices are Perl (which probably has the most active regex community), javascript and ruby (which may emphasize web tasks like form validation), sql or a general purpose language like java or C\#.
+
+Features discussion:
+
+Capture groups are arguably the most powerful feature, since they allow us to get the useful information that we were searching for.  They are probably used simply to group some sequence even when there is no intention of getting the content of the group.
+
+For some reason I want to lump the OR in with CG, or try it.
+
+We can logically group all repetition into the DBB type, since QST={tt \{0,1\}}, SNG={tt \{N,N\}}, and KLE={tt \{0,MAX\}}, ADD={tt \{1,MAX\}}, and LWB={tt \{1,MAX\}} for some MAX like Integer.MAX\_VALUE.
+
+But I want to look at ADD and KLE on their own - or look at them as super conveneint shorthand.  SO convenience needs to enter the discussion, not just equivalence.
+
+We can group STR, END and ENDZ together as endpoint anchors.
+
+We can group PNG, BKR and BKRN together as all back-referencing.
+
+Really, CCC, NCCC and RNG are all very fundamental, and supported by all.  It is worth looking at what they do.
+
+Meanwhile you could say that WSP, DEC, WRD and their opposites are reducible to CCC, but it would be interesting to see how often they are used.
+
+ANY could also be reduced, but I think it should be treated separately from these 6.
+
+I think that looking ahead and looking behind can be separated into two things, though the NCG and LKA - I want to know if they are not equivalent?
+
+WNW boundary and the opposite is special enough to do on its own.
+
+LZY gets its own show and is special.
+
+OPT - I have no idea, look into it.
+
+VWSP - super rare, maybe ignore it.
+
+
+
+
+
+
+
+
+

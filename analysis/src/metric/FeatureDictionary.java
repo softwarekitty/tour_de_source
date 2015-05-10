@@ -276,7 +276,7 @@ public class FeatureDictionary {
 		intToCodeMap.put(I_REP_SINGLEEXACTLY,"SNG");
 		intToCodeMap.put(I_REP_LAZY,"LZY");
 		
-		intToCodeMap.put(I_XTRA_NAMED_GROUP_PYTHON,"NCG");
+		intToCodeMap.put(I_XTRA_NAMED_GROUP_PYTHON,"PNG");
 		intToCodeMap.put(I_XTRA_END_SUBJECTLINE,"ENDZ");
 		intToCodeMap.put(I_XTRA_VERTICAL_WHITESPACE,"VWSP");
 		intToCodeMap.put(I_XTRA_OPTIONS,"OPT");
