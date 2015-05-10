@@ -1,3 +1,17 @@
 \section{Introduction}
 
-Regular expressions are used extensively in many programming languages, for example, to search text files~\cite{Clarke:1997:URE:256167.256174}, in form validation, and for XYZ. 
+ In essence, regular expressions are search patterns for strings. Regular expressions are used extensively in many programming languages, for example, to search text files~\cite{Clarke:1997:URE:256167.256174}, in form validation~\cite{}, and for XYZ~\cite{}. Due in part to their pervasive use across programming languages, many researchers and practitioners have developed tools to support the creation~\cite{}, validation~\cite{}, and testing~\cite{} of regular expressions. 
+ 
+ In writing tools to support regular expressions, tool designers make decisions about which features to support and which not to support. These decisions are often made casually and are dependent on the regular expressions the designers happen to have experience with, the designers have seen in the wild, or their complexity. The goal of this work is to bring more context and information about regular expression feature usage so these decisions can be better informed. 
+ 
+To motivate the study of regular expressions in general, we scrape GitHub for Python projects that use the {\tt re module}, which is the regular expression library for Python. We measure how frequently regular expressions appear in projects, and after doing a feature analysis (e.g., kleene star, literals, and capture groups are all features), we further measure how often such features appear in regular expressions and in projects. Then, we compare the features to those supported by four common regex support tools, brice~\cite{}, hampi~\cite{}, Rex~\cite{}, and RE2~\cite{}. We then explore the features not supported by common tools and explore the impact of omitting those features. Our results indicate that these tools support all of the top six most common features and that some of the omitted features, such as the lazy quantifier, are used in over 35\% of projects containing regular expressions. 
+
+The contributions of this work are:
+
+\begin{itemize}
+	\item An empirical analysis of the usage of regular expressions in XYZ open-source Python projects
+	\item An analysis of which features are omitted from common regular expression tools and the impact of ignoring those features
+	\item A discussion on the semantic similarity of regular expressions in practice and identification of opportunities for future work in supporting programmers in writing regular expressions. 
+\end{itemize}
+
+The rest of the paper is organized as follows. Section~\ref{sec:motivation} motivates this work by discussing research in supporting programmers in the use, creation, and validation of regular expressions. Section~\ref{sec:study} presents the research questions and study setup for exploring regular expressions in the wild. Results are in Section~\ref{sec:results} followed by a discussion in Section~\ref{sec:discussion} and conclusion. 

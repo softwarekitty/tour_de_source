@@ -1,4 +1,5 @@
 \section{Study}
+\label{sec:study}
 % \subsection{\centerline{DEFINITIONS}}
 
 % \begin{center}
@@ -42,11 +43,16 @@ We map the regex features to each of four research tools that are commonly used 
 To address this research question, we looked at the most popular regular expression features that Rex does not support. As Rex is used for our semantic analysis in RQ4, we were interested in the impact of not supporting these features.
 
 
+\todo{need to justify why we chose the tools we did}
+
 
 
 \subsection{Building the Corpus}
 \label{study:corpus}
-We used the github api to page through all repositories, cloning projects that contain Python code, stopping when the scraper ran out of memory\footnote{\url{www.details.#better_parser}}.  For each project, we used Astroid[X] to build the AST of each Python file and find uses of Python's 're' module.  Here is an example of one regex \emph{usage}, with key components labeled:
+To build a large corpus of regular expressions strings for analysis, we turn to GitHub, a popular project hosting site containing over 100,000 Python projects. 
+We used the GitHub api to page through all repositories, cloning projects that contain Python code. 
+%, stopping when the scraper ran out of memory\footnote{\url{www.details.#better_parser}}. 
+ For each project, we used Astroid[X] to build the AST of each Python file and find uses of Python's {\tt re} module.  Here is an example of one regex \emph{usage}, with key components labeled:
 
 \begin{figure}[htb]
 \centering
@@ -55,7 +61,18 @@ We used the github api to page through all repositories, cloning projects that c
 \label{fig:exampleUsage}
 \end{figure}
 
-Within each project, duplicate usages (same function, pattern and flags) within the same file (same relative path) were ignored.  Using git, each project was scanned at 20 evenly-spaced commits (or all commits if there were less than 20) in its history.  We observed and recorded \DTLfetch{data}{key}{nUsages}{value} regex usages in \DTLfetch{data}{key}{nProjScanned}{value} projects.
+In the end, we scraped XYZ projects that contained at least some Python code. Of these, XYZ projects also contained at least one Python file with a regular expression, forming the final set of projects for our analysis. 
+
+Within each relevant project, duplicate usages (same function, pattern and flags) within the same file (same relative path) were ignored. \todo{why were duplicates ignored?} Using git, each project was scanned at 20 evenly-spaced commits (or all commits if there were less than 20) in its history.  We observed and recorded \DTLfetch{data}{key}{nUsages}{value} regex usages in \DTLfetch{data}{key}{nProjScanned}{value} projects.
+
+Throughout the rest of the paper, we use the following definitions:
+
+\noindent \textbf{Usage}: A regex \emph{usage} is a single instance of a regular expression found in a project file. 
+
+\noindent \textbf{Pattern}: A regex \emph{pattern} is a unique regular expression found in the study and may represent many usages. 
+
+That is, the set of patterns is collected by collapsing on duplicate usages. We use patterns as opposed to usages because \todo{Carl: why is this?}
+
 
 \subsection{Selecting Patterns}
 Our analysis focuses on the patterns found, so we ignored the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of usages using flags that can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of usages contained patterns that could not be compiled because the pattern was non-static (used some runtime variable), or because of other unknown parsing failures.
