@@ -10,7 +10,12 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -283,4 +288,72 @@ public class IOUtil {
 		}
 		return miniCorpus;
 	}
+	
+	public static ArrayList<Integer> getProjectIDsHavingPattern(String pattern)
+			throws SQLException, ClassNotFoundException {
+		ArrayList<Integer> projectIDList = new ArrayList<Integer>(32);
+		
+		// prepare sql
+		Connection c = null;
+		Statement stmt = null;
+		Class.forName("org.sqlite.JDBC");
+		c = DriverManager.getConnection(PaperWriter.connectionString);
+		c.setAutoCommit(false);
+		
+		PreparedStatement ps = c.prepareStatement("select distinct uniqueSourceID as ID from RegexCitationMerged where pattern=?");
+		ps.setString(1, pattern);
+
+		ResultSet rs = ps.executeQuery();
+		while (rs.next()) {
+			int ID = rs.getInt("ID");
+			projectIDList.add(ID);
+		}
+
+		// wind down sql
+		rs.close();
+		c.close();
+		return projectIDList;
+	}
+
+	public static ArrayList<WeightRankedRegex> importFilteredCorpus(
+			String filtered_corpus_path) throws IllegalArgumentException, QuoteRuleException, PythonParsingException {
+		//get only clean lines, each with 2 parts
+		List<String> lines = IOUtil.getFileLines(filtered_corpus_path);
+		Iterator<String> it = lines.iterator();
+		while (it.hasNext()) {
+			String s = it.next();
+			if (s == null || s.length() == 0 || !s.contains("\t") ||
+				s.split("\t").length != 2) {
+				it.remove();
+			}
+		}
+		//turn these lines into indices
+		ArrayList<Integer> regexIndices = new ArrayList<Integer>();
+		for (String line : lines) {
+			String[] args = line.split("\t");
+			int index = Integer.parseInt(args[0]);
+			regexIndices.add(index);
+		}
+		
+		ArrayList<WeightRankedRegex> superSet = IOUtil.importCorpus(PaperWriter.homePath +
+				 "analysis/analysis_output/exportedCorpusRaw.txt");
+
+		HashMap<Integer, WeightRankedRegex> lookup = getLookup(superSet,filtered_corpus_path);
+		
+		ArrayList<WeightRankedRegex> corpus = new ArrayList<WeightRankedRegex>(lines.size());
+		
+		for(Integer patternIndex : regexIndices){
+			corpus.add(lookup.get(patternIndex));
+		}
+		return corpus;
+	}
+	
+	
+// cannot do this - some are doublequotes, others are singlequotes, you don't know which it was
+//	private static String reEscape(String pattern) {
+//		String reEscaped = pattern.replaceAll("\\\\", "\\\\\\\\");
+//		System.out.println("reEscaped: "+reEscaped);
+//		return "'''"+reEscaped+"'";
+//		
+//	}
 }

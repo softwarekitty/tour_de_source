@@ -209,14 +209,13 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements
 	public static void main(String[] args) throws IllegalArgumentException, QuoteRuleException, PythonParsingException, ClassNotFoundException, SQLException{
 		String filtered_corpus_path = PaperWriter.homePath +
 				"csharp/filteredCorpus.txt";
-		ArrayList<WeightRankedRegex> corpus = IOUtil.importCorpus( filtered_corpus_path);
+		ArrayList<WeightRankedRegex> corpus = IOUtil.importFilteredCorpus(filtered_corpus_path);
 		System.out.println("corpus size: "+corpus.size());
-		Cluster allPatterns = new Cluster(Integer.MAX_VALUE);
+		TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
 		for(WeightRankedRegex wrr : corpus){
-			allPatterns.add(wrr);
+			allProjectIDs.addAll(IOUtil.getProjectIDsHavingPattern(wrr.getContent()));
 		}
-		allPatterns.initialzeStats();
-		System.out.println("total Projects Supported By Rex: "+allPatterns.getProjectIDs().size());
+		System.out.println("total Projects Supported By Rex: "+allProjectIDs.size());
 
 	}
 }
