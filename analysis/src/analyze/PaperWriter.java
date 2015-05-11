@@ -22,6 +22,7 @@ import org.apache.commons.io.FileUtils;
 // int)''')
 // c.execute('''CREATE TABLE FilesPerProject (nFiles int, frequency int)''')
 
+
 import analyze.exceptions.ValueMissingException;
 
 public class PaperWriter {
@@ -68,8 +69,11 @@ public class PaperWriter {
 		// distinct features, token count and pattern length
 		filesToMake.add(new NameContentsPair("exportedCorpusRaw.txt", exportCorpusRaw(corpus)));
 
-		// distinct features, token count and pattern length
 		filesToMake.add(new NameContentsPair("exportedCorpusRex.txt", exportCorpusRex(corpus)));
+		
+		filesToMake.add(new NameContentsPair("exportedCorpusRexEsc.txt", exportCorpusRexEsc(corpus)));
+		
+		filesToMake.add(new NameContentsPair("exportedCorpusAll.txt", exportCorpusUnescaped(corpus)));
 
 
 
@@ -183,6 +187,39 @@ public class PaperWriter {
 		while (it.hasNext()) {
 			WeightRankedRegex wrr = it.next();
 			sb.append(i + "\t" + wrr.getRankableValue()+"\t"+wrr.getContent() + "\n");
+			i++;
+		}
+		return sb.toString();
+	}
+	
+
+	private static String exportCorpusRexEsc(
+			ArrayList<WeightRankedRegex> corpusList) {
+		StringBuilder sb = new StringBuilder();
+		Iterator<WeightRankedRegex> it = corpusList.iterator();
+		int i = 0;
+		while (it.hasNext()) {
+			WeightRankedRegex wrr = it.next();
+			if (rexCompatible(wrr)) {
+				sb.append(i + "\t" + wrr.getContent() + "\n");
+			}
+			// this 'i' is the way back to the original entry in the corpusList,
+			// so it should increment for each wrr, compatible or not
+			i++;
+		}
+		return sb.toString();
+	}
+
+	
+	// This export is for an unescaped version of the whole corpus
+	public static String exportCorpusUnescaped(
+			ArrayList<WeightRankedRegex> corpusList) {
+		StringBuilder sb = new StringBuilder();
+		Iterator<WeightRankedRegex> it = corpusList.iterator();
+		int i = 0;
+		while (it.hasNext()) {
+			WeightRankedRegex wrr = it.next();
+			sb.append(i + "\t" + wrr.getUnescapedPattern() + "\n");
 			i++;
 		}
 		return sb.toString();

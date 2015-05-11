@@ -17,10 +17,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Random;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.TreeSet;
 
 import metric.FeatureDictionary;
 
@@ -122,22 +122,24 @@ public class IOUtil {
 	//
 	public static TreeSet<Cluster> getClusters(String fullInputFilePath,String fullOutputFilePath,
 			String contents,
-			ArrayList<WeightRankedRegex> corpus, String mclInput)
+			ArrayList<WeightRankedRegex> corpus, String mclInput,HashMap<Integer, WeightRankedRegex> maybeNullLookup)
 			throws IOException, InterruptedException, ClassNotFoundException, SQLException {
 
 		// create the file for mcl to use as input
 		File f = new File(fullInputFilePath);
 		IOUtil.createAndWrite(f, contents);
 
-		return getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput);
+		return getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput,maybeNullLookup);
 
 	}
 
 	public static TreeSet<Cluster> getClustersFromFile(
 			String fullInputFilePath, ArrayList<WeightRankedRegex> corpus,
-			String fullOutputFilePath, String mclInput)
+			String fullOutputFilePath, String mclInput, HashMap<Integer, WeightRankedRegex> maybeNullLookup )
 			throws IOException, InterruptedException, ClassNotFoundException, SQLException {
-		HashMap<Integer, WeightRankedRegex> lookup = getLookup(corpus);
+		String filtered_corpus_path = PaperWriter.homePath +
+				"csharp/filteredCorpus.txt";
+		HashMap<Integer, WeightRankedRegex> lookup = maybeNullLookup==null? getLookup(corpus, filtered_corpus_path) :maybeNullLookup;
 
 		File outFile = new File(fullOutputFilePath);
 		if (outFile.exists()) {
@@ -237,10 +239,10 @@ public class IOUtil {
 	}
 
 	public static HashMap<Integer, WeightRankedRegex> getLookup(
-			ArrayList<WeightRankedRegex> corpus) {
-		String filtered_corpus_path = PaperWriter.homePath +
-			"csharp/filteredCorpus.txt";
-		String content = IOUtil.getFileContents(filtered_corpus_path);
+			ArrayList<WeightRankedRegex> corpus, String indexedCorpusFilePath) {
+		
+		
+		String content = IOUtil.getFileContents(indexedCorpusFilePath);
 
 		HashMap<Integer, WeightRankedRegex> lookup = new HashMap<Integer, WeightRankedRegex>();
 		Pattern finder = Pattern.compile("(\\d+)\\t(.*)");
@@ -268,5 +270,17 @@ public class IOUtil {
 			}
 		}
 		return lookup;
+	}
+
+	public static ArrayList<WeightRankedRegex> getRandomSubsetOf(
+			ArrayList<WeightRankedRegex> corpus, double d) {
+		Random gen = new Random();
+		ArrayList<WeightRankedRegex> miniCorpus = new ArrayList<WeightRankedRegex>();
+		for(WeightRankedRegex wrr : corpus){
+			if(gen.nextDouble() < d){
+				miniCorpus.add(wrr);
+			}
+		}
+		return miniCorpus;
 	}
 }

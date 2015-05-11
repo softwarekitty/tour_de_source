@@ -2,7 +2,7 @@ ANY_
 totalNProjectIDs: 801
 
 realClusters:
-('\\s.*':277)
+('\\s.*':277)  My first observation is that for over half of these clusters, the dot-star happens as the last little part of the pattern
 ('(\\d+)(.*)':193)
 ('([a-zA-Z_]\\w*)\\s*(.*)':138)
 ('(\\w+)(.*)':114)

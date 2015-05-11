@@ -8,8 +8,8 @@ realClusters:
 ('[A-Za-z]+':138)
 ('[\\x00-\\x20]+':122)
 ('\\w+':114)
-('.*\\\\':110)
-(',+':100)
+('.*\\\\':110) so in the first 7 clusters, the rep is applied to a character class
+(',+':100) I don't see much else to comment on- finding 1 or more, or 0 or more of something.
 (':+':91)
 ('^\\d+$':78)
 ('-.*':74)

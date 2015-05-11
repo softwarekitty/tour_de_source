@@ -8,9 +8,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.TreeSet;
 
+import analyze.exceptions.PythonParsingException;
+import analyze.exceptions.QuoteRuleException;
 import metric.FeatureDictionary;
 
 @SuppressWarnings("serial")
@@ -200,5 +203,20 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements
 				return myContent.compareTo(otherContent);
 			}
 		}
+	}
+	
+	//needed to count the number of projects supported by Rex, why not here?
+	public static void main(String[] args) throws IllegalArgumentException, QuoteRuleException, PythonParsingException, ClassNotFoundException, SQLException{
+		String filtered_corpus_path = PaperWriter.homePath +
+				"csharp/filteredCorpus.txt";
+		ArrayList<WeightRankedRegex> corpus = IOUtil.importCorpus( filtered_corpus_path);
+		System.out.println("corpus size: "+corpus.size());
+		Cluster allPatterns = new Cluster(Integer.MAX_VALUE);
+		for(WeightRankedRegex wrr : corpus){
+			allPatterns.add(wrr);
+		}
+		allPatterns.initialzeStats();
+		System.out.println("total Projects Supported By Rex: "+allPatterns.getProjectIDs().size());
+
 	}
 }

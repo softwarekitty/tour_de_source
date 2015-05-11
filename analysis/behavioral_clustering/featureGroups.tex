@@ -1,0 +1,32 @@
+\begin{center}
+\begin{table*}
+\begin{tabular}
+{cccc}
+index & feature set & nProjects & selected cluster examples (nProjects for that cluster)\\
+\toprule
+
+0 & ADD,KLD,QST & 970 & \begin{minipage}{3.5in}\begin{verbatim}`\W+'(208), `[A-Z]?[:;.A-Z]'(47), `:+'(91), `https?://'(13)\end{verbatim}\end{minipage}\\
+\midrule
+1 & CCC,NCCC,RNG & 953 & \begin{minipage}{3.5in}\begin{verbatim}`[0-9]'(193), `[^!-~]'(122), `[aeiou]'(4), `[^\w!#$%&'*+,.:;<=>?^`|~-]'(14)\end{verbatim}\end{minipage}\\
+\midrule
+2 & CG & 943 & \begin{minipage}{3.5in}\begin{verbatim}`coding[:=]\s*([-\w.]+)'(48), `<(.*)>'(63), `"(.*)"'(42), `\\(.)'(110s)\end{verbatim}\end{minipage}\\
+\midrule
+3 & STR,END & 807 & \begin{minipage}{3.5in}\begin{verbatim}`\w'\end{verbatim}\end{minipage}\\
+\midrule
+4 & ANY & 801 & \begin{minipage}{3.5in}\begin{verbatim}`\W'\end{verbatim}\end{minipage}\\
+\midrule
+5 & WSP,NWSP & 775 & \begin{minipage}{3.5in}\begin{verbatim}`^\d+$'\end{verbatim}\end{minipage}\\
+\midrule
+6 & OR & 759 & \begin{minipage}{3.5in}\begin{verbatim}`,'\end{verbatim}\end{minipage}\\
+\midrule
+7 & DEC,NDEC & 622 & \begin{minipage}{3.5in}\begin{verbatim}`\\'\end{verbatim}\end{minipage}\\
+\midrule
+8 & WRD,NWRD & 595 & \begin{minipage}{3.5in}\begin{verbatim}`:'\end{verbatim}\end{minipage}\\
+\midrule
+9 & DBB,LWB,SNG & 459 & \begin{minipage}{3.5in}\begin{verbatim}`[a-zA-Z]'\end{verbatim}\end{minipage}\\
+\bottomrule
+\end{tabular}
+\caption{Feature Groups with Selected Cluster Examples (RQ3)}
+\label{table:featureGroups}
+\end{table*}
+\end{center}

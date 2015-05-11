@@ -2,7 +2,7 @@ CCC_NCCC_RNG_
 totalNProjectIDs: 953
 
 realClusters:
-('[ ,]':277)
+('[ ,]':277) CCCs are everywhere, but it's interesting how often people use [0-9] instead of using \d
 ('[\\W]':208)
 ('[0-9]':193)
 ('[a-zA-Z]':138)

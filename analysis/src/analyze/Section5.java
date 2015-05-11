@@ -74,7 +74,7 @@ public class Section5 {
 					String mclInput = fullInputFilePath + " -I " +
 						df.format(i_value) + newOptions + " --abc -o " +
 						fullOutputFilePath;
-					behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput);
+					behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput,null);
 					IOUtil.dumpAllClusters(behavioral_analysis_path, behavioralClusters, corpus, "behavioralSimilarityClusterDump" +
 						suffix + ".txt", suffix);
 				}
