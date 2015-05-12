@@ -5,25 +5,25 @@
 index & feature set & nProjects & selected cluster examples (nProjects for that cluster)\\
 \toprule
 
-0 & ADD,KLD,QST & 970 & \begin{minipage}{3.5in}\begin{verbatim}`\W+'(208), `[A-Z]?[:;.A-Z]'(47), `:+'(91), `https?://'(13)\end{verbatim}\end{minipage}\\
+0 & ADD,KLD,QST & 970 & \begin{minipage}{5in}\begin{verbatim}`\W+'(208), `[A-Z]?[:;.A-Z]'(47), `:+'(91), `https?://'(13)\end{verbatim}\end{minipage}\\
 \midrule
-1 & CCC,NCCC,RNG & 953 & \begin{minipage}{3.5in}\begin{verbatim}`[0-9]'(193), `[^!-~]'(122), `[aeiou]'(4), `[^\w!#$%&'*+,.:;<=>?^`|~-]'(14)\end{verbatim}\end{minipage}\\
+1 & CCC,NCCC,RNG & 953 & \begin{minipage}{5in}\begin{verbatim}`[0-9]'(193), `[^!-~]'(122), `[aeiou]'(4), `[^\w!#$%&'*+,.:;<=>?^`|~-]'(14)\end{verbatim}\end{minipage}\\
 \midrule
-2 & CG & 943 & \begin{minipage}{3.5in}\begin{verbatim}`coding[:=]\s*([-\w.]+)'(48), `<(.*)>'(63), `"(.*)"'(42), `\\(.)'(110s)\end{verbatim}\end{minipage}\\
+2 & CG & 943 & \begin{minipage}{5in}\begin{verbatim}`coding[:=]\s*([-\w.]+)'(48), `<(.*)>'(63), `"(.*)"'(42), `\\(.)'(110s)\end{verbatim}\end{minipage}\\
 \midrule
-3 & STR,END & 807 & \begin{minipage}{3.5in}\begin{verbatim}`^\d+$'(78), `^\\s*$'(59), `,.*$'(100), `=.*$'(52), `^(.*)<(.*)>(.*)$'(63), \end{verbatim}\end{minipage}\\
+3 & STR,END & 807 & \begin{minipage}{5in}\begin{verbatim}`^\d+$'(78), `^\\s*$'(59), `,.*$'(100), `=.*$'(52), `^(.*)<(.*)>(.*)$'(63), \end{verbatim}\end{minipage}\\
 \midrule
-4 & ANY & 801 & \begin{minipage}{3.5in}\begin{verbatim}`\s.*'(277), `(\d+)(.*)'(193), `-.*'(74), `(.)([A-Z])'(47), `<.+>'(63)\end{verbatim}\end{minipage}\\
+4 & ANY & 801 & \begin{minipage}{5in}\begin{verbatim}`\s.*'(277), `(\d+)(.*)'(193), `-.*'(74), `(.)([A-Z])'(47), `<.+>'(63)\end{verbatim}\end{minipage}\\
 \midrule
-5 & WSP,NWSP & 775 & \begin{minipage}{3.5in}\begin{verbatim}`\s'(277), `\S'(53), `:\s*'(91), `,\S'(100), `<\\S[^>]*>'(63)\end{verbatim}\end{minipage}\\
+5 & WSP,NWSP & 775 & \begin{minipage}{5in}\begin{verbatim}`\s'(277), `\S'(53), `:\s*'(91), `,\S'(100), `<\\S[^>]*>'(63)\end{verbatim}\end{minipage}\\
 \midrule
-6 & OR & 759 & \begin{minipage}{3.5in}\begin{verbatim}`((the|a|an)\\s+)?[0-9]+'(193), `([ ]+_)|(_[ ]+)|([ ]+)'(66), `<.*>|</.*>'(63)\end{verbatim}\end{minipage}\\
+6 & OR & 759 & \begin{minipage}{5in}\begin{verbatim}`((the|a|an)\\s+)?[0-9]+'(193), `([ ]+_)|(_[ ]+)|([ ]+)'(66), `<.*>|</.*>'(63)\end{verbatim}\end{minipage}\\
 \midrule
-7 & DEC,NDEC & 622 & \begin{minipage}{3.5in}\begin{verbatim}`\d'(193), `(\D)[.]'(61), `\.\d+$'(14), `[^\w\d_]'(208)\end{verbatim}\end{minipage}\\
+7 & DEC,NDEC & 622 & \begin{minipage}{5in}\begin{verbatim}`\d'(193), `\D'(65), `\.\d+$'(14), `[^\w\d_]'(208), `(\D)[.]'(61)\end{verbatim}\end{minipage}\\
 \midrule
-8 & WRD,NWRD & 595 & \begin{minipage}{3.5in}\begin{verbatim}`\W'(208), \end{verbatim}\end{minipage}\\
+8 & WRD,NWRD & 595 & \begin{minipage}{5in}\begin{verbatim}`\W'(208), `\w'(114), `[a-zA-Z]\w*'(138), `(\w*)=(\w*)'(52), `\\(\W)'(110) \end{verbatim}\end{minipage}\\
 \midrule
-9 & DBB,LWB,SNG & 459 & \begin{minipage}{3.5in}\begin{verbatim}`[a-zA-Z]'\end{verbatim}\end{minipage}\\
+9 & DBB,LWB,SNG & 459 & \begin{minipage}{5in}\begin{verbatim}`^[0-9]{1,5}$'(78), `\d{2}'(193), `[.]{2,}'(21), `^[0-9A-Za-z._-]{0,100}$'(27)\end{verbatim}\end{minipage}\\
 \bottomrule
 \end{tabular}
 \caption{Feature Groups with Selected Cluster Examples (RQ3)}

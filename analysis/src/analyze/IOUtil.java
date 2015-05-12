@@ -170,6 +170,8 @@ public class IOUtil {
 		int lineNumber = 0;
 		for (String line : lines) {
 			String[] indices = line.split("\t");
+			
+			//we will never continue like this, if there is no tab, split returns line
 			if (indices.length == 0) {
 				continue;
 			}

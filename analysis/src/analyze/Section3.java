@@ -177,28 +177,36 @@ public class Section3 {
 		DecimalFormat df = new DecimalFormat("0.00");
 		for (int i = 0; i < 6; i++) {
 			HalfMatrix halfMatrix = testers[i];
-			double[] iVals = { 1.8, 3.3, 5.0 };
+			double[] iVals = { 2,4};
 			for (double i_value : iVals) {
-				double pVals[] = { 0.5, 0.6, 0.7};
+				double pVals[] = { 0.18, 0.27, 0.36, 0.72, 0.80, 0.88};
 				for (double p_value : pVals) {
 					int[] kVals = { 100 };
 					for (int k_value : kVals) {
 						String graphName = C.functionames[i] +
-							"synSimGraph.abc";
+								"synSimGraph.abc";
 						String suffix = "_i" + df.format(i_value) + "_p" +
-							df.format(p_value) + "_k" + k_value + "_" +
-							names[i] + "_";
-						String fullInputFilePath = outputPath + suffix +
-							"input" + graphName;
-						String fullOutputFilePath = outputPath + suffix +
-							"output" + graphName;
-						String mclInput = fullInputFilePath + " -I " +
-							df.format(i_value) + " -tf gq(" +
-							df.format(p_value) + ") -tf #knn(" + k_value + ")" +
-							" --abc -o " + fullOutputFilePath;
-						TreeSet<Cluster> syntacticClusters = IOUtil.getClusters(fullInputFilePath, fullOutputFilePath, halfMatrix.getABC(p_value), corpus, mclInput,lookup);
-						IOUtil.dumpAllClusters(outputPath, syntacticClusters, corpus, "syntacticSimilarityClusterDump" +
-							suffix + ".txt", suffix);
+								df.format(p_value) + "_k" + k_value + "_" +
+								names[i] + "_";
+							String fullInputFilePath = outputPath + suffix +
+								"input" + graphName;
+							String fullOutputFilePath = outputPath + suffix +
+								"output" + graphName;
+							String mclInput = fullInputFilePath + " -I " +
+								df.format(i_value) + " -tf gq(" +
+								df.format(p_value) + ") -tf #knn(" + k_value + ")" +
+								" --abc -o " + fullOutputFilePath;
+						//jaroW or jaccard
+						if((i==1 || i==2) && p_value >0.36){
+							TreeSet<Cluster> syntacticClusters = IOUtil.getClusters(fullInputFilePath, fullOutputFilePath, halfMatrix.getABC(p_value), corpus, mclInput,lookup);
+							IOUtil.dumpAllClusters(outputPath, syntacticClusters, corpus, "syntacticSimilarityClusterDump" +
+								suffix + ".txt", suffix);
+						//lcs or lev
+						}else if((i==3 || i==4)&& p_value < 0.72){
+							TreeSet<Cluster> syntacticClusters = IOUtil.getClusters(fullInputFilePath, fullOutputFilePath, halfMatrix.getABC(p_value), corpus, mclInput,lookup);
+							IOUtil.dumpAllClusters(outputPath, syntacticClusters, corpus, "syntacticSimilarityClusterDump" +
+								suffix + ".txt", suffix);
+						}
 					}
 				}
 			}

@@ -31,4 +31,11 @@ public class FeaturePile extends TreeSet<RankedFeature>{
 	public boolean containsFeatureIndex(int featureIndex) {
 		return featureCountArray[featureIndex]!=0;
 	}
+	
+	public static void main(String[] args){
+		String notab = "stuff";
+		String[] parts = notab.split("\t");
+		System.out.println(parts.length);
+		System.out.println(parts[0]);
+	}
 }

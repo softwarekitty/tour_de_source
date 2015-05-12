@@ -1,0 +1,3487 @@
+Cluster stats:
+
+nClusters: 164
+TotalPatterns: 590
+totalnProjects: 529
+suffix: _i2.00_p0.80_k100_jaroW_
+
+
+cluster 0 stats:
+nPatterns: 6.0
+nProjects: 101
+shortest: \s
+Features:
+
+1: LIT|a literal character | 1.3333333333333333
+2: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.8333333333333334
+3: ADD|one-or-more repetition | 0.6666666666666666
+4: NWSP|any non-whitespace | 0.16666666666666666
+
+
+0000 | 0078 | '\\s'
+0001 | 0020 | '>\\s+<'
+0002 | 0007 | 'a\\s'
+0003 | 0004 | u'>\\s+<'
+0004 | 0001 | '\\s+<'
+0005 | 0001 | '\\S+\\.a'
+
+
+
+cluster 1 stats:
+nPatterns: 24.0
+nProjects: 75
+shortest: \s*
+Features:
+
+1: LIT|a literal character | 4.125
+2: KLE|zero-or-more repetition | 1.7916666666666667
+3: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.6666666666666667
+4: ADD|one-or-more repetition | 0.6666666666666666
+5: CG|a capture group | 0.5416666666666666
+6: ANY|any non-newline char | 0.25
+7: NCCC|negated CCC | 0.20833333333333334
+8: CCC|custom character class | 0.16666666666666666
+9: NWSP|any non-whitespace | 0.16666666666666666
+10: RNG|chars within a range | 0.125
+11: DEC|any of: 0123456789 | 0.08333333333333333
+12: END|end-of-line | 0.08333333333333333
+13: QST|zero-or-one repetition | 0.08333333333333333
+14: WRD|[a-zA-Z0-9\_] | 0.08333333333333333
+15: LZY|as few reps as possible | 0.041666666666666664
+16: OR|logical or | 0.041666666666666664
+17: VWSP|matches U+000B | 0.041666666666666664
+
+
+0000 | 0030 | '\\s*'
+0001 | 0008 | '\\s*/\\*\\s*\\*/'
+0002 | 0007 | '\\s*-e\\s+'
+0003 | 0007 | '\\s*-e\\s+.*#egg=(.*)$'
+0004 | 0007 | '\\s*([a-f0-9]+):\\s*(\\S.*)'
+0005 | 0005 | ';\\s*'
+0006 | 0004 | ',\\s*$'
+0007 | 0004 | '\\s*\\(0[0-7]+\\).*'
+0008 | 0004 | '\\s*\\(\\d+[ulUL]*\\).*'
+0009 | 0003 | '\\s*,?\\s*new Array\\('
+0010 | 0002 | '\\/\\*[\\s\\S]*?\\*\\/'
+0011 | 0001 | ':\\s*'
+0012 | 0001 | '\\s*\\S+'
+0013 | 0001 | '\\s*(\\S+)'
+0014 | 0001 | '\\s*=+>\\s*'
+0015 | 0001 | '\\s*\\;\\s*'
+0016 | 0001 | '\\s*longitude\\s*'
+0017 | 0001 | '\\s*global\\s+(.*)'
+0018 | 0001 | '\\s*(-?\\w+:\\w+)+,*'
+0019 | 0001 | '\\s*([^\\s\\(\\)]*)\\s*'
+0020 | 0001 | '\\s*(([^,]|(,\\s*\\d))+)'
+0021 | 0001 | '\\s*([^;# \\t\\n\\r\\f\\v]+)'
+0022 | 0001 | '\\s*([^\\s\\(\\)"\\\'\\-=\\[\\]]+)\\s*'
+0023 | 0001 | '\\s*([^\\s\\(\\)"\\\'\\-=,\\[\\]/]+)\\s*'
+
+
+
+cluster 2 stats:
+nPatterns: 14.0
+nProjects: 67
+shortest: ^\D*
+Features:
+
+1: LIT|a literal character | 5.214285714285714
+2: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 2.357142857142857
+3: KLE|zero-or-more repetition | 2.0714285714285716
+4: STR|start-of-line | 1.0714285714285714
+5: ADD|one-or-more repetition | 1.0
+6: END|end-of-line | 0.5714285714285714
+7: ANY|any non-newline char | 0.35714285714285715
+8: CCC|custom character class | 0.35714285714285715
+9: CG|a capture group | 0.2857142857142857
+10: RNG|chars within a range | 0.2857142857142857
+11: WRD|[a-zA-Z0-9\_] | 0.14285714285714285
+12: DEC|any of: 0123456789 | 0.07142857142857142
+13: NCCC|negated CCC | 0.07142857142857142
+14: NDEC|any non-decimal | 0.07142857142857142
+15: OR|logical or | 0.07142857142857142
+
+
+0000 | 0048 | '^\\s*$'
+0001 | 0006 | '^\\s*\\|\\s.*\\s\\|\\s*$|^\\s*\\+[=+-]+\\+\\s*$'
+0002 | 0004 | u'^\\s*[^#\\s].*'
+0003 | 0003 | '^\\s*([A-Z_]+): (\\d+)'
+0004 | 0002 | '^\\s*\\#+\\s*'
+0005 | 0001 | '^\\D*'
+0006 | 0001 | '^\\s*\\['
+0007 | 0001 | '^\\s*msgid\\s+"'
+0008 | 0001 | '^\\s*[\\w-]+\\s*$'
+0009 | 0001 | '^\\s*=[A-Za-z_]+\\w*.*$'
+0010 | 0001 | '^\\s*[A-Z/\\s-]+ATTRIBUTES\\s*$'
+0011 | 0001 | '^\\s*\\.\\.\\s+autosummary::\\s*'
+0012 | 0001 | '^\\s*Tag\\s+Name\\s+VR\\s+VM\\s*$'
+0013 | 0001 | '^\\s*\\"(.+)\\"\\s*,\\s*\\"(.+)\\"\\s*$'
+
+
+
+cluster 3 stats:
+nPatterns: 7.0
+nProjects: 57
+shortest: ^.+$
+Features:
+
+1: LIT|a literal character | 1.2857142857142858
+2: ADD|one-or-more repetition | 1.1428571428571428
+3: END|end-of-line | 1.1428571428571428
+4: DEC|any of: 0123456789 | 1.0
+5: STR|start-of-line | 1.0
+6: OR|logical or | 0.2857142857142857
+7: QST|zero-or-one repetition | 0.2857142857142857
+8: ANY|any non-newline char | 0.14285714285714285
+9: CG|a capture group | 0.14285714285714285
+10: WRD|[a-zA-Z0-9\_] | 0.14285714285714285
+
+
+0000 | 0049 | '^\\d+$'
+0001 | 0009 | '^-?\\d+$'
+0002 | 0002 | '^.+$'
+0003 | 0002 | '-\\d+$'
+0004 | 0001 | '^\\.\\d+$'
+0005 | 0001 | '^\\.|^\\d\\.$|\\.\\.$'
+0006 | 0001 | '^\\d+(-\\d+)?|\\.\\w+$'
+
+
+
+cluster 4 stats:
+nPatterns: 6.0
+nProjects: 52
+shortest: \n
+Features:
+
+1: LIT|a literal character | 1.3333333333333333
+2: ADD|one-or-more repetition | 0.6666666666666666
+3: END|end-of-line | 0.16666666666666666
+
+
+0000 | 0041 | '\n'
+0001 | 0008 | '\n+'
+0002 | 0002 | '\\n +'
+0003 | 0002 | '\\n+$'
+0004 | 0001 | u'\n'
+0005 | 0001 | '\n\n+'
+
+
+
+cluster 5 stats:
+nPatterns: 6.0
+nProjects: 50
+shortest: \(\*
+Features:
+
+1: LIT|a literal character | 2.0
+2: KLE|zero-or-more repetition | 0.5
+3: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.5
+4: ADD|one-or-more repetition | 0.16666666666666666
+5: NWSP|any non-whitespace | 0.16666666666666666
+
+
+0000 | 0038 | '\\(\\*'
+0001 | 0005 | '\\)\\s*'
+0002 | 0003 | '\\\\*\\n'
+0003 | 0002 | '\\*\\S'
+0004 | 0001 | '\\-\\s*\\>'
+0005 | 0001 | '\\*/\\s+/\\*'
+
+
+
+cluster 6 stats:
+nPatterns: 24.0
+nProjects: 50
+shortest: [A-Za-z_]+
+Features:
+
+1: LIT|a literal character | 8.25
+2: RNG|chars within a range | 3.0
+3: CCC|custom character class | 0.875
+4: ADD|one-or-more repetition | 0.7083333333333334
+5: END|end-of-line | 0.5
+6: STR|start-of-line | 0.5
+7: NCCC|negated CCC | 0.20833333333333334
+8: CG|a capture group | 0.08333333333333333
+9: DEC|any of: 0123456789 | 0.08333333333333333
+10: LWB|at least n repetition | 0.08333333333333333
+11: SNG|exactly n repetition | 0.08333333333333333
+12: KLE|zero-or-more repetition | 0.041666666666666664
+13: QST|zero-or-one repetition | 0.041666666666666664
+14: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.041666666666666664
+
+
+0000 | 0020 | '[^a-zA-Z0-9]'
+0001 | 0005 | ', ([a-zA-Z0-9_]+)='
+0002 | 0003 | u'^[-a-zA-Z0-9_]+$'
+0003 | 0003 | '^[a-z0-9][a-z0-9_]{2,}$'
+0004 | 0003 | '^[a-zA-Z0-9\\.\\-:+"]+$'
+0005 | 0002 | '^[a-zA-Z0-9\\-]+$'
+0006 | 0002 | '^[a-zA-Z0-9_\\.]+$'
+0007 | 0001 | '[A-Za-z_]+'
+0008 | 0001 | '[^a-fA-F\\d]'
+0009 | 0001 | '[^0-9a-zA-Z._]'
+0010 | 0001 | '[^a-zA-Z0-9_]+'
+0011 | 0001 | '([a-zA-Z0-9_.]+)'
+0012 | 0001 | '^[0-9a-zA-Z- ]+$'
+0013 | 0001 | '{[a-zA-Z_ 0-9]+}'
+0014 | 0001 | u'^[a-zA-Z0-9_]+$'
+0015 | 0001 | '[a-zA-Z0-9_\\-]+$'
+0016 | 0001 | '^[A-Za-z0-9_]+\\('
+0017 | 0001 | '^[a-zA-Z0-9]{40}$'
+0018 | 0001 | '</?\\s*[a-zA-Z0-9]+'
+0019 | 0001 | '[^-a-zA-Z_\\.0-9:]+'
+0020 | 0001 | '\\%\\([a-zA-Z0-9]+\\)'
+0021 | 0001 | '^[a-zA-Z0-9_\\-\\.]+$'
+0022 | 0001 | '^/[a-zA-Z0-9_-]{28}/file1$'
+0023 | 0001 | '^[a-zA-Z][a-zA-Z\\d_]{2,}$'
+
+
+
+cluster 7 stats:
+nPatterns: 5.0
+nProjects: 48
+shortest: [\x01-\x1f]
+Features:
+
+1: LIT|a literal character | 3.0
+2: CCC|custom character class | 1.0
+3: RNG|chars within a range | 1.0
+4: CG|a capture group | 0.4
+5: ADD|one-or-more repetition | 0.2
+
+
+0000 | 0039 | '([\x80-\x9f])'
+0001 | 0008 | '[\\x00-\\x08\\x0e-\\x1f]'
+0002 | 0002 | '[\x01-\x1f]'
+0003 | 0002 | '[\x02\x1f\x16\x0f\x03]'
+0004 | 0001 | '([\x00-\x7f]+)'
+
+
+
+cluster 8 stats:
+nPatterns: 4.0
+nProjects: 45
+shortest: ^([.]*).*$
+Features:
+
+1: KLE|zero-or-more repetition | 2.0
+2: LIT|a literal character | 2.0
+3: CG|a capture group | 1.0
+4: END|end-of-line | 1.0
+5: STR|start-of-line | 1.0
+6: ANY|any non-newline char | 0.75
+7: CCC|custom character class | 0.5
+8: NCCC|negated CCC | 0.5
+9: QST|zero-or-one repetition | 0.25
+10: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.25
+
+
+0000 | 0041 | '^[ ]*(#.*)?$'
+0001 | 0002 | '^([^:]*):[^:]*$'
+0002 | 0001 | '^([.]*).*$'
+0003 | 0001 | '^"(.*)"\\s*$'
+
+
+
+cluster 9 stats:
+nPatterns: 3.0
+nProjects: 42
+shortest: (?m)^\s*
+Features:
+
+1: LIT|a literal character | 1.6666666666666667
+2: KLE|zero-or-more repetition | 1.0
+3: OPT|options wrapper | 1.0
+4: STR|start-of-line | 1.0
+5: CCC|custom character class | 0.6666666666666666
+6: LKA|matching sequence follows | 0.3333333333333333
+7: LWB|at least n repetition | 0.3333333333333333
+8: NCG|group without capturing | 0.3333333333333333
+9: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.3333333333333333
+
+
+0000 | 0040 | '(?m)^[ ]*(?=\n)'
+0001 | 0001 | '(?m)^\\s*'
+0002 | 0001 | '(?m)(?:^[ \\t]*\\n){1,}'
+
+
+
+cluster 10 stats:
+nPatterns: 5.0
+nProjects: 41
+shortest: \w
+Features:
+
+1: LIT|a literal character | 1.2
+2: WRD|[a-zA-Z0-9\_] | 0.8
+3: ADD|one-or-more repetition | 0.6
+4: NWRD|non-word chars | 0.2
+
+
+0000 | 0026 | '\\W+'
+0001 | 0010 | '\\w'
+0002 | 0003 | '\\w+\\.rb'
+0003 | 0001 | '<\\w'
+0004 | 0001 | '%\\w+%'
+
+
+
+cluster 11 stats:
+nPatterns: 2.0
+nProjects: 38
+shortest: alloc_fabric_acl\)\(
+Features:
+
+1: LIT|a literal character | 19.0
+
+
+0000 | 0038 | 'alloc_fabric_acl\\)\\('
+0001 | 0038 | 'release_fabric_acl\\)\\('
+
+
+
+cluster 12 stats:
+nPatterns: 4.0
+nProjects: 34
+shortest: [a-zA-Z][-_.:a-zA-Z0-9]*\s*
+Features:
+
+1: LIT|a literal character | 14.75
+2: RNG|chars within a range | 5.5
+3: CCC|custom character class | 2.25
+4: KLE|zero-or-more repetition | 1.75
+5: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.5
+6: CG|a capture group | 0.25
+7: END|end-of-line | 0.25
+8: OR|logical or | 0.25
+9: QST|zero-or-one repetition | 0.25
+10: STR|start-of-line | 0.25
+
+
+0000 | 0018 | '[a-zA-Z][-_.:a-zA-Z0-9]*\\s*'
+0001 | 0015 | '[a-zA-Z][-_.a-zA-Z0-9:]*\\s*'
+0002 | 0001 | '^@[a-zA-Z0-9][a-zA-Z0-9_\\.]*$'
+0003 | 0001 | '&([a-zA-Z][-.a-zA-Z0-9]*|#[0-9]*)?'
+
+
+
+cluster 13 stats:
+nPatterns: 2.0
+nProjects: 30
+shortest: /
+Features:
+
+1: LIT|a literal character | 1.5
+2: QST|zero-or-one repetition | 0.5
+
+
+0000 | 0030 | '/'
+0001 | 0001 | '/?>'
+
+
+
+cluster 14 stats:
+nPatterns: 7.0
+nProjects: 29
+shortest: (?<!\\),
+Features:
+
+1: LIT|a literal character | 7.714285714285714
+2: NLKB|sequence doesn't precede | 1.0
+3: CG|a capture group | 0.5714285714285714
+4: CCC|custom character class | 0.42857142857142855
+5: NLKA|sequence doesn't follow  | 0.2857142857142857
+6: WRD|[a-zA-Z0-9\_] | 0.2857142857142857
+7: ADD|one-or-more repetition | 0.14285714285714285
+8: DEC|any of: 0123456789 | 0.14285714285714285
+9: KLE|zero-or-more repetition | 0.14285714285714285
+
+
+0000 | 0019 | '(?<![\\w])(\\d+)L(?![\\w])'
+0001 | 0007 | '(?<!\\\\)([aAbBcdDEfFgGhHiIjlLmMnNOPrsStTUuwWyYzZ])'
+0002 | 0005 | '(?<!\\\\),'
+0003 | 0004 | u'(?<!%)%s'
+0004 | 0004 | '((?<!\\\\)(\\\\\\\\)*)\\.'
+0005 | 0001 | '(?<!\\\\)\\|'
+0006 | 0001 | '(?<!\\|)\\|(?!\\|)'
+
+
+
+cluster 15 stats:
+nPatterns: 7.0
+nProjects: 27
+shortest: (\d{4})
+Features:
+
+1: LIT|a literal character | 4.285714285714286
+2: CG|a capture group | 3.142857142857143
+3: DEC|any of: 0123456789 | 2.7142857142857144
+4: SNG|exactly n repetition | 2.0
+5: ADD|one-or-more repetition | 0.8571428571428571
+6: CCC|custom character class | 0.5714285714285714
+7: DBB|$n\le x \le m$ repetition | 0.42857142857142855
+8: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.42857142857142855
+9: KLE|zero-or-more repetition | 0.2857142857142857
+10: RNG|chars within a range | 0.2857142857142857
+11: ANY|any non-newline char | 0.14285714285714285
+12: QST|zero-or-one repetition | 0.14285714285714285
+
+
+0000 | 0019 | '(\\d{1,2})\\.(\\d{1,2})\\.(\\d{1,2})'
+0001 | 0003 | '(\\d{4})-(\\d{2})-(\\d{2})\\s+(\\d{2}):(\\d{2}):(\\d{2})(\\.\\d+)?'
+0002 | 0002 | '(\\d{4})'
+0003 | 0001 | '(\\d{3})'
+0004 | 0001 | '(\\{.+\\})'
+0005 | 0001 | '(\\d{4})-(\\d{2})-(\\d{2})[\\s\t]*([0-9:, -]+)'
+0006 | 0001 | '(\\d{4})-(\\d{2})-(\\d{2}) / (\\d+)[\\s\t]*([0-9:, -]+)'
+
+
+
+cluster 16 stats:
+nPatterns: 9.0
+nProjects: 25
+shortest: [a-zA-Z][a-zA-Z0-9_]*$
+Features:
+
+1: LIT|a literal character | 14.0
+2: RNG|chars within a range | 5.0
+3: CCC|custom character class | 2.111111111111111
+4: KLE|zero-or-more repetition | 1.0
+5: CG|a capture group | 0.3333333333333333
+6: DEC|any of: 0123456789 | 0.2222222222222222
+7: END|end-of-line | 0.2222222222222222
+8: WNW|word/non-word boundary | 0.2222222222222222
+9: ADD|one-or-more repetition | 0.1111111111111111
+10: ENDZ|absolute end of string | 0.1111111111111111
+11: NCCC|negated CCC | 0.1111111111111111
+12: QST|zero-or-one repetition | 0.1111111111111111
+13: SNG|exactly n repetition | 0.1111111111111111
+14: WRD|[a-zA-Z0-9\_] | 0.1111111111111111
+
+
+0000 | 0015 | '[a-zA-Z][-.a-zA-Z0-9:_]*'
+0001 | 0014 | '<[a-zA-Z][-.a-zA-Z0-9]*/'
+0002 | 0012 | '\\$([a-zA-Z_][a-zA-Z_0-9]*)'
+0003 | 0002 | '[A-Za-z_][A-Za-z0-9_]*$'
+0004 | 0002 | '(~?\\b[a-zA-Z_][a-zA-Z0-9_]*)\\b'
+0005 | 0002 | '&([a-zA-Z][a-zA-Z0-9]*)[^a-zA-Z0-9]'
+0006 | 0002 | 'irb\\([a-zA-Z_][a-zA-Z0-9_]*\\):\\d{3}:\\d+[>*] '
+0007 | 0001 | '[a-zA-Z][a-zA-Z0-9_]*$'
+0008 | 0001 | '[a-zA-Z_:][\\w\\.\\-_:]*\\Z'
+
+
+
+cluster 17 stats:
+nPatterns: 10.0
+nProjects: 22
+shortest: [0-9.]+
+Features:
+
+1: LIT|a literal character | 6.0
+2: RNG|chars within a range | 1.9
+3: CCC|custom character class | 1.8
+4: ADD|one-or-more repetition | 1.6
+5: CG|a capture group | 0.7
+6: STR|start-of-line | 0.1
+
+
+0000 | 0006 | '[0-9]+,[0-9]+'
+0001 | 0003 | '[0-9]+\\.[0-9]+'
+0002 | 0003 | '([0-9]+):([0-9]+)'
+0003 | 0003 | 'vport[0-9]p[0-9]+'
+0004 | 0002 | '([0-9]+)_([0-9]+)'
+0005 | 0001 | '[0-9.]+'
+0006 | 0001 | '[0-9]+:'
+0007 | 0001 | '[0-9]+[a-zA-Z]'
+0008 | 0001 | '^m_([0-9]+)_([0-9]+)'
+0009 | 0001 | ', ([0-9]+\\.[0-9]+) fps'
+
+
+
+cluster 18 stats:
+nPatterns: 2.0
+nProjects: 21
+shortest: #.*
+Features:
+
+1: ANY|any non-newline char | 1.0
+2: KLE|zero-or-more repetition | 1.0
+3: LIT|a literal character | 1.0
+4: END|end-of-line | 0.5
+
+
+0000 | 0016 | '#.*'
+0001 | 0003 | '#.*$'
+
+
+
+cluster 19 stats:
+nPatterns: 10.0
+nProjects: 21
+shortest: ^[0-9]
+Features:
+
+1: LIT|a literal character | 3.2
+2: RNG|chars within a range | 1.1
+3: CCC|custom character class | 1.0
+4: END|end-of-line | 0.9
+5: STR|start-of-line | 0.9
+6: SNG|exactly n repetition | 0.4
+7: ADD|one-or-more repetition | 0.3
+8: ANY|any non-newline char | 0.1
+9: CG|a capture group | 0.1
+10: DBB|$n\le x \le m$ repetition | 0.1
+11: KLE|zero-or-more repetition | 0.1
+12: NCCC|negated CCC | 0.1
+
+
+0000 | 0007 | '^py[0-9]{2}$'
+0001 | 0003 | u'^[A-Z]{,3}$'
+0002 | 0002 | '^[0-9]'
+0003 | 0002 | '^([0-9]+)$'
+0004 | 0002 | '^[0-9]{2}$'
+0005 | 0002 | '^[0-9]{4}$'
+0006 | 0001 | '^[+0-9]+$'
+0007 | 0001 | '.*[0-9]{6}$'
+0008 | 0001 | '^A[0-9][^ ]+$'
+0009 | 0001 | '^[0-9A-Z\\.]{1,10}$'
+
+
+
+cluster 20 stats:
+nPatterns: 9.0
+nProjects: 21
+shortest: (\s)
+Features:
+
+1: LIT|a literal character | 2.4444444444444446
+2: CG|a capture group | 1.5555555555555556
+3: ADD|one-or-more repetition | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.0
+6: NWSP|any non-whitespace | 0.8888888888888888
+7: ANY|any non-newline char | 0.4444444444444444
+8: CCC|custom character class | 0.3333333333333333
+9: END|end-of-line | 0.1111111111111111
+10: NWRD|non-word chars | 0.1111111111111111
+11: WRD|[a-zA-Z0-9\_] | 0.1111111111111111
+
+
+0000 | 0007 | '(\\s)'
+0001 | 0004 | '(\\S+)\\s*(.*)'
+0002 | 0003 | '(\\S+)\\s+(..+$)'
+0003 | 0002 | '(\\W)'
+0004 | 0001 | '(\\S)'
+0005 | 0001 | '(%\\w)'
+0006 | 0001 | '(\\S+):\\s*(.*)'
+0007 | 0001 | '(\\S+) Version (\\S+)'
+0008 | 0001 | '(\\S+)\\s*[.]\\s*setshape\\s*[(]\\s*(\\S+)\\s*[)]'
+
+
+
+cluster 21 stats:
+nPatterns: 2.0
+nProjects: 20
+shortest: &(?!(\w+|#\d+);)
+Features:
+
+1: LIT|a literal character | 3.0
+2: ADD|one-or-more repetition | 2.0
+3: CG|a capture group | 1.0
+4: DEC|any of: 0123456789 | 1.0
+5: NLKA|sequence doesn't follow  | 1.0
+6: OR|logical or | 1.0
+7: WRD|[a-zA-Z0-9\_] | 1.0
+
+
+0000 | 0016 | '&(?!(\\w+|#\\d+);)'
+0001 | 0004 | u'&(?!(\\w+|#\\d+);)'
+
+
+
+cluster 22 stats:
+nPatterns: 14.0
+nProjects: 20
+shortest: (\d)
+Features:
+
+1: LIT|a literal character | 3.2142857142857144
+2: CG|a capture group | 1.3571428571428572
+3: DEC|any of: 0123456789 | 1.2857142857142858
+4: ADD|one-or-more repetition | 1.0
+5: NDEC|any non-decimal | 0.2857142857142857
+6: QST|zero-or-one repetition | 0.21428571428571427
+7: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.21428571428571427
+8: NLKA|sequence doesn't follow  | 0.07142857142857142
+9: OR|logical or | 0.07142857142857142
+10: SNG|exactly n repetition | 0.07142857142857142
+
+
+0000 | 0005 | '(\\d+)bit'
+0001 | 0003 | '(\\d)'
+0002 | 0002 | '(\\d+) megabytes'
+0003 | 0002 | '(\\D)\\.(?!\\s)(\\D)'
+0004 | 0001 | '(\\D+)'
+0005 | 0001 | 'p=(\\d+)'
+0006 | 0001 | '(\\d\\d?)'
+0007 | 0001 | '(\\d|\\.)+'
+0008 | 0001 | '(\\d\\.\\d)'
+0009 | 0001 | '(\\d+) seconds'
+0010 | 0001 | '(\\d+)\\((\\d+)\\)'
+0011 | 0001 | '(\\d+) leaks? excluded'
+0012 | 0001 | '(\\d+\\.\\d+(\\.\\d+)?)'
+0013 | 0001 | '(\\d+)\\s(\\D+)\\s(\\d{4})'
+
+
+
+cluster 23 stats:
+nPatterns: 2.0
+nProjects: 19
+shortest: <(/?)\s*i\s*>
+Features:
+
+1: LIT|a literal character | 4.0
+2: KLE|zero-or-more repetition | 2.0
+3: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 2.0
+4: CG|a capture group | 1.0
+5: QST|zero-or-one repetition | 1.0
+
+
+0000 | 0016 | '<(/?)\\s*i\\s*>'
+0001 | 0003 | u'<(/?)\\s*i\\s*>'
+
+
+
+cluster 24 stats:
+nPatterns: 7.0
+nProjects: 19
+shortest: ^\W+
+Features:
+
+1: LIT|a literal character | 1.1428571428571428
+2: ADD|one-or-more repetition | 1.0
+3: STR|start-of-line | 1.0
+4: CG|a capture group | 0.8571428571428571
+5: WRD|[a-zA-Z0-9\_] | 0.8571428571428571
+6: END|end-of-line | 0.5714285714285714
+7: DBB|$n\le x \le m$ repetition | 0.14285714285714285
+8: NCCC|negated CCC | 0.14285714285714285
+9: NWRD|non-word chars | 0.14285714285714285
+
+
+0000 | 0008 | '^(\\w){1,2}$'
+0001 | 0006 | '^\\W+'
+0002 | 0001 | '^(\\-l)'
+0003 | 0001 | '^(\\w+):$'
+0004 | 0001 | '^(\\w+)\\([^;]'
+0005 | 0001 | '^(\\w+)\\-\\-$'
+0006 | 0001 | '^(\\w+\\.)+\\w+$'
+
+
+
+cluster 25 stats:
+nPatterns: 8.0
+nProjects: 17
+shortest: ^[^\.]+
+Features:
+
+1: LIT|a literal character | 1.625
+2: ADD|one-or-more repetition | 1.0
+3: STR|start-of-line | 1.0
+4: END|end-of-line | 0.625
+5: CCC|custom character class | 0.5
+6: NCCC|negated CCC | 0.5
+7: DEC|any of: 0123456789 | 0.25
+8: WRD|[a-zA-Z0-9\_] | 0.25
+9: CG|a capture group | 0.125
+
+
+0000 | 0011 | '^[\\d,]+$'
+0001 | 0005 | '(^[^\\.]+)\\.'
+0002 | 0001 | '^[^\\.]+'
+0003 | 0001 | '^[^\\$]+$'
+0004 | 0001 | '^[\\d.:]+$'
+0005 | 0001 | '^[^\\.]+\\.'
+0006 | 0001 | '^[-\\.\\w]+$'
+0007 | 0001 | '^\\$[\\w=]+$'
+
+
+
+cluster 26 stats:
+nPatterns: 7.0
+nProjects: 17
+shortest: [a-fA-F0-9]{1,4}
+Features:
+
+1: LIT|a literal character | 7.142857142857143
+2: RNG|chars within a range | 3.0
+3: CCC|custom character class | 1.0
+4: SNG|exactly n repetition | 0.5714285714285714
+5: DBB|$n\le x \le m$ repetition | 0.42857142857142855
+6: CG|a capture group | 0.2857142857142857
+7: END|end-of-line | 0.2857142857142857
+8: STR|start-of-line | 0.2857142857142857
+9: NLKA|sequence doesn't follow  | 0.14285714285714285
+10: QST|zero-or-one repetition | 0.14285714285714285
+11: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.14285714285714285
+
+
+0000 | 0004 | '%(?![0-9A-Fa-f]{2})'
+0001 | 0003 | '^#[0-9A-Fa-f]{6}$'
+0002 | 0003 | '\\\\u([0-9a-fA-F]{4})'
+0003 | 0003 | '\\\\([0-9a-fA-F]{1,6})\\s?'
+0004 | 0002 | '[a-fA-F0-9]{1,4}'
+0005 | 0001 | '#[0-9a-fA-F]{3,6}'
+0006 | 0001 | '^0x[a-fA-F0-9]{6}$'
+
+
+
+cluster 27 stats:
+nPatterns: 10.0
+nProjects: 17
+shortest: (.*)
+Features:
+
+1: LIT|a literal character | 4.6
+2: CG|a capture group | 1.6
+3: ANY|any non-newline char | 1.4
+4: KLE|zero-or-more repetition | 1.4
+5: ADD|one-or-more repetition | 0.3
+6: CCC|custom character class | 0.3
+7: END|end-of-line | 0.3
+8: RNG|chars within a range | 0.2
+9: DEC|any of: 0123456789 | 0.1
+10: OR|logical or | 0.1
+11: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.1
+
+
+0000 | 0004 | '(.*) \\(([0-9]+)\\)$'
+0001 | 0003 | 'o:(.*)s'
+0002 | 0003 | '(.*)//(.*)'
+0003 | 0002 | '(.*)'
+0004 | 0002 | '(.*)\n'
+0005 | 0002 | '(.*) cache:$'
+0006 | 0001 | '(.*)\\(\\d+\\) :'
+0007 | 0001 | '(.*)callsign\\=(.*)$'
+0008 | 0001 | '(.*)\\s(ASC|DESC)(.*)'
+0009 | 0001 | '(.*)-[0-9_]+(.*[.]lib)'
+
+
+
+cluster 28 stats:
+nPatterns: 2.0
+nProjects: 16
+shortest: ^[ \t]*$
+Features:
+
+1: LIT|a literal character | 2.0
+2: CCC|custom character class | 1.0
+3: END|end-of-line | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: STR|start-of-line | 1.0
+6: RNG|chars within a range | 0.5
+
+
+0000 | 0014 | '^[ \t]*$'
+0001 | 0002 | u'^[ -~]*$'
+
+
+
+cluster 29 stats:
+nPatterns: 2.0
+nProjects: 16
+shortest: ^(.*)#([^#]*)$
+Features:
+
+1: LIT|a literal character | 3.5
+2: KLE|zero-or-more repetition | 2.0
+3: ANY|any non-newline char | 1.5
+4: CG|a capture group | 1.5
+5: END|end-of-line | 1.0
+6: STR|start-of-line | 1.0
+7: DEC|any of: 0123456789 | 0.5
+8: LZY|as few reps as possible | 0.5
+9: NCCC|negated CCC | 0.5
+10: NCG|group without capturing | 0.5
+11: OR|logical or | 0.5
+
+
+0000 | 0014 | '^(.*)#([^#]*)$'
+0001 | 0003 | '^(.*?)(?:-dev|-\\d.*)$'
+
+
+
+cluster 30 stats:
+nPatterns: 9.0
+nProjects: 16
+shortest: [^\w]
+Features:
+
+1: LIT|a literal character | 2.111111111111111
+2: WRD|[a-zA-Z0-9\_] | 1.0
+3: ADD|one-or-more repetition | 0.7777777777777778
+4: CCC|custom character class | 0.5555555555555556
+5: NCCC|negated CCC | 0.4444444444444444
+6: DEC|any of: 0123456789 | 0.2222222222222222
+7: END|end-of-line | 0.1111111111111111
+8: RNG|chars within a range | 0.1111111111111111
+9: STR|start-of-line | 0.1111111111111111
+
+
+0000 | 0005 | '[^\\w]'
+0001 | 0002 | '[^\\w\\-\\.\\/]+'
+0002 | 0001 | '[\\w\\.]+'
+0003 | 0001 | '[^\\w\\-]'
+0004 | 0001 | '[^\\w\\-]+'
+0005 | 0001 | '^[\\w\\-\\_]+$'
+0006 | 0001 | '[\\w\\d\\-_\\.]+'
+0007 | 0001 | '[\\w\\d_\\.\\-]+'
+0008 | 0001 | '[\\w0-9\\.\\_\\-]+'
+
+
+
+cluster 31 stats:
+nPatterns: 2.0
+nProjects: 15
+shortest: ^.*[0-9]dev$
+Features:
+
+1: LIT|a literal character | 4.0
+2: ANY|any non-newline char | 1.0
+3: CCC|custom character class | 1.0
+4: CG|a capture group | 1.0
+5: END|end-of-line | 1.0
+6: KLE|zero-or-more repetition | 1.0
+7: RNG|chars within a range | 1.0
+8: STR|start-of-line | 1.0
+9: ADD|one-or-more repetition | 0.5
+
+
+0000 | 0014 | '^(.*):([0-9]+)$'
+0001 | 0001 | '^.*[0-9]dev$'
+
+
+
+cluster 32 stats:
+nPatterns: 2.0
+nProjects: 15
+shortest: (?:(\w+)=)?(.+)
+Features:
+
+1: ADD|one-or-more repetition | 2.0
+2: CG|a capture group | 2.0
+3: ANY|any non-newline char | 1.0
+4: LIT|a literal character | 1.0
+5: NCG|group without capturing | 1.0
+6: QST|zero-or-one repetition | 1.0
+7: WRD|[a-zA-Z0-9\_] | 1.0
+
+
+0000 | 0012 | '(?:(\\w+)=)?(.+)'
+0001 | 0003 | u'(?:(\\w+)=)?(.+)'
+
+
+
+cluster 33 stats:
+nPatterns: 3.0
+nProjects: 15
+shortest: ^\d{5}$
+Features:
+
+1: DEC|any of: 0123456789 | 1.0
+2: END|end-of-line | 1.0
+3: SNG|exactly n repetition | 1.0
+4: STR|start-of-line | 1.0
+
+
+0000 | 0012 | '^\\d{11}$'
+0001 | 0005 | '^\\d{5}$'
+0002 | 0003 | u'^\\d{11}$'
+
+
+
+cluster 34 stats:
+nPatterns: 5.0
+nProjects: 15
+shortest: \\$
+Features:
+
+1: LIT|a literal character | 1.4
+2: END|end-of-line | 0.4
+3: DEC|any of: 0123456789 | 0.2
+
+
+0000 | 0004 | '\\\\$'
+0001 | 0003 | "\\\\'"
+0002 | 0002 | '\\\\`'
+0003 | 0001 | '\\$$'
+0004 | 0001 | '\\$\\d'
+
+
+
+cluster 35 stats:
+nPatterns: 3.0
+nProjects: 14
+shortest: ^(?P<x>\d+)?(?:x(?P<y>\d+))?$
+Features:
+
+1: PNG|named capture group | 2.6666666666666665
+2: DEC|any of: 0123456789 | 2.3333333333333335
+3: ADD|one-or-more repetition | 2.0
+4: LIT|a literal character | 1.3333333333333333
+5: END|end-of-line | 1.0
+6: STR|start-of-line | 1.0
+7: QST|zero-or-one repetition | 0.6666666666666666
+8: NCG|group without capturing | 0.3333333333333333
+9: SNG|exactly n repetition | 0.3333333333333333
+10: WRD|[a-zA-Z0-9\_] | 0.3333333333333333
+
+
+0000 | 0012 | '^(?P<number>\\d{7})(?P<check>\\d)$'
+0001 | 0001 | '^(?P<x>\\d+)?(?:x(?P<y>\\d+))?$'
+0002 | 0001 | '^(?P<z>\\d+)/(?P<x>\\d+)/(?P<y>\\d+)\\.(?P<e>\\w+)$'
+
+
+
+cluster 36 stats:
+nPatterns: 5.0
+nProjects: 14
+shortest: ([a-z0-9])([A-Z])
+Features:
+
+1: LIT|a literal character | 10.6
+2: RNG|chars within a range | 4.2
+3: CCC|custom character class | 3.0
+4: CG|a capture group | 2.2
+5: ADD|one-or-more repetition | 0.8
+6: OR|logical or | 0.8
+7: END|end-of-line | 0.2
+8: KLE|zero-or-more repetition | 0.2
+9: QST|zero-or-one repetition | 0.2
+
+
+0000 | 0009 | '([a-z0-9])([A-Z])'
+0001 | 0003 | '([-0-9.]+)([a-zA-Z]+)'
+0002 | 0002 | '([\\-0-9])|([\\-0-9]/[0-9])'
+0003 | 0001 | '([A-Z]+_[a-z0-9]+\\.txt)'
+0004 | 0001 | '([a-zA-Z]|[0-9])(([a-zA-Z]|[0-9]|-)*([a-zA-Z]|[0-9]))?$'
+
+
+
+cluster 37 stats:
+nPatterns: 2.0
+nProjects: 13
+shortest: (?m)^\.
+Features:
+
+1: OPT|options wrapper | 1.0
+2: STR|start-of-line | 1.0
+3: ANY|any non-newline char | 0.5
+4: CG|a capture group | 0.5
+5: LIT|a literal character | 0.5
+
+
+0000 | 0012 | '(?m)^\\.'
+0001 | 0001 | '(?m)^(.)'
+
+
+
+cluster 38 stats:
+nPatterns: 2.0
+nProjects: 13
+shortest: (\(|\)|\s+|-)
+Features:
+
+1: LIT|a literal character | 2.0
+2: CG|a capture group | 1.5
+3: ADD|one-or-more repetition | 1.0
+4: OR|logical or | 1.0
+5: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.0
+6: STR|start-of-line | 0.5
+7: WRD|[a-zA-Z0-9\_] | 0.5
+
+
+0000 | 0012 | '(\\(|\\)|\\s+|-)'
+0001 | 0001 | '(\\A|\\s)#(\\w+)'
+
+
+
+cluster 39 stats:
+nPatterns: 3.0
+nProjects: 13
+shortest: [ \n]*{
+Features:
+
+1: LIT|a literal character | 2.3333333333333335
+2: KLE|zero-or-more repetition | 1.3333333333333333
+3: CCC|custom character class | 1.0
+4: CG|a capture group | 0.3333333333333333
+5: STR|start-of-line | 0.3333333333333333
+6: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.3333333333333333
+
+
+0000 | 0007 | '[ \n]*{'
+0001 | 0005 | '^[\r\n]*(\\s*)'
+0002 | 0001 | '[\r\n]*'
+
+
+
+cluster 40 stats:
+nPatterns: 2.0
+nProjects: 13
+shortest: (?P<option>[^:=\s][^:=]*)\s*(?P<vi>[:=])\s*(?P<value>.*)$
+Features:
+
+1: LIT|a literal character | 6.0
+2: KLE|zero-or-more repetition | 4.0
+3: PNG|named capture group | 3.0
+4: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 3.0
+5: NCCC|negated CCC | 2.0
+6: ANY|any non-newline char | 1.0
+7: CCC|custom character class | 1.0
+8: END|end-of-line | 1.0
+9: NCG|group without capturing | 0.5
+10: QST|zero-or-one repetition | 0.5
+
+
+0000 | 0013 | '(?P<option>[^:=\\s][^:=]*)\\s*(?P<vi>[:=])\\s*(?P<value>.*)$'
+0001 | 0003 | '(?P<option>[^:=\\s][^:=]*)\\s*(?:(?P<vi>[:=])\\s*(?P<value>.*))?$'
+
+
+
+cluster 41 stats:
+nPatterns: 2.0
+nProjects: 12
+shortest: ^\d{4}-\d{1,2}-\d{1,2}$
+Features:
+
+1: DEC|any of: 0123456789 | 3.0
+2: LIT|a literal character | 2.0
+3: SNG|exactly n repetition | 2.0
+4: CG|a capture group | 1.5
+5: DBB|$n\le x \le m$ repetition | 1.0
+6: END|end-of-line | 1.0
+7: STR|start-of-line | 1.0
+
+
+0000 | 0009 | '^\\d{4}-\\d{1,2}-\\d{1,2}$'
+0001 | 0003 | u'^(\\d{3})-(\\d{3})-(\\d{3})$'
+
+
+
+cluster 42 stats:
+nPatterns: 4.0
+nProjects: 12
+shortest: ^https?://\S+$
+Features:
+
+1: LIT|a literal character | 14.0
+2: QST|zero-or-one repetition | 1.0
+3: STR|start-of-line | 1.0
+4: ADD|one-or-more repetition | 0.75
+5: END|end-of-line | 0.75
+6: ANY|any non-newline char | 0.5
+7: NWSP|any non-whitespace | 0.5
+8: CCC|custom character class | 0.25
+9: KLE|zero-or-more repetition | 0.25
+10: NCCC|negated CCC | 0.25
+
+
+0000 | 0006 | '^https?://\\S+$'
+0001 | 0004 | '^https?://github.com/[^/]+/?$'
+0002 | 0001 | '^https?:\\/\\/.+'
+0003 | 0001 | '^http://instagr\\.am/p/[\\S]*$'
+
+
+
+cluster 43 stats:
+nPatterns: 5.0
+nProjects: 11
+shortest: (\d+)-(\d+)-(\d+)
+Features:
+
+1: LIT|a literal character | 6.4
+2: CG|a capture group | 4.6
+3: ADD|one-or-more repetition | 4.0
+4: DEC|any of: 0123456789 | 4.0
+5: QST|zero-or-one repetition | 1.4
+6: NCG|group without capturing | 0.4
+7: CCC|custom character class | 0.2
+8: OR|logical or | 0.2
+
+
+0000 | 0004 | '(\\d+)-(\\d+)-(\\d+)'
+0001 | 0004 | '(\\d+)\\.(\\d+)(\\.(\\d+))?(b(\\d+))?'
+0002 | 0002 | '([idel])|(\\d+):|(-?\\d+)'
+0003 | 0001 | 'git version (\\d+)\\.(\\d+)(\\.\\d+)?(\\.\\d+)?'
+0004 | 0001 | '(\\d+)-(\\d+)-(\\d+)(?: (\\d+):(\\d+):(\\d+)(?:\\.(\\d+))?)?'
+
+
+
+cluster 44 stats:
+nPatterns: 2.0
+nProjects: 10
+shortest: &#(\d+|[xX][0-9a-fA-F]+);
+Features:
+
+1: LIT|a literal character | 11.0
+2: RNG|chars within a range | 3.0
+3: CCC|custom character class | 2.0
+4: ADD|one-or-more repetition | 1.5
+5: CG|a capture group | 1.0
+6: OR|logical or | 1.0
+7: QST|zero-or-one repetition | 1.0
+8: DBB|$n\le x \le m$ repetition | 0.5
+9: DEC|any of: 0123456789 | 0.5
+10: NCG|group without capturing | 0.5
+11: WRD|[a-zA-Z0-9\_] | 0.5
+
+
+0000 | 0006 | '&#(\\d+|[xX][0-9a-fA-F]+);'
+0001 | 0004 | u'&(#?[xX]?(?:[0-9a-fA-F]+|\\w{1,8}));'
+
+
+
+cluster 45 stats:
+nPatterns: 8.0
+nProjects: 10
+shortest: ([A-Z][a-z]+)
+Features:
+
+1: LIT|a literal character | 8.0
+2: RNG|chars within a range | 2.875
+3: CCC|custom character class | 1.625
+4: ADD|one-or-more repetition | 1.125
+5: CG|a capture group | 1.125
+6: KLE|zero-or-more repetition | 0.375
+7: SNG|exactly n repetition | 0.25
+8: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.25
+9: END|end-of-line | 0.125
+10: NCCC|negated CCC | 0.125
+11: STR|start-of-line | 0.125
+
+
+0000 | 0003 | '([A-Z][a-z]+)'
+0001 | 0001 | '@([a-zA-Z_]+)@'
+0002 | 0001 | '([A-Za-z0-9_]*)'
+0003 | 0001 | "(^[A-Za-z\\' ]+$)"
+0004 | 0001 | '[A-Z][A-Za-z]+\\('
+0005 | 0001 | "\\{([a-zA-Z\\']+)\\}"
+0006 | 0001 | '([A-Z][0-9]{2})([0-9]{3})'
+0007 | 0001 | '([A-Za-z0-9_]+\\s+)+([*A-Za-z0-9_::]+)\\s*\\([^)]*\\)'
+
+
+
+cluster 46 stats:
+nPatterns: 2.0
+nProjects: 9
+shortest: name="(.*?)"
+Features:
+
+1: LIT|a literal character | 7.0
+2: ANY|any non-newline char | 1.0
+3: CG|a capture group | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: LZY|as few reps as possible | 1.0
+
+
+0000 | 0008 | 'name="(.*?)"'
+0001 | 0001 | 'link="(.*?)"'
+
+
+
+cluster 47 stats:
+nPatterns: 3.0
+nProjects: 9
+shortest: ([\t ]+)
+Features:
+
+1: LIT|a literal character | 2.3333333333333335
+2: CG|a capture group | 1.0
+3: ADD|one-or-more repetition | 0.6666666666666666
+4: CCC|custom character class | 0.6666666666666666
+5: NCCC|negated CCC | 0.3333333333333333
+
+
+0000 | 0007 | '([\\t ]+)'
+0001 | 0001 | '([^\\{])<'
+0002 | 0001 | '([\\+\\-\\^]+)'
+
+
+
+cluster 48 stats:
+nPatterns: 4.0
+nProjects: 9
+shortest: ^'(.*)'$
+Features:
+
+1: LIT|a literal character | 2.5
+2: ANY|any non-newline char | 1.0
+3: CG|a capture group | 1.0
+4: END|end-of-line | 1.0
+5: KLE|zero-or-more repetition | 1.0
+6: STR|start-of-line | 1.0
+
+
+0000 | 0005 | "^'(.*)'$"
+0001 | 0002 | '^yt-(.*)$'
+0002 | 0001 | '^(.*)"""$'
+0003 | 0001 | '^\\[(.*)\\]$'
+
+
+
+cluster 49 stats:
+nPatterns: 4.0
+nProjects: 9
+shortest: \\\\
+Features:
+
+1: LIT|a literal character | 2.5
+2: OR|logical or | 0.5
+3: CCC|custom character class | 0.25
+4: QST|zero-or-one repetition | 0.25
+
+
+0000 | 0007 | '\\\\\\\\'
+0001 | 0001 | '\\n|\\\\'
+0002 | 0001 | '\\\\[\\\\]?'
+0003 | 0001 | '\\\\n|\\\\\\\\'
+
+
+
+cluster 50 stats:
+nPatterns: 2.0
+nProjects: 8
+shortest: ^$
+Features:
+
+1: END|end-of-line | 1.0
+2: STR|start-of-line | 1.0
+3: LIT|a literal character | 0.5
+
+
+0000 | 0007 | '^$'
+0001 | 0001 | '^!$'
+
+
+
+cluster 51 stats:
+nPatterns: 2.0
+nProjects: 8
+shortest: \t
+Features:
+
+1: LIT|a literal character | 1.0
+2: ADD|one-or-more repetition | 0.5
+
+
+0000 | 0007 | '\t'
+0001 | 0002 | '\\t+'
+
+
+
+cluster 52 stats:
+nPatterns: 3.0
+nProjects: 8
+shortest: {([^}]*)}(.*)
+Features:
+
+1: LIT|a literal character | 4.0
+2: CG|a capture group | 2.0
+3: KLE|zero-or-more repetition | 2.0
+4: ANY|any non-newline char | 1.0
+5: NCCC|negated CCC | 1.0
+
+
+0000 | 0004 | '{([^}]*)}(.*)'
+0001 | 0002 | '([^#:]*#)(.*)'
+0002 | 0002 | '  ([^:]*):  (.*)'
+
+
+
+cluster 53 stats:
+nPatterns: 5.0
+nProjects: 8
+shortest: ^\d+:\d+$
+Features:
+
+1: LIT|a literal character | 4.8
+2: ADD|one-or-more repetition | 3.4
+3: DEC|any of: 0123456789 | 2.2
+4: NCG|group without capturing | 1.2
+5: END|end-of-line | 1.0
+6: STR|start-of-line | 1.0
+7: NWSP|any non-whitespace | 0.6
+8: QST|zero-or-one repetition | 0.6
+9: CCC|custom character class | 0.2
+10: KLE|zero-or-more repetition | 0.2
+11: OR|logical or | 0.2
+
+
+0000 | 0004 | u'^\\S+@\\S+\\.\\S+$'
+0001 | 0001 | '^\\d+:\\d+$'
+0002 | 0001 | '^\\-+\\+\\-+$'
+0003 | 0001 | '^\\d+\\-\\d+\\-\\d+$'
+0004 | 0001 | '^\\d+(?:\\.\\d+)+(?:(?:[abc]|rc)\\d+(?:\\.\\d+)*)?(?:\\.post\\d+)?(?:\\.dev\\d+)?$'
+
+
+
+cluster 54 stats:
+nPatterns: 5.0
+nProjects: 7
+shortest: ^.*\/
+Features:
+
+1: LIT|a literal character | 4.0
+2: ANY|any non-newline char | 1.2
+3: KLE|zero-or-more repetition | 1.0
+4: STR|start-of-line | 0.8
+5: END|end-of-line | 0.6
+
+
+0000 | 0003 | '.*\\.zip'
+0001 | 0002 | '^.*\\/'
+0002 | 0001 | '^.*\\.xsd$'
+0003 | 0001 | '^.*\\.zip$'
+0004 | 0001 | '^.*\\.tar.bz2$'
+
+
+
+cluster 55 stats:
+nPatterns: 2.0
+nProjects: 6
+shortest: ^[a-z]
+Features:
+
+1: LIT|a literal character | 2.0
+2: CCC|custom character class | 1.0
+3: RNG|chars within a range | 1.0
+4: STR|start-of-line | 1.0
+5: ADD|one-or-more repetition | 0.5
+6: END|end-of-line | 0.5
+
+
+0000 | 0005 | '^[a-z]+$'
+0001 | 0001 | '^[a-z]'
+
+
+
+cluster 56 stats:
+nPatterns: 3.0
+nProjects: 6
+shortest: \d+-
+Features:
+
+1: ADD|one-or-more repetition | 1.3333333333333333
+2: DEC|any of: 0123456789 | 1.3333333333333333
+3: LIT|a literal character | 1.0
+
+
+0000 | 0004 | '\\d+-'
+0001 | 0001 | '/\\d+'
+0002 | 0001 | '\\d+:\\d+'
+
+
+
+cluster 57 stats:
+nPatterns: 2.0
+nProjects: 6
+shortest: ^(\s*lib.*)+
+Features:
+
+1: LIT|a literal character | 3.0
+2: KLE|zero-or-more repetition | 2.0
+3: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.5
+4: ADD|one-or-more repetition | 1.0
+5: CG|a capture group | 1.0
+6: STR|start-of-line | 1.0
+7: ANY|any non-newline char | 0.5
+8: NCCC|negated CCC | 0.5
+
+
+0000 | 0005 | '^(\\s*<[^>]+>\\s*)'
+0001 | 0001 | '^(\\s*lib.*)+'
+
+
+
+cluster 58 stats:
+nPatterns: 5.0
+nProjects: 6
+shortest: \(.*$
+Features:
+
+1: LIT|a literal character | 2.0
+2: KLE|zero-or-more repetition | 1.0
+3: ANY|any non-newline char | 0.8
+4: CG|a capture group | 0.4
+5: END|end-of-line | 0.4
+
+
+0000 | 0002 | '\\?(.*)'
+0001 | 0001 | '\\(.*$'
+0002 | 0001 | '\\.0*$'
+0003 | 0001 | '\\) (.*)'
+0004 | 0001 | '/\\(.*\\)/'
+
+
+
+cluster 59 stats:
+nPatterns: 4.0
+nProjects: 6
+shortest: [ \r\n\t]+
+Features:
+
+1: LIT|a literal character | 3.75
+2: ADD|one-or-more repetition | 1.0
+3: CCC|custom character class | 1.0
+4: END|end-of-line | 0.25
+5: LKA|matching sequence follows | 0.25
+
+
+0000 | 0003 | '[ \t]+(?=\n)'
+0001 | 0001 | '[ \r\n\t]+'
+0002 | 0001 | '[\t\r\n]+$'
+0003 | 0001 | '[   \\r\\n]+'
+
+
+
+cluster 60 stats:
+nPatterns: 6.0
+nProjects: 6
+shortest: [\n]
+Features:
+
+1: LIT|a literal character | 1.6666666666666667
+2: CCC|custom character class | 1.0
+3: ADD|one-or-more repetition | 0.16666666666666666
+
+
+0000 | 0001 | '[\n]'
+0001 | 0001 | '[,\n]'
+0002 | 0001 | '[\\)]'
+0003 | 0001 | '[\n,]'
+0004 | 0001 | '[\\+-]'
+0005 | 0001 | '[\\n,]+'
+
+
+
+cluster 61 stats:
+nPatterns: 2.0
+nProjects: 5
+shortest: [<&]
+Features:
+
+1: LIT|a literal character | 3.0
+2: CCC|custom character class | 1.0
+
+
+0000 | 0004 | '[&<>"]'
+0001 | 0001 | '[<&]'
+
+
+
+cluster 62 stats:
+nPatterns: 3.0
+nProjects: 5
+shortest: ^/dev/
+Features:
+
+1: LIT|a literal character | 5.666666666666667
+2: STR|start-of-line | 1.0
+3: ADD|one-or-more repetition | 0.3333333333333333
+4: CCC|custom character class | 0.3333333333333333
+5: END|end-of-line | 0.3333333333333333
+6: RNG|chars within a range | 0.3333333333333333
+
+
+0000 | 0003 | '^/dev/'
+0001 | 0002 | '^/dev/[a-z]+$'
+0002 | 0001 | '^nodev'
+
+
+
+cluster 63 stats:
+nPatterns: 2.0
+nProjects: 5
+shortest: (.+)=(.+)
+Features:
+
+1: ADD|one-or-more repetition | 3.0
+2: CG|a capture group | 3.0
+3: ANY|any non-newline char | 2.0
+4: LIT|a literal character | 2.0
+5: DEC|any of: 0123456789 | 1.0
+
+
+0000 | 0003 | '(.+)=(.+)'
+0001 | 0002 | '(.+)_(\\d+)_(\\d+)_(.+)'
+
+
+
+cluster 64 stats:
+nPatterns: 2.0
+nProjects: 5
+shortest: ^(-?\d+)(\d{3})
+Features:
+
+1: CG|a capture group | 2.0
+2: DEC|any of: 0123456789 | 2.0
+3: ADD|one-or-more repetition | 1.5
+4: LIT|a literal character | 1.5
+5: QST|zero-or-one repetition | 1.0
+6: STR|start-of-line | 1.0
+7: END|end-of-line | 0.5
+8: SNG|exactly n repetition | 0.5
+
+
+0000 | 0004 | u'^(-?\\d+)(\\d{3})'
+0001 | 0001 | '^#?(\\d+)-(\\d+)$'
+
+
+
+cluster 65 stats:
+nPatterns: 3.0
+nProjects: 5
+shortest: \x1b\[\d+m
+Features:
+
+1: LIT|a literal character | 4.333333333333333
+2: ADD|one-or-more repetition | 0.6666666666666666
+3: CCC|custom character class | 0.3333333333333333
+4: DEC|any of: 0123456789 | 0.3333333333333333
+5: KLE|zero-or-more repetition | 0.3333333333333333
+6: NCCC|negated CCC | 0.3333333333333333
+7: RNG|chars within a range | 0.3333333333333333
+
+
+0000 | 0003 | '\\x1b\\[[^h]+h'
+0001 | 0001 | '\x1b\\[\\d+m'
+0002 | 0001 | '\x1b\\[[0-9;]*m'
+
+
+
+cluster 66 stats:
+nPatterns: 2.0
+nProjects: 5
+shortest: \s*SELECT
+Features:
+
+1: LIT|a literal character | 8.5
+2: ADD|one-or-more repetition | 2.5
+3: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 2.5
+4: KLE|zero-or-more repetition | 1.0
+5: ANY|any non-newline char | 0.5
+6: CCC|custom character class | 0.5
+7: CG|a capture group | 0.5
+8: LZY|as few reps as possible | 0.5
+9: QST|zero-or-one repetition | 0.5
+10: WRD|[a-zA-Z0-9\_] | 0.5
+
+
+0000 | 0004 | '\\s*SELECT'
+0001 | 0001 | "\\s*SELECT\\s+.+?\\s+FROM\\s+[']?(\\w+)"
+
+
+
+cluster 67 stats:
+nPatterns: 3.0
+nProjects: 5
+shortest: \.\.\.
+Features:
+
+1: LIT|a literal character | 4.666666666666667
+2: ANY|any non-newline char | 0.6666666666666666
+3: CG|a capture group | 0.6666666666666666
+4: END|end-of-line | 0.6666666666666666
+5: QST|zero-or-one repetition | 0.6666666666666666
+6: ADD|one-or-more repetition | 0.3333333333333333
+7: KLE|zero-or-more repetition | 0.3333333333333333
+8: LZY|as few reps as possible | 0.3333333333333333
+
+
+0000 | 0002 | '\\.\\.\\.'
+0001 | 0002 | '\\.\\. (.+?)::(.*)$'
+0002 | 0001 | '\\.?\\.?\\.\\.\\.\\.$'
+
+
+
+cluster 68 stats:
+nPatterns: 4.0
+nProjects: 5
+shortest: ^[a-zA-Z]*
+Features:
+
+1: LIT|a literal character | 4.0
+2: RNG|chars within a range | 1.75
+3: CCC|custom character class | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: STR|start-of-line | 0.75
+6: DEC|any of: 0123456789 | 0.5
+7: END|end-of-line | 0.5
+8: WRD|[a-zA-Z0-9\_] | 0.5
+9: NCG|group without capturing | 0.25
+
+
+0000 | 0002 | '[a-zA-Z_]\\w*$'
+0001 | 0001 | '^[a-zA-Z]*'
+0002 | 0001 | '^[a-zA-Z]\\w*$'
+0003 | 0001 | '^[a-z]\\d(?:,\\d)*'
+
+
+
+cluster 69 stats:
+nPatterns: 7.0
+nProjects: 5
+shortest: [a-z%]+$
+Features:
+
+1: LIT|a literal character | 10.142857142857142
+2: RNG|chars within a range | 3.5714285714285716
+3: CCC|custom character class | 1.4285714285714286
+4: ADD|one-or-more repetition | 1.2857142857142858
+5: CG|a capture group | 0.2857142857142857
+6: END|end-of-line | 0.14285714285714285
+7: OR|logical or | 0.14285714285714285
+8: QST|zero-or-one repetition | 0.14285714285714285
+9: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.14285714285714285
+
+
+0000 | 0001 | '[a-z%]+$'
+0001 | 0001 | u'[a-zA-Z]+'
+0002 | 0001 | '[a-zA-Z.;?<>-]+'
+0003 | 0001 | '[a-zA-Z]:(/|\\\\)'
+0004 | 0001 | '[a-zA-Z0-9]+(-[a-zA-Z0-9]+)?'
+0005 | 0001 | '[a-zA-Z0-9_\\.]+/[a-zA-Z0-9_\\.]+'
+0006 | 0001 | '[a-zA-Z0-9_]+:[a-zA-Z0-9_\\.\\-\\s]+'
+
+
+
+cluster 70 stats:
+nPatterns: 2.0
+nProjects: 4
+shortest: [,;]
+Features:
+
+1: LIT|a literal character | 2.5
+2: CCC|custom character class | 1.0
+3: ANY|any non-newline char | 0.5
+
+
+0000 | 0003 | '[,;]'
+0001 | 0001 | '[,;:].'
+
+
+
+cluster 71 stats:
+nPatterns: 2.0
+nProjects: 4
+shortest: ^the 
+Features:
+
+1: LIT|a literal character | 3.5
+2: STR|start-of-line | 1.0
+3: END|end-of-line | 0.5
+
+
+0000 | 0003 | '^the '
+0001 | 0001 | '^eth$'
+
+
+
+cluster 72 stats:
+nPatterns: 2.0
+nProjects: 4
+shortest: [.:-]
+Features:
+
+1: LIT|a literal character | 4.0
+2: CCC|custom character class | 1.0
+3: ADD|one-or-more repetition | 0.5
+
+
+0000 | 0003 | '[-/.: ]+'
+0001 | 0001 | '[.:-]'
+
+
+
+cluster 73 stats:
+nPatterns: 3.0
+nProjects: 4
+shortest: \-
+Features:
+
+1: LIT|a literal character | 1.0
+2: ADD|one-or-more repetition | 0.6666666666666666
+
+
+0000 | 0002 | '\\-'
+0001 | 0001 | u'-+'
+0002 | 0001 | u'\\-+'
+
+
+
+cluster 74 stats:
+nPatterns: 2.0
+nProjects: 4
+shortest: ^[\w,./=-]*$
+Features:
+
+1: LIT|a literal character | 4.0
+2: CCC|custom character class | 1.0
+3: END|end-of-line | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: STR|start-of-line | 1.0
+6: WRD|[a-zA-Z0-9\_] | 1.0
+
+
+0000 | 0003 | '^[\\w\\.\\-\\/]*$'
+0001 | 0001 | '^[\\w,./=-]*$'
+
+
+
+cluster 75 stats:
+nPatterns: 3.0
+nProjects: 4
+shortest: Resigned
+Features:
+
+1: LIT|a literal character | 8.333333333333334
+
+
+0000 | 0002 | 'Resigned'
+0001 | 0001 | 'Resolved'
+0002 | 0001 | 'Response:'
+
+
+
+cluster 76 stats:
+nPatterns: 2.0
+nProjects: 4
+shortest: <script.*?</script>
+Features:
+
+1: LIT|a literal character | 18.5
+2: ANY|any non-newline char | 1.0
+3: KLE|zero-or-more repetition | 1.0
+4: LZY|as few reps as possible | 1.0
+
+
+0000 | 0002 | '<noscript>.*?</noscript>'
+0001 | 0001 | '<script.*?</script>'
+
+
+
+cluster 77 stats:
+nPatterns: 4.0
+nProjects: 4
+shortest: :[\s]+
+Features:
+
+1: LIT|a literal character | 2.25
+2: ADD|one-or-more repetition | 1.0
+3: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.0
+4: CCC|custom character class | 0.75
+5: CG|a capture group | 0.5
+6: NCCC|negated CCC | 0.25
+
+
+0000 | 0001 | ':[\\s]+'
+0001 | 0001 | '([;,\\s]+)'
+0002 | 0001 | '[\'"\\s;]+'
+0003 | 0001 | '&([^;\\s]+);'
+
+
+
+cluster 78 stats:
+nPatterns: 2.0
+nProjects: 4
+shortest: ^\s*endif
+Features:
+
+1: LIT|a literal character | 11.5
+2: KLE|zero-or-more repetition | 2.0
+3: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 2.0
+4: ADD|one-or-more repetition | 1.0
+5: CCC|custom character class | 1.0
+6: CG|a capture group | 1.0
+7: RNG|chars within a range | 1.0
+8: STR|start-of-line | 1.0
+9: END|end-of-line | 0.5
+
+
+0000 | 0003 | '^\\s*#define SSH_([A-Z_]+)\\s+([0-9x]*)\\s*$'
+0001 | 0001 | '^\\s*endif'
+
+
+
+cluster 79 stats:
+nPatterns: 2.0
+nProjects: 4
+shortest: [ \t]
+Features:
+
+1: LIT|a literal character | 18.0
+2: CCC|custom character class | 1.5
+3: ADD|one-or-more repetition | 1.0
+4: RNG|chars within a range | 1.0
+5: CG|a capture group | 0.5
+
+
+0000 | 0003 | '[ \t]+([A-Z0-9]+) \\/\\* PBXTargetDependency \\*\\/,\n'
+0001 | 0001 | '[ \t]'
+
+
+
+cluster 80 stats:
+nPatterns: 3.0
+nProjects: 4
+shortest: (\D*)(\d*)(.*)
+Features:
+
+1: CG|a capture group | 3.0
+2: KLE|zero-or-more repetition | 3.0
+3: ANY|any non-newline char | 2.3333333333333335
+4: LIT|a literal character | 1.3333333333333333
+5: DEC|any of: 0123456789 | 0.3333333333333333
+6: END|end-of-line | 0.3333333333333333
+7: NDEC|any non-decimal | 0.3333333333333333
+8: STR|start-of-line | 0.3333333333333333
+
+
+0000 | 0003 | '(.*)\\[(.*)\\](.*)'
+0001 | 0003 | '^(.*)\\[(.*)\\](.*)$'
+0002 | 0001 | '(\\D*)(\\d*)(.*)'
+
+
+
+cluster 81 stats:
+nPatterns: 2.0
+nProjects: 4
+shortest: #define\s+(\S+)\s+(\S+)
+Features:
+
+1: LIT|a literal character | 15.0
+2: ADD|one-or-more repetition | 2.5
+3: CG|a capture group | 1.5
+4: NWRD|non-word chars | 1.0
+5: NWSP|any non-whitespace | 1.0
+6: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.0
+7: DEC|any of: 0123456789 | 0.5
+
+
+0000 | 0003 | '#define\\WDB_VERSION_PATCH\\W(\\d+)'
+0001 | 0001 | '#define\\s+(\\S+)\\s+(\\S+)'
+
+
+
+cluster 82 stats:
+nPatterns: 3.0
+nProjects: 4
+shortest: (.)([A-Z])
+Features:
+
+1: LIT|a literal character | 5.666666666666667
+2: CCC|custom character class | 2.0
+3: CG|a capture group | 1.3333333333333333
+4: RNG|chars within a range | 1.3333333333333333
+5: OPT|options wrapper | 0.6666666666666666
+6: ANY|any non-newline char | 0.3333333333333333
+7: NLKA|sequence doesn't follow  | 0.3333333333333333
+8: NLKB|sequence doesn't precede | 0.3333333333333333
+9: OR|logical or | 0.3333333333333333
+10: SNG|exactly n repetition | 0.3333333333333333
+
+
+0000 | 0002 | '(?i)([a-z]{2})'
+0001 | 0001 | '(.)([A-Z])'
+0002 | 0001 | '(?i)(?<![A-Z])E([ABCD]X|[SD]I)(?![A-Z])'
+
+
+
+cluster 83 stats:
+nPatterns: 3.0
+nProjects: 4
+shortest: ([a-z]+)([,']*)
+Features:
+
+1: LIT|a literal character | 7.666666666666667
+2: RNG|chars within a range | 3.0
+3: CCC|custom character class | 2.3333333333333335
+4: CG|a capture group | 2.0
+5: ADD|one-or-more repetition | 1.3333333333333333
+6: KLE|zero-or-more repetition | 0.3333333333333333
+7: QST|zero-or-one repetition | 0.3333333333333333
+
+
+0000 | 0002 | '([a-zA-Z]+)([A-Z][a-z])'
+0001 | 0001 | u"([a-z]+)([,']*)"
+0002 | 0001 | '([A-Za-z]+)(\\[[A-Za-z,]+\\])?'
+
+
+
+cluster 84 stats:
+nPatterns: 4.0
+nProjects: 4
+shortest: \((\w+)
+Features:
+
+1: LIT|a literal character | 2.0
+2: ADD|one-or-more repetition | 1.75
+3: CG|a capture group | 1.5
+4: DEC|any of: 0123456789 | 1.5
+5: WNW|word/non-word boundary | 0.25
+6: WRD|[a-zA-Z0-9\_] | 0.25
+
+
+0000 | 0001 | '\\((\\w+)'
+0001 | 0001 | '\\(\\d+\\)'
+0002 | 0001 | '\\b(\\d+)\\.(\\d+)'
+0003 | 0001 | '\\((\\d+)-(\\d+)-(\\d+)\\)'
+
+
+
+cluster 85 stats:
+nPatterns: 4.0
+nProjects: 4
+shortest: ([0-9\-]+)
+Features:
+
+1: LIT|a literal character | 5.25
+2: RNG|chars within a range | 2.0
+3: ADD|one-or-more repetition | 1.5
+4: CCC|custom character class | 1.5
+5: CG|a capture group | 1.5
+6: ANY|any non-newline char | 0.75
+7: KLE|zero-or-more repetition | 0.75
+8: END|end-of-line | 0.25
+9: NCG|group without capturing | 0.25
+10: QST|zero-or-one repetition | 0.25
+11: STR|start-of-line | 0.25
+
+
+0000 | 0001 | '([0-9\\-]+)'
+0001 | 0001 | '^([0-9a-f]+) (.*)$'
+0002 | 0001 | '(?:([0-9a-f]+):)?(.*)'
+0003 | 0001 | '([0-9]+\\.[0-9]+\\.[0-9]+).*'
+
+
+
+cluster 86 stats:
+nPatterns: 4.0
+nProjects: 4
+shortest: https?://.*
+Features:
+
+1: LIT|a literal character | 21.75
+2: ANY|any non-newline char | 1.5
+3: CG|a capture group | 1.25
+4: QST|zero-or-one repetition | 1.25
+5: KLE|zero-or-more repetition | 0.5
+6: CCC|custom character class | 0.25
+7: RNG|chars within a range | 0.25
+8: SNG|exactly n repetition | 0.25
+
+
+0000 | 0002 | 'https?://.*'
+0001 | 0001 | 'http(s)?://(www.)?facebook.com/'
+0002 | 0001 | 'http(s)?://(www.)?linkedin.com/'
+0003 | 0001 | 'http://.*imdb\\.com/title/tt([0-9]{7})/quotes'
+
+
+
+cluster 87 stats:
+nPatterns: 2.0
+nProjects: 4
+shortest: \n    (\n)?                            # leading line = $1\n    (^[ \t]*)                        # leading whitespace = $2\n    ([*+-]|\d+[.]) [ \t]+            # list marker = $3\n    ((?:.+?)                         # list item text = $4\n    (\n{1,2}))\n    (?= \n* (\Z | \2 ([*+-]|\d+[.]) [ \t]+))\n    
+Features:
+
+1: LIT|a literal character | 254.0
+2: CG|a capture group | 4.0
+3: CCC|custom character class | 3.5
+4: KLE|zero-or-more repetition | 3.0
+5: ADD|one-or-more repetition | 2.5
+6: END|end-of-line | 2.5
+7: OR|logical or | 2.0
+8: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 2.0
+9: ANY|any non-newline char | 1.0
+10: DEC|any of: 0123456789 | 1.0
+11: PNG|named capture group | 1.0
+12: STR|start-of-line | 1.0
+13: BKR|match the $i^{th}$ CG | 0.5
+14: DBB|$n\le x \le m$ repetition | 0.5
+15: ENDZ|absolute end of string | 0.5
+16: LKA|matching sequence follows | 0.5
+17: LZY|as few reps as possible | 0.5
+18: NCCC|negated CCC | 0.5
+19: NCG|group without capturing | 0.5
+20: QST|zero-or-one repetition | 0.5
+
+
+0000 | 0002 | '\n    (\\n)?                            # leading line = $1\n    (^[ \\t]*)                        # leading whitespace = $2\n    ([*+-]|\\d+[.]) [ \\t]+            # list marker = $3\n    ((?:.+?)                         # list item text = $4\n    (\\n{1,2}))\n    (?= \\n* (\\Z | \\2 ([*+-]|\\d+[.]) [ \\t]+))\n    '
+0001 | 0002 | '\n        ^\n        \\s*\n        (?P<operator>(==|!=|<=|>=|<|>))\n        \\s*\n        (?P<version>\n            [^\\s]* # We just match everything, except for whitespace since this\n                   # is a "legacy" specifier and the version string can be just\n                   # about anything.\n        )\n        \\s*\n        $\n        '
+
+
+
+cluster 88 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: s
+Features:
+
+1: LIT|a literal character | 2.0
+
+
+0000 | 0002 | 's'
+0001 | 0001 | 'sun'
+
+
+
+cluster 89 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: test4
+Features:
+
+1: LIT|a literal character | 6.5
+2: ANY|any non-newline char | 0.5
+3: CG|a capture group | 0.5
+4: END|end-of-line | 0.5
+5: KLE|zero-or-more repetition | 0.5
+
+
+0000 | 0002 | 'test4'
+0001 | 0001 | 'test_(.*)\\.js$'
+
+
+
+cluster 90 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: Audio: \w+
+Features:
+
+1: LIT|a literal character | 9.0
+2: ADD|one-or-more repetition | 0.5
+3: WRD|[a-zA-Z0-9\_] | 0.5
+
+
+0000 | 0002 | 'Audio Files'
+0001 | 0001 | 'Audio: \\w+'
+
+
+
+cluster 91 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: .*?\S\.\s
+Features:
+
+1: LIT|a literal character | 1.5
+2: ANY|any non-newline char | 1.0
+3: KLE|zero-or-more repetition | 1.0
+4: LZY|as few reps as possible | 1.0
+5: WNW|word/non-word boundary | 1.0
+6: NWSP|any non-whitespace | 0.5
+7: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.5
+
+
+0000 | 0002 | u'.*?\\S\\.\\s'
+0001 | 0001 | '.*?\\blm\\b'
+
+
+
+cluster 92 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: <(.*?)(?<!-)>
+Features:
+
+1: LIT|a literal character | 3.5
+2: ANY|any non-newline char | 1.0
+3: CG|a capture group | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: LZY|as few reps as possible | 1.0
+6: NLKB|sequence doesn't precede | 1.0
+7: QST|zero-or-one repetition | 0.5
+
+
+0000 | 0002 | "'(.*?)(?<!\\\\)',?"
+0001 | 0001 | '<(.*?)(?<!-)>'
+
+
+
+cluster 93 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: [ \t]*\.[ \t]*
+Features:
+
+1: LIT|a literal character | 6.0
+2: CCC|custom character class | 2.0
+3: KLE|zero-or-more repetition | 2.0
+
+
+0000 | 0002 | '[ \\t]*\\.[ \\t]*'
+0001 | 0001 | '[ \r\t]*\n[ \r\t]*'
+
+
+
+cluster 94 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: <id>([^<]+)</id>
+Features:
+
+1: LIT|a literal character | 12.0
+2: ADD|one-or-more repetition | 1.0
+3: CG|a capture group | 1.0
+4: NCCC|negated CCC | 1.0
+
+
+0000 | 0002 | '<id>([^<]+)</id>'
+0001 | 0001 | '<Term>([^<]+)</Term>'
+
+
+
+cluster 95 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: Target\s+(\d+)
+Features:
+
+1: LIT|a literal character | 6.0
+2: ADD|one-or-more repetition | 2.5
+3: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.5
+4: CG|a capture group | 1.0
+5: DEC|any of: 0123456789 | 1.0
+
+
+0000 | 0002 | 'Target\\s+(\\d+)'
+0001 | 0001 | 'Change\\s+(\\d+)\\s+'
+
+
+
+cluster 96 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: (\w+\W*)
+Features:
+
+1: LIT|a literal character | 4.0
+2: ADD|one-or-more repetition | 1.5
+3: CG|a capture group | 1.5
+4: KLE|zero-or-more repetition | 1.5
+5: WRD|[a-zA-Z0-9\_] | 1.0
+6: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.0
+7: DEC|any of: 0123456789 | 0.5
+8: NWRD|non-word chars | 0.5
+
+
+0000 | 0002 | '(\\w+\\W*)'
+0001 | 0001 | '(\\w+)\\s*District\\s*(\\d+)'
+
+
+
+cluster 97 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: ^(\d+)\s*$
+Features:
+
+1: ADD|one-or-more repetition | 2.5
+2: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 2.0
+3: CG|a capture group | 1.5
+4: DEC|any of: 0123456789 | 1.0
+5: KLE|zero-or-more repetition | 1.0
+6: STR|start-of-line | 1.0
+7: WRD|[a-zA-Z0-9\_] | 1.0
+8: END|end-of-line | 0.5
+9: LIT|a literal character | 0.5
+
+
+0000 | 0002 | '^(\\w+)\\s*:\\s+(\\d+)\\s\\w+'
+0001 | 0001 | '^(\\d+)\\s*$'
+
+
+
+cluster 98 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: .*?_([a-z]*)_pid\d*$
+Features:
+
+1: LIT|a literal character | 7.0
+2: KLE|zero-or-more repetition | 3.0
+3: CG|a capture group | 1.5
+4: ANY|any non-newline char | 1.0
+5: CCC|custom character class | 1.0
+6: DEC|any of: 0123456789 | 1.0
+7: END|end-of-line | 1.0
+8: LZY|as few reps as possible | 1.0
+9: RNG|chars within a range | 1.0
+
+
+0000 | 0002 | '.*?_([a-z]*)_pid(\\d*)$'
+0001 | 0001 | '.*?_([a-z]*)_pid\\d*$'
+
+
+
+cluster 99 stats:
+nPatterns: 3.0
+nProjects: 3
+shortest: .*?: (.*)
+Features:
+
+1: LIT|a literal character | 4.333333333333333
+2: ANY|any non-newline char | 2.0
+3: KLE|zero-or-more repetition | 2.0
+4: CG|a capture group | 1.0
+5: LZY|as few reps as possible | 0.6666666666666666
+6: END|end-of-line | 0.3333333333333333
+
+
+0000 | 0001 | '.*?: (.*)'
+0001 | 0001 | '.*\\?ptr=(.*)$'
+0002 | 0001 | '.*\\<use (.*?)\\>'
+
+
+
+cluster 100 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: ^(.+?)_(.+)$
+Features:
+
+1: LIT|a literal character | 11.0
+2: ADD|one-or-more repetition | 2.5
+3: ANY|any non-newline char | 2.5
+4: CG|a capture group | 2.5
+5: LZY|as few reps as possible | 2.0
+6: OR|logical or | 1.0
+7: QST|zero-or-one repetition | 1.0
+8: STR|start-of-line | 1.0
+9: CCC|custom character class | 0.5
+10: END|end-of-line | 0.5
+11: KLE|zero-or-more repetition | 0.5
+12: RNG|chars within a range | 0.5
+
+
+0000 | 0002 | '^(.+?)_(.+)$'
+0001 | 0001 | '^(.+?)/|/?(.+?)/main/?.*?/([0-9]+|CHECKEDOUT)'
+
+
+
+cluster 101 stats:
+nPatterns: 3.0
+nProjects: 3
+shortest: ^lib(.*).a$
+Features:
+
+1: LIT|a literal character | 4.666666666666667
+2: ANY|any non-newline char | 1.6666666666666667
+3: CG|a capture group | 1.6666666666666667
+4: KLE|zero-or-more repetition | 1.3333333333333333
+5: END|end-of-line | 1.0
+6: STR|start-of-line | 1.0
+7: ADD|one-or-more repetition | 0.6666666666666666
+8: DEC|any of: 0123456789 | 0.3333333333333333
+9: LZY|as few reps as possible | 0.3333333333333333
+10: QST|zero-or-one repetition | 0.3333333333333333
+11: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.3333333333333333
+
+
+0000 | 0001 | '^lib(.*).a$'
+0001 | 0001 | '^(.*\\.arc)$'
+0002 | 0001 | '^(.*?\\.pyc?):(\\d+):\\s+(.*)$'
+
+
+
+cluster 102 stats:
+nPatterns: 3.0
+nProjects: 3
+shortest: \[\[(.+)\]\]
+Features:
+
+1: LIT|a literal character | 5.0
+2: ADD|one-or-more repetition | 1.3333333333333333
+3: CG|a capture group | 1.3333333333333333
+4: NCCC|negated CCC | 1.0
+5: ANY|any non-newline char | 0.3333333333333333
+
+
+0000 | 0001 | '\\[\\[(.+)\\]\\]'
+0001 | 0001 | '\\[\\[([^\\]]+)\\]\\]'
+0002 | 0001 | u'\\[\\[([^:]+):([^|\\]]+)'
+
+
+
+cluster 103 stats:
+nPatterns: 2.0
+nProjects: 3
+shortest: (?P<name>[^=]+)="(?P<value>[^"]*)" *
+Features:
+
+1: LIT|a literal character | 6.0
+2: KLE|zero-or-more repetition | 2.0
+3: PNG|named capture group | 2.0
+4: ADD|one-or-more repetition | 1.5
+5: NCCC|negated CCC | 1.5
+6: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.5
+7: CCC|custom character class | 0.5
+8: END|end-of-line | 0.5
+9: WRD|[a-zA-Z0-9\_] | 0.5
+
+
+0000 | 0002 | '(?P<name>[\\w .-]+)\\s*\\(\\s*(?P<ver>[^\\s)]+)\\)$'
+0001 | 0001 | '(?P<name>[^=]+)="(?P<value>[^"]*)" *'
+
+
+
+cluster 104 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ^p
+Features:
+
+1: LIT|a literal character | 3.0
+2: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^p'
+0001 | 0001 | '^PDBID'
+
+
+
+cluster 105 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ^G
+Features:
+
+1: LIT|a literal character | 3.5
+2: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^G'
+0001 | 0001 | '^GROUP:'
+
+
+
+cluster 106 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ([<>])
+Features:
+
+1: LIT|a literal character | 2.0
+2: CCC|custom character class | 1.0
+3: CG|a capture group | 1.0
+
+
+0000 | 0001 | '([<>])'
+0001 | 0001 | '([|&])'
+
+
+
+cluster 107 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: Database
+Features:
+
+1: LIT|a literal character | 8.0
+2: STR|start-of-line | 0.5
+
+
+0000 | 0001 | 'Database'
+0001 | 0001 | '^DATABASE'
+
+
+
+cluster 108 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ^\S+
+Features:
+
+1: ADD|one-or-more repetition | 1.5
+2: LIT|a literal character | 1.0
+3: STR|start-of-line | 1.0
+4: CG|a capture group | 0.5
+5: NWSP|any non-whitespace | 0.5
+6: WRD|[a-zA-Z0-9\_] | 0.5
+7: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.5
+
+
+0000 | 0001 | '^\\S+'
+0001 | 0001 | '^\\s+(\\w+) ='
+
+
+
+cluster 109 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: subject=
+Features:
+
+1: LIT|a literal character | 9.5
+
+
+0000 | 0001 | 'subject='
+0001 | 0001 | 'subsection{'
+
+
+
+cluster 110 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: .*metis.*
+Features:
+
+1: LIT|a literal character | 6.5
+2: ANY|any non-newline char | 2.0
+3: KLE|zero-or-more repetition | 2.0
+
+
+0000 | 0001 | '.*metis.*'
+0001 | 0001 | '.*mandriva.*'
+
+
+
+cluster 111 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: [a-z ]+
+Features:
+
+1: LIT|a literal character | 5.0
+2: CCC|custom character class | 1.0
+3: RNG|chars within a range | 1.0
+4: ADD|one-or-more repetition | 0.5
+
+
+0000 | 0001 | '[a-z ]+'
+0001 | 0001 | "[a-z\\-' \n\t]"
+
+
+
+cluster 112 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: Not Found
+Features:
+
+1: LIT|a literal character | 11.0
+
+
+0000 | 0001 | 'Not Found'
+0001 | 0001 | '404 Not Found'
+
+
+
+cluster 113 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ^//(.*)
+Features:
+
+1: LIT|a literal character | 3.5
+2: ADD|one-or-more repetition | 1.0
+3: ANY|any non-newline char | 1.0
+4: CG|a capture group | 1.0
+5: STR|start-of-line | 1.0
+6: KLE|zero-or-more repetition | 0.5
+
+
+0000 | 0001 | '^//(.*)'
+0001 | 0001 | '^//(\\[.+\\])+\n'
+
+
+
+cluster 114 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: (\*|[0-9])
+Features:
+
+1: LIT|a literal character | 3.0
+2: CCC|custom character class | 1.0
+3: CG|a capture group | 1.0
+4: RNG|chars within a range | 1.0
+5: ADD|one-or-more repetition | 0.5
+6: ANY|any non-newline char | 0.5
+7: END|end-of-line | 0.5
+8: KLE|zero-or-more repetition | 0.5
+9: OR|logical or | 0.5
+
+
+0000 | 0001 | '(\\*|[0-9])'
+0001 | 0001 | '.*\\.([0-9]+)$'
+
+
+
+cluster 115 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: @([a-z_]+)@
+Features:
+
+1: LIT|a literal character | 6.0
+2: ADD|one-or-more repetition | 1.0
+3: CCC|custom character class | 1.0
+4: CG|a capture group | 1.0
+5: RNG|chars within a range | 1.0
+6: STR|start-of-line | 0.5
+
+
+0000 | 0001 | '@([a-z_]+)@'
+0001 | 0001 | '^=== ([A-Z_]+)'
+
+
+
+cluster 116 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: \s*\*/\s*
+Features:
+
+1: KLE|zero-or-more repetition | 2.5
+2: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 2.0
+3: LIT|a literal character | 1.0
+4: END|end-of-line | 0.5
+5: STR|start-of-line | 0.5
+6: WRD|[a-zA-Z0-9\_] | 0.5
+
+
+0000 | 0001 | '\\s*\\*/\\s*'
+0001 | 0001 | '^\\s*\\w*\\s*$'
+
+
+
+cluster 117 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: More Games
+Features:
+
+1: LIT|a literal character | 10.5
+2: ADD|one-or-more repetition | 0.5
+3: ANY|any non-newline char | 0.5
+4: CG|a capture group | 0.5
+5: KLE|zero-or-more repetition | 0.5
+6: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.5
+
+
+0000 | 0001 | 'More Games'
+0001 | 0001 | 'Model name:\\s+(.*)'
+
+
+
+cluster 118 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ([^:]+):(\S+)
+Features:
+
+1: ADD|one-or-more repetition | 2.0
+2: CG|a capture group | 2.0
+3: LIT|a literal character | 1.5
+4: CCC|custom character class | 1.0
+5: DEC|any of: 0123456789 | 1.0
+6: NCCC|negated CCC | 0.5
+7: NWSP|any non-whitespace | 0.5
+
+
+0000 | 0001 | '([^:]+):(\\S+)'
+0001 | 0001 | '([\\d]+) ([\\d]+)'
+
+
+
+cluster 119 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: <uuid>.*</uuid>
+Features:
+
+1: LIT|a literal character | 13.0
+2: ANY|any non-newline char | 1.0
+3: KLE|zero-or-more repetition | 1.0
+4: LZY|as few reps as possible | 0.5
+
+
+0000 | 0001 | '<uuid>.*</uuid>'
+0001 | 0001 | '<uuid.*?uuid>\\n  '
+
+
+
+cluster 120 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: (?i)handy(.*)nummer
+Features:
+
+1: LIT|a literal character | 11.0
+2: ANY|any non-newline char | 1.0
+3: CG|a capture group | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: OPT|options wrapper | 1.0
+
+
+0000 | 0002 | '(?i)handy(.*)nummer'
+0001 | 0002 | '(?i)pager(.*)nummer'
+
+
+
+cluster 121 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: (\w+)(?:\:(\w+))?
+Features:
+
+1: ADD|one-or-more repetition | 2.0
+2: CG|a capture group | 2.0
+3: LIT|a literal character | 1.5
+4: WRD|[a-zA-Z0-9\_] | 1.5
+5: NCG|group without capturing | 1.0
+6: QST|zero-or-one repetition | 1.0
+7: NCCC|negated CCC | 0.5
+8: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.5
+
+
+0000 | 0001 | '(\\w+)(?:\\:(\\w+))?'
+0001 | 0001 | '(\\w+)(?:=([^\\s;]+))?'
+
+
+
+cluster 122 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ^[-+]?([0][0-7,]*)$
+Features:
+
+1: LIT|a literal character | 7.0
+2: CCC|custom character class | 3.0
+3: RNG|chars within a range | 1.5
+4: CG|a capture group | 1.0
+5: END|end-of-line | 1.0
+6: KLE|zero-or-more repetition | 1.0
+7: QST|zero-or-one repetition | 1.0
+8: STR|start-of-line | 1.0
+9: OR|logical or | 0.5
+
+
+0000 | 0002 | '^[-+]?([0][0-7,]*)$'
+0001 | 0002 | '^[-+]?(0|[1-9][0-9,]*)$'
+
+
+
+cluster 123 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: (.*?)=(.*)
+Features:
+
+1: LIT|a literal character | 10.0
+2: ANY|any non-newline char | 2.5
+3: CG|a capture group | 2.5
+4: KLE|zero-or-more repetition | 2.5
+5: LZY|as few reps as possible | 2.0
+
+
+0000 | 0001 | '(.*?)=(.*)'
+0001 | 0001 | '(.*?)user (.*?)system (.*?)elapsed'
+
+
+
+cluster 124 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: (?ims)<tr[^>]*>.*?</tr>
+Features:
+
+1: LIT|a literal character | 10.5
+2: KLE|zero-or-more repetition | 2.0
+3: ANY|any non-newline char | 1.0
+4: LZY|as few reps as possible | 1.0
+5: NCCC|negated CCC | 1.0
+6: OPT|options wrapper | 1.0
+
+
+0000 | 0001 | '(?ims)<tr[^>]*>.*?</tr>'
+0001 | 0001 | '(?is)<tr [^>]*>.*?</tr>'
+
+
+
+cluster 125 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: [ \t]*\n([^\r\n])
+Features:
+
+1: LIT|a literal character | 6.0
+2: CCC|custom character class | 1.0
+3: KLE|zero-or-more repetition | 1.0
+4: CG|a capture group | 0.5
+5: NCCC|negated CCC | 0.5
+6: NCG|group without capturing | 0.5
+7: OR|logical or | 0.5
+
+
+0000 | 0001 | '[ \\t]*\\n([^\\r\\n])'
+0001 | 0001 | '[ \\f\\t]*(?:\\r\\n|\\r|\\n)'
+
+
+
+cluster 126 stats:
+nPatterns: 3.0
+nProjects: 2
+shortest: [ _.\[\]]+
+Features:
+
+1: LIT|a literal character | 6.0
+2: CCC|custom character class | 1.0
+3: ADD|one-or-more repetition | 0.3333333333333333
+
+
+0000 | 0001 | '[ _.\\[\\]]+'
+0001 | 0001 | '[\\[\\]\\(\\);]'
+0002 | 0001 | u'[_.,\\[\\]\\(\\):]'
+
+
+
+cluster 127 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ([\w\-\.]+@[\w\-\.]+)
+Features:
+
+1: LIT|a literal character | 4.5
+2: ADD|one-or-more repetition | 2.0
+3: CCC|custom character class | 2.0
+4: WRD|[a-zA-Z0-9\_] | 2.0
+5: CG|a capture group | 1.0
+6: END|end-of-line | 0.5
+7: QST|zero-or-one repetition | 0.5
+8: STR|start-of-line | 0.5
+
+
+0000 | 0001 | '([\\w\\-\\.]+@[\\w\\-\\.]+)'
+0001 | 0001 | '^([\\w\\-]+/)?[\\w\\-\\.]+$'
+
+
+
+cluster 128 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: <(\w+)(\s.*)?[^/]?>
+Features:
+
+1: LIT|a literal character | 6.0
+2: CG|a capture group | 2.0
+3: ADD|one-or-more repetition | 1.5
+4: NCCC|negated CCC | 1.5
+5: QST|zero-or-one repetition | 1.5
+6: KLE|zero-or-more repetition | 1.0
+7: WRD|[a-zA-Z0-9\_] | 1.0
+8: ANY|any non-newline char | 0.5
+9: BKR|match the $i^{th}$ CG | 0.5
+10: NCG|group without capturing | 0.5
+11: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.5
+
+
+0000 | 0001 | '<(\\w+)(\\s.*)?[^/]?>'
+0001 | 0001 | '<(\\w+)(?: [^>]+)?>([^<>]*)</\\1>'
+
+
+
+cluster 129 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ^\s*\*(?P<fromStar>\s*)
+Features:
+
+1: KLE|zero-or-more repetition | 2.5
+2: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 2.5
+3: LIT|a literal character | 2.0
+4: PNG|named capture group | 1.0
+5: STR|start-of-line | 1.0
+6: ADD|one-or-more repetition | 0.5
+7: NCCC|negated CCC | 0.5
+
+
+0000 | 0001 | '^\\s*\\*(?P<fromStar>\\s*)'
+0001 | 0001 | '^\\s*"\\s*(?P<arg0>[^"]+)\\s*"'
+
+
+
+cluster 130 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: ^(\s+\(copy-func\s+)(\w+)(.*)$
+Features:
+
+1: LIT|a literal character | 9.0
+2: ADD|one-or-more repetition | 3.0
+3: CG|a capture group | 3.0
+4: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 3.0
+5: END|end-of-line | 1.0
+6: KLE|zero-or-more repetition | 1.0
+7: STR|start-of-line | 1.0
+8: ANY|any non-newline char | 0.5
+9: NCCC|negated CCC | 0.5
+10: WRD|[a-zA-Z0-9\_] | 0.5
+
+
+0000 | 0002 | '^(\\s+\\(copy-func\\s+)(\\w+)(.*)$'
+0001 | 0002 | '^(\\s+\\(c-name\\s+)([^\\s]+)(\\s*\\))$'
+
+
+
+cluster 131 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: <meta http-equiv="Content-Type".*?>
+Features:
+
+1: LIT|a literal character | 36.0
+2: KLE|zero-or-more repetition | 1.0
+3: ANY|any non-newline char | 0.5
+4: LZY|as few reps as possible | 0.5
+5: NCCC|negated CCC | 0.5
+6: PNG|named capture group | 0.5
+
+
+0000 | 0001 | '<meta http-equiv="Content-Type".*?>'
+0001 | 0001 | '<meta property="og:title" content="(?P<title>[^"]*)" />'
+
+
+
+cluster 132 stats:
+nPatterns: 2.0
+nProjects: 2
+shortest: \s+at\s(?P<file>[^:]+):?(?P<row>\d+)?:?(?P<col>\d+)?
+Features:
+
+1: LIT|a literal character | 7.5
+2: ADD|one-or-more repetition | 4.5
+3: QST|zero-or-one repetition | 4.5
+4: PNG|named capture group | 3.5
+5: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 3.0
+6: DEC|any of: 0123456789 | 2.0
+7: NCCC|negated CCC | 1.0
+8: ANY|any non-newline char | 0.5
+9: NCG|group without capturing | 0.5
+
+
+0000 | 0002 | '\\s+at\\s(?P<file>[^:]+):?(?P<row>\\d+)?:?(?P<col>\\d+)?'
+0001 | 0002 | '\\s+at\\s(?:new\\s)?(?P<func>.+)\\s\\((?P<file>[^:]+):?(?P<row>\\d+)?:?(?P<col>\\d+)?\\)'
+
+
+
+cluster 133 stats:
+nPatterns: 1.0
+nProjects: 1
+shortest: ^([-\w]+)
+Features:
+
+1: ADD|one-or-more repetition | 1.0
+2: CCC|custom character class | 1.0
+3: CG|a capture group | 1.0
+4: LIT|a literal character | 1.0
+5: STR|start-of-line | 1.0
+6: WRD|[a-zA-Z0-9\_] | 1.0
+
+
+0000 | 0001 | '^([-\\w]+)'
+
+
+
+cluster 134 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: type\b\s*
+Features:
+
+1: LIT|a literal character | 6.5
+2: KLE|zero-or-more repetition | 1.0
+3: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 1.0
+4: WNW|word/non-word boundary | 0.5
+
+
+0000 | 0001 | 'type\\b\\s*'
+0001 | 0001 | 'typecode\\s*='
+
+
+
+cluster 135 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: ^JSC::UString$
+Features:
+
+1: LIT|a literal character | 12.0
+2: END|end-of-line | 1.0
+3: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^JSC::UString$'
+0001 | 0001 | '^WTF::CString$'
+
+
+
+cluster 136 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: .+(?<=archives/)
+Features:
+
+1: LIT|a literal character | 9.0
+2: ADD|one-or-more repetition | 1.0
+3: ANY|any non-newline char | 1.0
+4: LKB|matching sequence precedes | 1.0
+
+
+0000 | 0001 | '.+(?<=archives/)'
+0001 | 0001 | '.+(?<=spektakl/)'
+
+
+
+cluster 137 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: WEBATTACK_SSL=ON
+Features:
+
+1: LIT|a literal character | 17.0
+
+
+0000 | 0001 | 'WEBATTACK_SSL=ON'
+0001 | 0001 | 'webattack_account='
+
+
+
+cluster 138 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: function( .+?)\(
+Features:
+
+1: LIT|a literal character | 11.0
+2: ADD|one-or-more repetition | 1.0
+3: ANY|any non-newline char | 1.0
+4: CG|a capture group | 1.0
+5: LZY|as few reps as possible | 1.0
+
+
+0000 | 0001 | 'function( .+?)\\('
+0001 | 0001 | 'subroutine( .+?)\\('
+
+
+
+cluster 139 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: <genre>(.*?)</genre>
+Features:
+
+1: LIT|a literal character | 16.0
+2: ANY|any non-newline char | 1.0
+3: CG|a capture group | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: LZY|as few reps as possible | 1.0
+
+
+0000 | 0001 | '<genre>(.*?)</genre>'
+0001 | 0001 | '<rating>(.*?)</rating>'
+
+
+
+cluster 140 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: Connection timed out
+Features:
+
+1: LIT|a literal character | 22.0
+
+
+0000 | 0001 | 'Connection timed out'
+0001 | 0001 | 'Connection reset by peer'
+
+
+
+cluster 141 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: ^GlueSiteUniqueID=(.*)
+Features:
+
+1: LIT|a literal character | 17.5
+2: ANY|any non-newline char | 1.0
+3: CG|a capture group | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^GlueSiteUniqueID=(.*)'
+0001 | 0001 | '^GlueSiteUniqueID: (.*)'
+
+
+
+cluster 142 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: [$_]?(?:is|has)($|[A-Z_])
+Features:
+
+1: LIT|a literal character | 10.5
+2: CCC|custom character class | 2.0
+3: OR|logical or | 2.0
+4: CG|a capture group | 1.0
+5: END|end-of-line | 1.0
+6: NCG|group without capturing | 1.0
+7: QST|zero-or-one repetition | 1.0
+8: RNG|chars within a range | 1.0
+
+
+0000 | 0001 | '[$_]?(?:is|has)($|[A-Z_])'
+0001 | 0001 | '[$_]?(?:set|add)($|[A-Z_])'
+
+
+
+cluster 143 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: dhcp.option.ntp_server.\d
+Features:
+
+1: LIT|a literal character | 20.5
+2: ANY|any non-newline char | 3.0
+3: DEC|any of: 0123456789 | 1.0
+
+
+0000 | 0001 | 'dhcp.option.ntp_server.\\d'
+0001 | 0001 | 'dhcp.pool.allow_booting.\\d'
+
+
+
+cluster 144 stats:
+nPatterns: 3.0
+nProjects: 1
+shortest: (?i)\b(T)(is)\b
+Features:
+
+1: LIT|a literal character | 4.333333333333333
+2: CG|a capture group | 2.0
+3: WNW|word/non-word boundary | 2.0
+4: OPT|options wrapper | 1.0
+
+
+0000 | 0001 | '(?i)\\b(T)(is)\\b'
+0001 | 0001 | '(?i)\\b(T)(was)\\b'
+0002 | 0001 | '(?i)\\b(can)(not)\\b'
+
+
+
+cluster 145 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: ^} *\/\* *(?P<n>.*) *\*\/$
+Features:
+
+1: LIT|a literal character | 8.0
+2: KLE|zero-or-more repetition | 4.0
+3: ANY|any non-newline char | 1.0
+4: END|end-of-line | 1.0
+5: PNG|named capture group | 1.0
+6: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^} *\\/\\* *(?P<n>.*) *\\*\\/$'
+0001 | 0001 | '^ *\\/\\* *(?P<msg>.*) \\*\\/ *$'
+
+
+
+cluster 146 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: \s*[:_\t]+\s*|\s{2,}|\n
+Features:
+
+1: LIT|a literal character | 6.0
+2: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 4.0
+3: KLE|zero-or-more repetition | 2.0
+4: ADD|one-or-more repetition | 1.5
+5: CCC|custom character class | 1.0
+6: LWB|at least n repetition | 1.0
+7: OR|logical or | 1.0
+
+
+0000 | 0001 | '\\s*[:_\t]+\\s*|\\s{2,}|\n'
+0001 | 0001 | '\\s*[,/&.]\\s*|\\s+and\\s+|\\s{2,}|\n'
+
+
+
+cluster 147 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: ^Fan.#([0-9]+).information:$
+Features:
+
+1: LIT|a literal character | 22.0
+2: ANY|any non-newline char | 2.5
+3: ADD|one-or-more repetition | 1.0
+4: CCC|custom character class | 1.0
+5: CG|a capture group | 1.0
+6: END|end-of-line | 1.0
+7: RNG|chars within a range | 1.0
+8: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^Fan.#([0-9]+).information:$'
+0001 | 0001 | '^Server.Blade.#([0-9]+).Information:$'
+
+
+
+cluster 148 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: ''(?P<t>[^\s']+( +[^\s']+)*)''
+Features:
+
+1: LIT|a literal character | 7.0
+2: ADD|one-or-more repetition | 3.0
+3: NCCC|negated CCC | 2.0
+4: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 2.0
+5: KLE|zero-or-more repetition | 1.0
+6: PNG|named capture group | 1.0
+7: CG|a capture group | 0.5
+8: NCG|group without capturing | 0.5
+
+
+0000 | 0001 | "''(?P<t>[^\\s']+( +[^\\s']+)*)''"
+0001 | 0001 | "''(?P<t>[^\\s']+(?: +[^\\s']+)*)''"
+
+
+
+cluster 149 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: About\((.*)\).should
+Features:
+
+1: LIT|a literal character | 20.0
+2: ANY|any non-newline char | 2.5
+3: CG|a capture group | 1.5
+4: KLE|zero-or-more repetition | 1.5
+
+
+0000 | 0001 | 'About\\((.*)\\).should'
+0001 | 0001 | 'About\\((.*)\\).should_not_include\\((.*)\\)'
+
+
+
+cluster 150 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: \W\xd1\x8e\xd0\xb0\xd0\xbe\W
+Features:
+
+1: LIT|a literal character | 7.0
+2: NWRD|non-word chars | 2.0
+
+
+0000 | 0001 | '\\W\xd1\x8e\xd0\xb0\xd0\xbe\\W'
+0001 | 0001 | '\\W\xd1\x81\xd0\xb2\xd0\xb0\xd0\xbe\\W'
+
+
+
+cluster 151 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: const S32 LL_VERSION_MAJOR = (\d+);
+Features:
+
+1: LIT|a literal character | 30.0
+2: ADD|one-or-more repetition | 1.0
+3: CG|a capture group | 1.0
+4: DEC|any of: 0123456789 | 1.0
+
+
+0000 | 0001 | 'const S32 LL_VERSION_MAJOR = (\\d+);'
+0001 | 0001 | 'const S32 LL_VERSION_PATCH = (\\d+);'
+
+
+
+cluster 152 stats:
+nPatterns: 3.0
+nProjects: 1
+shortest: ^nic\.(\d+)
+Features:
+
+1: LIT|a literal character | 15.333333333333334
+2: ADD|one-or-more repetition | 1.6666666666666667
+3: DEC|any of: 0123456789 | 1.6666666666666667
+4: STR|start-of-line | 1.0
+5: END|end-of-line | 0.6666666666666666
+6: CG|a capture group | 0.3333333333333333
+
+
+0000 | 0001 | '^nic\\.(\\d+)'
+0001 | 0001 | '^nic\\.\\d+\\.dns_auto_build\\.\\d+$'
+0002 | 0001 | '^nic\\.\\d+\\.dns_has_conflict\\.\\d+$'
+
+
+
+cluster 153 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: ^(.+?)[ \._\-][Ss]([0-9]+)[\.\- ]?[Ee]([0-9]+)[^\/]*$
+Features:
+
+1: LIT|a literal character | 17.0
+2: CCC|custom character class | 5.5
+3: ADD|one-or-more repetition | 3.0
+4: CG|a capture group | 3.0
+5: LZY|as few reps as possible | 2.0
+6: RNG|chars within a range | 2.0
+7: ANY|any non-newline char | 1.0
+8: END|end-of-line | 1.0
+9: KLE|zero-or-more repetition | 1.0
+10: NCCC|negated CCC | 1.0
+11: QST|zero-or-one repetition | 1.0
+12: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^(.+?)[ \\._\\-][Ss]([0-9]+)[\\.\\- ]?[Ee]([0-9]+)[^\\/]*$'
+0001 | 0001 | '^(.+?)[ \\._\\-]\\[[Ss]([0-9]+?)\\]_\\[[Ee]([0-9]+?)\\]?[^\\/]*$'
+
+
+
+cluster 154 stats:
+nPatterns: 3.0
+nProjects: 1
+shortest: \n     #
+Features:
+
+1: LIT|a literal character | 31.666666666666668
+2: ANY|any non-newline char | 1.3333333333333333
+3: KLE|zero-or-more repetition | 1.3333333333333333
+4: OR|logical or | 0.6666666666666666
+5: DEC|any of: 0123456789 | 0.3333333333333333
+6: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.3333333333333333
+
+
+0000 | 0001 | '\n     #'
+0001 | 0001 | '\n        \\(CODE .*\\)\n        |\\(ID .*\\d\\)\n    '
+0002 | 0001 | '\n                <.*>_CODE\n                |\\s.*_ID\n        '
+
+
+
+cluster 155 stats:
+nPatterns: 3.0
+nProjects: 1
+shortest: ^1.2.840.10008.[0-9.]+ (.*)$
+Features:
+
+1: LIT|a literal character | 27.333333333333332
+2: ANY|any non-newline char | 5.0
+3: ADD|one-or-more repetition | 1.0
+4: CCC|custom character class | 1.0
+5: CG|a capture group | 1.0
+6: END|end-of-line | 1.0
+7: KLE|zero-or-more repetition | 1.0
+8: RNG|chars within a range | 1.0
+9: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^1.2.840.10008.[0-9.]+ (.*)$'
+0001 | 0001 | '^1.2.840.10008.[0-9.]+ (.*) \\(Retired\\)$'
+0002 | 0001 | '^1.2.840.10008.[0-9.]+ (.*) Well-known frame of reference$'
+
+
+
+cluster 156 stats:
+nPatterns: 3.0
+nProjects: 1
+shortest: [0-9]{4}-[0-9]{2}-[0-9]{2}
+Features:
+
+1: LIT|a literal character | 18.0
+2: CCC|custom character class | 5.0
+3: RNG|chars within a range | 5.0
+4: SNG|exactly n repetition | 5.0
+5: ANY|any non-newline char | 0.6666666666666666
+
+
+0000 | 0001 | '[0-9]{4}-[0-9]{2}-[0-9]{2}'
+0001 | 0001 | '[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}_cc.csv'
+0002 | 0001 | 'cc_[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.csv'
+
+
+
+cluster 157 stats:
+nPatterns: 3.0
+nProjects: 1
+shortest: ^(?P<area>[17]\d\d\d)(?P<station>\d+)$
+Features:
+
+1: DEC|any of: 0123456789 | 4.333333333333333
+2: LIT|a literal character | 3.3333333333333335
+3: PNG|named capture group | 2.6666666666666665
+4: ADD|one-or-more repetition | 1.0
+5: END|end-of-line | 1.0
+6: STR|start-of-line | 1.0
+7: CCC|custom character class | 0.6666666666666666
+8: SNG|exactly n repetition | 0.6666666666666666
+9: OR|logical or | 0.3333333333333333
+
+
+0000 | 0001 | '^(?P<area>[17]\\d\\d\\d)(?P<station>\\d+)$'
+0001 | 0001 | '^(?P<area>[235]\\d)(?P<area2>\\d{4})(?P<station>\\d+)$'
+0002 | 0001 | '^(?P<area>1\\d1|11\\d|8\\d\\d)(?P<area2>\\d{3})(?P<station>\\d+)$'
+
+
+
+cluster 158 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: (`(?:[^`]|``)+`|\w+)(?:(?:\:)(`(?:[^`]|``)+`|\w+))?
+Features:
+
+1: LIT|a literal character | 17.0
+2: NCG|group without capturing | 6.5
+3: ADD|one-or-more repetition | 6.0
+4: OR|logical or | 6.0
+5: CG|a capture group | 3.0
+6: NCCC|negated CCC | 3.0
+7: WRD|[a-zA-Z0-9\_] | 3.0
+8: QST|zero-or-one repetition | 1.5
+
+
+0000 | 0001 | '(`(?:[^`]|``)+`|\\w+)(?:(?:\\:)(`(?:[^`]|``)+`|\\w+))?'
+0001 | 0001 | '(`(?:[^`]|``)+`|\\w+)(?:(?:\\.)(`(?:[^`]|``)+`|\\w+))?(?:\\:)(`(?:[^`]|``)+`|\\w+)(?:(?:\\.)(`(?:[^`]|``)+`|\\w+))?'
+
+
+
+cluster 159 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: ^\([0-9a-fA-Fx]+,[0-9a-fA-F]+\)\s+(.*)\s+[A-Z][A-Z]\s+([0-9n-]+)\s+RET\s*$
+Features:
+
+1: LIT|a literal character | 27.0
+2: RNG|chars within a range | 9.0
+3: ADD|one-or-more repetition | 7.0
+4: CCC|custom character class | 5.0
+5: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 5.0
+6: CG|a capture group | 4.0
+7: KLE|zero-or-more repetition | 2.0
+8: ANY|any non-newline char | 1.0
+9: END|end-of-line | 1.0
+10: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^\\([0-9a-fA-Fx]+,[0-9a-fA-F]+\\)\\s+(.*)\\s+[A-Z][A-Z]\\s+([0-9n-]+)\\s+RET\\s*$'
+0001 | 0001 | '^\\(([0-9a-fA-Fx]+),([0-9a-fA-F]+)\\)\\s+(.*)\\s+([A-Z][A-Z])\\s+([0-9n-]+)\\s+(RET)\\s*$'
+
+
+
+cluster 160 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: ^\s*([A-Za-z0-9 '/-]+)\s+\(([0-9]+),([0-9A-Fa-fx]+)\)\s+([1-3])\s+.*$
+Features:
+
+1: LIT|a literal character | 31.0
+2: RNG|chars within a range | 10.0
+3: ADD|one-or-more repetition | 7.5
+4: CCC|custom character class | 5.5
+5: CG|a capture group | 5.0
+6: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 5.0
+7: KLE|zero-or-more repetition | 2.0
+8: END|end-of-line | 1.0
+9: STR|start-of-line | 1.0
+10: ANY|any non-newline char | 0.5
+
+
+0000 | 0001 | "^\\s*([A-Za-z0-9 '/-]+)\\s+\\(([0-9]+),([0-9A-Fa-fx]+)\\)\\s+([1-3])\\s+.*$"
+0001 | 0001 | '^\\s*([A-Za-z0-9()> -]+)\\s+\\(([0-9]+),([0-9A-Fx]+)\\)\\s+([A-Z][A-Z])\\s+([1-9n-]+)\\s+([A-Za-z_0-9. ]+)\\s*$'
+
+
+
+cluster 161 stats:
+nPatterns: 8.0
+nProjects: 1
+shortest: ^std::stack<.*>$
+Features:
+
+1: LIT|a literal character | 24.125
+2: ANY|any non-newline char | 1.0
+3: END|end-of-line | 1.0
+4: KLE|zero-or-more repetition | 1.0
+5: STR|start-of-line | 1.0
+
+
+0000 | 0001 | '^std::stack<.*>$'
+0001 | 0001 | '^std::__debug::list<.*>$'
+0002 | 0001 | '^std::unordered_set<.*>$'
+0003 | 0001 | '^std::unordered_multimap<.*>$'
+0004 | 0001 | '^std::unordered_multiset<.*>$'
+0005 | 0001 | '^std::_List_const_iterator<.*>$'
+0006 | 0001 | '^std::tr1::unordered_multiset<.*>$'
+0007 | 0001 | '^std::__debug::unordered_multimap<.*>$'
+
+
+
+cluster 162 stats:
+nPatterns: 2.0
+nProjects: 1
+shortest: (\xd0\xb1\xd1\x83\xd0\xbb\xd1\x8c\xd0\xb2\xd0\xb0\xd1\x80|\xd0\xb1-\xd1\x80\.?)\s?(\xd0\xb4\xd0\xbc\.?|\xd0\xb4\xd0\xbc\xd0\xb8\xd1\x82\xd1\x80\xd0\xb8\xd1\x8f) \xd0\xb4\xd0\xbe\xd0\xbd\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe
+Features:
+
+1: LIT|a literal character | 58.0
+2: CG|a capture group | 1.5
+3: OR|logical or | 1.5
+4: QST|zero-or-one repetition | 1.5
+5: WSP|\textbackslash t \textbackslash n \textbackslash r \textbackslash b \textbackslash f or space | 0.5
+
+
+0000 | 0001 | '(\xd0\xb1\xd1\x83\xd0\xbb\xd1\x8c\xd0\xb2\xd0\xb0\xd1\x80|\xd0\xb1-\xd1\x80\\.?)\\s?(\xd0\xb4\xd0\xbc\\.?|\xd0\xb4\xd0\xbc\xd0\xb8\xd1\x82\xd1\x80\xd0\xb8\xd1\x8f) \xd0\xb4\xd0\xbe\xd0\xbd\xd1\x81\xd0\xba\xd0\xbe\xd0\xb3\xd0\xbe'
+0001 | 0001 | '(\xd0\xb1\xd1\x83\xd0\xbd\xd0\xbd\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f \xd0\xb0\xd0\xbb\xd0\xbb\xd0\xb5\xd1\x8f|\xd0\xb1\xd1\x83\xd0\xbd\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f \xd0\xb0\xd0\xbb\xd0\xbb\xd0\xb5\xd1\x8f)'
+
+
+
+cluster 163 stats:
+nPatterns: 17.0
+nProjects: 1
+shortest: \xd1\x87\xd0\xb5\xd1\x85\xd0\xbe\xd0\xb2
+Features:
+
+1: LIT|a literal character | 22.294117647058822
+2: CG|a capture group | 0.5294117647058824
+3: OR|logical or | 0.4117647058823529
+4: CCC|custom character class | 0.058823529411764705
+
+
+0000 | 0001 | '\xd1\x87\xd0\xb5\xd1\x85\xd0\xbe\xd0\xb2'
+0001 | 0001 | '\xd0\xbf\xd1\x83\xd1\x88\xd0\xba\xd0\xb8\xd0\xbd[e .\n]'
+0002 | 0001 | '\xd0\xbc\xd0\xb0\xd1\x80\xd1\x8c\xd0\xb8\xd0\xbd\xd0\xbe'
+0003 | 0001 | '\xd0\xbe\xd1\x82\xd1\x80\xd0\xb0\xd0\xb4\xd0\xbd\xd0\xbe\xd0\xb5'
+0004 | 0001 | '(\xd0\xbb\xd0\xb0\xd0\xb4\xd0\xbe\xd0\xb6\xd1\x81\xd0\xba\xd0\xb0\xd1\x8f)'
+0005 | 0001 | '\xd1\x82\xd1\x80\xd1\x83\xd0\xb1\xd0\xbd(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)'
+0006 | 0001 | '\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xbe\xd0\xba\xd0\xbe\xd1\x81\xd0\xb8\xd0\xbd\xd0\xbe'
+0007 | 0001 | '\xd0\xbf\xd1\x80\xd0\xbe\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)'
+0008 | 0001 | '\xd0\xba\xd1\x80\xd0\xb0\xd1\x81\xd0\xbd\xd0\xbe\xd0\xb3\xd0\xbe\xd1\x80\xd1\x81\xd0\xba'
+0009 | 0001 | '(\xd0\xb3\xd0\xbe\xd1\x81\xd1\x82\xd0\xb8\xd0\xbd\xd1\x8b\xd0\xb9 \xd0\xb4\xd0\xb2\xd0\xbe\xd1\x80)'
+0010 | 0001 | '\xd0\xb2\xd0\xb0\xd1\x80\xd1\x88\xd0\xb0\xd0\xb2\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)'
+0011 | 0001 | '\xd0\xbd\xd0\xb0\xd0\xb3\xd0\xb0\xd1\x82\xd0\xb8\xd0\xbd\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)'
+0012 | 0001 | '\xd0\xbe\xd0\xba\xd1\x82\xd1\x8f\xd0\xb1\xd1\x80\xd1\x8c\xd1\x81\xd0\xba(\xd0\xb0\xd1\x8f|\xd0\xbe\xd0\xb9)'
+0013 | 0001 | '\xd1\x86\xd0\xb5\xd0\xbd\xd1\x82\xd1\x80\xd0\xb0\xd0\xbb\xd1\x8c\xd0\xbd(\xd1\x8b\xd0\xb9|\xd0\xbe\xd0\xbc)'
+0014 | 0001 | '\xd0\xbf\xd0\xb5\xd1\x82\xd1\x80\xd0\xbe\xd0\xb3\xd1\x80\xd0\xb0\xd0\xb4\xd1\x81\xd0\xba(\xd0\xb8\xd0\xb9|\xd0\xbe\xd0\xbc)'
+0015 | 0001 | '\xd1\x88\xd0\xbe\xd1\x81\xd1\x81\xd0\xb5 \xd1\x8d\xd0\xbd\xd1\x82\xd1\x83\xd0\xb7\xd0\xb8\xd0\xb0\xd1\x81\xd1\x82\xd0\xbe\xd0\xb2'
+0016 | 0001 | '\xd1\x81\xd1\x80\xd0\xb5\xd1\x82\xd0\xb5\xd0\xbd\xd1\x81\xd0\xba\xd0\xb8\xd0\xb9 \xd0\xb1\xd1\x83\xd0\xbb\xd1\x8c\xd0\xb2\xd0\xb0\xd1\x80'
+
+
+
