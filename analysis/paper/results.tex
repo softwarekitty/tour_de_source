@@ -5,10 +5,11 @@
 Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one \emph{utilization}.  For context about how saturated these projects were with regex \emph{utilizations}, we consider how many files the average project scanned contained, how many of those files contained \emph{utilizations}, and how many \emph{utilizations} occurred per file in table~\ref{table:contextHistogram}.
 
 \begin{table}[tb]
-\centering
-\input{../analysis_output/contextHistogram}
 \caption{How saturated are projects with \emph{utilizations}? (RQ1)}
 \label{table:contextHistogram}
+\begin{center}
+\input{../analysis_output/contextHistogram}
+\end{center}
 \end{table}
 
 \subsubsection{Usage Frequency of {\tt re} Module Functions and Flags}
