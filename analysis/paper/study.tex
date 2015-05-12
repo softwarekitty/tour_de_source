@@ -2,8 +2,23 @@
 \label{sec:study}
 
 To understand how programmers use regular expressions in Python projects, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects from GitHub, and recorded regex usages for analysis as described in Section~\ref{study:corpus}.
+Throughout the rest of this paper, we will employ the following terminology:
 
-Using this data, we intend to answer the following research questions:
+\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex engine in a project.  Within a particular file in a project, a \emph{utilization} is composed of a function, a pattern and 0 or more flags.  Here is an example of one regex \emph{utilization}, with key components labeled:
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/exampleUsage.eps}
+\caption{example of one regex utilization}
+\label{fig:exampleUsage}
+\end{figure}
+
+\noindent In other words, a utilization is one single invocation of the {\tt re} library in a project. 
+
+\noindent \textbf{Pattern}: A \emph{pattern} is an ordered series of regular expression language feature tokens that can be used to find match start and end indices within an input string.  Notice that because the vast majority of regex features are shared across most all-purpose languages, a Python \emph{pattern} will (almost always) behave the same when used in Java, C\#, Javascript, Ruby, etc, whereas a \emph{utilization} is not universal in the same way (would not compile in other languages).
+
+
+We aim to answer the following research questions:
 
 \textbf{RQ1:} How  is the {\tt re} module used in Python projects?
 
@@ -12,6 +27,8 @@ To address this research question, we measure how often any calls are made to th
 Furthermore, we measure the frequency of usage for calls to the 8 functions of the {\tt re} module ({\tt re.compile}, {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub} and {\tt re.subn}) in Python projects scraped from GitHub.
 
 We also measure usage of the 8 flags ({\tt re.DEFAULT}, {\tt re.IGNORECASE}, {\tt re.LOCALE}, {\tt re.MULTILINE}, {\tt re.DOTALL}, {\tt re.UNICODE}, {\tt re.VERBOSE} and {\tt re.DEBUG}) of the {\tt re} module.
+
+Further, to provide context as to the overlap among regular expression strings used in Python, we explore the most common regex {patterns} across all utlizations. 
 
 \textbf{RQ2:} Which regex language features are most commonly used in python?
 
@@ -30,19 +47,7 @@ Since our semantic analysis is based on Rex, this semantic analysis cannot be ap
 
 We chose Rex to build matching strings because it supports the most features of any String-generation tool.  We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity (without knowing the number of clusters in advance).
 
-\subsection{{DEFINITIONS}}
-Throughout the rest of this paper, we will employ the following terminology:
 
-\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex engine in a project.  Within a particular file in a project, a \emph{utilization} is composed of a function, a pattern and 0 or more flags.  Here is an example of one regex \emph{utilization}, with key components labeled:
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\columnwidth]{../illustrations/exampleUsage.eps}
-\caption{example of one regex utilization}
-\label{fig:exampleUsage}
-\end{figure}
-
-\noindent \textbf{Pattern}: A \emph{pattern} is an ordered series of regular expression language feature tokens that can be used to find match start and end indices within an input string.  Notice that because the vast majority of regex features are shared across most all-purpose languages, a Python \emph{pattern} will (almost always) behave the same when used in Java, C\#, Javascript, Ruby, etc, whereas a \emph{utilization} is not universal in the same way (would not compile in other languages).
 
 \subsection{Building the Corpus}
 \label{study:corpus}
