@@ -18,4 +18,5 @@ output
 *.js
 *.Rout
 .RData
-+*.synctex.gz
+*.synctex.gz
+*/RegexFeatureUseInPractice.pdf
