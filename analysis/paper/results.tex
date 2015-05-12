@@ -54,11 +54,14 @@ Literal tokens were found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of
 
 Our behavioral clustering technique found 952 clusters over 2727 patterns, with at least one cluster present in 999 of the 9727 projects that were compatible with Rex.
 
+\todo{Need to know why MCL is behaving like this}
+
 Table~\ref{table:exampleCluster} provides an example of a smaller behavioral cluster, representing 13 patterns, with at least one pattern from this cluster present in 100 different projects.
 \input{../behavioral_clustering/exampleCluster}
 On first glance this cluster may seem to revolve around the `\verb!\s*!' parts of these patterns, but actually this cluster was formed because each of these patterns has a comma literal, and other details did not interfere with matching the Rex-generated strings with commas in them.
 
 It is not a coincidence that the smallest pattern in this cluster gives the best idea of what all the patterns within it have in common (the smallest pattern is just the single comma character, at index 1).  All of the clusters we found follow this trend: the shortest pattern describes the rest of the pattern's behavior very well.  In table~\ref{table:topNClusters}, I show the top 10 clusters, ranked by the number of projects they appear in, using the shortest pattern from the cluster as an example.
+The cluster in Table~\ref{} appears in the seventh row of Table~\ref{}.
 
 \input{../behavioral_clustering/topNClusters}
 
