@@ -107,33 +107,7 @@ Note that the filteredCorpus is of size 9727, and at least one pattern from the 
 \subsubsection{Semantic Diversity}
 For the positive perspective, we created another subset of patterns (XYZ patterns) where Rex was able to generate strings that the pattern matched.  We then created a similarity graph with weighted, undirected edges as shown in Figure~\ref{fig:similarityConstruction}.
 
-\begin{figure}
-\begin{description}
-\setlength{\parskip}{0pt} % block paragraphs
-\setlength{\itemindent}{0in}
-\item for each row i:
-\setlength{\itemindent}{0.2in}
-\item obtain set of Rex-generated strings Ri from pattern at index i
-\item sRi = size of Ri
-\item for each col j:
-\setlength{\itemindent}{0.4in}
-\item Nij = number of strings in Ri matched by pattern at index j
-\item M[i][j] = Nij/sRi
-\setlength{\itemindent}{0in}
-\item G = empty graph
-\item for each row i:
-\setlength{\itemindent}{0.2in}
-\item for each col j:
-\setlength{\itemindent}{0.4in}
-\item SIMij = (M[i][j]+M[j][i])/2
-\item if SIMij > 0.75:
-\setlength{\itemindent}{0.6in}
-\item add edge (i,j)=SIMij to G
-\setlength{\itemindent}{0in}
-\setlength{\parskip}{10pt} % block paragraphs
-\end{description}
-\caption{Constructing Similarity Graph \label{fig:similarityConstruction} \todo{replace this algorithm with a textual description}}
-\end{figure}
+
 
 Again we used MCL to find clusters that aided a manual search for use cases strongly associated with particular features.
 
