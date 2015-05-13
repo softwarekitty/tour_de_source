@@ -1,12 +1,12 @@
 \section{Motivation and Related Work}
 \label{sec:related}
 
-With regexes, there is a common saying: 'now you have two problems'.
+When building and using regexes, it can be said, ``now you have two problems."
 %\footnote{\url{http://regex.info/blog/2006-09-15/247}}
-A skilled programmer can quickly solve many problems using regular expressions, but these regular expressions can be hard to understand and maintain, resulting in tens of thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}.
+A skilled programmer can quickly solve many problems using regular expressions, but these regular expressions can be hard to understand, debug, and maintain, resulting in tens of thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}.
 %per year???
-Regular expression languages enable an irreplaceable search technique used within text editors, command line tools and system tools.
-Regexes are also employed in critical missions like mysql injection prevention, malicious packet filtering  and web form validation.
+Regular expression languages enable a valuable search technique used frequently within text editors, command line tools, and system tools.
+Regular expressions are also employed in critical security applications, such as mysql injection prevention, malicious packet filtering  and web form validation. 
 
 
 %To improve test coverage for code using regular expressions, and to generate strings from regular expressions for whatever other reasons, projects like Reggae, Rex~\cite{rex}, JST, regex-tester\footnote{\url{https://github.com/nickawatts/regex-tester}}, regldg\footnote{\url{http://regldg.com/}},
@@ -15,18 +15,21 @@ Regexes are also employed in critical missions like mysql injection prevention, 
 %Going the other direction, a few projects have attempted to take a set of strings and generate a good regular expression that matches them like RegexGenerator++\footnote{\url{http://regex.inginf.units.it/}} and Regex-PreSuf\footnote{\url{http://search.cpan.org/~jhi/Regex-PreSuf-1.17/PreSuf.pm}} (a problem that suffers from overmatching).
 %%Tools to help developers write correct regular expressions, tools like RegexBuddy, Expresso, Pythex, The Regex Coach, Regex Widget, Regex magic, RegE xr, reWork, Rubular, Txt2re and....
 
-\todo{do we want to include the commented list or not?}
+\todo{do we want to include the commented list or not?} \todo{if we list them, we need to describe them}
 
-One common misconception is that all regular expression languages are \emph{regular languages} which can be represented using deterministic finite automata (DFA), and so they are easy to model, easy to describe formally and execute in O(n) time.  In fact, many regular expression matching engines run in exponential time in order to support useful features such as lazy quantifiers, capturing groups, look-aheads and back-references~\cite{msdnmatching}.  In the RE2 projext~\cite{re2}, Russ Cox aimed to use DFAs as much as possible (maximizing speed) while supporting as many useful features as possible.
+One common misconception is that all regular expression languages are \emph{regular languages} which can be represented using deterministic finite automata (DFA), and so they are easy to model, easy to describe formally and execute in O(n) time.  In fact, many regular expression matching engines run in exponential time in order to support useful features such as lazy quantifiers, capturing groups, look-aheads and back-references~\cite{msdnmatching}.  In a recent regular expression library, the RE2 projext~\cite{re2}, Russ Cox aimed to use DFAs as much as possible (maximizing speed) while supporting as many useful features as possible.
 
 %Thousands of research papers have focused on various other regular expression-related investigations.
-Since  regular expression languages vary somewhat in their syntax and feature set, researchers and tool designers have typically had to describe a particular language to reason about and have had to pick what features to include or exclude. Researchers and tool designers face a difficult design decision: supporting advanced features is always more expensive, taking more time and potentially making the tool or research project too complex and cumbersome to execute well.  A selection of only the simplest of regex features is common in research papers and automata libraries, but this limits the applicability/relevance of that work in the real world.
+Within standard programming languages, such as Java or Python, there are even some differences in support. For example, \todo{describe a difference between regex support in two standard languages}
+
+Since  regular expression languages vary somewhat in their syntax and feature set, researchers and tool designers have typically had to pick what features to include or exclude. Thus, researchers and tool designers face a difficult design decision: supporting advanced features is always more expensive, taking more time and potentially making the tool or research project too complex and cumbersome to execute well.  A selection of only the simplest of regex features is common in research papers and automata libraries, but this limits the applicability/relevance of that work in the real world.
 
 
 
 In this work, we perform a feature analysis on regular expressions used in the wild and compare that set to the features supported by four popular regular expression tools.
 Research tools like Hampi~\cite{hampi}, and Rex~\cite{rex}, and commercial tools like brics\cite{brics} and RE2~\cite{re2}, all use regular expressions for various task. Hampi was developed  in academia and uses regular expressions as a specification language for a strong constraint solver. Rex was developed by Microsoft Research and generates strings for regular expressions that can be used in several applications, such as test case generation~\cite{}. Brics is an open-source package that creates automata from regular expressions for manipulation and evaluation.
-While there are many regular expression tools available, in this work, we focus on the features support for these four tools, which offer diversity across developers (i.e., Microsoft, Google, open source, and academia) and across applications. Further, as the focus of this work is on tool designers, these four tools and their features are well-documented, allowing for easy comparison.
+Re2 is an open-source tool created by Google for \todo{describe it briefly}. 
+While there are many regular expression tools available, in this work, we focus on the features support for these four tools, which offer diversity across developers (i.e., Microsoft, Google, open source, and academia) and across applications. Further, as the focus of this work is on tool designers and we wanted to perform a feature analysis, these four tools and their features are well-documented, allowing for easy comparison.
 
 
 % \subsection{Research on Regular Expressions}
