@@ -1,11 +1,11 @@
 \section{Results}
 \label{sec:results}
-\subsection{Frequency of Regex \emph{Utilizations} in Python Projects}
-\subsubsection{Saturation of Projects with Regex \emph{Utilizations}}
-Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one \emph{utilization}.  For context about how saturated these projects were with regex \emph{utilizations}, we consider how many files the average project scanned contained, how many of those files contained \emph{utilizations}, and how many \emph{utilizations} occurred per file in table~\ref{table:contextHistogram}.
+\subsection{Frequency of Utilizations in Python Projects}
+\subsubsection{Saturation of Projects with Utilizations}
+Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average project scanned contained, how many of those files contained utilizations, and how many utilizations occurred per file in table~\ref{table:contextHistogram}.
 
 \begin{table}[tb]
-\caption{How saturated are projects with \emph{utilizations}? (RQ1)}
+\caption{How saturated are projects with utilizations? (RQ1)}
 \label{table:contextHistogram}
 \begin{center}
 \input{../analysis_output/contextHistogram}
@@ -21,7 +21,7 @@ Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetc
 \label{fig:partFunctions}
 \end{figure}
 
-As seen in Figure~\ref{fig:partFunctions} The `compile' function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all \emph{utilizations}, presumably because each usage of those functions could accept the compiled regex as an argument.
+As seen in Figure~\ref{fig:partFunctions} The `compile' function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions could accept the compiled regex as an argument.
 
 \begin{figure}[tb]
 \centering
@@ -30,7 +30,7 @@ As seen in Figure~\ref{fig:partFunctions} The `compile' function encompasses \DT
 \label{fig:partFlags}
 \end{figure}
 
-When considering flag use, we excluded non-behavioral flags (default and debug), which account for \DTLfetch{data}{key}{percentFlags0}{value}\% of all \emph{utilizations}.
+When considering flag use, we excluded non-behavioral flags (default and debug), which account for \DTLfetch{data}{key}{percentFlags0}{value}\% of all utilizations.
 
  As shown in figure ~\ref{fig:partFlags}, of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
 
@@ -43,7 +43,7 @@ When considering flag use, we excluded non-behavioral flags (default and debug),
 
 \subsection{Frequency of Feature Usage}
 
-Literal tokens were found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of patterns, and accounted for \DTLfetch{data}{key}{P_LITERAL_TOKENS}{value}\% of all tokens.  We consider literal tokens to be ubiquitous in all \emph{utilizations}, and necessary for any regex related tool, and so exclude them from the rest of the feature analysis.  In table~\ref{table:featureStats}, we display a large body of information about feature usage and relate it to four major regex related projects.
+Literal tokens were found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of patterns, and accounted for \DTLfetch{data}{key}{P_LITERAL_TOKENS}{value}\% of all tokens.  We consider literal tokens to be ubiquitous in all utilizations, and necessary for any regex related tool, and so exclude them from the rest of the feature analysis.  In table~\ref{table:featureStats}, we display a large body of information about feature usage and relate it to four major regex related projects.
 
 \input{../analysis_output/featureStats}
 %note captions and label are in external file
@@ -64,7 +64,7 @@ Table~\ref{table:exampleCluster} provides an example of a smaller behavioral clu
 On first glance this cluster may seem to revolve around the `\verb!\s*!' parts of these patterns, but actually this cluster was formed because each of these patterns has a comma literal, and other details did not interfere with matching the Rex-generated strings with commas in them.
 
 It is not a coincidence that the smallest pattern in this cluster gives the best idea of what all the patterns within it have in common (the smallest pattern is just the single comma character, at index 1).  All of the clusters we found follow this trend: the shortest pattern describes the rest of the pattern's behavior very well.  In table~\ref{table:topNClusters}, I show the top 10 clusters, ranked by the number of projects they appear in, using the shortest pattern from the cluster as an example.
-The cluster in Table~\ref{} appears in the seventh row of Table~\ref{}.
+The cluster in Table~\ref{table:exampleCluster} appears in the seventh row of Table~\ref{table:topNClusters}.
 
 \input{../behavioral_clustering/topNClusters}
 

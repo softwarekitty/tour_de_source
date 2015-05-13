@@ -424,12 +424,15 @@ public class Section0 {
 		int nProjScanned = Composer.intify(databaseFileContent.get(C.N_PROJ_SCANNED));
 
 		List<NamedStats> nsList = new LinkedList<NamedStats>();
+		DescriptiveStatistics regexPerProject = statsFromListQuery(connectionString, "select uniqueSourceID, count(uniqueSourceID) as ct from RegexCitationMerged group by uniqueSourceID;", "ct");
 		DescriptiveStatistics filesPerProjectStats = statsFilesPerProject(connectionString);
 		DescriptiveStatistics rFilesPerProjectStats = statsFromListQuery(connectionString, "select distinct uniqueSourceID, filePath, count(distinct filePath) as ct from RegexCitationMerged group by uniqueSourceID;", "ct");
 		DescriptiveStatistics regexPerFileStats = statsFromListQuery(connectionString, "select count(filePath) as ct from RegexCitationMerged group by uniqueSourceID, filePath;", "ct");
+		nsList.add(new NamedStats("utilizations per project",regexPerProject));
 		nsList.add(new NamedStats("files per project",filesPerProjectStats));
-		nsList.add(new NamedStats("files with regex per project",rFilesPerProjectStats));
-		nsList.add(new NamedStats("regex utilizations per file",regexPerFileStats));
+		nsList.add(new NamedStats("utilizing files per project",rFilesPerProjectStats));
+		nsList.add(new NamedStats("utilizations per file",regexPerFileStats));
+
 		
 		databaseFileContent.put(C.Q1_RFILE_PER_PROJECT, Composer.commafy(Composer.intify("" +
 			rFilesPerProjectStats.getPercentile(25))));

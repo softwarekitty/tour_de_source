@@ -56,7 +56,7 @@ public class PaperWriter {
 
 		// create the table showing source,Q1,Avg,Med,Q3,Max for
 		// filesPerProject, rFilesPerProject, regexPerFile
-		filesToMake.add(new NameContentsPair("contextHistogram.tex", Composer.composeHistogramTable(3, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent))));
+		filesToMake.add(new NameContentsPair("contextHistogram.tex", Composer.composeHistogramTable(4, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent))));
 
 		// make a latex table with the top N regexes by weight.
 		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.3, "pattern", "nProjects", "Top 10 Regexes","table:topNW")));
