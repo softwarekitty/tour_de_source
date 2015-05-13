@@ -2,15 +2,9 @@
 \label{sec:results}
 \subsection{Frequency of Utilizations in Python Projects}
 \subsubsection{Saturation of Projects with Utilizations}
-Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average project scanned contained, how many of those files contained utilizations, and how many utilizations occurred per file in table~\ref{table:contextHistogram}.
+Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average project scanned contained, how many of those files contained utilizations, and how many utilizations occurred per file in table~\ref{table:saturation}.
 
-\begin{table}[tb]
-\caption{How saturated are projects with utilizations? (RQ1)}
-\label{table:contextHistogram}
-\begin{center}
-\input{../analysis_output/contextHistogram}
-\end{center}
-\end{table}
+\input{../analysis_output/saturation}
 
 \subsubsection{Usage Frequency of {\tt re} Module Functions and Flags}
 
@@ -34,12 +28,18 @@ When considering flag use, we excluded non-behavioral flags (default and debug),
 
  As shown in figure ~\ref{fig:partFlags}, of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
 
-\todo{top regex patterns go here}
 
-\todo{topNW table?}
-% \subsubsection{{General Characteristics of Regexes Found}}
-% \todo{could the top 10 regexes be a pop-out?}
-% \input{../analysis_output/topNW}
+\subsubsection{Most Frequently Observed Patterns}
+
+Table~\ref{table:topNW} (description of table contents)
+
+\input{../analysis_output/topNW}
+
+\subsection{Pattern Characteristics}
+
+Table~\ref{table:patternStats} (description of table contents)
+
+\input{../analysis_output/patternStats}
 
 \subsection{Frequency of Feature Usage}
 

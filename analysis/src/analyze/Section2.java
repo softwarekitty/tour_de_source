@@ -32,7 +32,8 @@ public class Section2 {
 	}
 
 	public static String featureStats(List<WeightRankedRegex> corpus,
-			HashMap<String, String> databaseFileContent, String connectionString) throws ClassNotFoundException, SQLException {
+			HashMap<String, String> databaseFileContent, String connectionString)
+			throws ClassNotFoundException, SQLException {
 		FeatureDictionary fd = new FeatureDictionary();
 		int[] totalNProjects = { 0 };
 		int[] nProjectsPerFeature = getProjectsPerFeature(corpus, fd, totalNProjects, connectionString);
@@ -88,14 +89,18 @@ public class Section2 {
 
 		StringBuilder sb = new StringBuilder();
 		String between = " & ";
-		sb.append("\\begin{center}\n\\begin{table*}\n\\begin{tabular}\n{llllcccccccccc}\n");
+		sb.append("\\begin{table*}\n\\begin{center}\n"
+			+ "\\caption{How Frequently do Features Appear in Projects, and Which Features are Supported By Four Major Regex Projects? (RQ2)}\n"
+			+ "\\label{table:featureStats}\n"
+			+ "\\begin{tabular}\n{llllcccccccccc}\n");
 		sb.append("rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \\% patterns & nFiles & \\%files & nProjects & \\% projects \\\\ \n\\toprule\n");
 		TreeSet<FeatureDetail> sortedFeatures = new TreeSet<FeatureDetail>();
 		for (int i = 0; i < nFeatures; i++) {
 			if (i == FeatureDictionary.I_META_LITERAL || presentCounter[i] == 0) {
 				continue;
 			}
-			//int featureID, int nFiles, int nPresent, int nProjects, int max, int nTokens)
+			// int featureID, int nFiles, int nPresent, int nProjects, int max,
+			// int nTokens)
 			sortedFeatures.add(new FeatureDetail(i, filesWithFeature[i], presentCounter[i], nProjectsPerFeature[i], max[i], tokensCounter[i]));
 		}
 
@@ -116,8 +121,8 @@ public class Section2 {
 
 			String weightInt = Composer.commafy(featureDetail.getRankableValue());
 			String weightPercent = df.format(100 * (featureDetail.getRankableValue() / totalWeight));
-			
-			//System.out.println("filesWithFeature[ID]: "+filesWithFeature[ID]+" totalNFiles[0]: "+totalNFiles[0]+" nProjectsPerFeature[ID]: "+nProjectsPerFeature[ID]+" totalNProjects[0]: "+totalNProjects[0]);
+
+			// System.out.println("filesWithFeature[ID]: "+filesWithFeature[ID]+" totalNFiles[0]: "+totalNFiles[0]+" nProjectsPerFeature[ID]: "+nProjectsPerFeature[ID]+" totalNProjects[0]: "+totalNProjects[0]);
 
 			String nFiles = Composer.commafy(filesWithFeature[ID]);
 			String percentFiles = Composer.percentify(filesWithFeature[ID], totalNFiles[0]);
@@ -141,25 +146,25 @@ public class Section2 {
 			sb.append(between);
 			sb.append(projectFeatureInclusion(ID, 3));
 			sb.append(between);
-			
+
 			sb.append(nPresent);
 			sb.append(between);
 			sb.append(percentPresent);
 			sb.append(between);
-			
+
 			// sb.append(nTokens);
 			// sb.append(between);
-			// sb.append(percentTokens);		
+			// sb.append(percentTokens);
 			// sb.append(between);
-			
-			// sb.append(maxOccurances);	
+
+			// sb.append(maxOccurances);
 			// sb.append(between);
-			
+
 			// sb.append(weightInt);
 			// sb.append(between);
 			// sb.append(weightPercent);
 			// sb.append(between);
-			
+
 			sb.append(nFiles);
 			sb.append(between);
 			sb.append(percentFiles);
@@ -170,28 +175,29 @@ public class Section2 {
 			sb.append(" \\\\ \n\\midrule\n");
 			rankIndex++;
 		}
-		sb.append("\\bottomrule\n\\end{tabular}\n" +
-			"\\caption{How Frequently do Features Appear in Projects, and Which Features are Supported By Four Major Regex Projects? (RQ2)}\n" +
-			"\\label{table:featureStats}\n" +
-			"\\end{table*}\n\\end{center}\n");
+		sb.append("\\bottomrule\n\\end{tabular}\n"
+			+ "\\end{center}\n\\end{table*}\n");
 		return sb.toString();
 	}
 
 	private static int[] getFilesPerFeature(List<WeightRankedRegex> corpus,
-			FeatureDictionary fd, int[] totalNFiles, String connectionString) throws ClassNotFoundException, SQLException {
+			FeatureDictionary fd, int[] totalNFiles, String connectionString)
+			throws ClassNotFoundException, SQLException {
 		String filePatternQuery = "select uniqueSourceID || filePath as key, pattern from RegexCitationMerged;";
 		return getElementsPerFeature(corpus, fd, totalNFiles, filePatternQuery, connectionString);
 	}
 
 	private static int[] getProjectsPerFeature(List<WeightRankedRegex> corpus,
-			FeatureDictionary fd, int[] totalNProjects, String connectionString) throws ClassNotFoundException, SQLException {
+			FeatureDictionary fd, int[] totalNProjects, String connectionString)
+			throws ClassNotFoundException, SQLException {
 		String projectPatternQuery = "select uniqueSourceID || 'X' as key, pattern from RegexCitationMerged;";
 		return getElementsPerFeature(corpus, fd, totalNProjects, projectPatternQuery, connectionString);
 	}
 
 	private static int[] getElementsPerFeature(List<WeightRankedRegex> corpus,
 			FeatureDictionary fd, int[] totalNElements, String elementQuery,
-			String connectionString) throws ClassNotFoundException, SQLException {
+			String connectionString) throws ClassNotFoundException,
+			SQLException {
 		HashMap<String, ArrayList<Integer>> corpusMap = getCorpusMap(corpus);
 		HashMap<Integer, ArrayList<String>> projectIndexListMap = getIndexListMap(elementQuery, connectionString);
 		int nIndices = projectIndexListMap.size();
@@ -204,25 +210,27 @@ public class Section2 {
 		// be sequential so that fileMatrix is full, all indices are in bounds
 		for (Integer index : indices) {
 			ArrayList<String> patternList = projectIndexListMap.get(index);
-			//System.out.println("index: "+index + " patternList: "+patternList);
+			// System.out.println("index: "+index +
+			// " patternList: "+patternList);
 			for (String pattern : patternList) {
 
 				// note how important the iteration order in this list is!
 				ArrayList<Integer> featureCount = corpusMap.get(pattern);
-				
+
 				// some patterns are in the database, but not in the corpus -
 				// we have to ignore these because they were excluded because
 				// they have features that PCRE parser cannot parse, so we have
 				// no featureCount for some feature they use (this is rare)
-				if(featureCount!=null){
+				if (featureCount != null) {
 					for (int featureIndex = 0; featureIndex < nFeatures; featureIndex++) {
-						//System.out.println("featureIndex: "+featureIndex + " featureCount: "+featureCount);
-						
+						// System.out.println("featureIndex: "+featureIndex +
+						// " featureCount: "+featureCount);
+
 						int fCount = featureCount.get(featureIndex);
 						matrix[index][featureIndex] += fCount;
 					}
-				}else{
-					System.out.println("pattern not in corpus: "+pattern);
+				} else {
+					System.out.println("pattern not in corpus: " + pattern);
 				}
 
 			}
@@ -255,12 +263,13 @@ public class Section2 {
 	// important note: Integer keys must be sequential from zero - one for each
 	// element
 	private static HashMap<Integer, ArrayList<String>> getIndexListMap(
-			String query, String connectionString) throws ClassNotFoundException, SQLException {
+			String query, String connectionString)
+			throws ClassNotFoundException, SQLException {
 		HashMap<String, ArrayList<String>> keyListMap = new HashMap<String, ArrayList<String>>();
-		
-		//this is not a necessity, but guarantees identical results across runs
+
+		// this is not a necessity, but guarantees identical results across runs
 		TreeSet<String> sortedKeys = new TreeSet<String>();
-		
+
 		// prepare sql
 		Connection c = null;
 		Statement stmt = null;
@@ -268,7 +277,7 @@ public class Section2 {
 		c = DriverManager.getConnection(connectionString);
 		c.setAutoCommit(false);
 		stmt = c.createStatement();
-		
+
 		// the query needs to return a relation,
 		// the first string is a key, second the pattern
 		ResultSet rs = stmt.executeQuery(query);
@@ -277,21 +286,21 @@ public class Section2 {
 			String pattern = rs.getString("pattern");
 			sortedKeys.add(key);
 			ArrayList<String> patternList = keyListMap.get(key);
-			if(patternList==null){
+			if (patternList == null) {
 				patternList = new ArrayList<String>();
 			}
 			patternList.add(pattern);
-			keyListMap.put(key,patternList);
+			keyListMap.put(key, patternList);
 		}
-		
+
 		// wind down sql
 		rs.close();
 		stmt.close();
 		c.close();
-		
+
 		HashMap<Integer, ArrayList<String>> indexListMap = new HashMap<Integer, ArrayList<String>>();
 		int sequentialIndex = 0;
-		for(String elementKey : sortedKeys){
+		for (String elementKey : sortedKeys) {
 			ArrayList<String> finalPatternList = keyListMap.get(elementKey);
 			indexListMap.put(sequentialIndex++, finalPatternList);
 		}
@@ -367,7 +376,7 @@ public class Section2 {
 
 		int[] excl = excluded[projectIndex];
 		for (int i : excl) {
-			//System.out.println("ID: " + ID + " i: " + i);
+			// System.out.println("ID: " + ID + " i: " + i);
 			if (i == ID) {
 				return "\\no";
 			}

@@ -56,14 +56,14 @@ public class PaperWriter {
 
 		// create the table showing source,Q1,Avg,Med,Q3,Max for
 		// filesPerProject, rFilesPerProject, regexPerFile
-		filesToMake.add(new NameContentsPair("contextHistogram.tex", Composer.composeHistogramTable(4, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent))));
+		filesToMake.add(new NameContentsPair("saturation.tex", Composer.composeHistogramTable(4, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent),"How Saturated are Projects with Utilizations? (RQ1)","table:saturation")));
 
 		// make a latex table with the top N regexes by weight.
-		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.3, "pattern", "nProjects", "Top 10 Regexes","table:topNW")));
+		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.3, "pattern", "nProjects", "Top 10 Patterns by nProjects (RQ1)","table:topNW")));
 
 		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
 		// distinct features, token count and pattern length
-		filesToMake.add(new NameContentsPair("characterHistogram.tex", Composer.composeHistogramTable(4, Section1.getCharacterStatsAndAddToDatabase(databaseFileContent, corpus))));
+		filesToMake.add(new NameContentsPair("patternStats.tex", Composer.composeHistogramTable(4, Section1.getCharacterStatsAndAddToDatabase(databaseFileContent, corpus), "Pattern Characteristics (RQ1)","table:patternStats")));
 
 		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
 		// distinct features, token count and pattern length

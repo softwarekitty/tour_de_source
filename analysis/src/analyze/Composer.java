@@ -144,7 +144,8 @@ public class Composer {
 	}
 
 	public static String composeRankTable(int tableSize,
-			Iterator<? extends RankableContent> it, double width, String contentsName, String rankName, String caption, String label) {
+			Iterator<? extends RankableContent> it, double width,
+			String contentsName, String rankName, String caption, String label) {
 		StringBuilder sb = new StringBuilder();
 		DecimalFormat df = new DecimalFormat("#0.#");
 		String widthS = df.format(width);
@@ -152,8 +153,10 @@ public class Composer {
 			"in}\n\\begin{verbatim}\n";
 		String betweenPatternAndWeight = "\\end{verbatim}\n\\end{minipage}\n& ";
 		String afterWeight = " \\\\ \n";
-		sb.append("\\begin{table*}\n\\begin{center}\n\\begin{tabular}{lc}\n\\toprule\n");
-		sb.append(contentsName+" & "+rankName+" \\\\ \n");
+		sb.append("\\begin{table*}\n\\begin{center}\n" + "\\caption{" +
+			caption + "}\n" + "\\label{" + label + "}\n" +
+			"\\begin{tabular}{lc}\n\\toprule\n");
+		sb.append(contentsName + " & " + rankName + " \\\\ \n");
 		for (int i = 0; i < tableSize; i++) {
 			if (it.hasNext()) {
 				RankableContent rr = it.next();
@@ -164,23 +167,24 @@ public class Composer {
 				sb.append(afterWeight);
 			}
 		}
-		//\caption{What are the most frequently used Patterns?}\label{table:topNW}
-		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n" +
-			"\\caption{"+caption+"}\n" +
-			"\\label{"+label+"}\n" +
-			"\\end{table*}\n");
+		// \caption{What are the most frequently used
+		// Patterns?}\label{table:topNW}
+		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n"
+			+ "\\end{table*}\n");
 		return sb.toString();
 	}
 
 	public static String composeHistogramTable(int tableSize,
-			Iterator<NamedStats> it) {
+			Iterator<NamedStats> it, String caption, String label) {
 		StringBuilder sb = new StringBuilder();
 		String before = "\\midrule\n";
 		String between = " & ";
 		String after = " \\\\ \n";
 
 		//
-		sb.append("\\begin{center}\n\\begin{tabular}{l|ccccc}\n\\toprule\n");
+		sb.append("\\begin{table}[tb]\n\\begin{center}\n" + "\\caption{" +
+				caption + "}\n" + "\\label{" + label + "}\n" +
+			"\n\\begin{tabular}{l|ccccc}\n\\toprule\n");
 		sb.append("source & Q1 & Avg & Med & Q3 & Max \\\\ \n");
 		for (int i = 0; i < tableSize; i++) {
 			if (it.hasNext()) {
@@ -201,13 +205,13 @@ public class Composer {
 				sb.append(after);
 			}
 		}
-		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n");
+		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n\\end{table}\n");
 		return sb.toString();
 	}
-	
+
 	public static String createString(char character, int length) {
-	    char[] chars = new char[length];
-	    Arrays.fill(chars, character);
-	    return new String(chars);
+		char[] chars = new char[length];
+		Arrays.fill(chars, character);
+		return new String(chars);
 	}
 }
