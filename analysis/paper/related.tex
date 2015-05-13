@@ -5,8 +5,6 @@
 %Going the other direction, a few projects have attempted to take a set of strings and generate a good regular expression that matches them like RegexGenerator++\footnote{\url{http://regex.inginf.units.it/}} and Regex-PreSuf\footnote{\url{http://search.cpan.org/~jhi/Regex-PreSuf-1.17/PreSuf.pm}} (a problem that suffers from overmatching).
 %%Tools to help developers write correct regular expressions, tools like RegexBuddy, Expresso, Pythex, The Regex Coach, Regex Widget, Regex magic, RegE xr, reWork, Rubular, Txt2re and....
 
-\todo{do we want to include the commented list or not?} \todo{if we list them, we need to describe them}
-
 One common misconception is that all regular expression languages are \emph{regular languages} which can be represented using deterministic finite automata (DFA), and so they are easy to model, easy to describe formally and execute in O(n) time.  In fact, many regular expression matching engines run in exponential time in order to support useful features such as lazy quantifiers, capturing groups, look-aheads and back-references~\cite{msdnmatching}.  In a recent regular expression library, the RE2 projext~\cite{re2}, Russ Cox aimed to use DFAs as much as possible (maximizing speed) while supporting as many useful features as possible.
 
 %Thousands of research papers have focused on various other regular expression-related investigations.
@@ -17,11 +15,10 @@ Since  regular expression languages vary somewhat in their syntax and feature se
 
 
 In this work, we perform a feature analysis on regular expressions used in the wild and compare that set to the features supported by four popular regular expression tools.
-Research tools like Hampi~\cite{hampi}, and Rex~\cite{rex}, and commercial tools like brics\cite{brics} and RE2~\cite{re2}, all use regular expressions for various task. Hampi was developed  in academia and uses regular expressions as a specification language for a strong constraint solver. Rex was developed by Microsoft Research and generates strings for regular expressions that can be used in several applications, such as test case generation~\cite{}. Brics is an open-source package that creates automata from regular expressions for manipulation and evaluation.
+Research tools like Hampi~\cite{hampi}, and Rex~\cite{rex}, and commercial tools like brics\cite{brics} and RE2~\cite{re2}, all use regular expressions for various task. Hampi was developed  in academia and uses regular expressions as a specification language for a strong constraint solver. Rex was developed by Microsoft Research and generates strings for regular expressions that can be used in several applications, such as test case generation~\cite{Anand:2013:OSM:2503903.2503991, Tillmann:2014:TAT:2642937.2642941}. Brics is an open-source package that creates automata from regular expressions for manipulation and evaluation.
 Re2 is an open-source tool created by Google for \todo{describe it briefly}.
 While there are many regular expression tools available, in this work, we focus on the features support for these four tools, which offer diversity across developers (i.e., Microsoft, Google, open source, and academia) and across applications. Further, as the focus of this work is on tool designers and we wanted to perform a feature analysis, these four tools and their features are well-documented, allowing for easy comparison.
 
-\todo{Katie: incorporate these into related work}
 % \subsection{Research on Regular Expressions}
 % Visual debugging of regular expressions~\cite{Beck:2014:RVD:2591062.2591111}
 
