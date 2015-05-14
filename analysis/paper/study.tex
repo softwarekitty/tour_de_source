@@ -85,7 +85,7 @@ Next, we describe in greater detail how the corpus of regex patterns was built, 
 
 \subsection{Building the Corpus}
 \label{study:corpus}
-Github is a popular project hosting site containing over 100,000 Python projects.  The GitHub API assigns an integer identifier to each repository and can be used to clone relevant repositories for analysis.  Using the \url{http://api.github.com/repositories?since=N} interface page, we launched 32 scrapers to find repositories containing Python code.  The Github interface provides information about the first 100 repository IDs since the {\tt N} value on a single results page.  Each scraper used this information to identify repositories containing Python.  When a scraper was done with one page, it continued on to the next 100 repository IDs by using the interface again with {\tt N} now equal to the last repository ID on the current page.  Using this process, each scraper paged through the next available 1000 repositories, cloning and scanning Python projects as they were found.  Each scraper started at a different {\tt N} value, with the first scraper starting at 0.  Scraper start indices were spaced by 262,144 so as to investigate within the first 8 million repositories.  At the time scraping was performed, the highest repoID was over 32 million, so we were cloning projects in the lowest fourth of the available space of IDs.
+Github is a popular project hosting site containing over 100,000 Python projects.  The GitHub API assigns an integer identifier to each repository and can be used to clone relevant repositories for analysis.  Using the \url{http://api.github.com/repositories?since=N} interface page, we launched 32 scrapers to find repositories containing Python code.  The Github interface provides information about the first 100 repository IDs since the {\tt N} value on a single results page.  Each scraper used this information to identify repositories containing Python.  When a scraper was done with one page, it continued on to the next 100 repository IDs by using the interface again with {\tt N} now equal to the last repository ID on the current page.  Using this process, each scraper paged through the next available 1000 repositories, cloning and scanning Python projects as they were found.  Each scraper started at a different {\tt N} value, with the first scraper starting at 0.  Scraper start indices were spaced by 262,144 so as to investigate within the first 8 million repositories.  At the time scraping was performed, the highest repoID was over 32 million, so we were cloning projects in the lowest fourth of the available space of IDs.  After this process was complete, \DTLfetch{data}{key}{nProjScanned}{value} Python projects had been cloned and scanned.
 
 For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find utilizations of Python's {\tt re} module. This ensured that all utliizations of the {\tt re} module were captured for analysis.
 
@@ -112,7 +112,24 @@ To create the tool mappings, we consulted documentation for each of the selected
 %Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
 
 \subsection{Clustering and Semantic Analysis}
-\todo{this section needs lots of work}
+We are interested in what behaviors users are trying to get when using regexes, and we know that the exact same behavior, or very similar behavior can be specified in many ways, as shown in Figure~\ref{fig:equivalentPatterns}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/equivalentPatterns.eps}
+\caption{An Example of Patterns With Similar Behavior}
+\label{fig:equivalentPatterns}
+\end{figure}
+
+In order to find out what behaviors were most important, we clustered \DTLfetch{data}{key}{nCorpus}{value} pattern strings into XYZ clusters.
+
+
+The idea here is to take a huge number of patterns and break it into a smaller number of clusters so that we can get an idea about what behavior people are trying to get.  The intuition is that the same behavior can be achieved using many different
+
+
+
+We reduced the \DTLfetch{data}{key}{nCorpus}{value} pattern strings into a more manageable set of
+
 Markov clustering can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  After exploring the quality of the clusters using various tuning parameter combinations\footnote{\url{www.details.#thistopic}}, the best clusters were found using an inflation value of 1.8 and k=83.
 
 There was an operational error in pulling  patterns from our database and 227 patterns (2.3\%) were omitted from the semantic analysis.
