@@ -11,6 +11,9 @@ Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetc
 
 The average regex utilizations per project was 32, but this is offset by a high maximum value of 1,427. This value appeared in a project that \todo{finish this sentence}. The average number of files containing a utilization was 11 out of the average total files per project of 53. On average, each file with a regex utilization had only two, with a median of 1. 
 
+
+From Table~\ref{table:saturation}, we see that on average each project had \DTLfetch{data}{key}{medRFilePerProj}{value} files containing any regex usage, out of an average of \DTLfetch{data}{key}{medFilePerProj}{value} files.  Each of the files that did have a regex usage had an average of \DTLfetch{data}{key}{medRPerFile}{value} regex usages.  Because we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen \DTLfetch{data}{key}{nExpectedUsages}{value} regex usages, which is lower than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed.
+
 \input{../analysis_output/saturation}
 
 \subsubsection{Usage Frequency of {\tt re} Module Functions}
@@ -32,13 +35,14 @@ The average regex utilizations per project was 32, but this is offset by a high 
 The number of projects that use each of the {\tt re} modules are shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions could accept the compiled regex as an argument. 
 
 \subsubsection{Usage Frequency of {\tt re} Module Flags}
-When considering flag use, we excluded non-behavioral flags (default and debug), which account for \DTLfetch{data}{key}{percentFlags0}{value}\% of all utilizations.
+When considering flag use, we excluded non-behavioral flags (default and debug), which account for \DTLfetch{data}{key}{percentFlags0}{value}\% of all utilizations. \todo{are they both present in debug and default? how much of the 87\% is for each omitted flag? Why are these omitted, again?}
 
  As shown in figure ~\ref{fig:partFlags}, of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
 
 
 \subsubsection{Most Frequently Observed Patterns}
 
+\todo{need to describe these results}
 Table~\ref{table:topNW} (description of table contents)
 
 \input{../analysis_output/topNW}
@@ -70,6 +74,7 @@ Literal tokens were found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of
 	\subsection{{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool designers and users?}
 	\label{results:rq3}
 
+We guide the results analysis for this research question based on the features \emph{not} supported by popular regex tools. 
 Table~\ref{table:featureStats} shows the mapping from features to regex tools.
 The mappings for each regex tool to the features are shown using \yes $ $ to denote when 
 a feature is supported by the tool and \no $ $ when it is not. 
