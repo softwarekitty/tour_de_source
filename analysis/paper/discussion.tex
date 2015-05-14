@@ -86,18 +86,22 @@ One of the most ubiquitous sub-patterns, \verb!`.*'! appeared in 1937 of the 972
 
 One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on, as illustrated in Figure~\ref{fig:lineSearch}.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering
+\fbox{
 \includegraphics[width=\columnwidth]{../illustrations/lineSearch.eps}
+}
 \caption{An Example of Using .* to Count Lines Containing `Apples'}
 \label{fig:lineSearch}
 \end{figure}
 
 In many cases, this \verb!`.*'! at the end of the string may not actually contribute any new behavior to the pattern, and may in fact be extraneous.  Or users may be trying to bypass the whole-string nature of the {\tt re.match} function, without realizing that they could instead use the {\tt re.search} function.  Consider the comparison shown in Figure~\ref{fig:searchVSmatch}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering
+\fbox{
 \includegraphics[width=\columnwidth]{../illustrations/matchVSsearch.eps}
+}
 \caption{An Example of Using .* to get Search Behavior From The Match Function}
 \label{fig:searchVSmatch}
 \end{figure}
