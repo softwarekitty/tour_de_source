@@ -4,7 +4,10 @@
 To understand how programmers use regular expressions in Python projects, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects from GitHub, and recorded regex usages for analysis as described in Section~\ref{study:corpus}.
 Throughout the rest of this paper, we  employ the following terminology:
 
-\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex engine in a project.  Within a particular file in a project, a \emph{utilization} is composed of a function, a pattern and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one regex \emph{utilization}, with key components labeled. The function called from the {\tt re} module is {\tt re.compile} does \todo{describe this module}, the pattern observed (i.e., a regex string) is {\tt `(0 $\mid$-?[1-9][0-9]*)\$'} represents strings with \todo{briefly describe the regex}, and the flag allows string matching over multiple lines.
+\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex engine in a project.  Within a particular file in a project, a \emph{utilization} is composed of a function, a pattern and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one regex \emph{utilization}, with key components labeled.
+
+This \emph{utilization} will compile a regex object in the variable {\tt r1} from the pattern \verb!(0|-?[1-9][0-9]*)$!, with the \verb!$! token matching at the end of each line because of the {\tt re.MULTILINE} flag.  The pattern in this \emph{utilization} will match if it finds a zero at the end of a line, or a (possibly negative) integer at the end of a line.
+
 Thought of another way, a regular expression  utilization is one single invocation of the {\tt re} library in a project.
 
 \begin{figure}[htb]
@@ -18,7 +21,7 @@ Thought of another way, a regular expression  utilization is one single invocati
 
 \noindent \textbf{Pattern}: A \emph{pattern} is an ordered series of regular expression language feature tokens that can be used to find match start and end indices within an input string.  Notice that because the vast majority of regex features are shared across most all-purpose languages, a Python {pattern} will (almost always) behave the same when used in Java, C\#, Javascript, Ruby, etc, whereas a {utilization} is not universal in the same way (would not compile in other languages).
 
-In this work, we primarily focus on patterns since these represent \todo{explain why patterns}. 
+In this work, we primarily focus on patterns since they are the primary way of specifying the matching behavior for every utilization.
 
 \subsection{Research Questions}
 Our overall research goal is to understand how regular expressions and regular expression features are used in practice. We aim to answer the following research questions:
@@ -37,17 +40,17 @@ Further, to provide context as to the overlap among regular expression strings u
 
 We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Section~\ref{study:corpus} with examples.
 
-To measure feature usage, we parse Python regular expression patterns using Bart Kiers' PCRE parser\todo{add footnote or citation}, as described in Section~\ref{study:corpus}.  We then count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
+To measure feature usage, we parse Python regular expression patterns using Bart Kiers' PCRE parser\footnote{\url{https://github.com/bkiers/PCREParser}}, as described in Section~\ref{study:corpus}.  We then count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
 
 \textbf{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool designers and users?
 %\textbf{RQ3:} What is the impact of \emph{not} supporting various regex features on tool designers and users?
 
 To address, this question, we use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for.
 
-At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. Behavioral similarity is determined by a pairwise comparison among all patterns. Within each pair, a set of strings is generated for each regular expression and then tested against the other. The average percentage of matching regular expressions creates the similarity level. 
+At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. Behavioral similarity is determined by a pairwise comparison among all patterns. Within each pair, a set of strings is generated for each regular expression and then tested against the other. The average percentage of matching regular expressions creates the similarity level.
 
 \todo{Finish this example}
-For example, consider the following two regular expressions, denoted A and B for reference. 
+For example, consider the following two regular expressions, denoted A and B for reference.
 
 \begin{verbatim}
 state regex A
@@ -56,21 +59,21 @@ state regex B
 
 For each regex, the following strings are generated:
 
-\begin{tabular}{l | l} 
+\begin{tabular}{l | l}
 A & B \\ \hline
 s1 & s2 \\
-s3 & s4 \\ 
+s3 & s4 \\
 \end{tabular}
 
-Each string in the A column matches regex A, and each string in the B column matches regex B. When testing the strings in B against regex A, X/5 = 0.Y\% match. When testing the strings in the A column against regex B, Z/5 = 0.W\% match. Thus, the similarity between these two regular expressions is 0.U\%. 
+Each string in the A column matches regex A, and each string in the B column matches regex B. When testing the strings in B against regex A, X/5 = 0.Y\% match. When testing the strings in the A column against regex B, Z/5 = 0.W\% match. Thus, the similarity between these two regular expressions is 0.U\%.
 
-Semantic analysis is accomplished by first establishing a similarity matrix between regexes. These strings are generated by Rex.  We chose Rex to build matching strings because it supports the most features of any String-generation tool. To build the similarity matrix, we generated X strings per regular expression in an effort to balance the precision of the similarity metric (i.e., more strings lead to higher precision) with the speed of our analysis tool (i.e., more strings lead to longer runtimes). \todo{what is X?} 
+Semantic analysis is accomplished by first establishing a similarity matrix between regexes. These strings are generated by Rex.  We chose Rex to build matching strings because it supports the most features of any String-generation tool. To build the similarity matrix, we generated X strings per regular expression in an effort to balance the precision of the similarity metric (i.e., more strings lead to higher precision) with the speed of our analysis tool (i.e., more strings lead to longer runtimes). \todo{what is X?}
 
-Then clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.  These clusters are used to see how programmers implement regular expressions that match similar strings and interpret what a feature is used for. 
+Then clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.  These clusters are used to see how programmers implement regular expressions that match similar strings and interpret what a feature is used for.
  We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity (without knowing the number of clusters in advance).
 
 
-Next, we describe in greater detail how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed. 
+Next, we describe in greater detail how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
 %\todo{Is this still the case?}
 %Since our semantic analysis is based on Rex, this semantic analysis cannot be applied to all features studied.  For these unsupported features, we use 6 string similarity metrics (Jaro-Winkler, Levenshtein, Longest Common Substring, Sift3, Jaccard and Cosine) to build similarity matrices.  As before, these matrices are used to find clusters of regexes, which are used to interpret what a feature is used for.
 
@@ -82,7 +85,7 @@ Next, we describe in greater detail how the corpus of regex patterns was built, 
 Github is a popular project hosting site containing over 100,000 Python projects.
 We used the GitHub API to page through all repositories, cloning projects that contain Python code. \todo{How were these repositories sorted? by popularity? randomly?}
 
-For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find \emph{utilizations} of Python's {\tt re} module. This ensured that all utlizations of the {\tt re} module were captured for analysis. 
+For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find \emph{utilizations} of Python's {\tt re} module. This ensured that all utlizations of the {\tt re} module were captured for analysis.
 
 Using git, each project was scanned at 20 evenly-spaced commits (or all commits if there were less than 20) in its history.
 Within one project, we define a duplicate \emph{utilization} as a \emph{utilization} having the same function, pattern and flags within the same file (same relative path).  We ignored duplicate \emph{utilizations} across project versions to protect against over-counting the same \emph{utilization} as we rewind the project through its history.  We observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex \emph{utilizations} in \DTLfetch{data}{key}{nProjScanned}{value} projects.
@@ -96,13 +99,13 @@ The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}
 
 \subsection{Analyzing Features}
 \label{study:features}
-Given the corpus of regular expression patterns, we identified features by \todo{describe this process}. 
+Given the corpus of regular expression patterns, we identified features by \todo{describe this process}.
 
-Once the feature set was established, we mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, Hampi, RE2, and Rex. 
-Table~\ref{table:featureStats} shows this mapping. 
-The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. The mappings for each regex tool to the features are shown in the next four columns followed by usage statistics for the number and percent of patterns that the feature appears in, the number and percent of total files, and the number and percent of total projects. 
+Once the feature set was established, we mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, Hampi, RE2, and Rex.
+Table~\ref{table:featureStats} shows this mapping.
+The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. The mappings for each regex tool to the features are shown in the next four columns followed by usage statistics for the number and percent of patterns that the feature appears in, the number and percent of total files, and the number and percent of total projects.
 
-To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using  
+To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using
 \todo{make specific citations to the documents used for the mapping of features to tools for each tool. URLs are OK in this instance}
 
 %Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
@@ -111,7 +114,7 @@ To create the tool mappings, we consulted documentation for each of the selected
 \todo{this section needs lots of work}
 Markov clustering can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  After exploring the quality of the clusters using various tuning parameter combinations\footnote{\url{www.details.#thistopic}}, the best clusters were found using an inflation value of 1.8 and k=83.
 
-There was an operational error in pulling  patterns from our database and 227 patterns (2.3\%) were omitted from the semantic analysis. 
+There was an operational error in pulling  patterns from our database and 227 patterns (2.3\%) were omitted from the semantic analysis.
 
 Note that the filteredCorpus is of size 9727, and at least one pattern from the fc can be found in 1375 of the original 3900 or whatever.  Most patterns do not belong in a cluster (for example a very specific pattern like \verb!<title>[^<]*Revision \d+:!), so after clustering is done only 2727 patterns are included, and only 999 projects have any of these patterns in them.
 
