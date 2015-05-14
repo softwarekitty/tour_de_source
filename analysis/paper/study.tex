@@ -69,6 +69,8 @@ Semantic analysis is accomplished by first establishing a similarity matrix betw
 Then clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.  These clusters are used to see how programmers implement regular expressions that match similar strings and interpret what a feature is used for. 
  We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity (without knowing the number of clusters in advance).
 
+
+Next, we describe in greater detail how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed. 
 %\todo{Is this still the case?}
 %Since our semantic analysis is based on Rex, this semantic analysis cannot be applied to all features studied.  For these unsupported features, we use 6 string similarity metrics (Jaro-Winkler, Levenshtein, Longest Common Substring, Sift3, Jaccard and Cosine) to build similarity matrices.  As before, these matrices are used to find clusters of regexes, which are used to interpret what a feature is used for.
 
@@ -94,23 +96,23 @@ The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}
 
 \subsection{Analyzing Features}
 \label{study:features}
+Given the corpus of regular expression patterns, we identified features by \todo{describe this process}. 
 
-\todo{make specific citations to the documents used for the mapping of features to tools. URLs are OK in this instance}
+Once the feature set was established, we mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, Hampi, RE2, and Rex. 
+Table~\ref{table:featureStats} shows this mapping. 
+The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. The mappings for each regex tool to the features are shown in the next four columns followed by usage statistics for the number and percent of patterns that the feature appears in, the number and percent of total files, and the number and percent of total projects. 
 
-\todo{revise this subsection}
-After picking four large regex research projects, the big table with the features was created in order to decide which unsupported features are used most often.
-Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
+To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using  
+\todo{make specific citations to the documents used for the mapping of features to tools for each tool. URLs are OK in this instance}
 
-\subsubsection{Syntactic Diversity}
-For the negative perspective, we picked three features: LZY, NCG, WNW that are unsupported by Rex and other projects.  For each of these features, we created a subset of the \emph{collection} where all the patterns contain that feature.  Then we used syntactic analysis...to create a similarity matrix.  We then used markov clustering [X] (MCL) to find clusters in the subset.  We used these clusters to assist our manual search for some common use cases for the unsupported feature.
+%Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
 
+\subsection{Clustering and Semantic Analysis}
+\todo{this section needs lots of work}
 Markov clustering can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  After exploring the quality of the clusters using various tuning parameter combinations\footnote{\url{www.details.#thistopic}}, the best clusters were found using an inflation value of 1.8 and k=83.
 
 Note that the filteredCorpus is of size 9727, and at least one pattern from the fc can be found in 1375 of the original 3900 or whatever.  Most patterns do not belong in a cluster (for example a very specific pattern like \verb!<title>[^<]*Revision \d+:!), so after clustering is done only 2727 patterns are included, and only 999 projects have any of these patterns in them.
 
-
-\subsubsection{Semantic Diversity}
-For the positive perspective, we created another subset of patterns (XYZ patterns) where Rex was able to generate strings that the pattern matched.  We then created a similarity graph with weighted, undirected edges as shown in Figure~\ref{fig:similarityConstruction}.
 
 
 
