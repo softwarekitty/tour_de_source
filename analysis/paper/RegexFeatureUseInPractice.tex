@@ -3,6 +3,7 @@
 \usepackage{amsthm}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{enumerate}
 \usepackage{xtab}
 \usepackage{tikz}
 \usepackage{url}
@@ -68,16 +69,42 @@ In this paper, we explore regular expression feature usage, focusing on how ofte
 
 \todo{Katie will write this}
 
-Our semantic clustering is dependent on Rex. 
+Our semantic clustering is dependent on Rex.
 
-Generality - we only sample a subset of the total Python projects available, and from just one source. 
+Generality - we only sample a subset of the total Python projects available, and from just one source.
 
 Generality - we concentrate only on regexes used in Python which may not be representable of other languages
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-\todo{write me}
+\subsection{Empirical Analysis of Regex Utilizations}
+
+
+\subsection{Frequency of Feature Usage}
+
+conclusion II
+
+\subsubsection{A Suggested Feature Implementation Priority List}
+
+One key consideration for Tool designers is what features are most important to implement in order of priority.  We provide a prioritized list of feature groups to implement, based on the frequency of feature usage displayed in Table~\ref{table:featureStats}.
+
+\begin{enumerate}[1]
+\item literals, sequences of tokens
+\item CCC (and all subsumed features)
+\item CG (without back-references)
+\item DBB (and all subsumed features)
+\item STR, END
+\item OR
+\item LZY
+\item NCG
+\item NLKA, LKA, NLKB, LKB
+\item WNW, NWNW
+\item ENDZ
+\item BKR
+\end{enumerate}
+
+\subsection{How Features Are Used In Practice}
 
 % use section* for acknowledgement
 \section*{Acknowledgment}

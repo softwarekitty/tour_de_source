@@ -37,7 +37,8 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements
 
 	@Override
 	public boolean add(WeightRankedRegex x) {
-		return super.add(x);
+		boolean addSuccess = super.add(x);
+		return addSuccess;
 	}
 
 	@Override
@@ -79,12 +80,19 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements
 
 	public TreeSet<Integer> computeProjectIDs() throws SQLException,
 			ClassNotFoundException {
+		if(this.size() > 512){
+			return getProjectIDsSlowly();
+		}else{
+			return getProjectIDsBatch();
+		}
+	}
+
+	private TreeSet<Integer> getProjectIDsBatch() throws SQLException, ClassNotFoundException {
 		StringBuilder querySB = new StringBuilder();
 
 		// wow this is crazy, but should be faster than joining after the fact
 		querySB.append("select distinct uniqueSourceID as ID from RegexCitationMerged where pattern=? ");
-		int nPatterns = this.size();
-		for (int i = 1; i < nPatterns; i++) {
+		for (int i = 1; i < this.size(); i++) {
 			querySB.append("or pattern=? ");
 		}
 		querySB.append(";");
@@ -118,6 +126,17 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements
 		rs.close();
 		c.close();
 		return projectIDList;
+	}
+
+	private TreeSet<Integer> getProjectIDsSlowly() throws ClassNotFoundException, SQLException {
+		TreeSet<Integer> allIDs = new TreeSet<Integer>();
+		Iterator<WeightRankedRegex> it = iterator();
+		while(it.hasNext()){
+			WeightRankedRegex wrr = it.next();
+			ArrayList<Integer> IDs = IOUtil.getProjectIDsHavingPattern(wrr.getContent());
+			allIDs.addAll(IDs);
+		}
+		return allIDs;
 	}
 
 	@Override
@@ -190,17 +209,22 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements
 		} else if (nProjectsThis < nProjectsOther) {
 			return 1;
 		} else {
-			String myContent = this.getContent();
-			String otherContent = cOther.getContent();
-			// shorter length is earlier
-			if (myContent.length() > otherContent.length()) {
-				return 1;
-			} else if (myContent.length() < otherContent.length()) {
+			if(this.size() > cOther.size()){
 				return -1;
-			} else {
-
-				// same weight and length: by hashcode
-				return myContent.compareTo(otherContent);
+			}else if(this.size() < cOther.size()){
+				return 1;
+			}else{
+				Iterator<WeightRankedRegex> it1 = this.iterator();
+				Iterator<WeightRankedRegex> it2 = cOther.iterator();
+				while(it1.hasNext()){
+					WeightRankedRegex wrr1 = it1.next();
+					WeightRankedRegex wrr2 = it2.next();
+					int ct = wrr1.compareTo(wrr2);
+					if(ct!=0){
+						return ct;
+					}
+				}
+				return 0;
 			}
 		}
 	}

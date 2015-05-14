@@ -50,7 +50,7 @@ public class IOUtil {
 			String exportedCorpusRawPath) throws IllegalArgumentException,
 			QuoteRuleException, PythonParsingException {
 
-		//get only clean lines, each with 3 parts
+		// get only clean lines, each with 3 parts
 		List<String> lines = IOUtil.getFileLines(exportedCorpusRawPath);
 		Iterator<String> it = lines.iterator();
 		while (it.hasNext()) {
@@ -60,7 +60,7 @@ public class IOUtil {
 				it.remove();
 			}
 		}
-		//turn these lines into the ArrayList
+		// turn these lines into the ArrayList
 		WeightRankedRegex[] wrrArray = new WeightRankedRegex[lines.size()];
 		for (String line : lines) {
 			String[] args = line.split("\t");
@@ -125,26 +125,31 @@ public class IOUtil {
 	}
 
 	//
-	public static TreeSet<Cluster> getClusters(String fullInputFilePath,String fullOutputFilePath,
-			String contents,
-			ArrayList<WeightRankedRegex> corpus, String mclInput,HashMap<Integer, WeightRankedRegex> maybeNullLookup)
-			throws IOException, InterruptedException, ClassNotFoundException, SQLException {
+	public static TreeSet<Cluster> getClusters(String fullInputFilePath,
+			String fullOutputFilePath, String contents,
+			ArrayList<WeightRankedRegex> corpus, String mclInput,
+			HashMap<Integer, WeightRankedRegex> maybeNullLookup)
+			throws IOException, InterruptedException, ClassNotFoundException,
+			SQLException {
 
 		// create the file for mcl to use as input
 		File f = new File(fullInputFilePath);
 		IOUtil.createAndWrite(f, contents);
 
-		return getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput,maybeNullLookup);
+		return getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput, maybeNullLookup);
 
 	}
 
 	public static TreeSet<Cluster> getClustersFromFile(
 			String fullInputFilePath, ArrayList<WeightRankedRegex> corpus,
-			String fullOutputFilePath, String mclInput, HashMap<Integer, WeightRankedRegex> maybeNullLookup )
-			throws IOException, InterruptedException, ClassNotFoundException, SQLException {
+			String fullOutputFilePath, String mclInput,
+			HashMap<Integer, WeightRankedRegex> maybeNullLookup)
+			throws IOException, InterruptedException, ClassNotFoundException,
+			SQLException {
 		String filtered_corpus_path = PaperWriter.homePath +
-				"csharp/filteredCorpus.txt";
-		HashMap<Integer, WeightRankedRegex> lookup = maybeNullLookup==null? getLookup(corpus, filtered_corpus_path) :maybeNullLookup;
+			"csharp/filteredCorpus.txt";
+		HashMap<Integer, WeightRankedRegex> lookup = maybeNullLookup == null ? getLookup(corpus, filtered_corpus_path)
+				: maybeNullLookup;
 
 		File outFile = new File(fullOutputFilePath);
 		if (outFile.exists()) {
@@ -152,16 +157,14 @@ public class IOUtil {
 		}
 
 		// run the mcl script
-		//System.out.println("mcl input: "+ Arrays.toString(mclInput));
+		// System.out.println("mcl input: "+ Arrays.toString(mclInput));
 		List<String> cmds = new ArrayList<String>(Arrays.asList(mclInput.split(" ")));
-		System.out.println("mcl input: "+ mclInput);
+		System.out.println("mcl input: " + mclInput);
 		cmds.add(0, "/usr/local/bin/mcl");
 		ProcessBuilder pb = new ProcessBuilder(cmds);
 		Process p = pb.start();
 		int x = p.waitFor();
-		System.out.println("process int: "+x);
-		
-		
+		System.out.println("process int: " + x);
 
 		// parse mcl output
 		TreeSet<Cluster> clusters = new TreeSet<Cluster>();
@@ -170,8 +173,9 @@ public class IOUtil {
 		int lineNumber = 0;
 		for (String line : lines) {
 			String[] indices = line.split("\t");
-			
-			//we will never continue like this, if there is no tab, split returns line
+
+			// we will never continue like this, if there is no tab, split
+			// returns line
 			if (indices.length == 0) {
 				continue;
 			}
@@ -181,18 +185,27 @@ public class IOUtil {
 				WeightRankedRegex wrr = lookup.get(indexValue);
 				// System.out.print("lineNumber: "+lineNumber+" index: "+index+" indexValue: "+indexValue);
 				// System.out.println(" pattern: "+wrr.getContent());
-				cluster.add(wrr);
+				boolean added = cluster.add(wrr);
+				if(!added){
+					System.out.println("indexValue: "+indexValue+" failure to add: "+wrr.dump(0, 1) + " problem with: " +
+							Arrays.toString(indices));
+					System.out.println("cluster: "+cluster.getContent());
+					waitNsecsOrContinue(12);
+				}
 			}
 			cluster.initialzeStats();
 			clusters.add(cluster);
 			lineNumber++;
+			//System.out.println("lineNumber: "+lineNumber+" indices.length: "+indices.length);
+
 		}
 		return clusters;
 	}
 
 	public static void dumpAllClusters(String analysis_output_path,
 			TreeSet<Cluster> behavioralClusters,
-			ArrayList<WeightRankedRegex> corpus, String filename, String suffix) throws ClassNotFoundException, SQLException {
+			ArrayList<WeightRankedRegex> corpus, String filename, String suffix)
+			throws ClassNotFoundException, SQLException {
 		FeatureDictionary fd = new FeatureDictionary();
 		int totalPatterns = 0;
 		int totalWeight = 0;
@@ -206,12 +219,12 @@ public class IOUtil {
 			TreeSet<RankedFeature> featurePile = cluster.getFeaturePile();
 			StringBuilder topNString = new StringBuilder();
 			Iterator<RankedFeature> it = featurePile.iterator();
-			int n=1;
+			int n = 1;
 			int topN = 10;
 			boolean listAll = true;
-			while (it.hasNext() && (listAll || n<=topN)) {
+			while (it.hasNext() && (listAll || n <= topN)) {
 				RankedFeature rF = it.next();
-				if(rF.getFrequency()==0){
+				if (rF.getFrequency() == 0) {
 					break;
 				}
 				topNString.append(rF.dump(n));
@@ -234,8 +247,8 @@ public class IOUtil {
 			allProjectIDs.addAll(cluster.getProjectIDs());
 		}
 		sb.insert(0, "Cluster stats:\n\nnClusters: " + i + "\nTotalPatterns: " +
-			totalPatterns + "\ntotalnProjects: " + allProjectIDs.size() + "\nsuffix: " +
-			suffix + "\n\n\n");
+			totalPatterns + "\ntotalnProjects: " + allProjectIDs.size() +
+			"\nsuffix: " + suffix + "\n\n\n");
 		File output = new File(analysis_output_path, filename);
 
 		// delete the old version
@@ -247,8 +260,7 @@ public class IOUtil {
 
 	public static HashMap<Integer, WeightRankedRegex> getLookup(
 			ArrayList<WeightRankedRegex> corpus, String indexedCorpusFilePath) {
-		
-		
+
 		String content = IOUtil.getFileContents(indexedCorpusFilePath);
 
 		HashMap<Integer, WeightRankedRegex> lookup = new HashMap<Integer, WeightRankedRegex>();
@@ -283,25 +295,25 @@ public class IOUtil {
 			ArrayList<WeightRankedRegex> corpus, double d) {
 		Random gen = new Random();
 		ArrayList<WeightRankedRegex> miniCorpus = new ArrayList<WeightRankedRegex>();
-		for(WeightRankedRegex wrr : corpus){
-			if(gen.nextDouble() < d){
+		for (WeightRankedRegex wrr : corpus) {
+			if (gen.nextDouble() < d) {
 				miniCorpus.add(wrr);
 			}
 		}
 		return miniCorpus;
 	}
-	
+
 	public static ArrayList<Integer> getProjectIDsHavingPattern(String pattern)
 			throws SQLException, ClassNotFoundException {
 		ArrayList<Integer> projectIDList = new ArrayList<Integer>(32);
-		
+
 		// prepare sql
 		Connection c = null;
 		Statement stmt = null;
 		Class.forName("org.sqlite.JDBC");
 		c = DriverManager.getConnection(PaperWriter.connectionString);
 		c.setAutoCommit(false);
-		
+
 		PreparedStatement ps = c.prepareStatement("select distinct uniqueSourceID as ID from RegexCitationMerged where pattern=?");
 		ps.setString(1, pattern);
 
@@ -318,8 +330,9 @@ public class IOUtil {
 	}
 
 	public static ArrayList<WeightRankedRegex> importFilteredCorpus(
-			String filtered_corpus_path) throws IllegalArgumentException, QuoteRuleException, PythonParsingException {
-		//get only clean lines, each with 2 parts
+			String filtered_corpus_path) throws IllegalArgumentException,
+			QuoteRuleException, PythonParsingException {
+		// get only clean lines, each with 2 parts
 		List<String> lines = IOUtil.getFileLines(filtered_corpus_path);
 		Iterator<String> it = lines.iterator();
 		while (it.hasNext()) {
@@ -329,33 +342,33 @@ public class IOUtil {
 				it.remove();
 			}
 		}
-		//turn these lines into indices
+		// turn these lines into indices
 		ArrayList<Integer> regexIndices = new ArrayList<Integer>();
 		for (String line : lines) {
 			String[] args = line.split("\t");
 			int index = Integer.parseInt(args[0]);
 			regexIndices.add(index);
 		}
-		
-		ArrayList<WeightRankedRegex> superSet = IOUtil.importCorpus(PaperWriter.homePath +
-				 "analysis/analysis_output/exportedCorpusRaw.txt");
 
-		HashMap<Integer, WeightRankedRegex> lookup = getLookup(superSet,filtered_corpus_path);
-		
+		ArrayList<WeightRankedRegex> superSet = IOUtil.importCorpus(PaperWriter.homePath +
+			"analysis/analysis_output/exportedCorpusRaw.txt");
+
+		HashMap<Integer, WeightRankedRegex> lookup = getLookup(superSet, filtered_corpus_path);
+
 		ArrayList<WeightRankedRegex> corpus = new ArrayList<WeightRankedRegex>(lines.size());
-		
-		for(Integer patternIndex : regexIndices){
+
+		for (Integer patternIndex : regexIndices) {
 			corpus.add(lookup.get(patternIndex));
 		}
 		return corpus;
 	}
-	
-	
-// cannot do this - some are doublequotes, others are singlequotes, you don't know which it was
-//	private static String reEscape(String pattern) {
-//		String reEscaped = pattern.replaceAll("\\\\", "\\\\\\\\");
-//		System.out.println("reEscaped: "+reEscaped);
-//		return "'''"+reEscaped+"'";
-//		
-//	}
+
+	// cannot do this - some are doublequotes, others are singlequotes, you
+	// don't know which it was
+	// private static String reEscape(String pattern) {
+	// String reEscaped = pattern.replaceAll("\\\\", "\\\\\\\\");
+	// System.out.println("reEscaped: "+reEscaped);
+	// return "'''"+reEscaped+"'";
+	//
+	// }
 }

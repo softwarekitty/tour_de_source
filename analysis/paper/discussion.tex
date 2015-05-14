@@ -1,25 +1,6 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\todo{Carl: this section needs a lot of focus and thought ASAP}
-
-\subsection{Implications for Tool Designers}
-
-\subsubsection{character classes are important}
-not supporting {\tt \\d} makes a big difference.
-
-\subsubsection{Anchors matter}
-The endpoint anchor features STR and END are the only way specify that an entire line has to match.  Consider the following example, comparing the pattern \verb!`^\s*$'! (found in 48 projects) to the pattern \verb!`\s*'! when looking for empty lines in a text file for a diff utility.  Without the endpoint anchors, the pattern matches every line, since there are always at least zero whitespace characters on every line.  But with the endpoint anchors, only lines that contain nothing but whitespace will match.
-
-\subsection{Opportunities for Future Work}
-
-\subsubsection{New library feature for properties of a line}
-
-\subsubsection{Regexes need refactoring}
-We see the same features implemented many ways, and we don't know why. It might be that some methods of implementation are more understandable. However, if tool designers do not support that, refactoring may be needed.
-
-example with anchors and {\tt .*} in the middle which could be replaced by a comma?
-
 \subsection{Frequency of {\tt re} Module Usage}
 ...only \DTLfetch{data}{key}{percentFilesUsingRegex}{value}\% of the files observed had at least one regex usage.  This indicates that regex usage may usually be concentrated in just a few files.
 
@@ -29,39 +10,101 @@ From table~\ref{table:saturation}, we see that on average each project had \DTLf
 
 
 
+\subsection{DBB subsumes repetition, CCC subsumes character classes}
+
+The DBB feature subsumes all other repetition features.  Consider the equivalences shown in Figure~\ref{fig:DBBequivalences}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/DBBequivalences.eps}
+\caption{How DBB Subsumes All Other Repetition Features}
+\label{fig:DBBequivalences}
+\end{figure}
+
+Similarly, the CCC feature subsumes NCCC, RNG, ANY, DEC, NDEC, WSP,NWSP, WRD, NWRD because each of these features is equivalent to a set of characters.  We provide an example of how CCC subsumes DEC, WSP and WRD in Figure~\ref{fig:CCCequivalences} (other equivalences not shown for brevity).
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/CCCequivalences.eps}
+\caption{How CCC Subsumes DEC, WSP and WRD}
+\label{fig:CCCequivalences}
+\end{figure}
+
+\subsubsection{character classes are important}
+In replacing keyword search with an abstracted search, one of the most fundamental abstractions is that one element of a sequence can be one of several characters.  This abstraction is realized in custom character classes.
+
+\subsubsection{default character classes are widely used}
+
+The pattern language for Python and most major regex engines supports a few default character classes (and their negations) which we have described as the features ANY, DEC, WSP, WRD, NDEC, NWSP, NWRD.  Throughout this analysis it was obvious that these default character classes were widely used. Specifically, \verb!\s!, \verb!\d! and \verb!\W! were the top three behavioral clusters (as shown in Table~\ref{table:topNClusters}).  In Table~\ref{table:threeClusterSample} we show the top 10 patterns from these top three clusters.
+
+\input{../behavioral_clustering/threeClusterSample}
+
+One surprising result of our clustering is that behaviorally speaking, the negation of the word class was more heavily used (208 projects) than the word class itself (114 projects).  One
+
+The character class of all letters \verb![a-zA-Z]! appears so often that it is an excellent candidate for a new a character class.
+
+The largest cluster using custom character classes (cluster N in Table~\ref{table:topNClusters} whose shortest member is \verb•[^ -~]•) has 44 patterns which create a more permissive word class.  Inspection of the source code of several projects using this pattern indicates that these permissive word classes were typically used when trying to create system-friendly object names, which indicates that there is a demand for a word class that includes more characters (but not dashes, tildes or the first 9 unicode characters).
+
+
+
+
+One obvious character class to consider is hexidecimal characters, and we see the pattern [a-fA-F0-9] appear many times.
+
+For tools that do not support the default character classes, this is a significant obstacle for users trying to test the regexes that they already have.
+
+\subsubsection{use of repetition}
+
+
+\subsubsection{Anchors matter}
+The endpoint anchor features STR and END are the only way specify that an entire line has to match.  Consider the following example, comparing the pattern \verb!`^\s*$'! (found in 48 projects) to the pattern \verb!`\s*'! (found in X projects) when looking for lines devoid of content.  Without the endpoint anchors, the pattern matches every line, since there are always at least zero whitespace characters on every line.  But with the endpoint anchors, only lines that contain nothing but whitespace will match, allowing the user to find all lines that don't have any content.
+
+
+
+\subsection{Opportunities for Future Work}
+
+
+
+\subsubsection{New library feature for properties of a line}
+
+\subsubsection{Regexes need refactoring}
+We see the same features implemented many ways, and we don't know why. It might be that some methods of implementation are more understandable. However, if tool designers do not support that, refactoring may be needed.
+
+example with anchors and {\tt .*} in the middle which could be replaced by a comma?
+
+\subsubsection{Using 0-9 instead of \\d}
+Out of the 9727 patterns acceptable to Rex, 1498 contained the range \verb•0-9• within a character class, even though this is exactly equivalent to using \verb•\d• within a character class (which appeared within a character class only 237 times).  Why are users specifying digits using the RNG feature when a default character class already exists?  Is it to aid readability, or does this represent an opportunity for refactoring?
+
+\subsubsection{dot-star at the end - refactoring?}
+One of the most ubiquitous sub-patterns, \verb!`.*'! appeared in 1937 of the 9727 patterns acceptable by Rex, and appeared within the last four characters in 1161 of the 9727 patterns.  Out of the top 30 clusters containing the ANY feature, 26 also had \verb!`.*'! within the last four characters.
+
+One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on, as illustrated in Figure~\ref{fig:lineSearch}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/lineSearch.eps}
+\caption{An Example of Using .* to Count Lines Containing `Apples'}
+\label{fig:lineSearch}
+\end{figure}
+
+In many cases, this \verb!`.*'! at the end of the string may not actually contribute any new behavior to the pattern, and may in fact be extraneous.  Or users may be trying to bypass the whole-string nature of the {\tt re.match} function, without realizing that they could instead use the {\tt re.search} function.  Consider the comparison shown in Figure~\ref{fig:searchVSmatch}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/matchVSsearch.eps}
+\caption{An Example of Using .* to get Search Behavior From The Match Function}
+\label{fig:searchVSmatch}
+\end{figure}
+
+Are programmers using the dot-star sub-pattern unnecessarily? More research is needed into this question to find out if these patterns are a candidate for refactoring.
+
+
+
+
+
+
 Fun fact: while creating similarity matrix, row 5464 took 2 hours, or almost 1 second per cell avg, only suffering 18 timeouts (1.2 secs).  What is this pesky pattern?
 
 We do not assume that Python projects represent a perfect sample of regular expression usage in all environments, but to make the work of collecting data for the paper reasonable, we had to choose one language to focus on (we hope to compare results across languages in future work).  Python is an attractive choice because the culture of Python programming makes it seem likely that someone would write the pattern directly in the function, not trying to over-complicate things with some extra Classes or functions.  Other attractive choices are Perl (which probably has the most active regex community), javascript and ruby (which may emphasize web tasks like form validation), sql or a general purpose language like java or C\#.
-
-Features discussion:
-
-Capture groups are arguably the most powerful feature, since they allow us to get the useful information that we were searching for.  They are probably used simply to group some sequence even when there is no intention of getting the content of the group.
-
-For some reason I want to lump the OR in with CG, or try it.
-
-We can logically group all repetition into the DBB type, since QST={tt \{0,1\}}, SNG={tt \{N,N\}}, and KLE={tt \{0,MAX\}}, ADD={tt \{1,MAX\}}, and LWB={tt \{1,MAX\}} for some MAX like Integer.MAX\_VALUE.
-
-But I want to look at ADD and KLE on their own - or look at them as super conveneint shorthand.  SO convenience needs to enter the discussion, not just equivalence.
-
-We can group STR, END and ENDZ together as endpoint anchors.
-
-We can group PNG, BKR and BKRN together as all back-referencing.
-
-Really, CCC, NCCC and RNG are all very fundamental, and supported by all.  It is worth looking at what they do.
-
-Meanwhile you could say that WSP, DEC, WRD and their opposites are reducible to CCC, but it would be interesting to see how often they are used.
-
-ANY could also be reduced, but I think it should be treated separately from these 6.
-
-I think that looking ahead and looking behind can be separated into two things, though the NCG and LKA - I want to know if they are not equivalent?
-
-WNW boundary and the opposite is special enough to do on its own.
-
-LZY gets its own show and is special.
-
-OPT - I have no idea, look into it.
-
-VWSP - super rare, maybe ignore it.
 
 
 

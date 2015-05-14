@@ -83,8 +83,16 @@ public final class WeightRankedRegex implements RankableContent {
 				return -1;
 			} else {
 
-				// same weight and length: by hashcode
-				return this.pattern.compareTo(wrrOther.pattern);
+				if(this.pattern.equals(wrrOther.pattern)){
+					return 0;
+				}
+				else if(this.hashCode() > other.hashCode()){
+					return -1;
+				}else if(this.hashCode() < other.hashCode()){
+					return 1;
+				}else{
+					return -1;
+				}
 			}
 		}
 	}

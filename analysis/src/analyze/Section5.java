@@ -34,15 +34,15 @@ public class Section5 {
 			SQLException, IOException, InterruptedException,
 			IllegalArgumentException, QuoteRuleException,
 			PythonParsingException {
-		
-		//don't run this again - got what we needed
-		System.exit(0);
+
+		// don't run this again - got what we needed
+		// System.exit(0);
 		String behavioral_analysis_path = PaperWriter.homePath +
 			"analysis/behavioral_clustering/";
 
 		ArrayList<WeightRankedRegex> corpus = IOUtil.importCorpus(PaperWriter.homePath +
 			"analysis/analysis_output/exportedCorpusRaw.txt");
-		System.out.println("corpus size: "+corpus.size());
+		System.out.println("corpus size: " + corpus.size());
 		// HashMap<String, Integer> dummyCounter = new HashMap<String,
 		// Integer>();
 		// int[] dummyTracker = {0};
@@ -74,13 +74,12 @@ public class Section5 {
 					String mclInput = fullInputFilePath + " -I " +
 						df.format(i_value) + newOptions + " --abc -o " +
 						fullOutputFilePath;
-					behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput,null);
+					behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput, null);
 					IOUtil.dumpAllClusters(behavioral_analysis_path, behavioralClusters, corpus, "behavioralSimilarityClusterDump" +
 						suffix + ".txt", suffix);
 				}
 			}
 		}
-
 
 		int[][] supportedFeatureGroups = {
 				{ FeatureDictionary.I_META_CAPTURING_GROUP },
@@ -94,6 +93,18 @@ public class Section5 {
 				{ FeatureDictionary.I_META_CC, FeatureDictionary.I_META_NCC,
 						FeatureDictionary.I_CC_RANGE },
 				{ FeatureDictionary.I_CC_WHITESPACE,
+						FeatureDictionary.I_CC_NWHITESPACE,
+						FeatureDictionary.I_CC_DECIMAL,
+						FeatureDictionary.I_CC_NDECIMAL,
+						FeatureDictionary.I_CC_WORD,
+						FeatureDictionary.I_CC_NWORD },
+				{ FeatureDictionary.I_CC_WHITESPACE,
+						FeatureDictionary.I_CC_DECIMAL,
+						FeatureDictionary.I_CC_WORD },
+				{ FeatureDictionary.I_CC_NWHITESPACE,
+						FeatureDictionary.I_CC_NDECIMAL,
+						FeatureDictionary.I_CC_NWORD },
+				{ FeatureDictionary.I_CC_WHITESPACE,
 						FeatureDictionary.I_CC_NWHITESPACE },
 				{ FeatureDictionary.I_CC_DECIMAL,
 						FeatureDictionary.I_CC_NDECIMAL },
@@ -104,13 +115,17 @@ public class Section5 {
 
 		String featureDetailFilePrefix = "supportedFeatureDetail_";
 		for (int[] group : supportedFeatureGroups) {
+			int totalNPatterns = 0;
 			StringBuilder supportedContentSB = new StringBuilder();
 			String groupString = getGroupString(group, FeaturePile.fd);
 			TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
 			TreeSet<Cluster> realClustersContainingAny = new TreeSet<Cluster>();
+			TreeSet<Cluster> allClustersContainingAny = new TreeSet<Cluster>();
 			Cluster singleClusters = new Cluster(Integer.MAX_VALUE);
 			for (Cluster cluster : behavioralClusters) {
 				if (cluster.containsAnyFeatures(group)) {
+					allClustersContainingAny.add(cluster);
+					totalNPatterns += cluster.size();
 					allProjectIDs.addAll(cluster.computeProjectIDs());
 					if (cluster.size() > 1) {
 						realClustersContainingAny.add(cluster);
@@ -124,18 +139,20 @@ public class Section5 {
 			singleClusters.initialzeStats();
 			String realClusterString = getRealClusterSample(realClustersContainingAny, 30, group);
 			supportedContentSB.append(groupString + "\ntotalNProjectIDs: " +
-				allProjectIDs.size() + "\n\nrealClusters:\n" +
-				realClusterString + "\nnProjects with single pattern: " +
+				allProjectIDs.size() + "\ntotalNClusters: " +
+				allClustersContainingAny.size() + "\ntotalNPatterns:" +
+				totalNPatterns + "\nrealClusters:\n" + realClusterString +
+				"\nnProjects with single pattern: " +
 				singleClusters.getProjectIDs().size() + "\n");
 			IOUtil.createAndWrite(new File(behavioral_analysis_path +
 				featureDetailFilePrefix + groupString + ".txt"), supportedContentSB.toString());
 		}
 
-
 	}
 
 	public static String getRealClusterSample(
-			TreeSet<Cluster> realClustersContainingAny, int limit, int[] featureIndices) {
+			TreeSet<Cluster> realClustersContainingAny, int limit,
+			int[] featureIndices) {
 		StringBuilder sb = new StringBuilder();
 		int counter = 0;
 		Iterator<Cluster> it = realClustersContainingAny.iterator();
