@@ -1,26 +1,27 @@
-\section{Introduction And Motivation}
+\section{Introduction }
 
-Regular expressions (regexes) are an abstraction of keyword search~\cite{} that enable search of text using a pattern instead of an exact keyword.  With regexes, there is a common saying: 'now you have two problems'.
-
+Regular expressions (regexes) are an abstraction of keyword search that enables the identification of text using a pattern instead of an exact keyword.  
+With regexes, there is a  saying: `now you have two problems'.
 %\footnote{\url{http://regex.info/blog/2006-09-15/247}}
-A skilled programmer can quickly solve problems such as form validation~\cite{} and parsing text~\cite{} using regular expressions.  Regular expression languages also enable an irreplaceable text search/string specification technique used within text editors~\cite{}, command line tools~\cite{} and system tools~\cite{}.  Regexes are also employed in critical missions like mysql injection prevention~\cite{} and malicious packet filtering~\cite{}.  Although regexes are powerful and versatile, they can be hard to understand and maintain, resulting in tens of thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}.
-\todo{per year???}
+A skilled programmer can quickly solve problems such as form validation and parsing text using regular expressions.  Regular expression languages also enable a valuable text search/string specification technique used frequently within text editors (e.g., emacs), command line tools (e.g., grep, sed) and IDEs (e.g., the search feature in the Eclipse IDE).  Although regexes are powerful and versatile, they can be hard to understand,  maintain, and debug, resulting in tens of thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. 
 
-Due in part to their pervasive use across programming languages, many researchers and practitioners have developed tools to support the creation~\cite{}, validation~\cite{}, and testing~\cite{} of regular expressions.
+Due in part to their pervasive use across programming languages and how susceptible regexes are to error, many researchers and practitioners have developed tools to support more robust creation~\cite{Spishak:2012:TSR:2318202.2318207} or to allow visual debugging~\cite{Beck:2014:RVD:2591062.2591111}. To remove the human in the loop, other research has focused on learning regular expressions from  text~\cite{Babbar:2010:CBA:1871840.1871848, Li:2008:REL:1613715.1613719}. 
+Beyond supporting regular expression usage, the applications of regular expressions in research include test case generation~\cite{Ghosh:2013:JAT:2486788.2486925, Galler:2014:STD:2683035.2683100, Anand:2013:OSM:2503903.2503991, Tillmann:2014:TAT:2642937.2642941},  
+solvers for string constraints~\cite{Trinh:2014:SSS:2660267.2660372, hampi}, and as queries in a data mining framework~\cite{Begel:2010:CDE:1806799.1806821}.
+Regexes are also employed in critical missions like mysql injection prevention~\cite{Yeole:2011:ADT:1980022.1980229} and network intrusion detection~\cite{network}, or in more diverse applications like DNA sequencing alignment~\cite{1594922}. 
 
-Further, the applications of regular expressions in research include test case generation~\cite{Ghosh:2013:JAT:2486788.2486925, Galler:2014:STD:2683035.2683100} and solvers for string constraints~\cite{Trinh:2014:SSS:2660267.2660372, hampi}.
 
-In writing tools to support regular expressions, tool designers make decisions about which features to support and which not to support. These decisions are sometimes made casually and may be dependent on the regular expressions the designers happen to have experience with, the designers have seen in the wild, or their complexity. The goal of this work is to bring more context and information about regular expression feature usage so these decisions can be better informed.
+In writing tools to support regular expressions, tool designers make decisions about which features to support and which not to support. These decisions are sometimes made casually and may be dependent on the regular expressions the designers happen to have experience with, the designers have seen in the wild, or the complexity of the implementation. The goal of this work is to bring more context and information about regular expression feature usage so these design decisions can be better informed.
 
-This paper emerges out a need to understand which features can be reasonably excluded from a tool that supports regular expressions. In the absence of empirical research into how regular expressions are used in practice, this work was started.
+In fact, this paper emerges out a need to understand which features can be reasonably included in or excluded from a tool that supports regular expressions. In the absence of empirical research into how regular expressions are used in practice, this work emerged.
 
-To motivate the study of regular expressions in general, we explore how regular expressions are used in practice. For example, we measure how frequently regular expressions appear in projects, and after doing a feature analysis (e.g., kleene star, character classes, and capture groups are all features), we further measure how often such features appear in regular expressions and in projects. Then, we compare the features to those supported by four common regex support tools, brics~\cite{brics}, hampi~\cite{hampi}, Rex~\cite{rex}, and RE2~\cite{re2}. We then explore the features not supported by these tools and explore the impact of omitting those features. Our results indicate that these tools support all of the top six most common features and that some of the omitted features, such as the lazy quantifier, are used in over 35\% of projects containing regular expressions.
+In this paper, to motivate the study of regular expressions in general, we explore how regular expressions are used in practice. For example, we measure how frequently regular expressions appear in projects, and after doing a feature analysis (e.g., kleene star, character classes, and capture groups are all features), we further measure how often such features appear in regular expressions and in projects. Then, we compare the features to those supported by four common regex support tools, brics~\cite{brics}, hampi~\cite{hampi}, Rex~\cite{rex}, and RE2~\cite{re2}. We then explore the features not supported by these tools and, using a semantic analysis to cluster similar regular expressions, we explore the impact of omitting those features. Our results indicate that these tools support all of the top six most common features and that some of the omitted features, such as the lazy quantifier, are used in over 35\% of projects containing regular expressions.
 
 The contributions of this work are:
 
 \begin{itemize}
 	\item An empirical analysis of the usage of regular expressions in \DTLfetch{data}{key}{nProjScanned}{value} open-source Python projects
-	\item An analysis of which features are omitted from common regular expression tools and the impact of ignoring those features
+	\item A mapping of which features are omitted from common regular expression tools and the impact of ignoring those features
 	\item A discussion on the semantic similarity of regular expressions in practice and identification of opportunities for future work in supporting programmers in writing regular expressions.
 \end{itemize}
 
