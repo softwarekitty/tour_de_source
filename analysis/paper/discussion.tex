@@ -3,7 +3,7 @@
 
 \subsection{Utilizations May Be More Common In Python Library Code Than In User Code}
 
-Although \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% of the projects observed had at least one regex usage, only \DTLfetch{data}{key}{percentFilesUsingRegex}{value}\% of the files observed had at least one regex usage.  This indicates that regex usage is usually concentrated in a few files.  One exception to this is trend is the project with the most files containing utilizations: Arianrhod\footnote{\url{https://github.com/Ouroboros/Arianrhod}} which is a Japanese Anime game, mostly written in C\# (over 18K files), but containing 3404 Python files.  , most of which are source code for various libraries.  Of these library files, 541 (15.9\%) contained at least one utilization
+Although \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% of the projects observed had at least one regex usage, only \DTLfetch{data}{key}{percentFilesUsingRegex}{value}\% of the files observed had at least one regex usage.  This indicates that regex usage is usually concentrated in a few files.  One exception to this is trend is the project with the most files containing utilizations: Arianrhod\footnote{\url{https://github.com/Ouroboros/Arianrhod}} which is a Japanese Anime game, mostly written in C\# (over 18K files), but containing 3404 Python files, most of which are source code for various libraries.  Of these library files, 541 (15.9\%) contain at least one utilization.
 
 
 % to find the largest count for the 'utilizing files' row: select distinct uniqueSourceID, filePath, count(distinct filePath) as ct from RegexCitationMerged group by uniqueSourceID order by ct;
