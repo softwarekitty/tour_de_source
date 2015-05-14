@@ -106,20 +106,20 @@ For each escaped pattern, the PCRE-parser produces a tree of feature tokens. Not
 \todo{fill in this paragraph for a bridge between paragraphs}
 For example, consider again the pattern in Figure~\ref{fig:exampleUsage}. This pattern has X different features, specifically, Y, Z, and W. The Y feature appears X times. The set if distinct fears forms the feature set for the pattern. 
 
-Once the feature set was established, we mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, Hampi, RE2, and Rex.
-Table~\ref{table:featureStats} shows this mapping.
-The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. The mappings for each regex tool to the features are shown in the next four columns followed by usage statistics for the number and percent of patterns that the feature appears in, the number and percent of total files in which the appears at least once, and the number and percent of total projects in which that feature appears at least once.
-
+Once the feature set was established, we mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, hampi, RE2, and Rex.
 To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using the formal grammar\footnote{\url{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footnote{\url{https://code.google.com/p/hampi/downloads/list}} (this may have been an overestimation, as this included more features than specified by the formal grammar\footnote{\url{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}}).  For RE2, we used the excellent supported feature documentation\footnote{\url{https://re2.googlecode.com/hg/doc/syntax.html}}.  For Rex, we were able to use trial and error because we tried to parse all patterns with Rex, and Rex provides good error feedback when a feature is unsupported.
 
+\todo{Were there any features supported by the tools that we did not find in the corpus? Explain either way}
 %Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
 
 \subsection{Clustering and Semantic Analysis}
 We are interested in what behaviors users are trying to get when using regexes, and we know that the exact same behavior, or very similar behavior can be specified in many ways as shown in Figure~\ref{fig:equivalentPatterns}.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering
+\fbox{
 \includegraphics[width=\columnwidth]{../illustrations/equivalentPatterns.eps}
+}
 \caption{An Example of Patterns With Similar and Dissimilar Behavior}
 \label{fig:equivalentPatterns}
 \end{figure}

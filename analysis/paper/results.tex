@@ -54,6 +54,9 @@ Table~\ref{table:patternStats} (description of table contents)
 \todo{Insert summary of results for RQ1}
 
 \subsection{RQ2: Which regular expression language features are most commonly used in python?}
+Table~\ref{table:featureStats}  lists all the regex features observed in at least 10 projects. 
+The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. For example, the most common feature observed in the corpus is the {\tt +} token, denoting \emph{one-or-more repetition}s, and is abbreviated {\tt ADD}. 
+After the tool mapping (see Section~\ref{results:rq3}), the usage statistics are presented for the number and percent of patterns that the feature appears in, the number and percent of total files in which the appears at least once, and the number and percent of total projects in which that feature appears at least once. 
 
 Literal tokens were found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of patterns, and accounted for \DTLfetch{data}{key}{P_LITERAL_TOKENS}{value}\% of all tokens.  We consider literal tokens to be ubiquitous in all utilizations, and necessary for any regex related tool, and so exclude them from the rest of the feature analysis.  In table~\ref{table:featureStats}, we display a large body of information about feature usage and relate it to four major regex related projects. \todo{needs more complete description of feature usage}
 
@@ -61,8 +64,15 @@ Literal tokens were found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of
 
 \todo{Insert summary of results for RQ2}
 
-\subsection{{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool designers and users?
-}
+	\subsection{{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool designers and users?}
+	\label{results:rq3}
+
+Table~\ref{table:featureStats} shows the mapping from features to regex tools.
+The mappings for each regex tool to the features are shown using \yes $ $ to denote when 
+a feature is supported by the tool and \no $ $ when it is not. 
+
+
+
 
 % TODO - multiple boxplots for all 5-6 demonstrating cluster size and then also have \# of clusters, pick smallest number of clusters and then use that.
 %(I think it's more complicated than that, perhaps we can link to my discussion about how I explored the space to find the best i, p, k values)
