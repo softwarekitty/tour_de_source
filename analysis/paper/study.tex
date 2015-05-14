@@ -4,13 +4,14 @@
 To understand how programmers use regular expressions in Python projects, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects from GitHub, and recorded regex usages for analysis as described in Section~\ref{study:corpus}.
 Throughout the rest of this paper, we  employ the following terminology:
 
-\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex engine in a project.  Within a particular file in a project, a \emph{utilization} is composed of a function, a pattern and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one regex \emph{utilization}, with key components labeled.
+\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex engine in a project.  We detect utilizations by recording all calls to the {\tt re} module in Python. 
+Within a particular file in a project, a {utilization} is composed of a function, a pattern and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one regex {utilization}, with key components labeled. Specifically, {\tt re.compile} is the function call, \verb!(0|-?[1-9][0-9]*)$! is the regex string, or pattern, and {\tt re.MULTILINE} is an (optional) flag. Thought of another way, a regular expression  utilization is one single invocation of the {\tt re} library in a project.
 
-This \emph{utilization} will compile a regex object in the variable {\tt r1} from the pattern \verb!(0|-?[1-9][0-9]*)$!, with the \verb!$! token matching at the end of each line because of the {\tt re.MULTILINE} flag.  The pattern in this \emph{utilization} will match if it finds a zero at the end of a line, or a (possibly negative) integer at the end of a line.
 
-Thought of another way, a regular expression  utilization is one single invocation of the {\tt re} library in a project.
+The {utilization} in Figure~\ref{fig:exampleUsage}  will compile a regex object in the variable {\tt r1} from the pattern \verb!(0|-?[1-9][0-9]*)$!, with the \verb!$! token matching at the end of each line because of the {\tt re.MULTILINE} flag.  The pattern in this \emph{utilization} will match if it finds a zero at the end of a line, or a (possibly negative) integer at the end of a line (i.e., due to the {\tt -?} sequence denoting zero or one instance of the {\tt -}).
 
-\begin{figure}[htb]
+
+\begin{figure}[tb]
 \centering
 \includegraphics[width=\columnwidth]{../illustrations/exampleUsage.eps}
 \caption{example of one regex utilization}
@@ -19,9 +20,11 @@ Thought of another way, a regular expression  utilization is one single invocati
 
 
 
-\noindent \textbf{Pattern}: A \emph{pattern} is an ordered series of regular expression language feature tokens that can be used to find match start and end indices within an input string.  Notice that because the vast majority of regex features are shared across most all-purpose languages, a Python {pattern} will (almost always) behave the same when used in Java, C\#, Javascript, Ruby, etc, whereas a {utilization} is not universal in the same way (would not compile in other languages).
+\noindent \textbf{Pattern}: A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}. In essence, it is a string, but more formally it is an ordered series of regular expression language feature tokens. 
 
-In this work, we primarily focus on patterns since they are the primary way of specifying the matching behavior for every utilization.
+Notice that because the vast majority of regex features are shared across most all-purpose languages, a Python {pattern} will (almost always) behave the same when used in other languages, such as Java, C\#, Javascript, or Ruby, whereas a \emph{utilization} is not universal in the same way (i.e., it may not compile in other languages, even with small modifications to function and flag names). As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though it has an equivalent flag in Java.  \todo{Carl: check this paragraph}
+
+In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior for every utilization.
 
 \subsection{Research Questions}
 Our overall research goal is to understand how regular expressions and regular expression features are used in practice. We aim to answer the following research questions:
