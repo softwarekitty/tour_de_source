@@ -7,11 +7,13 @@ In this section, we present the results of each research question.
 To address this research question, we look at regex utilizations, flags, and the overlap among pattern strings among utilizations. 
 
 \subsubsection{Saturation of Projects with Utilizations}
-Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average project scanned contained, how many of those files contained utilizations, and how many utilizations occurred per file in table~\ref{table:saturation}.
+Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average project scanned contained, how many of those files contained utilizations, and how many utilizations occurred per file in Table~\ref{table:saturation}.
+
+The average regex utilizations per project was 32, but this is offset by a high maximum value of 1,427. This value appeared in a project that \todo{finish this sentence}. The average number of files containing a utilization was 11 out of the average total files per project of 53. On average, each file with a regex utilization had only two, with a median of 1. 
 
 \input{../analysis_output/saturation}
 
-\subsubsection{Usage Frequency of {\tt re} Module Functions and Flags}
+\subsubsection{Usage Frequency of {\tt re} Module Functions}
 
 \begin{figure}[tb]
 \centering
@@ -20,8 +22,6 @@ Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetc
 \label{fig:partFunctions}
 \end{figure}
 
-As seen in Figure~\ref{fig:partFunctions} The `compile' function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions could accept the compiled regex as an argument.
-
 \begin{figure}[tb]
 \centering
 \includegraphics[width=\columnwidth]{../analysis_output/partFlags.eps}
@@ -29,6 +29,9 @@ As seen in Figure~\ref{fig:partFunctions} The `compile' function encompasses \DT
 \label{fig:partFlags}
 \end{figure}
 
+The number of projects that use each of the {\tt re} modules are shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions could accept the compiled regex as an argument. 
+
+\subsubsection{Usage Frequency of {\tt re} Module Flags}
 When considering flag use, we excluded non-behavioral flags (default and debug), which account for \DTLfetch{data}{key}{percentFlags0}{value}\% of all utilizations.
 
  As shown in figure ~\ref{fig:partFlags}, of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
