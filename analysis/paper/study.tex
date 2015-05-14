@@ -111,6 +111,8 @@ To create the tool mappings, we consulted documentation for each of the selected
 \todo{this section needs lots of work}
 Markov clustering can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  After exploring the quality of the clusters using various tuning parameter combinations\footnote{\url{www.details.#thistopic}}, the best clusters were found using an inflation value of 1.8 and k=83.
 
+There was an operational error in pulling  patterns from our database and 227 patterns (2.3\%) were omitted from the semantic analysis. 
+
 Note that the filteredCorpus is of size 9727, and at least one pattern from the fc can be found in 1375 of the original 3900 or whatever.  Most patterns do not belong in a cluster (for example a very specific pattern like \verb!<title>[^<]*Revision \d+:!), so after clustering is done only 2727 patterns are included, and only 999 projects have any of these patterns in them.
 
 
