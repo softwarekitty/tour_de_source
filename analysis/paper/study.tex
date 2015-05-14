@@ -4,7 +4,7 @@
 To understand how programmers use regular expressions in Python projects, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects from GitHub, and recorded regex usages for analysis as described in Section~\ref{study:corpus}.
 Throughout the rest of this paper, we  employ the following terminology:
 
-\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex engine in a project.  We detect utilizations by recording all calls to the {\tt re} module in Python. 
+\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex engine in a project.  We detect utilizations by recording all calls to the {\tt re} module in Python.
 Within a particular file in a project, a {utilization} is composed of a function, a pattern and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one regex {utilization}, with key components labeled. Specifically, {\tt re.compile} is the function call, \verb!(0|-?[1-9][0-9]*)$! is the regex string, or pattern, and {\tt re.MULTILINE} is an (optional) flag. Thought of another way, a regular expression  utilization is one single invocation of the {\tt re} library in a project.
 
 
@@ -20,7 +20,7 @@ The {utilization} in Figure~\ref{fig:exampleUsage}  will compile a regex object 
 
 
 
-\noindent \textbf{Pattern}: A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}. In essence, it is a string, but more formally it is an ordered series of regular expression language feature tokens. 
+\noindent \textbf{Pattern}: A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}. In essence, it is a string, but more formally it is an ordered series of regular expression language feature tokens.
 
 Notice that because the vast majority of regex features are shared across most all-purpose languages, a Python {pattern} will (almost always) behave the same when used in other languages, such as Java, C\#, Javascript, or Ruby, whereas a \emph{utilization} is not universal in the same way (i.e., it may not compile in other languages, even with small modifications to function and flag names). As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though it has an equivalent flag in Java.  \todo{Carl: check this paragraph}
 
@@ -88,15 +88,15 @@ Next, we describe in greater detail how the corpus of regex patterns was built, 
 Github is a popular project hosting site containing over 100,000 Python projects.
 The GitHub API assigns an integer identifier to each repository and can be used to clone relevant repositories for analysis.  Using the \url{http://api.github.com/repositories?since=N} interface page, we launched 32 scrapers to obtain repositories, cloning those that contain Python code. These scrapers all had a different value of {\tt N} passed to the URL, starting at 0 and counting up by 262,144.   At the time of analysis, the highest repo ID is 35625401, so sampling the first 8 million projects represents about a fourth of the possible sample space. \todo{state how many projects were cloned}
 
-For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find \emph{utilizations} of Python's {\tt re} module. This ensured that all utlizations of the {\tt re} module were captured for analysis.
+For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find utilizations of Python's {\tt re} module. This ensured that all utliizations of the {\tt re} module were captured for analysis.
 
 Using git, each project was scanned at 20 evenly-spaced commits (or all commits if there were less than 20) in its history.
 Within one project, we define a duplicate utilization as a utilization having the same function, pattern and flags within the same file (same relative path).  We ignored duplicate utilizations across project versions to protect against over-counting the same utilization as we rewind the project through its history.  We observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate utilizations in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
 \subsection{Extracting Patterns}
-As the focus of this study is regex features, our analysis focuses on the patterns found. Thus,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of \emph{utilizations} using flags that can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of \emph{utilizations} contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable), or because of other unknown parsing failures.
+As the focus of this study is regex features, our analysis focuses on the patterns found. Thus,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of utilizations using flags that can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable), or because of other unknown parsing failures.
 
-The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) \emph{utilizations} were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings.  The resulting set of patten strings were parsed using an ANTLR-based, open source PCRE parser released by Bart Kiers\footnote{\url{https://github.com/bkiers/pcre-parser}}.  This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we have chosen to exclude in this study\footnote{\url{www.details.#thistopic}}.
+The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) \emph{utilizations} were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings using sql.  The resulting set of patten strings were parsed using an ANTLR-based, open source PCRE parser released by Bart Kiers\footnote{\url{https://github.com/bkiers/pcre-parser}}.  This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we have chosen to exclude in this study\footnote{\url{www.details.#thistopic}}.
 \todo{What? Which features did we choose to exclude? I'm lost}
   The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We  refer to this set of weighted, distinct pattern strings as the \emph{corpus}.
 
