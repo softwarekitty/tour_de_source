@@ -77,7 +77,7 @@ Since our semantic analysis is based on Rex, this semantic analysis cannot be ap
 \subsection{Building the Corpus}
 \label{study:corpus}
 Github is a popular project hosting site containing over 100,000 Python projects.
-We used the GitHub api to page through all repositories, cloning projects that contain Python code.
+We used the GitHub API to page through all repositories, cloning projects that contain Python code. \todo{How were these repositories sorted? by popularity? randomly?}
 
 For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find \emph{utilizations} of Python's {\tt re} module.
 
@@ -91,6 +91,8 @@ The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}
 
 \subsection{Analyzing Features}
 \label{study:features}
+
+\todo{make specific citations to the documents used for the mapping of features to tools. URLs are OK in this instance}
 
 \todo{revise this subsection}
 After picking four large regex research projects, the big table with the features was created in order to decide which unsupported features are used most often.
