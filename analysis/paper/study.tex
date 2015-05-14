@@ -123,7 +123,16 @@ We are interested in what behaviors users are trying to get when using regexes, 
 
 Rex can be used to generate a set of strings that will all match a pattern.  For each of the \DTLfetch{data}{key}{nCorpus}{value} distinct patterns, we tried to use Rex to generate a set of at least 384 \emph{matching strings}.  Because Rex does not support all the features present in the corpus, we could only generate sets of matching strings for 9727 of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus.
 
-We used these sets of matching strings to create a behavioral similarity matrix.  We will refer to a cell of this matrix with row index {\tt i} and column index {\tt j} as {\tt M[i][j]}.  For each pattern at index {\tt i}, we used Rex to create a set of matching strings which we will refer to as {\tt matching_strings_i}.  Then for every pattern at index {\tt j}, we set the value of {\tt M[i][j]} equal to the fraction of strings in {\tt matching_strings_i} that the pattern at index {\tt j} matched.
+We used these sets of matching strings to create a behavioral similarity matrix.  We will refer to a cell of this matrix with row index {\tt i} and column index {\tt j} as {\tt M[i][j]}.  For each pattern at index {\tt i}, we used Rex to create a set of matching strings which we will refer to as {\tt matching\_strings\_i}.  Then for every pattern at index {\tt j}, we set the value of {\tt M[i][j]} equal to the fraction of strings in {\tt matching\_strings\_i} that the pattern at index {\tt j} matched.
+
+Once the matrix was complete, the values of cells reflected across the diagonal of the matrix were averaged to create a half-matrix of undirected similarity edges.  Using all similarity values in this half-matrix above 0.75, we created a text file specifying the edges of a graph.  This process is illustrated in Figure~\ref{fig:matrixToGraph}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/matrixToGraph.eps}
+\caption{Creating A Similarity Graph From A Similarity Matrix}
+\label{fig:matrixToGraph}
+\end{figure}
 
 \todo{in progress!}
 
