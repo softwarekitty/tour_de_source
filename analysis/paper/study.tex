@@ -24,7 +24,7 @@ The {utilization} in Figure~\ref{fig:exampleUsage}  will compile a regex object 
 
 Notice that because the vast majority of regex features are shared across most all-purpose languages, a Python {pattern} will (almost always) behave the same when used in other languages, such as Java, C\#, Javascript, or Ruby, whereas a \emph{utilization} is not universal in the same way (i.e., it may not compile in other languages, even with small modifications to function and flag names). As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though it has an equivalent flag in Java.  \todo{Carl: check this paragraph}
 
-In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior for every utilization. Next, we describe the research questions and how the data set was collected and analyzed. 
+In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior for every utilization. Next, we describe the research questions and how the data set was collected and analyzed.
 
 \subsection{Research Questions}
 Our overall research goal is to understand how regular expressions and regular expression features are used in practice. We aim to answer the following research questions:
@@ -50,7 +50,7 @@ To measure feature usage, we parse Python regular expression patterns using Bart
 
 To address, this question, we use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for.
 
-At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. Behavioral similarity is determined by a pairwise comparison among all patterns. Within each pair, a set of strings is generated for each regular expression and then tested against the other. The average percentage of matching regular expressions creates the similarity level. By calculating pairwise similarity among all regex patterns, a similarity matrix is constructed for use during clustering. 
+At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. Behavioral similarity is determined by a pairwise comparison among all patterns. Within each pair, a set of strings is generated for each regular expression and then tested against the other. The average percentage of matching regular expressions creates the similarity level. By calculating pairwise similarity among all regex patterns, a similarity matrix is constructed for use during clustering.
 
 \todo{Finish this example - I will get back to this next pass}
 For example, consider the following two regular expressions, denoted A and B for reference.
@@ -73,7 +73,7 @@ Each string in the A column matches regex A, and each string in the B column mat
 To perform this similarity analysis on each pair of regex patterns, we use Rex for string generation.  We chose Rex to build matching strings because it supports the most features of any String-generation tool. To build the similarity matrix, we generated at least 384 strings per regular expression in an effort to balance the precision of the similarity metric (i.e., more strings lead to higher precision) with the speed of our analysis tool (i.e., more strings lead to longer runtimes).
 
 Using the similarity matrix, clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.  These clusters are used to see how programmers implement regular expressions that match similar strings and interpret what a feature is used for.
- We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}. 
+ We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
 
 
 Next, we describe in greater detail how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
@@ -85,8 +85,7 @@ Next, we describe in greater detail how the corpus of regex patterns was built, 
 
 \subsection{Building the Corpus}
 \label{study:corpus}
-Github is a popular project hosting site containing over 100,000 Python projects.
-The GitHub API assigns an integer identifier to each repository and can be used to clone relevant repositories for analysis.  Using the \url{http://api.github.com/repositories?since=N} interface page, we launched 32 scrapers to obtain repositories, cloning those that contain Python code. These scrapers all had a different value of {\tt N} passed to the URL, starting at 0 and counting up by 262,144.   At the time of analysis, the highest repo ID is 35625401, so sampling the first 8 million projects represents about a fourth of the possible sample space. \todo{state how many projects were cloned}
+Github is a popular project hosting site containing over 100,000 Python projects.  The GitHub API assigns an integer identifier to each repository and can be used to clone relevant repositories for analysis.  Using the \url{http://api.github.com/repositories?since=N} interface page, we launched 32 scrapers to find repositories containing Python code.  The Github interface provides information about the first 100 repository IDs since the {\tt N} value on a single results page.  Each scraper used this information to identify repositories containing Python.  When a scraper was done with one page, it continued on to the next 100 repository IDs by using the interface again with {\tt N} now equal to the last repository ID on the current page.  Using this process, each scraper paged through the next available 1000 repositories, cloning and scanning Python projects as they were found.  Each scraper started at a different {\tt N} value, with the first scraper starting at 0.  Scraper start indices were spaced by 262,144 so as to investigate within the first 8 million repositories.  At the time scraping was performed, the highest repoID was over 32 million, so we were cloning projects in the lowest fourth of the available space of IDs.  After this process was complete, \DTLfetch{data}{key}{nProjScanned}{value} Python projects had been cloned and scanned.
 
 For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find utilizations of Python's {\tt re} module. This ensured that all utliizations of the {\tt re} module were captured for analysis.
 
@@ -96,25 +95,50 @@ Within one project, we define a duplicate utilization as a utilization having th
 \subsection{Extracting Patterns}
 As the focus of this study is regex features, our analysis focuses on the patterns found. Thus,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of utilizations using flags that can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable), or because of other unknown parsing failures.
 
-The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) \emph{utilizations} were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings using sql.  The resulting set of patten strings were parsed using an ANTLR-based, open source PCRE parser released by Bart Kiers\footnote{\url{https://github.com/bkiers/pcre-parser}}.  This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we have chosen to exclude in this study\footnote{\url{www.details.#thistopic}}.
-\todo{What? Which features did we choose to exclude? I'm lost}
-  The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We  refer to this set of weighted, distinct pattern strings as the \emph{corpus}.
+The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) utilizations were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings using sql.  Each of the pattern strings was pre-processed by removing Python quotes(\verb!'\\W!' becomes \verb!\\W!), unescaping escaped characters (\verb!\\W! becomes \verb!\W!) and parsing the resulting unescaped string using an ANTLR-based, open source PCRE parser released by Bart Kiers\footnote{\url{https://github.com/bkiers/pcre-parser}}.
+
+This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we have chosen to exclude in this study because they did not appear often enough to be of significance.  The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We  refer to this set of weighted, distinct pattern strings as the \emph{corpus}.
 
 \subsection{Analyzing Features}
 \label{study:features}
-Given the corpus of regular expression patterns, we identified features by \todo{describe this process}.
+For each escaped pattern, the PCRE-parser produces a tree of feature tokens (features like capture groups or logical `OR' can contain sub-patterns composed of more tokens).  For each of these trees, we counted the number of tokens, creating a frequency-of-appearance vector or `\emph{featureCount}' for each pattern.  A pattern is said to contain a feature at an index if the value of the featureCount at that index is non-zero.  \todo{bridge this to next par.}
 
 Once the feature set was established, we mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, Hampi, RE2, and Rex.
 Table~\ref{table:featureStats} shows this mapping.
-The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. The mappings for each regex tool to the features are shown in the next four columns followed by usage statistics for the number and percent of patterns that the feature appears in, the number and percent of total files, and the number and percent of total projects.
+The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. The mappings for each regex tool to the features are shown in the next four columns followed by usage statistics for the number and percent of patterns that the feature appears in, the number and percent of total files in which the appears at least once, and the number and percent of total projects in which that feature appears at least once.
 
-To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using
-\todo{make specific citations to the documents used for the mapping of features to tools for each tool. URLs are OK in this instance}
+To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using the formal grammar\footnote{\url{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footnote{\url{https://code.google.com/p/hampi/downloads/list}} (this may have been an overestimation, as this included more features than specified by the formal grammar\footnote{\url{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}}).  For RE2, we used the excellent supported feature documentation\footnote{\url{https://re2.googlecode.com/hg/doc/syntax.html}}.  For Rex, we were able to use trial and error because we tried to parse all patterns with Rex, and Rex provides good error feedback when a feature is unsupported.
 
 %Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
 
 \subsection{Clustering and Semantic Analysis}
-\todo{this section needs lots of work}
+We are interested in what behaviors users are trying to get when using regexes, and we know that the exact same behavior, or very similar behavior can be specified in many ways as shown in Figure~\ref{fig:equivalentPatterns}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/equivalentPatterns.eps}
+\caption{An Example of Patterns With Similar and Dissimilar Behavior}
+\label{fig:equivalentPatterns}
+\end{figure}
+
+Rex can be used to generate a set of strings that will all match a pattern.  For each of the \DTLfetch{data}{key}{nCorpus}{value} distinct patterns, we tried to use Rex to generate a set of at least 384 \emph{matching strings}.  Because Rex does not support all the features present in the corpus, we could only generate sets of matching strings for 9727 of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus.
+
+We used these sets of matching strings to create a behavioral similarity matrix.  We will refer to a cell of this matrix with row index {\tt i} and column index {\tt j} as {\tt M[i][j]}.  For each pattern at index {\tt i}, we used Rex to create a set of matching strings which we will refer to as {\tt matching_strings_i}.  Then for every pattern at index {\tt j}, we set the value of {\tt M[i][j]} equal to the fraction of strings in {\tt matching_strings_i} that the pattern at index {\tt j} matched.
+
+\todo{in progress!}
+
+With 9727 patterns there were 94,614,529 cells in the matrix, and although we were able to match them at a rate of about 8300 cells per second, we had to save time by not
+
+
+In order to find out what behaviors were most important, we clustered \DTLfetch{data}{key}{nCorpus}{value} pattern strings into XYZ clusters.
+
+
+The idea here is to take a huge number of patterns and break it into a smaller number of clusters so that we can get an idea about what behavior people are trying to get.  The intuition is that the same behavior can be achieved using many different
+
+
+
+We reduced the \DTLfetch{data}{key}{nCorpus}{value} pattern strings into a more manageable set of
+
 Markov clustering can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  After exploring the quality of the clusters using various tuning parameter combinations\footnote{\url{www.details.#thistopic}}, the best clusters were found using an inflation value of 1.8 and k=83.
 
 There was an operational error in pulling  patterns from our database and 227 patterns (2.3\%) were omitted from the semantic analysis.
