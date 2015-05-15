@@ -122,8 +122,60 @@ No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 
 We identify the 8 most frequently used features (ADD, CG, KLE, CCC, ANY, RNG, STR and END) and the 7 least frequently used features (LKB, ENDZ, BKR, NDEC, BKRN, VWSP and NWNW).  We identify 5 features that make more appearances in terms of patterns and files than the feature ranked immediately higher than them in terms of appearances in projects.  We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects.
 
 
-\subsection{{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool designers and users?}
+\subsection{{RQ3:} What is the impact of \emph{not} supporting various regular expression features on users and tool designers?}
 \label{results:rq3}
+
+\subsubsection{Rationale for Behavioral Clustering}
+We believe that the best resource for tool designers considering what features to include is data about what behaviors are important to end users, and what features are useful for achieving those behaviors.  Our clustering technique helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
+
+\subsubsection{An Example Cluster}
+Table~\ref{table:exampleCluster} provides an example of a smaller behavioral cluster, representing 13 patterns, with at least one pattern from this cluster present in 100 different projects.  At first glance this cluster may seem to revolve around the `\verb!\s*!' parts of these patterns, but actually this cluster was formed because each of these patterns has a comma literal, and other details did not interfere with matching the Rex-generated strings with commas in them.
+\input{../behavioral_clustering/exampleCluster}
+
+\subsubsection{Using the Smallest Pattern to Represent a Cluster}
+The smallest pattern in Table~\ref{table:exampleCluster} is the single comma literal \verb!`,'! at index 1.  This smallest pattern gives the a good idea of what all the patterns within it have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the {\tt matching\_strings} created by Rex from another pattern within the cluster, so the minimal behavior specified by the smallest pattern is likely to be sufficient to represent the cluster.
+
+For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects it appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`,'(100)!.
+
+\subsubsection{General Information About Clusters Found}
+ From 9503 distinct patterns, our clustering technique identified 514 clusters of 2 or more patterns, and 7214 clusters of size 1.
+  % Clusters are ordered by first by the number of projects containing any pattern within the cluster, and second by size with larger clusters appearing earlier in the list.
+No two clusters contain the same pattern.
+%The top 10 clusters are shown in Table~\ref{table:topNClusters}, ranked by the number of projects they appear in.
+
+\subsubsection{Clusters Based On Default Character Classes}
+\verb!`\s'(277)!, \verb!`\W'(208)!, \verb!`\d'(193)!, \verb!`\w'(114)!, \verb!`\w+$'(71)!, \verb!`\D'(65)!, \verb!`\S'(53)!, \verb!`^\s'(40)!, \verb!`^\d+'(39)!, \verb!`^\s*'(39)!, \verb!`\d+$'(38)!, \verb!`\s*'(30)!, \verb!`^\w'(24)!, \verb!`:\d+$'(23)!
+
+\subsubsection{Clusters Based On User-Defined Character Classes}
+\verb!`[a-zA-Z]'(138)!, \verb•`[^!-~]'(122)•, \verb!`[&<]'(50)!, \verb!`[A-Z]'(47)!, \verb!`[ \t]'(37)!, \verb!`[-\s]'(35)!, \verb!`^[a-zA-Z]'(33)!, \verb!`[][\()<>@,:;"."]'(29)!, \verb!`[*?[]'(29)!, \verb!`[?/]+'(28)!, \verb!`[][\()"]'(27)!, \verb!`[/\\ ]'(26)!
+
+\subsubsection{Clusters Based On Single Literal Characters}
+\verb!`\\'(110)!, \verb!`,'(100)!, \verb!`:'(91)!, \verb!`-'(74)!, \verb!`#'(69)!, \verb!` '(66)!, \verb!`/'(65)!, \verb!`\.'(61)!, \verb!`='(52)!, \verb!`//'(51)!, \verb!`\n'(41)!, \verb!`;'(38)!, \verb!`_'(36)!, \verb!`@'(36)!, \verb!`"'(33)!, \verb!`%'(29)!, \verb!`&'(28)!
+
+\subsubsection{Clusters Based On Parsing Variable Assignments}
+\verb!`\nmd5_data = {\n([^}]+)}'(69)!, \verb!`.*rlen=([0-9]+)'(57)!, \verb!`coding[:=]\s*([-\w.]+)'(48)!, \verb!`((^|;)\s*charset=)([^;]*)'(34)!, \verb!`^\s*=\s*([^\s;,]*)'(15)!
+
+\subsubsection{Clusters Based On Parsing HTML/XML Tags}
+\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+
+\subsubsection{Clusters Based On Matching Whole Lines}
+\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+
+\subsubsection{Clusters Based On Matching Numeric Forms}
+\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+
+\subsubsection{Clusters Based On Matching Numeric Forms}
+\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+
+\subsubsection{Clusters Based On Including Specific Strings}
+\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+
+\subsubsection{Clusters Based On Parsing Source Code}
+\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+
+
+ %All 1375 projects containing at least 1 Rex-Compatible pattern
+
 
 % We guide the results analysis for this research question based on the features \emph{not} supported by popular regex tools.
 % Table~\ref{table:featureStats} shows the mapping from features to regex tools.
@@ -138,11 +190,7 @@ We identify the 8 most frequently used features (ADD, CG, KLE, CCC, ANY, RNG, ST
 
 % \todo{Need to know why MCL is behaving like this}
 
-% Table~\ref{table:exampleCluster} provides an example of a smaller behavioral cluster, representing 13 patterns, with at least one pattern from this cluster present in 100 different projects.
-% \input{../behavioral_clustering/exampleCluster}
-% On first glance this cluster may seem to revolve around the `\verb!\s*!' parts of these patterns, but actually this cluster was formed because each of these patterns has a comma literal, and other details did not interfere with matching the Rex-generated strings with commas in them.
 
-% It is not a coincidence that the smallest pattern in this cluster gives the best idea of what all the patterns within it have in common (the smallest pattern is just the single comma character, at index 1).  All of the clusters we found follow this trend: the shortest pattern describes the rest of the pattern's behavior very well.  In table~\ref{table:topNClusters}, I show the top 10 clusters, ranked by the number of projects they appear in, using the shortest pattern from the cluster as an example.
 % The cluster in Table~\ref{table:exampleCluster} appears in the seventh row of Table~\ref{table:topNClusters}.
 
 % \input{../behavioral_clustering/topNClusters}
