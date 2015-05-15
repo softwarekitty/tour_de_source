@@ -80,6 +80,13 @@ When hexadecimal values are used within a character class like this (and the UNI
 Only about half of the projects sampled contained any utilizations, and many of these utilizations came from python module source code that had been copied into projects, not code written by the users.  Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.  The most frequently observed patterns were used to match whitespace and digits.
 
 \subsection{RQ2: Which regular expression language features are most commonly used in python?}
+
+
+
+
+
+
+
 Table~\ref{table:featureStats}  lists all the regex features observed in at least 10 projects.
 The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. For example, the most common feature observed in the corpus is the {\tt +} token, denoting \emph{one-or-more repetition}s, and is abbreviated {\tt ADD}.
 After the tool mapping (see Section~\ref{results:rq3}), the usage statistics are presented for the number and percent of patterns that the feature appears in, the number and percent of total files in which the appears at least once, and the number and percent of total projects in which that feature appears at least once.
