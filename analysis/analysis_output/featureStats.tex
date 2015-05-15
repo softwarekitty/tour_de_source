@@ -5,7 +5,7 @@
 \begin{tabular}
 {llllcccccccccc}
 rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \% patterns & nFiles & \%files & nProjects & \% projects \\ 
-\toprule
+\toprule[0.16em]
 1 & ADD & one-or-more repetition & \begin{minipage}{0.5in}\begin{verbatim}z+\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 6,122 & 44 & 9,330 & 50.3 & 1,209 & 73.5 \\ 
 \midrule
 2 & CG & a capture group & \begin{minipage}{0.5in}\begin{verbatim}(caught)\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 7,248 & 52.1 & 9,759 & 52.6 & 1,197 & 72.8 \\ 
@@ -21,7 +21,7 @@ rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \%
 7 & STR & start-of-line & \begin{minipage}{0.5in}\begin{verbatim}^\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 3,660 & 26.3 & 5,622 & 30.3 & 847 & 51.5 \\ 
 \midrule
 8 & END & end-of-line & \begin{minipage}{0.5in}\begin{verbatim}$\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 3,258 & 23.4 & 5,549 & 29.9 & 828 & 50.3 \\ 
-\midrule
+\midrule[0.12em]
 9 & NCCC & negated CCC & \begin{minipage}{0.5in}\begin{verbatim}[^qwxf]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 1,970 & 14.2 & 4,027 & 21.7 & 777 & 47.2 \\ 
 \midrule
 10 & WSP & \textbackslash t \textbackslash n \textbackslash r \textbackslash v \textbackslash f or space & \begin{minipage}{0.5in}\begin{verbatim}\s\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 2,908 & 20.9 & 4,812 & 25.9 & 764 & 46.4 \\ 
@@ -46,7 +46,7 @@ rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \%
 \midrule
 20 & DBB & $n\le x \le m$ repetition & \begin{minipage}{0.5in}\begin{verbatim}z{3,8}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 384 & 2.8 & 692 & 3.7 & 242 & 14.7 \\ 
 \midrule
-21 & NLKA & sequence doesn't follow  & \begin{minipage}{0.5in}\begin{verbatim}a(?!yz)\end{verbatim}\end{minipage} & \no & \no & \yes & \no & 137 & 1 & 503 & 2.7 & 184 & 11.2 \\ 
+21 & NLKA & sequence doesn't follow  & \begin{minipage}{0.5in}\begin{verbatim}a(?!yz)\end{verbatim}\end{minipage} & \no & \no & \no & \no & 137 & 1 & 503 & 2.7 & 184 & 11.2 \\ 
 \midrule
 22 & NWRD & non-word chars & \begin{minipage}{0.5in}\begin{verbatim}\W\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 97 & 0.7 & 315 & 1.7 & 169 & 10.3 \\ 
 \midrule
@@ -59,7 +59,7 @@ rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \%
 26 & OPT & options wrapper & \begin{minipage}{0.5in}\begin{verbatim}(?i)CasE\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & 232 & 1.7 & 378 & 2 & 154 & 9.4 \\ 
 \midrule
 27 & NLKB & sequence doesn't precede & \begin{minipage}{0.5in}\begin{verbatim}(?<!x)yz\end{verbatim}\end{minipage} & \no & \no & \no & \no & 102 & 0.7 & 321 & 1.7 & 139 & 8.4 \\ 
-\midrule
+\midrule[0.12em]
 28 & LKB & matching sequence precedes & \begin{minipage}{0.5in}\begin{verbatim}(?<=a)bc\end{verbatim}\end{minipage} & \no & \no & \no & \no & 82 & 0.6 & 262 & 1.4 & 120 & 7.3 \\ 
 \midrule
 29 & ENDZ & absolute end of string & \begin{minipage}{0.5in}\begin{verbatim}\Z\end{verbatim}\end{minipage} & \no & \no & \no & \yes & 91 & 0.7 & 154 & 0.8 & 94 & 5.7 \\ 
@@ -68,13 +68,12 @@ rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \%
 \midrule
 31 & NDEC & any non-decimal & \begin{minipage}{0.5in}\begin{verbatim}\D\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 36 & 0.3 & 92 & 0.5 & 58 & 3.5 \\ 
 \midrule
-32 & BKRN & references NCG & \begin{minipage}{0.5in}\begin{verbatim}\g<name>\end{verbatim}\end{minipage} & \no & \yes & \no & \no & 17 & 0.1 & 44 & 0.2 & 28 & 1.7 \\ 
+32 & BKRN & references PNG & \begin{minipage}{0.5in}\begin{verbatim}\g<name>\end{verbatim}\end{minipage} & \no & \yes & \no & \no & 17 & 0.1 & 44 & 0.2 & 28 & 1.7 \\ 
 \midrule
 33 & VWSP & matches U+000B & \begin{minipage}{0.5in}\begin{verbatim}\v\end{verbatim}\end{minipage} & \no & \no & \yes & \yes & 13 & 0.1 & 16 & 0.1 & 15 & 0.9 \\ 
 \midrule
 34 & NWNW & negated WNW & \begin{minipage}{0.5in}\begin{verbatim}\B\end{verbatim}\end{minipage} & \no & \no & \no & \yes & 4 & 0 & 11 & 0.1 & 11 & 0.7 \\ 
-\midrule
-\bottomrule
+\bottomrule[0.13em]
 \end{tabular}
 \end{center}
 \end{table*}

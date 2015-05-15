@@ -93,7 +93,7 @@ public class Section2 {
 			+ "\\caption{How Frequently do Features Appear in Projects, and Which Features are Supported By Four Major Regex Projects? (RQ2)}\n"
 			+ "\\label{table:featureStats}\n"
 			+ "\\begin{tabular}\n{llllcccccccccc}\n");
-		sb.append("rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \\% patterns & nFiles & \\%files & nProjects & \\% projects \\\\ \n\\toprule\n");
+		sb.append("rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \\% patterns & nFiles & \\%files & nProjects & \\% projects \\\\ \n\\toprule[0.16em]\n");
 		TreeSet<FeatureDetail> sortedFeatures = new TreeSet<FeatureDetail>();
 		for (int i = 0; i < nFeatures; i++) {
 			if (i == FeatureDictionary.I_META_LITERAL || presentCounter[i] == 0) {
@@ -172,10 +172,15 @@ public class Section2 {
 			sb.append(nProjects);
 			sb.append(between);
 			sb.append(percentProjects);
-			sb.append(" \\\\ \n\\midrule\n");
+
+			if(rankIndex==8 || rankIndex==27){
+				sb.append(" \\\\ \n\\midrule[0.12em]\n");
+			}else if(rankIndex < sortedFeatures.size()){
+				sb.append(" \\\\ \n\\midrule\n");
+			}
 			rankIndex++;
 		}
-		sb.append("\\bottomrule\n\\end{tabular}\n"
+		sb.append(" \\\\ \n\\bottomrule[0.13em]\n\\end{tabular}\n"
 			+ "\\end{center}\n\\end{table*}\n");
 		return sb.toString();
 	}
@@ -344,7 +349,7 @@ public class Section2 {
 
 		// by using Rex, these are from PaperWriter
 		int[] rexMissingFeatures = { FeatureDictionary.I_REP_LAZY,
-				FeatureDictionary.I_LOOK_AHEAD, FeatureDictionary.I_LOOK_AHEAD,
+				FeatureDictionary.I_LOOK_AHEAD, FeatureDictionary.I_LOOK_AHEAD_NEGATIVE,
 				FeatureDictionary.I_LOOK_BEHIND,
 				FeatureDictionary.I_LOOK_BEHIND_NEGATIVE,
 				FeatureDictionary.I_LOOK_NON_CAPTURE,

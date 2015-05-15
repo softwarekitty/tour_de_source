@@ -183,7 +183,7 @@ public class FeatureDictionary {
 		intToDescMap.put(I_XTRA_END_SUBJECTLINE,"absolute end of string");
 		intToDescMap.put(I_XTRA_VERTICAL_WHITESPACE,"matches U+000B");
 		intToDescMap.put(I_XTRA_OPTIONS,"options wrapper");
-		intToDescMap.put(I_XTRA_NAMED_BACKREFERENCE,"references NCG");
+		intToDescMap.put(I_XTRA_NAMED_BACKREFERENCE,"references PNG");
 	}
 	
 	private void initializeIntToVerbMap() {

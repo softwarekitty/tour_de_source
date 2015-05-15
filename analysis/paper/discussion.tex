@@ -1,6 +1,8 @@
 \section{Discussion}
 \label{sec:discussion}
 
+ 1111111111 PART ONE 11111111111
+
 The results of the research questions have implications for \todo{finish me}
 
 
@@ -69,6 +71,19 @@ The character class of all letters \verb![a-zA-Z]! appears so often that it is a
 The largest cluster using custom character classes (cluster N in Table~\ref{table:topNClusters} whose shortest member is \verb•[^ -~]•) has 44 patterns which create a more permissive word class.  Inspection of the source code of several projects using this pattern indicates that these permissive word classes were typically used when trying to create system-friendly object names, which indicates that there is a demand for a word class that includes more characters (but not dashes, tildes or the first 9 unicode characters).
 
 
+22222222222222 PART TWO 22222222222
+
+\subsection{Features That May Be Intertwined}
+
+\todo{talk about the correlation between STR, END, noticing how their counts are nearly identical across all measures.  Yet STR seems more frequently used, suppose that with .* makes a whole line}
+
+\todo{note that we are not comparing like projects, and that it is not a judgement on brics or something.}
+
+\todo{Users Prefer Simple Regexes.  the top 8 features are conceptually the simplest?  Do not require thinking about steps performed by the regex engine}
+
+\todo{What does it mean when WSP is more pervasive in patterns and files, but not projects.  That it is popular among those who are used to using it but not everyone is used to using it? Stronger correlation between nPatterns and nFiles vs nFiles and nProjects or nPatterns and nProjects}
+
+\todo{Brics and the 6 default ccs.}
 
 
 One obvious character class to consider is hexidecimal characters, and we see the pattern [a-fA-F0-9] appear many times.
@@ -101,6 +116,11 @@ Out of the 9727 patterns acceptable to Rex, 1498 contained the range \verb•0-9
 One of the most ubiquitous sub-patterns, \verb!`.*'! appeared in 1937 of the 9727 patterns acceptable by Rex, and appeared within the last four characters in 1161 of the 9727 patterns.  Out of the top 30 clusters containing the ANY feature, 26 also had \verb!`.*'! within the last four characters.
 
 One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on, as illustrated in Figure~\ref{fig:lineSearch}.
+
+33333333333333 PART THREE 333333333333
+
+
+\todo{NDEC is one of the most rarely used features, while DEC is one of the most frequently used default char classes.  Contrast this with the craving for NWRD behavior evident from clustering.}
 
 \begin{figure}[tb]
 \centering
