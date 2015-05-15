@@ -34,19 +34,21 @@ From Table~\ref{table:saturation}, we see that each project had an average of 11
 \label{fig:partFlags}
 \end{figure}
 
-The number of projects that use each of the {\tt re} functions are shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex compiled using {\tt re.compile} as an argument.
+The number of projects that use each of the {\tt re} functions are shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex object compiled using {\tt re.compile} as an argument.
 
 \subsubsection{Usage Frequency of {\tt re} Module Flags}
 When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag (which is equivalent).  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed.
 
- As shown in figure ~\ref{fig:partFlags}, of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
+ As shown in figure~\ref{fig:partFlags}, of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
 
 
 \subsubsection{Most Frequently Observed Patterns}
 
-Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects that the pattern appears in.  The patterns are quoted to show the presence of spaces, if any.  The top pattern, \verb!`\s+'! uses the WSP character class, which (as described in Table~\ref{table:featureStats}) represents one or more whitespace characters, which (when no flags are used) is equivalent to a character class composed of spaces, tabs, newlines, vertical whitespace, carriage returns or form feeds.  The \verb!+! (the ADD feature in Table~\ref{table:featureStats}) at the end of the pattern means that it must match one or more whitespace characters.  The pattern \verb!`\s+'! is often used to split sentences into separate words which may have more than one space between them.
+Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects that the pattern appears in.  The patterns are quoted to show the presence of spaces, if any.  For brevity, we will only elucidate the top four patterns.
 
-The second pattern, \verb!`\s'! uses the WSP character class like same the first pattern, but does not match several whitespace characters (though it would match the first of several).
+The first pattern, \verb!`\s+'! uses the WSP character class.  This character class represents one or more whitespace characters.  Whitespace characters are defined as spaces, tabs, newlines, vertical whitespace, carriage returns or form feeds (as described in Table~\ref{table:featureStats}).  The \verb!+! (the ADD feature in Table~\ref{table:featureStats}) at the end of the pattern means that it must match one or more whitespace characters.  The pattern \verb!`\s+'! is often used to split sentences into separate words which may have more than one space between them, or contain tabs or other types of whitespace.
+
+The second pattern, \verb!`\s'! uses the WSP character class like the first pattern, but does not match several whitespace characters (though it would match the first of several).
 
 The third pattern, \verb!\d+! uses the DEC character class, which is composed of the digits from 0 to 9.  Like the first pattern, the third uses the ADD feature to match one or more digits.
 
@@ -75,12 +77,7 @@ When hexadecimal values are used within a character class like this (and the UNI
 
 
 \subsubsection{Summary of Results for RQ1}
-
-
-%note captions and label are in external file
-% use:\label{table:featureStats}
-
-\todo{Insert summary of results for RQ1}
+Only about half of the projects sampled contained any utilizations, and many of these utilizations came from python module source code that had been copied into projects, not code written by the users.  Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.  The most frequently observed patterns were used to match whitespace and digits.
 
 \subsection{RQ2: Which regular expression language features are most commonly used in python?}
 Table~\ref{table:featureStats}  lists all the regex features observed in at least 10 projects.
