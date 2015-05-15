@@ -138,34 +138,41 @@ The smallest pattern in Table~\ref{table:exampleCluster} is the single comma lit
 For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects it appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`,'(100)!.
 
 \subsubsection{General Information About Clusters Found}
- From 9503 distinct patterns, our clustering technique identified 514 clusters of 2 or more patterns, and 7214 clusters of size 1.
+ From 9503 distinct patterns, our clustering technique identified 514 clusters of 2 or more patterns, and 7214 clusters of size 1.  The average size of clusters larger than 1 is X.
   % Clusters are ordered by first by the number of projects containing any pattern within the cluster, and second by size with larger clusters appearing earlier in the list.
 No two clusters contain the same pattern.
 %The top 10 clusters are shown in Table~\ref{table:topNClusters}, ranked by the number of projects they appear in.
+\todo{some intro to this section, and explain the omission of linux kernel fabric (noise) clusters}
 
 \subsubsection{Clusters Based On Default Character Classes}
 \verb!`\s'(277)!, \verb!`\W'(208)!, \verb!`\d'(193)!, \verb!`\w'(114)!, \verb!`\w+$'(71)!, \verb!`\D'(65)!, \verb!`\S'(53)!, \verb!`^\s'(40)!, \verb!`^\d+'(39)!, \verb!`^\s*'(39)!, \verb!`\d+$'(38)!, \verb!`\s*'(30)!, \verb!`^\w'(24)!, \verb!`:\d+$'(23)!
 
 \subsubsection{Clusters Based On User-Defined Character Classes}
-\verb!`[a-zA-Z]'(138)!, \verb•`[^!-~]'(122)•, \verb!`[&<]'(50)!, \verb!`[A-Z]'(47)!, \verb!`[ \t]'(37)!, \verb!`[-\s]'(35)!, \verb!`^[a-zA-Z]'(33)!, \verb!`[][\()<>@,:;"."]'(29)!, \verb!`[*?[]'(29)!, \verb!`[?/]+'(28)!, \verb!`[][\()"]'(27)!, \verb!`[/\\ ]'(26)!
+\verb!`[a-zA-Z]'(138)!, \verb•`[^!-~]'(122)•, \verb!`[&<]'(50)!, \verb!`[A-Z]'(47)!, \verb!`[ \t]'(37)!, \verb!`[-\s]'(35)!, \verb!`^[a-zA-Z]'(33)!, \verb!`[][\()<>@,:;"."]'(29)!, \verb!`[*?[]'(29)!, \verb!`[?/]+'(28)!, \verb!`[][\()"]'(27)!, \verb!`[/\\ ]'(26)!, \verb!`[\s()]'(25)!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
 
 \subsubsection{Clusters Based On Single Literal Characters}
-\verb!`\\'(110)!, \verb!`,'(100)!, \verb!`:'(91)!, \verb!`-'(74)!, \verb!`#'(69)!, \verb!` '(66)!, \verb!`/'(65)!, \verb!`\.'(61)!, \verb!`='(52)!, \verb!`//'(51)!, \verb!`\n'(41)!, \verb!`;'(38)!, \verb!`_'(36)!, \verb!`@'(36)!, \verb!`"'(33)!, \verb!`%'(29)!, \verb!`&'(28)!
+\verb!`\\'(110)!, \verb!`,'(100)!, \verb!`:'(91)!, \verb!`-'(74)!, \verb!`#'(69)!, \verb!` '(66)!, \verb!`/'(65)!, \verb!`\.'(61)!, \verb!`='(52)!, \verb!`//'(51)!, \verb!`\n'(41)!, \verb!`;'(38)!, \verb!`_'(36)!, \verb!`@'(36)!, \verb!`"'(33)!, \verb!`%'(29)!, \verb!`&'(28)!, \verb!`&'(28)!, \verb!`''(28)!, \verb!`>'(28)!, \verb!`\?'(28)!, \verb!`'()!, \verb!`'()!
 
 \subsubsection{Clusters Based On Parsing Variable Assignments}
 \verb!`\nmd5_data = {\n([^}]+)}'(69)!, \verb!`.*rlen=([0-9]+)'(57)!, \verb!`coding[:=]\s*([-\w.]+)'(48)!, \verb!`((^|;)\s*charset=)([^;]*)'(34)!, \verb!`^\s*=\s*([^\s;,]*)'(15)!
 
-\subsubsection{Clusters Based On Parsing HTML/XML Tags}
-\verb!`<.+>'(63)!, \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!, \verb!`(<[^<>]*)/>'(35)!, \verb!`<!\s+([^<>]*)>'(35)!, \verb!`&(#\d+|#x[0-9a-fA-F]+|\w+);'(25)!, \verb!`&#?\w+;'(24)!, \verb!`<title>[^<]*Revision \d+:'(17)!, \verb!`<(/?)\s*i\s*>'(16)!
+\subsubsection{Clusters Based On Parsing Bracket Contents}
+\verb!`<.+>'(63)!, \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!, \verb!`(<[^<>]*)/>'(35)!, \verb!`<!\s+([^<>]*)>'(35)!,  \verb!`\(.*\)'(31)!, \verb!`\[.*\]'(27)!, \verb!`<title>[^<]*Revision \d+:'(17)!, \verb!`<(/?)\s*i\s*>'(16)!, \verb!\{.*\}!(14)
 
 \subsubsection{Clusters Based On Matching Whole Lines}
-\verb!`^\d+$'(78)!, \verb!`^\w+$'(74)!, \verb!`^\s*$'(59)!, \verb!`^[-\w]+$'(45)!, \verb!`^[a-zA-Z]\w*$'(43)!, \verb!`^[ ]*(#.*)?$'(41)!, \verb!`^[a-f0-9]{40}$'(34)!, \verb!`^[ -~]*$'(25)!, \verb!`^\s*plural$'(19)!
+\verb!`^\d+$'(78)!, \verb!`^\w+$'(74)!, \verb!`^\s*$'(59)!, \verb!`^[-\w]+$'(45)!, \verb!`^[a-zA-Z]\w*$'(43)!, \verb!`^[ ]*(#.*)?$'(41)!, \verb!`^[a-f0-9]{40}$'(34)!, \verb!`^\S+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$'(29)!, \verb!`^[ -~]*$'(25)!, \verb!`^\s*plural$'(19)!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+
+\subsubsection{Clusters Based On Matching Numeric Forms}
+\verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`\\[0-3][0-7][0-7]'(22)!, \verb!`(\d{4})-(\d\d?)-(\d\d?)$'(18)!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+
+\subsubsection{Clusters Based On Parsing Code}
+\verb!`^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?'(40)!, \verb!`^\w+://'(28)!, \verb!`^https?://'(27)!, \verb!`&(#\d+|#x[0-9a-fA-F]+|\w+);'(25)!,  \verb!`&#?\w+;'(24)!, \verb!`^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>'(21)!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!,
 
 \subsubsection{Clusters Based On Matching Numeric Forms}
 \verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`\\[0-3][0-7][0-7]'(22)!, \verb!`(\d{4})-(\d\d?)-(\d\d?)$'(18)!
 
-\subsubsection{Clusters Based On Parsing Source Code}
-\verb!`^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?'(40)!, \verb!`^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>'(21)!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, ,
+\subsubsection{Clusters Not Falling Into Any Category}
+\verb!`".*"'(42)!,\verb!`*$'(42)!, \verb!`(^|.*:)\s*\w*("|\')'(41)!, \verb!`\(\*'(38)!, \verb!`/|-'(36)!, \verb!`.'(35)!, \verb!`\\|/'(31)!, \verb!`::'(30)!, \verb!`/\*'(29)!, \verb!`\r\n|\r|\n'(28)!, \verb!`\w+\.\w+'(26)!, \verb!`\$[_A-Za-z]\w*'(26)!, \verb!`--'(26)!, \verb!`\n{2,}'(26)!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
 
 
  %All 1375 projects containing at least 1 Rex-Compatible pattern
