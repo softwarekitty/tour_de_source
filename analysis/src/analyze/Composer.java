@@ -153,7 +153,7 @@ public class Composer {
 			"in}\n\\begin{verbatim}\n";
 		String betweenPatternAndWeight = "\\end{verbatim}\n\\end{minipage}\n& ";
 		String afterWeight = " \\\\ \n";
-		sb.append("\\begin{table*}\n\\begin{center}\n" + "\\caption{" +
+		sb.append("\\begin{table}\n\\begin{center}\n" + "\\caption{" +
 			caption + "}\n" + "\\label{" + label + "}\n" +
 			"\\begin{tabular}{lc}\n\\toprule\n");
 		sb.append(contentsName + " & " + rankName + " \\\\ \n");
@@ -170,7 +170,7 @@ public class Composer {
 		// \caption{What are the most frequently used
 		// Patterns?}\label{table:topNW}
 		sb.append("\\bottomrule\n\\end{tabular}\n\\end{center}\n"
-			+ "\\end{table*}\n");
+			+ "\\end{table}\n");
 		return sb.toString();
 	}
 
