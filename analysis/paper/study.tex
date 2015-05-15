@@ -55,30 +55,34 @@ To measure feature usage, we parse Python regular expression patterns using Bart
 
 To address, this question, we use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for.
 
-At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. Behavioral similarity is determined by a pairwise comparison among all patterns. Within each pair, a set of strings is generated for each regular expression and then tested against the other. The average percentage of matching regular expressions creates the similarity level. By calculating pairwise similarity among all regex patterns, a similarity matrix is constructed for use during clustering.
+At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. We will breifly illustrate our definition of behavioral similarity using some unspecified patterns A and B.  Consider a set `mA' of 100 strings that pattern `A' matches.  If pattern B matches all 100 strings in the set `mA', then B is 100\% similar to A.  Now consider another set of 100 strings, 'mB' that pattern B matches.  If pattern A only
 
-\todo{Finish this example - I will get back to this next pass}
-For example, consider the following two regular expressions, denoted A and B for reference.
+We determine two initial similarity scores for each pair of patterns and then average the two scores together.
 
-\begin{verbatim}
-state regex A
-state regex B
-\end{verbatim}
+% Behavioral similarity is determined by a pairwise comparison among all patterns. Within each pair, a set of strings is generated for each regular expression and then tested against the other. The average percentage of matching regular expressions creates the similarity level. By calculating pairwise similarity among all regex patterns, a similarity matrix is constructed for use during clustering.
 
-For each regex, the following strings are generated:
+% \todo{Finish this example - I will get back to this next pass}
+% For example, consider the following two regular expressions, denoted A and B for reference.
 
-\begin{tabular}{l | l}
-A & B \\ \hline
-s1 & s2 \\
-s3 & s4 \\
-\end{tabular}
+% \begin{verbatim}
+% state regex A
+% state regex B
+% \end{verbatim}
 
-Each string in the A column matches regex A, and each string in the B column matches regex B. When testing the strings in B against regex A, X/5 = 0.Y\% match. When testing the strings in the A column against regex B, Z/5 = 0.W\% match. Thus, the similarity between these two regular expressions is 0.U\%.
+% For each regex, the following strings are generated:
 
-To perform this similarity analysis on each pair of regex patterns, we use Rex for string generation.  We chose Rex to build matching strings because it supports the most features of any String-generation tool. To build the similarity matrix, we generated at least 384 strings per regular expression in an effort to balance the precision of the similarity metric (i.e., more strings lead to higher precision) with the speed of our analysis tool (i.e., more strings lead to longer runtimes).
+% \begin{tabular}{l | l}
+% A & B \\ \hline
+% s1 & s2 \\
+% s3 & s4 \\
+% \end{tabular}
+
+% Each string in the A column matches regex A, and each string in the B column matches regex B. When testing the strings in B against regex A, X/5 = 0.Y\% match. When testing the strings in the A column against regex B, Z/5 = 0.W\% match. Thus, the similarity between these two regular expressions is 0.U\%.
+
+% To perform this similarity analysis on each pair of regex patterns, we use Rex for string generation.  We chose Rex to build matching strings because it supports the most features of any String-generation tool. To build the similarity matrix, we generated at least 384 strings per regular expression in an effort to balance the precision of the similarity metric (i.e., more strings lead to higher precision) with the speed of our analysis tool (i.e., more strings lead to longer runtimes).
 
 Using the similarity matrix, clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.  These clusters are used to see how programmers implement regular expressions that match similar strings and interpret what a feature is used for.
- We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
+We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
 
 
 Next, we describe in greater detail how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
