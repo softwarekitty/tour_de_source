@@ -129,11 +129,11 @@ We also identify brics as the project supporting the fewest features and RE2 as 
 \label{results:rq3}
 
 %\subsubsection{Rationale for Behavioral Clustering}
-When tool designers are considering what features to include, data about user behaviors is valuable.  Our clustering technique helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important. 
+When tool designers are considering what features to include, data about user behaviors is valuable.  Our clustering technique helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
 
 %\subsubsection{General Information About Clusters Found}
 From 9503 distinct patterns, the MCL clustering technique identified 514 clusters with 2 or more patterns, and 7214 clusters of size 1.  Recall that only pairs of patterns with a similarity level of \todo{X} were included in the matrix passed to MCL.  The average size of clusters larger than contains 3.7 patterns.
-Each pattern belongs to exactly one cluster. 
+Each pattern belongs to exactly one cluster.
 
 
 %\subsubsection{An Example Cluster}
@@ -157,32 +157,32 @@ No two clusters contain the same pattern.
 Next, we define the six categories and provide examples from the relevant clusters.  \todo{order the following sub subsections based on popularity}
 
 \subsubsection{Default Character Classes}
-This category contains 12 clusters. Each of the clusters \todo{finish this}. For example, three of the top clusters in this category include: 
-\verb!`\s'(277)!, \verb!`\W'(208)!, and \verb!`\d'(193)!. 
-%\verb!`\w'(114)!, \verb!`\w+$'(71)!, 
+This category contains 12 clusters. Each of the clusters \todo{finish this}. For example, three of the top clusters in this category include:
+\verb!`\s'(277)!, \verb!`\W'(208)!, and \verb!`\d'(193)!.
+%\verb!`\w'(114)!, \verb!`\w+$'(71)!,
 % \verb!`\D'(65)!, \verb!`\S'(53)!, \verb!`^\s'(40)!, \verb!`^\d+'(39)!, \verb!`^\s*'(39)!, \verb!`\d+$'(38)!, \verb!`\s*'(30)!
 
 \subsubsection{User-Defined Character Classes}
-This category contains 10 clusters. Each of the clusters \todo{finish this}. For example, three of the top clusters in this category include: 
+This category contains 10 clusters. Each of the clusters center around user defined character classes. For example, three of the top clusters in this category include:
 \verb!`[a-zA-Z]'(138)!, \verb•`[^!-~]'(122)•, and \verb!`[&<]'(50)!.
 % \verb!`[A-Z]'(47)!, \verb!`[ \t]'(37)!, \verb!`[-\s]'(35)!, \verb!`^[a-zA-Z]'(33)!, \verb!`[][\()<>@,:;"."]'(29)!, \verb!`[*?[]'(29)!, \verb!`[?/]+'(28)!
 
 \subsubsection{Single Literal Characters}
-This category contains 19 clusters. Each of the clusters \todo{finish this}. For example, three of the top clusters in this category include: 
+This category contains 19 clusters. Each of the clusters center around a single literal character. For example, three of the top clusters in this category include:
 \verb!`\\'(110)!, \verb!`,'(100)!, and \verb!`:'(91)!.
 % \verb!`-'(74)!, \verb!`#'(69)!, \verb!` '(66)!, \verb!`/'(65)!, \verb!`\.'(61)!, \verb!`='(52)!, \verb!`//'(51)!, \verb!`\n'(41)!, \verb!`;'(38)!, \verb!`_'(36)!, \verb!`@'(36)!, \verb!`"'(33)!, \verb!`%'(29)!, \verb!`&'(28)!, \verb!`&'(28)!, \verb!`''(28)!
 
-\subsubsection{Parsing Variable Assignments}
-This category contains 4 clusters. Each of the clusters \todo{finish this}. For example, three of the top clusters in this category include: 
+\subsubsection{Capturing Variable Assignments}
+This category contains 4 clusters. Each of the clusters contain an equals symbol and some pattern on either side of it, which appears to be a variable on the left of the equals sign and a value on the right.  This type of cluster is very likely used to capture the value of the variable assignment. For example, three of the top clusters in this category include:
 \verb!`\nmd5_data = {\n([^}]+)}'(69)!, \verb!`.*rlen=([0-9]+)'(57)!, and \verb!`coding[:=]\s*([-\w.]+)'(48)!.
 %, \verb!`((^|;)\s*charset=)([^;]*)'(34)!
 
-\subsubsection{Parsing Bracket Contents}
-This category contains 5 clusters. Each of the clusters \todo{finish this}. For example, three of the top clusters in this category include: 
+\subsubsection{Parsing Angle Bracket Contents}
+This category contains 5 clusters. Each of the clusters contains a pair of angle brackets that contain a repeating character class.  It appears that these clusters are being used to recognize or capture the contents of the angle brackets.  For example, three of the top clusters in this category include:
 \verb!`<.+>'(63)!, \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!, and \verb!`(<[^<>]*)/>'(35)!. %, \verb•`<!\s+([^<>]*)>'(35)•,  \verb!`\(.*\)'(31)!
 
-\subsubsection{ Matching Whole Lines}
-This category contains 8 clusters. Each of the clusters \todo{finish this}. For example, three of the top clusters in this category include: 
+\subsubsection{ Matching Whole Strings}
+This category contains 8 clusters. Each of the clusters begins with the STR anchor and ends with the END anchor, requiring the entire input string to match the pattern. For example, three of the top clusters in this category include:
 \verb!`^\d+$'(78)!, \verb!`^\w+$'(74)!, and \verb!`^\s*$'(59)!.
 %, \verb!`^[-\w]+$'(45)!, \verb!`^[a-zA-Z]\w*$'(43)!, \verb!`^[ ]*(#.*)?$'(41)!, \verb!`^[a-f0-9]{40}$'(34)!, \verb!`^\S+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$'(29)!
 
@@ -193,7 +193,7 @@ This category contains 8 clusters. Each of the clusters \todo{finish this}. For 
 \subsubsection{Summary of Results for RQ3:}
 We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the comma for the cluster in Table~\ref{table:exampleCluster}.
 These six categories define what users are doing with regexes at a high level: using default character classes, defining their own character classes, matching single characters, parsing variable assignments, parsing the contents of brackets, or matching whole lines.
- One of the six common cluster categories, \emph{parsing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice. 
+ One of the six common cluster categories, \emph{parsing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
 
 %whereas each group in the second part is drawn from a subset of strings in the corpus known to contain at least one of the desired features.  We did this because the presence of a feature in a pattern can be easily lost
 
