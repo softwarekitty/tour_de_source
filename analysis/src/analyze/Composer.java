@@ -144,7 +144,7 @@ public class Composer {
 	}
 
 	public static String composeRankTable(int tableSize,
-			Iterator<? extends RankableContent> it, double width,
+			Iterator<WeightRankedRegex> it, double width,
 			String contentsName, String rankName, String caption, String label) {
 		StringBuilder sb = new StringBuilder();
 		DecimalFormat df = new DecimalFormat("#0.#");
@@ -159,9 +159,9 @@ public class Composer {
 		sb.append(contentsName + " & " + rankName + " \\\\ \n");
 		for (int i = 0; i < tableSize; i++) {
 			if (it.hasNext()) {
-				RankableContent rr = it.next();
+				WeightRankedRegex rr = it.next();
 				sb.append(beforePattern);
-				sb.append(rr.getContent());
+				sb.append("'"+rr.getUnescapedPattern()+"'");
 				sb.append(betweenPatternAndWeight);
 				sb.append(rr.getRankableValue());
 				sb.append(afterWeight);

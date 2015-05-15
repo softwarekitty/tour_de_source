@@ -12,6 +12,12 @@ Although \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% of the project
 The project with the most files containing utilizations: Arianrhod\footnote{\url{https://github.com/Ouroboros/Arianrhod}} which is a Japanese Anime game, mostly written in C\# (over 18K files), but containing 3404 Python files, most of which are source code for various libraries.  Of these library files, 541 (15.9\%) contain at least one utilization. \todo{so what?}
 
 
+ACKk somesection about flags: notice how rarely the LOCALE flag was used.
+
+Notice that the presence of the Verbose flag implies usage of the comment feature!
+
+
+
 % to find the largest count for the 'utilizing files' row: select distinct uniqueSourceID, filePath, count(distinct filePath) as ct from RegexCitationMerged group by uniqueSourceID order by ct;
 
 

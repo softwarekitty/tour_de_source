@@ -24,28 +24,28 @@ public class Section3 {
 		return "";
 	}
 
-	static String getSyntaxClusteringTableContent(int nRows, String outputPath,
-			ArrayList<WeightRankedRegex> corpus, int functionSwitch, int topN,
-			double width) throws IOException, InterruptedException,
-			ClassNotFoundException, SQLException {
-
-		String graphName = C.functionames[functionSwitch] + "synSimGraph.abc";
-		double p_value = 0.75;
-		double i_value = 1.8;
-		double k_value = 83;
-		DecimalFormat df = new DecimalFormat("0.00");
-		String prefix = "i" + df.format(i_value) + "_p" + df.format(p_value) +
-			"_k" + k_value + "_";
-		String fullInputFilePath = outputPath + prefix + "input" + graphName;
-		String fullOutputFilePath = outputPath + prefix + "output" + graphName;
-		String mclInput = fullInputFilePath + " -I " + df.format(i_value) +
-			" -tf gq(" + df.format(p_value) + ") -tf #knn(" + k_value + ")" +
-			" --abc -o " + fullOutputFilePath;
-		HalfMatrix halfMatrix = syntacticClustering(corpus, functionSwitch);
-		TreeSet<Cluster> clusters = IOUtil.getClusters(fullInputFilePath, fullOutputFilePath, halfMatrix.getABC(p_value), corpus, mclInput,null);
-		return Composer.composeRankTable(nRows, clusters.iterator(), width, "top " +
-			topN + " regexes", "clusterWeight", "syntaxClusteringCaption", "table:syntax");
-	}
+//	static String getSyntaxClusteringTableContent(int nRows, String outputPath,
+//			ArrayList<WeightRankedRegex> corpus, int functionSwitch, int topN,
+//			double width) throws IOException, InterruptedException,
+//			ClassNotFoundException, SQLException {
+//
+//		String graphName = C.functionames[functionSwitch] + "synSimGraph.abc";
+//		double p_value = 0.75;
+//		double i_value = 1.8;
+//		double k_value = 83;
+//		DecimalFormat df = new DecimalFormat("0.00");
+//		String prefix = "i" + df.format(i_value) + "_p" + df.format(p_value) +
+//			"_k" + k_value + "_";
+//		String fullInputFilePath = outputPath + prefix + "input" + graphName;
+//		String fullOutputFilePath = outputPath + prefix + "output" + graphName;
+//		String mclInput = fullInputFilePath + " -I " + df.format(i_value) +
+//			" -tf gq(" + df.format(p_value) + ") -tf #knn(" + k_value + ")" +
+//			" --abc -o " + fullOutputFilePath;
+//		HalfMatrix halfMatrix = syntacticClustering(corpus, functionSwitch);
+//		TreeSet<Cluster> clusters = IOUtil.getClusters(fullInputFilePath, fullOutputFilePath, halfMatrix.getABC(p_value), corpus, mclInput,null);
+//		return Composer.composeRankTable(nRows, clusters.iterator(), width, "top " +
+//			topN + " regexes", "clusterWeight", "syntaxClusteringCaption", "table:syntax");
+//	}
 
 	public static HalfMatrix syntacticClustering(
 			ArrayList<WeightRankedRegex> corpus, int functionSwitch) {

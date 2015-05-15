@@ -1,18 +1,20 @@
 \section{Results}
 \label{sec:results}
 
-In this section, we present the results of each research question. 
+In this section, we present the results of each research question.
 
 \subsection{RQ1: How  is the {\tt re} module used in Python projects?}
-To address this research question, we look at regex utilizations, flags, and the overlap among pattern strings among utilizations. 
+To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
 
 \subsubsection{Saturation of Projects with Utilizations}
 Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average project scanned contained, how many of those files contained utilizations, and how many utilizations occurred per file in Table~\ref{table:saturation}.
 
-The average regex utilizations per project was 32, but this is offset by a high maximum value of 1,427. This value appeared in a project that \todo{finish this sentence}. The average number of files containing a utilization was 11 out of the average total files per project of 53. On average, each file with a regex utilization had only two, with a median of 1. 
+The average project contained 32 utilizations, and the maximum number of utilizations was 1427.  The project with the most utilizations is a C\# project\footnote{\url{https://github.com/Ouroboros/Arianrhod}} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
+
+% to find max nprojects: select distinct uniqueSourceID, count(*) as ct from RegexCitationMerged group by uniqueSourceID order by ct;
 
 
-From Table~\ref{table:saturation}, we see that on average each project had \DTLfetch{data}{key}{medRFilePerProj}{value} files containing any regex usage, out of an average of \DTLfetch{data}{key}{medFilePerProj}{value} files.  Each of the files that did have a regex usage had an average of \DTLfetch{data}{key}{medRPerFile}{value} regex usages.  Because we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen \DTLfetch{data}{key}{nExpectedUsages}{value} regex usages, which is lower than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed.
+From Table~\ref{table:saturation}, we see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.  Because we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen $11*2*3898=85756$ regex usages, which is higher than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed.
 
 \input{../analysis_output/saturation}
 
@@ -32,27 +34,47 @@ From Table~\ref{table:saturation}, we see that on average each project had \DTLf
 \label{fig:partFlags}
 \end{figure}
 
-The number of projects that use each of the {\tt re} modules are shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions could accept the compiled regex as an argument. 
+The number of projects that use each of the {\tt re} functions are shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex compiled using {\tt re.compile} as an argument.
 
 \subsubsection{Usage Frequency of {\tt re} Module Flags}
-When considering flag use, we excluded non-behavioral flags (default and debug), which account for \DTLfetch{data}{key}{percentFlags0}{value}\% of all utilizations. \todo{are they both present in debug and default? how much of the 87\% is for each omitted flag? Why are these omitted, again?}
+When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag (which is equivalent).  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed.
 
  As shown in figure ~\ref{fig:partFlags}, of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
 
 
 \subsubsection{Most Frequently Observed Patterns}
 
-\todo{need to describe these results}
-Table~\ref{table:topNW} (description of table contents)
+Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects that the pattern appears in.  The patterns are quoted to show the presence of spaces, if any.  The top pattern, \verb!`\s+'! uses the WSP character class, which (as described in Table~\ref{table:featureStats}) represents one or more whitespace characters, which (when no flags are used) is equivalent to a character class composed of spaces, tabs, newlines, vertical whitespace, carriage returns or form feeds.  The \verb!+! (the ADD feature in Table~\ref{table:featureStats}) at the end of the pattern means that it must match one or more whitespace characters.  The pattern \verb!`\s+'! is often used to split sentences into separate words which may have more than one space between them.
+
+The second pattern, \verb!`\s'! uses the WSP character class like same the first pattern, but does not match several whitespace characters (though it would match the first of several).
+
+The third pattern, \verb!\d+! uses the DEC character class, which is composed of the digits from 0 to 9.  Like the first pattern, the third uses the ADD feature to match one or more digits.
+
+The fourth pattern, \verb![\x80-\xff]!, uses the CCC feature to create a custom character class, and the RNG feature to specify a range of characters.
+%The hexadecimal value \verb!\x80! is equivalent to the value 128 in decimal, and the hexadecimal value \verb!\xff! is equivalent to 255 in decimal.
+When hexadecimal values are used within a character class like this (and the UNICODE flag is not active), it signifies the corresponding characters in an ASCII lookup table.  The range specified by this pattern is highlighted on the right side of Figure~\ref{fig:ASCIItable}.  Table image found at: \url{https://courses.engr.illinois.edu/ece390/books/labmanual/ascii-code/quickref.png}.
+\todo{run program again to unescape pattern strings}
+
+\todo{more of the topN patterns if there is space}
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\columnwidth]{../illustrations/ASCIItable.eps}
+\cprotect\caption{On the Right, ASCII Characters Matching \verb!'[\x80-\xff]'! (RQ1)}
+\label{fig:ASCIItable}
+\end{figure}
 
 \input{../analysis_output/topNW}
 
-%\subsection{Pattern Characteristics}
+% %\subsection{Pattern Characteristics}
 
-Table~\ref{table:patternStats} (description of table contents)
+% Table~\ref{table:patternStats} (description of table contents)
 
-\input{../analysis_output/patternStats}
+% \input{../analysis_output/patternStats}
+\todo{add patternStats table back in and describe it if there is enough time.  Note the longest pattern present in patternLength.csv in analysis folder was probably automatially generated from text and is monstrous!}
 
+
+\subsubsection{Summary of Results for RQ1}
 
 
 %note captions and label are in external file
@@ -61,9 +83,9 @@ Table~\ref{table:patternStats} (description of table contents)
 \todo{Insert summary of results for RQ1}
 
 \subsection{RQ2: Which regular expression language features are most commonly used in python?}
-Table~\ref{table:featureStats}  lists all the regex features observed in at least 10 projects. 
-The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. For example, the most common feature observed in the corpus is the {\tt +} token, denoting \emph{one-or-more repetition}s, and is abbreviated {\tt ADD}. 
-After the tool mapping (see Section~\ref{results:rq3}), the usage statistics are presented for the number and percent of patterns that the feature appears in, the number and percent of total files in which the appears at least once, and the number and percent of total projects in which that feature appears at least once. 
+Table~\ref{table:featureStats}  lists all the regex features observed in at least 10 projects.
+The first column, \emph{rank}, lists the features in order of popularity, determined by the percentage of projects in which they appear. The next column, \emph{code}, gives a succinct reference string for the feature followed by a {\tt description} and {\tt example} usage from the corpus. For example, the most common feature observed in the corpus is the {\tt +} token, denoting \emph{one-or-more repetition}s, and is abbreviated {\tt ADD}.
+After the tool mapping (see Section~\ref{results:rq3}), the usage statistics are presented for the number and percent of patterns that the feature appears in, the number and percent of total files in which the appears at least once, and the number and percent of total projects in which that feature appears at least once.
 
 Literal tokens were found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of patterns, and accounted for \DTLfetch{data}{key}{P_LITERAL_TOKENS}{value}\% of all tokens.  We consider literal tokens to be ubiquitous in all utilizations, and necessary for any regex related tool, and so exclude them from the rest of the feature analysis.  In table~\ref{table:featureStats}, we display a large body of information about feature usage and relate it to four major regex related projects. \todo{needs more complete description of feature usage}
 
@@ -74,10 +96,10 @@ Literal tokens were found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of
 	\subsection{{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool designers and users?}
 	\label{results:rq3}
 
-We guide the results analysis for this research question based on the features \emph{not} supported by popular regex tools. 
+We guide the results analysis for this research question based on the features \emph{not} supported by popular regex tools.
 Table~\ref{table:featureStats} shows the mapping from features to regex tools.
-The mappings for each regex tool to the features are shown using \yes $ $ to denote when 
-a feature is supported by the tool and \no $ $ when it is not. 
+The mappings for each regex tool to the features are shown using \yes $ $ to denote when
+a feature is supported by the tool and \no $ $ when it is not.
 
 
 

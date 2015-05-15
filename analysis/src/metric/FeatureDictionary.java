@@ -149,7 +149,7 @@ public class FeatureDictionary {
 		intToDescMap.put(I_CC_NWHITESPACE,"any non-whitespace");
 		intToDescMap.put(I_CC_NWORD,"non-word chars");
 		intToDescMap.put(I_CC_RANGE,"chars within a range");
-		intToDescMap.put(I_CC_WHITESPACE,"\\textbackslash t \\textbackslash n \\textbackslash r \\textbackslash b \\textbackslash f or space");
+		intToDescMap.put(I_CC_WHITESPACE,"\\textbackslash t \\textbackslash n \\textbackslash r \\textbackslash v \\textbackslash f or space");
 		intToDescMap.put(I_CC_WORD,"[a-zA-Z0-9\\_]");
 
 		intToDescMap.put(I_LOOK_AHEAD,"matching sequence follows");
