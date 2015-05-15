@@ -156,22 +156,16 @@ No two clusters contain the same pattern.
 \verb!`\nmd5_data = {\n([^}]+)}'(69)!, \verb!`.*rlen=([0-9]+)'(57)!, \verb!`coding[:=]\s*([-\w.]+)'(48)!, \verb!`((^|;)\s*charset=)([^;]*)'(34)!, \verb!`^\s*=\s*([^\s;,]*)'(15)!
 
 \subsubsection{Clusters Based On Parsing HTML/XML Tags}
-\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+\verb!`<.+>'(63)!, \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!, \verb!`(<[^<>]*)/>'(35)!, \verb!`<!\s+([^<>]*)>'(35)!, \verb!`&(#\d+|#x[0-9a-fA-F]+|\w+);'(25)!, \verb!`&#?\w+;'(24)!, \verb!`<title>[^<]*Revision \d+:'(17)!, \verb!`<(/?)\s*i\s*>'(16)!
 
 \subsubsection{Clusters Based On Matching Whole Lines}
-\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+\verb!`^\d+$'(78)!, \verb!`^\w+$'(74)!, \verb!`^\s*$'(59)!, \verb!`^[-\w]+$'(45)!, \verb!`^[a-zA-Z]\w*$'(43)!, \verb!`^[ ]*(#.*)?$'(41)!, \verb!`^[a-f0-9]{40}$'(34)!, \verb!`^[ -~]*$'(25)!, \verb!`^\s*plural$'(19)!
 
 \subsubsection{Clusters Based On Matching Numeric Forms}
-\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
-
-\subsubsection{Clusters Based On Matching Numeric Forms}
-\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
-
-\subsubsection{Clusters Based On Including Specific Strings}
-\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+\verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`\\[0-3][0-7][0-7]'(22)!, \verb!`(\d{4})-(\d\d?)-(\d\d?)$'(18)!
 
 \subsubsection{Clusters Based On Parsing Source Code}
-\verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!
+\verb!`^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?'(40)!, \verb!`^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>'(21)!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, \verb!`'()!, ,
 
 
  %All 1375 projects containing at least 1 Rex-Compatible pattern
