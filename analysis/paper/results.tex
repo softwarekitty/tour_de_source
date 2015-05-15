@@ -141,12 +141,19 @@ Table~\ref{table:exampleCluster} provides an example of a smaller behavioral clu
 \input{../behavioral_clustering/exampleCluster}
 
 %\subsubsection{Using the Smallest Pattern to Represent a Cluster}
-The smallest pattern in Table~\ref{table:exampleCluster} is the single comma literal \verb!`,'! at index 1.  This smallest pattern gives the a good idea of what all the patterns within it have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the {\tt matching\_strings} created by Rex from another pattern within the cluster, so the minimal behavior specified by the smallest pattern is likely to be sufficient to represent the cluster.
+The smallest pattern in Table~\ref{table:exampleCluster} is the single comma literal \verb!`,'! at index 1.  This smallest pattern gives the a good idea of what all the patterns within it have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the {\tt matching\_strings} created by Rex from another pattern within the cluster, and so \emph{the smallest pattern is likely to be sufficient to represent the cluster}.
 
 For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects it appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`,'(100)!.
+<<<<<<< HEAD
 %The top 10 clusters are shown in Table~\ref{table:topNClusters}, ranked by the number of projects they appear in.
 %\subsubsection{Catagorizing the Top 100 Clusters}
 We  manually mapped the top 100 clusters into each of 6 behavioral categories, omitting 11 clusters that did not fit into any of these catagories, and 29 clusters composed of long strings (example: \verb!set_fabric_sense_len\)\(!) which were in the top 100 because 28 projects that were scanned were forked linux kernels.
+=======
+
+\subsubsection{General Information About Clusters Found}
+From 9503 distinct patterns, our clustering technique identified 514 clusters of 2 or more patterns, and 7214 clusters of size 1.  The average size of clusters larger than 1 contains 3.7 patterns.
+No two clusters contain the same pattern.
+>>>>>>> dc97d0a5a9b5e7f2815a2df67ade9f7105d7771b
 
 Next, we define the six categories and provide examples from the relevant clusters.  \todo{order the following sub subsections based on popularity}
 
@@ -180,8 +187,19 @@ This category contains 8 clusters. Each of the clusters \todo{finish this}. For 
 \verb!`^\d+$'(78)!, \verb!`^\w+$'(74)!, and \verb!`^\s*$'(59)!.
 %, \verb!`^[-\w]+$'(45)!, \verb!`^[a-zA-Z]\w*$'(43)!, \verb!`^[ ]*(#.*)?$'(41)!, \verb!`^[a-f0-9]{40}$'(34)!, \verb!`^\S+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$'(29)!
 
+
 %\subsubsection{Clusters Not Falling Into Any Category}
 %\verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`".*"'(42)!,\verb!`*$'(42)!, \verb!`(^|.*:)\s*\w*("|\')'(41)!, \verb!`\(\*'(38)!, \verb!`/|-'(36)!, \verb!`.'(35)!, \verb!`\\|/'(31)!, \verb!`::'(30)!, \verb!`/\*'(29)!
+
+\subsubsection{Summary of Results for RQ3:}
+We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the comma for the cluster in Table~\ref{table:exampleCluster}.
+These six categories define what users are doing with regexes at a high level: using default character classes, defining their own character classes, matching single characters, parsing variable assignments, parsing the contents of brackets, or matching whole lines.
+ One of the six common cluster categories, \emph{parsing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice. 
+
+%whereas each group in the second part is drawn from a subset of strings in the corpus known to contain at least one of the desired features.  We did this because the presence of a feature in a pattern can be easily lost
+
+
+
 
 
  %All 1375 projects containing at least 1 Rex-Compatible pattern
@@ -206,14 +224,5 @@ This category contains 8 clusters. Each of the clusters \todo{finish this}. For 
 
 
 % tell them how the cluster groups in the first part are all drawn from a subset of the corpus limited by what Rex can support, whereas the cluster groups in the second part are all drawn from the complete corpus, but are not guaranteed to have behavioral similarity like in the first part.
-
-
-\subsubsection{Summary of Results for RQ3}
-Overall, we see that many clusters are defined by the presence of particular tokens, such as the comma for the cluster in Table~\ref{table:exampleCluster}. One of the six common cluster categories, \emph{parsing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice. 
-%whereas each group in the second part is drawn from a subset of strings in the corpus known to contain at least one of the desired features.  We did this because the presence of a feature in a pattern can be easily lost
-
-
-
-
 
 
