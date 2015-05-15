@@ -6,15 +6,15 @@ In this section, we present the results of each research question.
 \subsection{RQ1: How  is the {\tt re} module used in Python projects?}
 To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
 
-\subsubsection{Saturation of Projects with Utilizations}
-Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average project scanned contained, how many of those files contained utilizations, and how many utilizations occurred per file in Table~\ref{table:saturation}.
+\subsubsection{Regex Utilizations per Project}
+Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average scanned project  contained, how many of those files contained utilizations, and how many utilizations occurred per file, as shown in Table~\ref{table:saturation}.
 
-The average project contained 32 utilizations, and the maximum number of utilizations was 1427.  The project with the most utilizations is a C\# project\footnote{\url{https://github.com/Ouroboros/Arianrhod}} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
+The average project contained 32 utilizations, and the maximum number of utilizations was 1,427.  The project with the most utilizations is a C\# project\footnote{\url{https://github.com/Ouroboros/Arianrhod}} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
 
 % to find max nprojects: select distinct uniqueSourceID, count(*) as ct from RegexCitationMerged group by uniqueSourceID order by ct;
 
 
-From Table~\ref{table:saturation}, we see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.  Because we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen $11*2*3898=85756$ regex usages, which is higher than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed.
+From Table~\ref{table:saturation}, we also see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.  As we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen $11*2*3898=85,756$ regex usages, which is higher than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed. \todo{Explain why? Be pedantic. }
 
 \input{../analysis_output/saturation}
 
