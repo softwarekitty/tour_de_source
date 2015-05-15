@@ -136,7 +136,41 @@ We do not assume that Python projects represent a perfect sample of regular expr
 
 
 
+\subsection{Empirical Analysis of Regex Utilizations}
 
+
+\subsection{Frequency of Feature Usage}
+
+conclusion II
+
+\subsubsection{A Suggested Feature Implementation Priority List}
+
+One key consideration for Tool designers is what features are most important to implement in order of priority.  We provide a prioritized list of feature groups to implement in Figure~\ref{suggestfeaturepriority}, based on the frequency of feature usage displayed in Table~\ref{table:featureStats}.
+
+\todo{need to list all the subsumed features for CCC and DBB. It's not clear}
+
+\begin{figure}[tb]
+\fbox{\parbox{\columnwidth}{
+\begin{enumerate}
+\item literals, sequences of tokens
+\item CCC (and all subsumed features)
+\item CG (without back-references)
+\item DBB (and all subsumed features)
+\item STR, END
+\item OR
+\item LZY
+\item NCG
+\item NLKA, LKA, NLKB, LKB
+\item WNW, NWNW
+\item ENDZ
+\item BKR
+\end{enumerate}
+}}
+\caption{A Suggested Feature Implementation Priority List \label{suggestfeaturepriority}
+}
+\end{figure}
+
+\subsection{How Features Are Used In Practice}
 
 
 
