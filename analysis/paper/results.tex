@@ -98,6 +98,7 @@ We consider the literal feature to be ubiquitous in all patterns, and necessary 
 
 
 \subsubsection{Feature Usage}
+\label{sec:featureUsage}
 The eight most commonly used features, ADD, CG, KLE, CCC, ANY, RNG, STR and END,
 appear in over half the projects. The remaining 26 features appear in less than half of the projects containing utilizations.
 
@@ -157,7 +158,7 @@ No two clusters contain the same pattern.
 Next, we define the six categories and provide examples from the relevant clusters.  \todo{order the following sub subsections based on popularity}
 
 \subsubsection{Default Character Classes}
-This category contains 12 clusters. Each of the clusters \todo{finish this}. For example, three of the top clusters in this category include:
+This category contains 12 clusters. Each of the clusters revolves around the use of a default character class. For example, three of the top clusters in this category include:
 \verb!`\s'(277)!, \verb!`\W'(208)!, and \verb!`\d'(193)!.
 %\verb!`\w'(114)!, \verb!`\w+$'(71)!,
 % \verb!`\D'(65)!, \verb!`\S'(53)!, \verb!`^\s'(40)!, \verb!`^\d+'(39)!, \verb!`^\s*'(39)!, \verb!`\d+$'(38)!, \verb!`\s*'(30)!
@@ -191,9 +192,10 @@ This category contains 8 clusters. Each of the clusters begins with the STR anch
 %\verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`".*"'(42)!,\verb!`*$'(42)!, \verb!`(^|.*:)\s*\w*("|\')'(41)!, \verb!`\(\*'(38)!, \verb!`/|-'(36)!, \verb!`.'(35)!, \verb!`\\|/'(31)!, \verb!`::'(30)!, \verb!`/\*'(29)!
 
 \subsubsection{Summary of Results for RQ3}
+\label{sec:clusterResults}
 We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the comma for the cluster in Table~\ref{table:exampleCluster}.
 These six categories define what users are doing with regexes at a high level: using default character classes, defining their own character classes, matching single characters, parsing variable assignments, parsing the contents of brackets, or matching whole lines.
- One of the six common cluster categories, \emph{parsing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
+ One of the six common cluster categories, \emph{capturing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
 
 %whereas each group in the second part is drawn from a subset of strings in the corpus known to contain at least one of the desired features.  We did this because the presence of a feature in a pattern can be easily lost
 
