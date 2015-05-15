@@ -84,26 +84,27 @@ Only about half of the projects sampled contained any utilizations, and many of 
 
 \subsection{RQ2: Which regular expression language features are most commonly used in python?}
 \label{results:re2}
-\subsubsection{The Literal Feature}
-A pattern uses the literal feature to specify matching any specific character.  An example pattern that contains only one literal token is the pattern \verb!`a'!.  This pattern only matches the lowercase letter `a'.  The literal feature was found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of patterns.
-%, and accounted for \DTLfetch{data}{key}{P_LITERAL_TOKENS}{value}\% of all tokens.
-We consider the literal feature to be ubiquitous in all utilizations, and necessary for any regex related tool to support, and so exclude it from Table~\ref{table:featureStats} and the rest of the feature analysis.
 
-\subsubsection{The contents of Table~\ref{table:featureStats}}
-In Table~\ref{table:featureStats}, we display a large body of information about feature usage and relate it to four major regex related projects.  Table~\ref{table:featureStats} displays support information and usage statistics for every feature observed in at least 10 projects.
+Table~\ref{table:featureStats} displays feature usage from the corpus and relates it to four major regex related projects. Only features appearing in at least 10 projects are listed.
 The first column, \emph{rank}, lists the rank of a feature (relative to other features) in terms of the number of projects in which it appears. The next column, \emph{code}, gives a succinct reference string for the feature, and is followed by a \emph{description} column that provides a brief comment on what the feature does.  The \emph{example} column provides a short example of how the feature can be used.
 % For example, the most common feature observed in the corpus is \emph{one-or-more repetition}, which is specified in a pattern by using the {\tt +} character in conjunction with some sub-pattern that should repeat one or more times.  The code for this feature is \emph{ADD}, and the short example provided is \verb!z+!.
 The next four columns map to the four major research projects chosen for our investigation (see Section~\ref{results:rq3}).  We indicate that a project supports a feature with the `\yes' symbol, and indicate that a project does not support the feature with the `\no' symbol.
 
 The next six columns contain three pairs of usage statistics.  The first pair contains the number and percent of \emph{patterns} that a feature appears in, out of the 13,912 patterns that make up the corpus. The next pair of columns contain the number and percent of \emph{files} that a feature appears in out of the 18,549 files scanned that contain at least one utilization.  The last pair of columns contain the number and percent of \emph{projects} that a feature appears in out of the 1645 projects scanned that contain at least one utilization.
 
-\subsubsection{The 8 Most Commonly Used Features}
-The eight most commonly used features are: ADD, CG, KLE, CCC, ANY, RNG, STR and END.  These eight features are more commonly used than all other features with respect to all three of our usage statistics (number of appearances in patterns, files and projects).  Over half of the projects observed that contain utilizations use these eight features.  The remaining 26 features appear in less than half of the projects containing utilizations.
+One notable omission from Table~\ref{table:featureStats} is the literal feature, which is used  to specify matching any specific character.  An example pattern that contains only one literal token is the pattern \verb!`a'!.  This pattern only matches the lowercase letter `a'.  The literal feature was found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of patterns.
+%, and accounted for \DTLfetch{data}{key}{P_LITERAL_TOKENS}{value}\% of all tokens.
+We consider the literal feature to be ubiquitous in all patterns, and necessary for any regex related tool to support, and so exclude it from Table~\ref{table:featureStats} and the rest of the feature analysis.
 
-\subsubsection{The 7 Most Rarely Used Features}
-The seven most rarely used features are: LKB, ENDZ, BKR, NDEC, BKRN, VWSP and NWNW.  These seven features are more rarely used than all other features with respect to all three of our usage statistics.  Less than 8\% of scanned projects containing utilizations contain these features.
 
-\subsubsection{Potentially Under-Ranked and Over-Ranked Features}
+\subsubsection{Feature Usage}
+The eight most commonly used features, ADD, CG, KLE, CCC, ANY, RNG, STR and END,
+appear in over half the projects. The remaining 26 features appear in less than half of the projects containing utilizations.
+
+%The seven most rarely used features,  LKB, ENDZ, BKR, NDEC, BKRN, VWSP and NWNW, appear in fewer than 8.  These seven features are more rarely used than all other features with respect to all three of our usage statistics.  Less than 8\% of scanned projects containing utilizations contain these features.
+%removed because this table is not complete - features in less than 10 projects are omitted so talking about the least used is not entirely accurate
+
+%\subsubsection{Potentially Under-Ranked and Over-Ranked Features}
 Table~\ref{table:featureStats} is sorted by the number of projects a feature appears in, but if the table were instead sorted by the number of patterns or files that a feature appears in, the ranking order would be different.  CG is more commonly used in patterns than the highest ranked feature (ADD) by a wide margin (over 8\%).  CG is also more commonly used with respect to how many files it appears in by 2.3\%, while only being present in 12 fewer projects (0.7\%) than ADD.
 
 The WSP feature is present in more patterns than the NCCC feature by a margin of 6.7\%, and in more files by a margin of 4.2\%, yet it is ranked lower than NCCC because it is present in 13 fewer projects (0.8\%).
@@ -111,28 +112,30 @@ The WNW, OPT and QST features follow the same pattern of being under-ranked in t
 
 
 
-\subsubsection{Support of Features by Selected Projects}
-Of the four projects selected for analysis, RE2 supports the most features (28 features) followed by hampi (25 features), which is followed by Rex (21 features).  The brics project supports the fewest features (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.
+\subsubsection{Feature Support in Regex Projects}
+Of the four projects selected for analysis, RE2 supports the most features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.
 
 No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.  Brics is the only project that does not support any of the six default character classes (WSP, DEC, WRD, NWSP, NWRD, NDEC) - the rest of the projects support all of those features.  RE2 is the only project to support the WNW, ENDZ and NWNW features.  RE2 also supports the PNG feature (which allows you to name capturing groups), but does not support the BKRN feature which is necessary to refer back to the named capture group.
 
 \input{../analysis_output/featureStats}
 
 \subsubsection{Summary of Results for RQ2}
-We identify the 8 most frequently used features (ADD, CG, KLE, CCC, ANY, RNG, STR and END) and the 7 least frequently used features (LKB, ENDZ, BKR, NDEC, BKRN, VWSP and NWNW).  We identify 5 features that make more appearances in terms of patterns and files than the feature ranked immediately higher than them in terms of appearances in projects.  We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects.
+We found that the eight most common features are found on over 50\% of the projects.
+%Five features that make more appearances in terms of patterns and files than the feature ranked immediately higher than them in terms of appearances in projects.
+We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects.
 
 
 \subsection{{RQ3:} What is the impact of \emph{not} supporting various regular expression features on users and tool designers?}
 \label{results:rq3}
 
 \subsubsection{Rationale for Behavioral Clustering}
-We believe that the best resource for tool designers considering what features to include is data about what behaviors are important to end users, and what features are useful for achieving those behaviors.  Our clustering technique helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
+When tool designers are considering what features to include, data about user behaviors is valuable.  Our clustering technique helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important. \todo{good}
 
-\subsubsection{An Example Cluster}
+%\subsubsection{An Example Cluster}
 Table~\ref{table:exampleCluster} provides an example of a smaller behavioral cluster, representing 13 patterns, with at least one pattern from this cluster present in 100 different projects.  At first glance this cluster may seem to revolve around the `\verb!\s*!' parts of these patterns, but actually this cluster was formed because each of these patterns has a comma literal, and other details did not interfere with matching the Rex-generated strings with commas in them.
 \input{../behavioral_clustering/exampleCluster}
 
-\subsubsection{Using the Smallest Pattern to Represent a Cluster}
+%\subsubsection{Using the Smallest Pattern to Represent a Cluster}
 The smallest pattern in Table~\ref{table:exampleCluster} is the single comma literal \verb!`,'! at index 1.  This smallest pattern gives the a good idea of what all the patterns within it have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the {\tt matching\_strings} created by Rex from another pattern within the cluster, so the minimal behavior specified by the smallest pattern is likely to be sufficient to represent the cluster.
 
 For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects it appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`,'(100)!.
