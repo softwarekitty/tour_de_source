@@ -129,13 +129,13 @@ We also identify brics as the project supporting the fewest features and RE2 as 
 \label{results:rq3}
 
 \subsubsection{Rationale for Behavioral Clustering}
-We believe that the best resource for tool designers considering what features to include is data about what behaviors are important to end users, and what features are useful for achieving those behaviors.  Our clustering technique helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
+When tool designers are considering what features to include, data about user behaviors is valuable.  Our clustering technique helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important. \todo{good}
 
-\subsubsection{An Example Cluster}
+%\subsubsection{An Example Cluster}
 Table~\ref{table:exampleCluster} provides an example of a smaller behavioral cluster, representing 13 patterns, with at least one pattern from this cluster present in 100 different projects.  At first glance this cluster may seem to revolve around the `\verb!\s*!' parts of these patterns, but actually this cluster was formed because each of these patterns has a comma literal, and other details did not interfere with matching the Rex-generated strings with commas in them.
 \input{../behavioral_clustering/exampleCluster}
 
-\subsubsection{Using the Smallest Pattern to Represent a Cluster}
+%\subsubsection{Using the Smallest Pattern to Represent a Cluster}
 The smallest pattern in Table~\ref{table:exampleCluster} is the single comma literal \verb!`,'! at index 1.  This smallest pattern gives the a good idea of what all the patterns within it have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the {\tt matching\_strings} created by Rex from another pattern within the cluster, so the minimal behavior specified by the smallest pattern is likely to be sufficient to represent the cluster.
 
 For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects it appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`,'(100)!.
@@ -159,10 +159,10 @@ No two clusters contain the same pattern.
 \verb!`\nmd5_data = {\n([^}]+)}'(69)!, \verb!`.*rlen=([0-9]+)'(57)!, \verb!`coding[:=]\s*([-\w.]+)'(48)!, \verb!`((^|;)\s*charset=)([^;]*)'(34)!, \verb!`^\s*=\s*([^\s;,]*)'(15)!
 
 \subsubsection{Clusters Based On Parsing HTML/XML Tags}
-\verb!`<.+>'(63)!, \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!, \verb!`(<[^<>]*)/>'(35)!, \verb!`<!\s+([^<>]*)>'(35)!, \verb!`&(#\d+|#x[0-9a-fA-F]+|\w+);'(25)!, \verb!`&#?\w+;'(24)!, \verb!`<title>[^<]*Revision \d+:'(17)!, \verb!`<(/?)\s*i\s*>'(16)!
+%\verb!`<.+>'(63)!, \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!, \verb!`(<[^<>]*)/>'(35)!, \verb!`<!\s+([^<>]*)>'(35)!, \verb!`&(#\d+|#x[0-9a-fA-F]+|\w+);'(25)!, \verb!`&#?\w+;'(24)!, \verb!`<title>[^<]*Revision \d+:'(17)!, \verb!`<(/?)\s*i\s*>'(16)!
 
 \subsubsection{Clusters Based On Matching Whole Lines}
-\verb!`^\d+$'(78)!, \verb!`^\w+$'(74)!, \verb!`^\s*$'(59)!, \verb!`^[-\w]+$'(45)!, \verb!`^[a-zA-Z]\w*$'(43)!, \verb!`^[ ]*(#.*)?$'(41)!, \verb!`^[a-f0-9]{40}$'(34)!, \verb!`^[ -~]*$'(25)!, \verb!`^\s*plural$'(19)!
+%\verb!`^\d+$'(78)!, \verb!`^\w+$'(74)!, \verb!`^\s*$'(59)!, \verb!`^[-\w]+$'(45)!, \verb!`^[a-zA-Z]\w*$'(43)!, \verb!`^[ ]*(#.*)?$'(41)!, \verb!`^[a-f0-9]{40}$'(34)!, \verb!`^[ -~]*$'(25)!, \verb!`^\s*plural$'(19)!
 
 \subsubsection{Clusters Based On Matching Numeric Forms}
 \verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`\\[0-3][0-7][0-7]'(22)!, \verb!`(\d{4})-(\d\d?)-(\d\d?)$'(18)!
