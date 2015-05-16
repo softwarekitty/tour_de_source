@@ -155,7 +155,7 @@ For the rest of this paper, a cluster will be represented by one of the shortest
 We  manually mapped the top 100 clusters into each of 6 behavioral categories, omitting 11 clusters that did not fit into any of these catagories, and 29 clusters composed of long strings (example: \verb!set_fabric_sense_len\)\(!) which were in the top 100 because 28 projects that were scanned were forked linux kernels.
 
 
-Next, we define the six categories and provide examples from the relevant clusters. 
+Next, we define the six categories and provide examples from the relevant clusters.
 
 \subsubsection{Single Literal Characters}
 This category contains 19 clusters. Each of the clusters center around a single literal character. For example, three of the top clusters in this category include:
@@ -182,7 +182,8 @@ This category contains 8 clusters. Each of the clusters begins with the STR anch
 
 \subsubsection{Parsing Angle Bracket Contents}
 This category contains 5 clusters. Each of the clusters contains a pair of angle brackets that contain a repeating character class.  It appears that these clusters are being used to recognize or capture the contents of the angle brackets.  For example, three of the top clusters in this category include:
-\verb!`<.+>'(63)!, \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!, and \verb!`(<[^<>]*)/>'(35)!. %, \verb•`<!\s+([^<>]*)>'(35)•,  \verb!`\(.*\)'(31)!
+\verb!`<.+>'(63)!, \verb•`<!\s+([^<>]*)>'(35)•, and \verb!`(<[^<>]*)/>'(35)!. %, ,  \verb!`\(.*\)'(31)!
+% too long for column width: \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!,
 
 \subsubsection{Capturing Variable Assignments}
 This category contains 4 clusters. Each of the clusters contain an equals symbol and some pattern on either side of it, which appears to be a variable on the left of the equals sign and a value on the right.  This type of cluster is very likely used to capture the value of the variable assignment. For example, three of the top clusters in this category are:

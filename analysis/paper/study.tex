@@ -50,37 +50,19 @@ We consider regex language features to be tokens that specify the matching behav
 
 To measure feature usage, we parse Python regular expression patterns using Bart Kiers' PCRE parser\footnote{\url{https://github.com/bkiers/PCREParser}}, as described in Section~\ref{study:corpus}.  We then count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
 
-\textbf{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool designers and users?
+\textbf{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
 %\textbf{RQ3:} What is the impact of \emph{not} supporting various regex features on tool designers and users?
 
 To address, this question, we use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for.
 
-At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. We will breifly illustrate our definition of behavioral similarity using some unspecified patterns A and B.  Consider a set `mA' of 100 strings that pattern `A' matches.  If pattern B matches all 100 strings in the set `mA', then B is 100\% similar to A.  Now consider another set of 100 strings, 'mB' that pattern B matches.  If pattern A only
+At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. We will briefly illustrate our definition of behavioral similarity using some unspecified patterns A and B.  Consider a set `mA' of 100 strings that pattern A matches.  If pattern B matches 90 of the 100 strings in the set mA, then B is 90\% similar to A.  Now consider another set of 100 strings, `mB' that pattern B matches.  If pattern A only matches 50 of the strings in `mB', then A is 50\% similar to B.  We use similarity scores to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.  In row A, column B we see that B is 90\% similar to A.  Int row B, column A, we see that A is 50\% similar to B.  Each pattern is always 100\% similar to itself, since it matches all 100 of its own strings by their definition.
 
-We determine two initial similarity scores for each pair of patterns and then average the two scores together.
-
-% Behavioral similarity is determined by a pairwise comparison among all patterns. Within each pair, a set of strings is generated for each regular expression and then tested against the other. The average percentage of matching regular expressions creates the similarity level. By calculating pairwise similarity among all regex patterns, a similarity matrix is constructed for use during clustering.
-
-% \todo{Finish this example - I will get back to this next pass}
-% For example, consider the following two regular expressions, denoted A and B for reference.
-
-% \begin{verbatim}
-% state regex A
-% state regex B
-% \end{verbatim}
-
-% For each regex, the following strings are generated:
-% Each string in the A column matches regex A, and each string in the B column matches regex B. When testing the strings in B against regex A, X/5 = 0.Y\% match. When testing the strings in the A column against regex B, Z/5 = 0.W\% match. Thus, the similarity between these two regular expressions is 0.U\%. \todo{fill in the letters}
-
-% \begin{tabular}{l | l}
-% A & B \\ \hline
-% s1 & s2 \\
-% s3 & s4 \\
-% \end{tabular}
-
-% Each string in the A column matches regex A, and each string in the B column matches regex B. When testing the strings in B against regex A, X/5 = 0.Y\% match. When testing the strings in the A column against regex B, Z/5 = 0.W\% match. Thus, the similarity between these two regular expressions is 0.U\%.
-
-% To perform this similarity analysis on each pair of regex patterns, we use Rex for string generation.  We chose Rex to build matching strings because it supports the most features of any String-generation tool. To build the similarity matrix, we generated at least 384 strings per regular expression in an effort to balance the precision of the similarity metric (i.e., more strings lead to higher precision) with the speed of our analysis tool (i.e., more strings lead to longer runtimes).
+\begin{figure}[tb]
+\centering
+\includegraphics[height=0.6in]{../illustrations/minimalMatrix.eps}
+\caption{A Similarity Matrix Created by Counting Strings Matched}
+\label{fig:minimalMatrix}
+\end{figure}
 
 Using the similarity matrix, clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.  These clusters are used to see how programmers implement regular expressions that match similar strings and interpret what a feature is used for.
 We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
@@ -112,19 +94,25 @@ This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% 
 
 \subsection{Analyzing Features}
 \label{study:features}
-For each escaped pattern, the PCRE-parser produces a tree of feature tokens. Note that features such as capture groups or logical `OR' can contain sub-patterns composed of more tokens.  For each of these trees, we counted the number of tokens, creating a frequency-of-appearance vector or `\emph{featureCount}' for each pattern.  A pattern is said to contain a feature at an index if the value of the featureCount at that index is non-zero.
+For each escaped pattern, the PCRE-parser produces a tree of feature tokens, which is converted to a vector by counting the number of each token present in the tree.  For a simple example, consider the patterns in Figure~\ref{fig:featureParsing}.  The pattern \verb!`^m+(f(z)*)+'! contains four different types of tokens. It contains the kleene star (KLE), which is specified using the asterisk \verb!`*'! character, additional repetition (ADD), which is specified using the plus \verb!`+'! character, capture groups (CG), which are specified using pairs of parenthesis \verb!`(...)'! characters, and the start anchor (STR), which is specified using the caret \verb!`^'! character at the beginning of a pattern.
 
-\todo{fill in this paragraph for a bridge between paragraphs}
-For example, consider again the pattern in Figure~\ref{fig:exampleUsage}. This pattern has X different features, specifically, Y, Z, and W. The Y feature appears X times. The set of distinct features forms the feature set for the pattern.
+\begin{figure}[tb]
+\centering
+\includegraphics[height=0.6in]{../illustrations/featureParsing.eps}
+\caption{Two Patterns Parsed into Feature Vectors}
+\label{fig:featureParsing}
+\end{figure}
 
-Once the feature set was established, we mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, hampi, RE2, and Rex.
+Once all patterns were transformed into vectors, we examined each feature independently for all patterns, tracking the number of patterns it was in, and the size of the sets of projects and files that the patterns containing the features appeared in at least once.
+
+Once the statistics about feature appearance in projects, files and patterns was established, we mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, hampi, RE2, and Rex.
 To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using the formal grammar\footnote{\url{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footnote{\url{https://code.google.com/p/hampi/downloads/list}} (this may have been an overestimation, as this included more features than specified by the formal grammar\footnote{\url{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}}).  For RE2, we used the  supported feature documentation\footnote{\url{https://re2.googlecode.com/hg/doc/syntax.html}}.  For Rex, we were able to use trial and error because we tried to parse all patterns with Rex, and Rex provides good error feedback when a feature is unsupported.
 
 \todo{Were there any features supported by the tools that we did not find in the corpus? Explain either way...tomorrow.  There are many, it seems less critical}
 %Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
 
 \subsection{Clustering and Semantic Analysis}
-We are interested in what behaviors users are trying to get when using regexes, and we know that the exact same behavior, or very similar behavior can be specified in many ways.  For example, the three patterns \verb!`\W'!, \verb!`[^\w]'!, \verb!`[^a-zA-Z0-9_]'! all specify the same matching behavior.  Even if we create a slightly different pattern that matches one more character, for example \verb![\W_]!, most strings that match the first three equivalent patterns will also match the different pattern.
+We are interested in what behaviors users are trying to get when using regexes, and we know that the exact same behavior, or very similar behavior can be specified in many ways.  For example, the three patterns \verb!`\W'!, \verb!`[^\w]'!, \verb!`[^a-zA-Z0-9_]'! all specify the same matching behavior.  Even if we create a slightly different pattern that matches one more character, for example \verb!`[\W_]'!, most strings that match the first three equivalent patterns will also match the different pattern.
 
 % \begin{figure}[tb]
 % \centering
@@ -135,9 +123,7 @@ We are interested in what behaviors users are trying to get when using regexes, 
 % \label{fig:equivalentPatterns}
 % \end{figure}
 
-Rex can be used to generate a set of strings that will all match a pattern.  For each of the \DTLfetch{data}{key}{nCorpus}{value} distinct patterns, we use Rex to generate a set of at least 384 \emph{matching strings}. If fewer strings were generated, we did not include that pattern in the similarity analysis.
-
-\todo{compute averages}
+Rex can be used to generate a set of strings that will all match a pattern.  For each of the \DTLfetch{data}{key}{nCorpus}{value} distinct patterns, we use Rex to generate a set of at least 384 \emph{matching strings}. If Rex rejects the pattern, or fewer than 384 strings are generated, we do not include that pattern in the similarity analysis.
 %The average number of generated strings per pattern was \todo{X} with a standard deviation of \todo{Y}. The maximum number generated was \todo{Z-these3:programming project for later tonight}.
 The number 384 was selected to balance the runtime of the similarity analysis with the precision of the calculations. Since Rex does not support all the features present in the corpus, we could only generate sets of matching strings for 9,727 (70\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus (omitted features are indicated in Table~\ref{table:featureStats} as described in Section~\ref{results:rq3}).  At least one pattern from the 9727 patterns that Rex was able to generate matching strings for can be found in 1375 of the 1645 projects containing at least one utilization.  This means that 270 projects that contained at least one utilization did not contain any Rex-compatible patterns.
 
@@ -154,7 +140,6 @@ Note that pairs DB and DC are omitted from the final file because their similari
 \caption{Creating A Similarity Graph From A Similarity Matrix}
 \label{fig:matrixToGraph}
 \end{figure}
-\
 
 Markov clustering can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.
 
