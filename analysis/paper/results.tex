@@ -5,10 +5,7 @@ In this section, we present the results of each research question.
 
 \subsection{RQ1: How  is the {\tt re} module used in Python projects?}
 To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
-
-
-Furthermore, we measure the frequency of usage for calls to the 8 functions of the {\tt re} module ({\tt re.compile}, {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub} and {\tt re.subn}) in Python projects scraped from GitHub.
-
+We measure the frequency of usage for calls to the 8 functions of the {\tt re} module ({\tt re.compile}, {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub} and {\tt re.subn}) in Python projects scraped from GitHub.
 We also measure usage of the 8 flags ({\tt re.DEFAULT}, {\tt re.IGNORECASE}, {\tt re.LOCALE}, {\tt re.MULTILINE}, {\tt re.DOTALL}, {\tt re.UNICODE}, {\tt re.VERBOSE} and {\tt re.DEBUG}) of the {\tt re} module.
 
 
@@ -106,6 +103,9 @@ One notable omission from Table~\ref{table:featureStats} is the literal feature,
 We consider the literal feature to be ubiquitous in all patterns, and necessary for any regex related tool to support, and so exclude it from Table~\ref{table:featureStats} and the rest of the feature analysis.
 
 
+\todo{in Table~\ref{table:featureStats} remove the nFiles and \%files columns for space}
+\input{../analysis_output/featureStats}
+
 \subsubsection{Feature Usage}
 \label{sec:featureUsage}
 The eight most commonly used features, ADD, CG, KLE, CCC, ANY, RNG, STR and END,
@@ -124,11 +124,16 @@ Table~\ref{table:featureStats} is sorted by the number of projects a feature app
 
 
 \subsubsection{Feature Support in Regex Projects}
+We  mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, hampi, RE2, and Rex.
+To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using the formal grammar\footnote{\url{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footnote{\url{https://code.google.com/p/hampi/downloads/list}} (this may have been an overestimation, as this included more features than specified by the formal grammar\footnote{\url{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}}).  For RE2, we used the  supported feature documentation\footnote{\url{https://re2.googlecode.com/hg/doc/syntax.html}}.  For Rex, we were able to use trial and error because we tried to parse all patterns with Rex, and Rex provides good error feedback when a feature is unsupported.
+
+\todo{Were there any features supported by the tools that we did not find in the corpus? Explain either way...tomorrow.  There are many, it seems less critical}
+
+
 Of the four projects selected for analysis, RE2 supports the most features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.
 
 No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.  Brics is the only project that does not support any of the six default character classes (WSP, DEC, WRD, NWSP, NWRD, NDEC) - the rest of the projects support all of those features.  RE2 is the only project to support the WNW, ENDZ and NWNW features.  RE2 also supports the PNG feature (which allows you to name capturing groups), but does not support the BKRN feature which is necessary to refer back to the named capture group.
 
-\input{../analysis_output/featureStats}
 
 \subsubsection{Summary of Results for RQ2}
 We found that the eight most common features are found on over 50\% of the projects.
