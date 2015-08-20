@@ -13,7 +13,7 @@ Within a particular file in a project, a {utilization} is composed of a function
 \begin{figure}[tb]
 \centering
 \includegraphics[width=\columnwidth]{../illustrations/exampleUsage.eps}
-\caption{example of one regex utilization}
+\caption{Example of one regex utilization}
 \label{fig:exampleUsage}
 \end{figure}
 
@@ -56,7 +56,7 @@ Next, we describe how the corpus of regex patterns was built, how features were 
 \subsection{Regex Corpus}
 \label{study:corpus}
 %Github is a popular project hosting site containing over 100,000 Python projects.  
-Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects that had at least one call to the {\tt re} module. \todo{how many projects were scraped but did not have a call to the {\tt re} module?}
+Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects. 
 %The GitHub API assigns an integer identifier to each repository and can be used to clone relevant repositories for analysis.  Using the \url{http://api.github.com/repositories?since=N} interface page, we launched 32 scrapers to find repositories containing Python code.  The Github interface provides information about the first 100 repository IDs since the {\tt N} value on a single results page.  Each scraper used this information to identify repositories containing Python.  When a scraper was done with one page, it continued on to the next 100 repository IDs by using the interface again with {\tt N} now equal to the last repository ID on the current page.  Using this process, each scraper paged through the next available 1,000 repositories, cloning and scanning Python projects as they were found.  Each scraper started at a different {\tt N} value, with the first scraper starting at 0.  Scraper start indices were spaced by 262,144 so as to investigate within the first 8 million repositories.  At the time scraping was performed, the highest repoID was over 32 million, so we were cloning projects in the lowest fourth of the available space of IDs.  After this process was complete, \DTLfetch{data}{key}{nProjScanned}{value} Python projects had been cloned and scanned.
 %For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find utilizations of Python's {\tt re} module. This ensured that all utliizations of the {\tt re} module were captured for analysis.
 Each project's commit history was scanned at 20 evenly-spaced commits.  If the project had fewer than 20 commits, then all commits were scanned.  The most recent commit was always included, and the spacing between all other chosen commits was determined by dividing the remaining number of commits by 19 (rounding as needed). 
@@ -75,7 +75,7 @@ For each escaped pattern, the PCRE-parser produces a tree of feature tokens, whi
 \begin{figure}[tb]
 \centering
 \includegraphics[height=0.6in]{../illustrations/featureParsing.eps}
-\caption{Two Patterns Parsed into Feature Vectors}
+\caption{Two patterns parsed into feature vectors}
 \label{fig:featureParsing}
 \end{figure}
 
@@ -95,7 +95,7 @@ In row {\tt B}, column {\tt A}, we see that {\tt A} is 50\% similar to {\tt B}. 
 \begin{figure}[tb]
 \centering
 \includegraphics[height=0.6in]{../illustrations/minimalMatrix.eps}
-\caption{A Similarity Matrix Created by Counting Strings Matched}
+\caption{A similarity matrix created by counting strings matched}
 \label{fig:minimalMatrix}
 \end{figure}
 
@@ -136,7 +136,7 @@ The end result is clusters of highly semantically similar regular expressions.
 \begin{figure}[tb]
 \centering
 \includegraphics[width=\columnwidth]{../illustrations/matrixToGraph.eps}
-\caption{Creating A Similarity Graph From A Similarity Matrix}
+\caption{Creating a similarity graph from a similarity matrix}
 \label{fig:matrixToGraph}
 \end{figure}
 

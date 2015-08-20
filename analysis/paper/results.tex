@@ -5,8 +5,8 @@ In this section, we present the results of each research question.
 
 \subsection{RQ1: How  is the {\tt re} module used in Python projects?}
 To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
-We measure the frequency of usage for calls to the 8 functions of the {\tt re} module ({\tt re.compile}, {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub} and {\tt re.subn}) in Python projects scraped from GitHub.
-We also measure usage of the 8 flags ({\tt re.DEFAULT}, {\tt re.IGNORECASE}, {\tt re.LOCALE}, {\tt re.MULTILINE}, {\tt re.DOTALL}, {\tt re.UNICODE}, {\tt re.VERBOSE} and {\tt re.DEBUG}) of the {\tt re} module.
+We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}). 
+We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}). 
 
 
 
@@ -14,11 +14,12 @@ We also measure usage of the 8 flags ({\tt re.DEFAULT}, {\tt re.IGNORECASE}, {\t
 Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average scanned project  contained, how many of those files contained utilizations, and how many utilizations occurred per file, as shown in Table~\ref{table:saturation}.
 
 The average project contained 32 utilizations, and the maximum number of utilizations was 1,427.  The project with the most utilizations is a C\# project\footnote{\url{https://github.com/Ouroboros/Arianrhod}} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
+From Table~\ref{table:saturation}, we also see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.  
 
 % to find max nprojects: select distinct uniqueSourceID, count(*) as ct from RegexCitationMerged group by uniqueSourceID order by ct;
 
 
-From Table~\ref{table:saturation}, we also see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.  As we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen $11*2*3898=85,756$ regex usages, which is higher than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed. \todo{Explain why? Be pedantic. }
+%As we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen $11*2*3898=85,756$ regex usages, which is higher than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed. \todo{Explain why? Be pedantic. }
 
 \input{../analysis_output/saturation}
 
@@ -27,7 +28,7 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 \begin{figure}[tb]
 \centering
 \includegraphics[width=\columnwidth]{../analysis_output/partFunctions.eps}
-\caption{How often are the 8 re functions used? (RQ1)}
+\caption{How often are  {\tt re} functions used? (RQ1)}
 \label{fig:partFunctions}
 \end{figure}
 
@@ -38,17 +39,18 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 \label{fig:partFlags}
 \end{figure}
 
-The number of projects that use each of the {\tt re} functions are shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex object compiled using {\tt re.compile} as an argument.
+The number of projects that use each of the {\tt re} functions is shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex object compiled using {\tt re.compile} as an argument.
+\todo{can we connect any of these function calls to the findings from the survey? For example, according to Table~\ref{tab:regexactivities}, participants frequently or occasionally want to capture parts of strings, which maps to the X function in {\tt re}}
 
 \subsubsection{Usage Frequency of {\tt re} Module Flags}
-When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag (which is equivalent).  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed. \todo{interesting about the debug flag. Any idea why?}
+When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed. 
 
- Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. \todo{the numbers in the key do not appear to sum to the max on the Y-axis of this figure} Of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
+ Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  \todo{link this to survey results} It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
 
 
 \subsubsection{Most Frequently Observed Patterns}
 
-Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects that the pattern appears in.  The patterns are quoted to show the presence of spaces, if any.  For brevity, we will only elaborate on the top four patterns, and we will reference the feature set in Table~\ref{table:featureStats}, as described in Section~\ref{results:re2}.
+Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects in which the pattern appears.  The patterns are quoted to show the presence of spaces, if any.  We  elaborate on the top four patterns and  reference the feature set in Table~\ref{table:featureStats}.
 
 The first pattern, \verb!`\s+'!, uses the WSP character class feature.  This character class represents one or more whitespace characters,  defined as spaces, tabs, newlines, vertical whitespace, carriage returns or form feeds.  The \verb!+! (the ADD feature) at the end of the pattern means that it must match one or more whitespace characters.  The pattern \verb!`\s+'! is often used to split sentences into separate words which may have more than one space between them, or contain tabs or other types of whitespace.
 
@@ -83,8 +85,8 @@ When hexadecimal values are used within a character class like this (and the UNI
 \todo{add patternStats table back in and describe it if there is enough time.  Note the longest pattern present in patternLength.csv in analysis folder was probably automatially generated from text and is monstrous!}
 
 
-\subsubsection{Summary of Results for RQ1}
-Only about half of the projects sampled contained any utilizations, and many of these utilizations came from python module source code that had been copied into projects, not code written by the users.  Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.  The most frequently observed patterns were used to match whitespace and digits.
+\subsubsection{Summary}
+Only about half of the projects sampled contained any utilizations, and many of these utilizations came from Python module source code that had been copied into projects, not code written by the users. \todo{how do you know?} Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.  The most frequently observed patterns were used to match whitespace and digits.
 
 \subsection{RQ2: Which regular expression language features are most commonly used in python?}
 \label{results:re2}
