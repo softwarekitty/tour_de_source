@@ -22,8 +22,8 @@
 \widowpenalty=10000
 \clubpenalty=10000
 
-%\newcommand{\todo}[1]{\textbf{TODO: #1}} %comment out for submission
-\newcommand{\todo}[1]{}
+\newcommand{\todo}[1]{\textbf{TODO: #1}} %comment out for submission
+%\newcommand{\todo}[1]{}
 \newcommand{\yes}{\tikz\draw[black,fill=black] (0,0) circle (.5ex);}
 \newcommand{\sorta}{\tikz\draw[gray,fill=gray] (0,0) circle (.5ex);}
 \newcommand{\no}{\tikz\draw[black] (0,0) circle (.5ex);}
@@ -36,7 +36,7 @@
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 %\title{Regex Feature Use In Practice}
-\title{Exploring Regular Expression Feature Usage in Practice and the Impact on Tool Design}
+\title{Exploring Regular Expression Feature Usage in Python Projects}
 
 % author names and affiliations
 % use a multiple column layout for up to three different
@@ -56,7 +56,7 @@ Regular expressions are used frequently in programming languages for form valida
 In this paper, we explore regular expression feature usage, focusing on how often features are used and the diversity of regular expressions from syntactic and semantic perspectives. To do this, we analyzed nearly 4,000 open source Python projects from GitHub and extracted nearly 14,000 unique regex patterns that were used for analysis.
 We also map the most common features used in regular expressions to those features supported by four common regex engines from industry and academia, brics, Hampi, Re2, and Rex.
 Our results indicate that the most commonly used regular expression features are also supported by popular research tools and that programmers frequently reinvent the wheel by writing identical or nearly identical regular expressions in different ways.
-We concluded by discussing the implications of omitting certain features in a tool's design and outline several directions of future work.
+We conclude by discussing the implications of omitting certain features in a tool's design and outline several directions of future work.
 %FYI: nProjScanned = 3898
 %These observations lead to suggestions on which regular expression features are imperative to support and for future directions in research to help developers write and reuse regular expressions.
 \end{abstract}
@@ -64,6 +64,8 @@ We concluded by discussing the implications of omitting certain features in a to
 \input{introduction}
 
 \input{related}
+
+\input{survey}
 
 \input{study}
 .
