@@ -11,3 +11,53 @@ Participation was voluntary and participants were entered in a lottery for a \$5
 The survey was completed by 20 participants. Two survey responses were excluded
 because \todo{why?}, leaving 18 responses in the final data set. 
 
+
+On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 27\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. 
+Table~\ref{tab:regexenviron} shows how frequently participants compose regexes using each of several languages and technical environments. 
+Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and 5 (28\%) do this 6-10 times per year.  Regexes were rarely used in query languages like SQL, but for command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. \todo{summary message}
+
+\newcommand{\horiz}{\hspace{2.1pt}}
+
+\begin{table}
+\caption{Survey results for number of regexes composed per year by technical environment \label{tab:regexenviron}}
+\begin{center}
+\begin{small}
+\begin{tabular}{l | r @{  \horiz} r @{ \horiz } r @{ \horiz } r @{ \horiz } r @{ \horiz } r }
+Language/Environment & 0 & 1-5 & 6-10 & 11-20 & 21-50 & 51+ \\ \hline
+General  (e.g., Java)  & 1 & 6 & 5 & 3& 1& 2 \\
+Scripting  (e.g., Perl) &5 &4 &3 &3 &2  &1 \\
+Query  (e.g., SQL) & 15&2 &0 &0 &1  & 0\\
+Command line (e.g., grep)   &2 &5 &3 &2 &0  &6 \\
+Text editor (e.g., IntelliJ)   & 2& 5& 0& 5& 1& 5\\
+\end{tabular}
+\end{small}
+\end{center}
+\end{table}
+
+\begin{table}
+\caption{Survey results for regex usage frequencies for various activities, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 \label{tab:regexactivities}}
+\begin{center}
+\begin{tabular}{l|c}
+Activity & Frequency \\ \hline
+Capturing parts of strings & 4.3 \\ 
+Counting lines that match a pattern & 3.2\\
+Counting  substrings that match a pattern & 3.2\\
+Locating content within a file or files & 4.4\\
+Filtering collections (lists, tables, etc.) & 3.0 \\
+Checking for a single character & 1.7\\
+Parsing user input & 4.0\\
+Parsing generated text & 3.0\\
+
+\end{tabular}
+\end{center}
+\end{table}
+
+Table~\ref{tab:regexactivities} shows how frequently, on average, the participants use 
+regexes for various actives. 
+Participants answered questions using a 6-point likert scale including very frequently, frequently, occasionally, rarely, very rarely, and never. 
+Assigning values from 1 to 6, where 6 is the most frequent, the responses were averaged across participants. 
+Among the most common are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently. \todo{summary message}
+
+\todo{add information about regexes and tests here}
+
+\todo{add motivating paragraph for studying regexes, based on evidence provided here}

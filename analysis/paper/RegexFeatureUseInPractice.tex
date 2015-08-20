@@ -1,6 +1,7 @@
-\documentclass[conference]{IEEEtran}
+%\documentclass[conference]{IEEEtran}
+\documentclass{sig-alternate}
 \usepackage{datatool}
-\usepackage{amsthm}
+%\usepackage{amsthm}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{enumerate}
@@ -36,15 +37,28 @@
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 %\title{Regex Feature Use In Practice}
-\title{Exploring Regular Expression Feature Usage in Python Projects}
+\title{Exploring Regular Expression Feature Usage in Python}
 
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Carl Chapman and Kathryn T. Stolee}
-\IEEEauthorblockA{Department of Computer Science\\
-Iowa State University\\
-\{carl1978, kstolee\}@iastate.edu}}
+\numberofauthors{2}
+
+\author{
+\alignauthor
+Carl Chapman\\
+       \affaddr{Department of Computer Science}\\
+       \affaddr{Iowa State University}\\
+       \affaddr{Ames, IA, USA}\\
+      \email{carl1978@iastate.edu}\\
+ \alignauthor
+Kathryn T. Stolee\\
+       \affaddr{Departments of Computer Science and}\\
+             \affaddr{Electrical and Computer Engineering}\\
+       \affaddr{Iowa State University}\\
+       \affaddr{Ames, IA, USA}\\
+      \email{kstolee@iastate.edu}\\
+}
 
 % make the title area
 \maketitle
@@ -76,9 +90,13 @@ We conclude by discussing the implications of omitting certain features in a too
 
 \section{Threats to Validity}
 
+\todo{organize by internal, external, conclusion, construct}
+
 The threats to validity of this work stem primarily from sampling bias, tool limitations, and language selection.
 
 We mined only \DTLfetch{data}{key}{nProjScanned}{value} Python projects from GitHub, which is  small in comparison with the over 100,000 available Python projects. The projects were mined using the GitHub API which sorts the projects by creation date. By using the API, the goal was to reduce any sampling bias introduced by the researchers.
+
+The survey results are from a set of developers at one company and may not generalize to other developers at that company or at other companies. While the results provide some information on regex usage, repeating the survey to a larger set of diverse developers will increase the generalizeability of the results. 
 
 We did not scrape all commits in every project for regular expression utilizations, rather, we grabbed each project every 20 commits. It is possible that in between the scanned commits, a regular expression utilization was added and then removed, leading to fewer utilizations in our final data set.
 
