@@ -6,6 +6,13 @@ In this section, we present the results of each research question.
 \subsection{RQ1: How  is the {\tt re} module used in Python projects?}
 To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
 
+
+Furthermore, we measure the frequency of usage for calls to the 8 functions of the {\tt re} module ({\tt re.compile}, {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub} and {\tt re.subn}) in Python projects scraped from GitHub.
+
+We also measure usage of the 8 flags ({\tt re.DEFAULT}, {\tt re.IGNORECASE}, {\tt re.LOCALE}, {\tt re.MULTILINE}, {\tt re.DOTALL}, {\tt re.UNICODE}, {\tt re.VERBOSE} and {\tt re.DEBUG}) of the {\tt re} module.
+
+
+
 \subsubsection{Regex Utilizations per Project}
 Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average scanned project  contained, how many of those files contained utilizations, and how many utilizations occurred per file, as shown in Table~\ref{table:saturation}.
 
@@ -84,6 +91,8 @@ Only about half of the projects sampled contained any utilizations, and many of 
 
 \subsection{RQ2: Which regular expression language features are most commonly used in python?}
 \label{results:re2}
+
+To measure feature usage, we parse Python regular expression patterns using Bart Kiers' PCRE parser\footnote{\url{https://github.com/bkiers/PCREParser}}, as described in Section~\ref{study:corpus}.  We then count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
 
 Table~\ref{table:featureStats} displays feature usage from the corpus and relates it to four major regex related projects. Only features appearing in at least 10 projects are listed.
 The first column, \emph{rank}, lists the rank of a feature (relative to other features) in terms of the number of projects in which it appears. The next column, \emph{code}, gives a succinct reference string for the feature, and is followed by a \emph{description} column that provides a brief comment on what the feature does.  The \emph{example} column provides a short example of how the feature can be used.

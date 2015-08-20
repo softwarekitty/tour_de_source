@@ -1,14 +1,13 @@
 \section{Study}
 \label{sec:study}
 
-To understand how programmers use regular expressions in Python projects, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects from GitHub, and recorded regex usages for analysis as described in Section~\ref{study:corpus}.
-Throughout the rest of this paper, we  employ the following terminology:
+To understand how programmers use regular expressions in Python projects, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects from GitHub, and recorded regex usages for analysis. Throughout the rest of this paper, we  employ the following terminology:\\
 
-\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex engine in a project.  We detect utilizations by recording all calls to the {\tt re} module in Python.
-Within a particular file in a project, a {utilization} is composed of a function, a pattern and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one regex {utilization}, with key components labeled. Specifically, {\tt re.compile} is the function call, \verb!(0|-?[1-9][0-9]*)$! is the regex string, or pattern, and {\tt re.MULTILINE} is an (optional) flag. Thought of another way, a regular expression  utilization is one single invocation of the {\tt re} library in a project.
+\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a developer uses a regex  in a project.  We detect utilizations by recording all calls to the {\tt re} module in Python.
+Within a particular file in a project, a {utilization} is composed of a function, a pattern, and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one regex {utilization}, with key components labeled. The function call is {\tt re.compile}, \verb!(0|-?[1-9][0-9]*)$! is the regex string, or pattern, and {\tt re.MULTILINE} is an (optional) flag. This {utilization}  will compile a regex object in the variable {\tt r1} from the pattern \verb!(0|-?[1-9][0-9]*)$!, with the \verb!$! token matching at the end of each line because of the {\tt re.MULTILINE} flag. Thought of another way, a regular expression  utilization is one single invocation of the {\tt re} library.\\
 
 
-The {utilization} in Figure~\ref{fig:exampleUsage}  will compile a regex object in the variable {\tt r1} from the pattern \verb!(0|-?[1-9][0-9]*)$!, with the \verb!$! token matching at the end of each line because of the {\tt re.MULTILINE} flag.  The pattern in this \emph{utilization} will match if it finds a zero at the end of a line, or a (possibly negative) integer at the end of a line (i.e., due to the {\tt -?} sequence denoting zero or one instance of the {\tt -}).
+
 
 
 \begin{figure}[tb]
@@ -20,62 +19,41 @@ The {utilization} in Figure~\ref{fig:exampleUsage}  will compile a regex object 
 
 
 
-\noindent \textbf{Pattern}: A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}. In essence, it is a string, but more formally it is an ordered series of regular expression language feature tokens.
+\noindent \textbf{Pattern}: A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}. In essence, it is a string, but more formally it is an ordered series of regular expression language feature tokens.  The pattern in Figure~\ref{fig:exampleUsage}  will match if it finds a zero at the end of a line, or a (possibly negative) integer at the end of a line (i.e., due to the {\tt -?} sequence denoting zero or one instance of the {\tt -}).
 
-Notice that because the vast majority of regex features are shared across most all-purpose languages, a Python {pattern} will (almost always) behave the same when used in other languages, such as Java, C\#, Javascript, or Ruby, whereas a utilization is not universal in the same way (i.e., it may not compile in other languages, even with small modifications to function and flag names).
-
-
-% As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though it has an equivalent flag in Java.
+Note that because the vast majority of regex features are shared across most general programming languages (e.g., Java, C, C\#, or Ruby), a Python {pattern} will (almost always) behave the same when used in other languages, whereas a utilization is not universal in the same way (i.e., it may not compile in other languages, even with small modifications to function and flag names).
+As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though it has an equivalent flag in Java.
 %\todo{Carl: check the above paragraph}
 
 In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior for every utilization. Next, we describe the research questions and how the data set was collected and analyzed.
 
 \subsection{Research Questions}
 \label{sec:rqs}
-Our overall research goal is to understand how regular expressions and regular expression features are used in practice. We aim to answer the following research questions:
+To understand how regular expressions and regular expression features are used in Python projects, we aim to answer the following research questions:\\
 
-\textbf{RQ1:} How  is the {\tt re} module used in Python projects?
+\noindent \textbf{RQ1:} How  is the {\tt re} module used in Python projects?
 
-To address this research question, we measure how often any calls are made to the {\tt re} module per file and per project in Python projects.
+We measure how often calls are made to the {\tt re} module per file and per project in Python projects.
+To provide context as to the overlap among regular expression strings used in Python, we explore the most common regex {patterns} across all utlizations.\\
 
-Furthermore, we measure the frequency of usage for calls to the 8 functions of the {\tt re} module ({\tt re.compile}, {\tt re.search}, {\tt re.match}, {\tt re.split}, {\tt re.findall}, {\tt re.finditer}, {\tt re.sub} and {\tt re.subn}) in Python projects scraped from GitHub.
+\noindent \textbf{RQ2:} Which regular expression language features are most commonly used in python?
 
-We also measure usage of the 8 flags ({\tt re.DEFAULT}, {\tt re.IGNORECASE}, {\tt re.LOCALE}, {\tt re.MULTILINE}, {\tt re.DOTALL}, {\tt re.UNICODE}, {\tt re.VERBOSE} and {\tt re.DEBUG}) of the {\tt re} module.
+We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Section~\ref{study:corpus} with examples.\\
 
-Further, to provide context as to the overlap among regular expression strings used in Python, we explore the most common regex {patterns} across all utlizations.
-
-\textbf{RQ2:} Which regular expression language features are most commonly used in python?
-
-We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Section~\ref{study:corpus} with examples.
-
-To measure feature usage, we parse Python regular expression patterns using Bart Kiers' PCRE parser\footnote{\url{https://github.com/bkiers/PCREParser}}, as described in Section~\ref{study:corpus}.  We then count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
-
-\textbf{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
+\noindent \textbf{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
 %\textbf{RQ3:} What is the impact of \emph{not} supporting various regex features on tool designers and users?
 
-To address, this question, we use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for.
-
-At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. We will briefly illustrate our definition of behavioral similarity using some unspecified patterns A and B.  Consider a set `mA' of 100 strings that pattern A matches.  If pattern B matches 90 of the 100 strings in the set mA, then B is 90\% similar to A.  Now consider another set of 100 strings, `mB' that pattern B matches.  If pattern A only matches 50 of the strings in `mB', then A is 50\% similar to B.  We use similarity scores to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.  In row A, column B we see that B is 90\% similar to A.  Int row B, column A, we see that A is 50\% similar to B.  Each pattern is always 100\% similar to itself, since it matches all 100 of its own strings by their definition.
-
-\begin{figure}[tb]
-\centering
-\includegraphics[height=0.6in]{../illustrations/minimalMatrix.eps}
-\caption{A Similarity Matrix Created by Counting Strings Matched}
-\label{fig:minimalMatrix}
-\end{figure}
-
-Using the similarity matrix, clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.  These clusters are used to see how programmers implement regular expressions that match similar strings and interpret what a feature is used for.
-We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
+We use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for. \\
 
 
-Next, we describe in greater detail how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
+Next, we describe how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
 %\todo{Is this still the case?}
 %Since our semantic analysis is based on Rex, this semantic analysis cannot be applied to all features studied.  For these unsupported features, we use 6 string similarity metrics (Jaro-Winkler, Levenshtein, Longest Common Substring, Sift3, Jaccard and Cosine) to build similarity matrices.  As before, these matrices are used to find clusters of regexes, which are used to interpret what a feature is used for.
 
 
 
 
-\subsection{Building the Corpus}
+\subsection{Regex Corpus}
 \label{study:corpus}
 Github is a popular project hosting site containing over 100,000 Python projects.  The GitHub API assigns an integer identifier to each repository and can be used to clone relevant repositories for analysis.  Using the \url{http://api.github.com/repositories?since=N} interface page, we launched 32 scrapers to find repositories containing Python code.  The Github interface provides information about the first 100 repository IDs since the {\tt N} value on a single results page.  Each scraper used this information to identify repositories containing Python.  When a scraper was done with one page, it continued on to the next 100 repository IDs by using the interface again with {\tt N} now equal to the last repository ID on the current page.  Using this process, each scraper paged through the next available 1,000 repositories, cloning and scanning Python projects as they were found.  Each scraper started at a different {\tt N} value, with the first scraper starting at 0.  Scraper start indices were spaced by 262,144 so as to investigate within the first 8 million repositories.  At the time scraping was performed, the highest repoID was over 32 million, so we were cloning projects in the lowest fourth of the available space of IDs.  After this process was complete, \DTLfetch{data}{key}{nProjScanned}{value} Python projects had been cloned and scanned.
 
@@ -112,6 +90,20 @@ To create the tool mappings, we consulted documentation for each of the selected
 %Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
 
 \subsection{Clustering and Semantic Analysis}
+At a high level, our semantic analysis clusters regular expressions by their behavioral similarity. We will briefly illustrate our definition of behavioral similarity using some unspecified patterns A and B.  Consider a set `mA' of 100 strings thazt pattern A matches.  If pattern B matches 90 of the 100 strings in the set mA, then B is 90\% similar to A.  Now consider another set of 100 strings, `mB' that pattern B matches.  If pattern A only matches 50 of the strings in `mB', then A is 50\% similar to B.  We use similarity scores to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.  In row A, column B we see that B is 90\% similar to A.  Int row B, column A, we see that A is 50\% similar to B.  Each pattern is always 100\% similar to itself, since it matches all 100 of its own strings by their definition.
+
+
+\begin{figure}[tb]
+\centering
+\includegraphics[height=0.6in]{../illustrations/minimalMatrix.eps}
+\caption{A Similarity Matrix Created by Counting Strings Matched}
+\label{fig:minimalMatrix}
+\end{figure}
+
+Using the similarity matrix, clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.  These clusters are used to see how programmers implement regular expressions that match similar strings and interpret what a feature is used for.
+We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
+
+
 We are interested in what behaviors users are trying to get when using regexes, and we know that the exact same behavior, or very similar behavior can be specified in many ways.  For example, the three patterns \verb!`\W'!, \verb!`[^\w]'!, \verb!`[^a-zA-Z0-9_]'! all specify the same matching behavior.  Even if we create a slightly different pattern that matches one more character, for example \verb!`[\W_]'!, most strings that match the first three equivalent patterns will also match the different pattern.
 
 % \begin{figure}[tb]
