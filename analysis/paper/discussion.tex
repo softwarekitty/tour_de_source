@@ -1,11 +1,12 @@
 \section{Discussion}
 \label{sec:discussion}
 
-This research has explored how regular expressions are used in practice. In this section, we discuss the implications of these empirical findings on tool designers and users of regex tools and opportunities for future work.
+%This research has explored how regular expressions are used in practice. 
+In this section, we discuss the implications of these empirical findings on tool designers and users of regex tools and opportunities for future work.
 
 
 
-\subsection{Implications For Tool Designers of Omitting a Feature}
+\subsection{Implications For Tool Designers}
 
 We observe that, although the clusters were generated based on behavioral similarity, they are often centered around the presence of certain features. Thus, omitting those features in a tool's implementation often omits an entire space of regular expression behaviors.
 
@@ -13,10 +14,12 @@ We observe that, although the clusters were generated based on behavioral simila
 \subsubsection{STR, END}
 The endpoint anchor features STR and END are the only way to specify that the entire input string has to match a pattern.  Consider the following example, comparing the pattern \verb!`^\s*$'! to the pattern \verb!`\s*'! when looking for input strings devoid of content.  Because it does not have endpoint anchors, the pattern \verb!`\s*'! matches all inputs, since there are always at least zero whitespace characters in every input.  But with the endpoint anchors, only inputs that contain nothing but whitespace will match, allowing the user to determine if a string is devoid of content.
 
-From Table~\ref{table:featureStats} we know that STR and END features are present in over half of the scanned projects containing utilizations - further evidence of the importance of these features.  The brics library does not support this feature, which is a missed opportunity for many developers who could otherwise have used brics to model their regexes that use STR and END.
+From Table~\ref{table:featureStats} we know that STR and END features are present in over half of the scanned projects containing utilizations - further evidence of the importance of these features.  The brics library does not support this feature, which is a missed opportunity for many developers who could otherwise have used brics to model their regexes that use STR and END. The impact on users may be substantial. In our survey, over half (56\%) of the respondents answers that they use endpoint anchors frequently or very frequently. 
+
 
 \subsubsection{LZY}
 The LZY feature modifies the behavior of the repetition features (i.e., ADD, KLE, QST, DBB, LWB, SNG) by forcing them to use as few repetitions as possible for a match.  The default behavior for the repetition features is to use as many repetitions as possible for a match.  Consider trying to find the shortest sequence of binary characters starting and ending with a 1 within the binary sequence: {\tt 1010001}. The pattern \verb!`1.*1'! will match the entire sequence whereas the pattern \verb!`1.*?1'! will match {\tt 101} because the KLE repetition feature was modified by the LZY feature.  There is no way to obtain shortest matches without the LZY feature.  LZY is present in over 36\% of scanned projects with utilizations (see Table~\ref{table:featureStats}), and yet was not supported by two of the four major regex projects we looked at.
+In our developer survey, 11\% (2) of participants use this feature frequently and 6 (33\%) use it occasionally, showing a modest impact on potential users. 
 
 \subsection{Key User Behaviors to Support}
 %Several key user behaviors were observed in the corpus of patterns, and in the clusters and cluster categories that...
@@ -24,11 +27,12 @@ Here we offer a discussion of the main behaviors that are important for tool des
 
 \subsubsection{Prioritized List of Features}
 \label{sec:prioritizedList}
-Based on our analysis of feature usage in RQ2 and the data presented in Table~\ref{table:featureStats}, we have produced a prioritized list of features (Figure~\ref{fig:prioritizedList}) to include in a tool meant to support as many regexes as possible.
+Based on our analysis of feature usage in RQ2 and the data presented in Table~\ref{table:featureStats}, we have produced a prioritized list of features (Figure~\ref{fig:prioritizedList}) to include in a tool meant to support as many regexes as possible. The features NCCC, RNG, WSP, DEC, WRD, NWSP, NDEC, NWRD are all included as the second priority because by implementing CCC, these features are available as specific instances of CCC.  Consider how the DEC feature can be simulated using CCC, for example  $\backslash d \equiv [0123456789]$. Likewise, any use of the RNG feature can be simulated using CCC, for example: $[a-f] \equiv [abcdef]$.
+\todo{can this become more readable please? I'm lost in acronyms}
 
 \begin{figure}[tb]
 \fbox{\parbox{\columnwidth}{
-\begin{enumerate}
+\begin{enumerate} \itemsep -3pt
 \item literals, sequences of tokens
 \item CCC (NCCC, RNG, WSP, DEC, WRD, NWSP, NDEC, NWRD)
 \item CG (without back-references)
@@ -47,20 +51,20 @@ Based on our analysis of feature usage in RQ2 and the data presented in Table~\r
 }
 \end{figure}
 
-The features NCCC, RNG, WSP, DEC, WRD, NWSP, NDEC, NWRD are all included as the second priority because by implementing CCC, these features are available as specific instances of CCC.  Consider how the DEC feature can be simulated using CCC, for example  $\backslash d \equiv [0123456789]$. Likewise, any use of the RNG feature can be simulated using CCC, for example: $[a-f] \equiv [abcdef]$.
 
 Similarly, the features ADD, KLE, QST, SNG and LWB are available once the DBB feature is implemented.  Consider how every use of the ADD feature can be simulated with a specific use of the DBB feature, for example: $a+ \equiv a\{1, MAX\}$.  In the same way, any use of the SNG feature can be simulated using the DBB feature, for example:  $a\{5\} \equiv a\{5, 5\}$.
 
 
 \subsubsection{Capturing Specific Content}
-As mentioned in section~\ref{sec:featureUsage}, the CG feature is the most frequently used feature in terms of patterns and files (see Table~\ref{table:featureStats}).  The ability to capture some part of a match provides a powerful tool to programmers.  As mentioned in Section~\ref{sec:clusterResults}, capturing values assigned to variables was one of the main categories of clusters observed.  All four of the major regex tools support the CG feature.  Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important.
+As mentioned in section~\ref{sec:featureUsage}, the CG feature is the most frequently used feature in terms of patterns (see Table~\ref{table:featureStats}).  The ability to capture some part of a match provides a powerful tool to programmers.  As mentioned in Section~\ref{sec:clusterResults}, capturing values assigned to variables when parsing source code was one of the main categories of clusters observed.  All four of the major regex tools support the CG feature.  Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important.
 
 \subsubsection{Use of the Default Character Classes}
-The pattern language for Python and most major regex engines support a few default character classes (and their negations) which we have described as the features ANY, DEC, WSP, WRD, NDEC, NWSP, NWRD.  Throughout this analysis it was obvious that these default character classes were widely used.  As mentioned in section~\ref{sec:prioritizedList}, all of these default character classes can be simulated using the CCC feature, and the CCC feature is one of the most basic features that is essential for all regex tools to support.  For tools that do not support the default character classes, this is a significant obstacle for users trying to test or model the regexes that they already have.
+The pattern language for Python and most major regex engines support a few default character classes (and their negations) which we have described as the features ANY, DEC, WSP, WRD, NDEC, NWSP, NWRD.  Throughout this analysis and in our survey,  it was clear that these default character classes were widely used.  As mentioned in section~\ref{sec:prioritizedList}, all of these default character classes can be simulated using the CCC feature, and the CCC feature is one of the most basic features that is essential for all regex tools to support.  For tools that do not support the default character classes, this is a significant obstacle for users trying to test or model the regexes that they already have.
 
 \subsubsection{Using {\tt`.*'} to Count Lines Containing a Pattern}
-Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of all the patterns observed during this study, the most ubiquitous sub-pattern was \verb!`.*'!, usually present near the end of the pattern.  Out of the 13,912 patterns in the corpus, 3444 (24\%) contained \verb!`.*'! at least once.
-One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on, as illustrated in Figure~\ref{fig:lineSearch}.  \todo{describe Fig 6 better} Tools that intend to be applicable to regex use in practice must support both the ANY and KLE features, and should give special care to maintain the expected line-counting behavior for the \verb!`.*'! idiom.
+Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of all the patterns observed in the study, the most ubiquitous sub-pattern was \verb!`.*'!, usually present near the end of the pattern. \todo{what is a sub-pattern? is this ever defined?} Out of the 13,912 patterns in the corpus, 3444 (24\%) contained \verb!`.*'! at least once.
+One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on, as illustrated in Figure~\ref{fig:lineSearch}. 
+Tools that intend to be applicable to regex use in practice must support both the ANY and KLE features, and should give special care to maintain the expected line-counting behavior for the \verb!`.*'! idiom.
 
 %\subsubsection{Using `\textbackslash W' to Sanitize Arbitrary Text}
 
@@ -70,7 +74,7 @@ One reasonable explanation for this tendency to put \verb!`.*'! at the end of a 
 \fbox{
 \includegraphics[width=\columnwidth]{../illustrations/lineSearch.eps}
 }
-\caption{An Example of Using .* to Count Lines Containing `Apples' \todo{crop}}
+\caption{An Example of Using .* to Count Lines Containing `Apples'}
 \label{fig:lineSearch}
 \end{figure}
 
@@ -88,6 +92,13 @@ The project with the most files containing utilizations observed is Arianrhod\fo
 
 \subsubsection{Regexes need refactoring}
 When clustering by behavior, we observed many clusters with more than 10 patterns all specifying nearly the same behavior.  We don't know why different users choose to implement the same behavior in different ways.  Out of the 13,912 patterns in the corpus, 1977 (14\%) used the RNG feature to specify the range \verb•0-9•, even though this is exactly equivalent to using \verb•\d• .  Future work is needed to determine why users specify digits using the RNG feature when an equivalent default character class already exists, as has been done for other refactoring work (e.g.,~\cite{StoleeTSE2013}).
+\todo{weird formatting on regexes}
+
+\subsubsection{Automated program repair}
+
+
+
+
 
 % \subsubsection{dot-star at the end - refactoring?}
 % One of the most ubiquitous sub-patterns, \verb!`.*'! appeared in 1937 of the 9727 patterns acceptable by Rex, and appeared within the last four characters in 1161 of the 9727 patterns.  Out of the top 30 clusters containing the ANY feature, 26 also had \verb!`.*'! within the last four characters.
