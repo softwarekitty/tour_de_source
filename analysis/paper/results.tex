@@ -5,8 +5,8 @@ In this section, we present the results of each research question.
 
 \subsection{RQ1: How  is the {\tt re} module used in Python projects?}
 To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
-We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}). 
-We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}). 
+We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}).
+We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}).
 
 
 
@@ -14,7 +14,7 @@ We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNOREC
 Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average scanned project  contained, how many of those files contained utilizations, and how many utilizations occurred per file, as shown in Table~\ref{table:saturation}.
 
 The average project contained 32 utilizations, and the maximum number of utilizations was 1,427.  The project with the most utilizations is a C\# project\footnote{\url{https://github.com/Ouroboros/Arianrhod}} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
-From Table~\ref{table:saturation}, we also see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.  
+From Table~\ref{table:saturation}, we also see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.
 
 % to find max nprojects: select distinct uniqueSourceID, count(*) as ct from RegexCitationMerged group by uniqueSourceID order by ct;
 
@@ -43,7 +43,7 @@ The number of projects that use each of the {\tt re} functions is shown in Figur
 \todo{can we connect any of these function calls to the findings from the survey? For example, according to Table~\ref{tab:regexactivities}, participants frequently or occasionally want to capture parts of strings, which maps to the X function in {\tt re}}
 
 \subsubsection{Usage Frequency of {\tt re} Module Flags}
-When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed. 
+When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed.
 
  Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  \todo{link this to survey results} It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
 
@@ -121,7 +121,7 @@ CG is more commonly used in patterns than the highest ranked feature (ADD) by a 
 %removed because this table is not complete - features in less than 10 projects are omitted so talking about the least used is not entirely accurate
 
 %\subsubsection{Potentially Under-Ranked and Over-Ranked Features}
-%We note that Table~\ref{table:featureStats} is sorted by the number of projects a feature appears in, but if the table were instead sorted by the number of patterns or files that a feature appears in, the ranking order would be different.  
+%We note that Table~\ref{table:featureStats} is sorted by the number of projects a feature appears in, but if the table were instead sorted by the number of patterns or files that a feature appears in, the ranking order would be different.
 
 %\todo{include this or not?}
 % The WSP feature is present in more patterns than the NCCC feature by a margin of 6.7\%, and in more files by a margin of 4.2\%, yet it is ranked lower than NCCC because it is present in 13 fewer projects (0.8\%).
@@ -179,18 +179,18 @@ Next, we define the six categories and provide examples from the relevant cluste
 
 \subsubsection{Single Literal Characters}
 This category contains 19 clusters. Each of the clusters center around a single literal character. For example, three of the top clusters in this category include:
-\verb!`\\'(110)!, \verb!`,'(100)!, and \verb!`:'(91)!. This is in contrast to the survey in Section~\ref{sec:survey} in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{tab:regexactivities}). 
+\verb!`\\'(110)!, \verb!`,'(100)!, and \verb!`:'(91)!. This is in contrast to the survey in Section~\ref{sec:survey} in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{tab:regexactivities}).
 % \verb!`-'(74)!, \verb!`#'(69)!, \verb!` '(66)!, \verb!`/'(65)!, \verb!`\.'(61)!, \verb!`='(52)!, \verb!`//'(51)!, \verb!`\n'(41)!, \verb!`;'(38)!, \verb!`_'(36)!, \verb!`@'(36)!, \verb!`"'(33)!, \verb!`%'(29)!, \verb!`&'(28)!, \verb!`&'(28)!, \verb!`''(28)!
 
 \subsubsection{Default Character Classes}
 This category contains 12 clusters. Each of the clusters revolves around the use of a default character class. For example, three of the top clusters in this category are:
-\verb!`\s'(277)!, \verb!`\W'(208)!, and \verb!`\d'(193)!. This corroborates our survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which 56\% (10) of the participants indicated they use the default classes more than custom. 
+\verb!`\s'(277)!, \verb!`\W'(208)!, and \verb!`\d'(193)!. This corroborates our survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which 56\% (10) of the participants indicated they use the default classes more than custom.
 %\verb!`\w'(114)!, \verb!`\w+$'(71)!,
 % \verb!`\D'(65)!, \verb!`\S'(53)!, \verb!`^\s'(40)!, \verb!`^\d+'(39)!, \verb!`^\s*'(39)!, \verb!`\d+$'(38)!, \verb!`\s*'(30)!
 
 \subsubsection{User-Defined Character Classes}
 This category contains 10 clusters. Each of the clusters center around user defined character classes. For example, three of the top clusters in this category are:
-\verb!`[a-zA-Z]'(138)!, \verb!`[^!-~]'(122)!, and \verb!`[&<]'(50)!. This further supports our survey results in which 33\% (6) participants indicated they use the custom classes more than default. The remaining two participants use both equally. 
+\verb!`[a-zA-Z]'(138)!, \verb!`[^!-~]'(122)!, and \verb!`[&<]'(50)!. This further supports our survey results in which 33\% (6) participants indicated they use the custom classes more than default. The remaining two participants use both equally.
 % \verb!`[A-Z]'(47)!, \verb!`[ \t]'(37)!, \verb!`[-\s]'(35)!, \verb!`^[a-zA-Z]'(33)!, \verb!`[][\()<>@,:;"."]'(29)!, \verb!`[*?[]'(29)!, \verb!`[?/]+'(28)!
 
 
@@ -202,9 +202,8 @@ This category contains 8 clusters. Each of the clusters begins with the STR anch
 
 \subsubsection{Parsing Angle Bracket Contents}
 This category contains 5 clusters. Each of the clusters contains a pair of angle brackets that contain a repeating character class.  It appears that these clusters are being used to recognize or capture the contents of the angle brackets.  For example, three of the top clusters in this category include:
-\verb!`<.+>'(63)!, \verb•`<!\s+([^<>]*)>'(35)•, and \verb!`(<[^<>]*)/>'(35)!. %, ,  \verb!`\(.*\)'(31)!
+\verb!`<.+>'(63)!, \verb?`<!\s+([^<>]*)>'(35)?, and \verb!`(<[^<>]*)/>'(35)!. %, ,  \verb!`\(.*\)'(31)!
 % too long for column width: \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!,
-\todo{weird formatting in these verb environments}
 
 \subsubsection{Capturing Variable Assignments}
 This category contains 4 clusters. Each of the clusters contain an equals symbol and some pattern on either side of it, which appears to be a variable on the left of the equals sign and a value on the right.  This type of cluster is very likely used to capture the value of the variable assignment when parsing source code. For example, three of the top clusters in this category are:
@@ -217,7 +216,7 @@ This category contains 4 clusters. Each of the clusters contain an equals symbol
 \subsection{Summary}
 \label{sec:clusterResults}
 We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the comma for the cluster in Table~\ref{table:exampleCluster}.
-These six categories define what users are doing with regexes at a high level: using default character classes, defining their own character classes, matching single characters, parsing variable assignments, parsing the contents of brackets, or matching whole lines. The higher frequency of default character class matching than custom character class matching corroborates our developer survey responses. 
+These six categories define what users are doing with regexes at a high level: using default character classes, defining their own character classes, matching single characters, parsing variable assignments, parsing the contents of brackets, or matching whole lines. The higher frequency of default character class matching than custom character class matching corroborates our developer survey responses.
  One of the six common cluster categories, \emph{capturing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
 
 %whereas each group in the second part is drawn from a subset of strings in the corpus known to contain at least one of the desired features.  We did this because the presence of a feature in a pattern can be easily lost

@@ -110,7 +110,7 @@ The generated strings for each pattern are used to measure the pairwise similari
 %The average number of generated strings per pattern was \todo{X} with a standard deviation of \todo{Y}. The maximum number generated was \todo{Z-these3:programming project for later tonight}.
 %At least one pattern from the 9727 patterns that Rex was able to generate matching strings for can be found in 1375 of the 1645 projects containing at least one utilization.
 
-Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix were averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph} \todo{remove the text file from the figure}. This facilitated clustering by means of the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.
+Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix were averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph}. This facilitated clustering by means of the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.
 We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
 We note that Markov clustering can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.
 The end result is clusters of highly semantically similar regular expressions.
