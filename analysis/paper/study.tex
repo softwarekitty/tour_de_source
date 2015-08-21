@@ -55,11 +55,11 @@ Next, we describe how the corpus of regex patterns was built, how features were 
 
 \subsection{Regex Corpus}
 \label{study:corpus}
-%Github is a popular project hosting site containing over 100,000 Python projects.  
-Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects. 
+%Github is a popular project hosting site containing over 100,000 Python projects.
+Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects.
 %The GitHub API assigns an integer identifier to each repository and can be used to clone relevant repositories for analysis.  Using the \url{http://api.github.com/repositories?since=N} interface page, we launched 32 scrapers to find repositories containing Python code.  The Github interface provides information about the first 100 repository IDs since the {\tt N} value on a single results page.  Each scraper used this information to identify repositories containing Python.  When a scraper was done with one page, it continued on to the next 100 repository IDs by using the interface again with {\tt N} now equal to the last repository ID on the current page.  Using this process, each scraper paged through the next available 1,000 repositories, cloning and scanning Python projects as they were found.  Each scraper started at a different {\tt N} value, with the first scraper starting at 0.  Scraper start indices were spaced by 262,144 so as to investigate within the first 8 million repositories.  At the time scraping was performed, the highest repoID was over 32 million, so we were cloning projects in the lowest fourth of the available space of IDs.  After this process was complete, \DTLfetch{data}{key}{nProjScanned}{value} Python projects had been cloned and scanned.
 %For each project, we used Astroid\footnote{\url{https://bitbucket.org/logilab/astroid}} to build the AST of each Python file and find utilizations of Python's {\tt re} module. This ensured that all utliizations of the {\tt re} module were captured for analysis.
-Each project's commit history was scanned at 20 evenly-spaced commits.  If the project had fewer than 20 commits, then all commits were scanned.  The most recent commit was always included, and the spacing between all other chosen commits was determined by dividing the remaining number of commits by 19 (rounding as needed). 
+Each project's commit history was scanned at 20 evenly-spaced commits.  If the project had fewer than 20 commits, then all commits were scanned.  The most recent commit was always included, and the spacing between all other chosen commits was determined by dividing the remaining number of commits by 19 (rounding as needed).
 All regex utilizations were obtained, sans duplicates. Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In the end, we observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex utilizations in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
 In collecting the set of distinct patterns for analysis,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of utilizations using flags, which can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable), or because of other unknown parsing failures.
@@ -83,13 +83,13 @@ Once all patterns were transformed into vectors, we examined each feature indepe
 %Our semantic analysis is dependent on the use of Rex to generate strings so we can identify semantically related clusters. For three common features unsupported by Rex, we rely on syntactic analysis to determine similarity among regular expressions containing those features. For those features supported by Rex, we cluster the regular expressions based on semantic diversity.
 
 \subsection{Clustering and Semantic Analysis}
-Our semantic analysis clusters regular expressions by their behavioral similarity. 
-Consider two unspecified patterns {\tt A} and {\tt B}, a set {\tt mA} of 100 strings that pattern {\tt A} matches, and a set {\tt mB} of 100 strings that pattern {\tt B} matches.  
-If pattern {\tt B} matches 90 of the 100 strings in the set {\tt mA}, then {\tt B} is 90\% similar to {\tt A}.  
-If pattern {\tt A} only matches 50 of the strings in {\tt mB}, then {\tt A} is 50\% similar to {\tt B}.  
-We use similarity scores to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.  
-In row {\tt A}, column {\tt B} we see that {\tt B} is 90\% similar to {\tt A}.  
-In row {\tt B}, column {\tt A}, we see that {\tt A} is 50\% similar to {\tt B}.  Each pattern is always 100\% similar to itself, by definition. 
+Our semantic analysis clusters regular expressions by their behavioral similarity.
+Consider two unspecified patterns {\tt A} and {\tt B}, a set {\tt mA} of 100 strings that pattern {\tt A} matches, and a set {\tt mB} of 100 strings that pattern {\tt B} matches.
+If pattern {\tt B} matches 90 of the 100 strings in the set {\tt mA}, then {\tt B} is 90\% similar to {\tt A}.
+If pattern {\tt A} only matches 50 of the strings in {\tt mB}, then {\tt A} is 50\% similar to {\tt B}.
+We use similarity scores to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.
+In row {\tt A}, column {\tt B} we see that {\tt B} is 90\% similar to {\tt A}.
+In row {\tt B}, column {\tt A}, we see that {\tt A} is 50\% similar to {\tt B}.  Each pattern is always 100\% similar to itself, by definition.
 
 
 \begin{figure}[tb]
@@ -100,20 +100,20 @@ In row {\tt B}, column {\tt A}, we see that {\tt A} is 50\% similar to {\tt B}. 
 \end{figure}
 
 
-In the implementation, strings are generated for each pattern using Rex~\cite{rex}. 
+In the implementation, strings are generated for each pattern using Rex~\cite{rex}.
 \todo{explain how Rex generated strings. How likely is Rex to enumerate the same regular expressions for similar
 regular expressions?}
-Our goal is to generate 384 strings for each pattern to balance the runtime of the similarity analysis with the precision of the similarity calculations. 
- Since Rex does not support all the features present in the corpus, we could only generate sets of matching strings for 9,727 (70\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 270 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats}, as described in Section~\ref{results:rq3}. 
-The generated strings for each pattern are used to measure the pairwise similarity for all patterns and construct the similarity matrix. 
+Our goal is to generate 384 strings for each pattern to balance the runtime of the similarity analysis with the precision of the similarity calculations.
+ Since Rex does not support all the features present in the corpus, we could only generate sets of matching strings for 9,727 (70\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 270 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats}, as described in Section~\ref{results:rq3}.
+The generated strings for each pattern are used to measure the pairwise similarity for all patterns and construct the similarity matrix.
 %If Rex rejects the pattern, or fewer than 384 strings are generated, we do not include that pattern in the similarity analysis.
 %The average number of generated strings per pattern was \todo{X} with a standard deviation of \todo{Y}. The maximum number generated was \todo{Z-these3:programming project for later tonight}.
-%At least one pattern from the 9727 patterns that Rex was able to generate matching strings for can be found in 1375 of the 1645 projects containing at least one utilization.  
+%At least one pattern from the 9727 patterns that Rex was able to generate matching strings for can be found in 1375 of the 1645 projects containing at least one utilization.
 
-Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix were averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph} \todo{remove the text file from the figure}. This facilitated clustering by means of the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.  
+Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix were averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph} \todo{remove the text file from the figure}. This facilitated clustering by means of the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.
 We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
 We note that Markov clustering can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.
-The end result is clusters of highly semantically similar regular expressions. 
+The end result is clusters of highly semantically similar regular expressions.
 
 
 
@@ -121,7 +121,7 @@ The end result is clusters of highly semantically similar regular expressions.
 %The first matrix represents all pairwise similarity values between the four regexes: A, B, C, and D.  The second matrix represents the average of cells reflected across the diagonal of the matrix.  For example the value of row A, column C (0.9) represents the similarity of C to strings generated by Rex for regex A.  The value of row C column A (0.6) represents the similarity of A to strings generated by Rex for regex C.  The average of the two values is 0.75, which goes into row C, column A in the half-matrix.  For every value of 0.75 or greater, an edge is written to \emph{out.abc}.
 %Note that pairs DB and DC are omitted from the final file because their similarities are lower than the threshold.  The \emph{out.abc} generated file  is fed as input to the Markov Clustering Algorithm, and the top 100 clusters were catagorized by inspection into six categories of behavior (see Section~\ref{results:rq3}).
 %
-%Once the similarity matrix is built, clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.  
+%Once the similarity matrix is built, clusters of regexes with similar behavior are discovered using Markov Clustering\footnote{\url{http://micans.org/mcl/}}.
 %We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
 
 
@@ -130,7 +130,13 @@ The end result is clusters of highly semantically similar regular expressions.
 
 %As explained in Section~\ref{sec:rqs}, we used these sets of matching strings to  measure the pairwise similarity between regular expressions and create a behavioral similarity matrix.  We will refer to a cell of this matrix with row index {\tt i} and column index {\tt j} as {\tt M[i][j]}.  For each pattern at index {\tt i}, we used Rex to create a set of matching strings which we will refer to as {\tt matching\_strings\_i}.  Then for every pattern at index {\tt j}, we set the value of {\tt M[i][j]} equal to the fraction of strings in {\tt matching\_strings\_i} that the pattern at index {\tt j} matched.
 
+As explained in Section~\ref{sec:rqs}, we used these sets of matching strings to  measure the similarity between regular expressions and create a behavioral similarity matrix.  We will refer to a cell of this matrix with row index {\tt i} and column index {\tt j} as {\tt M[i][j]}.  For each pattern at index {\tt i}, we used Rex to create a set of matching strings which we will refer to as {\tt matching\_strings\_i}.  Then for every pattern at index {\tt j}, we set the value of {\tt M[i][j]} equal to the fraction of strings in {\tt matching\_strings\_i} that the pattern at index {\tt j} matched.
 
+%Once the matrix was complete, the values of cells reflected across the diagonal of the matrix were averaged to create a half-matrix of undirected similarity edges.
+%Using all similarity values in this half-matrix above 0.75, we created a text file specifying the edges of a graph.
+We illustrate the process used to create a text file specifying the edges of the graph to cluster in Figure~\ref{fig:matrixToGraph}.
+The leftmost matrix represents all similarity values between the four regexes: A, B, C, and D.  The central matrix represents the average of cells reflected across the diagonal of the matrix.  For example the value of row A, column C (0.9) represents the similarity of C to strings generated by Rex for regex A.  The value of row C column A (0.6) represents the similarity of A to strings generated by Rex for regex C.  The average of the two values is 0.75, which goes into row C, column A in the half-matrix.  For every value of 0.75 or greater, an edge is written to \emph{out.abc}.
+Note that pairs DB and DC are omitted from the final file because their similarities are lower than the threshold.  The \emph{out.abc} generated file  is fed as input to the Markov Clustering Algorithm, and the top 100 clusters are catagorized by inspection into six categories of behavior (see Section~\ref{results:rq3}).
 
 
 \begin{figure}[tb]

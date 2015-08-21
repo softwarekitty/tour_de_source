@@ -1,7 +1,7 @@
 \section{Discussion}
 \label{sec:discussion}
 
-%This research has explored how regular expressions are used in practice. 
+%This research has explored how regular expressions are used in practice.
 In this section, we discuss the implications of these empirical findings on tool designers and users of regex tools and opportunities for future work.
 
 
@@ -14,12 +14,12 @@ We observe that, although the clusters were generated based on behavioral simila
 \subsubsection{STR, END}
 The endpoint anchor features STR and END are the only way to specify that the entire input string has to match a pattern.  Consider the following example, comparing the pattern \verb!`^\s*$'! to the pattern \verb!`\s*'! when looking for input strings devoid of content.  Because it does not have endpoint anchors, the pattern \verb!`\s*'! matches all inputs, since there are always at least zero whitespace characters in every input.  But with the endpoint anchors, only inputs that contain nothing but whitespace will match, allowing the user to determine if a string is devoid of content.
 
-From Table~\ref{table:featureStats} we know that STR and END features are present in over half of the scanned projects containing utilizations - further evidence of the importance of these features.  The brics library does not support this feature, which is a missed opportunity for many developers who could otherwise have used brics to model their regexes that use STR and END. The impact on users may be substantial. In our survey, over half (56\%) of the respondents answers that they use endpoint anchors frequently or very frequently. 
+From Table~\ref{table:featureStats} we know that STR and END features are present in over half of the scanned projects containing utilizations - further evidence of the importance of these features.  The brics library does not support this feature, which is a missed opportunity for many developers who could otherwise have used brics to model their regexes that use STR and END. The impact on users may be substantial. In our survey, over half (56\%) of the respondents answers that they use endpoint anchors frequently or very frequently.
 
 
 \subsubsection{LZY}
 The LZY feature modifies the behavior of the repetition features (i.e., ADD, KLE, QST, DBB, LWB, SNG) by forcing them to use as few repetitions as possible for a match.  The default behavior for the repetition features is to use as many repetitions as possible for a match.  Consider trying to find the shortest sequence of binary characters starting and ending with a 1 within the binary sequence: {\tt 1010001}. The pattern \verb!`1.*1'! will match the entire sequence whereas the pattern \verb!`1.*?1'! will match {\tt 101} because the KLE repetition feature was modified by the LZY feature.  There is no way to obtain shortest matches without the LZY feature.  LZY is present in over 36\% of scanned projects with utilizations (see Table~\ref{table:featureStats}), and yet was not supported by two of the four major regex projects we looked at.
-In our developer survey, 11\% (2) of participants use this feature frequently and 6 (33\%) use it occasionally, showing a modest impact on potential users. 
+In our developer survey, 11\% (2) of participants use this feature frequently and 6 (33\%) use it occasionally, showing a modest impact on potential users.
 
 \subsection{Key User Behaviors to Support}
 %Several key user behaviors were observed in the corpus of patterns, and in the clusters and cluster categories that...
@@ -63,7 +63,15 @@ The pattern language for Python and most major regex engines support a few defau
 
 \subsubsection{Using {\tt`.*'} to Count Lines Containing a Pattern}
 Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of all the patterns observed in the study, the most ubiquitous sub-pattern was \verb!`.*'!, usually present near the end of the pattern. \todo{what is a sub-pattern? is this ever defined?} Out of the 13,912 patterns in the corpus, 3444 (24\%) contained \verb!`.*'! at least once.
-One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on, as illustrated in Figure~\ref{fig:lineSearch}. 
+One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on, as illustrated in Figure~\ref{fig:lineSearch}.
+
+Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of all the patterns observed during this study, the most ubiquitous sub-pattern was \verb!`.*'!, usually present near the end of the pattern.  Out of the 13,912 patterns in the corpus, 3444 (24\%) contained \verb!`.*'! at least once.
+One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  In Figure~\ref{fig:lineSearch}, we illustrate this phenomenon with two lines of Python code.
+
+The first line initializes the string {\tt fruitDiary}, which represents some file with many lines, with each line containing one unit of data.  In this example, each line contains a list of the fruits that were eaten on that day.  Two apples are recorded on the first line of {\tt fruitDiary}, zero apples are on the second line, and one apple is on the third line.  Overall, we see that at least one apple was eaten on two of the three days.
+
+The second line of code finds the length of the list of matches found using the {\tt re.findall} function.  The pattern \verb!`Apple.*'! will match any character sequence that starts with the string {\tt Apple} and then the \verb!`.*'! portion of the pattern will match every character except the newline character.  The two matches are highlighted in Figure~\ref{fig:lineSearch}. Because the \verb!`.*'! portion of the pattern matches everything up to the newline, the second Apple on the first line is ignored.  This allows the number of matches to be a count of lines containing {\tt Apple} at least once.
+
 Tools that intend to be applicable to regex use in practice must support both the ANY and KLE features, and should give special care to maintain the expected line-counting behavior for the \verb!`.*'! idiom.
 
 %\subsubsection{Using `\textbackslash W' to Sanitize Arbitrary Text}
