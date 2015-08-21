@@ -23,7 +23,9 @@
 \widowpenalty=10000
 \clubpenalty=10000
 
-\newcommand{\todo}[1]{\textbf{\textcolor{red}{TODO: #1}}} %comment out for submission
+\newcommand{\todoNow}[1]{\textbf{\textcolor{red}{TODO.NOW: #1}}} %comment out for submission
+\newcommand{\todoMid}[1]{\textbf{\textcolor{green}{TODO.MID: #1}}} %comment out for submission
+\newcommand{\todoLast}[1]{\textbf{\textcolor{blue}{TODO.LAST: #1}}} %comment out for submission
 %\newcommand{\todo}[1]{}
 \newcommand{\yes}{\tikz\draw[black,fill=black] (0,0) circle (.5ex);}
 \newcommand{\sorta}{\tikz\draw[gray,fill=gray] (0,0) circle (.5ex);}
@@ -67,10 +69,10 @@ Kathryn T. Stolee\\
 \begin{abstract}
 Regular expressions are used frequently in programming languages for form validation, ad-hoc file searches, and simple parsing. Due to the popularity and pervasive use of regular expressions, researchers have created tools to support their creation, validation, and use. Each tool has made design decisions about which regular expression features to support, and these decisions impact the usefulness and power of the tools. Yet, these decisions are often made with little information as there does not exist an empirical study of regular expression feature usage to inform these design decisions.
 
-In this paper, we survey 18 professional developers about the context and frequency of their regular expression usage. Then, we 
-explore regular expression feature usage in Pythod, focusing on how often features are used and the diversity of regular expressions from syntactic and semantic perspectives. We analyzed nearly 4,000 open source Python projects from GitHub and extracted nearly 14,000 unique regex patterns that were used for analysis.
+In this paper, we survey 18 professional developers about the context and frequency of their regular expression usage. Then, we
+explore regular expression feature usage in Python, focusing on how often features are used and the diversity of regular expressions from syntactic and semantic perspectives. We analyzed nearly 4,000 open source Python projects from GitHub and extracted nearly 14,000 unique regex patterns that were used for analysis.
 We also map the most common features used in regular expressions to those features supported by four common regex engines from industry and academia, brics, Hampi, Re2, and Rex.
-Our results indicate that developers frequently use regular expressions in their programming practices, but often those regular expressions do not persist (e.g., when used for command line or file search purposes). For regular expressions found in Python projects, 
+Our results indicate that developers frequently use regular expressions in their programming practices, but often those regular expressions do not persist (e.g., when used for command line or file search purposes). For regular expressions found in Python projects,
 the most commonly used features are also supported by popular research tools and that programmers frequently reinvent the wheel by writing identical or nearly identical regular expressions in different ways.
 We conclude by discussing the implications for  tool  designers and outline several directions of future work.
 %FYI: nProjScanned = 3898
@@ -91,13 +93,13 @@ We conclude by discussing the implications for  tool  designers and outline seve
 
 \section{Threats to Validity}
 
-\todo{organize by internal, external, conclusion, construct}
+\todoMid{organize by internal, external, conclusion, construct}
 
 The threats to validity of this work stem primarily from sampling bias, tool limitations, and language selection.
 
 We mined only \DTLfetch{data}{key}{nProjScanned}{value} Python projects from GitHub, which is  small in comparison with the over 100,000 available Python projects. The projects were mined using the GitHub API which sorts the projects by creation date. By using the API, the goal was to reduce any sampling bias introduced by the researchers.
 
-The survey results are from a set of developers at one company and may not generalize to other developers at that company or at other companies. While the results provide some information on regex usage, repeating the survey to a larger set of diverse developers will increase the generalizeability of the results. 
+The survey results are from a set of developers at one company and may not generalize to other developers at that company or at other companies. While the results provide some information on regex usage, repeating the survey to a larger set of diverse developers will increase the generalizeability of the results.
 
 We did not scrape all commits in every project for regular expression utilizations, rather, we grabbed each project every 20 commits. It is possible that in between the scanned commits, a regular expression utilization was added and then removed, leading to fewer utilizations in our final data set.
 
@@ -116,7 +118,7 @@ Regular expressions are used frequently in programming projects. In our analysis
 In analyzing the features used in regular expressions, we find that the most common is the {\tt +} token.
 When clustering regexes based on semantic similarity, we observe that programmers frequently create identical regular expressions using slightly different patterns. After mapping the features supported by four popular regex tools from academia and industry, we observe that most of the most popular features are also supported. However, those  unsupported can have an impact on the tool users.
 
-\todo{add: mining regexes from repos represents just a fraction of all regexes composed by developers. A deeper study into programmer behavior regarding regex usage in all tools, not just those that appear in repos, is needed, and left for future work}
+\todoMid{add: mining regexes from repos represents just a fraction of all regexes composed by developers. A deeper study into programmer behavior regarding regex usage in all tools, not just those that appear in repos, is needed, and left for future work}
 
 % use section* for acknowledgement
 \section*{Acknowledgment}

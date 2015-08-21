@@ -28,7 +28,7 @@ Here we offer a discussion of the main behaviors that are important for tool des
 \subsubsection{Prioritized List of Features}
 \label{sec:prioritizedList}
 Based on our analysis of feature usage in RQ2 and the data presented in Table~\ref{table:featureStats}, we have produced a prioritized list of features (Figure~\ref{fig:prioritizedList}) to include in a tool meant to support as many regexes as possible. The features NCCC, RNG, WSP, DEC, WRD, NWSP, NDEC, NWRD are all included as the second priority because by implementing CCC, these features are available as specific instances of CCC.  Consider how the DEC feature can be simulated using CCC, for example  $\backslash d \equiv [0123456789]$. Likewise, any use of the RNG feature can be simulated using CCC, for example: $[a-f] \equiv [abcdef]$.
-\todo{can this become more readable please? I'm lost in acronyms}
+\todoLast{can this become more readable please? I'm lost in acronyms}
 
 \begin{figure}[tb]
 \fbox{\parbox{\columnwidth}{
@@ -62,7 +62,7 @@ As mentioned in section~\ref{sec:featureUsage}, the CG feature is the most frequ
 The pattern language for Python and most major regex engines support a few default character classes (and their negations) which we have described as the features ANY, DEC, WSP, WRD, NDEC, NWSP, NWRD.  Throughout this analysis and in our survey,  it was clear that these default character classes were widely used.  As mentioned in section~\ref{sec:prioritizedList}, all of these default character classes can be simulated using the CCC feature, and the CCC feature is one of the most basic features that is essential for all regex tools to support.  For tools that do not support the default character classes, this is a significant obstacle for users trying to test or model the regexes that they already have.
 
 \subsubsection{Using {\tt`.*'} to Count Lines Containing a Pattern}
-Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of all the patterns observed in the study, the most ubiquitous sub-pattern was \verb!`.*'!, usually present near the end of the pattern. \todo{what is a sub-pattern? is this ever defined?} Out of the 13,912 patterns in the corpus, 3444 (24\%) contained \verb!`.*'! at least once.
+Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of all the patterns observed in the study, the most ubiquitous sub-pattern was \verb!`.*'!, usually present near the end of the pattern. \todoMid{what is a sub-pattern? is this ever defined?} Out of the 13,912 patterns in the corpus, 3444 (24\%) contained \verb!`.*'! at least once.
 One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on, as illustrated in Figure~\ref{fig:lineSearch}.
 
 Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of all the patterns observed during this study, the most ubiquitous sub-pattern was \verb!`.*'!, usually present near the end of the pattern.  Out of the 13,912 patterns in the corpus, 3444 (24\%) contained \verb!`.*'! at least once.
