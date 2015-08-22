@@ -1,7 +1,7 @@
 END_STR_
 totalNProjectIDs: 992
 totalNClusters: 2877
-totalNPatterns:3907
+totalNPatterns:3908
 realClusters:
 ('(\\s+.*)|(^$)':277)
 ('(^[^a-zA-Z\\._]+)|([^a-zA-Z\\._0-9]+)':208)

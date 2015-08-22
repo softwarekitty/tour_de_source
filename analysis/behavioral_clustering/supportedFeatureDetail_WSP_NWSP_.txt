@@ -1,7 +1,7 @@
 WSP_NWSP_
 totalNProjectIDs: 882
 totalNClusters: 1840
-totalNPatterns:2727
+totalNPatterns:2728
 realClusters:
 ('\\s':277)
 ('[^\\w\\s-]':208)

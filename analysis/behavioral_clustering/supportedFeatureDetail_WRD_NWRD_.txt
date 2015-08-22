@@ -1,7 +1,7 @@
 WRD_NWRD_
 totalNProjectIDs: 691
 totalNClusters: 765
-totalNPatterns:1380
+totalNPatterns:1381
 realClusters:
 ('\\W':208)
 ('\\w\\w+':193)

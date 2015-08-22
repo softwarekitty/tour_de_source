@@ -1,7 +1,7 @@
 WSP_DEC_WRD_
 totalNProjectIDs: 1048
 totalNClusters: 3123
-totalNPatterns:4362
+totalNPatterns:4363
 realClusters:
 ('\\s':277)
 ('[^\\w]':208)

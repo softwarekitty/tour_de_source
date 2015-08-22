@@ -132,7 +132,7 @@ public class IOUtil {
 			ArrayList<WeightRankedRegex> corpus, String mclInput,
 			HashMap<Integer, WeightRankedRegex> maybeNullLookup)
 			throws IOException, InterruptedException, ClassNotFoundException,
-			SQLException {
+			SQLException, IllegalArgumentException, QuoteRuleException, PythonParsingException {
 
 		// create the file for mcl to use as input
 		File f = new File(fullInputFilePath);
