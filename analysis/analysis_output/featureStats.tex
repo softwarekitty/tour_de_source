@@ -1,81 +1,79 @@
-\begin{table*}[ht!]
+\begin{table*}
 \begin{center}
-\caption{How Frequently do Features Appear in Projects, and Which Features are Supported By Four Major Regex Projects? (each listed feature appears in at least 1\% of projects) (RQ2) }
+\caption{How Frequently do Features Appear in Projects, and Which Features are Supported By Four Major Regex Projects? (RQ2)}
 \label{table:featureStats}
-\begin{small}
 \begin{tabular}
 {llllcccccccccc}
-rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \% patterns & nFiles & \%files & nProjects & \% projects \\ 
+rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \% patterns & nProjects & \% projects \\ 
 \toprule[0.16em]
-1 & ADD & one-or-more repetition & \begin{minipage}{0.5in}\begin{verbatim}z+\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 6,122 & 44 & 9,330 & 50.3 & 1,209 & 73.5 \\ 
+1 & ADD & one-or-more repetition & \begin{minipage}{0.5in}\begin{verbatim}z+\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 6,122 & 44 & 1,209 & 73.5 \\ 
 \midrule
-2 & CG & a capture group & \begin{minipage}{0.5in}\begin{verbatim}(caught)\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 7,248 & 52.1 & 9,759 & 52.6 & 1,197 & 72.8 \\ 
+2 & CG & a capture group & \begin{minipage}{0.5in}\begin{verbatim}(caught)\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 7,248 & 52.1 & 1,197 & 72.8 \\ 
 \midrule
-3 & KLE & zero-or-more repetition & \begin{minipage}{0.5in}\begin{verbatim}.*\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 6,104 & 43.9 & 8,323 & 44.9 & 1,100 & 66.9 \\ 
+3 & KLE & zero-or-more repetition & \begin{minipage}{0.5in}\begin{verbatim}.*\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 6,104 & 43.9 & 1,100 & 66.9 \\ 
 \midrule
-4 & CCC & custom character class & \begin{minipage}{0.5in}\begin{verbatim}[aeiou]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 4,581 & 32.9 & 7,808 & 42.1 & 1,027 & 62.4 \\ 
+4 & CCC & custom character class & \begin{minipage}{0.5in}\begin{verbatim}[aeiou]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 4,581 & 32.9 & 1,027 & 62.4 \\ 
 \midrule
-5 & ANY & any non-newline char & \begin{minipage}{0.5in}\begin{verbatim}.\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 4,708 & 33.8 & 6,394 & 34.5 & 1,006 & 61.2 \\ 
+5 & ANY & any non-newline char & \begin{minipage}{0.5in}\begin{verbatim}.\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 4,708 & 33.8 & 1,006 & 61.2 \\ 
 \midrule
-6 & RNG & chars within a range & \begin{minipage}{0.5in}\begin{verbatim}[a-z]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 2,698 & 19.4 & 5,196 & 28 & 849 & 51.6 \\ 
-%\midrule
-%7 & STR & start-of-line & \begin{minipage}{0.5in}\begin{verbatim}^\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 3,660 & 26.3 & 5,622 & 30.3 & 847 & 51.5 \\ 
-%\midrule
-%8 & END & end-of-line & \begin{minipage}{0.5in}\begin{verbatim}$\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 3,258 & 23.4 & 5,549 & 29.9 & 828 & 50.3 \\ 
-%\midrule[0.12em]
-%9 & NCCC & negated CCC & \begin{minipage}{0.5in}\begin{verbatim}[^qwxf]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 1,970 & 14.2 & 4,027 & 21.7 & 777 & 47.2 \\ 
-%\midrule
-%10 & WSP & \textbackslash t \textbackslash n \textbackslash r \textbackslash v \textbackslash f or space & \begin{minipage}{0.5in}\begin{verbatim}\s\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 2,908 & 20.9 & 4,812 & 25.9 & 764 & 46.4 \\ 
-%\midrule
-%11 & OR & logical or & \begin{minipage}{0.5in}\begin{verbatim}a|b\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 2,161 & 15.5 & 4,039 & 21.8 & 711 & 43.2 \\ 
-%\midrule
-%12 & DEC & any of: 0123456789 & \begin{minipage}{0.5in}\begin{verbatim}\d\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 2,385 & 17.1 & 4,366 & 23.5 & 694 & 42.2 \\ 
+6 & RNG & chars within a range & \begin{minipage}{0.5in}\begin{verbatim}[a-z]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 2,698 & 19.4 & 849 & 51.6 \\ 
 \midrule
-13 & WRD & [a-zA-Z0-9\_] & \begin{minipage}{0.5in}\begin{verbatim}\w\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 1,457 & 10.5 & 3,004 & 16.2 & 652 & 39.6 \\ 
+7 & STR & start-of-line & \begin{minipage}{0.5in}\begin{verbatim}^\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 3,660 & 26.3 & 847 & 51.5 \\ 
 \midrule
-14 & QST & zero-or-one repetition & \begin{minipage}{0.5in}\begin{verbatim}z?\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 1,922 & 13.8 & 3,821 & 20.6 & 647 & 39.3 \\ 
-\midrule
-15 & LZY & as few reps as possible & \begin{minipage}{0.5in}\begin{verbatim}z+?\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & 1,318 & 9.5 & 2,291 & 12.4 & 606 & 36.8 \\ 
-\midrule
-16 & NCG & group without capturing & \begin{minipage}{0.5in}\begin{verbatim}a(?:b)c\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & 813 & 5.8 & 1,748 & 9.4 & 404 & 24.6 \\ 
-\midrule
-17 & PNG & named capture group & \begin{minipage}{0.5in}\begin{verbatim}(?P<name>x)\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & 934 & 6.7 & 1,517 & 8.2 & 354 & 21.5 \\ 
-\midrule
-18 & SNG & exactly n repetition & \begin{minipage}{0.5in}\begin{verbatim}z{8}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 623 & 4.5 & 1,359 & 7.3 & 340 & 20.7 \\ 
-\midrule
-19 & NWSP & any non-whitespace & \begin{minipage}{0.5in}\begin{verbatim}\S\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 490 & 3.5 & 788 & 4.2 & 271 & 16.5 \\ 
-\midrule
-20 & DBB & $n\le x \le m$ repetition & \begin{minipage}{0.5in}\begin{verbatim}z{3,8}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 384 & 2.8 & 692 & 3.7 & 242 & 14.7 \\ 
-\midrule
-21 & NLKA & sequence doesn't follow  & \begin{minipage}{0.5in}\begin{verbatim}a(?!yz)\end{verbatim}\end{minipage} & \no & \no & \no & \no & 137 & 1 & 503 & 2.7 & 184 & 11.2 \\ 
-\midrule
-22 & NWRD & non-word chars & \begin{minipage}{0.5in}\begin{verbatim}\W\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 97 & 0.7 & 315 & 1.7 & 169 & 10.3 \\ 
-\midrule
-23 & LWB & at least n repetition & \begin{minipage}{0.5in}\begin{verbatim}z{15,}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 97 & 0.7 & 337 & 1.8 & 167 & 10.2 \\ 
-\midrule
-24 & WNW & word/non-word boundary & \begin{minipage}{0.5in}\begin{verbatim}\b\end{verbatim}\end{minipage} & \no & \no & \no & \yes & 248 & 1.8 & 438 & 2.4 & 166 & 10.1 \\ 
-\midrule
-25 & LKA & matching sequence follows & \begin{minipage}{0.5in}\begin{verbatim}a(?=bc)\end{verbatim}\end{minipage} & \no & \no & \no & \no & 114 & 0.8 & 360 & 1.9 & 159 & 9.7 \\ 
-\midrule
-26 & OPT & options wrapper & \begin{minipage}{0.5in}\begin{verbatim}(?i)CasE\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & 232 & 1.7 & 378 & 2 & 154 & 9.4 \\ 
-\midrule
-27 & NLKB & sequence doesn't precede & \begin{minipage}{0.5in}\begin{verbatim}(?<!x)yz\end{verbatim}\end{minipage} & \no & \no & \no & \no & 102 & 0.7 & 321 & 1.7 & 139 & 8.4 \\ 
+8 & END & end-of-line & \begin{minipage}{0.5in}\begin{verbatim}$\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 3,258 & 23.4 & 828 & 50.3 \\ 
 \midrule[0.12em]
-28 & LKB & matching sequence precedes & \begin{minipage}{0.5in}\begin{verbatim}(?<=a)bc\end{verbatim}\end{minipage} & \no & \no & \no & \no & 82 & 0.6 & 262 & 1.4 & 120 & 7.3 \\ 
+9 & NCCC & negated CCC & \begin{minipage}{0.5in}\begin{verbatim}[^qwxf]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 1,970 & 14.2 & 777 & 47.2 \\ 
 \midrule
-29 & ENDZ & absolute end of string & \begin{minipage}{0.5in}\begin{verbatim}\Z\end{verbatim}\end{minipage} & \no & \no & \no & \yes & 91 & 0.7 & 154 & 0.8 & 94 & 5.7 \\ 
+10 & WSP & \textbackslash t \textbackslash n \textbackslash r \textbackslash v \textbackslash f or space & \begin{minipage}{0.5in}\begin{verbatim}\s\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 2,908 & 20.9 & 764 & 46.4 \\ 
 \midrule
-30 & BKR & match the $i^{th}$ CG & \begin{minipage}{0.5in}\begin{verbatim}\1\end{verbatim}\end{minipage} & \no & \no & \no & \no & 60 & 0.4 & 129 & 0.7 & 84 & 5.1 \\ 
+11 & OR & logical or & \begin{minipage}{0.5in}\begin{verbatim}a|b\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 2,161 & 15.5 & 711 & 43.2 \\ 
 \midrule
-31 & NDEC & any non-decimal & \begin{minipage}{0.5in}\begin{verbatim}\D\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 36 & 0.3 & 92 & 0.5 & 58 & 3.5 \\ 
+12 & DEC & any of: 0123456789 & \begin{minipage}{0.5in}\begin{verbatim}\d\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 2,385 & 17.1 & 694 & 42.2 \\ 
 \midrule
-32 & BKRN & references PNG & \begin{minipage}{0.5in}\begin{verbatim}\g<name>\end{verbatim}\end{minipage} & \no & \yes & \no & \no & 17 & 0.1 & 44 & 0.2 & 28 & 1.7 \\ 
-%\midrule
-%33 & VWSP & matches U+000B & \begin{minipage}{0.5in}\begin{verbatim}\v\end{verbatim}\end{minipage} & \no & \no & \yes & \yes & 13 & 0.1 & 16 & 0.1 & 15 & 0.9 \\ 
-%\midrule
-%34 & NWNW & negated WNW & \begin{minipage}{0.5in}\begin{verbatim}\B\end{verbatim}\end{minipage} & \no & \no & \no & \yes & 4 & 0 & 11 & 0.1 & 11 & 0.7 \\ 
+13 & WRD & [a-zA-Z0-9\_] & \begin{minipage}{0.5in}\begin{verbatim}\w\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 1,457 & 10.5 & 652 & 39.6 \\ 
+\midrule
+14 & QST & zero-or-one repetition & \begin{minipage}{0.5in}\begin{verbatim}z?\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 1,922 & 13.8 & 647 & 39.3 \\ 
+\midrule
+15 & LZY & as few reps as possible & \begin{minipage}{0.5in}\begin{verbatim}z+?\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & 1,318 & 9.5 & 606 & 36.8 \\ 
+\midrule
+16 & NCG & group without capturing & \begin{minipage}{0.5in}\begin{verbatim}a(?:b)c\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & 813 & 5.8 & 404 & 24.6 \\ 
+\midrule
+17 & PNG & named capture group & \begin{minipage}{0.5in}\begin{verbatim}(?P<name>x)\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & 934 & 6.7 & 354 & 21.5 \\ 
+\midrule
+18 & SNG & exactly n repetition & \begin{minipage}{0.5in}\begin{verbatim}z{8}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 623 & 4.5 & 340 & 20.7 \\ 
+\midrule
+19 & NWSP & any non-whitespace & \begin{minipage}{0.5in}\begin{verbatim}\S\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 490 & 3.5 & 271 & 16.5 \\ 
+\midrule
+20 & DBB & $n\le x \le m$ repetition & \begin{minipage}{0.5in}\begin{verbatim}z{3,8}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 384 & 2.8 & 242 & 14.7 \\ 
+\midrule
+21 & NLKA & sequence doesn't follow  & \begin{minipage}{0.5in}\begin{verbatim}a(?!yz)\end{verbatim}\end{minipage} & \no & \no & \no & \no & 137 & 1 & 184 & 11.2 \\ 
+\midrule
+22 & NWRD & non-word chars & \begin{minipage}{0.5in}\begin{verbatim}\W\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 97 & 0.7 & 169 & 10.3 \\ 
+\midrule
+23 & LWB & at least n repetition & \begin{minipage}{0.5in}\begin{verbatim}z{15,}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 97 & 0.7 & 167 & 10.2 \\ 
+\midrule
+24 & WNW & word/non-word boundary & \begin{minipage}{0.5in}\begin{verbatim}\b\end{verbatim}\end{minipage} & \no & \no & \no & \yes & 248 & 1.8 & 166 & 10.1 \\ 
+\midrule
+25 & LKA & matching sequence follows & \begin{minipage}{0.5in}\begin{verbatim}a(?=bc)\end{verbatim}\end{minipage} & \no & \no & \no & \no & 114 & 0.8 & 159 & 9.7 \\ 
+\midrule
+26 & OPT & options wrapper & \begin{minipage}{0.5in}\begin{verbatim}(?i)CasE\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & 232 & 1.7 & 154 & 9.4 \\ 
+\midrule
+27 & NLKB & sequence doesn't precede & \begin{minipage}{0.5in}\begin{verbatim}(?<!x)yz\end{verbatim}\end{minipage} & \no & \no & \no & \no & 102 & 0.7 & 139 & 8.4 \\ 
+\midrule[0.12em]
+28 & LKB & matching sequence precedes & \begin{minipage}{0.5in}\begin{verbatim}(?<=a)bc\end{verbatim}\end{minipage} & \no & \no & \no & \no & 82 & 0.6 & 120 & 7.3 \\ 
+\midrule
+29 & ENDZ & absolute end of string & \begin{minipage}{0.5in}\begin{verbatim}\Z\end{verbatim}\end{minipage} & \no & \no & \no & \yes & 91 & 0.7 & 94 & 5.7 \\ 
+\midrule
+30 & BKR & match the $i^{th}$ CG & \begin{minipage}{0.5in}\begin{verbatim}\1\end{verbatim}\end{minipage} & \no & \no & \no & \no & 60 & 0.4 & 84 & 5.1 \\ 
+\midrule
+31 & NDEC & any non-decimal & \begin{minipage}{0.5in}\begin{verbatim}\D\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & 36 & 0.3 & 58 & 3.5 \\ 
+\midrule
+32 & BKRN & references PNG & \begin{minipage}{0.5in}\begin{verbatim}\g<name>\end{verbatim}\end{minipage} & \no & \yes & \no & \no & 17 & 0.1 & 28 & 1.7 \\ 
+\midrule
+33 & VWSP & matches U+000B & \begin{minipage}{0.5in}\begin{verbatim}\v\end{verbatim}\end{minipage} & \no & \no & \yes & \yes & 13 & 0.1 & 15 & 0.9 \\ 
+\midrule
+34 & NWNW & negated WNW & \begin{minipage}{0.5in}\begin{verbatim}\B\end{verbatim}\end{minipage} & \no & \no & \no & \yes & 4 & 0 & 11 & 0.7 \\ 
 \bottomrule[0.13em]
 \end{tabular}
-\end{small}
 \end{center}
 \end{table*}

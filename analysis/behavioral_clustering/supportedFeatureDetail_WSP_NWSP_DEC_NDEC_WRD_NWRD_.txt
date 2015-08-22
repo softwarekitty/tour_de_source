@@ -1,37 +1,7 @@
 WSP_NWSP_DEC_NDEC_WRD_NWRD_
-totalNProjectIDs: 1064
-totalNClusters: 3253
-totalNPatterns:4526
+totalNProjectIDs: 0
+totalNClusters: 0
+totalNPatterns:0
 realClusters:
-('\\s':277)
-('\\W':208)
-('\\d':193)
-('[a-zA-Z]\\w*':138)
-("[\\s'\\\\]":122)
-('\\w':114)
-('\\s*\\\\':110)
-(',\\S':100)
-(':\\s*':91)
-('^\\d+$':78)
-('^\\w+$':74)
-('\\s*-':74)
-('\\w+$':71)
-('\\s*#':69)
-('\\s*(\\d*) (.*)':66)
-('/+\\s?':65)
-('\\D':65)
-('<\\S[^>]*>':63)
-('[.](\\D)':61)
-('^\\s*$':59)
-('\\d+\\.\\d+':53)
-('\\S':53)
-('=\\s*':52)
-('\\d+\\.\\d+\\.\\d+':48)
-('coding[:=]\\s*([-\\w.]+)':48)
-('^[-\\w]+$':45)
-('^[a-zA-Z]\\w*$':43)
-('^\\s':40)
-('^\\d+':39)
-('^\\s*#':39)
 
-nProjects with single pattern: 748
+nProjects with single pattern: 0

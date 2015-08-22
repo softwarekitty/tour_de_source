@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -89,6 +90,8 @@ public class Section1 {
 		if (corpus == null) {
 			throw new RuntimeException("the empty corpus should not be null");
 		}
+		
+		//List<WeightRankedRegex> preQuoteFilteredCorpus = new ArrayList<WeightRankedRegex>(1024);
 
 		// prepare sql
 		Connection c = null;

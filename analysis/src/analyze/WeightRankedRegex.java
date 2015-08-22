@@ -16,13 +16,15 @@ public final class WeightRankedRegex implements RankableContent {
 
 	private final FeatureCount features;
 	private final int weight;
+	private String unquoted;
 	private String unescaped;
 
 	public WeightRankedRegex(String pattern, int weight) throws QuoteRuleException, IllegalArgumentException, PythonParsingException {
 		if (pattern == null) {
 			throw new IllegalArgumentException("pattern cannot be null: "+pattern);
 		} 
-		this.unescaped = getUnescapedPythonPattern(pattern);
+		this.unquoted = getUnquotedPythonPattern(pattern);
+		this.unescaped = unquoted.replaceAll("\\\\\\\\", "\\\\");
 		
 		if ("".equals(unescaped)) {
 			throw new IllegalArgumentException("pattern cannot be empty: "+pattern);
@@ -120,7 +122,7 @@ public final class WeightRankedRegex implements RankableContent {
 		return "'" + escaped + "'";
 	}
 
-	private static String getUnescapedPythonPattern(String pat) throws QuoteRuleException {
+	private static String getUnquotedPythonPattern(String pat) throws QuoteRuleException {
 
 		// python can do: u'...', ur'...', r'...'
 		String removedUR = pat.startsWith("ur") ? pat.substring(2)
@@ -155,8 +157,7 @@ public final class WeightRankedRegex implements RankableContent {
 		if(unQuoted.length()==0){
 			return "";
 		}
-		String unescaped = unQuoted.replaceAll("\\\\\\\\", "\\\\");
-		return unescaped;
+		return unQuoted;
 	}
 
 	private static String removeQuotes(String s, int i) {
@@ -175,6 +176,6 @@ public final class WeightRankedRegex implements RankableContent {
 	public static void main(String[] args) throws QuoteRuleException{
 		String r = "'^(boot(\\\\.\\\\d+)?$|kernel\\\\.)'";
 		System.out.println(r);
-		System.out.println(getUnescapedPythonPattern(r));
+		System.out.println(getUnquotedPythonPattern(r));
 	}
 }

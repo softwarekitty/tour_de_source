@@ -21,7 +21,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Random;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
@@ -145,11 +147,24 @@ public class IOUtil {
 			String fullOutputFilePath, String mclInput,
 			HashMap<Integer, WeightRankedRegex> maybeNullLookup)
 			throws IOException, InterruptedException, ClassNotFoundException,
-			SQLException {
+			SQLException, IllegalArgumentException, QuoteRuleException, PythonParsingException {
 		String filtered_corpus_path = PaperWriter.homePath +
 			"csharp/filteredCorpus.txt";
 		HashMap<Integer, WeightRankedRegex> lookup = maybeNullLookup == null ? getLookup(corpus, filtered_corpus_path)
 				: maybeNullLookup;
+		
+		 HashMap<String, List<WeightRankedRegex>> unquotedMM = getUnquotedMultiMap(corpus);
+		 
+		 for(Entry<Integer, WeightRankedRegex> entry : lookup.entrySet()){
+			 Integer key = entry.getKey();
+			 WeightRankedRegex value = entry.getValue();
+			 List<WeightRankedRegex> wrrList = unquotedMM.get(value.getUnescapedPattern());
+			 int combinedWeights = 0;
+			 for(WeightRankedRegex wrr : wrrList){
+				 combinedWeights+= wrr.getRankableValue();
+			 }
+			 lookup.put(key, new WeightRankedRegex(value.getContent(), combinedWeights));
+		 }
 
 		File outFile = new File(fullOutputFilePath);
 		if (outFile.exists()) {
@@ -183,14 +198,14 @@ public class IOUtil {
 			for (String index : indices) {
 				int indexValue = Integer.parseInt(index);
 				WeightRankedRegex wrr = lookup.get(indexValue);
-				// System.out.print("lineNumber: "+lineNumber+" index: "+index+" indexValue: "+indexValue);
-				// System.out.println(" pattern: "+wrr.getContent());
+//				 System.out.print("lineNumber: "+lineNumber+" index: "+index+" indexValue: "+indexValue);
+//				 System.out.println(" pattern: "+wrr.getContent());
 				boolean added = cluster.add(wrr);
 				if(!added){
 					System.out.println("indexValue: "+indexValue+" failure to add: "+wrr.dump(0, 1) + " problem with: " +
 							Arrays.toString(indices));
-					System.out.println("cluster: "+cluster.getContent());
-					waitNsecsOrContinue(12);
+					//System.out.println("cluster: "+cluster.getContent());
+					//waitNsecsOrContinue(12);
 				}
 			}
 			cluster.initialzeStats();
@@ -200,6 +215,22 @@ public class IOUtil {
 
 		}
 		return clusters;
+	}
+	
+	private static HashMap<String, List<WeightRankedRegex>> getUnquotedMultiMap(
+			ArrayList<WeightRankedRegex> corpus) {
+		
+		HashMap<String, List<WeightRankedRegex>> collection = new HashMap<String, List<WeightRankedRegex>>();
+		for(WeightRankedRegex wrr : corpus){
+			String key = wrr.getUnescapedPattern();
+			List<WeightRankedRegex> wrrList = collection.get(key);
+			if(wrrList==null){
+				wrrList = new LinkedList<WeightRankedRegex>();
+			}
+			wrrList.add(wrr);
+			collection.put(key, wrrList);
+		}
+		return collection;
 	}
 
 	public static void dumpAllClusters(String analysis_output_path,

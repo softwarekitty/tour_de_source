@@ -1,37 +1,7 @@
 ADD_KLE_QST_
-totalNProjectIDs: 1295
-totalNClusters: 5459
-totalNPatterns:7126
+totalNProjectIDs: 0
+totalNClusters: 0
+totalNPatterns:0
 realClusters:
-('\\s+':277)
-('\\W+':208)
-('\\d+':193)
-('[A-Za-z]+':138)
-('[\\x00-\\x20]+':122)
-('\\w+':114)
-('.*\\\\':110)
-(',+':100)
-(':+':91)
-('^\\d+$':78)
-('^\\w+$':74)
-('-.*':74)
-('\\w+$':71)
-('#.*':69)
-(' +':66)
-('/+':65)
-('(\\D+)':65)
-('<.+>':63)
-('\\.+':61)
-('^\\s*$':59)
-('\\d+\\.\\d+':53)
-('\\S+':53)
-('=.*$':52)
-('//+':51)
-('[&<>\\"\\x80-\\xff]+':50)
-('\\d+\\.\\d+\\.\\d+':48)
-('coding[:=]\\s*([-\\w.]+)':48)
-('[A-Z]+':47)
-('^[-\\w]+$':45)
-('^[a-zA-Z]\\w*$':43)
 
-nProjects with single pattern: 1014
+nProjects with single pattern: 0

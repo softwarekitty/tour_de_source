@@ -93,7 +93,7 @@ public class Section2 {
 			+ "\\caption{How Frequently do Features Appear in Projects, and Which Features are Supported By Four Major Regex Projects? (RQ2)}\n"
 			+ "\\label{table:featureStats}\n"
 			+ "\\begin{tabular}\n{llllcccccccccc}\n");
-		sb.append("rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \\% patterns & nFiles & \\%files & nProjects & \\% projects \\\\ \n\\toprule[0.16em]\n");
+		sb.append("rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \\% patterns & nProjects & \\% projects \\\\ \n\\toprule[0.16em]\n");
 		TreeSet<FeatureDetail> sortedFeatures = new TreeSet<FeatureDetail>();
 		for (int i = 0; i < nFeatures; i++) {
 			if (i == FeatureDictionary.I_META_LITERAL || presentCounter[i] == 0) {
@@ -124,8 +124,8 @@ public class Section2 {
 
 			// System.out.println("filesWithFeature[ID]: "+filesWithFeature[ID]+" totalNFiles[0]: "+totalNFiles[0]+" nProjectsPerFeature[ID]: "+nProjectsPerFeature[ID]+" totalNProjects[0]: "+totalNProjects[0]);
 
-			String nFiles = Composer.commafy(filesWithFeature[ID]);
-			String percentFiles = Composer.percentify(filesWithFeature[ID], totalNFiles[0]);
+//			String nFiles = Composer.commafy(filesWithFeature[ID]);
+//			String percentFiles = Composer.percentify(filesWithFeature[ID], totalNFiles[0]);
 
 			String nProjects = Composer.commafy(nProjectsPerFeature[ID]);
 			String percentProjects = Composer.percentify(nProjectsPerFeature[ID], totalNProjects[0]);
@@ -165,10 +165,10 @@ public class Section2 {
 			// sb.append(weightPercent);
 			// sb.append(between);
 
-			sb.append(nFiles);
-			sb.append(between);
-			sb.append(percentFiles);
-			sb.append(between);
+//			sb.append(nFiles);
+//			sb.append(between);
+//			sb.append(percentFiles);
+//			sb.append(between);
 			sb.append(nProjects);
 			sb.append(between);
 			sb.append(percentProjects);

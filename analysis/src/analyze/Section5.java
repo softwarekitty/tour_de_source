@@ -7,7 +7,13 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 import java.util.TreeSet;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.LineIterator;
 
 import metric.FeatureDictionary;
 import analyze.exceptions.PythonParsingException;
@@ -35,14 +41,20 @@ public class Section5 {
 			IllegalArgumentException, QuoteRuleException,
 			PythonParsingException {
 
-		// don't run this again - got what we needed
-		// System.exit(0);
 		String behavioral_analysis_path = PaperWriter.homePath +
 			"analysis/behavioral_clustering/";
 
 		ArrayList<WeightRankedRegex> corpus = IOUtil.importCorpus(PaperWriter.homePath +
 			"analysis/analysis_output/exportedCorpusRaw.txt");
 		System.out.println("corpus size: " + corpus.size());
+		
+		String filtered_corpus_path = PaperWriter.homePath +
+				"csharp/filteredCorpus.txt";
+		HashMap<Integer, WeightRankedRegex> lookup = IOUtil.getLookup(corpus, filtered_corpus_path);
+		Set<Integer> lookupKeys = lookup.keySet();
+		
+		
+		
 		// HashMap<String, Integer> dummyCounter = new HashMap<String,
 		// Integer>();
 		// int[] dummyTracker = {0};
@@ -54,8 +66,13 @@ public class Section5 {
 		// IOUtil.createAndWrite(new
 		// File(behavioral_analysis_path,"debugCorpus.txt"), debugCorpus);
 
-		String fullInputFilePath = behavioral_analysis_path +
-			"behavioralSimilarityGraph.abc";
+		String expectedName = "behavioralSimilarityGraph.abc";
+
+		String fullInputFilePath = behavioral_analysis_path + expectedName;
+		File finalGraphFile = new File(fullInputFilePath);
+		if (!finalGraphFile.exists()) {
+			createFileWithoutDuplicates(behavioral_analysis_path, expectedName, lookupKeys);
+		}
 		DecimalFormat df = new DecimalFormat("0.00");
 		TreeSet<Cluster> behavioralClusters = null;
 
@@ -74,7 +91,7 @@ public class Section5 {
 					String mclInput = fullInputFilePath + " -I " +
 						df.format(i_value) + newOptions + " --abc -o " +
 						fullOutputFilePath;
-					behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput, null);
+					behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput, lookup);
 					IOUtil.dumpAllClusters(behavioral_analysis_path, behavioralClusters, corpus, "behavioralSimilarityClusterDump" +
 						suffix + ".txt", suffix);
 				}
@@ -148,6 +165,37 @@ public class Section5 {
 				featureDetailFilePrefix + groupString + ".txt"), supportedContentSB.toString());
 		}
 
+	}
+
+	private static void createFileWithoutDuplicates(
+			String behavioral_analysis_path, String expectedName, Set<Integer> lookupKeys)
+			throws IOException {
+		StringBuilder sb = new StringBuilder();
+
+		String oldName = "oldBehavioralSimilarityGraph.abc";
+		File oldFile = new File(behavioral_analysis_path + oldName);
+		LineIterator it = FileUtils.lineIterator(oldFile, "UTF-8");
+		int lineCounter = 0;
+		try {
+			while (it.hasNext()) {
+				String line = it.nextLine();				
+				if(lineCounter++%100==0){
+					System.out.println("line: "+ line + " number: " +lineCounter);
+				}
+				String[] cols = line.split("\\s");
+				Integer col0 = Integer.parseInt(cols[0]);
+				Integer col1 = Integer.parseInt(cols[1]);
+				if (lookupKeys.contains(col0) &&
+					lookupKeys.contains(col1)) {
+					sb.append(line + "\n");
+				}
+
+			}
+		} finally {
+			it.close();
+		}
+		File newFile = new File( behavioral_analysis_path + expectedName);
+		IOUtil.createAndWrite(newFile, sb.toString());
 	}
 
 	public static String getRealClusterSample(
