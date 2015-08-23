@@ -1,17 +1,18 @@
 ANY_
-totalNProjectIDs: 1026
-totalNClusters: 2430
-totalNPatterns:3448
+totalNProjectIDs: 1027
+totalNClusters: 2428
+totalNPatterns:3468
 realClusters:
 ('\\s.*':277)
-('(\\d+)(.*)':193)
-('([a-zA-Z_]\\w*)\\s*(.*)':138)
-('(\\w+)(.*)':114)
+('(\\d+)(.*)':191)
+('([a-zA-Z_]\\w*)\\s*(.*)':139)
+('(\\w+)(.*)':115)
 ('.*\\\\':110)
 (',.*$':100)
 ('.*:':91)
 ('-.*':74)
 ('#.*':69)
+('(\\S+)\\s*(.*)':67)
 (' .*':66)
 ('.*/':65)
 ('^\\s*[^#\\s].*':65)
@@ -32,6 +33,5 @@ realClusters:
 ('[ \t\\)].*$':37)
 ('_.*':36)
 ('@.*':36)
-('^([a-zA-Z]+)(.*)$':33)
 
-nProjects with single pattern: 678
+nProjects with single pattern: 676

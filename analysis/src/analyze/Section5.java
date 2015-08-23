@@ -47,14 +47,21 @@ public class Section5 {
 		ArrayList<WeightRankedRegex> corpus = IOUtil.importCorpus(PaperWriter.homePath +
 			"analysis/analysis_output/exportedCorpusRaw.txt");
 		System.out.println("corpus size: " + corpus.size());
-		
+
 		String filtered_corpus_path = PaperWriter.homePath +
-				"csharp/filteredCorpus.txt";
+			"csharp/filteredCorpus.txt";
 		HashMap<Integer, WeightRankedRegex> lookup = IOUtil.getLookup(corpus, filtered_corpus_path);
 		Set<Integer> lookupKeys = lookup.keySet();
+		TreeSet<String> unescapedPatterns = new TreeSet<String>();
+		TreeSet<Integer> nonDuplicateLookupKeys = new TreeSet<Integer>();
 		
-		
-		
+		for(Integer i : lookupKeys){
+			WeightRankedRegex wrr = lookup.get(i);
+			if(unescapedPatterns.add(wrr.getUnescapedPattern())){
+				nonDuplicateLookupKeys.add(i);
+			}
+		}
+
 		// HashMap<String, Integer> dummyCounter = new HashMap<String,
 		// Integer>();
 		// int[] dummyTracker = {0};
@@ -71,7 +78,7 @@ public class Section5 {
 		String fullInputFilePath = behavioral_analysis_path + expectedName;
 		File finalGraphFile = new File(fullInputFilePath);
 		if (!finalGraphFile.exists()) {
-			createFileWithoutDuplicates(behavioral_analysis_path, expectedName, lookupKeys);
+			createFileWithoutDuplicates(behavioral_analysis_path, expectedName, nonDuplicateLookupKeys);
 		}
 		DecimalFormat df = new DecimalFormat("0.00");
 		TreeSet<Cluster> behavioralClusters = null;
@@ -168,8 +175,8 @@ public class Section5 {
 	}
 
 	private static void createFileWithoutDuplicates(
-			String behavioral_analysis_path, String expectedName, Set<Integer> lookupKeys)
-			throws IOException {
+			String behavioral_analysis_path, String expectedName,
+			Set<Integer> nonDuplicateLookupKeys) throws IOException {
 		StringBuilder sb = new StringBuilder();
 
 		String oldName = "oldBehavioralSimilarityGraph.abc";
@@ -178,15 +185,16 @@ public class Section5 {
 		int lineCounter = 0;
 		try {
 			while (it.hasNext()) {
-				String line = it.nextLine();				
-				if(lineCounter++%100==0){
-					System.out.println("line: "+ line + " number: " +lineCounter);
+				String line = it.nextLine();
+				if (lineCounter++ % 100 == 0) {
+					System.out.println("line: " + line + " number: " +
+						lineCounter);
 				}
 				String[] cols = line.split("\\s");
 				Integer col0 = Integer.parseInt(cols[0]);
 				Integer col1 = Integer.parseInt(cols[1]);
-				if (lookupKeys.contains(col0) &&
-					lookupKeys.contains(col1)) {
+				if (nonDuplicateLookupKeys.contains(col0) &&
+					nonDuplicateLookupKeys.contains(col1)) {
 					sb.append(line + "\n");
 				}
 
@@ -194,7 +202,7 @@ public class Section5 {
 		} finally {
 			it.close();
 		}
-		File newFile = new File( behavioral_analysis_path + expectedName);
+		File newFile = new File(behavioral_analysis_path + expectedName);
 		IOUtil.createAndWrite(newFile, sb.toString());
 	}
 
