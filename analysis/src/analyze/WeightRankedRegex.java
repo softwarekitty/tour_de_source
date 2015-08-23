@@ -16,7 +16,7 @@ public final class WeightRankedRegex implements RankableContent {
 
 	private final FeatureCount features;
 	private final int weight;
-	private String unquoted;
+	public String unquoted;
 	private String unescaped;
 
 	public WeightRankedRegex(String pattern, int weight) throws QuoteRuleException, IllegalArgumentException, PythonParsingException {
@@ -122,7 +122,7 @@ public final class WeightRankedRegex implements RankableContent {
 		return "'" + escaped + "'";
 	}
 
-	private static String getUnquotedPythonPattern(String pat) throws QuoteRuleException {
+	public static String getUnquotedPythonPattern(String pat) throws QuoteRuleException {
 
 		// python can do: u'...', ur'...', r'...'
 		String removedUR = pat.startsWith("ur") ? pat.substring(2)

@@ -199,12 +199,12 @@ public class Section3 {
 						//jaroW or jaccard
 						if((i==1 || i==2) && p_value >0.36){
 							TreeSet<Cluster> syntacticClusters = IOUtil.getClusters(fullInputFilePath, fullOutputFilePath, halfMatrix.getABC(p_value), corpus, mclInput,lookup);
-							IOUtil.dumpAllClusters(outputPath, syntacticClusters, corpus, "syntacticSimilarityClusterDump" +
+							IOUtil.dumpAllClusters(outputPath, syntacticClusters, "syntacticSimilarityClusterDump" +
 								suffix + ".txt", suffix);
 						//lcs or lev
 						}else if((i==3 || i==4)&& p_value < 0.72){
 							TreeSet<Cluster> syntacticClusters = IOUtil.getClusters(fullInputFilePath, fullOutputFilePath, halfMatrix.getABC(p_value), corpus, mclInput,lookup);
-							IOUtil.dumpAllClusters(outputPath, syntacticClusters, corpus, "syntacticSimilarityClusterDump" +
+							IOUtil.dumpAllClusters(outputPath, syntacticClusters, "syntacticSimilarityClusterDump" +
 								suffix + ".txt", suffix);
 						}
 					}

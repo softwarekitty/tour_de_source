@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.TreeSet;
 
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
@@ -23,7 +24,9 @@ public class Section1 {
 	static void contributeToMap(HashMap<String, String> databaseFileContent,
 			String connectionString, List<WeightRankedRegex> emptyCorpus,
 			HashMap<String, Integer> alienFeatureCount)
-			throws ClassNotFoundException, SQLException {
+			throws ClassNotFoundException, SQLException,
+			IllegalArgumentException, QuoteRuleException,
+			PythonParsingException {
 
 		// the set of all distinct patterns (including alien and
 		// PCRE-problematic ones)
@@ -86,13 +89,14 @@ public class Section1 {
 			int[] allPatterns, List<WeightRankedRegex> corpus,
 			int[] errorPatterns, int[] alienPatterns, int[] unicodePatterns,
 			HashMap<String, Integer> alienFeatureCount)
-			throws ClassNotFoundException, SQLException {
+			throws ClassNotFoundException, SQLException,
+			IllegalArgumentException, QuoteRuleException,
+			PythonParsingException {
 		if (corpus == null) {
 			throw new RuntimeException("the empty corpus should not be null");
 		}
-		
-		//List<WeightRankedRegex> preQuoteFilteredCorpus = new ArrayList<WeightRankedRegex>(1024);
 
+		HashMap<String, TreeSet<Integer>> patternProjectMM = new HashMap<String, TreeSet<Integer>>();
 		// prepare sql
 		Connection c = null;
 		Statement stmt = null;
@@ -101,21 +105,39 @@ public class Section1 {
 		c.setAutoCommit(false);
 		stmt = c.createStatement();
 
-		// this proves that '\\s+' occurs in a certain number of projects:
-		// select distinct uniqueSourceID from RegexCitationMerged where
-		// (flags=0 or flags like 'arg%' or flags=128 or flags='re.DEBUG') and
-		// pattern!='arg1' and pattern="'\\s+'"
-		// I get the same number with the query below so it is probably working
-		String query = "select pattern, count(distinct uniqueSourceID) as weight from RegexCitationMerged where (flags=0 or flags like 'arg%' or flags=128 or flags='re.DEBUG') and pattern!='arg1' group by pattern order by weight desc;";
+		// unlike the previous version, we will now do the group by in memory,
+		// to be able to finally get an accurate count of projects per unquoted
+		// pattern
+		String query = "select pattern, uniqueSourceID from RegexCitationMerged where (flags=0 or flags like 'arg%' or flags=128 or flags='re.DEBUG') and pattern!='arg1';";
 
 		// these are all the distinct patterns with weight
 		ResultSet rs = stmt.executeQuery(query);
 		while (rs.next()) {
 			String pattern = rs.getString("pattern");
-			int weight = rs.getInt("weight");
+			int projectID = rs.getInt("uniqueSourceID");
 			allPatterns[0]++;
 			try {
-				WeightRankedRegex r = new WeightRankedRegex(pattern, weight);
+				String unquotedPattern = WeightRankedRegex.getUnquotedPythonPattern(pattern);
+				TreeSet<Integer> projectIDs = patternProjectMM.get(unquotedPattern);
+				if (projectIDs == null) {
+					projectIDs = new TreeSet<Integer>();
+				}
+				projectIDs.add(projectID);
+				patternProjectMM.put(unquotedPattern, projectIDs);
+
+			} catch (QuoteRuleException e) {
+				errorPatterns[0]++;
+			}
+		}
+
+		rs.close();
+		stmt.close();
+		c.close();
+
+		for (Entry<String, TreeSet<Integer>> entry : patternProjectMM.entrySet()) {
+			String pattern = "'" + entry.getKey() + "'";
+			try {
+				WeightRankedRegex r = new WeightRankedRegex(pattern, entry.getValue().size());
 				corpus.add(r);
 			} catch (AlienFeatureException e) {
 				String alienMessage = e.getMessage();
@@ -124,7 +146,8 @@ public class Section1 {
 					Integer count = alienFeatureCount.get(token);
 					int x = count == null ? 0 : count;
 					alienFeatureCount.put(token, ++x);
-					if ("<invalid>".equals(token) && (pattern.startsWith("u")||pattern.contains("(?u"))) {
+					if ("<invalid>".equals(token) &&
+						(pattern.startsWith("u") || pattern.contains("(?u"))) {
 						unicodePatterns[0]++;
 					} else {
 						alienPatterns[0]++;
@@ -139,17 +162,10 @@ public class Section1 {
 				// e.printStackTrace();
 			} catch (QuoteRuleException e) {
 				errorPatterns[0]++;
-				// e.printStackTrace();
 			} catch (PythonParsingException e) {
 				errorPatterns[0]++;
-				// e.printStackTrace();
 			}
 		}
-
-		// wind down sql: '^(XIE)$'
-		rs.close();
-		stmt.close();
-		c.close();
 	}
 
 	public static Iterator<NamedStats> getCharacterStatsAndAddToDatabase(

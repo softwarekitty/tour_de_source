@@ -230,16 +230,16 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements
 	}
 	
 	//needed to count the number of projects supported by Rex, why not here?
-	public static void main(String[] args) throws IllegalArgumentException, QuoteRuleException, PythonParsingException, ClassNotFoundException, SQLException{
-		String filtered_corpus_path = PaperWriter.homePath +
-				"csharp/filteredCorpus.txt";
-		ArrayList<WeightRankedRegex> corpus = IOUtil.importFilteredCorpus(filtered_corpus_path);
-		System.out.println("corpus size: "+corpus.size());
-		TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
-		for(WeightRankedRegex wrr : corpus){
-			allProjectIDs.addAll(IOUtil.getProjectIDsHavingPattern(wrr.getContent()));
-		}
-		System.out.println("total Projects Supported By Rex: "+allProjectIDs.size());
-
-	}
+//	public static void main(String[] args) throws IllegalArgumentException, QuoteRuleException, PythonParsingException, ClassNotFoundException, SQLException{
+//		String filtered_corpus_path = PaperWriter.homePath +
+//				"csharp/filteredCorpus.txt";
+//		ArrayList<WeightRankedRegex> corpus = IOUtil.importFilteredCorpus(filtered_corpus_path);
+//		System.out.println("corpus size: "+corpus.size());
+//		TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
+//		for(WeightRankedRegex wrr : corpus){
+//			allProjectIDs.addAll(IOUtil.getProjectIDsHavingPattern(wrr.getContent()));
+//		}
+//		System.out.println("total Projects Supported By Rex: "+allProjectIDs.size());
+//
+//	}
 }

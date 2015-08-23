@@ -132,39 +132,27 @@ public class IOUtil {
 			ArrayList<WeightRankedRegex> corpus, String mclInput,
 			HashMap<Integer, WeightRankedRegex> maybeNullLookup)
 			throws IOException, InterruptedException, ClassNotFoundException,
-			SQLException, IllegalArgumentException, QuoteRuleException, PythonParsingException {
+			SQLException, IllegalArgumentException, QuoteRuleException,
+			PythonParsingException {
 
 		// create the file for mcl to use as input
 		File f = new File(fullInputFilePath);
 		IOUtil.createAndWrite(f, contents);
 
-		return getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput, maybeNullLookup);
+		return getClustersFromFile(fullInputFilePath, fullOutputFilePath, mclInput, maybeNullLookup);
 
 	}
 
 	public static TreeSet<Cluster> getClustersFromFile(
-			String fullInputFilePath, ArrayList<WeightRankedRegex> corpus,
-			String fullOutputFilePath, String mclInput,
-			HashMap<Integer, WeightRankedRegex> maybeNullLookup)
+			String fullInputFilePath, String fullOutputFilePath,
+			String mclInput, HashMap<Integer, WeightRankedRegex> maybeNullLookup)
 			throws IOException, InterruptedException, ClassNotFoundException,
-			SQLException, IllegalArgumentException, QuoteRuleException, PythonParsingException {
+			SQLException, IllegalArgumentException, QuoteRuleException,
+			PythonParsingException {
 		String filtered_corpus_path = PaperWriter.homePath +
 			"csharp/filteredCorpus.txt";
-		HashMap<Integer, WeightRankedRegex> lookup = maybeNullLookup == null ? getLookup(corpus, filtered_corpus_path)
+		HashMap<Integer, WeightRankedRegex> lookup = maybeNullLookup == null ? getLookup(filtered_corpus_path)
 				: maybeNullLookup;
-		
-		 HashMap<String, List<WeightRankedRegex>> unquotedMM = getUnquotedMultiMap(corpus);
-		 
-		 for(Entry<Integer, WeightRankedRegex> entry : lookup.entrySet()){
-			 Integer key = entry.getKey();
-			 WeightRankedRegex value = entry.getValue();
-			 List<WeightRankedRegex> wrrList = unquotedMM.get(value.getUnescapedPattern());
-			 int combinedWeights = 0;
-			 for(WeightRankedRegex wrr : wrrList){
-				 combinedWeights+= wrr.getRankableValue();
-			 }
-			 lookup.put(key, new WeightRankedRegex(value.getContent(), combinedWeights));
-		 }
 
 		File outFile = new File(fullOutputFilePath);
 		if (outFile.exists()) {
@@ -198,33 +186,48 @@ public class IOUtil {
 			for (String index : indices) {
 				int indexValue = Integer.parseInt(index);
 				WeightRankedRegex wrr = lookup.get(indexValue);
-//				 System.out.print("lineNumber: "+lineNumber+" index: "+index+" indexValue: "+indexValue);
-//				 System.out.println(" pattern: "+wrr.getContent());
+				// System.out.print("lineNumber: "+lineNumber+" index: "+index+" indexValue: "+indexValue);
+				// System.out.println(" pattern: "+wrr.getContent());
 				boolean added = cluster.add(wrr);
-				if(!added){
-					System.out.println("indexValue: "+indexValue+" failure to add: "+wrr.dump(0, 1) + " problem with: " +
-							Arrays.toString(indices));
-					//System.out.println("cluster: "+cluster.getContent());
-					//waitNsecsOrContinue(12);
+				if (!added) {
+					System.out.println("indexValue: " + indexValue +
+						" failure to add: " + wrr.dump(0, 1) +
+						" problem with: " + Arrays.toString(indices));
+					// System.out.println("cluster: "+cluster.getContent());
+					// waitNsecsOrContinue(12);
 				}
 			}
 			cluster.initialzeStats();
 			clusters.add(cluster);
 			lineNumber++;
-			//System.out.println("lineNumber: "+lineNumber+" indices.length: "+indices.length);
+			// System.out.println("lineNumber: "+lineNumber+" indices.length: "+indices.length);
 
 		}
 		return clusters;
 	}
-	
-	private static HashMap<String, List<WeightRankedRegex>> getUnquotedMultiMap(
+
+	private static HashMap<String, Integer> getPatternWeightMap() {
+		HashMap<String, Integer> patternWeightMap = new HashMap<String, Integer>();
+		String content = IOUtil.getFileContents(PaperWriter.homePath +
+			"analysis/analysis_output/patternWeightMap.txt");
+		Pattern finder = Pattern.compile("(.*)\\t(\\d+)");
+		Matcher pairMatcher = finder.matcher(content);
+		while (pairMatcher.find()) {
+			String quotedPattern = pairMatcher.group(1);
+			Integer weight = Integer.parseInt(pairMatcher.group(2));
+			patternWeightMap.put(quotedPattern, weight);
+		}
+		return patternWeightMap;
+	}
+
+	public static HashMap<String, List<WeightRankedRegex>> getUnquotedMultiMap(
 			ArrayList<WeightRankedRegex> corpus) {
-		
+
 		HashMap<String, List<WeightRankedRegex>> collection = new HashMap<String, List<WeightRankedRegex>>();
-		for(WeightRankedRegex wrr : corpus){
+		for (WeightRankedRegex wrr : corpus) {
 			String key = wrr.getUnescapedPattern();
 			List<WeightRankedRegex> wrrList = collection.get(key);
-			if(wrrList==null){
+			if (wrrList == null) {
 				wrrList = new LinkedList<WeightRankedRegex>();
 			}
 			wrrList.add(wrr);
@@ -234,8 +237,7 @@ public class IOUtil {
 	}
 
 	public static void dumpAllClusters(String analysis_output_path,
-			TreeSet<Cluster> behavioralClusters,
-			ArrayList<WeightRankedRegex> corpus, String filename, String suffix)
+			TreeSet<Cluster> behavioralClusters, String filename, String suffix)
 			throws ClassNotFoundException, SQLException {
 		FeatureDictionary fd = new FeatureDictionary();
 		int totalPatterns = 0;
@@ -290,33 +292,24 @@ public class IOUtil {
 	}
 
 	public static HashMap<Integer, WeightRankedRegex> getLookup(
-			ArrayList<WeightRankedRegex> corpus, String indexedCorpusFilePath) {
+			String indexedCorpusFilePath) throws QuoteRuleException, IllegalArgumentException, PythonParsingException {
+		HashMap<Integer, WeightRankedRegex> lookup = new HashMap<Integer, WeightRankedRegex>();
+		HashMap<String, Integer> patternWeightMap = getPatternWeightMap();
 
 		String content = IOUtil.getFileContents(indexedCorpusFilePath);
-
-		HashMap<Integer, WeightRankedRegex> lookup = new HashMap<Integer, WeightRankedRegex>();
 		Pattern finder = Pattern.compile("(\\d+)\\t(.*)");
 		Matcher pairMatcher = finder.matcher(content);
 		while (pairMatcher.find()) {
 
 			Integer index = Integer.parseInt(pairMatcher.group(1));
-			String pattern = pairMatcher.group(2);
-			for (WeightRankedRegex wrr : corpus) {
-				String unesc = wrr.getUnescapedPattern();
-				// System.out.print(":::,:::"+unesc);
-				if (unesc.equals(pattern)) {
-					lookup.put(index, wrr);
-					break;
-				}
-			}
-			if (lookup.get(index) == null) {
-				System.out.println("getLookup why did this fail?- index: " +
-					index + " pattern:::" + pattern + ":::");
-				try {
-					Thread.sleep(10000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+			String rawPattern = pairMatcher.group(2);
+			String normalizedPattern = "'" + rawPattern+"'";
+			Integer weight = patternWeightMap.get(normalizedPattern);
+			if(weight==null){
+				System.out.println("warning: could not find pattern: " +normalizedPattern+ " in patternWeightMap");
+				System.exit(1);
+			}else{
+				lookup.put(index, new WeightRankedRegex(normalizedPattern, weight));
 			}
 		}
 		return lookup;
@@ -360,39 +353,42 @@ public class IOUtil {
 		return projectIDList;
 	}
 
-	public static ArrayList<WeightRankedRegex> importFilteredCorpus(
-			String filtered_corpus_path) throws IllegalArgumentException,
-			QuoteRuleException, PythonParsingException {
-		// get only clean lines, each with 2 parts
-		List<String> lines = IOUtil.getFileLines(filtered_corpus_path);
-		Iterator<String> it = lines.iterator();
-		while (it.hasNext()) {
-			String s = it.next();
-			if (s == null || s.length() == 0 || !s.contains("\t") ||
-				s.split("\t").length != 2) {
-				it.remove();
-			}
-		}
-		// turn these lines into indices
-		ArrayList<Integer> regexIndices = new ArrayList<Integer>();
-		for (String line : lines) {
-			String[] args = line.split("\t");
-			int index = Integer.parseInt(args[0]);
-			regexIndices.add(index);
-		}
-
-		ArrayList<WeightRankedRegex> superSet = IOUtil.importCorpus(PaperWriter.homePath +
-			"analysis/analysis_output/exportedCorpusRaw.txt");
-
-		HashMap<Integer, WeightRankedRegex> lookup = getLookup(superSet, filtered_corpus_path);
-
-		ArrayList<WeightRankedRegex> corpus = new ArrayList<WeightRankedRegex>(lines.size());
-
-		for (Integer patternIndex : regexIndices) {
-			corpus.add(lookup.get(patternIndex));
-		}
-		return corpus;
-	}
+	// public static ArrayList<WeightRankedRegex> importFilteredCorpus(
+	// String filtered_corpus_path) throws IllegalArgumentException,
+	// QuoteRuleException, PythonParsingException {
+	// // get only clean lines, each with 2 parts
+	// List<String> lines = IOUtil.getFileLines(filtered_corpus_path);
+	// Iterator<String> it = lines.iterator();
+	// while (it.hasNext()) {
+	// String s = it.next();
+	// if (s == null || s.length() == 0 || !s.contains("\t") ||
+	// s.split("\t").length != 2) {
+	// it.remove();
+	// }
+	// }
+	// // turn these lines into indices
+	// ArrayList<Integer> regexIndices = new ArrayList<Integer>();
+	// for (String line : lines) {
+	// String[] args = line.split("\t");
+	// int index = Integer.parseInt(args[0]);
+	// regexIndices.add(index);
+	// }
+	//
+	// ArrayList<WeightRankedRegex> superSet =
+	// IOUtil.importCorpus(PaperWriter.homePath +
+	// "analysis/analysis_output/exportedCorpusRaw.txt");
+	//
+	// HashMap<Integer, WeightRankedRegex> lookup =
+	// getLookup(filtered_corpus_path);
+	//
+	// ArrayList<WeightRankedRegex> corpus = new
+	// ArrayList<WeightRankedRegex>(lines.size());
+	//
+	// for (Integer patternIndex : regexIndices) {
+	// corpus.add(lookup.get(patternIndex));
+	// }
+	// return corpus;
+	// }
 
 	// cannot do this - some are doublequotes, others are singlequotes, you
 	// don't know which it was

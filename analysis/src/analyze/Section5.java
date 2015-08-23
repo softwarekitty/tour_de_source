@@ -44,13 +44,13 @@ public class Section5 {
 		String behavioral_analysis_path = PaperWriter.homePath +
 			"analysis/behavioral_clustering/";
 
-		ArrayList<WeightRankedRegex> corpus = IOUtil.importCorpus(PaperWriter.homePath +
-			"analysis/analysis_output/exportedCorpusRaw.txt");
-		System.out.println("corpus size: " + corpus.size());
+//		ArrayList<WeightRankedRegex> corpus = IOUtil.importCorpus(PaperWriter.homePath +
+//			"analysis/analysis_output/exportedCorpusRaw.txt");
+//		System.out.println("corpus size: " + corpus.size());
 
 		String filtered_corpus_path = PaperWriter.homePath +
 			"csharp/filteredCorpus.txt";
-		HashMap<Integer, WeightRankedRegex> lookup = IOUtil.getLookup(corpus, filtered_corpus_path);
+		HashMap<Integer, WeightRankedRegex> lookup = IOUtil.getLookup(filtered_corpus_path);
 		Set<Integer> lookupKeys = lookup.keySet();
 		TreeSet<String> unescapedPatterns = new TreeSet<String>();
 		TreeSet<Integer> nonDuplicateLookupKeys = new TreeSet<Integer>();
@@ -98,8 +98,8 @@ public class Section5 {
 					String mclInput = fullInputFilePath + " -I " +
 						df.format(i_value) + newOptions + " --abc -o " +
 						fullOutputFilePath;
-					behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, corpus, fullOutputFilePath, mclInput, lookup);
-					IOUtil.dumpAllClusters(behavioral_analysis_path, behavioralClusters, corpus, "behavioralSimilarityClusterDump" +
+					behavioralClusters = IOUtil.getClustersFromFile(fullInputFilePath, fullOutputFilePath, mclInput, lookup);
+					IOUtil.dumpAllClusters(behavioral_analysis_path, behavioralClusters, "behavioralSimilarityClusterDump" +
 						suffix + ".txt", suffix);
 				}
 			}

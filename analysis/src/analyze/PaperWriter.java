@@ -23,6 +23,11 @@ import org.apache.commons.io.FileUtils;
 // c.execute('''CREATE TABLE FilesPerProject (nFiles int, frequency int)''')
 
 
+
+
+
+import analyze.exceptions.PythonParsingException;
+import analyze.exceptions.QuoteRuleException;
 import analyze.exceptions.ValueMissingException;
 
 public class PaperWriter {
@@ -37,7 +42,7 @@ public class PaperWriter {
 
 	public static void main(String[] args) throws ClassNotFoundException,
 			SQLException, ValueMissingException, IOException,
-			InterruptedException {
+			InterruptedException, IllegalArgumentException, QuoteRuleException, PythonParsingException {
 		System.out.println("begin paper writer");
 		corpus = new ArrayList<WeightRankedRegex>(1024);
 		alienFeatureCount = new HashMap<String, Integer>();
@@ -75,7 +80,7 @@ public class PaperWriter {
 		
 		filesToMake.add(new NameContentsPair("exportedCorpusAll.txt", exportCorpusUnescaped(corpus)));
 
-
+		filesToMake.add(new NameContentsPair("patternWeightMap.txt", exportPatternWeightMap(corpus)));
 
 		// list of alien features excluded
 		filesToMake.add(new NameContentsPair("alienFeatures.txt", stringifyAlienFeatures()));
@@ -144,6 +149,15 @@ public class PaperWriter {
 		// createContent
 		generateArtifacts(filesToMake, homePath);
 		System.out.println("finished paper writer");
+	}
+
+	private static String exportPatternWeightMap(
+			ArrayList<WeightRankedRegex> corpus2) {
+		StringBuilder sb = new StringBuilder();
+		for(WeightRankedRegex wrr: corpus2){
+			sb.append(wrr.getContent() + "\t" + wrr.getRankableValue() + "\n");
+		}
+		return sb.toString();
 	}
 
 	private static String stringifyAlienFeatures() {
@@ -286,7 +300,7 @@ public class PaperWriter {
 
 	private static void populateTexDatabase(
 			HashMap<String, String> databaseFileContent, String connectionString)
-			throws ClassNotFoundException, SQLException, ValueMissingException {
+			throws ClassNotFoundException, SQLException, ValueMissingException, IllegalArgumentException, QuoteRuleException, PythonParsingException {
 		Section0.contributeToMap(databaseFileContent, connectionString);
 		Section1.contributeToMap(databaseFileContent, connectionString, corpus, alienFeatureCount);
 		Section2.contributeToMap(databaseFileContent, connectionString);

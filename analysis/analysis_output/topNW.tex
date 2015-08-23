@@ -8,63 +8,63 @@ pattern & nProjects \\
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'\s+'\end{verbatim}
+'\x1b\]((?:.|;)*?)(\x07)'\end{verbatim}
 \end{minipage}
-& 181 \\ 
+& 2 \\ 
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'\s'\end{verbatim}
+'\x1b\[\d+m'\end{verbatim}
 \end{minipage}
-& 78 \\ 
+& 1 \\ 
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'\d+'\end{verbatim}
+'^[A-Z]'\end{verbatim}
 \end{minipage}
-& 70 \\ 
+& 2 \\ 
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'[\x80-\xff]'\end{verbatim}
+'^#format \w*\n'\end{verbatim}
 \end{minipage}
-& 69 \\ 
+& 2 \\ 
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'\nmd5_data = {\n([^}]+)}'\end{verbatim}
+'(,\n|[^\n-])+'\end{verbatim}
 \end{minipage}
-& 69 \\ 
+& 1 \\ 
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'\\(.)'\end{verbatim}
+'^[a-df-z]\d*$'\end{verbatim}
 \end{minipage}
-& 67 \\ 
+& 1 \\ 
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'([\\"]|[^\ -~])'\end{verbatim}
+'[a-zA-Z_:][\w\.\-_:]*\Z'\end{verbatim}
 \end{minipage}
-& 66 \\ 
+& 1 \\ 
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'(-?(?:0|[1-9]\d*))(\.\d+)?([eE][-+]?\d+)?'\end{verbatim}
+'^\?(.*)'\end{verbatim}
 \end{minipage}
-& 61 \\ 
+& 8 \\ 
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'[^]]+?\] +([0-9.]+): (\w+) <-(\w+)'\end{verbatim}
+'Video: \w+'\end{verbatim}
 \end{minipage}
-& 60 \\ 
+& 1 \\ 
 \midrule
 \begin{minipage}{2.4in}
 \begin{verbatim}
-'.*rlen=([0-9]+)'\end{verbatim}
+'\\.|.'\end{verbatim}
 \end{minipage}
-& 57 \\ 
+& 9 \\ 
 \bottomrule
 \end{tabular}
 \end{center}
