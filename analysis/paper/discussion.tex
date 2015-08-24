@@ -18,7 +18,7 @@ In our developer survey, 11\% (2) of participants use this feature frequently an
 
 \subsubsection{PNG and BKRN vs CG and BKR}
 The PNG group (python-style named capture groups) and BKRN (back-references: named) are intended to operate together to allow users to name the content that is expected to appear in a capture group.  A simple example of how these can be used together with the named capture group matching some vowel is:
-\verb!(?P<vowel>[aeiou]x(?P=vowel))! which will match the strings 'axa' and 'oxo' but not 'txt'.  The same functionality can be obtained with a much shorter expression: \verb!([aeiou])x\1! where the \verb!'\1'! references the CG started by the first left parenthesis found when moving from left to right.  When survey participants were asked if they prefer to always use numbered capture groups, alway s use named captured groups or 'it depends', 66\% (12) of survey participants said that they always use BKR, and the remaining 33\% (6) said 'it depends'.  No one said that they always use named capture groups, and the participants who answered 'it depends' said that they would only use named capture groups when composing a very large regex.  BKR is present in 5\% of scanned projects, while BKRN is present in only 1.7\%, which corroborates our findings that numbered capture groups are generally preferred over named capture groups.
+\verb!(?P<vowel>[aeiou]x(?P=vowel))! which will match the strings 'axa' and 'oxo' but not 'txt'.  The same functionality can be obtained with a much shorter expression: \verb!([aeiou])x\1! where the \verb!'\1'! references the CG started by the first left parenthesis found when moving from left to right.  When survey participants were asked if they prefer to always use numbered capture groups, alway s use named captured groups or 'it depends', 66\% (12) of survey participants said that they always use BKR, and the remaining 33\% (6) said `it depends'.  No one said that they always use named capture groups, and the participants who answered 'it depends' said that they would only use named capture groups when composing a very large regex.  BKR is present in 5\% of scanned projects, while BKRN is present in only 1.7\%, which corroborates our findings that numbered capture groups are generally preferred over named capture groups.
 
 \subsection{Key User Behaviors to Support}
 Here we offer a discussion of the main behaviors that are important for tool designers to support.
@@ -39,17 +39,18 @@ Based on our findings, there are many opportunities for future work.
 \subsubsection{A Modern WRD Character Class}
 One surprising result of our clustering is that, behaviorally speaking, the negation of the word class NWRD was used in 208 projects, while the word class itself was used in only 114 projects. After inspecting several projects using the patterns found in this behavioral cluster, we concluded that most users are trying to sanitize arbitrary strings that must conform to a system character set requirement, such as requirements for filenames.  For example, a user might replace all NWRD matching characters with the `\_' to guarantee that an arbitrary string can be used as a filename.  We also considered the largest cluster using custom character classes (\verb?`[^ -~]'(122)?) and concluded that users are constructing a more permissive version of the NWRD character class, to allow more non-letter, non-digit characters than just the `\_' in their sanitized strings.  More research is needed to determine if a more modern WRD class could be useful, and if so, what characters set is preferred.
 
-\subsubsection{Refactoring Regex for Readability and Performance}
+\subsubsection{Refactoring Regex for Readability}
 The survey showed that users want readability and find the lack of readable regexes to be a major pain point.  Certain character classes that are logically equivalent can be expressed differently.  One avenue for future exploration is a tool to transform a regex with an character class that is difficult to read into one that has the same effect but is easier to understand.
 Other similar refactoring techniques may become evident with a more thorough search.  A tool that preserved the exact behavior of a regex but optimized for readability could be incorporated into an IDE and relieve some developer pain.  More research is needed into why certain character classes are considered more readable, as has been done for other refactoring work (e.g.,~\cite{StoleeTSE2013}).
 Similarly, there are several principals that can be followed to enhance the performance of a regex.  Using non-capture groups whenever possible, avoiding backtracking, etc.  In theory it seems possible to build a compiler that could compose a regex with identical behavior but with better readability and performance.
 
+\todoMid{talk about performance and cite Chris}
 \subsubsection{Developer Awareness of Best Practices}
 One category of 5 clusters in the top 100 contained regex patterns to parse the contents of angle brackets.  Because the contents of angle brackets are usually unconstrained, regex are a poor replacement for XML or HTML parsers.  Using regex instead of a parser can lead to many programming disasters, as thoroughly discussed on the StackOverflow page dedicated to this topic\footnote{\url{http://stackoverflow.com/questions/1732348}}.  More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
 
 \subsubsection{Automated Regex Repair}
 Given a suite of tests and a high suspiciousness score for lines of code containing regex, an automated system could searh for similar regexes to try in place of the faulty one.  The same clustering technique that we used to study regex behavior could be used to index groups of similar regexes, speeding up the process of searching for a replacement.
-
+\todoMid{Katie do this}
 
 
 

@@ -1,9 +1,10 @@
-\begin{table*}
+\begin{table*}[h!tp]
 \begin{center}
-\caption{How Frequently do Features Appear in Projects, and Which Features are Supported By Four Major Regex Projects? (RQ2)}
+\begin{small}
+\caption{How frequently do features appear in projects? (RQ2)}
 \label{table:featureStats}
 \begin{tabular}
-{llllcccccccccc}
+{ll@{ }llc @{ } c @{ }c @{ } c  cccccc @{}}
 rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \% patterns & nProjects & \% projects \\ 
 \toprule[0.16em]
 1 & ADD & one-or-more repetition & \begin{minipage}{0.5in}\begin{verbatim}z+\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & 5,889 & 44 & 1,197 & 72.8 \\ 
@@ -75,5 +76,6 @@ rank & code & description & example & brics & hampi & Rex & RE2 & nPatterns & \%
 34 & NWNW & negated WNW & \begin{minipage}{0.5in}\begin{verbatim}\B\end{verbatim}\end{minipage} & \no & \no & \no & \yes & 4 & 0 & 10 & 0.6 \\ 
 \bottomrule[0.13em]
 \end{tabular}
+\end{small}
 \end{center}
 \end{table*}

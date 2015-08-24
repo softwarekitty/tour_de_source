@@ -23,13 +23,13 @@ In this work, we primarily focus on patterns since they are cross-cutting across
 \subsection{Research Questions}
 \label{sec:rqs}
 To understand how regular expressions and regular expression features are used in Python projects, we aim to answer the following research questions:\\
-\leavevmode\color{gray}
+
 \noindent \textbf{RQ1:} How  is the {\tt re} module used in Python projects?
 
 We measure how often calls are made to the {\tt re} module per file and per project in Python projects.
 To provide context as to the overlap among regular expression strings used in Python, we explore the most common regex {patterns} across all utlizations.\\
 
-\leavevmode\color{black}
+
 
 \noindent \textbf{RQ2:} Which regular expression language features are most commonly used in python?
 
@@ -95,8 +95,10 @@ The end result is clusters of highly semantically similar regular expressions.  
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\columnwidth]{../illustrations/matrixToGraph.eps}
+\includegraphics[width=0.7\columnwidth]{../illustrations/matrixToGraph.eps}
+\vspace{-6pt}
 \caption{Creating a similarity graph from a similarity matrix}
+\vspace{-6pt}
 \label{fig:matrixToGraph}
 \end{figure}
 
