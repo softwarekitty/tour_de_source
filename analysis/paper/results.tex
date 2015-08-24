@@ -1,6 +1,8 @@
 \section{Results}
 \label{sec:results}
 
+\input{../analysis_output/featureStats}
+
 In this section, we present the results of each research question.
 
 \subsection{RQ1: How  is the {\tt re} module used?}
@@ -50,7 +52,7 @@ The number of projects that use each of the {\tt re} functions is shown in Figur
 When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed.
  Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.   Although multiple flags can be combined using a bitwise or, this was never observed.
 
-\input{../analysis_output/featureStats}
+
 
 %\subsubsection{Most Frequently Observed Patterns}
 %
