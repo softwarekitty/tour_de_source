@@ -105,7 +105,7 @@ The first column, \emph{rank}, lists the rank of a feature (relative to other fe
 The next four columns map to the four major research projects chosen for our investigation (see Section~\ref{results:rq2}).  We indicate that a project supports a feature with the `\yes' symbol, and indicate that a project does not support the feature with the `\no' symbol.
 
 
-The next six columns contain three pairs of usage statistics.  The first pair contains the number and percent of \emph{patterns} that a feature appears in, out of the 13,912 patterns that make up the corpus. The next pair of columns contain the number and percent of \emph{files} that a feature appears in out of the 18,549 files scanned that contain at least one utilization.  The last pair of columns contain the number and percent of \emph{projects} that a feature appears in out of the 1645 projects scanned that contain at least one utilization.
+The next four columns contain two pairs of usage statistics.  The first pair contains the number and percent of \emph{patterns} that a feature appears in, out of the 13,912 patterns that make up the corpus.  The second pair of columns contain the number and percent of \emph{projects} that a feature appears in out of the 1645 projects scanned that contain at least one utilization.
 
 One notable omission from Table~\ref{table:featureStats} is the literal feature, which is used  to specify matching any specific character.  An example pattern that contains only one literal token is the pattern \verb!`a'!.  This pattern only matches the lowercase letter `a'.  The literal feature was found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of patterns.
 %, and accounted for \DTLfetch{data}{key}{P_LITERAL_TOKENS}{value}\% of all tokens.
@@ -117,32 +117,21 @@ The eight most commonly used features, ADD, CG, KLE, CCC, ANY, RNG, STR and END,
 appear in over half the projects. The remaining 26 features appear in less than half of the projects containing utilizations.
 CG is more commonly used in patterns than the highest ranked feature (ADD) by a wide margin (over 8\%).  CG is also more commonly used with respect to how many files it appears in by 2.3\%, while only being present in 12 fewer projects (0.7\%) than ADD.
 
-%The seven most rarely used features,  LKB, ENDZ, BKR, NDEC, BKRN, VWSP and NWNW, appear in fewer than 8.  These seven features are more rarely used than all other features with respect to all three of our usage statistics.  Less than 8\% of scanned projects containing utilizations contain these features.
-%removed because this table is not complete - features in less than 10 projects are omitted so talking about the least used is not entirely accurate
-
-%\subsubsection{Potentially Under-Ranked and Over-Ranked Features}
-%We note that Table~\ref{table:featureStats} is sorted by the number of projects a feature appears in, but if the table were instead sorted by the number of patterns or files that a feature appears in, the ranking order would be different.
-
-%\todo{include this or not?}
-% The WSP feature is present in more patterns than the NCCC feature by a margin of 6.7\%, and in more files by a margin of 4.2\%, yet it is ranked lower than NCCC because it is present in 13 fewer projects (0.8\%).
-% The WNW, OPT and QST features follow the same pattern of being under-ranked in terms of the number of patterns and files that they appear in.
-
-
-
 \subsubsection{Feature Support in Regex Tools}
  We  mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, hampi, RE2, and Rex.
 To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using the formal grammar\footnote{\url{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footnote{\url{https://code.google.com/p/hampi/downloads/list}} (this may have been an overestimation, as this included more features than specified by the formal grammar\footnote{\url{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}}).  For RE2, we used the  supported feature documentation\footnote{\url{https://re2.googlecode.com/hg/doc/syntax.html}}.  For Rex, we were able to use trial and error because we tried to parse all patterns with Rex, and Rex provides good error feedback when a feature is unsupported.
 
-\todoLast{Were there any features supported by the tools that we did not find in the corpus? Answer: RE2 has a lot of features we didn't study and that weren't found in the corpus in any substantial quantity.  }
+\todoLast{Were there any features supported by the tools that we did not find in the corpus? Answer: RE2 has a lot of features we didn't study and that weren't found in the corpus in any substantial quantity.  I think this is addressed by the earlier mention: Only features appearing in at least 10 projects are listed.}
 
 
-Of the four projects selected for this analysis, RE2 supports the most studied features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.
+Of the four projects selected for this analysis, RE2 supports the most studied features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.  RE2 is the only project to support the WNW, ENDZ and NWNW features.
 
-No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.  Brics is the only project that does not support any of the six default character classes (WSP, DEC, WRD, NWSP, NWRD, NDEC) - the rest of the projects support all of those features.  RE2 is the only project to support the WNW, ENDZ and NWNW features.  RE2 also supports the PNG feature (which allows you to name capturing groups), but does not support the BKRN feature which is necessary to refer back to the named capture group.
+\leavevmode\color{gray}
+No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.  Brics is the only project that does not support any of the six default character classes (WSP, DEC, WRD, NWSP, NWRD, NDEC) - the rest of the projects support all of those features.  RE2 also supports the PNG feature (which allows you to name capturing groups), but does not support the BKRN feature which is necessary to refer back to the named capture group.
+\leavevmode\color{black}
 
 \subsubsection{Summary}
 We found that the eight most common features are found on over 50\% of the projects.
-%Five features that make more appearances in terms of patterns and files than the feature ranked immediately higher than them in terms of appearances in projects.
 We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects.
 
 
@@ -150,17 +139,10 @@ We also identify brics as the project supporting the fewest features and RE2 as 
 \label{results:rq3}
 
 %\subsubsection{Rationale for Behavioral Clustering}
-When tool designers are considering what features to include, data about usage in practice, beyond syntactic characteristics, is valuable.  Semantic similarity clustering  helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
+When tool designers are considering what features to include, data about usage in practice is valuable.  Semantic similarity clustering  helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
 
 %\subsubsection{General Information About Clusters Found}
-From 9,503 distinct patterns, the MCL clustering technique identified 514 clusters with 2 or more patterns, and 7,214 clusters of size 1.  Recall that only pairs of patterns with a similarity level of 0.75 were included in the matrix passed to MCL.  The average size of clusters larger than size one was 3.7.
-%From 9503 distinct patterns, the MCL clustering technique identified 514 clusters with 2 or more patterns, and 7214 clusters of size 1.
-%this section is repeated later, goes better there
-%Recall that only pairs of patterns with a similarity level of 0.75 were included in the matrix passed to MCL.
-%The average size of clusters larger than contains 3.7 patterns.
-Each pattern belongs to exactly one cluster.
-%\todo{It seems like we missed an opportunity here. There are two measures of the `influence' a cluster represents, one in its size (how many patterns) and another in how many projects. Did we weight the clusters at all by the number of projects in which the patterns are present?}
-
+From 9,503 distinct patterns, the MCL clustering technique identified 514 clusters with 2 or more patterns, and 7,214 clusters of size 1.  Recall that only pairs of patterns with a similarity level of 0.75 were included in the matrix passed to MCL.  The average size of clusters larger than size one was 3.7.Each pattern belongs to exactly one cluster.
 
 %\subsubsection{An Example Cluster}
 Table~\ref{table:exampleCluster} provides an example of a behavioral cluster representing 13 patterns with at least one pattern from this cluster present in 100 different projects.  At first glance this cluster may seem to revolve around the `\verb!\s*!' parts of these patterns, but actually this cluster was formed because each of these patterns has a comma literal, and other details did not interfere with matching the Rex-generated strings with commas in them.
@@ -170,9 +152,8 @@ Table~\ref{table:exampleCluster} provides an example of a behavioral cluster rep
 The smallest pattern in Table~\ref{table:exampleCluster} is the single comma literal \verb!`,'! at index 1.  This smallest pattern gives the a good idea of what all the patterns within it have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the strings created by Rex from another pattern within the cluster, and so we assume that \emph{the smallest pattern is a good representation of the cluster}.
 
 For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects a member of the cluster appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`,'(100)!.
-%The top 10 clusters are shown in Table~\ref{table:topNClusters}, ranked by the number of projects they appear in.
-%\subsubsection{Catagorizing the Top 100 Clusters}
-We  manually mapped the top 100 clusters into each of 6 behavioral categories, omitting 40 clusters that did not fit into any of these catagories.
+
+We  manually mapped the top 100 clusters into each of 6 behavioral categories (determined by inspection), omitting 40 clusters that did not fit into any of these catagories.
 \leavevmode\color{gray}
  ...including 29 clusters composed of long strings (example: \verb!set_fabric_sense_len\)\(!) which were in the top 100 because 28 projects that were scanned were forked linux kernels.
 \leavevmode\color{black}

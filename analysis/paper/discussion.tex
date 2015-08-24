@@ -1,15 +1,11 @@
 \section{Discussion}
 \label{sec:discussion}
 
-%This research has explored how regular expressions are used in practice.
 In this section, we discuss the implications of these empirical findings on tool designers and users of regex tools and opportunities for future work.
 
-
-\todoMid{move the discussion about simulating features out of this before removing it}
 \subsection{Implications For Tool Designers}
 
 We observe that, although the clusters were generated based on behavioral similarity, they are often centered around the presence of certain features. Thus, omitting those features in a tool's implementation often omits an entire space of regular expression behaviors.
-
 
 \subsubsection{STR, END}
 The endpoint anchor features STR and END are useful for specifying how a pattern relates to the beginning or end of a line, or an entire line from beginning to end.  In our survey, over half (56\%) of the respondents answers that they use endpoint anchors frequently or very frequently, and none of them claimed to never use them.  Some common use cases require the endpoint anchors, such as specifying that some content is first or last in an input.  In multi-line mode, endpoint anchors match the beginning and ending of each line.  For example the regex \verb!(?m)^\s*$! will match every line that is only whitespace.
@@ -20,154 +16,40 @@ From Table~\ref{table:featureStats} we know that STR and END features are presen
 The LZY feature modifies the behavior of the repetition features (i.e., ADD, KLE, QST, DBB, LWB, SNG) by forcing them to use as few repetitions as possible for a match.  The default behavior for the repetition features is to use as many repetitions as possible for a match.  Consider trying to find the shortest sequence of binary characters starting and ending with a 1 within the binary sequence: {\tt 1010001}. The pattern \verb!`1.*1'! will match the entire sequence whereas the pattern \verb!`1.*?1'! will match {\tt 101} because the KLE repetition feature was modified by the LZY feature.  There is no way to obtain shortest matches without the LZY feature.  LZY is present in over 36\% of scanned projects with utilizations (see Table~\ref{table:featureStats}), and yet was not supported by two of the four major regex projects we looked at.
 In our developer survey, 11\% (2) of participants use this feature frequently and 6 (33\%) use it occasionally, showing a modest impact on potential users.
 
+\subsubsection{PNG and BKRN vs CG and BKR}
+The PNG group (python-style named capture groups) and BKRN (back-references: named) are intended to operate together to allow users to name the content that is expected to appear in a capture group.  A simple example of how these can be used together with the named capture group matching some vowel is:
+\verb!(?P<vowel>[aeiou]x(?P=vowel))! which will match the strings 'axa' and 'oxo' but not 'txt'.  The same functionality can be obtained with a much shorter expression: \verb!([aeiou])x\1! where the \verb!'\1'! references the CG started by the first left parenthesis found when moving from left to right.  When survey participants were asked if they prefer to always use numbered capture groups, alway s use named captured groups or 'it depends', 66\% (12) of survey participants said that they always use BKR, and the remaining 33\% (6) said 'it depends'.  No one said that they always use named capture groups, and the participants who answered 'it depends' said that they would only use named capture groups when composing a very large regex.  BKR is present in 5\% of scanned projects, while BKRN is present in only 1.7\%, which corroborates our findings that numbered capture groups are generally preferred over named capture groups.
+
 \subsection{Key User Behaviors to Support}
-%Several key user behaviors were observed in the corpus of patterns, and in the clusters and cluster categories that...
 Here we offer a discussion of the main behaviors that are important for tool designers to support.
-\leavevmode\color{gray}
-\subsubsection{Prioritized List of Features}
-\label{sec:prioritizedList}
-Based on our analysis of feature usage in RQ2 and the data presented in Table~\ref{table:featureStats}, we have produced a prioritized list of features (Figure~\ref{fig:prioritizedList}) to include in a tool meant to support as many regexes as possible. The features NCCC, RNG, WSP, DEC, WRD, NWSP, NDEC, NWRD are all included as the second priority because by implementing CCC, these features are available as specific instances of CCC.  Consider how the DEC feature can be simulated using CCC, for example  $\backslash d \equiv [0123456789]$. Likewise, any use of the RNG feature can be simulated using CCC, for example: $[a-f] \equiv [abcdef]$.
-\todoLast{can this become more readable please? I'm lost in acronyms}
 
-\begin{figure}[tb]
-\fbox{\parbox{\columnwidth}{
-\begin{enumerate} \itemsep -3pt
-\item literals, sequences of tokens
-\item CCC (NCCC, RNG, WSP, DEC, WRD, NWSP, NDEC, NWRD)
-\item CG (without back-references)
-\item DBB (ADD, KLE, QST, SNG, LWB)
-\item STR, END
-\item OR
-\item LZY
-\item NCG
-\item NLKA, LKA, NLKB, LKB
-\item WNW, NWNW
-\item ENDZ
-\item BKR
-\end{enumerate}
-}}
-\caption{A Suggested Feature Implementation Priority List \label{fig:prioritizedList}
-}
-\end{figure}
-
-
-Similarly, the features ADD, KLE, QST, SNG and LWB are available once the DBB feature is implemented.  Consider how every use of the ADD feature can be simulated with a specific use of the DBB feature, for example: $a+ \equiv a\{1, MAX\}$.  In the same way, any use of the SNG feature can be simulated using the DBB feature, for example:  $a\{5\} \equiv a\{5, 5\}$.
-
-\leavevmode\color{black}
 \subsubsection{Capturing Specific Content}
-The survey results from secdion~\ref{sec:survey} indicated that capturing parts of strings was the second most frequent activity that developers used regex for.  As mentioned in section~\ref{sec:featureUsage}, the CG feature is the most frequently used feature in terms of patterns (see Table~\ref{table:featureStats}).  As mentioned in Section~\ref{sec:clusterResults}, capturing values assigned to variables when parsing source code was one of the main categories of clusters observed.  The ability to capture some part of a match provides a powerful tool to programmers.  The CG feature has two functions: 1. it allows logical grouping as would be expected by parenthesis, and 2. it allows retrieval of information that was in one logical grouping.  Although the four regex projects all support the very necessary logical grouping aspect of the feature, none support the BKR feature that retrieves what content was found in an earlier CG.  Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
-\leavevmode\color{gray}
+The survey results from section~\ref{sec:survey} indicated that capturing parts of strings was the second most frequent activity that developers used regex for.  As mentioned in section~\ref{sec:featureUsage}, the CG feature is the most frequently used feature in terms of patterns (see Table~\ref{table:featureStats}).  As mentioned in Section~\ref{sec:clusterResults}, capturing values assigned to variables when parsing source code was one of the main categories of clusters observed.  The ability to capture some part of a match provides a powerful tool to programmers.  The CG feature has two functions: 1. it allows logical grouping as would be expected by parenthesis, and 2. it allows retrieval of information that was in one logical grouping.  Although the four regex projects all support the very necessary logical grouping aspect of the feature, none support the BKR feature that retrieves what content was found in an earlier CG.  Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
 
-\subsubsection{Use of the Default Character Classes}
-The pattern language for Python and most major regex engines support a few default character classes (and their negations) which we have described as the features ANY, DEC, WSP, WRD, NDEC, NWSP, NWRD.  Throughout this analysis and in our survey,  it was clear that these default character classes were widely used.  As mentioned in section~\ref{sec:prioritizedList}, all of these default character classes can be simulated using the CCC feature, and the CCC feature is one of the most basic features that is essential for all regex tools to support.  For tools that do not support the default character classes, this is a significant obstacle for users trying to test or model the regexes that they already have.
-
-\subsubsection{Using {\tt`.*'} to Count Lines Containing a Pattern}
+\subsubsection{Counting Delimiters and Finding Flags}
 Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of the 13,912 patterns in the corpus, 3444 (24\%) contained ANY followed by KLE: \verb!`.*'!, often at the end of the pattern.
-One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on, as illustrated in Figure~\ref{fig:lineSearch}.
+One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of 'Counting lines that match a pattern' and 'Counting substrings that match a pattern' at 3.2 or Rarely/Occasionally.
 
-Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of all the patterns observed during this study, the most ubiquitous sub-pattern was \verb!`.*'!, usually present near the end of the pattern.  Out of the 13,912 patterns in the corpus, 3444 (24\%) contained \verb!`.*'! at least once.
-One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  In Figure~\ref{fig:lineSearch}, we illustrate this phenomenon with two lines of Python code.
-
-The first line initializes the string {\tt fruitDiary}, which represents some file with many lines, with each line containing one unit of data.  In this example, each line contains a list of the fruits that were eaten on that day.  Two apples are recorded on the first line of {\tt fruitDiary}, zero apples are on the second line, and one apple is on the third line.  Overall, we see that at least one apple was eaten on two of the three days.
-
-The second line of code finds the length of the list of matches found using the {\tt re.findall} function.  The pattern \verb!`Apple.*'! will match any character sequence that starts with the string {\tt Apple} and then the \verb!`.*'! portion of the pattern will match every character except the newline character.  The two matches are highlighted in Figure~\ref{fig:lineSearch}. Because the \verb!`.*'! portion of the pattern matches everything up to the newline, the second Apple on the first line is ignored.  This allows the number of matches to be a count of lines containing {\tt Apple} at least once.
-
-Tools that intend to be applicable to regex use in practice must support both the ANY and KLE features, and should give special care to maintain the expected line-counting behavior for the \verb!`.*'! idiom.
-
-%\subsubsection{Using `\textbackslash W' to Sanitize Arbitrary Text}
-
-
-\begin{figure}[tb]
-\centering
-\fbox{
-\includegraphics[width=\columnwidth]{../illustrations/lineSearch.eps}
-}
-\caption{An Example of Using .* to Count Lines Containing `Apples'}
-\label{fig:lineSearch}
-\end{figure}
-\leavevmode\color{black}
-\todoMid{insert new sections about conclusions from survey}
+Delimiters that separate items on one line like \verb!','! are also quite common.  Although survey participants indicated an average frequency of 1.7 (very rarely or never) for 'checking for a single character', we found 19 clusters whose essential behavior was to search for one or two characters.  This makes sense if you consider that the top ranked activity for developers was 'Locating content within a file or files', and usually this content is located using some small set of characters that the user knows will flag that content.  Looking closely at that category of cluster, some of the characters being searched for were \verb!-!, \verb!#! and \verb!:! - all common delimiters in different scenarios.
 
 \subsection{Opportunities For Future Work}
 
 Based on our findings, there are many opportunities for future work.
-\leavevmode\color{gray}
-\subsubsection{Re-Evaluating the WRD Character Class}
-One surprising result of our clustering is that, behaviorally speaking, the negation of the word class NWRD was used in 208 projects, while the word class itself was used in only 114 projects. After inspecting several projects using the patterns found in this behavioral cluster, we concluded that most users are trying to sanitize arbitrary strings that must conform to a system character set requirement, such as requirements for filenames.  For example, a user might replace all NWRD matching characters with the `\_' to guarantee that an arbitrary string can be used as a filename.  We also considered the largest cluster using custom character classes (\verb?`[^ -~]'(122)?) and concluded that users are constructing a more permissive version of the NWRD character class, to allow more non-letter, non-digit characters than just the `\_' in their sanitized strings.  We hypothesize that this is because modern systems allow more special characters in filenames than systems allowed when the WRD character class originated.  More research is needed to determine if a more modern WRD class could be useful, and if so, what characters set is preferred.
-\leavevmode\color{black}
-\subsubsection{What Are Best Practices For Regex Composition?}
-The survey
-\leavevmode\color{gray}
-\subsubsection{Regexes need refactoring}
-When clustering by behavior, we observed many clusters with more than 10 patterns all specifying nearly the same behavior.  We don't know why different users choose to implement the same behavior in different ways.  Out of the 13,912 patterns in the corpus, 1977 (14\%) used the RNG feature to specify the range \verb?0-9?, even though this is exactly equivalent to using \verb?\d? .  Future work is needed to determine why users specify digits using the RNG feature when an equivalent default character class already exists, as has been done for other refactoring work (e.g.,~\cite{StoleeTSE2013}).
-\leavevmode\color{black}
-\subsubsection{Automated program repair}
-\todoMid{fill in this and other ideas about future work}
 
+\subsubsection{A Modern WRD Character Class}
+One surprising result of our clustering is that, behaviorally speaking, the negation of the word class NWRD was used in 208 projects, while the word class itself was used in only 114 projects. After inspecting several projects using the patterns found in this behavioral cluster, we concluded that most users are trying to sanitize arbitrary strings that must conform to a system character set requirement, such as requirements for filenames.  For example, a user might replace all NWRD matching characters with the `\_' to guarantee that an arbitrary string can be used as a filename.  We also considered the largest cluster using custom character classes (\verb?`[^ -~]'(122)?) and concluded that users are constructing a more permissive version of the NWRD character class, to allow more non-letter, non-digit characters than just the `\_' in their sanitized strings.  More research is needed to determine if a more modern WRD class could be useful, and if so, what characters set is preferred.
 
+\subsubsection{Refactoring Regex for Readability and Performance}
+The survey showed that users want readability and find the lack of readable regexes to be a major pain point.  Certain character classes that are logically equivalent can be expressed differently.  One avenue for future exploration is a tool to transform a regex with an character class that is difficult to read into one that has the same effect but is easier to understand.
+Other similar refactoring techniques may become evident with a more thorough search.  A tool that preserved the exact behavior of a regex but optimized for readability could be incorporated into an IDE and relieve some developer pain.  More research is needed into why certain character classes are considered more readable, as has been done for other refactoring work (e.g.,~\cite{StoleeTSE2013}).
+Similarly, there are several principals that can be followed to enhance the performance of a regex.  Using non-capture groups whenever possible, avoiding backtracking, etc.  In theory it seems possible to build a compiler that could compose a regex with identical behavior but with better readability and performance.
 
+\subsubsection{Developer Awareness of Best Practices}
+One category of 5 clusters in the top 100 contained regex patterns to parse the contents of angle brackets.  Because the contents of angle brackets are usually unconstrained, regex are a poor replacement for XML or HTML parsers.  Using regex instead of a parser can lead to many programming disasters, as thoroughly discussed on the StackOverflow page dedicated to this topic\footnote{\url{http://stackoverflow.com/questions/1732348}}.  More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
 
-% \subsubsection{dot-star at the end - refactoring?}
-% One of the most ubiquitous sub-patterns, \verb!`.*'! appeared in 1937 of the 9727 patterns acceptable by Rex, and appeared within the last four characters in 1161 of the 9727 patterns.  Out of the top 30 clusters containing the ANY feature, 26 also had \verb!`.*'! within the last four characters.
+\subsubsection{Automated Regex Repair}
+Given a suite of tests and a high suspiciousness score for lines of code containing regex, an automated system could searh for similar regexes to try in place of the faulty one.  The same clustering technique that we used to study regex behavior could be used to index groups of similar regexes, speeding up the process of searching for a replacement.
 
-
-
-
-
-
-% In many cases, this \verb!`.*'! at the end of the string may not actually contribute any new behavior to the pattern, and may in fact be extraneous.  Or users may be trying to bypass the whole-string nature of the {\tt re.match} function, without realizing that they could instead use the {\tt re.search} function.  Consider the comparison shown in Figure~\ref{fig:searchVSmatch}
-
-% \begin{figure}[tb]
-% \centering
-% \fbox{
-% \includegraphics[width=\columnwidth]{../illustrations/matchVSsearch.eps}
-% }
-% \caption{An Example of Using .* to get Search Behavior From The Match Function}
-% \label{fig:searchVSmatch}
-% \end{figure}
-
-% Are programmers using the dot-star sub-pattern unnecessarily? More research is needed into this question to find out if these patterns are a candidate for refactoring.
-
-
-
-% to find the largest count for the 'utilizing files' row: select distinct uniqueSourceID, filePath, count(distinct filePath) as ct from RegexCitationMerged group by uniqueSourceID order by ct;
-
-
-% \subsubsection{default character classes are widely used}
-
-%  Specifically, \verb!\s!, \verb!\d! and \verb!\W! were the top three behavioral clusters (as shown in Table~\ref{table:topNClusters}).  In Table~\ref{table:threeClusterSample} we show the top 10 patterns from these top three clusters. \todo{implication for tool designers}
-
-% \input{../behavioral_clustering/threeClusterSample}
-
-% example with anchors and {\tt .*} in the middle which could be replaced by a comma?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% Fun fact: while creating similarity matrix, row 5464 took 2 hours, or almost 1 second per cell avg, only suffering 18 timeouts (1.2 secs).  What is this pesky pattern?
-
-% We do not assume that Python projects represent a perfect sample of regular expression usage in all environments, but to make the work of collecting data for the paper reasonable, we had to choose one language to focus on (we hope to compare results across languages in future work).  Python is an attractive choice because the culture of Python programming makes it seem likely that someone would write the pattern directly in the function, not trying to over-complicate things with some extra Classes or functions.  Other attractive choices are Perl (which probably has the most active regex community), javascript and ruby (which may emphasize web tasks like form validation), sql or a general purpose language like java or C\#.
-
-
-% \todo{What does it mean when WSP is more pervasive in patterns and files, but not projects.  That it is popular among those who are used to using it but not everyone is used to using it? Stronger correlation between nPatterns and nFiles vs nFiles and nProjects or nPatterns and nProjects}
-
-% \todo{NDEC is one of the most rarely used features, while DEC is one of the most frequently used default char classes.  Contrast this with the craving for NWRD behavior evident from clustering.}
-
-% \subsubsection{An Evaluation of the Functions and Flags}
-
-% ACKk somesection about flags: notice how rarely the LOCALE flag was used, how combined flags were never used, and certain functions were almost never used.
-
-%Notice that the presence of the Verbose flag implies usage of the comment feature!
 
 
 
