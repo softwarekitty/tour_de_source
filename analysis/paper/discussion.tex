@@ -4,7 +4,7 @@
 %This research has explored how regular expressions are used in practice.
 In this section, we discuss the implications of these empirical findings on tool designers and users of regex tools and opportunities for future work.
 
-\leavevmode\color{gray}
+
 \todoMid{move the discussion about simulating features out of this before removing it}
 \subsection{Implications For Tool Designers}
 
@@ -12,10 +12,9 @@ We observe that, although the clusters were generated based on behavioral simila
 
 
 \subsubsection{STR, END}
-The endpoint anchor features STR and END are the only way to specify that the entire input string has to match a pattern.  Consider the following example, comparing the pattern \verb!`^\s*$'! to the pattern \verb!`\s*'! when looking for input strings devoid of content.  Because it does not have endpoint anchors, the pattern \verb!`\s*'! matches all inputs, since there are always at least zero whitespace characters in every input.  But with the endpoint anchors, only inputs that contain nothing but whitespace will match, allowing the user to determine if a string is devoid of content.
+The endpoint anchor features STR and END are useful for specifying how a pattern relates to the beginning or end of a line, or an entire line from beginning to end.  In our survey, over half (56\%) of the respondents answers that they use endpoint anchors frequently or very frequently, and none of them claimed to never use them.  Some common use cases require the endpoint anchors, such as specifying that some content is first or last in an input.  In multi-line mode, endpoint anchors match the beginning and ending of each line.  For example the regex \verb!(?m)^\s*$! will match every line that is only whitespace.
 
-From Table~\ref{table:featureStats} we know that STR and END features are present in over half of the scanned projects containing utilizations - further evidence of the importance of these features.  The brics library does not support this feature, which is a missed opportunity for many developers who could otherwise have used brics to model their regexes that use STR and END. The impact on users may be substantial. In our survey, over half (56\%) of the respondents answers that they use endpoint anchors frequently or very frequently.
-
+From Table~\ref{table:featureStats} we know that STR and END features are present in over half of the scanned projects containing utilizations - further evidence of the importance of these features.  The brics library does not support this feature, which is a missed opportunity for many developers who could otherwise have used brics to model their regexes that use STR and END.
 
 \subsubsection{LZY}
 The LZY feature modifies the behavior of the repetition features (i.e., ADD, KLE, QST, DBB, LWB, SNG) by forcing them to use as few repetitions as possible for a match.  The default behavior for the repetition features is to use as many repetitions as possible for a match.  Consider trying to find the shortest sequence of binary characters starting and ending with a 1 within the binary sequence: {\tt 1010001}. The pattern \verb!`1.*1'! will match the entire sequence whereas the pattern \verb!`1.*?1'! will match {\tt 101} because the KLE repetition feature was modified by the LZY feature.  There is no way to obtain shortest matches without the LZY feature.  LZY is present in over 36\% of scanned projects with utilizations (see Table~\ref{table:featureStats}), and yet was not supported by two of the four major regex projects we looked at.
@@ -24,7 +23,7 @@ In our developer survey, 11\% (2) of participants use this feature frequently an
 \subsection{Key User Behaviors to Support}
 %Several key user behaviors were observed in the corpus of patterns, and in the clusters and cluster categories that...
 Here we offer a discussion of the main behaviors that are important for tool designers to support.
-
+\leavevmode\color{gray}
 \subsubsection{Prioritized List of Features}
 \label{sec:prioritizedList}
 Based on our analysis of feature usage in RQ2 and the data presented in Table~\ref{table:featureStats}, we have produced a prioritized list of features (Figure~\ref{fig:prioritizedList}) to include in a tool meant to support as many regexes as possible. The features NCCC, RNG, WSP, DEC, WRD, NWSP, NDEC, NWRD are all included as the second priority because by implementing CCC, these features are available as specific instances of CCC.  Consider how the DEC feature can be simulated using CCC, for example  $\backslash d \equiv [0123456789]$. Likewise, any use of the RNG feature can be simulated using CCC, for example: $[a-f] \equiv [abcdef]$.
@@ -56,9 +55,9 @@ Similarly, the features ADD, KLE, QST, SNG and LWB are available once the DBB fe
 
 \leavevmode\color{black}
 \subsubsection{Capturing Specific Content}
-As mentioned in section~\ref{sec:featureUsage}, the CG feature is the most frequently used feature in terms of patterns (see Table~\ref{table:featureStats}).  The ability to capture some part of a match provides a powerful tool to programmers.  As mentioned in Section~\ref{sec:clusterResults}, capturing values assigned to variables when parsing source code was one of the main categories of clusters observed.  All four of the major regex tools support the CG feature.  Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important.
-\todoMid{mention survey results here}
+The survey results from secdion~\ref{sec:survey} indicated that capturing parts of strings was the second most frequent activity that developers used regex for.  As mentioned in section~\ref{sec:featureUsage}, the CG feature is the most frequently used feature in terms of patterns (see Table~\ref{table:featureStats}).  As mentioned in Section~\ref{sec:clusterResults}, capturing values assigned to variables when parsing source code was one of the main categories of clusters observed.  The ability to capture some part of a match provides a powerful tool to programmers.  The CG feature has two functions: 1. it allows logical grouping as would be expected by parenthesis, and 2. it allows retrieval of information that was in one logical grouping.  Although the four regex projects all support the very necessary logical grouping aspect of the feature, none support the BKR feature that retrieves what content was found in an earlier CG.  Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
 \leavevmode\color{gray}
+
 \subsubsection{Use of the Default Character Classes}
 The pattern language for Python and most major regex engines support a few default character classes (and their negations) which we have described as the features ANY, DEC, WSP, WRD, NDEC, NWSP, NWRD.  Throughout this analysis and in our survey,  it was clear that these default character classes were widely used.  As mentioned in section~\ref{sec:prioritizedList}, all of these default character classes can be simulated using the CCC feature, and the CCC feature is one of the most basic features that is essential for all regex tools to support.  For tools that do not support the default character classes, this is a significant obstacle for users trying to test or model the regexes that they already have.
 
@@ -96,9 +95,8 @@ Based on our findings, there are many opportunities for future work.
 \subsubsection{Re-Evaluating the WRD Character Class}
 One surprising result of our clustering is that, behaviorally speaking, the negation of the word class NWRD was used in 208 projects, while the word class itself was used in only 114 projects. After inspecting several projects using the patterns found in this behavioral cluster, we concluded that most users are trying to sanitize arbitrary strings that must conform to a system character set requirement, such as requirements for filenames.  For example, a user might replace all NWRD matching characters with the `\_' to guarantee that an arbitrary string can be used as a filename.  We also considered the largest cluster using custom character classes (\verb?`[^ -~]'(122)?) and concluded that users are constructing a more permissive version of the NWRD character class, to allow more non-letter, non-digit characters than just the `\_' in their sanitized strings.  We hypothesize that this is because modern systems allow more special characters in filenames than systems allowed when the WRD character class originated.  More research is needed to determine if a more modern WRD class could be useful, and if so, what characters set is preferred.
 \leavevmode\color{black}
-\subsubsection{How Does Developer Experience Influence Regex Composition?}
-% \noindent \emph{Observation 1: Utilizations May Be More Common In Python Library Code Than In User Code. }
-The project with the most files containing utilizations observed is Arianrhod\footnote{\url{https://github.com/Ouroboros/Arianrhod}} which is a Japanese Anime game, mostly written in C\# (over 18K files), but containing 3404 Python files.  Most of these Python files are source code for various libraries.  Of these library files, 15.9\% (541) contain at least one utilization, which is more than the 11\% average.  This indicates that more experienced developers (those capable of developing core Python libraries) may be more likely to use regexes than less experienced developers.  More research is needed to determine if experienced developers are more likely to use regexes, and what differences in feature set and composition can be observed when compared to regexes composed by less experienced developers.
+\subsubsection{What Are Best Practices For Regex Composition?}
+The survey
 \leavevmode\color{gray}
 \subsubsection{Regexes need refactoring}
 When clustering by behavior, we observed many clusters with more than 10 patterns all specifying nearly the same behavior.  We don't know why different users choose to implement the same behavior in different ways.  Out of the 13,912 patterns in the corpus, 1977 (14\%) used the RNG feature to specify the range \verb?0-9?, even though this is exactly equivalent to using \verb?\d? .  Future work is needed to determine why users specify digits using the RNG feature when an equivalent default character class already exists, as has been done for other refactoring work (e.g.,~\cite{StoleeTSE2013}).

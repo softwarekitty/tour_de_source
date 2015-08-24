@@ -2,7 +2,7 @@
 \label{sec:survey}
 
 To understand the context of when and how programmers use regular expressions,
-we designed a survey with 40 questions about regex usage. This survey was
+we designed a survey with 41 questions about regex usage. This survey was
 deployed to developers at Dwolla, a company that provides software for
  online and mobile payment management.
  \todoLast{they are probably ok with using their name - check during final scrub by Dwolla}
@@ -55,11 +55,12 @@ Table~\ref{tab:regexactivities} shows how frequently, on average, the participan
 regexes for various actives.
 Participants answered questions using a 6-point likert scale including very frequently, frequently, occasionally, rarely, very rarely, and never.
 Assigning values from 1 to 6, where 6 is the most frequent, the responses were averaged across participants.
-\todoLast{could we explain this less?  It seems to me like the 6-point scale is overemphasized here and in the table caption.}
-Among the most common are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently. \todoMid{summary message - not sure how that fits here}
+\todoLast{is the 6-point scale overemphasized here and in the table caption?}
+Among the most common are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently.
 
-\todoLast{add information about regexes and tests here - maybe this?}
-Using a similar 7-point likert scale that includes 'always' as a seventh point, developers indicated that they test their code with the same frequency as they test their regexes (5.2).  Half of the 18 developers indicate that they use tools to test their regexes, and the other half indicated that they only use tests that they write themselves.
+Using a similar 7-point likert scale that includes 'always' as a seventh point, developers indicated that they test their code with the same frequency as they test their regexes (5.2 which is between frequently and very frequently).  Half of the 18 developers indicate that they use tools to test their regexes, and the other half indicated that they only use tests that they write themselves. Of the 9 developers using tools, 6 of them mentioned some online composition aide similar to regex101.com where a regex and input are entered, and the input is highlighted according to what is matched.
+%The other three developers mentioned 'ScalaCheck' (a testing framework), 'IDE regex plugins', and 'Language specific Regexlib'.
 
-\todoLast{add motivating paragraph for studying regexes, based on evidence provided here - how is this?}
-The survey validates the assumption that regex are widely used by professional software developers.  Future research into regex can focus on areas that prove to be most important to developers, namely capturing parts of strings and searching for specific content.  Although research into regex in general purpose and scripting languages is important, usage within command line tools and text editors should not be discounted.  The fact that all the developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.
+When asked an open ended question about pain points encountered with regular expressions, 7 developers responded with an answer equivalent to 'hard to read', 3 responded with 'inconsistency across implementations' and 11 responded with 'hard to compose' (3 developers gave two answers).
+
+The survey validates the assumption that regex are widely used by professional software developers.  Future research into regex can focus on areas that prove to be most important to developers, namely capturing parts of strings and searching for specific content.  Although research into regex use in general purpose and scripting languages is important, usage within command line tools and text editors should also be considered.  The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regex being hard to read and hard to compose, and most of the tools that they indicate using are focused on composition, indicating a need for tools that help make existing regexes more readable.
