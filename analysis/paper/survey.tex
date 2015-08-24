@@ -37,14 +37,15 @@ Text editor (e.g., IntelliJ)   & 2& 5& 0& 5& 1& 5\\
 \begin{center}
 \begin{tabular}{l|c}
 Activity & Frequency \\ \hline
+Locating content within a file or files & 4.4\\
 Capturing parts of strings & 4.3 \\
+Parsing user input & 4.0\\
 Counting lines that match a pattern & 3.2\\
 Counting  substrings that match a pattern & 3.2\\
-Locating content within a file or files & 4.4\\
+Parsing generated text & 3.0\\
 Filtering collections (lists, tables, etc.) & 3.0 \\
 Checking for a single character & 1.7\\
-Parsing user input & 4.0\\
-Parsing generated text & 3.0\\
+
 
 \end{tabular}
 \end{center}
@@ -54,8 +55,11 @@ Table~\ref{tab:regexactivities} shows how frequently, on average, the participan
 regexes for various actives.
 Participants answered questions using a 6-point likert scale including very frequently, frequently, occasionally, rarely, very rarely, and never.
 Assigning values from 1 to 6, where 6 is the most frequent, the responses were averaged across participants.
-Among the most common are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently. \todoMid{summary message}
+\todoLast{could we explain this less?  It seems to me like the 6-point scale is overemphasized here and in the table caption.}
+Among the most common are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently. \todoMid{summary message - not sure how that fits here}
 
-\todoMid{add information about regexes and tests here}
+\todoLast{add information about regexes and tests here - maybe this?}
+Using a similar 7-point likert scale that includes 'always' as a seventh point, developers indicated that they test their code with the same frequency as they test their regexes (5.2).  Half of the 18 developers indicate that they use tools to test their regexes, and the other half indicated that they only use tests that they write themselves.
 
-\todoMid{add motivating paragraph for studying regexes, based on evidence provided here}
+\todoLast{add motivating paragraph for studying regexes, based on evidence provided here - how is this?}
+The survey validates the assumption that regex are widely used by professional software developers.  Future research into regex can focus on areas that prove to be most important to developers, namely capturing parts of strings and searching for specific content.  Although research into regex in general purpose and scripting languages is important, usage within command line tools and text editors should not be discounted.  The fact that all the developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.

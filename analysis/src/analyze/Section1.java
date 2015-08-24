@@ -1,11 +1,13 @@
 package analyze;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -112,10 +114,13 @@ public class Section1 {
 
 		// these are all the distinct patterns with weight
 		ResultSet rs = stmt.executeQuery(query);
+		TreeSet<String> errorPatternSet = new TreeSet<String>();
+		TreeSet<String> alienPatternSet = new TreeSet<String>();
+		TreeSet<String> unicodePatternSet = new TreeSet<String>();
+		TreeSet<String> corpusPatternSet = new TreeSet<String>();
 		while (rs.next()) {
 			String pattern = rs.getString("pattern");
 			int projectID = rs.getInt("uniqueSourceID");
-			allPatterns[0]++;
 			try {
 				String unquotedPattern = WeightRankedRegex.getUnquotedPythonPattern(pattern);
 				TreeSet<Integer> projectIDs = patternProjectMM.get(unquotedPattern);
@@ -126,9 +131,11 @@ public class Section1 {
 				patternProjectMM.put(unquotedPattern, projectIDs);
 
 			} catch (QuoteRuleException e) {
-				errorPatterns[0]++;
+				//System.out.println("problem unquoting pattern: " + pattern);
+				errorPatternSet.add(pattern); 
 			}
 		}
+		allPatterns[0] = patternProjectMM.size();
 
 		rs.close();
 		stmt.close();
@@ -138,6 +145,7 @@ public class Section1 {
 			String pattern = "'" + entry.getKey() + "'";
 			try {
 				WeightRankedRegex r = new WeightRankedRegex(pattern, entry.getValue().size());
+				corpusPatternSet.add(pattern);
 				corpus.add(r);
 			} catch (AlienFeatureException e) {
 				String alienMessage = e.getMessage();
@@ -148,24 +156,46 @@ public class Section1 {
 					alienFeatureCount.put(token, ++x);
 					if ("<invalid>".equals(token) &&
 						(pattern.startsWith("u") || pattern.contains("(?u"))) {
-						unicodePatterns[0]++;
+						unicodePatternSet.add(pattern);
 					} else {
-						alienPatterns[0]++;
+						alienPatternSet.add(pattern);
 					}
 				}
-				System.out.println(e.getMessage());
-
+				//System.out.println(e.getMessage());
 			} catch (IllegalArgumentException e) {
 				System.out.println("initializeCorpus: Cannot parse " + pattern +
 					" because: " + e.toString());
-				errorPatterns[0]++;
+				errorPatternSet.add(pattern);
 				// e.printStackTrace();
 			} catch (QuoteRuleException e) {
-				errorPatterns[0]++;
+				errorPatternSet.add(pattern);
 			} catch (PythonParsingException e) {
-				errorPatterns[0]++;
+				errorPatternSet.add(pattern);
 			}
 		}
+		File errorFile = new File(PaperWriter.homePath + "analysis/pattern_tracking/errorPatterns.txt");
+		File alienFile = new File(PaperWriter.homePath + "analysis/pattern_tracking/alienPatterns.txt");
+		File unicodeFile = new File(PaperWriter.homePath + "analysis/pattern_tracking/unicodePatterns.txt");
+		File corpusFile = new File(PaperWriter.homePath + "analysis/pattern_tracking/corpusPatterns.txt");
+		errorFile.delete();
+		alienFile.delete();
+		unicodeFile.delete();
+		corpusFile.delete();
+		IOUtil.createAndWrite(new File(PaperWriter.homePath + "analysis/pattern_tracking/errorPatterns.txt"), contentFromStringSet(errorPatternSet));
+		IOUtil.createAndWrite(new File(PaperWriter.homePath + "analysis/pattern_tracking/alienPatterns.txt"), contentFromStringSet(alienPatternSet));
+		IOUtil.createAndWrite(new File(PaperWriter.homePath + "analysis/pattern_tracking/unicodePatterns.txt"), contentFromStringSet(unicodePatternSet));
+		IOUtil.createAndWrite(new File(PaperWriter.homePath + "analysis/pattern_tracking/corpusPatterns.txt"), contentFromStringSet(corpusPatternSet));
+		errorPatterns[0] = errorPatternSet.size();
+		alienPatterns[0] = alienPatternSet.size();
+		unicodePatterns[0] = unicodePatternSet.size();
+	}
+	
+	private static String contentFromStringSet(Collection<String> stringSet){
+		StringBuilder sb = new StringBuilder();
+		for(String s : stringSet){
+			sb.append(s + "\n");
+		}
+		return sb.toString();
 	}
 
 	public static Iterator<NamedStats> getCharacterStatsAndAddToDatabase(

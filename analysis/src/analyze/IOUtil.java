@@ -186,15 +186,19 @@ public class IOUtil {
 			for (String index : indices) {
 				int indexValue = Integer.parseInt(index);
 				WeightRankedRegex wrr = lookup.get(indexValue);
-				// System.out.print("lineNumber: "+lineNumber+" index: "+index+" indexValue: "+indexValue);
-				// System.out.println(" pattern: "+wrr.getContent());
-				boolean added = cluster.add(wrr);
-				if (!added) {
-					System.out.println("indexValue: " + indexValue +
-						" failure to add: " + wrr.dump(0, 1) +
-						" problem with: " + Arrays.toString(indices));
-					// System.out.println("cluster: "+cluster.getContent());
-					// waitNsecsOrContinue(12);
+				if (wrr == null) {
+					// this happens when
+					System.out.println("missing wrr at: " + indexValue +
+						" in cluster: " + cluster.thisClusterID);
+				} else {
+					boolean added = cluster.add(wrr);
+					if (!added) {
+						System.out.println("indexValue: " + indexValue +
+							" failure to add: " + wrr.dump(0, 1) +
+							" problem with: " + Arrays.toString(indices));
+						// System.out.println("cluster: "+cluster.getContent());
+						// waitNsecsOrContinue(12);
+					}
 				}
 			}
 			cluster.initialzeStats();
@@ -206,18 +210,31 @@ public class IOUtil {
 		return clusters;
 	}
 
-	private static HashMap<String, Integer> getPatternWeightMap() {
-		HashMap<String, Integer> patternWeightMap = new HashMap<String, Integer>();
+	private static HashMap<String, WeightRankedRegex> getPatternWRRMap()
+			throws IllegalArgumentException, QuoteRuleException,
+			PythonParsingException {
+		HashMap<String, WeightRankedRegex> patternWRRMap = new HashMap<String, WeightRankedRegex>();
 		String content = IOUtil.getFileContents(PaperWriter.homePath +
 			"analysis/analysis_output/patternWeightMap.txt");
-		Pattern finder = Pattern.compile("(.*)\\t(\\d+)");
+		Pattern finder = Pattern.compile("(.*)\\t(.*)\\t(\\d+)");
 		Matcher pairMatcher = finder.matcher(content);
 		while (pairMatcher.find()) {
-			String quotedPattern = pairMatcher.group(1);
-			Integer weight = Integer.parseInt(pairMatcher.group(2));
-			patternWeightMap.put(quotedPattern, weight);
+			String rexShortenedPattern = pairMatcher.group(1);
+			String originalPattern = pairMatcher.group(2);
+			Integer weight = Integer.parseInt(pairMatcher.group(3));
+			WeightRankedRegex previous = patternWRRMap.put(rexShortenedPattern, new WeightRankedRegex(originalPattern, weight));
+			if (previous != null) {
+				System.out.println("information hidden by rex flattening of slashes in pattern: " +
+					originalPattern +
+					" with shortened version: " +
+					rexShortenedPattern +
+					" and previous wrr: pattern=" +
+					previous.getContent() +
+					" weight=" +
+					previous.getRankableValue());
+			}
 		}
-		return patternWeightMap;
+		return patternWRRMap;
 	}
 
 	public static HashMap<String, List<WeightRankedRegex>> getUnquotedMultiMap(
@@ -264,7 +281,8 @@ public class IOUtil {
 				n++;
 			}
 			double nPatterns = cluster.size();
-			sb.append("cluster " + i + " stats:\nnPatterns: " + nPatterns +
+			sb.append("cluster " + i + " stats:\ninternalID: " +
+				cluster.thisClusterID + "\nnPatterns: " + nPatterns +
 				"\nnProjects: " + cluster.getRankableValue() + "\nshortest: " +
 				cluster.getShortest() + "\nFeatures:\n\n" +
 				topNString.toString() + "\n\n");
@@ -292,9 +310,10 @@ public class IOUtil {
 	}
 
 	public static HashMap<Integer, WeightRankedRegex> getLookup(
-			String indexedCorpusFilePath) throws QuoteRuleException, IllegalArgumentException, PythonParsingException {
+			String indexedCorpusFilePath) throws QuoteRuleException,
+			IllegalArgumentException, PythonParsingException {
 		HashMap<Integer, WeightRankedRegex> lookup = new HashMap<Integer, WeightRankedRegex>();
-		HashMap<String, Integer> patternWeightMap = getPatternWeightMap();
+		HashMap<String, WeightRankedRegex> patternWRRMap = getPatternWRRMap();
 
 		String content = IOUtil.getFileContents(indexedCorpusFilePath);
 		Pattern finder = Pattern.compile("(\\d+)\\t(.*)");
@@ -303,13 +322,14 @@ public class IOUtil {
 
 			Integer index = Integer.parseInt(pairMatcher.group(1));
 			String rawPattern = pairMatcher.group(2);
-			String normalizedPattern = "'" + rawPattern+"'";
-			Integer weight = patternWeightMap.get(normalizedPattern);
-			if(weight==null){
-				System.out.println("warning: could not find pattern: " +normalizedPattern+ " in patternWeightMap");
-				System.exit(1);
-			}else{
-				lookup.put(index, new WeightRankedRegex(normalizedPattern, weight));
+			String normalizedPattern = "'" + rawPattern + "'";
+			WeightRankedRegex wrr = patternWRRMap.get(normalizedPattern);
+			if (wrr == null) {
+				System.out.println("warning: could not find pattern: " +
+					normalizedPattern + " in patternWeightMap");
+				// System.exit(1);
+			} else {
+				lookup.put(index, wrr);
 			}
 		}
 		return lookup;

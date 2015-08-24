@@ -19,6 +19,8 @@ import metric.FeatureDictionary;
 @SuppressWarnings("serial")
 public class Cluster extends TreeSet<WeightRankedRegex> implements
 		RankableContent {
+	private static int nextClusterID = 0;
+	public final int thisClusterID = nextClusterID++;
 
 	private int topN;
 	private TreeSet<Integer> projectIDs;

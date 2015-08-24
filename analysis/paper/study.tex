@@ -30,12 +30,19 @@ In this work, we primarily focus on patterns since they are cross-cutting across
 \subsection{Research Questions}
 \label{sec:rqs}
 To understand how regular expressions and regular expression features are used in Python projects, we aim to answer the following research questions:\\
+\leavevmode\color{gray}
+\noindent \textbf{RQ1:} How  is the {\tt re} module used in Python projects?
 
-\noindent \textbf{RQ1:} Which regular expression language features are most commonly used in python?
+We measure how often calls are made to the {\tt re} module per file and per project in Python projects.
+To provide context as to the overlap among regular expression strings used in Python, we explore the most common regex {patterns} across all utlizations.\\
+
+\leavevmode\color{black}
+
+\noindent \textbf{RQ2:} Which regular expression language features are most commonly used in python?
 
 We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Section~\ref{study:corpus} with examples.\\
 
-\noindent \textbf{RQ2:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
+\noindent \textbf{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
 %\textbf{RQ3:} What is the impact of \emph{not} supporting various regex features on tool designers and users?
 
 We use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for. \\
@@ -96,8 +103,8 @@ In row {\tt B}, column {\tt A}, we see that {\tt A} is 50\% similar to {\tt B}. 
 
 
 In the implementation, strings are generated for each pattern using Rex~\cite{rex}.
-\todoMid{explain how Rex generated strings. How likely is Rex to enumerate the same regular expressions for similar
-regular expressions?}
+\todoLast{explain how Rex generated strings. How likely is Rex to enumerate the same regular expressions for similar
+regular expressions? - is this enough?}  Rex generates matching strings by representing the regular expression as an automation, and taking a random walk within that automation.  Rex will choose not to produce duplicate strings if asked to produce more strings than the automation can provide, instead producing a list of all possible strings.
 Our goal is to generate 384 strings for each pattern to balance the runtime of the similarity analysis with the precision of the similarity calculations.
  Since Rex does not support all the features present in the corpus, we could only generate sets of matching strings for 9,727 (70\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 270 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats}, as described in Section~\ref{results:rq3}.
 The generated strings for each pattern are used to measure the pairwise similarity for all patterns and construct the similarity matrix.
@@ -143,9 +150,10 @@ Note that pairs DB and DC are omitted from the final file because their similari
 
 
 
-\todoNow{fix this before the ICSE deadline - fix may be broken.}
-We note that there was an operational error in pulling patterns from our database prior to the similarity analysis and clustering, so that 224 patterns (2.3\%) of the 9,727 patterns were omitted. These were duplicate patterns that were quoted differently (for example \verb!`\W'! and \verb!"\W"!).  The result of this error is a slight underestimate in number of projects per pattern (and per cluster), and a slight over-estimate in the pattern, file and project statistics shown in Table~\ref{table:featureStats}.  We do not believe that this error affects our conclusions.
+\todoNow{fix this before the ICSE deadline - after putting several days into this, I have a partial fix but the fact is there was information loss when going between the java program and the cs program and back again.  So it remains to be seen if it will be feasible to do non-automatic repairs.}
 
+
+We note that there was an operational error in pulling patterns from our database prior to the similarity analysis and clustering, so that 224 patterns (2.3\%) of the 9,727 patterns were omitted. These were duplicate patterns that were quoted differently (for example \verb!`\W'! and \verb!"\W"!).  The result of this error is a slight underestimate in number of projects per pattern (and per cluster), and a slight over-estimate in the pattern, file and project statistics shown in Table~\ref{table:featureStats}.  We do not believe that this error affects our conclusions.
 
 %Most patterns do not belong in a cluster (for example a very specific pattern like \verb!<title>[^<]*Revision \d+:!), so after clustering is done only 2727 patterns are included, and only 999 projects have any of these patterns in them.
 

@@ -119,6 +119,12 @@ public final class WeightRankedRegex implements RankableContent {
 	
 	public static String getEscapedPythonPattern(String unescapedPattern){
 		String escaped= unescapedPattern.replaceAll("\\\\", "\\\\\\\\");
+//		escaped = escaped.replaceAll("\\\\\\\\n","\\\\n");
+//		escaped = escaped.replaceAll("\\\\\\\\t","\\\\t");
+//		escaped = escaped.replaceAll("\\\\\\\\r","\\\\r");
+//		escaped = escaped.replaceAll("\\\\\\\\b","\\\\b");
+//		escaped = escaped.replaceAll("\\\\\\\\f","\\\\f");
+		//escaped.replaceAll("\\\\\\\\.","\\\\.");
 		return "'" + escaped + "'";
 	}
 

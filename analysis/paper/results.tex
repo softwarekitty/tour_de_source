@@ -2,8 +2,95 @@
 \label{sec:results}
 
 In this section, we present the results of each research question.
+\leavevmode\color{gray}
+\subsection{RQ1: How  is the {\tt re} module used in Python projects?}
+To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
+We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}).
+We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}).
 
-\subsection{RQ1: Which regular expression language features are most commonly used in python?}
+
+
+\subsubsection{Regex Utilizations per Project}
+Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average scanned project  contained, how many of those files contained utilizations, and how many utilizations occurred per file, as shown in Table~\ref{table:saturation}.
+
+The average project contained 32 utilizations, and the maximum number of utilizations was 1,427.  The project with the most utilizations is a C\# project\footnote{\url{https://github.com/Ouroboros/Arianrhod}} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
+From Table~\ref{table:saturation}, we also see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.
+
+% to find max nprojects: select distinct uniqueSourceID, count(*) as ct from RegexCitationMerged group by uniqueSourceID order by ct;
+
+
+%As we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen $11*2*3898=85,756$ regex usages, which is higher than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed. \todo{Explain why? Be pedantic. }
+
+\input{../analysis_output/saturation}
+
+\subsubsection{Usage Frequency of {\tt re} Module Functions}
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\columnwidth]{../analysis_output/partFunctions.eps}
+\caption{How often are  {\tt re} functions used? (RQ1)}
+\label{fig:partFunctions}
+\end{figure}
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\columnwidth]{../analysis_output/partFlags.eps}
+\caption{Which behavioral flags are used? (RQ1)}
+\label{fig:partFlags}
+\end{figure}
+
+The number of projects that use each of the {\tt re} functions is shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex object compiled using {\tt re.compile} as an argument.
+\todoNow{can we connect any of these function calls to the findings from the survey? For example, according to Table~\ref{tab:regexactivities}, participants frequently or occasionally want to capture parts of strings, which maps to the X function in {\tt re}}
+
+\subsubsection{Usage Frequency of {\tt re} Module Flags}
+When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed.
+
+ Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  \todoNow{link this to survey results} It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
+
+
+\subsubsection{Most Frequently Observed Patterns}
+
+Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects in which the pattern appears.  The patterns are quoted to show the presence of spaces, if any.  We  elaborate on the top four patterns and  reference the feature set in Table~\ref{table:featureStats}.
+
+
+The first pattern, \verb!`\s+'!, uses the WSP character class feature.  This character class represents one or more whitespace characters,  defined as spaces, tabs, newlines, vertical whitespace, carriage returns or form feeds.  The \verb!+! (the ADD feature) at the end of the pattern means that it must match one or more whitespace characters.  The pattern \verb!`\s+'! is often used to split sentences into separate words which may have more than one space between them, or contain tabs or other types of whitespace.
+
+Interestingly, the second most common pattern, \verb!`\s'!, also uses the WSP character. In this case, it does not match several whitespace characters (though it would match the first of several).
+
+The third pattern, \verb!\d+!,  uses the DEC character class, which is composed of the digits from 0 to 9.  Like the first pattern, the third uses the ADD feature to match one or more digits.
+
+The fourth pattern, \verb![\x80-\xff]!, uses the CCC feature to create a custom character class, and the RNG feature to specify a range of characters.
+%The hexadecimal value \verb!\x80! is equivalent to the value 128 in decimal, and the hexadecimal value \verb!\xff! is equivalent to 255 in decimal.
+When hexadecimal values are used within a character class like this (and the UNICODE flag is not active), it signifies the corresponding characters in an ASCII lookup table.
+%The range specified by this pattern is highlighted on the right side of Figure~\ref{fig:ASCIItable}.  Table image found at: \url{https://courses.engr.illinois.edu/ece390/books/labmanual/ascii-code/quickref.png}.
+%\todo{run program again to unescape pattern strings}
+%\todo{Figure 6 seems largely unnecessary}
+
+
+%\todo{more of the topN patterns if there is space}
+
+%\begin{figure}[tb]
+%\centering
+%\includegraphics[width=\columnwidth]{../illustrations/ASCIItable.eps}
+%\cprotect\caption{On the Right, ASCII Characters Matching \verb!'[\x80-\xff]'! (RQ1)}
+%\label{fig:ASCIItable}
+%\end{figure}
+
+\input{../analysis_output/topNW}
+
+% %\subsection{Pattern Characteristics}
+
+% Table~\ref{table:patternStats} (description of table contents)
+
+% \input{../analysis_output/patternStats}
+\todoNow{add patternStats table back in and describe it if there is enough time.  Note the longest pattern present in patternLength.csv in analysis folder was probably automatially generated from text and is monstrous!}
+
+
+\subsubsection{Summary}
+
+Only about half of the projects sampled contained any utilizations.  Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.  The most frequently observed patterns were used to match whitespace and digits.
+\leavevmode\color{black}
+\subsection{RQ2: Which regular expression language features are most commonly used in python?}
 \label{results:re2}
 
 To measure feature usage, we  count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
@@ -46,10 +133,10 @@ CG is more commonly used in patterns than the highest ranked feature (ADD) by a 
  We  mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, hampi, RE2, and Rex.
 To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using the formal grammar\footnote{\url{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footnote{\url{https://code.google.com/p/hampi/downloads/list}} (this may have been an overestimation, as this included more features than specified by the formal grammar\footnote{\url{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}}).  For RE2, we used the  supported feature documentation\footnote{\url{https://re2.googlecode.com/hg/doc/syntax.html}}.  For Rex, we were able to use trial and error because we tried to parse all patterns with Rex, and Rex provides good error feedback when a feature is unsupported.
 
-\todoLast{Were there any features supported by the tools that we did not find in the corpus? Explain either way...tomorrow.  There are many, it seems less critical}
+\todoLast{Were there any features supported by the tools that we did not find in the corpus? Answer: RE2 has a lot of features we didn't study and that weren't found in the corpus in any substantial quantity.  }
 
 
-Of the four projects selected for this analysis, RE2 supports the most features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.
+Of the four projects selected for this analysis, RE2 supports the most studied features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.
 
 No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.  Brics is the only project that does not support any of the six default character classes (WSP, DEC, WRD, NWSP, NWRD, NDEC) - the rest of the projects support all of those features.  RE2 is the only project to support the WNW, ENDZ and NWNW features.  RE2 also supports the PNG feature (which allows you to name capturing groups), but does not support the BKRN feature which is necessary to refer back to the named capture group.
 
@@ -59,7 +146,7 @@ We found that the eight most common features are found on over 50\% of the proje
 We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects.
 
 
-\subsection{{RQ2:} What is the impact of \emph{not} supporting various regular expression features?}
+\subsection{{RQ3:} What is the impact of \emph{not} supporting various regular expression features?}
 \label{results:rq3}
 
 %\subsubsection{Rationale for Behavioral Clustering}
@@ -80,13 +167,15 @@ Table~\ref{table:exampleCluster} provides an example of a behavioral cluster rep
 \input{../behavioral_clustering/exampleCluster}
 
 %\subsubsection{Using the Smallest Pattern to Represent a Cluster}
-The smallest pattern in Table~\ref{table:exampleCluster} is the single comma literal \verb!`,'! at index 1.  This smallest pattern gives the a good idea of what all the patterns within it have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the strings created by Rex from another pattern within the cluster, and so we assume that {the smallest pattern is a good representation of the cluster}.
+The smallest pattern in Table~\ref{table:exampleCluster} is the single comma literal \verb!`,'! at index 1.  This smallest pattern gives the a good idea of what all the patterns within it have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the strings created by Rex from another pattern within the cluster, and so we assume that \emph{the smallest pattern is a good representation of the cluster}.
 
 For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects a member of the cluster appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`,'(100)!.
 %The top 10 clusters are shown in Table~\ref{table:topNClusters}, ranked by the number of projects they appear in.
 %\subsubsection{Catagorizing the Top 100 Clusters}
-We  manually mapped the top 100 clusters into each of 6 behavioral categories, omitting 11 clusters that did not fit into any of these catagories, and 29 clusters composed of long strings (example: \verb!set_fabric_sense_len\)\(!) which were in the top 100 because 28 projects that were scanned were forked linux kernels.
-
+We  manually mapped the top 100 clusters into each of 6 behavioral categories, omitting 40 clusters that did not fit into any of these catagories.
+\leavevmode\color{gray}
+ ...including 29 clusters composed of long strings (example: \verb!set_fabric_sense_len\)\(!) which were in the top 100 because 28 projects that were scanned were forked linux kernels.
+\leavevmode\color{black}
 
 Next, we define the six categories and provide examples from the relevant clusters.
 

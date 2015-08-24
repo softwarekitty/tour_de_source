@@ -48,8 +48,10 @@ public class Section5 {
 //			"analysis/analysis_output/exportedCorpusRaw.txt");
 //		System.out.println("corpus size: " + corpus.size());
 
+//		String filtered_corpus_path = PaperWriter.homePath +
+//			"analysis/analysis_output/exportedCorpusRexEsc.txt";
 		String filtered_corpus_path = PaperWriter.homePath +
-			"csharp/filteredCorpus.txt";
+				"csharp/filteredCorpus.txt";
 		HashMap<Integer, WeightRankedRegex> lookup = IOUtil.getLookup(filtered_corpus_path);
 		Set<Integer> lookupKeys = lookup.keySet();
 		TreeSet<String> unescapedPatterns = new TreeSet<String>();

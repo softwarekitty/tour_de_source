@@ -10,9 +10,9 @@ maxFilePerProj•5,963
 nProjScanned•3,898
 N_ALIEN•78
 q1FilePerProj•2
-percentUnicode•0
+percentUnicode•0.1
 percentFilesUsingRegex•11.2
-percentAlien•0.2
+percentAlien•0.6
 nProjectsUsingRegex•1,645
 FLAGS_16•711
 percentI•43.8
@@ -40,12 +40,12 @@ FLAGS_32•397
 q3RFilePerProj•6
 N_UNICODE•19
 nInvalidPattern•3,526
-percentPCREError•1.2
+percentPCREError•2.6
 q1RFilePerProj•1
 percentProjectsUsingRegex•42.2
 percentFlags0•87.3
 percentInvalidPattern•6.5
-nDistinctPatterns•43,860
+nDistinctPatterns•13,749
 q3FilePerProj•21
 maxRFilePerProj•541
 P_LITERAL_PRESENT•97.6
@@ -53,6 +53,6 @@ FLAGS_64•943
 nExpectedUsages•23,388
 nBadFlags•6,835
 maxRPerFile•207
-N_PCRE_ERROR•540
+N_PCRE_ERROR•354
 nUsages•53,894
 nCloneURL•42,000

@@ -235,7 +235,7 @@ public class Section2 {
 						matrix[index][featureIndex] += fCount;
 					}
 				} else {
-					System.out.println("pattern not in corpus: " + pattern);
+					//System.out.println("pattern not in corpus: " + pattern);
 				}
 
 			}
