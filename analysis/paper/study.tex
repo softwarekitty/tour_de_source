@@ -23,19 +23,27 @@ In this work, we primarily focus on patterns since they are cross-cutting across
 \subsection{Research Questions}
 \label{sec:rqs}
 To understand how regular expressions and regular expression features are used in Python projects, we aim to answer the following research questions:\\
-\leavevmode\color{gray}
-\noindent \textbf{RQ1:} How  is the {\tt re} module used in Python projects?
+
+\noindent \textbf{RQ1:} In what context do developers use regular expressions?
+
+We survey 18 developers at a local company about when, why, and how often they use regular expressions. \\
+
+\noindent \textbf{RQ2:} How  is the {\tt re} module used in Python projects?
 
 We measure how often calls are made to the {\tt re} module per file and per project in Python projects.
 To provide context as to the overlap among regular expression strings used in Python, we explore the most common regex {patterns} across all utlizations.\\
 
-\leavevmode\color{black}
 
-\noindent \textbf{RQ2:} Which regular expression language features are most commonly used in python?
+
+\noindent \textbf{RQ3:} Which regular expression language features are most commonly used in python?
 
 We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Section~\ref{study:corpus} with examples.\\
 
-\noindent \textbf{RQ3:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
+\noindent \textbf{RQ4:} How semantically similar are regexes?
+
+We measure similarity between pairs of regexes by generating strings that match each and evaluating each other regex against those strings to build a similarity matrix. Then we use clustering to form semantic groupings. \\
+
+\noindent \textbf{RQ5:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
 
 We use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for. \\
 Next, we describe how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
@@ -95,8 +103,10 @@ The end result is clusters of highly semantically similar regular expressions.  
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\columnwidth]{../illustrations/matrixToGraph.eps}
+\includegraphics[width=0.7\columnwidth]{../illustrations/matrixToGraph.eps}
+\vspace{-6pt}
 \caption{Creating a similarity graph from a similarity matrix}
+\vspace{-6pt}
 \label{fig:matrixToGraph}
 \end{figure}
 
@@ -105,3 +115,4 @@ The end result is clusters of highly semantically similar regular expressions.  
 
 
 We note that there was an operational error in pulling patterns from our database prior to the similarity analysis and clustering, so that 224 patterns (2.3\%) of the 9,727 patterns were omitted. These were duplicate patterns that were quoted differently (for example \verb!`\W'! and \verb!"\W"!).  The result of this error is a slight underestimate in number of projects per pattern (and per cluster), and a slight over-estimate in the pattern, file and project statistics shown in Table~\ref{table:featureStats}.  We do not believe that this error affects our conclusions.
+

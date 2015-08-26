@@ -1,9 +1,74 @@
 \section{Results}
 \label{sec:results}
 
+\input{../analysis_output/featureStats}
+
 In this section, we present the results of each research question.
-\leavevmode\color{gray}
-\subsection{RQ1: How  is the {\tt re} module used in Python projects?}
+
+\subsection{RQ0: In what context do developers use regular expressions}
+To understand the context of when and how programmers use regular expressions,
+we designed a survey with 41 questions about regex usage. This survey was
+deployed to 22 developers at Dwolla, a company that provides software for
+ online and mobile payment management.
+ \todoLast{they are probably ok with using their name - check during final scrub by Dwolla}
+Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
+The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers. The questions asked about general regex usage and the use of various language features. 
+
+On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly. 
+Table~\ref{tab:regexenviron} shows how frequently participants compose regexes using each of several languages and technical environments.
+Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  Regexes were rarely used in query languages like SQL, but for command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. Overall, regexes are used frequently, but in some environments, such as command line or text editor, and sometimes query languages, the composed regular expressions do not persist.
+
+\newcommand{\horiz}{\hspace{2.1pt}}
+
+\begin{table}
+\caption{Survey results for number of regexes composed per year by technical environment \label{tab:regexenviron}}
+\begin{center}
+\begin{small}
+\begin{tabular}{l | r @{  \horiz} r @{ \horiz } r @{ \horiz } r @{ \horiz } r @{ \horiz } r }
+Language/Environment & 0 & 1-5 & 6-10 & 11-20 & 21-50 & 51+ \\ \hline
+General  (e.g., Java)  & 1 & 6 & 5 & 3& 1& 2 \\
+Scripting  (e.g., Perl) &5 &4 &3 &3 &2  &1 \\
+Query  (e.g., SQL) & 15&2 &0 &0 &1  & 0\\
+Command line (e.g., grep)   &2 &5 &3 &2 &0  &6 \\
+Text editor (e.g., IntelliJ)   & 2& 5& 0& 5& 1& 5\\
+\end{tabular}
+\end{small}
+\end{center}
+\end{table}
+
+\begin{table}
+\caption{Survey results for regex usage frequencies for various activities, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 \label{tab:regexactivities}}
+\begin{center}
+\begin{tabular}{l|c}
+Activity & Frequency \\ \hline
+Locating content within a file or files & 4.4\\
+Capturing parts of strings & 4.3 \\
+Parsing user input & 4.0\\
+Counting lines that match a pattern & 3.2\\
+Counting  substrings that match a pattern & 3.2\\
+Parsing generated text & 3.0\\
+Filtering collections (lists, tables, etc.) & 3.0 \\
+Checking for a single character & 1.7\\
+
+
+\end{tabular}
+\end{center}
+\end{table}
+
+Table~\ref{tab:regexactivities} shows how frequently, on average, the participants use
+regexes for various actives.
+Participants answered questions using a 6-point likert scale including very frequently, frequently, occasionally, rarely, very rarely, and never.
+Assigning values from 1 to 6, where 6 is the most frequent, the responses were averaged across participants.
+Among the most common usages are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently.
+
+Using a similar 7-point likert scale that includes `always' as a seventh point, developers indicated that they test their regexes with the same frequency as they test their code (average response was 5.2, which is between frequently and very frequently).  Half of the 18 developers indicate that they use external tools to test their regexes, and the other half indicated that they only use tests that they write themselves. Of the nine developers using tools, six mentioned some online composition aide such as \url{regex101.com} where a regex and input string are entered, and the input string is highlighted according to what is matched.
+%The other three developers mentioned 'ScalaCheck' (a testing framework), 'IDE regex plugins', and 'Language specific Regexlib'.
+
+When asked an open ended question about pain points encountered with regular expressions, we observed three main categories. The most common, ``hard to compose," was represented in 61\% (11) responses. Next, 
+ 39\% (7) developers responded that regexes are ``hard to read" and 17\% (3) indicated difficulties with ``inconsistency across implementations," which manifest when using regexes in multiple languages. These responses do not sum to 18 as three developers provided overlapping  answers.
+
+
+\subsection{RQ1: How  is the {\tt re} module used?}
 To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
 We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}).
 We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}).
@@ -11,7 +76,7 @@ We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNOREC
 
 
 \subsubsection{Regex Utilizations per Project}
-Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  For context about how saturated these projects were with utilizations, we consider how many utilizations were observed per project, how many files the average scanned project  contained, how many of those files contained utilizations, and how many utilizations occurred per file, as shown in Table~\ref{table:saturation}.
+Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  To illustrate how saturated projects are with regexes, we measure utilizations per project, files scanned per project, files contained utilizations, and  utilizations  per file, as shown in Table~\ref{table:saturation}.
 
 The average project contained 32 utilizations, and the maximum number of utilizations was 1,427.  The project with the most utilizations is a C\# project\footnote{\url{https://github.com/Ouroboros/Arianrhod}} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
 From Table~\ref{table:saturation}, we also see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.
@@ -23,79 +88,84 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 
 \input{../analysis_output/saturation}
 
-\subsubsection{Usage Frequency of {\tt re} Module Functions}
+\subsubsection{Usage Frequency of {\tt re} Module}
 
 \begin{figure}[tb]
 \centering
 \includegraphics[width=\columnwidth]{../analysis_output/partFunctions.eps}
+\vspace{-6pt}
 \caption{How often are  {\tt re} functions used? (RQ1)}
+\vspace{-6pt}
 \label{fig:partFunctions}
 \end{figure}
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\columnwidth]{../analysis_output/partFlags.eps}
+\includegraphics[width=0.9\columnwidth]{../analysis_output/partFlags.eps}
+\vspace{-6pt}
 \caption{Which behavioral flags are used? (RQ1)}
+%\vspace{-6pt}
 \label{fig:partFlags}
 \end{figure}
 
 The number of projects that use each of the {\tt re} functions is shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex object compiled using {\tt re.compile} as an argument.
-\todoNow{can we connect any of these function calls to the findings from the survey? For example, according to Table~\ref{tab:regexactivities}, participants frequently or occasionally want to capture parts of strings, which maps to the X function in {\tt re}}
+%\todoNow{can we connect any of these function calls to the findings from the survey? For example, according to Table~\ref{tab:regexactivities}, participants frequently or occasionally want to capture parts of strings, which maps to the X function in {\tt re}}
+%\subsubsection{Usage Frequency of {\tt re} Module Flags}
 
-\subsubsection{Usage Frequency of {\tt re} Module Flags}
 When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed.
-
- Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  \todoNow{link this to survey results} It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
-
-
-\subsubsection{Most Frequently Observed Patterns}
-
-Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects in which the pattern appears.  The patterns are quoted to show the presence of spaces, if any.  We  elaborate on the top four patterns and  reference the feature set in Table~\ref{table:featureStats}.
+ Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.   Although multiple flags can be combined using a bitwise or, this was never observed.
 
 
-The first pattern, \verb!`\s+'!, uses the WSP character class feature.  This character class represents one or more whitespace characters,  defined as spaces, tabs, newlines, vertical whitespace, carriage returns or form feeds.  The \verb!+! (the ADD feature) at the end of the pattern means that it must match one or more whitespace characters.  The pattern \verb!`\s+'! is often used to split sentences into separate words which may have more than one space between them, or contain tabs or other types of whitespace.
 
-Interestingly, the second most common pattern, \verb!`\s'!, also uses the WSP character. In this case, it does not match several whitespace characters (though it would match the first of several).
-
-The third pattern, \verb!\d+!,  uses the DEC character class, which is composed of the digits from 0 to 9.  Like the first pattern, the third uses the ADD feature to match one or more digits.
-
-The fourth pattern, \verb![\x80-\xff]!, uses the CCC feature to create a custom character class, and the RNG feature to specify a range of characters.
-%The hexadecimal value \verb!\x80! is equivalent to the value 128 in decimal, and the hexadecimal value \verb!\xff! is equivalent to 255 in decimal.
-When hexadecimal values are used within a character class like this (and the UNICODE flag is not active), it signifies the corresponding characters in an ASCII lookup table.
-%The range specified by this pattern is highlighted on the right side of Figure~\ref{fig:ASCIItable}.  Table image found at: \url{https://courses.engr.illinois.edu/ece390/books/labmanual/ascii-code/quickref.png}.
-%\todo{run program again to unescape pattern strings}
-%\todo{Figure 6 seems largely unnecessary}
-
-
-%\todo{more of the topN patterns if there is space}
-
-%\begin{figure}[tb]
-%\centering
-%\includegraphics[width=\columnwidth]{../illustrations/ASCIItable.eps}
-%\cprotect\caption{On the Right, ASCII Characters Matching \verb!'[\x80-\xff]'! (RQ1)}
-%\label{fig:ASCIItable}
-%\end{figure}
-
-\input{../analysis_output/topNW}
+%\subsubsection{Most Frequently Observed Patterns}
+%
+%Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects in which the pattern appears.  \todoNow{Is this still true???} The patterns are quoted to show the presence of spaces, if any.  We  elaborate on the top four patterns and  reference the feature set in Table~\ref{table:featureStats}. 
+%
+%
+%The first pattern, \verb!`\s+'!, uses the WSP character class feature.  This character class represents one or more whitespace characters,  defined as spaces, tabs, newlines, vertical whitespace, carriage returns or form feeds.  The \verb!+! (the ADD feature) at the end of the pattern means that it must match one or more whitespace characters.  The pattern \verb!`\s+'! is often used to split sentences into separate words which may have more than one space between them, or contain tabs or other types of whitespace.
+%
+%Interestingly, the second most common pattern, \verb!`\s'!, also uses the WSP character. In this case, it does not match several whitespace characters (though it would match the first of several).
+%
+%The third pattern, \verb!\d+!,  uses the DEC character class, which is composed of the digits from 0 to 9.  Like the first pattern, the third uses the ADD feature to match one or more digits.
+%
+%The fourth pattern, \verb![\x80-\xff]!, uses the CCC feature to create a custom character class, and the RNG feature to specify a range of characters.
+%%The hexadecimal value \verb!\x80! is equivalent to the value 128 in decimal, and the hexadecimal value \verb!\xff! is equivalent to 255 in decimal.
+%When hexadecimal values are used within a character class like this (and the UNICODE flag is not active), it signifies the corresponding characters in an ASCII lookup table.
+%%The range specified by this pattern is highlighted on the right side of Figure~\ref{fig:ASCIItable}.  Table image found at: \url{https://courses.engr.illinois.edu/ece390/books/labmanual/ascii-code/quickref.png}.
+%%\todo{run program again to unescape pattern strings}
+%%\todo{Figure 6 seems largely unnecessary}
+%
+%
+%%\todo{more of the topN patterns if there is space}
+%
+%%\begin{figure}[tb]
+%%\centering
+%%\includegraphics[width=\columnwidth]{../illustrations/ASCIItable.eps}
+%%\cprotect\caption{On the Right, ASCII Characters Matching \verb!'[\x80-\xff]'! (RQ1)}
+%%\label{fig:ASCIItable}
+%%\end{figure}
+%
+%\input{../analysis_output/topNW}
 
 % %\subsection{Pattern Characteristics}
 
 % Table~\ref{table:patternStats} (description of table contents)
 
 % \input{../analysis_output/patternStats}
-\todoNow{add patternStats table back in and describe it if there is enough time.  Note the longest pattern present in patternLength.csv in analysis folder was probably automatially generated from text and is monstrous!}
+%\todoNow{add patternStats table back in and describe it if there is enough time.  Note the longest pattern present in patternLength.csv in analysis folder was probably automatially generated from text and is monstrous!}
 
 
 \subsubsection{Summary}
 
-Only about half of the projects sampled contained any utilizations.  Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.  The most frequently observed patterns were used to match whitespace and digits.
+Only about half of the projects sampled contained any utilizations.  Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.  
+%The most frequently observed patterns were used to match whitespace and digits.
 \leavevmode\color{black}
-\subsection{RQ2: Which regular expression language features are most commonly used in python?}
+\subsection{RQ2: Which regular expression language features are most commonly used in Python?}
 \label{results:re2}
 
 To measure feature usage, we  count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
 
-\input{../analysis_output/featureStats}
+
 
 \subsubsection{Feature Usage}
 \label{sec:featureUsage}
@@ -118,6 +188,8 @@ appear in over half the projects. The remaining 26 features appear in less than 
 CG is more commonly used in patterns than the highest ranked feature (ADD) by a wide margin (over 8\%).  CG is also more commonly used with respect to how many files it appears in by 2.3\%, while only being present in 12 fewer projects (0.7\%) than ADD.
 
 \subsubsection{Feature Support in Regex Tools}
+While there are many regular expression tools available, in this work, we focus on the features support for these four tools, which offer diversity across developers (i.e., Microsoft, Google, open source, and academia) and across applications. Further, as the focus of this work is on tool designers and we wanted to perform a feature analysis, these four tools and their features are well-documented, allowing for easy comparison.
+
  We  mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, hampi, RE2, and Rex.
 To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using the formal grammar\footnote{\url{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footnote{\url{https://code.google.com/p/hampi/downloads/list}} (this may have been an overestimation, as this included more features than specified by the formal grammar\footnote{\url{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}}).  For RE2, we used the  supported feature documentation\footnote{\url{https://re2.googlecode.com/hg/doc/syntax.html}}.  For Rex, we were able to use trial and error because we tried to parse all patterns with Rex, and Rex provides good error feedback when a feature is unsupported.
 
@@ -135,8 +207,8 @@ We found that the eight most common features are found on over 50\% of the proje
 We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects.
 
 
-\subsection{{RQ3:} What is the impact of \emph{not} supporting various regular expression features?}
-\label{results:rq3}
+\subsection{RQ4: How semantically similar are regexes?}
+
 
 %\subsubsection{Rationale for Behavioral Clustering}
 When tool designers are considering what features to include, data about usage in practice is valuable.  Semantic similarity clustering  helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
@@ -195,6 +267,68 @@ This category contains 4 clusters. Each of the clusters contain an equals symbol
 
 %\subsubsection{Clusters Not Falling Into Any Category}
 %\verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`".*"'(42)!,\verb!`*$'(42)!, \verb!`(^|.*:)\s*\w*("|\')'(41)!, \verb!`\(\*'(38)!, \verb!`/|-'(36)!, \verb!`.'(35)!, \verb!`\\|/'(31)!, \verb!`::'(30)!, \verb!`/\*'(29)!
+
+
+\subsection{{RQ5:} What is the impact of \emph{not} supporting various regular expression features?}
+\label{results:rq3}
+
+
+\subsection{Regex Feature Usage}
+The pattern language for Python, which is used to compose regexes, supports default character classes like the ANY or dot character class: \verb!.! meaning, `any character except newline' (a full list of features and examples is in the first four columns of Table~\ref{table:featureStats}).  
+It also supports three other default character classes: \verb!\d!, \verb!\w!, \verb!\s! (and their negations). All of these default character classes can be simulated using the custom character class (CCC) feature, which can create semantically equivalent regexes.  
+For example  the decimal character class: \verb!\d! is equivalent to a CCC containing all 10 digits:  \verb!d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!.  
+%Users have a choice when using regex between writing \verb!\d! and \verb![0-9]! and whereas the first option may be shorter, the second may seem more intuitive and readable.  
+Other default character classes such as the word character class: \verb!\w! may not be as intuitive to encode in a CCC: \verb![a-zA-Z0-9_]!.  
+
+Survey participants were asked if they use only CCC, use CCC more than default, use both equally, use default more than CCC or use only default.  Results for this question are shown in Table~\ref{tab:cccvsdefault}, with 67\% (12) indicating that they use default the most. 
+Participants were also asked to explain their preferences.  Participants who favored CCC mostly said something equivalent to ``it is more explicit," whereas the participants who favored default character classes said,  ``it is less verbose" and ``I like using built-in code."
+
+\begin{table}
+\caption{Survey results for preferences between custom character and default character classes. \label{tab:cccvsdefault}}
+\begin{center}
+\begin{tabular}{l|c}
+Preference & Frequency \\ \hline
+use only CCC & 1\\
+use CCC more than default & 5 \\
+use both equally & 2\\
+use default more than CCC & 10\\
+use only default & 2\\
+
+\end{tabular}
+\end{center}
+\end{table}
+
+To further explore how frequently participants use various regex features, participants were asked five questions (on a 6-point likert scale) about how frequently they use specific related groups of features:
+\begin{itemize} \itemsep -2pt
+    \item endpoint anchors: \verb!^! and \verb!$!
+    \item capture groups: (capture me)
+    \item word boundaries: \verb!word\b!
+    \item (negative) look-ahead/behinds: \verb!a(?=bc)!, \verb!(?<!x)yz!, \verb!(?<=a)!, \verb!a(?!yz)!
+    \item lazy repetition: \verb!ab+?!, \verb!xy{2,3}?!
+\end{itemize}
+These features were chosen based on \todoMid{why just these features?}
+Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used. 
+
+\begin{table}
+\caption{Survey results for regex usage frequencies for five feature groups, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 \label{tab:regexfeaturegroups}}
+\begin{center}
+\begin{tabular}{l|c}
+Group & Frequency \\ \hline
+endpoint anchors & 4.4\\
+capture groups & 4.2 \\
+word boundaries & 3.5 \\
+lazy repetition & 2.9\\
+(negative) look-ahead/behinds & 2.5\\
+
+
+\end{tabular}
+\end{center}
+\end{table}
+
+The survey validates the assumption that regex are widely used by professional software developers and sheds some light into the context in which regexes are used. 
+%Future research into regex can focus on activities that prove to be most important to developers, namely capturing parts of strings and searching for specific content.  
+%Although research into regex use in general purpose and scripting languages is important, usage within command line tools and text editors should also be considered.  
+The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regex being hard to read and hard to compose, and most of the tools that they indicate using are focused on composition, indicating a need for tools that help make existing regexes more readable.
 
 \subsection{Summary}
 \label{sec:clusterResults}

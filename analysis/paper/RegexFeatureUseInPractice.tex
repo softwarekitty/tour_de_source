@@ -9,11 +9,12 @@
 \usepackage{xtab}
 \usepackage{tikz}
 \usepackage{url}
+\usepackage{hyperref}
+\usepackage{cite}
 \usepackage[update,prepend,outdir=./]{epstopdf}
 \DTLsetseparator{•}
 \DTLloaddb{data}{../analysis_output/database.csv}
 
-\usepackage{cite}
 \usepackage{balance}
 
 %submission site: http://cyberchairpro.borbala.net/asepapers/submit/
@@ -29,7 +30,7 @@
 \newcommand{\yes}{\tikz\draw[black,fill=black] (0,0) circle (.5ex);}
 \newcommand{\sorta}{\tikz\draw[gray,fill=gray] (0,0) circle (.5ex);}
 \newcommand{\no}{\tikz\draw[black] (0,0) circle (.5ex);}
-
+\renewcommand{\dbltopfraction}{.9}
 
 \newtheorem{mydef}{Definition}
 
