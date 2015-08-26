@@ -1,443 +1,0 @@
-syn keyword vimCommand contained	 \P
-syn keyword vimAutoEvent contained	 
-syn keyword vimAutoEvent contained2N
-syn keyword vimAutoEvent contained  b 
-syn keyword vimCommand contained  ]T
-syn keyword vimCommand contained   |2\0R{o
-syn keyword vimOption contained -<
-syn keyword vimAutoEvent contained  $X>q4-V
-syn keyword vimCommand contained  
-syn keyword vimOption contained_Dp?
-syn keyword vimCommand contained 
-syn keyword vimAutoEvent containedsO
-syn keyword vimOption contained 	
-	\xv\
-syn keyword vimCommand contained
-syn keyword vimOption contained
-~\e
-syn keyword vimOption contained
- ^
-syn keyword vimOption contained 5
-syn keyword vimOption contained p(w
-syn keyword vimAutoEvent contained 
-syn keyword vimCommand contained C
-syn keyword vimOption contained	A`(
-syn keyword vimOption contained Hvj
-syn keyword vimAutoEvent contained	  
-syn keyword vimOption contained  
-syn keyword vimCommand contained 	b,[2
-syn keyword vimCommand containedTh3
-syn keyword vimOption contained /
-syn keyword vimOption contained 
-syn keyword vimAutoEvent contained	
-`;\g
-syn keyword vimCommand contained	vb\a
-syn keyword vimAutoEvent contained @
-syn keyword vimAutoEvent contained	
-syn keyword vimCommand contained ca=BMe
-syn keyword vimAutoEvent contained   	~v
-syn keyword vimOption contained @y,d<R
-syn keyword vimOption contained    d `
-syn keyword vimCommand contained y
-syn keyword vimAutoEvent contained  	/
-syn keyword vimAutoEvent contained J
-syn keyword vimAutoEvent contained A@
-syn keyword vimAutoEvent contained    s
-syn keyword vimAutoEvent contained	 &
-syn keyword vimOption contained 
-syn keyword vimAutoEvent contained $ m0i\"
-syn keyword vimOption contained
-syn keyword vimAutoEvent contained	 	 
-syn keyword vimOption contained
-	 Os
-syn keyword vimCommand contained
-
-syn keyword vimAutoEvent contained
-N>
-syn keyword vimOption contained 	
- 	
-syn keyword vimOption contained 
-  y])[
-syn keyword vimAutoEvent contained 	t/
-syn keyword vimAutoEvent contained
-MsF
-syn keyword vimOption contained	  =9<5Afp+
-syn keyword vimOption contained b
-syn keyword vimCommand contained	
-syn keyword vimOption contained 
-U
-syn keyword vimCommand contained 	 
-syn keyword vimOption contained X
-syn keyword vimOption contained
-
-syn keyword vimOption contained	
-syn keyword vimCommand contained    (
-syn keyword vimCommand contained 
-l-
-syn keyword vimOption contained d<	M
-syn keyword vimAutoEvent contained
-	JO'K
-syn keyword vimCommand contained
-syn keyword vimOption contained 	 
-syn keyword vimAutoEvent contained  )
-syn keyword vimCommand contained	 
-syn keyword vimCommand contained 	 
-syn keyword vimCommand contained2\ekd4
-syn keyword vimOption contained\a
-syn keyword vimCommand contained	*~
-syn keyword vimCommand contained (a
-syn keyword vimAutoEvent containedB
-syn keyword vimCommand contained	 L<HM:\aC
-syn keyword vimOption containedHBll{9Y8
-syn keyword vimAutoEvent contained		
-syn keyword vimAutoEvent contained zR
-syn keyword vimCommand contained 
-syn keyword vimOption contained	
->.F
-syn keyword vimOption contained    #`1
-syn keyword vimAutoEvent contained 'S
-syn keyword vimAutoEvent contained  	
-syn keyword vimAutoEvent contained
-syn keyword vimAutoEvent contained \0L_-
-syn keyword vimAutoEvent contained ~bS&
-syn keyword vimCommand contained (
-syn keyword vimCommand contained  
-syn keyword vimCommand contained   2
-syn keyword vimCommand contained    tG
-syn keyword vimCommand contained c
-syn keyword vimOption contained ,
-syn keyword vimAutoEvent contained
-  !
-syn keyword vimCommand contained \aO
-syn keyword vimOption contained l
-syn keyword vimAutoEvent contained 1
-syn keyword vimAutoEvent contained
-syn keyword vimCommand contained   	 WS6!
-syn keyword vimAutoEvent contained  w'W/
-syn keyword vimCommand contained ]D0
-syn keyword vimCommand contained 
-syn keyword vimAutoEvent contained  
-syn keyword vimCommand contained fn
-syn keyword vimCommand contained '
-syn keyword vimAutoEvent contained
-syn keyword vimOption contained U
-syn keyword vimAutoEvent contained/~P(
-syn keyword vimCommand contained '
-syn keyword vimCommand contained	^
-syn keyword vimCommand contained	  w
-syn keyword vimAutoEvent contained   E
-syn keyword vimAutoEvent contained  c+g
-
-syn keyword vimCommand contained Q
-syn keyword vimOption contained, 
-syn keyword vimCommand contained 	
-syn keyword vimOption contained 
-syn keyword vimOption contained
-
-syn keyword vimOption contained \a>XN
-syn keyword vimCommand contained
-  @
-syn keyword vimAutoEvent contained*$e
-syn keyword vimCommand contained 	
-syn keyword vimOption contained   Ni
-syn keyword vimCommand contained r(w
-syn keyword vimCommand contained h-X
-syn keyword vimAutoEvent contained?_m\a.[
-syn keyword vimCommand contained  U
-syn keyword vimOption contained
-syn keyword vimCommand contained d#
-syn keyword vimAutoEvent contained.CG8c?
-syn keyword vimCommand contained  	 
-syn keyword vimCommand contained	
-  	 U>:
-syn keyword vimCommand contained X
-syn keyword vimCommand contained<	
-syn keyword vimCommand contained
-w
-syn keyword vimAutoEvent contained.W\0p
-syn keyword vimOption contained
-hx3
-syn keyword vimAutoEvent contained w
-syn keyword vimOption containedc>
-syn keyword vimCommand contained mQ
-syn keyword vimAutoEvent contained  
-syn keyword vimAutoEvent contained    
-syn keyword vimCommand contained  
- 9Y7
-syn keyword vimOption contained 4s
-syn keyword vimCommand contained C5U
-syn keyword vimAutoEvent contained
-syn keyword vimCommand contained b
-syn keyword vimCommand contained   ?
-syn keyword vimCommand contained
-
-
-syn keyword vimAutoEvent contained0Sv
-syn keyword vimAutoEvent contained
-syn keyword vimAutoEvent contained  #t
-syn keyword vimCommand contained k
-syn keyword vimCommand contained 
-,A
-syn keyword vimCommand contained	 	
-syn keyword vimOption contained	}!E
-syn keyword vimAutoEvent containedgU<W1a`II
-syn keyword vimCommand contained 
-syn keyword vimCommand contained
-syn keyword vimAutoEvent contained Bo
-syn keyword vimOption containedB)
-syn keyword vimAutoEvent containedP
-syn keyword vimCommand contained <sX(B
-syn keyword vimCommand contained   
-3)&
-syn keyword vimCommand contained 0)c
-syn keyword vimAutoEvent contained 
-syn keyword vimAutoEvent contained K^*/
-syn keyword vimAutoEvent contained	\"d
-syn keyword vimOption contained	o*e
-syn keyword vimAutoEvent contained 	  
-syn keyword vimOption contained U
-syn keyword vimCommand contained 
-syn keyword vimAutoEvent contained
-   M\0$?*
-syn keyword vimCommand contained	+
-syn keyword vimAutoEvent contained
- CG:
-syn keyword vimAutoEvent contained
-h?)
-syn keyword vimOption containedd
-syn keyword vimAutoEvent containedzP
-syn keyword vimCommand contained
-   
-syn keyword vimOption contained JZ,
-syn keyword vimOption contained	@
-syn keyword vimCommand contained 	a>s
-syn keyword vimAutoEvent containedsh4ZW`,zm
-syn keyword vimCommand contained	rR
-syn keyword vimOption contained   	   ]
-syn keyword vimAutoEvent contained tBtn
-syn keyword vimAutoEvent contained AA
-syn keyword vimOption contained _lA
-syn keyword vimCommand contained   Z\a
-syn keyword vimOption contained %
-syn keyword vimAutoEvent contained    
-syn keyword vimOption contained )
-syn keyword vimOption contained ;
-syn keyword vimOption containedCN9
-syn keyword vimCommand contained 
-
-syn keyword vimOption contained
- 	 i&Ad
-syn keyword vimOption contained	
-syn keyword vimAutoEvent contained k^
-syn keyword vimAutoEvent containedxj
-syn keyword vimCommand contained
-   +_\e
-syn keyword vimAutoEvent contained 6U
-syn keyword vimAutoEvent contained
-p
-syn keyword vimCommand containedW
-syn keyword vimOption contained
-9|
-syn keyword vimOption contained	   yM
-syn keyword vimAutoEvent contained	+
-syn keyword vimCommand contained 
-syn keyword vimAutoEvent contained 
-~
-syn keyword vimOption contained 
-syn keyword vimCommand contained R
-syn keyword vimOption contained:I
-syn keyword vimAutoEvent contained z5
-syn keyword vimCommand contained q
-syn keyword vimAutoEvent contained /~N
-syn keyword vimCommand contained w[Li
-syn keyword vimOption contained
-syn keyword vimCommand contained	x1~-
-syn keyword vimOption containedb>:
-syn keyword vimOption contained	 )wi
-syn keyword vimAutoEvent contained v
-syn keyword vimCommand contained S\aJ7
-syn keyword vimCommand containedicy
-syn keyword vimAutoEvent contained 
-syn keyword vimAutoEvent contained	  	e
-syn keyword vimOption contained  +
-syn keyword vimOption contained s4y
-syn keyword vimCommand containedS
-syn keyword vimOption contained	,
-syn keyword vimOption contained
-Vw3
-syn keyword vimAutoEvent contained  	
-syn keyword vimOption contained 	 \efgiF
-syn keyword vimAutoEvent contained 
-syn keyword vimCommand contained
-#!
-syn keyword vimAutoEvent contained $
-syn keyword vimOption contained%\"@&
-syn keyword vimCommand contained    
-syn keyword vimOption contained9
-syn keyword vimAutoEvent contained +
-
-syn keyword vimOption contained
-
-syn keyword vimOption contained   
-t
-syn keyword vimAutoEvent contained  	
-syn keyword vimCommand contained   i	i5
-syn keyword vimCommand contained
-82
-syn keyword vimAutoEvent contained %
-syn keyword vimAutoEvent contained 	 90l
-syn keyword vimOption contained
-syn keyword vimCommand contained o+
-syn keyword vimAutoEvent contained	
-syn keyword vimCommand contained
-syn keyword vimOption contained 	w+v(
-syn keyword vimOption contained W:Y
-syn keyword vimOption contained
-syn keyword vimOption contained 	
-syn keyword vimCommand contained 
-syn keyword vimOption contained ~\" s'E
-syn keyword vimAutoEvent contained  Ab
-syn keyword vimCommand contained\0
-syn keyword vimOption contained 
-syn keyword vimCommand contained  A
-syn keyword vimCommand contained 
-syn keyword vimAutoEvent contained *!
-syn keyword vimCommand contained sf
-syn keyword vimOption contained )!q
-syn keyword vimAutoEvent contained ]vY`
-syn keyword vimAutoEvent contained,
-syn keyword vimAutoEvent contained
-
-  i`
-syn keyword vimOption contained    e@
-syn keyword vimOption contained >
-syn keyword vimCommand contained 		
-syn keyword vimOption contained  
-
-syn keyword vimOption contained _+
-syn keyword vimCommand contained 6
-syn keyword vimAutoEvent contained  69
-syn keyword vimOption contained	 8
-syn keyword vimCommand containedM0fx\a
-syn keyword vimOption contained
-
-syn keyword vimCommand contained	oy
-syn keyword vimAutoEvent contained 8
-syn keyword vimOption contained m~o
-syn keyword vimAutoEvent containedC=9
-syn keyword vimCommand contained8M\0n
-syn keyword vimOption contained  1x
-syn keyword vimAutoEvent contained ;nGP
-syn keyword vimOption contained J
-syn keyword vimCommand contained  
-syn keyword vimOption contained(rn
-syn keyword vimOption contained H
-syn keyword vimCommand contained
-syn keyword vimAutoEvent contained
-  zhG
-syn keyword vimAutoEvent contained	-uKo!,=]l
-syn keyword vimCommand contained
-Ig
-syn keyword vimAutoEvent containedr
-syn keyword vimOption contained c@f
-syn keyword vimCommand contained
-	n
-syn keyword vimOption contained _
-syn keyword vimAutoEvent contained w;
-syn keyword vimAutoEvent contained8+
-syn keyword vimAutoEvent contained 	t1A
-syn keyword vimCommand containedS
-syn keyword vimAutoEvent contained
- i
-syn keyword vimCommand contained  t
-syn keyword vimOption contained   
-syn keyword vimOption contained \"v
-syn keyword vimCommand contained<
-syn keyword vimAutoEvent contained j
-syn keyword vimCommand contained A
-syn keyword vimCommand containedI	
-syn keyword vimOption contained C
-syn keyword vimAutoEvent contained 3j
-syn keyword vimAutoEvent contained	 Z
-syn keyword vimOption contained   
-syn keyword vimCommand contained   03
-syn keyword vimAutoEvent contained J#
-syn keyword vimAutoEvent containedI
-syn keyword vimOption contained 
-	 <
-syn keyword vimAutoEvent contained  vUX$
-syn keyword vimOption contained   i*
-syn keyword vimCommand containedH\w
-syn keyword vimOption contained 
-syn keyword vimCommand contained
-syn keyword vimAutoEvent contained ]-
-syn keyword vimAutoEvent contained 0C\aqD
-syn keyword vimOption containedS
-syn keyword vimOption contained 8
-syn keyword vimCommand contained	gea'f
-syn keyword vimAutoEvent containedn
-syn keyword vimCommand contained 
-syn keyword vimAutoEvent contained    X
-syn keyword vimCommand contained
-syn keyword vimAutoEvent contained&
-syn keyword vimOption contained gP
-syn keyword vimAutoEvent contained 	:
-syn keyword vimOption contained \0-C
-syn keyword vimCommand containedp
-syn keyword vimCommand contained
-
-  	*V
-syn keyword vimCommand contained4X^
-syn keyword vimAutoEvent contained 	  ]
-syn keyword vimCommand containedri\
-syn keyword vimAutoEvent contained  @r^
-syn keyword vimOption contained  Pw
-syn keyword vimCommand contained B
-syn keyword vimAutoEvent contained
-	w
-syn keyword vimAutoEvent contained  	iD\a
-syn keyword vimOption contained C^
-syn keyword vimAutoEvent contained  9
-syn keyword vimAutoEvent contained	fW
-syn keyword vimCommand contained  
-syn keyword vimAutoEvent contained  f;>
-syn keyword vimCommand contained  _[!
-syn keyword vimCommand contained   
-syn keyword vimOption containedI$J
-syn keyword vimAutoEvent contained  
-	;[\0.
-syn keyword vimCommand contained(#25
-syn keyword vimAutoEvent contained	 (('4<
-syn keyword vimAutoEvent contained  Vl
-syn keyword vimOption contained  	
-syn keyword vimCommand contained -\
-syn keyword vimAutoEvent contained 	 \e^_
-syn keyword vimOption contained 
-syn keyword vimCommand contained 
-syn keyword vimCommand contained 	y
-syn keyword vimCommand contained 
-syn keyword vimAutoEvent containedy
-syn keyword vimOption contained	 
-syn keyword vimAutoEvent contained
-yob,U&
-syn keyword vimOption containedi
-syn keyword vimAutoEvent contained m)
-syn keyword vimCommand contained	
-syn keyword vimOption contained U]
-syn keyword vimOption contained )[V
-syn keyword vimCommand contained zjD
-syn keyword vimOption contained 		 
-syn keyword vimAutoEvent contained	C S
-syn keyword vimCommand contained$\a
-syn keyword vimAutoEvent contained 
-syn keyword vimCommand contained	
- 
-syn keyword vimCommand contained   T
-syn keyword vimCommand contained tS!
-syn keyword vimAutoEvent contained:lV.Z$VF
-syn keyword vimCommand contained  (
-syn keyword vimAutoEvent contained'q
-syn keyword vimOption contained	9
-syn keyword vimCommand contained 	  pfa+
-syn keyword vimAutoEvent contained
-K

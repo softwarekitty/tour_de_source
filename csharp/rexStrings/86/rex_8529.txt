@@ -1,387 +1,0 @@
-pixel_at(886,13)rshould_be_the_same_as pixel_at(9,4)
-pixel_at(8,697834);should_be_the_same_as pixel_at(8,1)
-pixel_at(99,8)$should_be_the_same_as pixel_at(8,1)
-pixel_at(5666,97868) should_be_the_same_as pixel_at(5,9)o\ex1
-pixel_at(4699,5)'should_be_the_same_as pixel_at(1,9)$J
-pixel_at(89,8)tshould_be_the_same_as pixel_at(132,1)
-pixel_at(41,8)Lshould_be_the_same_as pixel_at(2804,99)
-pixel_at(3,98)Lshould_be_the_same_as pixel_at(76,8435);RvE2t[K2u
-pixel_at(1,19)[should_be_the_same_as pixel_at(9,2))
-pixel_at(2,21)sshould_be_the_same_as pixel_at(84,9)
-pixel_at(88878,7452)tshould_be_the_same_as pixel_at(87788330,53)\
-pixel_at(040818,03)7should_be_the_same_as pixel_at(3989,6)
-pixel_at(48,9)nshould_be_the_same_as pixel_at(6,9184)
-pixel_at(98,4)9should_be_the_same_as pixel_at(4,559)@
-pixel_at(3,3)*should_be_the_same_as pixel_at(1989,60)O=
-pixel_at(9,27)>should_be_the_same_as pixel_at(29,8)
-pixel_at(1,88)should_be_the_same_as pixel_at(0994808,91978)v[8
-pixel_at(9,598)_should_be_the_same_as pixel_at(8,992)
-pixel_at(849,2)should_be_the_same_as pixel_at(9,8)
-pixel_at(8997,2)should_be_the_same_as pixel_at(4,86)
-pixel_at(9,9)should_be_the_same_as pixel_at(4000,4)
-pixel_at(9,8)|should_be_the_same_as pixel_at(09,3)
-pixel_at(5,828)[should_be_the_same_as pixel_at(35,8)
-pixel_at(8,922)should_be_the_same_as pixel_at(442,49)R |
-pixel_at(3,39292)Sshould_be_the_same_as pixel_at(9,2887)|
-pixel_at(9,09)ishould_be_the_same_as pixel_at(3,0)
-pixel_at(2,8)?should_be_the_same_as pixel_at(1,4)
-pixel_at(8,8)Mshould_be_the_same_as pixel_at(8198,9599)wv
-pixel_at(1,81)should_be_the_same_as pixel_at(9500,6)
-pixel_at(4,9799)Tshould_be_the_same_as pixel_at(3,3)
-pixel_at(9,5023667)should_be_the_same_as pixel_at(9,8802){+%M^
-pixel_at(30,989)gshould_be_the_same_as pixel_at(5419,997)7
-pixel_at(2,6)should_be_the_same_as pixel_at(485,7)
-pixel_at(3,9)_should_be_the_same_as pixel_at(2,874)R
-pixel_at(95,48)tshould_be_the_same_as pixel_at(845,88)
-pixel_at(63,9)mshould_be_the_same_as pixel_at(0199900,568028)
-pixel_at(88,8)should_be_the_same_as pixel_at(3,911680)
-pixel_at(9,90)sshould_be_the_same_as pixel_at(1,449)!
-pixel_at(8,8)lshould_be_the_same_as pixel_at(8,69)	|}
-pixel_at(94,9917)should_be_the_same_as pixel_at(1,9)
-pixel_at(188,8)=should_be_the_same_as pixel_at(38,873)M
-pixel_at(22,989)7should_be_the_same_as pixel_at(1,8)|
-pixel_at(6,6689)	should_be_the_same_as pixel_at(0,96)
-pixel_at(298,6)~should_be_the_same_as pixel_at(12,59)k
-pixel_at(8980,59)8should_be_the_same_as pixel_at(9,99061)
-pixel_at(38,8)should_be_the_same_as pixel_at(9,8)
-pixel_at(89988,9)cshould_be_the_same_as pixel_at(19,1)
-pixel_at(89,2)Vshould_be_the_same_as pixel_at(998,87)
-pixel_at(56,49)7should_be_the_same_as pixel_at(1999,6)
-pixel_at(48208,8)7should_be_the_same_as pixel_at(08,1)8
-pixel_at(5994,9)tshould_be_the_same_as pixel_at(108,9895)-
-pixel_at(9,08490)\should_be_the_same_as pixel_at(7996,19)
-pixel_at(7,4)should_be_the_same_as pixel_at(8,607)
-pixel_at(242,869331)Kshould_be_the_same_as pixel_at(74,6)
-pixel_at(961,83)gshould_be_the_same_as pixel_at(1,998)z
-pixel_at(37,91)Bshould_be_the_same_as pixel_at(7,9)ka
-pixel_at(9,4)Nshould_be_the_same_as pixel_at(16,60)me
-pixel_at(9,281091)Wshould_be_the_same_as pixel_at(2,7)|
-pixel_at(8,8890)nshould_be_the_same_as pixel_at(6,6)
-pixel_at(6,48359)&should_be_the_same_as pixel_at(99,8994)8C
-pixel_at(9988,9)should_be_the_same_as pixel_at(8,93)
-pixel_at(8762,26173):should_be_the_same_as pixel_at(5,8)
-pixel_at(2,1)@should_be_the_same_as pixel_at(698,7) K_
-pixel_at(9,939198)]should_be_the_same_as pixel_at(86,3)c~
-pixel_at(947,7)tshould_be_the_same_as pixel_at(3,5)
-pixel_at(2,94)should_be_the_same_as pixel_at(91,66)
-pixel_at(233,9587)should_be_the_same_as pixel_at(79,868)^
-pixel_at(885,8)#should_be_the_same_as pixel_at(55,94)
-pixel_at(9,8)@should_be_the_same_as pixel_at(9,9248)!
-pixel_at(99389,529)should_be_the_same_as pixel_at(33760,889)
-pixel_at(1,8)should_be_the_same_as pixel_at(8,6)
-pixel_at(9,3)should_be_the_same_as pixel_at(99,8)
-pixel_at(971,89)%should_be_the_same_as pixel_at(8803,9)\eCc
-pixel_at(1,8)'should_be_the_same_as pixel_at(92912,9)X/
-pixel_at(5835,4242)should_be_the_same_as pixel_at(8,6)
-pixel_at(2,3)9should_be_the_same_as pixel_at(888885,9)C
-pixel_at(99,7911)vshould_be_the_same_as pixel_at(68,31)
-pixel_at(7,2)should_be_the_same_as pixel_at(88,9)Y|
-pixel_at(9,93)ashould_be_the_same_as pixel_at(0,7)v9A
-pixel_at(5,4)_should_be_the_same_as pixel_at(9,1)
-pixel_at(902781,99)?should_be_the_same_as pixel_at(8,98)
-pixel_at(69828,7)Jshould_be_the_same_as pixel_at(97,9)
-pixel_at(2,281)3should_be_the_same_as pixel_at(939,5)
-pixel_at(85,1)cshould_be_the_same_as pixel_at(465,99)
-pixel_at(8,175)should_be_the_same_as pixel_at(5,98)
-pixel_at(99,8)should_be_the_same_as pixel_at(2,819)hg#j
-pixel_at(899,42)should_be_the_same_as pixel_at(6,99)
-pixel_at(5,8)Wshould_be_the_same_as pixel_at(8,0)*;
-pixel_at(996,8)should_be_the_same_as pixel_at(01,3)W
-pixel_at(967,8)Oshould_be_the_same_as pixel_at(0,3)
-pixel_at(276,97)Gshould_be_the_same_as pixel_at(48,9)
-pixel_at(8,981):should_be_the_same_as pixel_at(8,6)
-pixel_at(18299,0)eshould_be_the_same_as pixel_at(0,3)+
-pixel_at(9,3080)should_be_the_same_as pixel_at(0,4)
-pixel_at(8953,9)Fshould_be_the_same_as pixel_at(5,283)l'\"T
-pixel_at(28,95)should_be_the_same_as pixel_at(98,9878394)
-pixel_at(828,84)#should_be_the_same_as pixel_at(6,3)
-pixel_at(09,1)should_be_the_same_as pixel_at(9,568)
-pixel_at(4,48)fshould_be_the_same_as pixel_at(9,50)
-pixel_at(927,78)should_be_the_same_as pixel_at(6,5)]
-pixel_at(8,4)should_be_the_same_as pixel_at(48279,6)S
-pixel_at(4844,87)'should_be_the_same_as pixel_at(3,08)97
-pixel_at(19,1)should_be_the_same_as pixel_at(8,99)
-pixel_at(9,7)#should_be_the_same_as pixel_at(52998768,98)/=
-pixel_at(79,2007)ushould_be_the_same_as pixel_at(9,9229)x
-pixel_at(99,49)should_be_the_same_as pixel_at(44,9)
-pixel_at(8,2)Kshould_be_the_same_as pixel_at(8,803)
-pixel_at(4,20)should_be_the_same_as pixel_at(8,4)}g
-pixel_at(8,0)vshould_be_the_same_as pixel_at(3,2)5
-pixel_at(52,98)zshould_be_the_same_as pixel_at(9,569)
-pixel_at(1,8)jshould_be_the_same_as pixel_at(688943,8)
-pixel_at(551794,8)Cshould_be_the_same_as pixel_at(4,88)\0e8
-pixel_at(4,91)yshould_be_the_same_as pixel_at(8,2888)
-pixel_at(8,42)ushould_be_the_same_as pixel_at(5908,898)
-pixel_at(0,5)should_be_the_same_as pixel_at(599859,99)I
-pixel_at(78,8)vshould_be_the_same_as pixel_at(085,8)
-pixel_at(088,6)+should_be_the_same_as pixel_at(7,88)
-pixel_at(881,2)should_be_the_same_as pixel_at(8,01)e
-pixel_at(906,976)Dshould_be_the_same_as pixel_at(8,9)n'
-pixel_at(3925,9)%should_be_the_same_as pixel_at(9081,9)53
-pixel_at(99,86)0should_be_the_same_as pixel_at(8,88)
-pixel_at(9,5)should_be_the_same_as pixel_at(975,8)
-pixel_at(9,4)Wshould_be_the_same_as pixel_at(0,8)
-pixel_at(8,1)Rshould_be_the_same_as pixel_at(71,69)
-pixel_at(3,2)mshould_be_the_same_as pixel_at(7,98)b
-pixel_at(69,60)Lshould_be_the_same_as pixel_at(0,850)Hl
-pixel_at(9770559,0)wshould_be_the_same_as pixel_at(0,70)
-pixel_at(63,4)zshould_be_the_same_as pixel_at(24588,16)(
-pixel_at(9,52081).should_be_the_same_as pixel_at(17,8)b
-pixel_at(8,93)fshould_be_the_same_as pixel_at(98,9)
-pixel_at(8,99)should_be_the_same_as pixel_at(1,29)
-pixel_at(85,9)tshould_be_the_same_as pixel_at(1,2)
-pixel_at(37,0689)should_be_the_same_as pixel_at(2,9)8xG
-pixel_at(6308,3)rshould_be_the_same_as pixel_at(954,2978859)
-pixel_at(3,9)tshould_be_the_same_as pixel_at(9,484)
-pixel_at(3,198)should_be_the_same_as pixel_at(9,4)T2
-pixel_at(8,6)'should_be_the_same_as pixel_at(187,88693)
-pixel_at(95,9)should_be_the_same_as pixel_at(8,8)
-pixel_at(4,863)%should_be_the_same_as pixel_at(768,83848)
-pixel_at(8,99)Cshould_be_the_same_as pixel_at(8,14999)$g
-pixel_at(19,5)should_be_the_same_as pixel_at(619,16889)n
-pixel_at(3,08)]should_be_the_same_as pixel_at(455,83)
-pixel_at(8,51)&should_be_the_same_as pixel_at(624,3)
-pixel_at(1899,78)'should_be_the_same_as pixel_at(8,9)Z
-pixel_at(77529,86)0should_be_the_same_as pixel_at(841,8)x
-pixel_at(569,8)should_be_the_same_as pixel_at(9,3)$a
-pixel_at(3,29)should_be_the_same_as pixel_at(83121,9)
-pixel_at(99,19)'should_be_the_same_as pixel_at(539,9930)
-pixel_at(2,980)~should_be_the_same_as pixel_at(78,85)
-pixel_at(8,0)@should_be_the_same_as pixel_at(85,2)
-pixel_at(92,553)wshould_be_the_same_as pixel_at(0896,58)
-pixel_at(9,515)should_be_the_same_as pixel_at(84,4)
-pixel_at(5,93)Qshould_be_the_same_as pixel_at(99989,2)
-pixel_at(0,93)9should_be_the_same_as pixel_at(1,9699)
-pixel_at(1,58)8should_be_the_same_as pixel_at(1,998)+'
-pixel_at(8,68859017)7should_be_the_same_as pixel_at(999,1)~$
-pixel_at(0,9)should_be_the_same_as pixel_at(3,88)
-pixel_at(998,0)\should_be_the_same_as pixel_at(558,47)
-pixel_at(4,8)should_be_the_same_as pixel_at(8,9)
-pixel_at(8,8)should_be_the_same_as pixel_at(2,7)HE]
-pixel_at(93801,89)\should_be_the_same_as pixel_at(2,9)#qD
-pixel_at(1,7007998)lshould_be_the_same_as pixel_at(8,198)R
-pixel_at(41,960)1should_be_the_same_as pixel_at(85,6)l
-pixel_at(9,997)Mshould_be_the_same_as pixel_at(18,9)
-pixel_at(8,9)should_be_the_same_as pixel_at(9,87)
-pixel_at(8,068898)should_be_the_same_as pixel_at(95,8)BS
-pixel_at(9,98)mshould_be_the_same_as pixel_at(1,4)
-pixel_at(8,5)_should_be_the_same_as pixel_at(9,0)1
-pixel_at(1,2)Wshould_be_the_same_as pixel_at(8,42)
-pixel_at(8,89)should_be_the_same_as pixel_at(056,92986498)
-pixel_at(714,816),should_be_the_same_as pixel_at(82,9)C
-pixel_at(9,18)vshould_be_the_same_as pixel_at(19,87)
-pixel_at(4,6)Qshould_be_the_same_as pixel_at(8,7){
-pixel_at(82,4)kshould_be_the_same_as pixel_at(896,4)
-pixel_at(1,8)	should_be_the_same_as pixel_at(2,90)oa
-pixel_at(2,99)Dshould_be_the_same_as pixel_at(199,89)yu$
-pixel_at(0,4)rshould_be_the_same_as pixel_at(0,29)
-pixel_at(47,9),should_be_the_same_as pixel_at(87,859989)~
-pixel_at(84,90)should_be_the_same_as pixel_at(8979,9)
-pixel_at(26,09376)#should_be_the_same_as pixel_at(8,16)
-pixel_at(69,9)should_be_the_same_as pixel_at(9983939,14)
-pixel_at(62,882778)should_be_the_same_as pixel_at(76,2)xp
-pixel_at(83,5)7should_be_the_same_as pixel_at(8,9)?
-pixel_at(88,78)should_be_the_same_as pixel_at(65,88)
-pixel_at(9,8)gshould_be_the_same_as pixel_at(9,8)
-pixel_at(66,8)should_be_the_same_as pixel_at(8,71)
-pixel_at(879,1899877)5should_be_the_same_as pixel_at(4,2899)
-pixel_at(8,2)?should_be_the_same_as pixel_at(27,88)
-pixel_at(7,8)Fshould_be_the_same_as pixel_at(96,178)Co
-pixel_at(86,948)Cshould_be_the_same_as pixel_at(20,48)`
-pixel_at(9,8)fshould_be_the_same_as pixel_at(81,0)
-pixel_at(97,1)should_be_the_same_as pixel_at(8,09)
-pixel_at(4,92395)`should_be_the_same_as pixel_at(839,71499)gQ
-pixel_at(912039872,85290)yshould_be_the_same_as pixel_at(5,2)z
-pixel_at(54781,77)Tshould_be_the_same_as pixel_at(8,800788)
-pixel_at(2,9)0should_be_the_same_as pixel_at(6,8995)
-pixel_at(89,8)gshould_be_the_same_as pixel_at(8,65)
-pixel_at(89,298))should_be_the_same_as pixel_at(5,3998)
-pixel_at(9,25)Dshould_be_the_same_as pixel_at(667,571)[>5
-pixel_at(6,9)Eshould_be_the_same_as pixel_at(8,98)-
-pixel_at(15,8)#should_be_the_same_as pixel_at(981,889)
-pixel_at(1897,75)>should_be_the_same_as pixel_at(728,45859)?
-pixel_at(1,93)cshould_be_the_same_as pixel_at(9,9)
-pixel_at(985,81)should_be_the_same_as pixel_at(84792,60)
-pixel_at(99,993)Rshould_be_the_same_as pixel_at(82,1)F
-pixel_at(4,9694).should_be_the_same_as pixel_at(16,9)
-pixel_at(8,9).should_be_the_same_as pixel_at(9,78)4
-pixel_at(8,9)should_be_the_same_as pixel_at(6,658)k
-pixel_at(1,75)should_be_the_same_as pixel_at(98373,8)=?
-pixel_at(51,8591){should_be_the_same_as pixel_at(9,8)
-pixel_at(8,5)should_be_the_same_as pixel_at(186,1)
-pixel_at(9,8)@should_be_the_same_as pixel_at(94,9)
-pixel_at(1,99)should_be_the_same_as pixel_at(1428714,57)
-pixel_at(798,28),should_be_the_same_as pixel_at(93,09)
-pixel_at(90,313)*should_be_the_same_as pixel_at(007,4)
-pixel_at(7,8)Lshould_be_the_same_as pixel_at(8,9)
-pixel_at(90,9)should_be_the_same_as pixel_at(9,926)
-pixel_at(5,6098)*should_be_the_same_as pixel_at(9,2)7
-pixel_at(9,018)cshould_be_the_same_as pixel_at(109,9)^M
-pixel_at(048,1)should_be_the_same_as pixel_at(54,9)
-pixel_at(475,82)6should_be_the_same_as pixel_at(68,99)
-pixel_at(9,70)6should_be_the_same_as pixel_at(27,4)
-pixel_at(56,5)should_be_the_same_as pixel_at(9,8)
-pixel_at(8,48898)sshould_be_the_same_as pixel_at(5,8)~
-pixel_at(841,6)eshould_be_the_same_as pixel_at(295,6)
-pixel_at(998,5)sshould_be_the_same_as pixel_at(8998,8)V^
-pixel_at(9,060)should_be_the_same_as pixel_at(0,1938)
-pixel_at(8,839)4should_be_the_same_as pixel_at(852,19)\"
-pixel_at(8,7)*should_be_the_same_as pixel_at(5,9)B
-pixel_at(89,3)Lshould_be_the_same_as pixel_at(0,0975)Na
-pixel_at(3887,8)should_be_the_same_as pixel_at(89,24)
-pixel_at(84,4)dshould_be_the_same_as pixel_at(78,90988)
-pixel_at(3,732)should_be_the_same_as pixel_at(43,998)
-pixel_at(698,10)Ushould_be_the_same_as pixel_at(3,8)
-pixel_at(93,8) should_be_the_same_as pixel_at(608249928293,3)t
-pixel_at(899283,9)should_be_the_same_as pixel_at(2399,4)8
-pixel_at(3,83)lshould_be_the_same_as pixel_at(17738128,9)
-4b
-pixel_at(22,88)3should_be_the_same_as pixel_at(894,31){s
-pixel_at(8,79)/should_be_the_same_as pixel_at(8,5996)
-pixel_at(179,886)Vshould_be_the_same_as pixel_at(4,06)
-pixel_at(099524,98)Pshould_be_the_same_as pixel_at(47,6)
-pixel_at(8,1)	should_be_the_same_as pixel_at(9,829)
-pixel_at(3,8)Fshould_be_the_same_as pixel_at(8,18876)
-pixel_at(895,0)should_be_the_same_as pixel_at(86,7)
-pixel_at(8915,9)Lshould_be_the_same_as pixel_at(8,9)
-pixel_at(82,98)oshould_be_the_same_as pixel_at(982,90)
-pixel_at(88,1)should_be_the_same_as pixel_at(3953,3)
-pixel_at(89998,8994818)should_be_the_same_as pixel_at(386,82)
-pixel_at(99,92789)qshould_be_the_same_as pixel_at(91,5)
-pixel_at(5,45)sshould_be_the_same_as pixel_at(60198,9)
-pixel_at(6,0)should_be_the_same_as pixel_at(9,84)!
-pixel_at(999,81)Sshould_be_the_same_as pixel_at(9,8)
-pixel_at(0,6)should_be_the_same_as pixel_at(3908,9)a
-pixel_at(6,0)]should_be_the_same_as pixel_at(9,88)7
-pixel_at(4,9998)pshould_be_the_same_as pixel_at(4,8)h
-pixel_at(8,98)<should_be_the_same_as pixel_at(0,2)=
-pixel_at(9,4970)Tshould_be_the_same_as pixel_at(88,89)
-pixel_at(78,44)cshould_be_the_same_as pixel_at(17,3)
-pixel_at(9344,1)sshould_be_the_same_as pixel_at(4,8)
-pixel_at(83837087929799,70)4should_be_the_same_as pixel_at(9573,2)7w
-pixel_at(8329,95918)should_be_the_same_as pixel_at(7,3068)P
-pixel_at(882097,9)Cshould_be_the_same_as pixel_at(9,8)
-pixel_at(8,5)9should_be_the_same_as pixel_at(1888,51)nQS
-pixel_at(5,8)Ashould_be_the_same_as pixel_at(7,95)*sIIc
-pixel_at(6,91)[should_be_the_same_as pixel_at(8,89)
-pixel_at(8,51)zshould_be_the_same_as pixel_at(807,59040)%{Q_
-pixel_at(0,9)1should_be_the_same_as pixel_at(55,9)
-pixel_at(987,08094)\should_be_the_same_as pixel_at(8,890)s'
-pixel_at(88,8)qshould_be_the_same_as pixel_at(8,9)
-pixel_at(8459,9)vshould_be_the_same_as pixel_at(8988,9)
-pixel_at(5,0)hshould_be_the_same_as pixel_at(81,124)
-pixel_at(8888,7)'should_be_the_same_as pixel_at(679,576)
-pixel_at(9,9)Nshould_be_the_same_as pixel_at(39,3)\"9
-pixel_at(329,88).should_be_the_same_as pixel_at(9,4)`
-pixel_at(797,09)should_be_the_same_as pixel_at(8,5658)Ag
-pixel_at(7,9)should_be_the_same_as pixel_at(8,5)
-pixel_at(6,95)ishould_be_the_same_as pixel_at(1,19)
-pixel_at(8,8)Mshould_be_the_same_as pixel_at(0,7)
-pixel_at(8,9)&should_be_the_same_as pixel_at(78,988)
-pixel_at(599,6282)~should_be_the_same_as pixel_at(9,597)
-pixel_at(7,388)xshould_be_the_same_as pixel_at(982,6)
-pixel_at(07,4)4should_be_the_same_as pixel_at(9,4)
-pixel_at(98,669)should_be_the_same_as pixel_at(0,94)
-pixel_at(39,8)vshould_be_the_same_as pixel_at(2657393,7)
-pixel_at(8,8)eshould_be_the_same_as pixel_at(61,528)
-pixel_at(889,4)Fshould_be_the_same_as pixel_at(6,6):
-pixel_at(9,8))should_be_the_same_as pixel_at(69,8)+!
-pixel_at(86,9486989).should_be_the_same_as pixel_at(989843129,3)>
-pixel_at(8,0)Qshould_be_the_same_as pixel_at(9,5)
-pixel_at(5903789089,8)+should_be_the_same_as pixel_at(2,9)
-pixel_at(89,9)should_be_the_same_as pixel_at(88,9)
-pixel_at(39,1)Lshould_be_the_same_as pixel_at(98,5988)
-pixel_at(29,889)should_be_the_same_as pixel_at(29,9)a
-pixel_at(8,433099)Bshould_be_the_same_as pixel_at(9,08)
-pixel_at(76,9)|should_be_the_same_as pixel_at(97,592)w:
-pixel_at(1,262)should_be_the_same_as pixel_at(85,4)h
-pixel_at(8,987)`should_be_the_same_as pixel_at(7,18)
-pixel_at(875,884)sshould_be_the_same_as pixel_at(64,0)k
-pixel_at(97,9)dshould_be_the_same_as pixel_at(29,99)
-pixel_at(9,9)&should_be_the_same_as pixel_at(7,8)@
-H	
-pixel_at(8,89790)vshould_be_the_same_as pixel_at(035,62)A
-pixel_at(4,683)should_be_the_same_as pixel_at(847,8558)
-pixel_at(914,888)8should_be_the_same_as pixel_at(3,989)
-pixel_at(8,6)<should_be_the_same_as pixel_at(91,569)
-pixel_at(899,9)ishould_be_the_same_as pixel_at(943,4)
-pixel_at(9,9)Mshould_be_the_same_as pixel_at(9,4)%
-pixel_at(65,89)pshould_be_the_same_as pixel_at(2,9)W
-pixel_at(89,8)should_be_the_same_as pixel_at(8973,6)e
-pixel_at(99,3)should_be_the_same_as pixel_at(8592,658)
-pixel_at(08,980)yshould_be_the_same_as pixel_at(157,3)
-pixel_at(3,89)|should_be_the_same_as pixel_at(9,34648)ns[
-pixel_at(8883830,96)should_be_the_same_as pixel_at(98,8)[
-pixel_at(9,9)should_be_the_same_as pixel_at(9,69)
-pixel_at(9,8)*should_be_the_same_as pixel_at(69990,98)
-pixel_at(298,73)should_be_the_same_as pixel_at(9,2576)n
-pixel_at(648,0)}should_be_the_same_as pixel_at(8,387929)
-pixel_at(8688,1)Rshould_be_the_same_as pixel_at(9,1)4t
-pixel_at(95,088882689)should_be_the_same_as pixel_at(18241,9)\"
-pixel_at(2,27)Kshould_be_the_same_as pixel_at(77199,0099)
-pixel_at(2,89853)should_be_the_same_as pixel_at(98,8479)l\"\"Pb;
-pixel_at(974584,13)Hshould_be_the_same_as pixel_at(3,65)
-pixel_at(5818,88)/should_be_the_same_as pixel_at(89,8)1
-pixel_at(80,89)Dshould_be_the_same_as pixel_at(82,890)
-pixel_at(9,849)should_be_the_same_as pixel_at(74,99)`9
-pixel_at(999,88)cshould_be_the_same_as pixel_at(9,89)
-pixel_at(9963,59)should_be_the_same_as pixel_at(9,29)
-pixel_at(8,781)}should_be_the_same_as pixel_at(78,9)3)
-
-pixel_at(99,6);should_be_the_same_as pixel_at(46,818)
-pixel_at(8,811)jshould_be_the_same_as pixel_at(8,7)
-pixel_at(885,8).should_be_the_same_as pixel_at(99,87)
-pixel_at(3,7)mshould_be_the_same_as pixel_at(937,7)
-pixel_at(89,78)?should_be_the_same_as pixel_at(8,8)
-pixel_at(8887,83)should_be_the_same_as pixel_at(046,59)
-pixel_at(7,090)@should_be_the_same_as pixel_at(4,39283)
-pixel_at(21,0)2should_be_the_same_as pixel_at(036,9)x
-pixel_at(5,8);should_be_the_same_as pixel_at(8,9)
-pixel_at(66478,0)Fshould_be_the_same_as pixel_at(680,649)
-pixel_at(9,53098)\should_be_the_same_as pixel_at(3,3)
-pixel_at(9,9)Cshould_be_the_same_as pixel_at(9,8)
-pixel_at(29,690)Gshould_be_the_same_as pixel_at(9,7)yg,
-pixel_at(97,2)Sshould_be_the_same_as pixel_at(3,89)
-pixel_at(8,94789)Yshould_be_the_same_as pixel_at(88913,7)l
-pixel_at(8,9)Wshould_be_the_same_as pixel_at(2,932)
-pixel_at(349,86)Vshould_be_the_same_as pixel_at(2,8)7
-pixel_at(8,3)should_be_the_same_as pixel_at(9431,99)
-pixel_at(41,110)pshould_be_the_same_as pixel_at(91996,94)
-pixel_at(8983,84)should_be_the_same_as pixel_at(6,6)X
-pixel_at(69,9997)should_be_the_same_as pixel_at(06,90)_?
-pixel_at(88,99)>should_be_the_same_as pixel_at(0,56)
-pixel_at(71,70899)Dshould_be_the_same_as pixel_at(619,9)`[	maw,
-pixel_at(8,7)+should_be_the_same_as pixel_at(9,4)3I 
-pixel_at(50,19)|should_be_the_same_as pixel_at(8,9)
-pixel_at(8,9)Tshould_be_the_same_as pixel_at(895,18)+
-pixel_at(45,3)mshould_be_the_same_as pixel_at(88,58)
-pixel_at(994,89)should_be_the_same_as pixel_at(43,6)
-pixel_at(0,29)Zshould_be_the_same_as pixel_at(9,1)
-pixel_at(2,489)should_be_the_same_as pixel_at(817,37)
-pixel_at(0789804,9)2should_be_the_same_as pixel_at(1,9928)
-pixel_at(5,9)#should_be_the_same_as pixel_at(2,616998)
-pixel_at(9,48200)Nshould_be_the_same_as pixel_at(3,9)
-pixel_at(8,29)should_be_the_same_as pixel_at(9296,096)
-pixel_at(8,88)ushould_be_the_same_as pixel_at(58,51819)
-pixel_at(994998978,97)Sshould_be_the_same_as pixel_at(4,94458)
-pixel_at(21,12):should_be_the_same_as pixel_at(09,8)
-pixel_at(0,972523)mshould_be_the_same_as pixel_at(8,8)<s
-pixel_at(9739802,94)eshould_be_the_same_as pixel_at(99889,989)R
-pixel_at(8,5)[should_be_the_same_as pixel_at(8,8)
-pixel_at(88,8)'should_be_the_same_as pixel_at(3,2)F
-pixel_at(787,4)0should_be_the_same_as pixel_at(3,57)
-pixel_at(3,7)7should_be_the_same_as pixel_at(0,994):
-pixel_at(9,01)should_be_the_same_as pixel_at(89,67)
-pixel_at(5,93)should_be_the_same_as pixel_at(98,823)
-pixel_at(8,980)|should_be_the_same_as pixel_at(12,9)EUy;
-pixel_at(77,9)pshould_be_the_same_as pixel_at(7,38892989)L
-pixel_at(97,799)!should_be_the_same_as pixel_at(94,8)4
-pixel_at(9,7)'should_be_the_same_as pixel_at(8,4557)8
-pixel_at(8,0)zshould_be_the_same_as pixel_at(9093,5)
-pixel_at(5,8987)rshould_be_the_same_as pixel_at(9,219)3'
-pixel_at(768,889)?should_be_the_same_as pixel_at(5,9)
-pixel_at(9,82882)should_be_the_same_as pixel_at(8889,55829)'
-pixel_at(86,270)should_be_the_same_as pixel_at(9,4)
-pixel_at(9,634)should_be_the_same_as pixel_at(8,7)H3
-pixel_at(9,98)_should_be_the_same_as pixel_at(02316,5)L^
-pixel_at(19,0)Mshould_be_the_same_as pixel_at(49,88)?Fb

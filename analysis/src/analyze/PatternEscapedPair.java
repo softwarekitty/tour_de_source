@@ -23,7 +23,6 @@ public class PatternEscapedPair implements Comparable<PatternEscapedPair>{
 	@Override
 	public int compareTo(PatternEscapedPair o) {
 		int val = this.unescaped.compareTo(o.unescaped);
-		System.out.println("val: " + val);
 		return val;
 	}
 

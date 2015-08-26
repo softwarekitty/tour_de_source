@@ -1,0 +1,358 @@
+670	4	'((\\d|\\w|_)+)'	((\d|\w|_)+)
+12525	2	'foo.*bar'	foo.*bar
+11488	2	'^\\w'	^\w
+9286	2	'^(X|A)$'	^(X|A)$
+2486	3	'(\\d{4})-(\\d{2})-(\\d{2})\\s+(\\d{2}):(\\d{2}):(\\d{2})(\\.\\d+)?'	(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2}):(\d{2})(\.\d+)?
+9621	15	'^(\\d{10})$'	^(\d{10})$
+2656	2	'(\\w+\\d+)[:\\s]'	(\w+\d+)[:\s]
+4564	2	'>[ \r\n]+<'	>[ \r\n]+<
+8251	5	'\\s+(\\d+)$'	\s+(\d+)$
+5300	2	'QEMU_PID'	QEMU_PID
+3388	3	'.*\\((.*)\\).*'	.*\((.*)\).*
+8724	2	'\\|(\\S+)\\|'	\|(\S+)\|
+4786	2	'Components\\.manager'	Components\.manager
+2971	8	'(x|i[3-6])86$'	(x|i[3-6])86$
+13514	21	'x'	x
+224	2	'#(..)(..)(..)'	#(..)(..)(..)
+11865	4	'^ruby-'	^ruby-
+10897	3	'^[http|file|chrome|about].*'	^[http|file|chrome|about].*
+8331	14	'\\s{2,}'	\s{2,}
+9299	2	'^([ \\|0-9-]*)(.*) ?\\[([^ ]*) \\+(0x[0-9A-F]{1,8})\\](.*)$'	^([ \|0-9-]*)(.*) ?\[([^ ]*) \+(0x[0-9A-F]{1,8})\](.*)$
+8078	7	'\\s*-e\\s+.*#egg=(.*)$'	\s*-e\s+.*#egg=(.*)$
+12784	2	'initrd-(\\d+)\\.(\\d+)\\.(\\d+)-(.*).img'	initrd-(\d+)\.(\d+)\.(\d+)-(.*).img
+5602	2	'WIN_UTIL'	WIN_UTIL
+209	5	'## PATH PLACEHOLDER ##'	## PATH PLACEHOLDER ##
+6156	19	'[\\\\].'	[\\].
+12232	4	'browser\\.contentHandlers\\.types\\.[0-5]'	browser\.contentHandlers\.types\.[0-5]
+427	2	'&#8212;'	&#8212;
+10025	3	'^/?[a-zA-Z0-9_.-]+(/[a-zA-Z0-9_.-]+)*/?$'	^/?[a-zA-Z0-9_.-]+(/[a-zA-Z0-9_.-]+)*/?$
+5516	2	'Total'	Total
+11845	3	'^rebt.*'	^rebt.*
+11135	2	'^\\s*#\\s*include\\s*"(gmock/.+)"'	^\s*#\s*include\s*"(gmock/.+)"
+11519	2	'^\\|\\s*'	^\|\s*
+9437	8	'^([^.]*)\\.([^:]*):[\\t ]+(.*)'	^([^.]*)\.([^:]*):[\t ]+(.*)
+5002	2	'HOSTNAME=(.*)'	HOSTNAME=(.*)
+4285	3	'<h1>.*</h1>'	<h1>.*</h1>
+8051	2	'\\s*(\\d+)  (.*)$'	\s*(\d+)  (.*)$
+119	25	'"'	"
+2784	41	'(^|.*:)\\s*\\w*("|\')'	(^|.*:)\s*\w*("|\')
+8324	3	'\\sfile:\\s+"([^"]*)"'	\sfile:\s+"([^"]*)"
+2114	8	'([a-z])([A-Z])'	([a-z])([A-Z])
+4348	8	'<li>Plot: <a href=".+/admin_views/plot/1/">World Domination</a>\\s*<ul>\\s*<li>Plot details: <a href=".+/admin_views/plotdetails/1/">almost finished</a>'	<li>Plot: <a href=".+/admin_views/plot/1/">World Domination</a>\s*<ul>\s*<li>Plot details: <a href=".+/admin_views/plotdetails/1/">almost finished</a>
+424	7	'&#(x?[0-9a-fA-F]+)[^0-9a-fA-F]'	&#(x?[0-9a-fA-F]+)[^0-9a-fA-F]
+8731	16	']\\s*>'	]\s*>
+12708	2	'https?://'	https?://
+3955	3	'<(.*):(.*)>'	<(.*):(.*)>
+11605	9	'^def\\s*(\\w+)\\s*=(.*)$'	^def\s*(\w+)\s*=(.*)$
+538	7	'( |\\n|^)\\.\\. '	( |\n|^)\.\. 
+8250	2	'\\s+(\\S+\\s*)$'	\s+(\S+\s*)$
+658	2	'(([wum]asser(t|ted))) *\\(( *)(\\d+) *,\\s*([\\S\\s+<\\(\\)"]+) *,?.*'	(([wum]asser(t|ted))) *\(( *)(\d+) *,\s*([\S\s+<\(\)"]+) *,?.*
+8177	14	'\\s*\\\\'	\s*\\
+6292	8	'[\\x00-\\x20]+'	[\x00-\x20]+
+7950	81	'\\s'	\s
+8287	4	'\\s+const$'	\s+const$
+4799	7	'Contents of'	Contents of
+789	2	'(.*)\n'	(.*)\n
+12301	38	'coding[:=]\\s*([-\\w.]+)'	coding[:=]\s*([-\w.]+)
+7966	2	'\\s*#(.*)$'	\s*#(.*)$
+882	5	'(.+)\\.(\\w*)$'	(.+)\.(\w*)$
+8052	3	'\\s*(\\d+)\\s*'	\s*(\d+)\s*
+11249	2	'^\\s*//\\s*$'	^\s*//\s*$
+10036	3	'^/dev/'	^/dev/
+6178	8	'[\n\r\t\x0b\x0c]'	[\n\r\t\x0b\x0c]
+10409	3	'^Status against revision:\\s+(\\d+)'	^Status against revision:\s+(\d+)
+4421	6	'<root>([^<]*)</root>'	<root>([^<]*)</root>
+7040	2	'\\.\\w'	\.\w
+8951	2	'^(.*)\\.(diff|patch)$'	^(.*)\.(diff|patch)$
+4288	2	'<h2 class="ti-5"><a href="http://video\\.yahoo\\.com/(people|profile)/[0-9]+" beacon=".*">(.*)</a></h2>'	<h2 class="ti-5"><a href="http://video\.yahoo\.com/(people|profile)/[0-9]+" beacon=".*">(.*)</a></h2>
+2900	2	'(h|s)\\w*(\\d\\d\\d\\d\\d)'	(h|s)\w*(\d\d\d\d\d)
+12252	2	'call\\slaunch\\sbefore'	call\slaunch\sbefore
+11676	16	'^hg\\s*update\\s*-r\\s*(.*)\\s*'	^hg\s*update\s*-r\s*(.*)\s*
+5559	2	'Username="(\\w+)"'	Username="(\w+)"
+11522	3	'^_+'	^_+
+12365	2	'default:.*off'	default:.*off
+12248	2	'c.*'	c.*
+7979	2	'\\s*#define\\s+([a-zA-Z][a-zA-Z_0-9]*)\\s+([a-zA-Z_0-9]+)'	\s*#define\s+([a-zA-Z][a-zA-Z_0-9]*)\s+([a-zA-Z_0-9]+)
+5279	2	'Please choose another session'	Please choose another session
+8364	16	'\\w+(\\.\\w+)*$'	\w+(\.\w+)*$
+4241	3	'<ci.*</ci>'	<ci.*</ci>
+6405	6	'[^A-Za-z0-9_.!~*()-]'	[^A-Za-z0-9_.!~*()-]
+12747	2	'idle'	idle
+6489	2	'[^a-zA-Z0-9.]'	[^a-zA-Z0-9.]
+738	2	'(.*) cache:$'	(.*) cache:$
+786	2	'(.*)\\.\\w{3,4}$'	(.*)\.\w{3,4}$
+7448	3	'\\\\*\\#'	\\*\#
+7455	3	'\\\\?(gettext|_)\\('	\\?(gettext|_)\(
+6131	2	'[\\D]*(\\d+)\\w*$'	[\D]*(\d+)\w*$
+2152	3	'([}{])'	([}{])
+13346	4	'text/html|application/x(ht)?ml'	text/html|application/x(ht)?ml
+10568	27	'^[0-9]+$'	^[0-9]+$
+4784	2	'Components\\.classes'	Components\.classes
+4851	2	'Debian'	Debian
+12233	4	'browser\\.search\\.order\\.[1-9]'	browser\.search\.order\.[1-9]
+946	5	'(;?)$'	(;?)$
+7675	4	'\\d+ hdrcharset=([^\\n]+)\\n'	\d+ hdrcharset=([^\n]+)\n
+7522	7	'\\]'	\]
+10741	4	'^[^(\\[]*'	^[^(\[]*
+7009	5	'\\.?0+$'	\.?0+$
+3401	6	'.*\\.([a-zA-Z]{3,}$)'	.*\.([a-zA-Z]{3,}$)
+1994	5	"([^'\\\\]|\\\\(.|$))+"	([^'\\]|\\(.|$))+
+2539	5	'(\\s*)[^\\s]+@[^(\\s]+(\\s*)\\(.+\\)'	(\s*)[^\s]+@[^(\s]+(\s*)\(.+\)
+4571	4	'@'	@
+6282	3	'[\x00-\x08\x0e-\x1f\x7f]'	[\x00-\x08\x0e-\x1f\x7f]
+10186	2	'^Attached scsi disk (.+) at scsi(.+), channel (.+), id (.+), lun (.+)$'	^Attached scsi disk (.+) at scsi(.+), channel (.+), id (.+), lun (.+)$
+8246	4	'\\s+([!{};:>+\\(\\)\\],])'	\s+([!{};:>+\(\)\],])
+3855	2	':(\\s|$)'	:(\s|$)
+7969	10	'\\s*#.*'	\s*#.*
+2339	5	'(\\d*\\.?\\d*)\\s*(\\S*)'	(\d*\.?\d*)\s*(\S*)
+4372	2	'<meta name="video_width" content="([0-9]+)" />'	<meta name="video_width" content="([0-9]+)" />
+10899	7	'^[sgydpn]+$'	^[sgydpn]+$
+9408	4	'^([\\s*,;/])([\\?\\w\\.\\-\\+]+\\w*\\s*)(\\(?.*$)'	^([\s*,;/])([\?\w\.\-\+]+\w*\s*)(\(?.*$)
+2580	2	'(\\s|,)+'	(\s|,)+
+11663	2	'^get_bill_text?'	^get_bill_text?
+8093	11	'\\s*;\\s*'	\s*;\s*
+5653	7	'[ \n]*{(([^{}}]|{[^}]*})*)}'	[ \n]*{(([^{}}]|{[^}]*})*)}
+12604	3	'h[23]$'	h[23]$
+7934	2	'\r*\n'	\r*\n
+2860	2	'(const)?\\s*char\\s*\\*?$'	(const)?\s*char\s*\*?$
+6247	2	'[\\w ]+'	[\w ]+
+10640	2	'^[A-Z]'	^[A-Z]
+776	4	'(.*)\\((.*)\\)'	(.*)\((.*)\)
+8312	2	'\\s?["\']([a-zA-Z_"\'\\s\\d]+)["\']\\s+tset'	\s?["\']([a-zA-Z_"\'\s\d]+)["\']\s+tset
+6596	5	'[a-zA-Z_]([a-zA-Z0-9_.]*) *$'	[a-zA-Z_]([a-zA-Z0-9_.]*) *$
+9063	2	'^(<=|>=|<|>|!=|==)?\\s*([^\\s,]+)$'	^(<=|>=|<|>|!=|==)?\s*([^\s,]+)$
+3191	2	'.*/(\\d+)'	.*/(\d+)
+6913	8	'\\*'	\*
+1855	6	'([A-Z]{3}_ERROR_[A-Z_0-9]+)\\s+=?\\s*\\(?([A-Z_0-9-][A-Z_0-9-+ ]+[A-Z_0-9])'	([A-Z]{3}_ERROR_[A-Z_0-9]+)\s+=?\s*\(?([A-Z_0-9-][A-Z_0-9-+ ]+[A-Z_0-9])
+11059	3	u'^\\d+(\\.\\d+)*$'	^\d+(\.\d+)*$
+7001	8	'\\.+'	\.+
+13404	3	'undefined symbol: (.*)\t\\((.*)\\)'	undefined symbol: (.*)\t\((.*)\)
+12172	4	'asm-([\\w\\d_\\+\\.\\-]+)(/.*)'	asm-([\w\d_\+\.\-]+)(/.*)
+10676	13	'^[A-Za-z_][A-Za-z0-9_.]*$'	^[A-Za-z_][A-Za-z0-9_.]*$
+8378	3	'\\w+\\.erb'	\w+\.erb
+4776	2	'CoSponsor'	CoSponsor
+3108	2	'-\\d+$'	-\d+$
+12854	2	'libs/([^/]+)'	libs/([^/]+)
+11513	4	'^\x1b\\['	^\x1b\[
+7964	4	'\\s*# SOURCE LINE (\\d+)'	\s*# SOURCE LINE (\d+)
+442	6	'&&'	&&
+5834	36	'[-\\s]+'	[-\s]+
+6977	4	'\\.(?![^.]*$)'	\.(?![^.]*$)
+4753	2	'CPU\\s+.*'	CPU\s+.*
+4669	3	'Accelerate'	Accelerate
+13516	8	'x+'	x+
+656	2	'(([umsgf]asser(t|ted))) *\\(( *)(\\d+)'	(([umsgf]asser(t|ted))) *\(( *)(\d+)
+6836	9	'\\((\\S+).py, line (\\d+)'	\((\S+).py, line (\d+)
+10907	2	'^\\"|\\"$'	^\"|\"$
+3074	3	'--test-config=(.*)$'	--test-config=(.*)$
+7442	6	'\\\\(\\\'|\\"|\\\\|[abfnrtv]|x.{0,2}|[0-7]{1,3})'	\\(\\'|\"|\\|[abfnrtv]|x.{0,2}|[0-7]{1,3})
+9822	2	'^(unit)?tests?$'	^(unit)?tests?$
+2429	12	'(\\d+\\.\\d+\\.\\d+)'	(\d+\.\d+\.\d+)
+11546	2	'^application/x-java-((applet|bean)(;jpi-version=1\\.5|;version=(1\\.(1(\\.[1-3])?|(2|4)(\\.[1-2])?|3(\\.1)?|5)))?|vm)$'	^application/x-java-((applet|bean)(;jpi-version=1\.5|;version=(1\.(1(\.[1-3])?|(2|4)(\.[1-2])?|3(\.1)?|5)))?|vm)$
+2527	7	'(\\s*#)|(\\s*$)'	(\s*#)|(\s*$)
+6273	3	'[\x00-\x06\x0e-\x1f]'	[\x00-\x06\x0e-\x1f]
+8838	21	'^#define\\s{1,}(\\w{1,}_H)\\s{1,}<(.*)>'	^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>
+10778	32	'^[a-f0-9]{40}$'	^[a-f0-9]{40}$
+4403	2	'<param([^<>]+)>'	<param([^<>]+)>
+5640	2	'[ -~]*$'	[ -~]*$
+11307	4	'^\\s*T_VIRTUAL_CALL: (\\d+) calls on (.*):$'	^\s*T_VIRTUAL_CALL: (\d+) calls on (.*):$
+8176	2	'\\s*\\[auto-props\\]'	\s*\[auto-props\]
+6155	7	'[\\\\]([a-zA-Z]+[*]?) ?({|\\s*\\n?)'	[\\]([a-zA-Z]+[*]?) ?({|\s*\n?)
+9967	2	'^.+$'	^.+$
+2824	8	'(a(?!\\s[^a]))'	(a(?!\s[^a]))
+10028	10	'^/[-\\w/]+$'	^/[-\w/]+$
+6749	2	'\\$\\((\\w+)\\)'	\$\((\w+)\)
+3059	13	'-->'	-->
+2003	3	u'([^,]+),\\s+(\\d{2})\\s+([^\\s]+)\\s+(\\d{4})\\s+(\\d{2}):(\\d{2}):(\\d{2})\\s+([^\\s]+)'	([^,]+),\s+(\d{2})\s+([^\s]+)\s+(\d{4})\s+(\d{2}):(\d{2}):(\d{2})\s+([^\s]+)
+9339	4	'^([0-9]{4})$'	^([0-9]{4})$
+5692	3	'[ \t]+([A-Z0-9]+) \\/\\* PBXTargetDependency \\*\\/,\n'	[ \t]+([A-Z0-9]+) \/\* PBXTargetDependency \*\/,\n
+12908	3	'md[0-9]$|sd[a-z]+$'	md[0-9]$|sd[a-z]+$
+6965	4	'\\-\\-[A-Za-z][\\w\\-]*(\\.[\\w\\-]+)*\\=.*'	\-\-[A-Za-z][\w\-]*(\.[\w\-]+)*\=.*
+10105	2	'^<!-- ##### (\\w+) (\\w+) ##### -->$'	^<!-- ##### (\w+) (\w+) ##### -->$
+322	17	'#egg=([^&]*)'	#egg=([^&]*)
+9057	2	'^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'	^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$
+5232	2	'OUTPUT *(.*)'	OUTPUT *(.*)
+420	3	u'&#(\\d+);'	&#(\d+);
+6990	2	'\\.(\\d+)$'	\.(\d+)$
+4106	2	'<TestThread\\(.*, initial\\)>'	<TestThread\(.*, initial\)>
+3796	7	'0x[0-9a-fA-F]+'	0x[0-9a-fA-F]+
+5845	7	'[-a-zA-Z_@.]+'	[-a-zA-Z_@.]+
+693	2	'((msgasser(t|ted)NoTrace)) *\\(( *)(\\d+) *, *("\\S[^,^"]+\\S") *,?'	((msgasser(t|ted)NoTrace)) *\(( *)(\d+) *, *("\S[^,^"]+\S") *,?
+5813	6	'[-+]?(\\d+|\\d*\\.\\d+)$'	[-+]?(\d+|\d*\.\d+)$
+2550	7	'(\\s*\\n\\s*)'	(\s*\n\s*)
+7503	7	"\\\\openout.*`(.*)'"	\\openout.*`(.*)'
+3832	31	':'	:
+7674	2	'\\d+ failur.*\\d+ librar'	\d+ failur.*\d+ librar
+13356	2	'timestamp="(.*)"'	timestamp="(.*)"
+395	2	'%\\s*#.*coding[:=]\\s*([-\\w.]+)'	%\s*#.*coding[:=]\s*([-\w.]+)
+9618	8	'^(\\d{1,3})\\.(\\d{1,4})$'	^(\d{1,3})\.(\d{1,4})$
+5626	9	'Xorg'	Xorg
+2740	2	'(\\{[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}\\} |  # GUID\n                   [a-z0-9-\\.\\+_]*\\@[a-z0-9-\\._]+)  # Email format'	(\{[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}\} |  # GUID\n                   [a-z0-9-\.\+_]*\@[a-z0-9-\._]+)  # Email format
+3446	3	'.*\\s=\\s(\\d+)\\s;'	.*\s=\s(\d+)\s;
+4767	3	'Change (\\d+) submitted.'	Change (\d+) submitted.
+8751	2	'^ *(0x[0-9a-f]+) +0x([0-9a-f]+): +eax=0x([0-9a-f]+) ebx=0x([0-9a-f]+) ecx=0x([0-9a-f]+) edx=0x([0-9a-f]+)$'	^ *(0x[0-9a-f]+) +0x([0-9a-f]+): +eax=0x([0-9a-f]+) ebx=0x([0-9a-f]+) ecx=0x([0-9a-f]+) edx=0x([0-9a-f]+)$
+7923	2	'\\n{3,}'	\n{3,}
+8374	3	'\\w+\\('	\w+\(
+2896	2	'(https?://|git://)github'	(https?://|git://)github
+6777	11	'\\$if\\s+'	\$if\s+
+5910	2	'[0-9]+\\s+[+-][0-9]+'	[0-9]+\s+[+-][0-9]+
+5554	3	'Usage'	Usage
+11648	2	'^file://'	^file://
+8038	13	'\\s*([a-zA-Z_][-.:a-zA-Z_0-9]*)(\\s*=\\s*(\\\'[^\\\']*\\\'|"[^"]*"|[-a-zA-Z0-9./,:;+*%?!&$\\(\\)_#=~@]*))?'	\s*([a-zA-Z_][-.:a-zA-Z_0-9]*)(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[-a-zA-Z0-9./,:;+*%?!&$\(\)_#=~@]*))?
+3176	3	'.*(\\.so|\\.py[cod]?)$'	.*(\.so|\.py[cod]?)$
+10003	4	'^/([^/])/'	^/([^/])/
+6304	6	'[\\|,]'	[\|,]
+240	16	'#.*'	#.*
+12273	2	'cirrus'	cirrus
+10719	6	'^[\\w\\-:\\$]+'	^[\w\-:\$]+
+6857	2	'\\(CVS\\) ([\\d\\.]+) '	\(CVS\) ([\d\.]+) 
+8334	2	'\\s|,'	\s|,
+11974	4	'^v(ersion)?\\s*(\\d+)'	^v(ersion)?\s*(\d+)
+5970	6	'[<>&]'	[<>&]
+12198	8	'b*'	b*
+283	2	'#d8e8ff'	#d8e8ff
+6734	11	'\\$[_A-Za-z]\\w*'	\$[_A-Za-z]\w*
+6137	2	'[\\W_]+'	[\W_]+
+2913	2	'(mapper|table|column|session|attribute|engine):(.*)'	(mapper|table|column|session|attribute|engine):(.*)
+6878	7	'\\(\\)'	\(\)
+6473	2	'[^_\\w]'	[^_\w]
+1941	5	'([\\w-]+)([.#])(\\w+)'	([\w-]+)([.#])(\w+)
+94	4	' at 0x[0-9a-f]+'	 at 0x[0-9a-f]+
+2401	4	'(\\d+)\\.(\\d+)(\\.(\\d+))?(b(\\d+))?'	(\d+)\.(\d+)(\.(\d+))?(b(\d+))?
+12170	2	'as (\\w+)'	as (\w+)
+261	5	'#\\s*all-random\\s+'	#\s*all-random\s+
+7256	26	'\\W+'	\W+
+11784	3	'^multipart/byteranges; boundary="(.*)"$'	^multipart/byteranges; boundary="(.*)"$
+4617	2	'@\\w+( [^{}:\n]+)?:'	@\w+( [^{}:\n]+)?:
+7113	3	'\\/\\* END LOOP \\*\\/'	\/\* END LOOP \*\/
+8956	2	'^(.*)\\[(zero|one|two|few|many|other)\\]$'	^(.*)\[(zero|one|two|few|many|other)\]$
+11988	2	'^www\\.|^(?!http)\\w[^@]+\\.(com|edu|gov|int|mil|net|org)$'	^www\.|^(?!http)\w[^@]+\.(com|edu|gov|int|mil|net|org)$
+2933	2	'(require|define)\\s*\\(\\s*([\\\'\\"][^\\\'\\"]+[\\\'\\"]\\s*,)?\\s*\\[([^\\]]+)\\]'	(require|define)\s*\(\s*([\\'\"][^\\'\"]+[\\'\"]\s*,)?\s*\[([^\]]+)\]
+156	2	'"QOOXDOO_PATH"\\s*:\\s*"([^"]*)"\\s*,?'	"QOOXDOO_PATH"\s*:\s*"([^"]*)"\s*,?
+13162	2	'refundInfoList.refundInfo\\((\\d+)\\).(.*)'	refundInfoList.refundInfo\((\d+)\).(.*)
+2144	2	'([idel])|(\\d+):|(-?\\d+)'	([idel])|(\d+):|(-?\d+)
+9274	2	'^(Mozilla.*(Gecko|KHTML|MSIE|Presto|Trident)|Opera).*$'	^(Mozilla.*(Gecko|KHTML|MSIE|Presto|Trident)|Opera).*$
+12887	16	'macosx-(\\d+)\\.(\\d+)-(.*)'	macosx-(\d+)\.(\d+)-(.*)
+2507	2	'(\\r\\n|\\n|\\r)'	(\r\n|\n|\r)
+9337	2	'^([0-9]{1,3}\\.){0,3}[0-9]{1,3}(/[0-9]{1,2}){1}$'	^([0-9]{1,3}\.){0,3}[0-9]{1,3}(/[0-9]{1,2}){1}$
+9446	8	'^([^:]*): *(.*)'	^([^:]*): *(.*)
+10699	5	'^[\r\n]*(\\s*)'	^[\r\n]*(\s*)
+7094	3	'\\.|\\\\'	\.|\\
+7475	2	'\\\\\\.'	\\\.
+1720	8	'(["\\\\`])'	(["\\`])
+13300	2	'stopped'	stopped
+4822	3	'DD>([^<]+)'	DD>([^<]+)
+2990	5	', ([a-zA-Z0-9_]+)='	, ([a-zA-Z0-9_]+)=
+2939	8	'(sha1|sha224|sha384|sha256|sha512|md5)=([a-f0-9]+)'	(sha1|sha224|sha384|sha256|sha512|md5)=([a-f0-9]+)
+4981	2	'G_CONST_RETURN |const '	G_CONST_RETURN |const 
+6575	47	'[a-zA-Z][-_.:a-zA-Z0-9]*'	[a-zA-Z][-_.:a-zA-Z0-9]*
+12782	9	'init\\((.*)\\):'	init\((.*)\):
+9625	15	'^(\\d{3})-(\\d{3})-(\\d{3})$'	^(\d{3})-(\d{3})-(\d{3})$
+4648	7	'API|TOKEN|KEY|SECRET|PASS|PROFANITIES_LIST|SIGNATURE'	API|TOKEN|KEY|SECRET|PASS|PROFANITIES_LIST|SIGNATURE
+2508	33	'(\r\n|\r|\n)'	(\r\n|\r|\n)
+11990	2	'^x?vd[a-p]$'	^x?vd[a-p]$
+12560	3	'get_ipython\\(\\)\\.magic\\(u?["\\\']%?autopx'	get_ipython\(\)\.magic\(u?["\\']%?autopx
+326	9	'#include +"[^/]+\\.h"'	#include +"[^/]+\.h"
+5409	10	'Shipping="?FedEx"?;\\s*\\$Path="\\/acme"'	Shipping="?FedEx"?;\s*\$Path="\/acme"
+8191	2	'\\s*]\\s*'	\s*]\s*
+8953	2	'^(.*)\\.stgit$'	^(.*)\.stgit$
+13241	38	'sess_get_index\\)\\('	sess_get_index\)\(
+5346	17	'Revision: (.+)'	Revision: (.+)
+6592	5	'[a-zA-Z_$][A-Za-z0-9_$..]*'	[a-zA-Z_$][A-Za-z0-9_$..]*
+8291	2	'\\s+inet6\\s+([0-9a-f:]+)/\\d+\\s+scope\\s+link'	\s+inet6\s+([0-9a-f:]+)/\d+\s+scope\s+link
+12114	2	'a.*'	a.*
+5752	2	'[&?]location($|=|&)'	[&?]location($|=|&)
+4863	2	'District (\\d+)'	District (\d+)
+12091	2	'_flymake\\.cpp$'	_flymake\.cpp$
+2776	3	'(^\\s+Invalid read of size )\\d+'	(^\s+Invalid read of size )\d+
+8077	7	'\\s*-e\\s+'	\s*-e\s+
+583	2	'(((verify))) *\\(( *)(\\d+)'	(((verify))) *\(( *)(\d+)
+9708	8	'^(\\w){1}$'	^(\w){1}$
+8698	2	'\\{(http:\\/\\/[A-Za-z0-9_\\.\\/]+\\/nzb)\\}file'	\{(http:\/\/[A-Za-z0-9_\.\/]+\/nzb)\}file
+2366	3	'(\\d+)(st|nd|rd|th)'	(\d+)(st|nd|rd|th)
+13136	36	'queue_status\\)\\('	queue_status\)\(
+13443	2	'v=(.*)$'	v=(.*)$
+12898	2	'mapper/'	mapper/
+7663	4	'\\d*\\.\\d*\\.\\d*\\.\\d*'	\d*\.\d*\.\d*\.\d*
+11031	3	'^\\[.*\\]'	^\[.*\]
+2506	2	'(\r\n)|\r|(\n\r)'	(\r\n)|\r|(\n\r)
+10434	2	'^Vendor:'	^Vendor:
+9995	4	'^.{3,20}$'	^.{3,20}$
+9260	2	'^(FF|GF)\\((\\d+)\\)$'	^(FF|GF)\((\d+)\)$
+12077	3	'__start_tp_report(.*)__end_tp_report'	__start_tp_report(.*)__end_tp_report
+3901	2	':|\\*|\\?|"|<|>|\\|'	:|\*|\?|"|<|>|\|
+12906	11	'md5=([a-f0-9]+)'	md5=([a-f0-9]+)
+6291	7	'[\\x00-\\x20]'	[\x00-\x20]
+7901	2	'\\n\\s*\\n*'	\n\s*\n*
+2840	5	'(add|subtract|multiply|divide|remainder|power|and~|or~|xor~|minimum|maximum|negate|complement|absolute|random|head|tail|next|back|skip|at|pick|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|last|path|find|select|make|to|copy\\*|insert|remove|change|poke|clear|trim|sort|min|max|abs|cp|copy)$'	(add|subtract|multiply|divide|remainder|power|and~|or~|xor~|minimum|maximum|negate|complement|absolute|random|head|tail|next|back|skip|at|pick|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|last|path|find|select|make|to|copy\*|insert|remove|change|poke|clear|trim|sort|min|max|abs|cp|copy)$
+3053	3	'----gnatsweb-attachment----\n'	----gnatsweb-attachment----\n
+5903	6	'[0-9]+,[0-9]+'	[0-9]+,[0-9]+
+194	2	'# Sched features: ([\\w]+)'	# Sched features: ([\w]+)
+12802	2	'irb\\([a-zA-Z_][a-zA-Z0-9_]*\\):\\d{3}:\\d+[>*] '	irb\([a-zA-Z_][a-zA-Z0-9_]*\):\d{3}:\d+[>*] 
+10915	10	'^\\$Version="?1"?; Customer="?WILE_E_COYOTE"?; \\$Path="/acme"$'	^\$Version="?1"?; Customer="?WILE_E_COYOTE"?; \$Path="/acme"$
+5299	2	'QEMU_AUDIO_DRV.[^\\s]+\\s'	QEMU_AUDIO_DRV.[^\s]+\s
+4281	2	'<form(.*)name="login"(.*)</form>'	<form(.*)name="login"(.*)</form>
+2190	5	'(\\+|-|\\*|/|//|\\*\\*|and|or|xor|=\\?|=|==|<>|<|>|<=|>=)$'	(\+|-|\*|/|//|\*\*|and|or|xor|=\?|=|==|<>|<|>|<=|>=)$
+12729	2	'hwidcmd'	hwidcmd
+4611	9	'@[a-z]+'	@[a-z]+
+7912	3	'\ndrive_add'	\ndrive_add
+2361	2	'(\\d+)(.*)'	(\d+)(.*)
+10705	10	'^[\t ]*#[\t ]*define[\t ]+([a-zA-Z0-9_]+)[\t ]+'	^[\t ]*#[\t ]*define[\t ]+([a-zA-Z0-9_]+)[\t ]+
+8949	2	'^(.*)\\*(\\d+)\\*$'	^(.*)\*(\d+)\*$
+3073	2	u'--rows=[0-9]+'	--rows=[0-9]+
+3124	6	'-isysroot\\s+\\S+(\\s|$)'	-isysroot\s+\S+(\s|$)
+3131	10	'-py([123]\\.?[0-9]?)$'	-py([123]\.?[0-9]?)$
+2163	2	'(\\$\\{)\\d+(:[^}]+\\})'	(\$\{)\d+(:[^}]+\})
+7931	12	'\\r(?!\\n)'	\r(?!\n)
+2421	5	'(\\d+[abc])$'	(\d+[abc])$
+6116	3	'[\\/][^\\/]+[\\/]?$'	[\/][^\/]+[\/]?$
+13478	2	'virtio'	virtio
+921	4	'(/\\.)|(//)|([\\\\:\\*\\?\\""\\<\\>\\|]|[\x00-\x1f]|[\x7f-\x9f])'	(/\.)|(//)|([\\:\*\?\""\<\>\|]|[\x00-\x1f]|[\x7f-\x9f])
+2884	2	'(grubby version)?(\\s)?(\\d+)\\.(\\d+)(.*)'	(grubby version)?(\s)?(\d+)\.(\d+)(.*)
+3988	57	'<([^>]*)>: \\[0x([0-9a-f]+)-0x([0-9a-f]+)\\]'	<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]
+13196	6	'return.*[ \\(]..._FAILURE'	return.*[ \(]..._FAILURE
+5442	2	'Subversion Revision:'	Subversion Revision:
+7326	2	'\\[0\\:0\\] -A .* -j ACCEPT -p tcp --dport 80:81 -s 192.168.10.0/24'	\[0\:0\] -A .* -j ACCEPT -p tcp --dport 80:81 -s 192.168.10.0/24
+7681	11	'\\d+ tests?, listed below'	\d+ tests?, listed below
+8118	4	'\\s*=\\s*'	\s*=\s*
+3980	2	'<([^ ]+)(>| ).*'	<([^ ]+)(>| ).*
+5306	8	'REG_\\w+\\s+([^\\r]+)\\r\\n'	REG_\w+\s+([^\r]+)\r\n
+6188	3	'[\n]+'	[\n]+
+5786	4	'[,*")([\\]]'	[,*")([\]]
+8153	2	'\\s*\\((\\d+)\\)\\s*'	\s*\((\d+)\)\s*
+2911	3	'(js_Execute|CallHook) ([^ ]+) ([^ ]+ )?([^ ]+ms)'	(js_Execute|CallHook) ([^ ]+) ([^ ]+ )?([^ ]+ms)
+5437	2	'Status: (\\S+)'	Status: (\S+)
+6669	2	'[x-](\\d+)'	[x-](\d+)
+671	5	'((\\t)|(    ))(.*)'	((\t)|(    ))(.*)
+11080	7	'^\\d+_\\d+_?\\d*$'	^\d+_\d+_?\d*$
+11556	3	'^begin [0-7]{3}'	^begin [0-7]{3}
+2676	8	'(\x1b|~{)'	(\x1b|~{)
+11543	3	'^a+$'	^a+$
+3011	13	',\\s*'	,\s*
+9664	2	'^(\\s*)<.+> '	^(\s*)<.+> 
+5745	4	'[&<>"]'	[&<>"]
+3983	2	'<([^/!][^>]*[^/])>\\s+</'	<([^/!][^>]*[^/])>\s+</
+3785	3	'0 INFO SimpleTest START.*'	0 INFO SimpleTest START.*
+11225	2	'^\\s*(\n\r|\r\n|\r|\n)'	^\s*(\n\r|\r\n|\r|\n)
+4796	4	'Content-Length: (\\d+)'	Content-Length: (\d+)
+11497	2	'^\\w+:\\/\\/'	^\w+:\/\/
+1871	2	'([A-Za-z]+)(hat|check|dot|breve|acute|ddot|grave|tilde|mathring|bar|vec)'	([A-Za-z]+)(hat|check|dot|breve|acute|ddot|grave|tilde|mathring|bar|vec)
+6075	2	"[\\']([a-zA-Z0-9]+)[\\']"	[\']([a-zA-Z0-9]+)[\']
+3049	8	'----- (Start|End) Table ([A-Z](.[0-9])+) -----'	----- (Start|End) Table ([A-Z](.[0-9])+) -----
+6783	16	'\\${([A-Za-z][A-Za-z0-9_]*)}'	\${([A-Za-z][A-Za-z0-9_]*)}
+11097	10	'^\\d{4}-\\d\\d-\\d\\d \\d\\d:\\d\\d:\\d\\dZ$'	^\d{4}-\d\d-\d\d \d\d:\d\d:\d\dZ$
+1948	6	'([\\w.+]+)\\s*\\(#(\\d+),\\s*([\\w ]+),\\s*([\\w :]+)\\)\\s*\\[([^\\]]+)\\]?'	([\w.+]+)\s*\(#(\d+),\s*([\w ]+),\s*([\w :]+)\)\s*\[([^\]]+)\]?
+7074	4	'\\.pdb$'	\.pdb$
+11843	4	'^r(ev)?\\s*(\\d+)'	^r(ev)?\s*(\d+)
+6685	14	'\\!([^=])'	\!([^=])
+11032	6	'^\\[.*\\]$'	^\[.*\]$
+5952	2	'[:"<>|?]'	[:"<>|?]
+9304	2	'^([+-])(\\d{2}):?(\\d{2})$'	^([+-])(\d{2}):?(\d{2})$
+11455	2	'^\\s+\\(c-name\\s+([^\\s]+)\\s*\\)$'	^\s+\(c-name\s+([^\s]+)\s*\)$
+4538	3	'==\\d+==\\s+still\\s+reachable:\\s+([0-9,]+)\\s+bytes'	==\d+==\s+still\s+reachable:\s+([0-9,]+)\s+bytes
+3186	2	'.*-sdk ([a-zA-Z0-9.]*)'	.*-sdk ([a-zA-Z0-9.]*)
+10169	3	'^@[Aa][Tt][Tt][Rr][Ii][Bb][Uu][Tt][Ee]\\s*(..*$)'	^@[Aa][Tt][Tt][Rr][Ii][Bb][Uu][Tt][Ee]\s*(..*$)
+8908	2	'^((x?v|s)d)'	^((x?v|s)d)
+2237	2	'(\\S+)'	(\S+)
+5304	5	'REBOL$'	REBOL$
+7232	20	'\\D'	\D
