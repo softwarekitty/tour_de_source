@@ -23,7 +23,8 @@ namespace ConsoleApplication1
 
             if(!File.Exists(filteredCorpusPath)){
 
-                string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exportedCorpus.txt";
+                string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exportedCorpusRex.txt";
+                //string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\nRexStringsStudy\rexSample_0.txt";
                 if (!File.Exists(exportedCorpusPath))
                 {
                     Console.WriteLine("exiting because the file does not exist: " + exportedCorpusPath);
@@ -51,13 +52,14 @@ namespace ConsoleApplication1
                 // which brings us down to 2.5 days of work, which is managable wrt deadlines.
                 // we only have to do 30 percent because if a cell will be below minSimilarity we
                 // quit early.  These values would be discared anyway, and make up the majority of values.
-                int nRexGeneratedStringsPerRegex = 384;
+                int nRexGeneratedStringsPerRegex = 400;
 
                 // note the requirement to associate lines of the filteredCorpusPath files
                 // with the folders contianing rexStrings - a hazard but worth doing bc 
                 // it lets us look at the exact strings used in this evaluation.
                 PreProcess.generateFilteredCorpusAndRexFolders(exportedCorpusPath, filteredCorpusPath, rexStringsBase, nRexGeneratedStringsPerRegex);
                 Console.WriteLine("filtered corpus and Rex folders complete");
+                return;
             }
             
 

@@ -17,7 +17,7 @@ namespace ConsoleApplication1
 
         public static void generateFilteredCorpusAndRexFolders(string exportedCorpusPath, string filteredCorpusPath, string rexStringsBase, int nRexGeneratedStringsPerRegex)
         {
-            Regex numberFinder = new Regex(@"(\d+)\t(.*)");
+            Regex numberFinder = new Regex(@"(\d+)\t(\d)\t(.*)\t(.*)");
             Random gen = new Random(int.MaxValue);
             Dictionary<int, Regex> regexMap = new Dictionary<int, Regex>();
             Dictionary<int, string> patternMap = new Dictionary<int, string>();
@@ -34,10 +34,9 @@ namespace ConsoleApplication1
                     if (lineMatch.Success)
                     {
                         int index = int.Parse(lineMatch.Groups[1].Value);
-                        string pattern = lineMatch.Groups[2].Value;
+                        string pattern = lineMatch.Groups[4].Value;
                         Console.WriteLine("i: "+index+" pattern: "+pattern);
 
-                        //TODO
                         string tempFilePath = Util.getTempFilePath(index);
                         try
                         {
@@ -80,7 +79,7 @@ namespace ConsoleApplication1
             }
             System.IO.File.WriteAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\failureMap.txt", Util.mapToString(failureMap));
             System.IO.File.WriteAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exceptionMap.txt", Util.mapToString(exceptionMap));
-            System.IO.File.WriteAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\timeoutMap", Util.mapToString(timeoutMap));
+            System.IO.File.WriteAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\timeoutMap.txt", Util.mapToString(timeoutMap));
             System.IO.File.WriteAllText(@"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\filteredCorpus.txt", Util.mapToString(patternMap));
 
 
@@ -105,8 +104,24 @@ namespace ConsoleApplication1
                 int actualIndex = keyList[i];
                 string rexPath = Util.getRexFilePath(rexStringsBase,nKeys,i);
                 HashSet<string> matchingStrings = getMatchStrings(nRexGeneratedStringsPerRegex, gen, patternMap[actualIndex], regexMap[actualIndex], Util.getTempFilePath(i));
-                System.IO.File.WriteAllText(rexPath, Util.setToString(matchingStrings));
+                System.IO.File.WriteAllText(rexPath, getDelimitedRexFileContent(matchingStrings));
+                HashSet<string> reconstitutedMatchingStrings = Util.getRexGeneratedStrings(actualIndex, nKeys, rexStringsBase);
+                if (!matchingStrings.Equals(reconstitutedMatchingStrings))
+                {
+                    throw new Exception("must be able to get original Rex strings back from rex strings file");
+                }
             }
+        }
+
+        static String getDelimitedRexFileContent(HashSet<String> matchingStrings)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (string ms in matchingStrings)
+            {
+                sb.Append(ms + Util.getRexDelimiter());
+            }
+            string rexFileContent = sb.ToString();
+            return sb.ToString();
         }
 
 
@@ -118,6 +133,7 @@ namespace ConsoleApplication1
             System.IO.File.WriteAllText(tempFilePath, pattern);
             int maxAttempts = 9;
             int attemptCounter = 0;
+            int counter = 0;
             while (matchingStrings.Count < maxStrings && attemptCounter < maxAttempts)
             {
 
@@ -130,7 +146,7 @@ namespace ConsoleApplication1
                 //System.IO.File.WriteAllText(@"C:\Users\IEUser\Desktop\rexOutput.txt", rexOutput);
                 //System.IO.File.WriteAllLines(@"C:\Users\IEUser\Desktop\rexOutputSplit.txt", rexOutputLines);
 
-                int counter = 0;
+
                 foreach (string rexOutLine in rexOutputLines)
                 {
                     if (matchingStrings.Count == maxStrings)
@@ -138,7 +154,7 @@ namespace ConsoleApplication1
                         break;
                     }
 
-                    //this says it's okay for the one line to be blank...right?
+                    //this says it's okay for the one line to be blank
                     if (rexOutLine.Equals("") && counter == 0)
                     {
                         counter++;

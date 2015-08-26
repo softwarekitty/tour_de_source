@@ -32,6 +32,11 @@ namespace ConsoleApplication1
             return bucketNames;
         }
 
+        public static string getRexDelimiter()
+        {
+            return "\n2jxj8oSFLPEfrP4q8yVn6h0vfWqeD5lRazvCUfWspIXjZl8ssIZB4Nr5GqR2\n";
+        }
+
         public static string decideBucket(int rowNumber, int nBuckets)
         {
             int bucketID = rowNumber / nBuckets;
@@ -151,13 +156,11 @@ namespace ConsoleApplication1
             HashSet<string> generatedStrings = new HashSet<string>();
             using (StreamReader r = new StreamReader(rexFilePath))
             {
-                string line = null;
-                while ((line = r.ReadLine()) != null)
+                string text = r.ReadToEnd();
+                string[] lines = text.Split(new string[] { Util.getRexDelimiter()}, StringSplitOptions.None);
+                foreach (string s in lines)
                 {
-                    if (line.Length > 0)
-                    {
-                        generatedStrings.Add(line);
-                    }
+                    generatedStrings.Add(s);
                 }
             }
             return generatedStrings;

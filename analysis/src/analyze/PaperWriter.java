@@ -60,8 +60,8 @@ public class PaperWriter {
 		// filesPerProject, rFilesPerProject, regexPerFile
 		filesToMake.add(new NameContentsPair("saturation.tex", Composer.composeHistogramTable(4, Section0.getContextStatsAndAddToDatabase(connectionString, databaseFileContent), "How Saturated are Projects with Utilizations? (RQ1)", "table:saturation")));
 
-		// make a latex table with the top N regexes by weight.
-		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.4, "pattern", "nProjects", "Top 10 Patterns by nProjects (RQ1)", "table:topNW")));
+//		// make a latex table with the top N regexes by weight.
+//		filesToMake.add(new NameContentsPair("topNW.tex", Composer.composeRankTable(10, corpus.iterator(), 2.4, "pattern", "nProjects", "Top 10 Patterns by nProjects (RQ1)", "table:topNW")));
 
 		// create the table showing source,Q1,Avg,Med,Q3,Max for pattern weight,
 		// distinct features, token count and pattern length
@@ -179,9 +179,9 @@ public class PaperWriter {
 		while (it.hasNext()) {
 			WeightRankedRegex wrr = it.next();
 			int weight = wrr.getRankableValue();
-			if (weight > 2 && rexCompatible(wrr)) {
+			if (weight > 1 && rexCompatible(wrr)) {
 				sb.append(i + "\t" +weight + "\t" + wrr.getContent() +"\t"+ wrr.getUnescapedPattern() + "\n");
-			}else if(weight < 3){
+			}else if(weight == 1){
 				System.out.println("underweight: " + wrr.getContent());
 			}else{
 				System.out.println("incompatible: " + wrr.getContent());
