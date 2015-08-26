@@ -268,12 +268,18 @@ This category contains 4 clusters. Each of the clusters contain an equals symbol
 %\subsubsection{Clusters Not Falling Into Any Category}
 %\verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`".*"'(42)!,\verb!`*$'(42)!, \verb!`(^|.*:)\s*\w*("|\')'(41)!, \verb!`\(\*'(38)!, \verb!`/|-'(36)!, \verb!`.'(35)!, \verb!`\\|/'(31)!, \verb!`::'(30)!, \verb!`/\*'(29)!
 
+\subsubsection{Summary}
+We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the comma for the cluster in Table~\ref{table:exampleCluster}.
+These six categories define what users are doing with regexes at a high level: using default character classes, defining their own character classes, matching single characters, parsing variable assignments, parsing the contents of brackets, or matching whole lines. The higher frequency of default character class matching than custom character class matching corroborates our developer survey responses.
+ One of the six common cluster categories, \emph{capturing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
+
 
 \subsection{{RQ5:} What is the impact of \emph{not} supporting various regular expression features?}
 \label{results:rq3}
 
 
-\subsection{Regex Feature Usage}
+\subsubsection{Summary}
+
 The pattern language for Python, which is used to compose regexes, supports default character classes like the ANY or dot character class: \verb!.! meaning, `any character except newline' (a full list of features and examples is in the first four columns of Table~\ref{table:featureStats}).  
 It also supports three other default character classes: \verb!\d!, \verb!\w!, \verb!\s! (and their negations). All of these default character classes can be simulated using the custom character class (CCC) feature, which can create semantically equivalent regexes.  
 For example  the decimal character class: \verb!\d! is equivalent to a CCC containing all 10 digits:  \verb!d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!.  
@@ -330,11 +336,6 @@ The survey validates the assumption that regex are widely used by professional s
 %Although research into regex use in general purpose and scripting languages is important, usage within command line tools and text editors should also be considered.  
 The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regex being hard to read and hard to compose, and most of the tools that they indicate using are focused on composition, indicating a need for tools that help make existing regexes more readable.
 
-\subsection{Summary}
-\label{sec:clusterResults}
-We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the comma for the cluster in Table~\ref{table:exampleCluster}.
-These six categories define what users are doing with regexes at a high level: using default character classes, defining their own character classes, matching single characters, parsing variable assignments, parsing the contents of brackets, or matching whole lines. The higher frequency of default character class matching than custom character class matching corroborates our developer survey responses.
- One of the six common cluster categories, \emph{capturing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
 
 %whereas each group in the second part is drawn from a subset of strings in the corpus known to contain at least one of the desired features.  We did this because the presence of a feature in a pattern can be easily lost
 

@@ -1,13 +1,10 @@
 \section{Related Work}
 \label{sec:related}
-
-\todoLast{add \cite{Parnin:2013:AUJ:2589712.2589717, Callau:2011:DUD:1985441.1985448, Dyer:2014:MBA:2568225.2568295}}
-
 Regular expressions have been a focus point in a variety of research objectives. From the user perspective, tools have been developed to support more robust creation~\cite{Spishak:2012:TSR:2318202.2318207} or to allow visual debugging~\cite{Beck:2014:RVD:2591062.2591111}.
 Building on the perspective that regexes are difficult to create, other research has focused on removing the human from the creation process by learning regular expressions from  text~\cite{Babbar:2010:CBA:1871840.1871848, Li:2008:REL:1613715.1613719}.
 
 Regarding applications, regular expressions have been used for test case generation~\cite{Ghosh:2013:JAT:2486788.2486925, Galler:2014:STD:2683035.2683100, Anand:2013:OSM:2503903.2503991, Tillmann:2014:TAT:2642937.2642941},  and
-solvers for string constraints~\cite{Trinh:2014:SSS:2660267.2660372, hampi}.
+as specifications for string constraint solvers~\cite{Trinh:2014:SSS:2660267.2660372, hampi}.
 Regexes are also employed in critical missions like mysql injection prevention~\cite{Yeole:2011:ADT:1980022.1980229} and network intrusion detection~\cite{network}, or in more diverse applications like DNA sequencing alignment~\cite{1594922} or querying RDF data~\cite{Lee:2010:PSQ:1871871.1871877, Alkhateeb:2009:ESR:1540656.1540975}.
 
 
@@ -24,8 +21,18 @@ some data mining frameworks use regular expressions as queries (e.g., ~\cite{Beg
 Research tools like Hampi~\cite{hampi}, and Rex~\cite{rex}, and commercial tools like brics\cite{brics} and RE2~\cite{re2}, all use regular expressions for various task. Hampi was developed  in academia and uses regular expressions as a specification language for a strong constraint solver. Rex was developed by Microsoft Research and generates strings for regular expressions that can be used in several applications, such as test case generation~\cite{Anand:2013:OSM:2503903.2503991, Tillmann:2014:TAT:2642937.2642941}. Brics is an open-source package that creates automata from regular expressions for manipulation and evaluation.
 RE2 is an open-source tool created by Google to power Code Search with a more efficient regex engine.
 
-Mining properties of open source repositories is a well-studied topic, focusing, for example, on API usage patterms~\cite{Linares-Vasquez:2014:MEA:2597073.2597085} and bug characterizations~\cite{Chen:2014:ESD:2597073.2597108}.
+
+Mining properties of open source repositories is a well-studied topic, focusing, for example, on API usage patterns~\cite{Linares-Vasquez:2014:MEA:2597073.2597085} and bug characterizations~\cite{Chen:2014:ESD:2597073.2597108}.
+Exploring language feature usage by mining source code has been studied extensively for 
+Smalltalk~\cite{Callau:2011:DUD:1985441.1985448, Callau:2013:DUD:2589712.2589718}, 
+JavaScript~\cite{Richards:2010:ADB:1809028.1806598}, 
+and Java~\cite{Dyer:2014:MBA:2568225.2568295, Grechanik:2010:EIL:1852786.1852801, Parnin:2013:AUJ:2589712.2589717, Livshits:2005:RAJ:2099708.2099724}, 
+and more specifically, 
+Java generics~\cite{Parnin:2013:AUJ:2589712.2589717} and 
+Java reflection~\cite{Livshits:2005:RAJ:2099708.2099724}. 
 To our knowledge, this is the first work to mine and evaluate regular expression usages from existing software repositories. Related to mining work, regular expressions have been used to form queries in mining framework~\cite{Begel:2010:CDE:1806799.1806821}, but have not been the focus of the mining activities.
+Surveys have been used to measure adoption of various programming languages~\cite{Meyerovich:2013:EAP:2509136.2509515, another surveypaper}, and been combined with source code analysis~\cite{Meyerovich:2013:EAP:2509136.2509515}, but have not focused on regular expressions or on particular regular expression feature usages. 
+
 
 % \subsection{Research on Regular Expressions}
 % Visual debugging of regular expressions~\cite{Beck:2014:RVD:2591062.2591111}
