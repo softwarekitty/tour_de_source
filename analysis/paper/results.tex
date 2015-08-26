@@ -5,14 +5,8 @@
 
 In this section, we present the results of each research question.
 
-\subsection{RQ0: In what context do developers use regular expressions}
-To understand the context of when and how programmers use regular expressions,
-we designed a survey with 41 questions about regex usage. This survey was
-deployed to 22 developers at Dwolla, a company that provides software for
- online and mobile payment management.
- \todoLast{they are probably ok with using their name - check during final scrub by Dwolla}
-Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
-The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers. The questions asked about general regex usage and the use of various language features. 
+\subsection{RQ1: In what context do developers use regular expressions?}
+
 
 On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly. 
 Table~\ref{tab:regexenviron} shows how frequently participants compose regexes using each of several languages and technical environments.
@@ -67,8 +61,10 @@ Using a similar 7-point likert scale that includes `always' as a seventh point, 
 When asked an open ended question about pain points encountered with regular expressions, we observed three main categories. The most common, ``hard to compose," was represented in 61\% (11) responses. Next, 
  39\% (7) developers responded that regexes are ``hard to read" and 17\% (3) indicated difficulties with ``inconsistency across implementations," which manifest when using regexes in multiple languages. These responses do not sum to 18 as three developers provided overlapping  answers.
 
+\paragraph{Summary - RQ1}
 
-\subsection{RQ1: How  is the {\tt re} module used?}
+
+\subsection{RQ2: How  is the {\tt re} module used?}
 To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
 We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}).
 We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}).
@@ -155,12 +151,16 @@ When considering flag use, we excluded the default flag, which is built into the
 %\todoNow{add patternStats table back in and describe it if there is enough time.  Note the longest pattern present in patternLength.csv in analysis folder was probably automatially generated from text and is monstrous!}
 
 
-\subsubsection{Summary}
+\paragraph{Summary - RQ2}
 
 Only about half of the projects sampled contained any utilizations.  Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.  
+
+
+
+
 %The most frequently observed patterns were used to match whitespace and digits.
-\leavevmode\color{black}
-\subsection{RQ2: Which regular expression language features are most commonly used in Python?}
+
+\subsection{RQ3: Which regular expression language features are most commonly used in Python?}
 \label{results:re2}
 
 To measure feature usage, we  count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
@@ -202,7 +202,66 @@ Of the four projects selected for this analysis, RE2 supports the most studied f
 No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.  Brics is the only project that does not support any of the six default character classes (WSP, DEC, WRD, NWSP, NWRD, NDEC) - the rest of the projects support all of those features.  RE2 also supports the PNG feature (which allows you to name capturing groups), but does not support the BKRN feature which is necessary to refer back to the named capture group.
 \leavevmode\color{black}
 
-\subsubsection{Summary}
+
+\subsubsection{Survey Results for Feature Usage}
+The pattern language for Python, which is used to compose regexes, supports default character classes like the ANY or dot character class: \verb!.! meaning, `any character except newline' (a full list of features and examples is in the first four columns of Table~\ref{table:featureStats}).  
+It also supports three other default character classes: \verb!\d!, \verb!\w!, \verb!\s! (and their negations). All of these default character classes can be simulated using the custom character class (CCC) feature, which can create semantically equivalent regexes.  
+For example  the decimal character class: \verb!\d! is equivalent to a CCC containing all 10 digits:  \verb!d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!.  
+%Users have a choice when using regex between writing \verb!\d! and \verb![0-9]! and whereas the first option may be shorter, the second may seem more intuitive and readable.  
+Other default character classes such as the word character class: \verb!\w! may not be as intuitive to encode in a CCC: \verb![a-zA-Z0-9_]!.  
+
+Survey participants were asked if they use only CCC, use CCC more than default, use both equally, use default more than CCC or use only default.  Results for this question are shown in Table~\ref{tab:cccvsdefault}, with 67\% (12) indicating that they use default the most. 
+Participants were also asked to explain their preferences.  Participants who favored CCC mostly said something equivalent to ``it is more explicit," whereas the participants who favored default character classes said,  ``it is less verbose" and ``I like using built-in code."
+
+\begin{table}
+\caption{Survey results for preferences between custom character and default character classes. \label{tab:cccvsdefault}}
+\begin{center}
+\begin{tabular}{l|c}
+Preference & Frequency \\ \hline
+use only CCC & 1\\
+use CCC more than default & 5 \\
+use both equally & 2\\
+use default more than CCC & 10\\
+use only default & 2\\
+
+\end{tabular}
+\end{center}
+\end{table}
+
+To further explore how frequently participants use various regex features, participants were asked five questions (on a 6-point likert scale) about how frequently they use specific related groups of features:
+\begin{itemize} \itemsep -2pt
+    \item endpoint anchors: \verb!^! and \verb!$!
+    \item capture groups: (capture me)
+    \item word boundaries: \verb!word\b!
+    \item (negative) look-ahead/behinds: \verb!a(?=bc)!, \verb!(?<!x)yz!, \verb!(?<=a)!, \verb!a(?!yz)!
+    \item lazy repetition: \verb!ab+?!, \verb!xy{2,3}?!
+\end{itemize}
+These features were chosen based on \todoMid{why just these features?}
+Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used. 
+
+\begin{table}
+\caption{Survey results for regex usage frequencies for five feature groups, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 \label{tab:regexfeaturegroups}}
+\begin{center}
+\begin{tabular}{l|c}
+Group & Frequency \\ \hline
+endpoint anchors & 4.4\\
+capture groups & 4.2 \\
+word boundaries & 3.5 \\
+lazy repetition & 2.9\\
+(negative) look-ahead/behinds & 2.5\\
+
+
+\end{tabular}
+\end{center}
+\end{table}
+
+The survey validates the assumption that regex are widely used by professional software developers and sheds some light into the context in which regexes are used. 
+%Future research into regex can focus on activities that prove to be most important to developers, namely capturing parts of strings and searching for specific content.  
+%Although research into regex use in general purpose and scripting languages is important, usage within command line tools and text editors should also be considered.  
+The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regex being hard to read and hard to compose, and most of the tools that they indicate using are focused on composition, indicating a need for tools that help make existing regexes more readable.
+
+
+\paragraph{Summary - RQ3}
 We found that the eight most common features are found on over 50\% of the projects.
 We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects.
 
@@ -268,74 +327,19 @@ This category contains 4 clusters. Each of the clusters contain an equals symbol
 %\subsubsection{Clusters Not Falling Into Any Category}
 %\verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`".*"'(42)!,\verb!`*$'(42)!, \verb!`(^|.*:)\s*\w*("|\')'(41)!, \verb!`\(\*'(38)!, \verb!`/|-'(36)!, \verb!`.'(35)!, \verb!`\\|/'(31)!, \verb!`::'(30)!, \verb!`/\*'(29)!
 
-\subsubsection{Summary}
+\paragraph{Summary - RQ4}
 We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the comma for the cluster in Table~\ref{table:exampleCluster}.
 These six categories define what users are doing with regexes at a high level: using default character classes, defining their own character classes, matching single characters, parsing variable assignments, parsing the contents of brackets, or matching whole lines. The higher frequency of default character class matching than custom character class matching corroborates our developer survey responses.
  One of the six common cluster categories, \emph{capturing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
 
 
-\subsection{{RQ5:} What is the impact of \emph{not} supporting various regular expression features?}
-\label{results:rq3}
-
-
-\subsubsection{Summary}
-
-The pattern language for Python, which is used to compose regexes, supports default character classes like the ANY or dot character class: \verb!.! meaning, `any character except newline' (a full list of features and examples is in the first four columns of Table~\ref{table:featureStats}).  
-It also supports three other default character classes: \verb!\d!, \verb!\w!, \verb!\s! (and their negations). All of these default character classes can be simulated using the custom character class (CCC) feature, which can create semantically equivalent regexes.  
-For example  the decimal character class: \verb!\d! is equivalent to a CCC containing all 10 digits:  \verb!d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!.  
-%Users have a choice when using regex between writing \verb!\d! and \verb![0-9]! and whereas the first option may be shorter, the second may seem more intuitive and readable.  
-Other default character classes such as the word character class: \verb!\w! may not be as intuitive to encode in a CCC: \verb![a-zA-Z0-9_]!.  
-
-Survey participants were asked if they use only CCC, use CCC more than default, use both equally, use default more than CCC or use only default.  Results for this question are shown in Table~\ref{tab:cccvsdefault}, with 67\% (12) indicating that they use default the most. 
-Participants were also asked to explain their preferences.  Participants who favored CCC mostly said something equivalent to ``it is more explicit," whereas the participants who favored default character classes said,  ``it is less verbose" and ``I like using built-in code."
-
-\begin{table}
-\caption{Survey results for preferences between custom character and default character classes. \label{tab:cccvsdefault}}
-\begin{center}
-\begin{tabular}{l|c}
-Preference & Frequency \\ \hline
-use only CCC & 1\\
-use CCC more than default & 5 \\
-use both equally & 2\\
-use default more than CCC & 10\\
-use only default & 2\\
-
-\end{tabular}
-\end{center}
-\end{table}
-
-To further explore how frequently participants use various regex features, participants were asked five questions (on a 6-point likert scale) about how frequently they use specific related groups of features:
-\begin{itemize} \itemsep -2pt
-    \item endpoint anchors: \verb!^! and \verb!$!
-    \item capture groups: (capture me)
-    \item word boundaries: \verb!word\b!
-    \item (negative) look-ahead/behinds: \verb!a(?=bc)!, \verb!(?<!x)yz!, \verb!(?<=a)!, \verb!a(?!yz)!
-    \item lazy repetition: \verb!ab+?!, \verb!xy{2,3}?!
-\end{itemize}
-These features were chosen based on \todoMid{why just these features?}
-Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used. 
-
-\begin{table}
-\caption{Survey results for regex usage frequencies for five feature groups, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 \label{tab:regexfeaturegroups}}
-\begin{center}
-\begin{tabular}{l|c}
-Group & Frequency \\ \hline
-endpoint anchors & 4.4\\
-capture groups & 4.2 \\
-word boundaries & 3.5 \\
-lazy repetition & 2.9\\
-(negative) look-ahead/behinds & 2.5\\
-
-
-\end{tabular}
-\end{center}
-\end{table}
-
-The survey validates the assumption that regex are widely used by professional software developers and sheds some light into the context in which regexes are used. 
-%Future research into regex can focus on activities that prove to be most important to developers, namely capturing parts of strings and searching for specific content.  
-%Although research into regex use in general purpose and scripting languages is important, usage within command line tools and text editors should also be considered.  
-The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regex being hard to read and hard to compose, and most of the tools that they indicate using are focused on composition, indicating a need for tools that help make existing regexes more readable.
-
+%\subsection{{RQ5:} What is the impact of \emph{not} supporting various regular expression features?}
+%\label{results:rq3}
+%
+%
+%
+%
+%\paragraph{Summary - RQ5}
 
 %whereas each group in the second part is drawn from a subset of strings in the corpus known to contain at least one of the desired features.  We did this because the presence of a feature in a pattern can be easily lost
 

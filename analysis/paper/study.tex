@@ -26,27 +26,36 @@ To understand how regular expressions and regular expression features are used i
 
 \noindent \textbf{RQ1:} In what context do developers use regular expressions?
 
-We survey 18 developers at a local company about when, why, and how often they use regular expressions. \\
+We designed and deployed a survey about when, why, and how often they use regular expressions. This was completed by 18 professional developers at a small software start-up company.\\
 
 \noindent \textbf{RQ2:} How  is the {\tt re} module used in Python projects?
 
-We measure how often calls are made to the {\tt re} module per file and per project in Python projects.
-To provide context as to the overlap among regular expression strings used in Python, we explore the most common regex {patterns} across all utlizations.\\
-
+We explore invocations of  the {\tt re} module in \DTLfetch{data}{key}{nProjScanned}{value} Python projects.\\
 
 
 \noindent \textbf{RQ3:} Which regular expression language features are most commonly used in python?
 
-We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Section~\ref{study:corpus} with examples.\\
+We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Section~\ref{study:corpus} with examples. We then map the feature coverage for four common regex support tools, brics, hampi, RE2 and Rex, and explore survey responses of feature usage for some of the less supported features.\\
 
 \noindent \textbf{RQ4:} How semantically similar are regexes?
 
 We measure similarity between pairs of regexes by generating strings that match each and evaluating each other regex against those strings to build a similarity matrix. Then we use clustering to form semantic groupings. \\
 
-\noindent \textbf{RQ5:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
+%\noindent \textbf{RQ5:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
+%
+%We use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for. \\
 
-We use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for. \\
 Next, we describe how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
+
+\subsection{Survey Design}
+\label{study:survey}
+To understand the context of when and how programmers use regular expressions,, 
+we designed a survey with 41 questions about regex usage. This survey was
+deployed to 22 developers at Dwolla, a company that provides software for
+ online and mobile payment management.
+ \todoLast{they are probably ok with using their name - check during final scrub by Dwolla}
+Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
+The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers. The questions asked about general regex usage and the use of various language features. 
 
 
 \subsection{Regex Corpus}
