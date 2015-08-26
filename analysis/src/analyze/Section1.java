@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -98,7 +99,7 @@ public class Section1 {
 			throw new RuntimeException("the empty corpus should not be null");
 		}
 
-		HashMap<String, TreeSet<Integer>> patternProjectMM = new HashMap<String, TreeSet<Integer>>();
+		HashMap<PatternEscapedPair, TreeSet<Integer>> patternProjectMM = new HashMap<PatternEscapedPair, TreeSet<Integer>>();
 		// prepare sql
 		Connection c = null;
 		Statement stmt = null;
@@ -122,14 +123,17 @@ public class Section1 {
 			String pattern = rs.getString("pattern");
 			int projectID = rs.getInt("uniqueSourceID");
 			try {
-				String unquotedPattern = WeightRankedRegex.getUnquotedPythonPattern(pattern);
-				TreeSet<Integer> projectIDs = patternProjectMM.get(unquotedPattern);
-				if (projectIDs == null) {
-					projectIDs = new TreeSet<Integer>();
+				PatternEscapedPair patternEscapedPair = new PatternEscapedPair(pattern);
+				if(patternEscapedPair.getPattern().equals("")){
+					System.out.println("found empty: " + pattern);
+				}else{
+					TreeSet<Integer> projectIDs = patternProjectMM.get(patternEscapedPair);
+					if (projectIDs == null) {
+						projectIDs = new TreeSet<Integer>();
+					}
+					projectIDs.add(projectID);
+					patternProjectMM.put(patternEscapedPair, projectIDs);
 				}
-				projectIDs.add(projectID);
-				patternProjectMM.put(unquotedPattern, projectIDs);
-
 			} catch (QuoteRuleException e) {
 				//System.out.println("problem unquoting pattern: " + pattern);
 				errorPatternSet.add(pattern); 
@@ -140,9 +144,15 @@ public class Section1 {
 		rs.close();
 		stmt.close();
 		c.close();
-
-		for (Entry<String, TreeSet<Integer>> entry : patternProjectMM.entrySet()) {
-			String pattern = "'" + entry.getKey() + "'";
+		
+		//sort so that we always get the same order (sets do not guarantee an ordering)
+		LinkedList<SortableEntry> entryList = new LinkedList<SortableEntry>();
+		for(Entry<PatternEscapedPair, TreeSet<Integer>> entry : patternProjectMM.entrySet()){
+			entryList.add(new SortableEntry(entry.getKey(),entry.getValue()));
+		}
+		Collections.sort(entryList);
+		for (SortableEntry entry : entryList) {
+			String pattern = entry.getKey().getPattern();
 			try {
 				WeightRankedRegex r = new WeightRankedRegex(pattern, entry.getValue().size());
 				corpusPatternSet.add(pattern);

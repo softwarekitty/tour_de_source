@@ -24,7 +24,7 @@ public final class WeightRankedRegex implements RankableContent {
 			throw new IllegalArgumentException("pattern cannot be null: "+pattern);
 		} 
 		this.unquoted = getUnquotedPythonPattern(pattern);
-		this.unescaped = unquoted.replaceAll("\\\\\\\\", "\\\\");
+		this.unescaped = getUnescaped(unquoted);
 		
 		if ("".equals(unescaped)) {
 			throw new IllegalArgumentException("pattern cannot be empty: "+pattern);
@@ -47,6 +47,10 @@ public final class WeightRankedRegex implements RankableContent {
 			this.rootTree = new PCRE(getUnescapedPattern()).getCommonTree();
 			this.features = new FeatureCount(rootTree,pattern);
 		}
+	}
+	
+	public static String getUnescaped(String unquotedPattern){
+		return unquotedPattern.replaceAll("\\\\\\\\", "\\\\");
 	}
 	
 	public boolean hasFeature(int featureIndex){
