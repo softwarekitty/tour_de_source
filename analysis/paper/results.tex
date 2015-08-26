@@ -6,7 +6,7 @@
 In this section, we present the results of each research question.
 
 \subsection{RQ1: In what context do developers use regular expressions?}
-
+\label{rq1:survey}
 
 On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly. 
 Table~\ref{tab:regexenviron} shows how frequently participants compose regexes using each of several languages and technical environments.
@@ -161,7 +161,7 @@ Only about half of the projects sampled contained any utilizations.  Most utiliz
 %The most frequently observed patterns were used to match whitespace and digits.
 
 \subsection{RQ3: Which regular expression language features are most commonly used in Python?}
-\label{results:re2}
+\label{results:rq3}
 
 To measure feature usage, we  count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
 
@@ -267,6 +267,10 @@ We also identify brics as the project supporting the fewest features and RE2 as 
 
 
 \subsection{RQ4: How semantically similar are regexes?}
+\label{rq4:results}
+
+ Since Rex does not support all the features present in the corpus, we could only generate sets of matching strings for 9,727 (70\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 270 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats}, as described in Section~\ref{results:rq3}.
+The generated strings for each pattern are used to measure the pairwise similarity for all patterns and construct the similarity matrix.
 
 
 %\subsubsection{Rationale for Behavioral Clustering}

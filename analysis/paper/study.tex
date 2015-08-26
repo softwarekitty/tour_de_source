@@ -45,17 +45,16 @@ We measure similarity between pairs of regexes by generating strings that match 
 %
 %We use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for. \\
 
-Next, we describe how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
+Next, we describe our survey, how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
 
 \subsection{Survey Design}
 \label{study:survey}
 To understand the context of when and how programmers use regular expressions,, 
-we designed a survey with 41 questions about regex usage. This survey was
-deployed to 22 developers at Dwolla, a company that provides software for
+we designed a survey with 40 questions about regex usage and context. 
+This survey was deployed to 22 developers at Dwolla, a company that provides software for
  online and mobile payment management.
- \todoLast{they are probably ok with using their name - check during final scrub by Dwolla}
 Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
-The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers. The questions asked about general regex usage and the use of various language features. 
+The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers. The questions asked about regex usage frequency, languages, purposes, and the use of various language features, as explored in Section~\ref{rq1:survey} and Section~\ref{results:rq3}. 
 
 
 \subsection{Regex Corpus}
@@ -63,11 +62,11 @@ The survey was completed by 18 participants (82\% response rate) that identified
 Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects.  Each project's commit history was scanned at 20 evenly-spaced commits.  If the project had fewer than 20 commits, then all commits were scanned.  The most recent commit was always included, and the spacing between all other chosen commits was determined by dividing the remaining number of commits by 19 (rounding as needed).
 All regex utilizations were obtained, sans duplicates. Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In the end, we observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex utilizations in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
-In collecting the set of distinct patterns for analysis,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of utilizations using flags, which can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable), or because of other unknown parsing failures.
+In collecting the set of distinct patterns for analysis,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of utilizations using flags, which can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable). 
+The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) utilizations were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings.  Each of the pattern strings was pre-processed by removing Python quotes (\verb!`\\W!' becomes \verb!\\W!), unescaping escaped characters (\verb!\\W! becomes \verb!\W!) and parsing the resulting  string using an ANTLR-based, open source PCRE parser\footnote{\url{https://github.com/bkiers/pcre-parser}}.
+This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we  chose to exclude because appeared very rarely (e.g., Reference Conditions).  
 
-The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) utilizations were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings using sql.  Each of the pattern strings was pre-processed by removing Python quotes (\verb!`\\W!' becomes \verb!\\W!), unescaping escaped characters (\verb!\\W! becomes \verb!\W!) and parsing the resulting  string using an ANTLR-based, open source PCRE parser\footnote{\url{https://github.com/bkiers/pcre-parser}}.
-
-This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we have chosen to exclude in this study because they did not appear often enough (e.g., Reference Conditions).  The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We  refer to this set of weighted, distinct pattern strings as the \emph{corpus}.
+The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We  refer to this set of weighted, distinct pattern strings as the \emph{corpus}.
 
 \subsection{Analyzing Features}
 \label{study:features}
@@ -80,7 +79,7 @@ For each escaped pattern, the PCRE-parser produces a tree of feature tokens, whi
 \label{fig:featureParsing}
 \end{figure}
 
-Once all patterns were transformed into vectors, we examined each feature independently for all patterns, tracking the number of patterns it was in, and the size of the sets of projects and files that the patterns containing the features appeared in at least once.
+Once all patterns were transformed into vectors, we examined each feature independently for all patterns, tracking the number of patterns and  projects that the each feature appears in at least once.
 
 \subsection{Clustering and Semantic Analysis}
 Our semantic analysis clusters regular expressions by their behavioral similarity.
@@ -99,16 +98,18 @@ In row {\tt B}, column {\tt A}, we see that {\tt A} is 50\% similar to {\tt B}. 
 \label{fig:minimalMatrix}
 \end{figure}
 
+Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix are averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph}. 
+This facilitates clustering using the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.
+We chose MCL  because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
+
 
 In the implementation, strings are generated for each pattern using Rex~\cite{rex}.  Rex generates matching strings by representing the regular expression as an automation, and taking a random walk within that automation.  By avoiding any repeat walks of the automation, Rex never produces duplicate strings.  If asked to produce more strings than the automation can provide, Rex will instead produce a list of all possible strings.
 Our goal is to generate 384 strings for each pattern to balance the runtime of the similarity analysis with the precision of the similarity calculations.
- Since Rex does not support all the features present in the corpus, we could only generate sets of matching strings for 9,727 (70\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 270 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats}, as described in Section~\ref{results:rq3}.
-The generated strings for each pattern are used to measure the pairwise similarity for all patterns and construct the similarity matrix.
 
-Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix were averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph}. This facilitated clustering by means of the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.
-We chose the mcl clustering tool because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
-We note that Markov clustering can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.
-The end result is clusters of highly semantically similar regular expressions.  The top 100 clusters are catagorized by inspection into six categories of behavior (see Section~\ref{results:rq3}).
+We note that MCL can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.  
+After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.
+The end result is clusters of highly semantically similar regular expressions.  The top 100 clusters are categorized by inspection into six categories of behavior (see Section~\ref{rq4:results}).
+
 
 \begin{figure}[tb]
 \centering
@@ -120,8 +121,8 @@ The end result is clusters of highly semantically similar regular expressions.  
 \end{figure}
 
 
-\todoNow{fix this before the ICSE deadline - after putting several days into this, I have a partial fix but the fact is there was information loss when going between the java program and the cs program and back again.  So it remains to be seen if it will be feasible to do non-automatic repairs.}
-
-
-We note that there was an operational error in pulling patterns from our database prior to the similarity analysis and clustering, so that 224 patterns (2.3\%) of the 9,727 patterns were omitted. These were duplicate patterns that were quoted differently (for example \verb!`\W'! and \verb!"\W"!).  The result of this error is a slight underestimate in number of projects per pattern (and per cluster), and a slight over-estimate in the pattern, file and project statistics shown in Table~\ref{table:featureStats}.  We do not believe that this error affects our conclusions.
+%\todoNow{fix this before the ICSE deadline - after putting several days into this, I have a partial fix but the fact is there was information loss when going between the java program and the cs program and back again.  So it remains to be seen if it will be feasible to do non-automatic repairs.}
+%
+%
+%We note that there was an operational error in pulling patterns from our database prior to the similarity analysis and clustering, so that 224 patterns (2.3\%) of the 9,727 patterns were omitted. These were duplicate patterns that were quoted differently (for example \verb!`\W'! and \verb!"\W"!).  The result of this error is a slight underestimate in number of projects per pattern (and per cluster), and a slight over-estimate in the pattern, file and project statistics shown in Table~\ref{table:featureStats}.  We do not believe that this error affects our conclusions.
 
