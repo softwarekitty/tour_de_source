@@ -178,8 +178,13 @@ public class PaperWriter {
 		int i = 0;
 		while (it.hasNext()) {
 			WeightRankedRegex wrr = it.next();
-			if (rexCompatible(wrr)) {
-				sb.append(i + "\t" + wrr.getUnescapedPattern() + "\n");
+			int weight = wrr.getRankableValue();
+			if (weight > 2 && rexCompatible(wrr)) {
+				sb.append(i + "\t" +weight + "\t" + wrr.getContent() +"\t"+ wrr.getUnescapedPattern() + "\n");
+			}else if(weight < 3){
+				System.out.println("underweight: " + wrr.getContent());
+			}else{
+				System.out.println("incompatible: " + wrr.getContent());
 			}
 			// this 'i' is the way back to the original entry in the corpusList,
 			// so it should increment for each wrr, compatible or not
