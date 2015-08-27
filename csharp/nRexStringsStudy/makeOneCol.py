@@ -3,7 +3,7 @@ from os.path import isfile, join
 basePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/csharp/nRexStringsStudy/"
 
 for i in range(3):
-    for j in range(4):
+    for j in range(9):
         samplePath = basePath + "sample_" + str(i) + "/"+ str((j+1)*100) + "/"
         sampleData = []
         for k in range(18):

@@ -1,0 +1,286 @@
+13415	upstart
+6455	[^\w\.\- ]
+7304	\[([^\]]*)\]
+6681	\ \ +
+12063	__.*__
+12397	disk size:\s+(\S+.*)
+9519	^([a-zA-z0-9]+)=([\S\s]*)$
+10601	^[0-9a-f]{20,40}$
+5300	QEMU_PID
+3788	00000000 <(v8dbg_.*)>:
+7236	\S* *\d*-\d*-\d* \d*:\d*:\d* [+-]\d* \w*
+4786	Components\.manager
+11119	^\s
+3895	:month
+6134	[\W]+
+9421	^([\w\d]([\w\d\-]{0,61}[\w\d])?\.)*[\w\d]([\w\d\-]{0,61}[\w\d])?$
+4919	FAIL -
+4688	Audio Files
+2992	, *<
+6144	[\\"]|[^ -~]
+3419	.*\.tar\.bz
+6981	\.([\$a-zA-Z0-9_\-\&]+)
+787	(.*)\[(.*)\](.*)
+1697	(RHEL.*PC)
+11330	^\s*\*
+427	&#8212;
+5516	Total
+6192	[\r\n]
+6472	[^]~%\\{}]+
+4724	Bill Status
+4834	DOCTYPE|xml
+9550	^(\.\.)[\/](.*)$
+7226	\A\s\s\S+,
+4603	@@PACKAGE_CONFLICTS@@
+9413	^([\w\-:]*)
+8682	\{% csrf_token
+8269	\s+\(default:\s+\'(.*)\'\)$
+5047	In\ \[\d+\]: 
+6706	\$([^\$]+)\$
+10284	^I+
+305	#define[ \t]+([A-Z0-9a-z_]+)[ \t]+([0-9]+)[ \t]*/\*[ \t]*(.*)[ \t]*\*/
+9670	^(\s*@charset [^;]+;\s*)+
+13110	project-root.jam
+359	%([0-9a-fA-F][0-9a-fA-F])
+8043	\s*([a-zA-Z_][-:.a-zA-Z_0-9]*)[$]?(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[][\-a-zA-Z0-9./,:;+*%?!&$\(\)_#=~\\'"@]*))?
+3183	.*-(\w*)$
+5754	[&?]requestPayment($|=|&)
+4601	@@BINARYDIR@@
+429	&#8217;
+12907	md5=[0-9a-f]{32}$
+5331	Report time: (.*)
+6796	\%(-?\w+)
+7038	\.\d+$
+9343	^([0-9]{4})~([01][0-9])~([0-9]{2})$
+9317	^([0-7]{6}) ([a-z]+) ([0-9a-f]{40})\t(.*)$
+8405	\w{12}
+9463	^([^<]*)(/(<.*))?$
+6178	[\n\r\t\x0b\x0c]
+4602	@@PACKAGE_BASENAME@@
+11337	^\s*\*\w+(\+\+|--);
+9401	^([MAGCUD_ ][MAGCUD_ ]) (.+)
+7690	\d+-
+276	#\w\w\w$
+7722	\d;\s*url=
+852	(.*[Jj]amfile\.v2)|(.*[Bb]uild\.jam)
+2984	(}?\s*)$
+2906	(interface|) ([^ ]*) : public (.*)$
+3380	.*[^aeiouy][aeiouy][^aeiouywxY]$
+12022	_(unit)?test$
+12706	https://www.google.com/a/[a-z0-9.-]+/ServiceLogin
+6044	[Hh][123456]
+10097	^6\.
+2740	(\{[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}\} |  # GUID\n                   [a-z0-9-\.\+_]*\@[a-z0-9-\._]+)  # Email format
+9937	^.*\.(c|cpp)$
+3523	.*}.*
+6667	[vhs]d[a-z]*[\d]+
+13398	u?r?["\\']
+7315	\[.* test environment .*\n
+6489	[^a-zA-Z0-9.]
+10981	^\.+
+9371	^([>\w\-]+)\s*:\s*(.*)\s*$
+6407	[^A-Za-z0-9_.:;\-]
+11344	^\s*\/\/
+2434	(\d+|\D+)
+5755	[&?]torrent($|=|&)
+1682	(I[0-9a-f]{8,40})|([Bb]ug|[Ll][Pp])[\s\#:]*(\d+)|([Bb]lue[Pp]rint|[Bb][Pp])[\s\#:]*([A-Za-z0-9\-]+)
+5156	Microsoft Visual C\+\+ Toolkit 2003
+4851	Debian
+12233	browser\.search\.order\.[1-9]
+3702	/b2g\s*$
+6167	[\d\.]+
+3401	.*\.([a-zA-Z]{3,}$)
+8800	^##AGENT-WARNING##.*
+6004	[A-Z]+
+4498	<type>boost::(lazy_)?(enable|disable)_if
+9525	^([a-z]\w*)\s*:?(\s*\(.*\)\s*){0,2}\s*$
+5334	Resigned
+3905	;(\s+)
+7516	\\x([0-9a-fA-F]{2}|[0-9a-fA-F])
+109	 {2,}\n
+2339	(\d*\.?\d*)\s*(\S*)
+2580	(\s|,)+
+1839	([A-Z]+)
+11848	^refs/heads/
+5733	[$><;[{~`|&()]
+1925	([\d\w\-_]+)(.*)
+6531	[a-f0-9]+\s+<.*:$
+2865	(const)\s+((unsigned|signed)?(bool|char|short|int|long))
+11759	^link
+11046	^\\(section|subsection|subsubsection|paragraph|subparagraph){(numpy|scipy)\.
+12884	mac=00:00:00:00:00:00
+11648	^file://
+1764	([0-9.]+)
+8951	^(.*)\.(diff|patch)$
+9827	^(}|struct\s+\w+);\s*$
+6478	[^a-z0-9]+
+6810	\((.*)\)$
+4776	CoSponsor
+2837	(a)?a
+8299	\s+{(\d+), arcs_(\d+)_(\d+)},$
+4540	=[ =]*$
+12854	libs/([^/]+)
+5316	Ran (\d+) tests
+8234	\s+#
+2624	(\w+)Manifest
+12949	monitor_result
+6530	[a-f0-9]+$
+13297	static state states_(\d+)\[(\d+)\] = {$
+3074	--test-config=(.*)$
+11540	^`!p\s
+445	&(#?)(x?)(\w+);
+5073	L -(\d+) -\d+
+6885	\(\n
+12925	messages -> ([A-Za-z_0-9]+) {
+5793	[,<>()]
+13050	p\s*cnf\s*(\d*)\s*(\d*)
+3023	-$
+4929	Failure
+2181	(\(|\)|\s+|\+)
+6903	\(|\)
+4443	<span id=short-desc-content>([^<]*)</span>
+2365	(\d+)(\s+\d+){2}\s+([TF])
+3075	--user-config=(.*)$
+11169	^\s*(>>>|...) (.*)$
+2751	(^/dev/x{0,1}[a-z]{0,1}d{0,1})([a-z]+)[0-9]*$
+7473	\\[ntrab]
+7374	\[\[\!\!([^\]]*)\]\]
+10806	^[a-zA-Z0-9\-]+$
+12195	available:\s+(\d+)\s+nodes\s+.*
+12875	lost: 0 bytes in 0 blocks.
+4379	<meta[^>]*content\s*=\s*[\'"]?text/html;\s*charset\s*=\s*([^ \'">]+)\s*[\'"]?[^>]*>
+5702	[ ]+
+3834	:   
+2611	(\w+)(\.|:)\s*(.*)
+2040	([^[]+)\[([^]]+)\]
+9653	^(\s*)()(\S+)(.*$)
+7097	\.|_
+13316	sysvinit
+12294	cms/page/(\d+)
+8751	^ *(0x[0-9a-f]+) +0x([0-9a-f]+): +eax=0x([0-9a-f]+) ebx=0x([0-9a-f]+) ecx=0x([0-9a-f]+) edx=0x([0-9a-f]+)$
+8252	\s+(\d+),$
+2812	(^|\})(([^\{\:])+\:)+([^\{]*\{)
+1817	([:\-\w]*){([^}]+)}
+7840	\n(.+\S+)\ +\S+\ +(.+\S+)
+5910	[0-9]+\s+[+-][0-9]+
+13078	pip \d(\.[\d])+(\.?(rc|dev|pre|post)\d+)? from (.*) \(python \d(.[\d])+\)$
+1792	([0-9]+)_([0-9]+)
+6936	\*\S
+6910	\)\s*
+8780	^#
+3193	.*/.*_V(\d+\.\d+)/mongo
+3882	:\s*(#.*)?$
+11335	^\s*\*?\s*$
+6761	\$\{(.*)\}
+10788	^[a-z0-9][a-z0-9\._-]{1,253}[a-z0-9]$
+7432	\\([0-3][0-7][0-7])
+11088	^\d{10}[\.\d]+$
+7467	\\[A-Za-z]+
+5007	HTTP/(\d\.\d)\s+(\d+)\s+(.*)$
+376	%[^%]|%$
+3039	-- ADDMODULE MARKER 2 --
+3008	,\S
+3622	/+$
+5861	[.\-]
+3992	<([^\s\w/])
+4470	<title>(.*)</title>
+10892	^[cC](\:[\\\/]+)
+370	%20
+2549	(\s*\=)|(\s*\:)
+10715	^[\w.\*]+([\s,:;]\s*[\w.\*]+)*$
+10496	^[ ]{4,7}((\d+\.)|[*+-])[ ].*
+11199	^\s*([0-9]+:[0-9]+)\s*\|\s*([0-9]+:[0-9]+)\s*\|\s*(.+)
+6184	[\n\t]
+5255	PM
+7449	\\*\n
+6513	[^aeiouy]*[aeiouy]+[^aeiouy](\w*)
+5619	Wrote: (.*)
+2239	(\S+)$
+138	"([0-9][.0-9]*)
+8807	^#.*coding[:=]\s*([-\w.]+)
+7526	\^@
+13468	version *= *([\'"][^\'"]*[\'"])
+7453	\\.|.
+13218	s
+12355	date
+495	&nbsp;
+4121	<[^<>]*>
+13408	unknown operand
+8116	\s*=.*
+10999	^\/\w\/
+654	(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
+12795	invalid literal for int().*: '?'?
+8052	\s*(\d+)\s*
+10274	^Gui
+9745	^(\w+|/|\.|\(|\"|\\')
+11844	^rebt
+4478	<title>([^- ]+ - )?Revision \d+:
+11073	^\d+\.\d+(\.\d+)?$
+12114	a.*
+277	#\w\w\w\w\w\w$
+5752	[&?]location($|=|&)
+1967	([\x00-\x1f\x7f])
+2888	(http://)(\w*)
+583	(((verify))) *\(( *)(\d+)
+7727	\d\D\w\W\s\S
+2139	([aeiouy])y
+11484	^\t*
+8416	\x03[0-9]{1,2}(,[0-9]{1,2})?
+13526	xvd
+10150	^>(.*)$
+5428	Spider.*
+8304	\s-drive\s[^\s]+
+9599	^(\d+)\s+([+-]\d\d:?\d\d)$
+3791	0D
+641	((DB|User|Msg|MsgAssertion)Exceptio(n))\(( *)(\d+) *,? *(\S+.+\S) *,?
+12588	goog\.require\s*\(\s*[\'"]([^\)]+)[\'"]\s*\)
+2840	(add|subtract|multiply|divide|remainder|power|and~|or~|xor~|minimum|maximum|negate|complement|absolute|random|head|tail|next|back|skip|at|pick|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|last|path|find|select|make|to|copy\*|insert|remove|change|poke|clear|trim|sort|min|max|abs|cp|copy)$
+8308	\s?((["][^"]*["]|[\'][^\']*[\'])\s+dluohs)
+10474	^[ \t]*[^# \t]
+5978	[=!]=
+532	( +)
+6607	[a-zA-Z_][a-zA-Z0-9_]*
+11075	^\d+\.\d+\.\d+\.\d+$
+2922	(plugins.*|scripts.*)$
+3403	.*\.(gz|xz|7z|bz2)$
+3218	.*<(.*)>.*
+8190	\s*\}\s*$
+6900	\(used in test (.+)\)
+2410	(\d+)\s+(\d+)\s+(\d+)
+3935	<!--.*
+5043	In \[(\d+)\]:\s?(.*)\s*
+3699	/_ah/upload/(.*)
+10533	^[-_A-Za-z0-9]+$
+11239	^\s*(if|try|elif|while|for|with)
+2655	(\w+\W*)
+927	(0x[0-9A-Fa-f]+|0\d*|[1-9]\d*)
+6099	[\.0-9]+
+9298	^([ \|0-9-]*)
+13016	o
+9702	^(\w){1,2}$
+4141	<[a-zA-Z][a-zA-Z0-9]*/
+4806	Copyright [\d-]*20[0-1][0-9] the V8 project authors. All rights reserved.
+5986	[?*+]+
+5322	Red Hat
+8829	^#define ASYNC_PROTOCOL_MAJOR\t*(.*)
+5546	Ubuntu
+8861	^%%([^:]*):[ \t]*(.*)[ \t]*$
+9664	^(\s*)<.+> 
+13454	var 
+13112	project.pbxproj$
+3983	<([^/!][^>]*[^/])>\s+</
+12797	invalid literal for long().*: '?0xOoops'?
+1871	([A-Za-z]+)(hat|check|dot|breve|acute|ddot|grave|tilde|mathring|bar|vec)
+2877	(filename = ).*
+4574	@'([^']+)'
+7729	\d\d-[a-zA-Z]{3,3}-\d\d\d\d \d\d:\d\d
+11843	^r(ev)?\s*(\d+)
+11231	^\s*(\w|\d)+\s*$
+3186	.*-sdk ([a-zA-Z0-9.]*)
+11601	^de
+1944	([\w-]+[\w]+)\s+(\w+)\s+(\w+)
+9890	^.*::
+2147	([shv]db)\s
+9292	^([ \t\r\f\v]+)
+2488	(\d{4})\.(\d{2})\.(\d{2})\.(\d{2})\.(\d{2})\.(\d{2})$
+5497	This is file for test_formatted_disk.
