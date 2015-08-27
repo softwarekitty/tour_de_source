@@ -4,6 +4,7 @@
 %\usepackage{amsthm}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{multirow}
 \usepackage{enumerate}
 \usepackage{cprotect}
 \usepackage{xtab}
@@ -75,6 +76,8 @@ We also map the most common features used in regular expressions to those featur
 Our results indicate that developers frequently use regular expressions in their programming practices, but often those regular expressions do not persist (e.g., when used for command line or file search purposes). For regular expressions found in Python projects,
 the most commonly used features are also supported by popular research tools and that programmers frequently reinvent the wheel by writing identical or nearly identical regular expressions in different ways.
 We conclude by discussing the implications for  tool  designers and outline several directions of future work.
+\todoLast{Katie: revise}
+
 %FYI: nProjScanned = 3898
 %These observations lead to suggestions on which regular expression features are imperative to support and for future directions in research to help developers write and reuse regular expressions.
 \end{abstract}
@@ -92,7 +95,7 @@ We conclude by discussing the implications for  tool  designers and outline seve
 \input{discussion}
 
 \section{Threats to Validity}
-
+\label{sec:threats}
 \todoMid{organize by internal, external, conclusion, construct}
 
 The threats to validity of this work stem primarily from sampling bias, tool limitations, and language selection.

@@ -1,16 +1,17 @@
 \section{Results}
 \label{sec:results}
 
-\input{../analysis_output/featureStats}
+
 
 In this section, we present the results of each research question.
 
 \subsection{RQ1: In what context do developers use regular expressions?}
 \label{rq1:survey}
 
+The survey was completed by 18 professional software developers with an average of nine years of programming experience ($\sigma = 4.28$). 
 On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly. 
 Table~\ref{tab:regexenviron} shows how frequently participants compose regexes using each of several languages and technical environments.
-Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  Regexes were rarely used in query languages like SQL, but for command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. Overall, regexes are used frequently, but in some environments, such as command line or text editor, and sometimes query languages, the composed regular expressions do not persist.
+Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  Regexes were rarely used in query languages like SQL, but for command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. 
 
 \newcommand{\horiz}{\hspace{2.1pt}}
 
@@ -62,16 +63,20 @@ When asked an open ended question about pain points encountered with regular exp
  39\% (7) developers responded that regexes are ``hard to read" and 17\% (3) indicated difficulties with ``inconsistency across implementations," which manifest when using regexes in multiple languages. These responses do not sum to 18 as three developers provided overlapping  answers.
 
 \paragraph{Summary - RQ1}
+%The survey validates the assumption that regex are widely used by professional software developers and sheds some light into the context in which regexes are used. 
+%Future research into regex can focus on activities that prove to be most important to developers, namely capturing parts of strings and searching for specific content.  
+%Although research into regex use in general purpose and scripting languages is important, usage within command line tools and text editors should also be considered.  
+
+Overall, regexes are used frequently with common usages including locating content within a file, capturing parts of strings, and parsing user input. 
+The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regex being hard to read and hard to compose, and most of the tools that they indicate using are focused on composition. 
+
 
 
 \subsection{RQ2: How  is the {\tt re} module used?}
-To address this research question, we look at regex utilizations, flags, and the most frequently observed pattern strings.
-We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}).
-We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}).
-
-
-
-\subsubsection{Regex Utilizations per Project}
+We explore regex utilizations and flags used in the scraped Python projects. 
+%We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}).
+%We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}).
+%\subsubsection{Regex Utilizations per Project}
 Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  To illustrate how saturated projects are with regexes, we measure utilizations per project, files scanned per project, files contained utilizations, and  utilizations  per file, as shown in Table~\ref{table:saturation}.
 
 The average project contained 32 utilizations, and the maximum number of utilizations was 1,427.  The project with the most utilizations is a C\# project\footnote{\url{https://github.com/Ouroboros/Arianrhod}} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
@@ -84,7 +89,7 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 
 \input{../analysis_output/saturation}
 
-\subsubsection{Usage Frequency of {\tt re} Module}
+%\subsubsection{Usage Frequency of {\tt re} Module}
 
 \begin{figure}[tb]
 \centering
@@ -103,6 +108,8 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 %\vspace{-6pt}
 \label{fig:partFlags}
 \end{figure}
+
+\input{../analysis_output/featureStats}
 
 The number of projects that use each of the {\tt re} functions is shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex object compiled using {\tt re.compile} as an argument.
 %\todoNow{can we connect any of these function calls to the findings from the survey? For example, according to Table~\ref{tab:regexactivities}, participants frequently or occasionally want to capture parts of strings, which maps to the X function in {\tt re}}
@@ -163,7 +170,7 @@ Only about half of the projects sampled contained any utilizations.  Most utiliz
 \subsection{RQ3: Which regular expression language features are most commonly used in Python?}
 \label{results:rq3}
 
-To measure feature usage, we  count the number of usages of each feature per project, per file and as a percent of all distinct regular expression patterns.
+To measure feature usage, we  count the number of usages of each feature per project and as a percent of all distinct regular expression patterns in the corpus.
 
 
 
@@ -172,10 +179,8 @@ To measure feature usage, we  count the number of usages of each feature per pro
 Table~\ref{table:featureStats} displays feature usage from the corpus and relates it to four major regex related projects. Only features appearing in at least 10 projects are listed.
 The first column, \emph{rank}, lists the rank of a feature (relative to other features) in terms of the number of projects in which it appears. The next column, \emph{code}, gives a succinct reference string for the feature, and is followed by a \emph{description} column that provides a brief comment on what the feature does.  The \emph{example} column provides a short example of how the feature can be used.
 % For example, the most common feature observed in the corpus is \emph{one-or-more repetition}, which is specified in a pattern by using the {\tt +} character in conjunction with some sub-pattern that should repeat one or more times.  The code for this feature is \emph{ADD}, and the short example provided is \verb!z+!.
-The next four columns map to the four major research projects chosen for our investigation (see Section~\ref{results:rq2}).  We indicate that a project supports a feature with the `\yes' symbol, and indicate that a project does not support the feature with the `\no' symbol.
-
-
-The next four columns contain two pairs of usage statistics.  The first pair contains the number and percent of \emph{patterns} that a feature appears in, out of the 13,912 patterns that make up the corpus.  The second pair of columns contain the number and percent of \emph{projects} that a feature appears in out of the 1645 projects scanned that contain at least one utilization.
+The next four columns, (i.e., \emph{brics}, \emph{hampi}, \emph{Rex}, and \emph{RE2}), map to the four major research projects chosen for our investigation (see Section~\ref{regextoolsresults}).  We indicate that a project supports a feature with the `\yes' symbol, and indicate that a project does not support the feature with the `\no' symbol.
+The final four columns contain two pairs of usage statistics.  The first pair contains the number and percent of \emph{patterns} that a feature appears in, out of the 13,912 patterns that make up the corpus.  The second pair of columns contain the number and percent of \emph{projects} that a feature appears in out of the 1645 projects scanned that contain at least one utilization.
 
 One notable omission from Table~\ref{table:featureStats} is the literal feature, which is used  to specify matching any specific character.  An example pattern that contains only one literal token is the pattern \verb!`a'!.  This pattern only matches the lowercase letter `a'.  The literal feature was found in \DTLfetch{data}{key}{P_LITERAL_PRESENT}{value}\% of patterns.
 %, and accounted for \DTLfetch{data}{key}{P_LITERAL_TOKENS}{value}\% of all tokens.
@@ -184,23 +189,22 @@ We consider the literal feature to be ubiquitous in all patterns, and necessary 
 
 
 The eight most commonly used features, ADD, CG, KLE, CCC, ANY, RNG, STR and END,
-appear in over half the projects. The remaining 26 features appear in less than half of the projects containing utilizations.
-CG is more commonly used in patterns than the highest ranked feature (ADD) by a wide margin (over 8\%).  CG is also more commonly used with respect to how many files it appears in by 2.3\%, while only being present in 12 fewer projects (0.7\%) than ADD.
+appear in over half the projects. %The remaining 26 features appear in less than half of the projects containing utilizations.
+CG is more commonly used in patterns than the highest ranked feature (ADD) by a wide margin (over 8\%), even though they appear in similar numbers of projects. 
 
 \subsubsection{Feature Support in Regex Tools}
-While there are many regular expression tools available, in this work, we focus on the features support for these four tools, which offer diversity across developers (i.e., Microsoft, Google, open source, and academia) and across applications. Further, as the focus of this work is on tool designers and we wanted to perform a feature analysis, these four tools and their features are well-documented, allowing for easy comparison.
+\label{regextoolsresults}
+While there are many regex tools available, in this work, we focus on the features support for these four tools, brics, hampi, Rex and RE2, which offer diversity across developers (i.e., Microsoft, Google, open source, and academia) and across applications. Further, as we wanted to perform a feature analysis, these four tools and their features are well-documented, allowing for easy comparison.
 
- We  mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, hampi, RE2, and Rex.
-To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using the formal grammar\footnote{\url{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footnote{\url{https://code.google.com/p/hampi/downloads/list}} (this may have been an overestimation, as this included more features than specified by the formal grammar\footnote{\url{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}}).  For RE2, we used the  supported feature documentation\footnote{\url{https://re2.googlecode.com/hg/doc/syntax.html}}.  For Rex, we were able to use trial and error because we tried to parse all patterns with Rex, and Rex provides good error feedback when a feature is unsupported.
+% We  mapped the features from the corpus to those features supported by the four regular expression engines described in Section~\ref{sec:related}: brics, hampi, RE2, and Rex.
+To create the tool mappings, we consulted documentation for each of the selected regular expression engines. For brics, we collected the set of supported features using the formal grammar\footnote{\url{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footnote{\url{https://code.google.com/p/hampi/downloads/list}} (this may have been an overestimation, as this included more features than specified by the formal grammar\footnote{\url{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}}).  For RE2, we used the  supported feature documentation\footnote{\url{https://re2.googlecode.com/hg/doc/syntax.html}}.  For Rex, we collected the feature set empirically because we tried to parse all patterns with Rex for the semantic analysis (Section~\ref{rq4:results}), and Rex provides comprehensive error feedback for unsupported features.
 
-\todoLast{Were there any features supported by the tools that we did not find in the corpus? Answer: RE2 has a lot of features we didn't study and that weren't found in the corpus in any substantial quantity.  I think this is addressed by the earlier mention: Only features appearing in at least 10 projects are listed.}
+%\todoLast{Were there any features supported by the tools that we did not find in the corpus? Answer: RE2 has a lot of features we didn't study and that weren't found in the corpus in any substantial quantity.  I think this is addressed by the earlier mention: Only features appearing in at least 10 projects are listed.}
 
 
-Of the four projects selected for this analysis, RE2 supports the most studied features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.  RE2 is the only project to support the WNW, ENDZ and NWNW features.
-
-\leavevmode\color{gray}
-No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.  Brics is the only project that does not support any of the six default character classes (WSP, DEC, WRD, NWSP, NWRD, NDEC) - the rest of the projects support all of those features.  RE2 also supports the PNG feature (which allows you to name capturing groups), but does not support the BKRN feature which is necessary to refer back to the named capture group.
-\leavevmode\color{black}
+Of the four projects selected for this analysis, RE2 supports the most studied features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  
+%All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.  RE2 is the only project to support the WNW, ENDZ and NWNW features.
+No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.%, which inspired in part the survey questions about feature usage. 
 
 
 \subsubsection{Survey Results for Feature Usage}
@@ -228,43 +232,52 @@ use only default & 2\\
 \end{center}
 \end{table}
 
-To further explore how frequently participants use various regex features, participants were asked five questions (on a 6-point likert scale) about how frequently they use specific related groups of features:
-\begin{itemize} \itemsep -2pt
-    \item endpoint anchors: \verb!^! and \verb!$!
-    \item capture groups: (capture me)
-    \item word boundaries: \verb!word\b!
-    \item (negative) look-ahead/behinds: \verb!a(?=bc)!, \verb!(?<!x)yz!, \verb!(?<=a)!, \verb!a(?!yz)!
-    \item lazy repetition: \verb!ab+?!, \verb!xy{2,3}?!
-\end{itemize}
-These features were chosen based on \todoMid{why just these features?}
-Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used. 
+To further explore how frequently participants use various regex features, participants were asked five questions (on a 6-point likert scale) about how frequently they use specific related groups of features, 
+%\begin{itemize} \itemsep -2pt
+%    \item endpoint anchors (STR, END): \verb!^! and \verb!$!
+%    \item capture groups(CG): (capture me)
+%    \item word boundaries (WNW): \verb!word\b!
+%    \item (negative) look-ahead/behinds (LKA, NLKA, LKB, NLKB): \verb!a(?=bc)!, \verb!(?<!x)yz!, \verb!(?<=a)!, \verb!a(?!yz)!
+%    \item lazy repetition (LZY): \verb!ab+?!, \verb!xy{2,3}?!
+%\end{itemize}
+%These features were 
+chosen based on the tool feature support explored in Section~\ref{regextoolsresults}. 
+Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used. \todoLast{Carl: check table for correct mapping of group to code}
+
 
 \begin{table}
-\caption{Survey results for regex usage frequencies for five feature groups, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 \label{tab:regexfeaturegroups}}
+\caption{Survey results for regex usage frequencies, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 \label{tab:regexfeaturegroups}}
 \begin{center}
-\begin{tabular}{l|c}
-Group & Frequency \\ \hline
-endpoint anchors & 4.4\\
-capture groups & 4.2 \\
-word boundaries & 3.5 \\
-lazy repetition & 2.9\\
-(negative) look-ahead/behinds & 2.5\\
-
-
+\begin{small}
+\begin{tabular}{lllc}
+Group & Code &  Frequency \\ \hline
+endpoint anchors & (STR, END) & 4.4\\
+capture groups & (CG) & 4.2 \\
+word boundaries & (WNW) & 3.5 \\
+lazy repetition & (LZY) &  2.9\\ 
+\multirow{2}{*}{(neg) look-ahead/behind} &  (LKA, NLKA,  & \multirow{2}{*}{2.5}\\
+& LKB, NLKB) & \\
 \end{tabular}
+\end{small}
 \end{center}
 \end{table}
 
-The survey validates the assumption that regex are widely used by professional software developers and sheds some light into the context in which regexes are used. 
-%Future research into regex can focus on activities that prove to be most important to developers, namely capturing parts of strings and searching for specific content.  
-%Although research into regex use in general purpose and scripting languages is important, usage within command line tools and text editors should also be considered.  
-The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regex being hard to read and hard to compose, and most of the tools that they indicate using are focused on composition, indicating a need for tools that help make existing regexes more readable.
+
 
 
 \paragraph{Summary - RQ3}
 We found that the eight most common features are found on over 50\% of the projects.
-We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects.
+We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects. Some of the less supported features, such as endpoint anchors and capture groups, are at least occasionally used by developers. 
 
+From Table~\ref{table:featureStats} we know that STR and END features are present in over half of the scanned projects containing utilizations.  In our survey, over half (56\%) of the respondents answers that they use endpoint anchors frequently or very frequently, and none of them claimed to never use them. The brics library does not support this feature, which is a missed opportunity for developers who could otherwise have used brics to model their regexes that use STR and END.
+
+The LZY feature  is present in over 36\% of scanned projects with utilizations (Table~\ref{table:featureStats}), and yet was not supported by two of the four major regex projects we explored, brics and RE2.
+In our developer survey, 11\% (2) of participants use this feature frequently and 6 (33\%) use it occasionally, showing a modest impact on potential users.
+
+%\subsubsection{PNG and BKRN vs CG and BKR}
+%The PNG group (python-style named capture groups) and BKRN (back-references: named) are intended to operate together to allow users to name the content that is expected to appear in a capture group.  A simple example of how these can be used together with the named capture group matching some vowel is:
+%\verb!(?P<vowel>[aeiou]x(?P=vowel))! which will match the strings 'axa' and 'oxo' but not 'txt'.  The same functionality can be obtained with a much shorter expression: \verb!([aeiou])x\1! where the \verb!'\1'! references the CG started by the first left parenthesis found when moving from left to right.  
+When survey participants were asked if they prefer to always use numbered (BKR) or named (BKRN) back references, 66\% (12) of survey participants said that they always use BKR, and the remaining 33\% (6) said ``it depends."  Not one participant preferred named capture groups.  BKR is present in 5\% of scanned projects, while BKRN is present in only 1.7\%, which corroborates our findings that numbered  are generally preferred over named capture groups.
 
 \subsection{RQ4: How semantically similar are regexes?}
 \label{rq4:results}
@@ -296,7 +309,7 @@ We  manually mapped the top 100 clusters into each of 6 behavioral categories (d
 Next, we define the six categories and provide examples from the relevant clusters.
 
 \subsubsection{Single Literal Characters}
-This category contains 19 clusters. Each of the clusters center around a single literal character. For example, three of the top clusters in this category include:
+This category contains 19 clusters representing \todoNow{X} projects. Each of the clusters center around a single literal character. For example, three of the top clusters in this category include:
 \verb!`\\'(110)!, \verb!`,'(100)!, and \verb!`:'(91)!. This is in contrast to the survey in Section~\ref{sec:survey} in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{tab:regexactivities}).
 % \verb!`-'(74)!, \verb!`#'(69)!, \verb!` '(66)!, \verb!`/'(65)!, \verb!`\.'(61)!, \verb!`='(52)!, \verb!`//'(51)!, \verb!`\n'(41)!, \verb!`;'(38)!, \verb!`_'(36)!, \verb!`@'(36)!, \verb!`"'(33)!, \verb!`%'(29)!, \verb!`&'(28)!, \verb!`&'(28)!, \verb!`''(28)!
 
