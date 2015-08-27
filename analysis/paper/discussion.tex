@@ -7,20 +7,30 @@ In this section, we discuss the implications of these empirical findings on tool
 The results in this work have several implications for tool designers who want to effectively support developers who use regular expressions. 
 
 \subsubsection{Capturing Specific Content}
-The survey results from section~\ref{sec:survey} indicated that capturing parts of strings was the second most frequent activity that developers used regex for.  As mentioned in section~\ref{sec:featureUsage}, the CG feature is the most frequently used feature in terms of patterns (see Table~\ref{table:featureStats}).  As mentioned in Section~\ref{sec:clusterResults}, capturing values assigned to variables when parsing source code was one of the main categories of clusters observed.  The ability to capture some part of a match provides a powerful tool to programmers.  The CG feature has two functions: 1. it allows logical grouping as would be expected by parenthesis, and 2. it allows retrieval of information that was in one logical grouping.  Although the four regex projects all support the very necessary logical grouping aspect of the feature, none support the BKR feature that retrieves what content was found in an earlier CG.  Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
+The survey results from Section~\ref{rq1:survey} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.  
+The capture group (CG) feature is the most frequently used feature in terms of patterns (Table~\ref{table:featureStats}).  
+As mentioned in Section~\ref{rq4:results}, capturing values assigned to variables when parsing source code was one of the main categories of clusters observed.  \todoMid{update?}
+Thus, we observe that the ability to capture some part of a match provides a powerful tool to programmers.  
+The CG feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  
+Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
 
-\subsubsection{Counting Delimiters and Finding Flags}
-Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of the 13,912 patterns in the corpus, 3444 (24\%) contained ANY followed by KLE: \verb!`.*'!, often at the end of the pattern.
-One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of 'Counting lines that match a pattern' and 'Counting substrings that match a pattern' at 3.2 or Rarely/Occasionally.
+\subsubsection{File Parsing}
+Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of the 13,912 patterns in the corpus, 3,444 (24\%) contained ANY followed by KLE  (i.e., \verb!`.*'!), often at the end of the pattern.
+One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of ``Counting lines that match a pattern" and ``Counting substrings that match a pattern" at 3.2 or Rarely/Occasionally.
 
-Delimiters that separate items on one line like \verb!','! are also quite common.  Although survey participants indicated an average frequency of 1.7 (very rarely or never) for 'checking for a single character', we found 19 clusters whose essential behavior was to search for one or two characters.  This makes sense if you consider that the top ranked activity for developers was 'Locating content within a file or files', and usually this content is located using some small set of characters that the user knows will flag that content.  Looking closely at that category of cluster, some of the characters being searched for were \verb!-!, \verb!#! and \verb!:! - all common delimiters in different scenarios.
+Delimiters that separate items on one line like \verb!','! are also quite common.  Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found 19 clusters whose essential behavior was to search for one or two characters.  \todoMid{update!} 
+Yet, the top ranked activity for developers is ``Locating content within a file or files," and usually this content is located using some small set of characters that the user knows will flag that content.  Looking closely at that category of cluster, some of the characters being searched for were \verb!-!, \verb!#! and \verb!:! - all common delimiters in different scenarios. This emphasizes the need for regex tools to  facilitate easy file parsing. 
+
+
 
 \subsection{Opportunities For Future Work}
 
 Based on our findings, there are many opportunities for future work.
 
-\subsubsection{A Modern WRD Character Class}
-One surprising result of our clustering is that, behaviorally speaking, the negation of the word class NWRD was used in 208 projects, while the word class itself was used in only 114 projects. After inspecting several projects using the patterns found in this behavioral cluster, we concluded that most users are trying to sanitize arbitrary strings that must conform to a system character set requirement, such as requirements for filenames.  For example, a user might replace all NWRD matching characters with the `\_' to guarantee that an arbitrary string can be used as a filename.  We also considered the largest cluster using custom character classes (\verb?`[^ -~]'(122)?) and concluded that users are constructing a more permissive version of the NWRD character class, to allow more non-letter, non-digit characters than just the `\_' in their sanitized strings.  More research is needed to determine if a more modern WRD class could be useful, and if so, what characters set is preferred.
+
+
+\subsubsection{Context-Specific Regex Support}
+In some environments, such as command line or text editor, regexes are used extensively (Section~\ref{rq1:survey}), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.  
 
 \subsubsection{Refactoring Regex for Readability}
 The survey showed that users want readability and find the lack of readable regexes to be a major pain point.  Certain character classes that are logically equivalent can be expressed differently.  One avenue for future exploration is a tool to transform a regex with an character class that is difficult to read into one that has the same effect but is easier to understand.
@@ -39,5 +49,7 @@ Within standard programming languages, regular expressions libraries are very co
 Given a suite of tests and a high suspiciousness score for lines of code containing regex, an automated system could searh for similar regexes to try in place of the faulty one.  The same clustering technique that we used to study regex behavior could be used to index groups of similar regexes, speeding up the process of searching for a replacement.
 \todoMid{Katie do this}
 
+\subsubsection{A Modern WRD Character Class}
+One surprising result of our clustering is that, behaviorally speaking, the negation of the word class NWRD was used in 208 projects, while the word class itself was used in only 114 projects. After inspecting several projects using the patterns found in this behavioral cluster, we concluded that most users are trying to sanitize arbitrary strings that must conform to a system character set requirement, such as requirements for filenames.  For example, a user might replace all NWRD matching characters with the `\_' to guarantee that an arbitrary string can be used as a filename.  We also considered the largest cluster using custom character classes (\verb?`[^ -~]'(122)?) and concluded that users are constructing a more permissive version of the NWRD character class, to allow more non-letter, non-digit characters than just the `\_' in their sanitized strings.  More research is needed to determine if a more modern WRD class could be useful, and if so, what characters set is preferred.
 
 
