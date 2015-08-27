@@ -1,358 +1,358 @@
-13415	4	'upstart'	upstart
-142	16	'"([^"]+)"'	"([^"]+)"
-1003	5	'(?![^%])%s'	(?![^%])%s
-2052	2	'([^\\?\\!]*\\?)?([^\\?\\!]*\\!)?(.*)'	([^\?\!]*\?)?([^\?\!]*\!)?(.*)
-12228	3	'browser.search.order.([1-9])'	browser.search.order.([1-9])
-2870	5	'(error|source|input|license|help|install|echo|Usage|with|func|throw-on-error|function|does|has|context|probe|\\?\\?|as-pair|mod|modulo|round|repend|about|set-net|append|join|rejoin|reform|remold|charset|array|replace|move|extract|forskip|forall|alter|first+|also|take|for|forever|dispatch|attempt|what-dir|change-dir|clean-path|list-dir|dirize|rename|split-path|delete|make-dir|delete-dir|in-dir|confirm|dump-obj|upgrade|what|build-tag|process-source|build-markup|decode-cgi|read-cgi|write-user|save-user|set-user-name|protect-system|parse-xml|cvs-date|cvs-version|do-boot|get-net-info|desktop|layout|scroll-para|get-face|alert|set-face|uninstall|unfocus|request-dir|center-face|do-events|net-error|decode-url|parse-header|parse-header-date|parse-email-addrs|import-email|send|build-attach-body|resend|show-popup|hide-popup|open-events|find-key-face|do-face|viewtop|confine|find-window|insert-event-func|remove-event-func|inform|dump-pane|dump-face|flag-face|deflag-face|clear-fields|read-net|vbug|path-thru|read-thru|load-thru|do-thru|launch-thru|load-image|request-download|do-face-alt|set-font|set-para|get-style|set-style|make-face|stylize|choose|hilight-text|hilight-all|unlight-text|focus|scroll-drag|clear-face|reset-face|scroll-face|resize-face|load-stock|load-stock-block|notify|request|flash|request-color|request-pass|request-text|request-list|request-date|request-file|dbug|editor|link-relative-path|emailer|parse-error)$'	(error|source|input|license|help|install|echo|Usage|with|func|throw-on-error|function|does|has|context|probe|\?\?|as-pair|mod|modulo|round|repend|about|set-net|append|join|rejoin|reform|remold|charset|array|replace|move|extract|forskip|forall|alter|first+|also|take|for|forever|dispatch|attempt|what-dir|change-dir|clean-path|list-dir|dirize|rename|split-path|delete|make-dir|delete-dir|in-dir|confirm|dump-obj|upgrade|what|build-tag|process-source|build-markup|decode-cgi|read-cgi|write-user|save-user|set-user-name|protect-system|parse-xml|cvs-date|cvs-version|do-boot|get-net-info|desktop|layout|scroll-para|get-face|alert|set-face|uninstall|unfocus|request-dir|center-face|do-events|net-error|decode-url|parse-header|parse-header-date|parse-email-addrs|import-email|send|build-attach-body|resend|show-popup|hide-popup|open-events|find-key-face|do-face|viewtop|confine|find-window|insert-event-func|remove-event-func|inform|dump-pane|dump-face|flag-face|deflag-face|clear-fields|read-net|vbug|path-thru|read-thru|load-thru|do-thru|launch-thru|load-image|request-download|do-face-alt|set-font|set-para|get-style|set-style|make-face|stylize|choose|hilight-text|hilight-all|unlight-text|focus|scroll-drag|clear-face|reset-face|scroll-face|resize-face|load-stock|load-stock-block|notify|request|flash|request-color|request-pass|request-text|request-list|request-date|request-file|dbug|editor|link-relative-path|emailer|parse-error)$
-10170	3	'^@[Dd][Aa][Tt][Aa]'	^@[Dd][Aa][Tt][Aa]
-2268	3	'(\\S+)\\s+(..+$)'	(\S+)\s+(..+$)
-309	9	'#define\\WDB_VERSION_MINOR\\W(\\d+)'	#define\WDB_VERSION_MINOR\W(\d+)
-12714	16	'https?://[^/]*(/.*reset/\\S*)'	https?://[^/]*(/.*reset/\S*)
-12002	8	'^x{}$'	^x{}$
-727	2	'(.*)'	(.*)
-9519	3	'^([a-zA-z0-9]+)=([\\S\\s]*)$'	^([a-zA-z0-9]+)=([\S\s]*)$
+6773	11	'\\$elif\\s+'	\$elif\s+
+10564	2	'^[0-9]'	^[0-9]
+2332	2	'(\\d)\\.(\\d{4})'	(\d)\.(\d{4})
+1002	5	'(?![\\.\\-])dev$'	(?![\.\-])dev$
+4643	3	'AMD64'	AMD64
 3857	6	':(\\w+)$'	:(\w+)$
-788	2	'(.*)\\[([^\\[\\]]+)\\](.*)'	(.*)\[([^\[\]]+)\](.*)
-3788	3	'00000000 <(v8dbg_.*)>:'	00000000 <(v8dbg_.*)>:
-12022	4	'_(unit)?test$'	_(unit)?test$
-6353	12	'[^-a-zA-Z0-9!*+/ ]'	[^-a-zA-Z0-9!*+/ ]
-6991	2	"\\.(\\w+)'>"	\.(\w+)'>
-10116	9	'^<>$'	^<>$
-159	9	'"[^"]*"'	"[^"]*"
-871	3	'(.+)=(.+)'	(.+)=(.+)
-13044	2	'ovs-vswitchd \\(Open vSwitch\\) (.+)'	ovs-vswitchd \(Open vSwitch\) (.+)
-8379	3	'\\w+\\.feature'	\w+\.feature
-5821	8	'[-./\\s]'	[-./\s]
-4215	3	'<a\\s*href="(.*)"\\s*>(.*)</a>'	<a\s*href="(.*)"\s*>(.*)</a>
-3848	2	':([a-zA-Z][a-zA-Z0-9_-]*)'	:([a-zA-Z][a-zA-Z0-9_-]*)
-13502	3	'window.location.replace\\("(.*)"\\);'	window.location.replace\("(.*)"\);
-1884	6	'([\\"\\\\])'	([\"\\])
-11515	4	'^\x1b\\]'	^\x1b\]
-12874	8	'lost: 0 bytes in 0 blocks'	lost: 0 bytes in 0 blocks
-3971	2	'<(?![a-z/?\\$!])'	<(?![a-z/?\$!])
-7996	4	'\\s*(.+)\\s*:\\s*([-a-zA-Z]+)\\s*$'	\s*(.+)\s*:\s*([-a-zA-Z]+)\s*$
-13521	2	'xen'	xen
-9312	2	'^([-]+BEGIN CERTIFICATE[-]+[\\r]*\\n.*[\\r]*^[-]+END CERTIFICATE[-]+)$'	^([-]+BEGIN CERTIFICATE[-]+[\r]*\n.*[\r]*^[-]+END CERTIFICATE[-]+)$
-5092	2	'LR Number:'	LR Number:
-7876	2	'\n[ ]+\n'	\n[ ]+\n
-121	11	'"$'	"$
-12006	15	'^{"type":"Point","coordinates":\\[-95.363151,29.763374,18(\\.0+)?\\]}$'	^{"type":"Point","coordinates":\[-95.363151,29.763374,18(\.0+)?\]}$
-9550	5	'^(\\.\\.)[\\/](.*)$'	^(\.\.)[\/](.*)$
-9606	2	'^(\\d+\\.\\d+)\\.\\d+(.*)'	^(\d+\.\d+)\.\d+(.*)
-10463	14	'^[ \t]*#define[ \t]+FT_COMPONENT[ \t]+trace_'	^[ \t]*#define[ \t]+FT_COMPONENT[ \t]+trace_
-6175	9	'[\n@{}&<>]'	[\n@{}&<>]
-6987	4	'\\.([hc]|py|txt|sln|vcproj)$'	\.([hc]|py|txt|sln|vcproj)$
-4496	2	'<tt class="[\\w+]"></tt>'	<tt class="[\w+]"></tt>
-3715	3	'/dev/cdrom-\\w+|/dev/cdrom\\d*'	/dev/cdrom-\w+|/dev/cdrom\d*
-10603	2	'^[0-9a-f]{40} refs/heads/(.+)$'	^[0-9a-f]{40} refs/heads/(.+)$
-6556	2	'[a-zA-Z0-9_-]+'	[a-zA-Z0-9_-]+
-11491	39	'^\\w+$'	^\w+$
-5001	2	'HFS\\s+(.+)'	HFS\s+(.+)
-2350	3	'(\\d+) bytes \\(\\d+\\.*\\d* \\w*\\) copied, (\\d+\\.*\\d*) s, \\d+\\.*\\d* \\w./s'	(\d+) bytes \(\d+\.*\d* \w*\) copied, (\d+\.*\d*) s, \d+\.*\d* \w./s
-1867	14	'([A-Za-z])+'	([A-Za-z])+
-7015	2	'\\.[0-9]+'	\.[0-9]+
-11688	2	'^http://build.mozilla.org/talos/'	^http://build.mozilla.org/talos/
-2595	21	'(\\w+(\\.\\w+)*)\\.(\\w*)'	(\w+(\.\w+)*)\.(\w*)
-6224	3	'[\\s]'	[\s]
-10984	2	'^\\./site-packages'	^\./site-packages
-10691	4	'^[\\S]+@[\\S]+\\.[\\S]+$'	^[\S]+@[\S]+\.[\S]+$
-9383	6	'^([A-Z][A-Z][A-Z])([-+]?[0-9]+)([A-Z][A-Z][A-Z]);([0-9]+)/([0-9]+),([0-9]+)/([0-9]+)$'	^([A-Z][A-Z][A-Z])([-+]?[0-9]+)([A-Z][A-Z][A-Z]);([0-9]+)/([0-9]+),([0-9]+)/([0-9]+)$
-3864	6	'::'	::
-6666	4	'[uU][rR]?[\\\'\\"]'	[uU][rR]?[\\'\"]
-13092	5	'pre$'	pre$
-10859	4	'^[a-zA-Z_]'	^[a-zA-Z_]
-12442	3	'enabled'	enabled
-6399	6	"[^A-Za-z0-9\\-_.~!*'();:@&=+$,/?%#[\\]]"	[^A-Za-z0-9\-_.~!*'();:@&=+$,/?%#[\]]
-7065	3	'\\.jar?$'	\.jar?$
-11133	3	'^\\s*#\\s*define\\s+OPENSSL_VERSION_NUMBER\\s+(0x[0-9a-fA-F]+)'	^\s*#\s*define\s+OPENSSL_VERSION_NUMBER\s+(0x[0-9a-fA-F]+)
-9317	2	'^([0-7]{6}) ([a-z]+) ([0-9a-f]{40})\\t(.*)$'	^([0-7]{6}) ([a-z]+) ([0-9a-f]{40})\t(.*)$
-8757	13	'^ *\n'	^ *\n
-11409	3	u'^\\s*var\\s+[a-zA-Z_$]\\w*\\s*=\\s*function\\s+([a-zA-Z_$]\\w*)\\s*\\('	^\s*var\s+[a-zA-Z_$]\w*\s*=\s*function\s+([a-zA-Z_$]\w*)\s*\(
-7966	2	'\\s*#(.*)$'	\s*#(.*)$
-11676	16	'^hg\\s*update\\s*-r\\s*(.*)\\s*'	^hg\s*update\s*-r\s*(.*)\s*
-4604	4	'@@PACKAGE_NAME@@'	@@PACKAGE_NAME@@
-4288	2	'<h2 class="ti-5"><a href="http://video\\.yahoo\\.com/(people|profile)/[0-9]+" beacon=".*">(.*)</a></h2>'	<h2 class="ti-5"><a href="http://video\.yahoo\.com/(people|profile)/[0-9]+" beacon=".*">(.*)</a></h2>
-13296	5	'static label labels\\[(\\d+)\\] = {$'	static label labels\[(\d+)\] = {$
-10186	2	'^Attached scsi disk (.+) at scsi(.+), channel (.+), id (.+), lun (.+)$'	^Attached scsi disk (.+) at scsi(.+), channel (.+), id (.+), lun (.+)$
-2311	8	'(\\\\*)([,;]+)'	(\\*)([,;]+)
-882	5	'(.+)\\.(\\w*)$'	(.+)\.(\w*)$
-5559	2	'Username="(\\w+)"'	Username="(\w+)"
-4469	2	'<title>(.*) video by (.*) - Photobucket</title>'	<title>(.*) video by (.*) - Photobucket</title>
-12414	2	'dot version ([\\d\\.]+)'	dot version ([\d\.]+)
-10624	3	'^[67]\\.'	^[67]\.
-11360	15	'^\\s*\\n'	^\s*\n
-8752	2	'^ *([0-9]+)'	^ *([0-9]+)
-4868	2	'Duration: (\\d{2}):(\\d{2}):(\\d{2}.\\d{2}),'	Duration: (\d{2}):(\d{2}):(\d{2}.\d{2}),
-12076	2	'__start_report(.*)__end_report'	__start_report(.*)__end_report
-2180	15	'(\\(|\\)|\\s+|-)'	(\(|\)|\s+|-)
-2906	2	'(interface|) ([^ ]*) : public (.*)$'	(interface|) ([^ ]*) : public (.*)$
-12213	2	'biltxt'	biltxt
-7980	5	'\\s*$'	\s*$
-11440	3	'^\\s+File .* in runUntilCurrent'	^\s+File .* in runUntilCurrent
-7037	3	'\\.\\d+'	\.\d+
-11462	3	'^\\s+by 0x[0-9A-Fa-f]+: '	^\s+by 0x[0-9A-Fa-f]+: 
-2321	2	'(\\\\|\\*|\\+|\\?|\\||\\{|\\}|\\[|\\]|\\(|\\)|\\^|\\$|\\.|\\#|\\ )'	(\\|\*|\+|\?|\||\{|\}|\[|\]|\(|\)|\^|\$|\.|\#|\ )
-9937	6	'^.*\\.(c|cpp)$'	^.*\.(c|cpp)$
-2838	7	'(a)|(b)'	(a)|(b)
-3523	3	'.*}.*'	.*}.*
-4486	6	'<title>\\([^<]*\\)</title>'	<title>\([^<]*\)</title>
-11073	3	'^\\d+\\.\\d+(\\.\\d+)?$'	^\d+\.\d+(\.\d+)?$
-5854	3	'[./\\\\]'	[./\\]
-13346	4	'text/html|application/x(ht)?ml'	text/html|application/x(ht)?ml
-1714	3	'([ ]+)\t'	([ ]+)\t
-496	3	'&quot;'	&quot;
-3593	4	'/$'	/$
-13463	3	'vecLib'	vecLib
-5763	4	'[()\\\\]'	[()\\]
-0	25	' '	 
+7426	3	'\\\\(?!\\s$)'	\\(?!\s$)
+8189	2	'\\s*\\}\\s*'	\s*\}\s*
+9779	2	'^(fails|needs-focus|random|skip|asserts|fuzzy)'	^(fails|needs-focus|random|skip|asserts|fuzzy)
 7846	3	'\n(Contents of the|The section) '	\n(Contents of the|The section) 
-5360	2	'S(\\s+0.0+){2}.*vhost-\\d+[\\d|+]'	S(\s+0.0+){2}.*vhost-\d+[\d|+]
-1842	3	'([A-Z]+)\\s+:\\s+(.*)$'	([A-Z]+)\s+:\s+(.*)$
-4419	2	'<replaceable>[^<]+</replaceable>'	<replaceable>[^<]+</replaceable>
-2179	19	'(\\(|\\)|\\s+)'	(\(|\)|\s+)
-1807	6	'([0-9]{4}-[0-9]{2}-[0-9]{2})  ([0-9]{4,5}) {1,2}(.*)'	([0-9]{4}-[0-9]{2}-[0-9]{2})  ([0-9]{4,5}) {1,2}(.*)
-10131	8	'^<gml:Point SrsName="EPSG::4326"><gml:coordinates decimal="\\." cs="," ts=" ">-104.609251\\d+,38.255001</gml:coordinates></gml:Point>'	^<gml:Point SrsName="EPSG::4326"><gml:coordinates decimal="\." cs="," ts=" ">-104.609251\d+,38.255001</gml:coordinates></gml:Point>
-5890	4	'[0-9]'	[0-9]
-1839	4	'([A-Z]+)'	([A-Z]+)
-12604	3	'h[23]$'	h[23]$
-2860	2	'(const)?\\s*char\\s*\\*?$'	(const)?\s*char\s*\*?$
-13181	2	'repo\\=cdrom[\\:\\w\\d\\/]*'	repo\=cdrom[\:\w\d\/]*
-11561	16	'^bzr\\s*branch\\s*-r\\s*(\\d*)'	^bzr\s*branch\s*-r\s*(\d*)
-9015	3	'^(.+)[:(]\\d+[:)]'	^(.+)[:(]\d+[:)]
-12448	11	'encoding\\s*=\\s*[\'"]([^"\']+)["\']'	encoding\s*=\s*[\'"]([^"\']+)["\']
-5628	2	'YEAS -?\\s?(\\d+)(.*)NAYS -?\\s?(\\d+)(.*)ABSENT( OR NOT VOTING)? -?\\s?(\\d+)(.*)'	YEAS -?\s?(\d+)(.*)NAYS -?\s?(\d+)(.*)ABSENT( OR NOT VOTING)? -?\s?(\d+)(.*)
+13332	2	'test2'	test2
+10897	3	'^[http|file|chrome|about].*'	^[http|file|chrome|about].*
+9554	2	'^(\\S+ \\S+ \\S+ \\S+: )?(.*)$'	^(\S+ \S+ \S+ \S+: )?(.*)$
+241	3	'#.*$'	#.*$
+1677	2	'(ERROR|FATAL):'	(ERROR|FATAL):
+13156	2	'rc_view'	rc_view
+10587	2	'^[0-9]{2}$'	^[0-9]{2}$
+7439	9	'\\\\([abfnrtv?"\\\\\\\']|\\d+|x[0-9a-fA-F]+)'	\\([abfnrtv?"\\\\']|\d+|x[0-9a-fA-F]+)
+13018	3	'o:(.*)s'	o:(.*)s
+1841	4	'([A-Z]+)([A-Z][a-z])'	([A-Z]+)([A-Z][a-z])
+8179	15	'\\s*\\]'	\s*\]
+5145	2	'MemFree:\\s+(.\\d+)\\s+(\\w+)'	MemFree:\s+(.\d+)\s+(\w+)
+12760	2	'importScripts\\([\\\'"]([^\\\'"]+)[\\\'"]\\)'	importScripts\([\\'"]([^\\'"]+)[\\'"]\)
+4438	6	'<span class="date below-more" title="([^"]+)"'	<span class="date below-more" title="([^"]+)"
+432	2	'&#8230;'	&#8230;
+4043	2	'</[a-z]*>'	</[a-z]*>
+9312	2	'^([-]+BEGIN CERTIFICATE[-]+[\\r]*\\n.*[\\r]*^[-]+END CERTIFICATE[-]+)$'	^([-]+BEGIN CERTIFICATE[-]+[\r]*\n.*[\r]*^[-]+END CERTIFICATE[-]+)$
+3839	2	':"([0-9]+)"'	:"([0-9]+)"
+7876	2	'\n[ ]+\n'	\n[ ]+\n
+7185	2	'\\A#!.*python(?!3).*$'	\A#!.*python(?!3).*$
+12529	2	'fourth commit'	fourth commit
+11145	3	'^\\s*#define SSH_([A-Z_]+)\\s+([0-9x]*)\\s*$'	^\s*#define SSH_([A-Z_]+)\s+([0-9x]*)\s*$
+7466	19	'\\\\[0-3][0-7][0-7]'	\\[0-3][0-7][0-7]
+12202	2	'backing file'	backing file
+4024	8	'</(\\w+)>'	</(\w+)>
+9606	2	'^(\\d+\\.\\d+)\\.\\d+(.*)'	^(\d+\.\d+)\.\d+(.*)
+2359	4	'(\\d+)% packet loss'	(\d+)% packet loss
+1766	8	'([0-9.]+)(\\S*)$'	([0-9.]+)(\S*)$
+9452	8	'^([^:]*):\\t(.*)'	^([^:]*):\t(.*)
+1719	4	'([!{}:;>+\\(\\[,])\\s+'	([!{}:;>+\(\[,])\s+
+6533	3	'[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}'	[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}
+2350	3	'(\\d+) bytes \\(\\d+\\.*\\d* \\w*\\) copied, (\\d+\\.*\\d*) s, \\d+\\.*\\d* \\w./s'	(\d+) bytes \(\d+\.*\d* \w*\) copied, (\d+\.*\d*) s, \d+\.*\d* \w./s
+6208	14	'[\\s.]'	[\s.]
+8408	7	'\x00'	\x00
+5539	2	'URL: (\\S+)'	URL: (\S+)
+9273	3	'^(MemTotal|MemFree|Buffers|Cached|SwapCached|Active|Inactive|SwapTotal|SwapFree|Dirty|VmallocTotal|VmallocUser|VmallocChunk):\\s*(\\d+)\\s*kB'	^(MemTotal|MemFree|Buffers|Cached|SwapCached|Active|Inactive|SwapTotal|SwapFree|Dirty|VmallocTotal|VmallocUser|VmallocChunk):\s*(\d+)\s*kB
+6246	3	u'[\\t]'	[\t]
+8043	2	'\\s*([a-zA-Z_][-:.a-zA-Z_0-9]*)[$]?(\\s*=\\s*(\\\'[^\\\']*\\\'|"[^"]*"|[][\\-a-zA-Z0-9./,:;+*%?!&$\\(\\)_#=~\\\'"@]*))?'	\s*([a-zA-Z_][-:.a-zA-Z_0-9]*)[$]?(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[][\-a-zA-Z0-9./,:;+*%?!&$\(\)_#=~\\'"@]*))?
+4948	2	'FlashCopy Mapping, id \\[([0-9]+)\\], successfully created'	FlashCopy Mapping, id \[([0-9]+)\], successfully created
+8108	2	'\\s*<entry><type>([^<]+)</></entry>'	\s*<entry><type>([^<]+)</></entry>
+5770	24	'[*?[]'	[*?[]
+7310	4	'\\[(\\d?\\d?\\d?)%\\]'	\[(\d?\d?\d?)%\]
 2850	8	'(b)|(:+)'	(b)|(:+)
-8937	2	'^(.*)(ed|ing)$'	^(.*)(ed|ing)$
-775	2	'(.*)\\('	(.*)\(
-10409	3	'^Status against revision:\\s+(\\d+)'	^Status against revision:\s+(\d+)
-6673	2	'[{ ]*[-+0-9]'	[{ ]*[-+0-9]
-9623	15	'^(\\d{2})[-\\.]?(\\d{4})[-\\.]?(\\d{4})$'	^(\d{2})[-\.]?(\d{4})[-\.]?(\d{4})$
-9918	14	'^.*FT_TRACE_DEF[ \t]*\\([ \t]*'	^.*FT_TRACE_DEF[ \t]*\([ \t]*
-3005	2	',[ ]*([-]?\\d+|n)'	,[ ]*([-]?\d+|n)
-176	3	'"|\\\\'	"|\\
-6204	22	'[\\s,]'	[\s,]
-6896	2	'\\(live[^\\)]*\\)'	\(live[^\)]*\)
-3123	6	'-isysroot\\s+(\\S+)'	-isysroot\s+(\S+)
-4540	7	'=[ =]*$'	=[ =]*$
-5048	2	'Index: '	Index: 
-8345	4	'\\t+'	\t+
+10025	3	'^/?[a-zA-Z0-9_.-]+(/[a-zA-Z0-9_.-]+)*/?$'	^/?[a-zA-Z0-9_.-]+(/[a-zA-Z0-9_.-]+)*/?$
+3672	19	'/\\*'	/\*
+658	2	'(([wum]asser(t|ted))) *\\(( *)(\\d+) *,\\s*([\\S\\s+<\\(\\)"]+) *,?.*'	(([wum]asser(t|ted))) *\(( *)(\d+) *,\s*([\S\s+<\(\)"]+) *,?.*
+7950	81	'\\s'	\s
+8182	3	u'\\s*\\n\\s*'	\s*\n\s*
+7038	7	'\\.\\d+$'	\.\d+$
+796	9	'(.*)\\|(.*)'	(.*)\|(.*)
+3508	2	'.*subject=\\w+$'	.*subject=\w+$
+10601	3	'^[0-9a-f]{20,40}$'	^[0-9a-f]{20,40}$
+12203	2	'backing file:'	backing file:
+10591	2	'^[0-9]{4}$'	^[0-9]{4}$
+11383	2	'^\\s*from flask import\\s+'	^\s*from flask import\s+
+5796	2	'[,\\s]+'	[,\s]+
+7137	2	'\\<(\\d+)\\>(.*)'	\<(\d+)\>(.*)
+11967	3	'^uninst .*$'	^uninst .*$
+6952	13	'\\+OK.*(<[^>]+>)'	\+OK.*(<[^>]+>)
+2848	2	'(a|alpha|b|beta|pre|rc)\\d*$'	(a|alpha|b|beta|pre|rc)\d*$
+13551	2	'{([^}]*)}'	{([^}]*)}
+12252	2	'call\\slaunch\\sbefore'	call\slaunch\sbefore
+4469	2	'<title>(.*) video by (.*) - Photobucket</title>'	<title>(.*) video by (.*) - Photobucket</title>
+11565	8	'^cat '	^cat 
+13157	15	'realm="([^"]*)"'	realm="([^"]*)"
+11522	3	'^_+'	^_+
+9398	5	'^([A-Za-z][^:]*):[ \\t]*(.*)[ \\t]*$'	^([A-Za-z][^:]*):[ \t]*(.*)[ \t]*$
+1757	17	'([.\\w-]+)\\s*(.*)$'	([.\w-]+)\s*(.*)$
+9985	6	'^...?.?\\....?.?'	^...?.?\....?.?
+7320	2	'\\[.*\\d+ tests.*\\n'	\[.*\d+ tests.*\n
+3397	2	'.*\\*$'	.*\*$
+3206	2	'.*6300ESB Watchdog Timer'	.*6300ESB Watchdog Timer
+3621	4	'/+'	/+
+11440	3	'^\\s+File .* in runUntilCurrent'	^\s+File .* in runUntilCurrent
+13480	2	'virtual size:\\s+(\\S+.*)'	virtual size:\s+(\S+.*)
+6237	8	"[\t\n #$%&'()*;<=>?[{|}~]|^$"	[\t\n #$%&'()*;<=>?[{|}~]|^$
+10006	2	'^/(artist|release|track|label|release-group)/([^/]*)$'	^/(artist|release|track|label|release-group)/([^/]*)$
+9739	2	'^(\\w+)\\s+(\\w+)\\s+(\\w+)\\s+(\\S+)\\s+(([a-fA-F0-9]{2}:?){6})'	^(\w+)\s+(\w+)\s+(\w+)\s+(\S+)\s+(([a-fA-F0-9]{2}:?){6})
+7994	3	'\\s*(-?\\d+)\\s*-\\s*(-?\\d+)\\s*$'	\s*(-?\d+)\s*-\s*(-?\d+)\s*$
+1938	7	'([\\t ]+)'	([\t ]+)
+13065	2	'part_start'	part_start
+2321	2	'(\\\\|\\*|\\+|\\?|\\||\\{|\\}|\\[|\\]|\\(|\\)|\\^|\\$|\\.|\\#|\\ )'	(\\|\*|\+|\?|\||\{|\}|\[|\]|\(|\)|\^|\$|\.|\#|\ )
+7476	2	'\\\\\\?([^\\.]+)\\.(.*)'	\\\?([^\.]+)\.(.*)
+3904	6	'; *q *='	; *q *=
+3122	16	'-isysroot [^ \t]*'	-isysroot [^ \t]*
+3443	3	'.*\\s(\\d+).*'	.*\s(\d+).*
+10839	4	'^[a-zA-Z]'	^[a-zA-Z]
+2830	8	'(a)'	(a)
+7448	3	'\\\\*\\#'	\\*\#
+9521	4	'^([a-z]*)(:|%3A)([\\w-]*)$'	^([a-z]*)(:|%3A)([\w-]*)$
+4784	2	'Components\\.classes'	Components\.classes
+11524	3	'^_ZThn[0-9]+_'	^_ZThn[0-9]+_
+6979	2	'\\.(?!\\s)(\\D)'	\.(?!\s)(\D)
+7675	4	'\\d+ hdrcharset=([^\\n]+)\\n'	\d+ hdrcharset=([^\n]+)\n
+5250	2	'PATH.[^\\s]+\\s'	PATH.[^\s]+\s
+1710	2	'(Y=.*)'	(Y=.*)
+2905	2	'(initrd(.*).img|ramdisk.image.gz)'	(initrd(.*).img|ramdisk.image.gz)
+1917	3	'([\\d.]+) ([\\d.]+) ([\\d.]+) (\\d+)/(\\d+)'	([\d.]+) ([\d.]+) ([\d.]+) (\d+)/(\d+)
+8068	3	'\\s*,?\\s*new Array\\('	\s*,?\s*new Array\(
+10959	9	'^\\* ([^:]*):(:|[ \t]*([^\t,\n.]+)([^ \t\n]*))[ \t\n]*'	^\* ([^:]*):(:|[ \t]*([^\t,\n.]+)([^ \t\n]*))[ \t\n]*
+5974	7	'[<>\'"]'	[<>\'"]
+3629	6	'//'	//
+8786	10	'^#! */usr/local/bin/python'	^#! */usr/local/bin/python
+3855	2	':(\\s|$)'	:(\s|$)
+12360	4	'decode\\..+'	decode\..+
+1963	2	'([\\w]*)([^:=]*:?=?)([sif]?)'	([\w]*)([^:=]*:?=?)([sif]?)
+4372	2	'<meta name="video_width" content="([0-9]+)" />'	<meta name="video_width" content="([0-9]+)" />
+2580	2	'(\\s|,)+'	(\s|,)+
+13098	2	'processor'	processor
+2461	20	'(\\d{1,2})\\.(\\d{1,2})\\.(\\d{1,2})'	(\d{1,2})\.(\d{1,2})\.(\d{1,2})
+10482	3	'^[ \t]+def +[a-zA-Z0-9_]+ *( *self *, *(( *(.*) *)) *) *:'	^[ \t]+def +[a-zA-Z0-9_]+ *( *self *, *(( *(.*) *)) *) *:
+3191	2	'.*/(\\d+)'	.*/(\d+)
+10869	7	'^[a-zA-Z_]\\w*'	^[a-zA-Z_]\w*
+9609	3	'^(\\d+\\.|[-*|]|\\[\\d+\\]) .'	^(\d+\.|[-*|]|\[\d+\]) .
+9827	2	'^(}|struct\\s+\\w+);\\s*$'	^(}|struct\s+\w+);\s*$
+310	3	'#define\\WDB_VERSION_PATCH\\W(\\d+)'	#define\WDB_VERSION_PATCH\W(\d+)
+6159	7	'[\\\\]end{([^}]*)}'	[\\]end{([^}]*)}
+10676	13	'^[A-Za-z_][A-Za-z0-9_.]*$'	^[A-Za-z_][A-Za-z0-9_.]*$
+7435	3	'\\\\([0-9a-fA-F]{1,6})\\s?'	\\([0-9a-fA-F]{1,6})\s?
+687	2	'((fassertFailed)()) *\\(( *)(\\d+)()'	((fassertFailed)()) *\(( *)(\d+)()
+12349	16	'darwin-(\\d+)\\.(\\d+)\\.(\\d+)-(.*)'	darwin-(\d+)\.(\d+)\.(\d+)-(.*)
+9448	2	'^([^:]*):([^@]*)@([^:]*):([^/]*)/([^/]*)/?(.*)'	^([^:]*):([^@]*)@([^:]*):([^/]*)/([^/]*)/?(.*)
+4776	2	'CoSponsor'	CoSponsor
+712	2	'(-?\\d+)(\\d{3})'	(-?\d+)(\d{3})
+5834	36	'[-\\s]+'	[-\s]+
+7107	3	'\\/\\* Begin PBXBuildFile section \\*\\/\n'	\/\* Begin PBXBuildFile section \*\/\n
+8081	2	'\\s*.*#\\s*.*define\\s.*SQLITE_VERSION\\W*"(.*)"'	\s*.*#\s*.*define\s.*SQLITE_VERSION\W*"(.*)"
+2624	2	'(\\w+)Manifest'	(\w+)Manifest
 4623	2	'@dists='	@dists=
-2223	2	'(\\D)\\.(?!\\s)'	(\D)\.(?!\s)
-2254	2	'(\\S+)\\s*=\\s*("([^"]*)"|\'([^\']*)\')'	(\S+)\s*=\s*("([^"]*)"|\'([^\']*)\')
-11710	6	'^https?://\\S+$'	^https?://\S+$
-8148	2	'\\s*[^\\s]+\\s*='	\s*[^\s]+\s*=
-10717	3	u'^[\\w/:+-]+$'	^[\w/:+-]+$
-2527	7	'(\\s*#)|(\\s*$)'	(\s*#)|(\s*$)
-6279	3	'[\x00-\x08\x0b-\x0c\x0e-\x1f]'	[\x00-\x08\x0b-\x0c\x0e-\x1f]
-4113	16	'<[>a-zA-Z]'	<[>a-zA-Z]
-11680	2	'^http(s)?://'	^http(s)?://
-12883	2	'mac='	mac=
-7250	59	'\\W'	\W
-10789	3	'^[a-z0-9][a-z0-9_]{2,}$'	^[a-z0-9][a-z0-9_]{2,}$
-569	2	'(&#\\d+;)'	(&#\d+;)
-9321	3	'^([0-9\\.]+)\\s*([0-9\\.]+)\\s*([0-9\\.]+)\\s*([0-9]+)\\/([0-9]+)'	^([0-9\.]+)\s*([0-9\.]+)\s*([0-9\.]+)\s*([0-9]+)\/([0-9]+)
-968	5	'(<[^>]+>)'	(<[^>]+>)
-6689	4	'\\"\\"\\"|\\\'\\\'\\\''	\"\"\"|\\'\\'\\'
-6051	2	'[N|n]ame'	[N|n]ame
-9854	2	'^.(.*).$'	^.(.*).$
-6470	4	'[^\\}\\{]+\\{\\}'	[^\}\{]+\{\}
-3059	13	'-->'	-->
-7886	3	'\n\n\n+'	\n\n\n+
-9492	2	'^([a-zA-Z-]+\\.[0-9]+)\\.[0-9]+.log$'	^([a-zA-Z-]+\.[0-9]+)\.[0-9]+.log$
-399	2	'%e'	%e
-8732	16	']\\s*]\\s*>'	]\s*]\s*>
-5692	3	'[ \t]+([A-Z0-9]+) \\/\\* PBXTargetDependency \\*\\/,\n'	[ \t]+([A-Z0-9]+) \/\* PBXTargetDependency \*\/,\n
-10105	2	'^<!-- ##### (\\w+) (\\w+) ##### -->$'	^<!-- ##### (\w+) (\w+) ##### -->$
-10929	3	'^\\${\\d+[:}]'	^\${\d+[:}]
-11397	3	'^\\s*public static final int ([A-Z_]+) = (\\d+);$'	^\s*public static final int ([A-Z_]+) = (\d+);$
-12015	25	'_'	_
-7711	2	'\\d+\\.\\d+\\.\\d+\\.\\d+'	\d+\.\d+\.\d+\.\d+
-6657	3	'[pP]ython'	[pP]ython
-6872	2	'\\([^)]+\\)\\s*(([A-Za-z0-9_][A-Za-z0-9_]*))'	\([^)]+\)\s*(([A-Za-z0-9_][A-Za-z0-9_]*))
-8240	3	'\\s+(-\\S+):\\s+(.*)$'	\s+(-\S+):\s+(.*)$
-8764	6	'^ | $|/ | /'	^ | $|/ | /
-4245	2	'<code>(.*)</code><description>(.*)</description>'	<code>(.*)</code><description>(.*)</description>
-6988	3	'\\.(\\d)+$'	\.(\d)+$
-12056	2	'_\\d+$'	_\d+$
-6134	4	'[\\W]+'	[\W]+
-2676	8	'(\x1b|~{)'	(\x1b|~{)
-3907	4	';+\\}'	;+\}
-8092	4	'\\s*:\\s*'	\s*:\s*
-13356	2	'timestamp="(.*)"'	timestamp="(.*)"
-5113	7	'Local variables in frame'	Local variables in frame
-7170	2	u'\\?[a-zA-Z_][a-zA-Z0-9_]*'	\?[a-zA-Z_][a-zA-Z0-9_]*
-10831	2	'^[a-zA-Z0-9_\\.]+$'	^[a-zA-Z0-9_\.]+$
-12877	3	'lsi53c895a'	lsi53c895a
-4351	2	'<link rel="image_src" href="(.*)" />'	<link rel="image_src" href="(.*)" />
-4214	2	'<a[^>]*\\shref'	<a[^>]*\shref
-11255	2	'^\\s*/\\*\\*\\s'	^\s*/\*\*\s
-2866	2	'(const-)?([A-Za-z0-9]+)\\*?\\s+'	(const-)?([A-Za-z0-9]+)\*?\s+
+11595	7	'^createdb: database creation failed: ERROR:  database ".+" already exists'	^createdb: database creation failed: ERROR:  database ".+" already exists
+6836	9	'\\((\\S+).py, line (\\d+)'	\((\S+).py, line (\d+)
+13297	5	'static state states_(\\d+)\\[(\\d+)\\] = {$'	static state states_(\d+)\[(\d+)\] = {$
+3020	4	'- '	- 
+11997	8	'^x{1}$'	^x{1}$
+8958	2	'^(.*)\\s*<(.*)>\\s*(.*)\\s*$'	^(.*)\s*<(.*)>\s*(.*)\s*$
+5975	19	'[<>]'	[<>]
+12302	13	'coding[:=]\\s*([-\\w_.]+)'	coding[:=]\s*([-\w_.]+)
+6298	2	'[\x02\x1f\x16\x0f\x03]'	[\x02\x1f\x16\x0f\x03]
+9561	2	'^(\\S+)\\s+\\D*(\\d+)'	^(\S+)\s+\D*(\d+)
+1823	6	'([<>]|&(?!#\\d+;|#x[0-9a-fA-F]+;|\\w+;))'	([<>]|&(?!#\d+;|#x[0-9a-fA-F]+;|\w+;))
+800	4	'(.*)_\\d\\d'	(.*)_\d\d
+1784	3	'([0-9]+):([0-9]+)'	([0-9]+):([0-9]+)
+3682	10	'/\\*([^*]+|\\*+[^/])*(\\*+/)?'	/\*([^*]+|\*+[^/])*(\*+/)?
+11307	4	'^\\s*T_VIRTUAL_CALL: (\\d+) calls on (.*):$'	^\s*T_VIRTUAL_CALL: (\d+) calls on (.*):$
+2149	2	'([{}])'	([{}])
+6728	2	'\\$VersionInfo\\$'	\$VersionInfo\$
+13050	2	'p\\s*cnf\\s*(\\d*)\\s*(\\d*)'	p\s*cnf\s*(\d*)\s*(\d*)
+10994	22	'^\\.\\s*(\\w+)\\s*'	^\.\s*(\w+)\s*
+1833	3	'([A-Z0-9]+) \\/\\* Frameworks \\*\\/'	([A-Z0-9]+) \/\* Frameworks \*\/
+8897	2	'^(([^:/?#]+):)?(//([^/?#]*):([^/?#]*))?'	^(([^:/?#]+):)?(//([^/?#]*):([^/?#]*))?
+2206	15	'(\\.|\\s|/|-)'	(\.|\s|/|-)
+285	6	'#define ([A-Z][A-Z0-9_]+) (.*)\n'	#define ([A-Z][A-Z0-9_]+) (.*)\n
+1975	39	'([\x80-\x9f])'	([\x80-\x9f])
+6809	6	'\\((.*)\\)'	\((.*)\)
+11975	6	'^v..?.?\\...?.?'	^v..?.?\...?.?
+9891	3	'^.*:\\$'	^.*:\$
+6164	16	'[\\d.]+'	[\d.]+
+5896	22	'[0-9]+'	[0-9]+
+4723	2	'Bill Name:\\s+([H|S]F\\d+)'	Bill Name:\s+([H|S]F\d+)
+4806	8	'Copyright [\\d-]*20[0-1][0-9] the V8 project authors. All rights reserved.'	Copyright [\d-]*20[0-1][0-9] the V8 project authors. All rights reserved.
+12201	3	'ba'	ba
+4818	10	'Customer="?WILE_E_COYOTE"?;\\s*\\$Path="\\/acme"'	Customer="?WILE_E_COYOTE"?;\s*\$Path="\/acme"
+91	2	' \\| '	 \| 
+4898	2	'EXAMPLE'	EXAMPLE
+2205	15	'(\\.|\\s)'	(\.|\s)
+2751	2	'(^/dev/x{0,1}[a-z]{0,1}d{0,1})([a-z]+)[0-9]*$'	(^/dev/x{0,1}[a-z]{0,1}d{0,1})([a-z]+)[0-9]*$
+10919	8	'^\\$\\((.*)\\)(/(.*)|)$'	^\$\((.*)\)(/(.*)|)$
+2886	5	'(halt|quit|do|load|q|recycle|call|run|ask|parse|view|unview|return|exit|break)$'	(halt|quit|do|load|q|recycle|call|run|ask|parse|view|unview|return|exit|break)$
+693	2	'((msgasser(t|ted)NoTrace)) *\\(( *)(\\d+) *, *("\\S[^,^"]+\\S") *,?'	((msgasser(t|ted)NoTrace)) *\(( *)(\d+) *, *("\S[^,^"]+\S") *,?
+7990	16	'\\s*((\\w|[-.])+)'	\s*((\w|[-.])+)
+2353	2	'(\\d+) files? changed, (\\d+) insertions?\\(\\+\\), (\\d+) deletions?\\(\\-\\)'	(\d+) files? changed, (\d+) insertions?\(\+\), (\d+) deletions?\(\-\)
+12632	2	'href="/pypi/([^/"]*)'	href="/pypi/([^/"]*)
+8939	14	'^(.*):(.*)$'	^(.*):(.*)$
+125	2	'"(.*)"(\\s*\\[.*\\])'	"(.*)"(\s*\[.*\])
+13399	2	'ubuntu'	ubuntu
+6148	2	'[\\\\/\\*]'	[\\/\*]
+9618	8	'^(\\d{1,3})\\.(\\d{1,4})$'	^(\d{1,3})\.(\d{1,4})$
+10027	3	'^/[-\\w/]*$'	^/[-\w/]*$
+7942	2	'\r\n?'	\r\n?
+3335	2	'.*SUSE.*'	.*SUSE.*
+2368	3	'(\\d+),\\s*(.+),\\s*(.+),\\s*(.+)'	(\d+),\s*(.+),\s*(.+),\s*(.+)
+5697	6	'[ \t][ \t]+'	[ \t][ \t]+
+4580	2	'@([^\'"\\s]+)'	@([^\'"\s]+)
 5560	2	'UsernameToken Username="([^"]+)", PasswordDigest="([^"]+)", Nonce="([^"]+)", Created="([^"]+)"'	UsernameToken Username="([^"]+)", PasswordDigest="([^"]+)", Nonce="([^"]+)", Created="([^"]+)"
-6777	11	'\\$if\\s+'	\$if\s+
+2896	2	'(https?://|git://)github'	(https?://|git://)github
 7242	3	'\\S+\\s(\\S+)\\t(.+)'	\S+\s(\S+)\t(.+)
 6102	2	'[\\.\\-\\/\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\+\\-"\'\\,\\;\\:\\[\\]\\{\\}\\<\\>\\=\\_]'	[\.\-\/\!\@\#\$\%\^\&\*\(\)\+\-"\'\,\;\:\[\]\{\}\<\>\=\_]
-2426	5	'(\\d+\\.\\d+)'	(\d+\.\d+)
-5204	2	'No such file'	No such file
-3488	2	'.*lib2to3.*\\.pickle$'	.*lib2to3.*\.pickle$
-7937	4	'\r?\n\\d'	\r?\n\d
-321	3	'#egg=(.*)$'	#egg=(.*)$
-2038	2	'([^A-Z])([A-Z])'	([^A-Z])([A-Z])
+141	3	'"([^"]*)",?'	"([^"]*)",?
+12667	2	'http://(\\S+)\\s*'	http://(\S+)\s*
+6936	2	'\\*\\S'	\*\S
+8038	13	'\\s*([a-zA-Z_][-.:a-zA-Z_0-9]*)(\\s*=\\s*(\\\'[^\\\']*\\\'|"[^"]*"|[-a-zA-Z0-9./,:;+*%?!&$\\(\\)_#=~@]*))?'	\s*([a-zA-Z_][-.:a-zA-Z_0-9]*)(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[-a-zA-Z0-9./,:;+*%?!&$\(\)_#=~@]*))?
 11718	3	'^https?://github.com/([^/]+)/?$'	^https?://github.com/([^/]+)/?$
-7771	2	u'\n            ([a-zA-Z]+        #Tag\n            \\s?[0-9]+):       #Tag number\n            \\s+[+-]           #Temp signed\n            ([0-9]+\\.[0-9]+)  #Temp value\n            (\\xc2\\xb0         #\xb0 match\n            [CF])             #Celsius or Fahrenheit\n            '	\n            ([a-zA-Z]+        #Tag\n            \s?[0-9]+):       #Tag number\n            \s+[+-]           #Temp signed\n            ([0-9]+\.[0-9]+)  #Temp value\n            (\xc2\xb0         #\xb0 match\n            [CF])             #Celsius or Fahrenheit\n            
-5148	2	'MemTotal:\\s+(\\d+)\\s+kB'	MemTotal:\s+(\d+)\s+kB
-12409	2	'doctype\\s+: (\\w+)'	doctype\s+: (\w+)
-13251	31	'set_fabric_sense_len\\)\\('	set_fabric_sense_len\)\(
-5007	2	'HTTP/(\\d\\.\\d)\\s+(\\d+)\\s+(.*)$'	HTTP/(\d\.\d)\s+(\d+)\s+(.*)$
-12118	8	'ab+c'	ab+c
-6311	12	'[^ !-<>-~\\t]'	[^ !-<>-~\t]
-356	3	'%(@|d|f|lld|\\d+\\.?f|\\d+\\.\\d+f|\\d+d)'	%(@|d|f|lld|\d+\.?f|\d+\.\d+f|\d+d)
-2392	2	'(\\d+):.*virtio\\d+-input.\\d'	(\d+):.*virtio\d+-input.\d
+7469	2	'\\\\[\\s.-]'	\\[\s.-]
+2084	5	'([a-zA-Z-]+):\\s*$'	([a-zA-Z-]+):\s*$
+9612	2	'^(\\d\\d)'	^(\d\d)
+4108	2	'<Timeout>(.+)</Timeout>'	<Timeout>(.+)</Timeout>
+11421	14	'^\\s+$'	^\s+$
+5749	22	'[&<]'	[&<]
+234	2	'#(\\S+)'	#(\S+)
+8152	8	'\\s*\\$\\$.*'	\s*\$\$.*
+5267	2	'Party: '	Party: 
+11974	4	'^v(ersion)?\\s*(\\d+)'	^v(ersion)?\s*(\d+)
+529	3	"'\\?(.)'"	'\?(.)'
+13547	3	'{(..+)}'	{(..+)}
+4746	2	'CONSTRAINT (\\w+) UNIQUE \\(([^\\)]+)\\)'	CONSTRAINT (\w+) UNIQUE \(([^\)]+)\)
+8241	3	'\\s+(-\\S+)\\s+(.*)$'	\s+(-\S+)\s+(.*)$
+3039	8	'-- ADDMODULE MARKER 2 --'	-- ADDMODULE MARKER 2 --
+8198	3	'\\s*define|\\s*endef'	\s*define|\s*endef
+8296	5	'\\s+{(\\d+), "(\\w+)", (\\d+), (\\d+), states_(\\d+),$'	\s+{(\d+), "(\w+)", (\d+), (\d+), states_(\d+),$
 8151	3	'\\s*\\#\\s*include\\s+<cxxtest/'	\s*\#\s*include\s+<cxxtest/
-8157	4	'\\s*\\(0[xX][0-9a-fA-F]*\\).*'	\s*\(0[xX][0-9a-fA-F]*\).*
-5861	4	'[.\\-]'	[.\-]
-12210	2	'bill=SB|SCR|SJR\\d+'	bill=SB|SCR|SJR\d+
-10824	2	'^[a-zA-Z0-9_-]{1,500}$'	^[a-zA-Z0-9_-]{1,500}$
-11521	2	'^_'	^_
-2549	3	'(\\s*\\=)|(\\s*\\:)'	(\s*\=)|(\s*\:)
-966	3	'(<[^>]*>)(.*)'	(<[^>]*>)(.*)
-5538	17	'URL: (.+)'	URL: (.+)
-2378	4	'(\\d+)-(\\d\\d)-(\\d\\d)T(\\d\\d):(\\d\\d):(\\d\\d)'	(\d+)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)
-4531	2	'==END TEST=='	==END TEST==
+3622	4	'/+$'	/+$
+12753	2	'image:\\s+(\\S+)'	image:\s+(\S+)
+261	5	'#\\s*all-random\\s+'	#\s*all-random\s+
+2195	2	'(\\.[\\d]+)?$'	(\.[\d]+)?$
+498	5	"''"	''
+11784	3	'^multipart/byteranges; boundary="(.*)"$'	^multipart/byteranges; boundary="(.*)"$
+10496	7	'^[ ]{4,7}((\\d+\\.)|[*+-])[ ].*'	^[ ]{4,7}((\d+\.)|[*+-])[ ].*
+8060	21	'\\s*(\\w*|\\w(\\w|\\.)*\\w)\\s*::'	\s*(\w*|\w(\w|\.)*\w)\s*::
+7958	30	'\\s*'	\s*
 4398	17	'<p>Paragraph 1\\s*</p>\\s*<h2>\\s*An h2</h2>'	<p>Paragraph 1\s*</p>\s*<h2>\s*An h2</h2>
-7891	4	'\n\\s*'	\n\s*
-3810	2	'127.0.0.1:'	127.0.0.1:
-9368	13	'^([:,;#%.\\sa-zA-Z0-9!]|\\w-\\w|\'[\\s\\w]+\'|"[\\s\\w]+"|\\([\\d,\\s]+\\))*$'	^([:,;#%.\sa-zA-Z0-9!]|\w-\w|\'[\s\w]+\'|"[\s\w]+"|\([\d,\s]+\))*$
-7164	2	'\\?(.*)'	\?(.*)
-11724	4	'^https?://github.com/[^/]+/[^/]+/tree/[^/]+/?$'	^https?://github.com/[^/]+/[^/]+/tree/[^/]+/?$
-7182	2	'\\A#!.*node.*$'	\A#!.*node.*$
-9508	9	'^([a-zA-Z0-9_]+)[ \t]*=(.*)'	^([a-zA-Z0-9_]+)[ \t]*=(.*)
-8374	3	'\\w+\\('	\w+\(
-9446	8	'^([^:]*): *(.*)'	^([^:]*): *(.*)
+8956	2	'^(.*)\\[(zero|one|two|few|many|other)\\]$'	^(.*)\[(zero|one|two|few|many|other)\]$
+8413	4	'\x01?\x1b\\[([0-9;]*)m\x02?'	\x01?\x1b\[([0-9;]*)m\x02?
+2933	2	'(require|define)\\s*\\(\\s*([\\\'\\"][^\\\'\\"]+[\\\'\\"]\\s*,)?\\s*\\[([^\\]]+)\\]'	(require|define)\s*\(\s*([\\'\"][^\\'\"]+[\\'\"]\s*,)?\s*\[([^\]]+)\]
+6284	13	'[\\x00-\\x19\\\\"\\b\\f\\n\\r\\t]'	[\x00-\x19\\"\b\f\n\r\t]
+4543	3	'=[a-fA-F0-9]{2}'	=[a-fA-F0-9]{2}
+6960	2	'\\-'	\-
+9274	2	'^(Mozilla.*(Gecko|KHTML|MSIE|Presto|Trident)|Opera).*$'	^(Mozilla.*(Gecko|KHTML|MSIE|Presto|Trident)|Opera).*$
+6879	38	'\\(\\*'	\(\*
+3833	2	': '	: 
+2507	2	'(\\r\\n|\\n|\\r)'	(\r\n|\n|\r)
+12855	9	'lightlink'	lightlink
 11808	7	'^ns:((\\w+\\.)*(\\w+))$'	^ns:((\w+\.)*(\w+))$
-61	14	' +$'	 +$
-13178	2	'repeat\\d+'	repeat\d+
-4459	2	'<td style="text-align: right;">[0-9]{1,}</td>'	<td style="text-align: right;">[0-9]{1,}</td>
+42	12	' (\\d+\\.\\d+(\\.\\d+)*)'	 (\d+\.\d+(\.\d+)*)
+13218	2	's'	s
+8341	17	'\\t'	\t
 13300	2	'stopped'	stopped
+4541	5	'=[^,)]+,'	=[^,)]+,
 10171	3	'^@[Rr][Ee][Ll][Aa][Tt][Ii][Oo][Nn]\\s*(\\S*)'	^@[Rr][Ee][Ll][Aa][Tt][Ii][Oo][Nn]\s*(\S*)
+11404	2	'^\\s*using boostbook'	^\s*using boostbook
 1699	2	'(Read-only)|(protected)'	(Read-only)|(protected)
-13172	24	'release_cmd_to_pool'	release_cmd_to_pool
-472	2	'&([a-zA-Z][a-zA-Z0-9]*)[^a-zA-Z0-9]'	&([a-zA-Z][a-zA-Z0-9]*)[^a-zA-Z0-9]
-10071	15	'^0([1-9]{1})\\d{8}$'	^0([1-9]{1})\d{8}$
-6804	9	'\\('	\(
-10156	9	'^@([a-z]+)([ \t]|$)'	^@([a-z]+)([ \t]|$)
-4371	2	'<meta name="video_height" content="([0-9]+)" />'	<meta name="video_height" content="([0-9]+)" />
-3990	14	'<([^>]+)>'	<([^>]+)>
-5442	2	'Subversion Revision:'	Subversion Revision:
-8953	2	'^(.*)\\.stgit$'	^(.*)\.stgit$
-686	2	'((fassertFailed)()) *\\(( *)(\\d+)'	((fassertFailed)()) *\(( *)(\d+)
-7836	9	'\\n$'	\n$
-1998	5	'([^*{}\\s]@|[^*{}@\\s]|\\*(?!/))+'	([^*{}\s]@|[^*{}@\s]|\*(?!/))+
-4864	2	'District:'	District:
-13403	2	'unconverted data remains: \\.([0-9]+)$'	unconverted data remains: \.([0-9]+)$
-6592	5	'[a-zA-Z_$][A-Za-z0-9_$..]*'	[a-zA-Z_$][A-Za-z0-9_$..]*
-3746	2	'/plugin-container\\s*$'	/plugin-container\s*$
-10547	8	'^[0-9.]+$'	^[0-9.]+$
-5521	3	'Traceback (most recent call last):'	Traceback (most recent call last):
-11511	4	'^\x1b.$'	^\x1b.$
-6774	11	'\\$else\\s+'	\$else\s+
-9771	6	'^(def|class)\\s+'	^(def|class)\s+
-13411	3	'unzip: exiting'	unzip: exiting
-7420	71	'\\\\(.)'	\\(.)
-6921	8	'\\*([a-zA-Z]+)\\*'	\*([a-zA-Z]+)\*
-2369	3	'(\\d+),\\s*(\\d+),\\s*(\\d+),\\s*(\\d+),\\s*(\\d+)'	(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+)
-8410	4	'\\x00\\x01'	\x00\x01
-12555	38	'get_default_depth'	get_default_depth
-4913	2	'ErrorReturnCode_(\\d+)'	ErrorReturnCode_(\d+)
-8066	16	'\\s*,'	\s*,
-5157	3	'Microsoft Visual Studio 10'	Microsoft Visual Studio 10
-5661	4	'[ \\t\\n]'	[ \t\n]
-9662	3	'^(\\s*)(def|class)(\\s.*)?$'	^(\s*)(def|class)(\s.*)?$
-3471	3	'.*error.*'	.*error.*
-8347	3	'\tobjectVersion = ([0-9]+);'	\tobjectVersion = ([0-9]+);
-11310	17	u'^\\s*[#*=]{4,}\\n[a-z0-9 -]+\\n[#*=]{4,}\\s*'	^\s*[#*=]{4,}\n[a-z0-9 -]+\n[#*=]{4,}\s*
-6003	2	'[A-Z]*_API '	[A-Z]*_API 
-4782	3	'Committed revision (\\d+)\\.'	Committed revision (\d+)\.
-8304	2	'\\s-drive\\s[^\\s]+'	\s-drive\s[^\s]+
-9558	2	'^(\\S+):?'	^(\S+):?
-10473	2	'^[ \t]*[Xv!_][Xv!_ \t]*\n'	^[ \t]*[Xv!_][Xv!_ \t]*\n
-3045	3	'---'	---
-6358	2	'[^/\\\\,{]\\*\\*|\\*\\*[^/\\\\,}]'	[^/\\,{]\*\*|\*\*[^/\\,}]
-13420	2	'url\\(([^\\)]+)\\)'	url\(([^\)]+)\)
-1673	2	'(BlackBerry|HTC|LG|MOT|Nokia|NOKIAN|PLAYSTATION|PSP|SAMSUNG|SonyEricsson)'	(BlackBerry|HTC|LG|MOT|Nokia|NOKIAN|PLAYSTATION|PSP|SAMSUNG|SonyEricsson)
-7707	4	'\\d+\\.\\d+'	\d+\.\d+
-5138	4	'MatplotlibBox:\\(([\\d.]+)pt\\+([\\d.]+)pt\\)x([\\d.]+)pt'	MatplotlibBox:\(([\d.]+)pt\+([\d.]+)pt\)x([\d.]+)pt
-5872	2	'[/,-]'	[/,-]
-5736	2	'[$][{]\\d+:([^}]+)[}]'	[$][{]\d+:([^}]+)[}]
-5903	6	'[0-9]+,[0-9]+'	[0-9]+,[0-9]+
-194	2	'# Sched features: ([\\w]+)'	# Sched features: ([\w]+)
-9668	5	'^(\\s*<[^>]+>\\s*)'	^(\s*<[^>]+>\s*)
-5995	2	'[@]'	[@]
-68	2	' -[HS]J \\d+;? ?'	 -[HS]J \d+;? ?
-4089	3	'<H[13]'	<H[13]
-6288	2	'[\x00-\x1f\x7f()<>@,;:\\[\\]={} \t\\\\"]'	[\x00-\x1f\x7f()<>@,;:\[\]={} \t\\"]
-8804	2	'^#(ifndef|define|endif\\s*//)\\s*[\\w_]+\\s*$'	^#(ifndef|define|endif\s*//)\s*[\w_]+\s*$
-3687	5	'/\\*\\*'	/\*\*
-156	2	'"QOOXDOO_PATH"\\s*:\\s*"([^"]*)"\\s*,?'	"QOOXDOO_PATH"\s*:\s*"([^"]*)"\s*,?
-11106	8	'^\\d{5}$'	^\d{5}$
-5582	2	'Versi.+n (.+) ([0-9]+).([0-9])+ megabytes'	Versi.+n (.+) ([0-9]+).([0-9])+ megabytes
-7939	6	'\\r[ \\t]+def '	\r[ \t]+def 
-6607	5	u'[a-zA-Z_][a-zA-Z0-9_]*'	[a-zA-Z_][a-zA-Z0-9_]*
-5687	9	'[ \\t]+'	[ \t]+
-3945	2	'<![^>]*>'	<![^>]*>
-8856	7	'^$'	^$
-5366	7	'SECRET|PASSWORD|PROFANITIES_LIST'	SECRET|PASSWORD|PROFANITIES_LIST
-9470	7	'^([^@]*@)?([^:]*)(:.*)?'	^([^@]*@)?([^:]*)(:.*)?
-5982	2	'[=?\x7f-\xff]'	[=?\x7f-\xff]
-7445	9	'\\\\(begin|end){([_a-zA-Z]+)}|([()\\[\\]])'	\\(begin|end){([_a-zA-Z]+)}|([()\[\]])
-3029	5	'-(a|b|c)(\\d+)$'	-(a|b|c)(\d+)$
-7738	2	'\\d{1,3}.\\d{1,3}.\\d{1,3}.\\d{1,3}'	\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}
-11239	2	'^\\s*(if|try|elif|while|for|with)'	^\s*(if|try|elif|while|for|with)
-13009	5	'ns\\d+$'	ns\d+$
-3133	2	'-py(\\d\\.?\\d?)'	-py(\d\.?\d?)
-6498	5	'[^a-zA-Z0-9_-]'	[^a-zA-Z0-9_-]
-4050	7	'</form\\s*>'	</form\s*>
-2655	2	'(\\w+\\W*)'	(\w+\W*)
-7971	17	'\\s*#?\\s*$'	\s*#?\s*$
+5490	2	'This is file for test of tar-in.'	This is file for test of tar-in.
+12455	4	'episodenumber(\\d+)'	episodenumber(\d+)
+6071	2	'[\'"\\\\]'	[\'"\\]
+12782	9	'init\\((.*)\\):'	init\((.*)\):
+4713	3	'BUG:.*---\\[ end trace .* \\]---'	BUG:.*---\[ end trace .* \]---
+4749	2	'CPU Affinity: +[-y]+'	CPU Affinity: +[-y]+
+6355	6	'[^.]*'	[^.]*
+10707	10	'^[\t ]*#[\t ]*include[\t ]+<([a-zA-Z0-9_/\\.]+)'	^[\t ]*#[\t ]*include[\t ]+<([a-zA-Z0-9_/\.]+)
+7485	2	'\\\\`'	\\`
 6625	2	'[a-z]::[^=]|:[a-z]+:|`|\\.\\.\\s*\\w+:'	[a-z]::[^=]|:[a-z]+:|`|\.\.\s*\w+:
-11227	22	'^\\s*(\\w+)\\s*'	^\s*(\w+)\s*
-9578	4	'^(\\d+)([a-z]+)$'	^(\d+)([a-z]+)$
-8352	3	'\\w*:\\w*:\\w*:\\w*:\\w*:\\w*'	\w*:\w*:\w*:\w*:\w*:\w*
-8829	3	'^#define ASYNC_PROTOCOL_MAJOR\t*(.*)'	^#define ASYNC_PROTOCOL_MAJOR\t*(.*)
-3366	2	'.*[/\\\\](.+)(\\:\\d+|\\(\\d+\\))\\:'	.*[/\\](.+)(\:\d+|\(\d+\))\:
-6234	4	'[\t ]+\n'	[\t ]+\n
-4719	2	'BadgeImpl'	BadgeImpl
-10732	4	'^[\\w_]+$'	^[\w_]+$
-6788	3	'\\${(\\w+)}'	\${(\w+)}
-3132	9	'-py([123]\\.[0-9])$'	-py([123]\.[0-9])$
-8043	2	'\\s*([a-zA-Z_][-:.a-zA-Z_0-9]*)[$]?(\\s*=\\s*(\\\'[^\\\']*\\\'|"[^"]*"|[][\\-a-zA-Z0-9./,:;+*%?!&$\\(\\)_#=~\\\'"@]*))?'	\s*([a-zA-Z_][-:.a-zA-Z_0-9]*)[$]?(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[][\-a-zA-Z0-9./,:;+*%?!&$\(\)_#=~\\'"@]*))?
-6103	2	'[\\.\\-\\/\\_]'	[\.\-\/\_]
-5745	4	'[&<>"]'	[&<>"]
-7143	2	'\\<\\!\\-\\-\\#\\s?[A-z0-9_-]*\\s?\\:s?[A-z0-9\\s_-]*\\s?\\-\\-\\>'	\<\!\-\-\#\s?[A-z0-9_-]*\s?\:s?[A-z0-9\s_-]*\s?\-\-\>
-4761	2	'Capacity:\\s+(\\S+.*)'	Capacity:\s+(\S+.*)
-12861	2	'line \\d+'	line \d+
-724	11	'(.*  )(\\w+)(( &lt;cycle.*&gt;)? \\[\\d+\\])\\n'	(.*  )(\w+)(( &lt;cycle.*&gt;)? \[\d+\])\n
-3785	3	'0 INFO SimpleTest START.*'	0 INFO SimpleTest START.*
-10870	2	'^[a-zA-Z_]\\w*(\\.[a-zA-Z_]\\w*)*$'	^[a-zA-Z_]\w*(\.[a-zA-Z_]\w*)*$
-1871	2	'([A-Za-z]+)(hat|check|dot|breve|acute|ddot|grave|tilde|mathring|bar|vec)'	([A-Za-z]+)(hat|check|dot|breve|acute|ddot|grave|tilde|mathring|bar|vec)
-2787	3	'(^|/)Change[Ll]og$'	(^|/)Change[Ll]og$
-8188	3	'\\s*\\|\\s*'	\s*\|\s*
-6236	2	'[\\t\\b\\r\\f#]'	[\t\b\r\f#]
-8059	2	'\\s*(\\w*)\\s*::'	\s*(\w*)\s*::
-5611	9	'Websafe'	Websafe
-6839	4	'\\((\\d+)\\)'	\((\d+)\)
-7385	8	'\\[\\d+ refs\\]\\r?\\n?$'	\[\d+ refs\]\r?\n?$
+13403	2	'unconverted data remains: \\.([0-9]+)$'	unconverted data remains: \.([0-9]+)$
+8840	6	'^#import[\\s\t]*([^\\s^\t]*)[\\s\t]*$'	^#import[\s\t]*([^\s^\t]*)[\s\t]*$
+11355	8	'^\\s*\\d+\\s(\\.\\S+)\\s+[a-f0-9]'	^\s*\d+\s(\.\S+)\s+[a-f0-9]
+4368	2	'<meta name="title" content="(.*)" />'	<meta name="title" content="(.*)" />
+3754	2	'/pypi\\?\\:action=doap\\&amp;name=[a-zA-Z0-9\\.\\-\\_]+\\&amp;version=[a-zA-Z0-9\\.\\-\\_]+'	/pypi\?\:action=doap\&amp;name=[a-zA-Z0-9\.\-\_]+\&amp;version=[a-zA-Z0-9\.\-\_]+
+9510	2	'^([a-zA-Z]:[^(]*)\\(([0-9]+)\\)'	^([a-zA-Z]:[^(]*)\(([0-9]+)\)
+6729	9	'\\$[()]'	\$[()]
+4345	6	'<li><a href="([^"]*)">([^"]*)</a></li>'	<li><a href="([^"]*)">([^"]*)</a></li>
+8410	4	'\\x00\\x01'	\x00\x01
+9708	8	'^(\\w){1}$'	^(\w){1}$
+3706	2	'/cgcc/'	/cgcc/
+12216	2	'blocked'	blocked
+7727	8	'\\d\\D\\w\\W\\s\\S'	\d\D\w\W\s\S
+11153	3	'^\\s*(([A-Z][a-z]*)+) = (\\d+)'	^\s*(([A-Z][a-z]*)+) = (\d+)
+13221	2	's3n://.*\\.elasticmapreduce/libs/state-pusher/[^/]+/fetch'	s3n://.*\.elasticmapreduce/libs/state-pusher/[^/]+/fetch
+9376	2	'^([A-Z])([A-Z])'	^([A-Z])([A-Z])
+3015	14	',\\s*|\\s+'	,\s*|\s+
+2139	2	'([aeiouy])y'	([aeiouy])y
+9323	12	'^([0-9]+) ?(.*)\n?'	^([0-9]+) ?(.*)\n?
+11484	3	'^\\t*'	^\t*
+8416	2	'\x03[0-9]{1,2}(,[0-9]{1,2})?'	\x03[0-9]{1,2}(,[0-9]{1,2})?
+13245	2	'set'	set
+3689	9	'/\\.(?![^.]*$)/'	/\.(?![^.]*$)/
+1905	11	'([\\\\"/]|[^\\ -~])'	([\\"/]|[^\ -~])
+5875	8	'[/\\\\ ]'	[/\\ ]
+5289	2	'ProductVersion:\\s+([0-9]+)\\.([0-9]+)\\.([0-9]+)'	ProductVersion:\s+([0-9]+)\.([0-9]+)\.([0-9]+)
+4582	2	'@([a-zA-Z0-9_][a-zA-Z0-9_]*)\\.route'	@([a-zA-Z0-9_][a-zA-Z0-9_]*)\.route
+10121	15	'^<Point><coordinates>-95.363\\d+,29.763\\d+,18</coordinates></Point>$'	^<Point><coordinates>-95.363\d+,29.763\d+,18</coordinates></Point>$
+7055	6	'\\.dll$'	\.dll$
+2840	5	'(add|subtract|multiply|divide|remainder|power|and~|or~|xor~|minimum|maximum|negate|complement|absolute|random|head|tail|next|back|skip|at|pick|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|last|path|find|select|make|to|copy\\*|insert|remove|change|poke|clear|trim|sort|min|max|abs|cp|copy)$'	(add|subtract|multiply|divide|remainder|power|and~|or~|xor~|minimum|maximum|negate|complement|absolute|random|head|tail|next|back|skip|at|pick|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|last|path|find|select|make|to|copy\*|insert|remove|change|poke|clear|trim|sort|min|max|abs|cp|copy)$
+7387	2	'\\[\\d\\]\\s+='	\[\d\]\s+=
+3053	3	'----gnatsweb-attachment----\n'	----gnatsweb-attachment----\n
+6339	2	'[^%]+%testing[.](expect-failure|expect-success)'	[^%]+%testing[.](expect-failure|expect-success)
+2980	2	'({[^}]+})?(\\w+)'	({[^}]+})?(\w+)
+6949	2	'\\+(\\w+)'	\+(\w+)
+308	9	'#define\\WDB_VERSION_MAJOR\\W(\\d+)'	#define\WDB_VERSION_MAJOR\W(\d+)
+2797	2	'(^|\\\\n)([^\\\\]*)$'	(^|\\n)([^\\]*)$
+6748	3	'\\$\\(([a-zA-Z_][a-zA-Z0-9_]*)\\)'	\$\(([a-zA-Z_][a-zA-Z0-9_]*)\)
+11106	8	'^\\d{5}$'	^\d{5}$
+3632	5	'//$'	//$
+9318	3	'^([0-9.]+)'	^([0-9.]+)
+4402	4	'<p[^/>]*>\\s*</p>'	<p[^/>]*>\s*</p>
+3892	3	':filename'	:filename
+7935	32	'\r?\n'	\r?\n
+1850	3	'([A-Z][a-z]+[A-Z][^ ]+)'	([A-Z][a-z]+[A-Z][^ ]+)
+10366	2	'^Pull: (.*)\n$'	^Pull: (.*)\n$
+12139	2	'aki-[0-9a-f]{8}'	aki-[0-9a-f]{8}
+12424	2	'e'	e
+2916	4	"(nextval\\(')([^']+)('.*$)"	(nextval\(')([^']+)('.*$)
+11154	3	'^\\s*(([A-Z][a-z]*)+),?\\s*# (\\d+)$'	^\s*(([A-Z][a-z]*)+),?\s*# (\d+)$
+6116	3	'[\\/][^\\/]+[\\/]?$'	[\/][^\/]+[\/]?$
+11786	12	'^name="(.*)"\\s+certificate="(.*)"\\s+private_key="(.*)"$'	^name="(.*)"\s+certificate="(.*)"\s+private_key="(.*)"$
+999	5	'(></)|("")|(\\n\\s+)\\n|(.|\\s)'	(></)|("")|(\n\s+)\n|(.|\s)
+3029	5	'-(a|b|c)(\\d+)$'	-(a|b|c)(\d+)$
+5467	2	'TOTEM_INFO_DURATION=(\\d+)'	TOTEM_INFO_DURATION=(\d+)
+5714	2	'["!|@]'	["!|@]
+9733	2	'^(\\w+)\\s*:\\s+(\\d+)\\s\\w+'	^(\w+)\s*:\s+(\d+)\s\w+
+6179	10	'[\\n\\r]'	[\n\r]
+1956	5	'([\\w\\-]+\\s*:)(?!:)\\s*'	([\w\-]+\s*:)(?!:)\s*
+2777	3	'(^\\s+Invalid write of size )\\d+'	(^\s+Invalid write of size )\d+
+2236	5	'(\\S+(\\.\\w+)*)\\.(\\w*)$'	(\S+(\.\w+)*)\.(\w*)$
+3019	33	'-'	-
+8265	3	'\\s+Flags from (\\S.+):$'	\s+Flags from (\S.+):$
+6099	7	'[\\.0-9]+'	[\.0-9]+
+701	3	'(-)(\\d+)$'	(-)(\d+)$
+11021	2	'^\\S+\\s+'	^\S+\s+
+5750	2	'[&<]|]]>'	[&<]|]]>
+6393	4	'[^A-Z^a-z^0-9^:]+'	[^A-Z^a-z^0-9^:]+
+13295	5	'static dfa dfas\\[(\\d+)\\] = {$'	static dfa dfas\[(\d+)\] = {$
+13064	2	'part_size'	part_size
+5643	26	'[ \\(\\)<>@,;:\\\\"/\\[\\]\\?=]'	[ \(\)<>@,;:\\"/\[\]\?=]
+697	2	'()(  +)'	()(  +)
+6101	2	'[\\.\\-\\ ]'	[\.\-\ ]
+10835	4	'^[a-zA-Z0-9_]+\\.py$'	^[a-zA-Z0-9_]+\.py$
+9603	2	'^(\\d+\\.\\d+(\\.\\d+)*)((a|b|c|rc)(\\d+))?(\\.(post)(\\d+))?(\\.(dev)(\\d+))?$'	^(\d+\.\d+(\.\d+)*)((a|b|c|rc)(\d+))?(\.(post)(\d+))?(\.(dev)(\d+))?$
+8716	3	'\\{\\{|\\}\\}'	\{\{|\}\}
+8896	40	'^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?'	^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?
+3751	2	'/projects/([-\\w]+)/([-\\w]+)/'	/projects/([-\w]+)/([-\w]+)/
+11441	3	'^\\s+File .*erroneous\\.py", line \\d+, in go'	^\s+File .*erroneous\.py", line \d+, in go
+13425	4	'url\\s*\\(([^)]+)'	url\s*\(([^)]+)
+13227	3	'sd\\w'	sd\w
+2877	2	'(filename = ).*'	(filename = ).*
+8036	7	'\\s*([a-f0-9]+):\\s*(\\S.*)'	\s*([a-f0-9]+):\s*(\S.*)
+10963	3	'^\\*\\*\\d+\\*\\*'	^\*\*\d+\*\*
+11116	2	'^\\n?namespace\\s+\\w+\\s*{\\s*\\n?$'	^\n?namespace\s+\w+\s*{\s*\n?$
+6445	12	"[^\\w!#$%&'*+,.:;<=>?^`|~-]"	[^\w!#$%&'*+,.:;<=>?^`|~-]
+7729	2	'\\d\\d-[a-zA-Z]{3,3}-\\d\\d\\d\\d \\d\\d:\\d\\d'	\d\d-[a-zA-Z]{3,3}-\d\d\d\d \d\d:\d\d
+2863	2	'(const)?\\s*int$'	(const)?\s*int$
+9660	13	'^(\\s*)(\\w*)'	^(\s*)(\w*)
+13180	2	'repo\\=[\\:\\w\\d\\/]*'	repo\=[\:\w\d\/]*
+11847	2	'^redo\\s+(\\d+)$'	^redo\s+(\d+)$
 10686	3	'^[\'"](.*)[\'"]$'	^[\'"](.*)[\'"]$
-11032	6	'^\\[.*\\]$'	^\[.*\]$
-11018	29	'^\\S+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+$'	^\S+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$
-6058	3	'[Tt ].*$'	[Tt ].*$
-89	4	' \\n'	 \n
-1944	2	'([\\w-]+[\\w]+)\\s+(\\w+)\\s+(\\w+)'	([\w-]+[\w]+)\s+(\w+)\s+(\w+)
-5824	4	'[-.]'	[-.]
-4605	4	'@@PACKAGE_OBSOLETES@@'	@@PACKAGE_OBSOLETES@@
-12003	2	'^yt-(.*)$'	^yt-(.*)$
-13508	38	'write_pending_status\\)\\('	write_pending_status\)\(
-2086	2	'([a-zA-Z0-9+.-]+)://'	([a-zA-Z0-9+.-]+)://
+458	4	'&(?!\\#)'	&(?!\#)
+12544	4	'gecko\\.handlerService\\.schemes\\.'	gecko\.handlerService\.schemes\.
+5778	3	'[+-]?(\\d*)(.*)'	[+-]?(\d*)(.*)
+11557	2	'^bob'	^bob
 1705	3	'(TARGET_XPCOM_ABI|OS_TARGET|MOZ_DEBUG)\\s*=\\s*(.*)'	(TARGET_XPCOM_ABI|OS_TARGET|MOZ_DEBUG)\s*=\s*(.*)
-7444	4	'\\\\(\\d+)'	\\(\d+)
-5304	5	'REBOL$'	REBOL$
 4967	6	'GET http://([a-zA-Z0-9-_.]+)(:([0-9]+))?'	GET http://([a-zA-Z0-9-_.]+)(:([0-9]+))?

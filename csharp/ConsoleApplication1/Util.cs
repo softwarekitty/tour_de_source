@@ -34,7 +34,7 @@ namespace ConsoleApplication1
 
         public static string getRexDelimiter()
         {
-            return "\n2jxj8oSFLPEfrP4q8yVn6h0vfWqeD5lRazvCUfWspIXjZl8ssIZB4Nr5GqR2\n";
+            return "\n2jxj8oSFLPEfrP4q8yVn6h0vf\n";
         }
 
         public static string decideBucket(int rowNumber, int nBuckets)
@@ -150,7 +150,7 @@ namespace ConsoleApplication1
         }
 
 
-        public static HashSet<string> getRexGeneratedStrings(int rowIndex, int nKeys, string rexStringsBase)
+        public static HashSet<string> getRexGeneratedStrings(int rowIndex, int nKeys, string rexStringsBase, int nMatchStrings)
         {
             string rexFilePath = Util.getRexFilePath(rexStringsBase, nKeys, rowIndex);
             HashSet<string> generatedStrings = new HashSet<string>();
@@ -158,7 +158,13 @@ namespace ConsoleApplication1
             {
                 string text = r.ReadToEnd();
                 string[] lines = text.Split(new string[] { Util.getRexDelimiter()}, StringSplitOptions.None);
-                foreach (string s in lines)
+                int nAvailable = lines.Count() - 1;
+                if (nAvailable < nMatchStrings)
+                {
+                    throw new Exception("the number of rex generated strings available ("+nAvailable+") is lower than the number requested ("+nMatchStrings+")");
+                }
+                var withoutLast = lines.Take(nMatchStrings);
+                foreach (string s in withoutLast)
                 {
                     generatedStrings.Add(s);
                 }

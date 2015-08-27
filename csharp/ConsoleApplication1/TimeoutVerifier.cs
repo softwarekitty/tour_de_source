@@ -12,7 +12,7 @@ namespace ConsoleApplication1
 {
     static class TimeoutVerifier
     {
-        internal static void verifyRows(string allRowsBase, int nRows, double minSimilarity, string filteredCorpusPath, int nRunnawaysWithoutStress, int batchSize, string rexStringsBase)
+        internal static void verifyRows(string allRowsBase, int nRows, double minSimilarity, string filteredCorpusPath, int nRunnawaysWithoutStress, int batchSize, string rexStringsBase, int nMatchingStrings)
         {
             AppDomain domain = AppDomain.CurrentDomain;
             domain.SetData("REGEX_DEFAULT_MATCH_TIMEOUT",TimeSpan.FromMilliseconds(1200));
@@ -44,18 +44,17 @@ namespace ConsoleApplication1
                 {
                     break;
                 }
-                validateRow(indicesWithTimeouts[indexKey],nRows,keyList,regexMap,minSimilarity,allRowsBase, rexStringsBase, stressCounter);
+                validateRow(indicesWithTimeouts[indexKey],nRows,keyList,regexMap,minSimilarity,allRowsBase, rexStringsBase, stressCounter, nMatchingStrings);
             }
         }
 
-        private static void validateRow(int rowIndex, int nRows, List<int> keyList, Dictionary<int, Regex> regexMap, double minSimilarity, string allRowsBase, string rexStringsBase, int[] stressCounter)
+        private static void validateRow(int rowIndex, int nRows, List<int> keyList, Dictionary<int, Regex> regexMap, double minSimilarity, string allRowsBase, string rexStringsBase, int[] stressCounter, int nMatchingStrings)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
             MatrixRow mr = new MatrixRow(allRowsBase, rowIndex, nRows);
-            HashSet<string> matchingStrings_outer = Util.getRexGeneratedStrings(rowIndex, nRows, rexStringsBase);
-            int nMatchingStrings = matchingStrings_outer.Count;
+            HashSet<string> matchingStrings_outer = Util.getRexGeneratedStrings(rowIndex, nRows, rexStringsBase, nMatchingStrings);
             int maxErrors = (int)((1 - minSimilarity) * nMatchingStrings) + 1;
             double[] values = mr.getValues();
             int nTimeouts = 0;
