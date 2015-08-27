@@ -52,7 +52,7 @@ namespace ConsoleApplication1
                 // which brings us down to 2.5 days of work, which is managable wrt deadlines.
                 // we only have to do 30 percent because if a cell will be below minSimilarity we
                 // quit early.  These values would be discared anyway, and make up the majority of values.
-                int nRexGeneratedStringsPerRegex = 400;
+                int nRexGeneratedStringsPerRegex = 900;
 
                 // note the requirement to associate lines of the filteredCorpusPath files
                 // with the folders contianing rexStrings - a hazard but worth doing bc 
@@ -71,7 +71,7 @@ namespace ConsoleApplication1
             //determine nRows by inspecting the line numbers in filteredCorpus.txt
             int nRows = Util.countFileLines(filteredCorpusPath);
             int nRowsBefore = nRowsExist(allRowsBase, nRows);
-            int nRexStringsToUse = 100;
+            int nRexStringsToUse = 500;
 
             // we have to do batches bc runaway regex matchings never release memory
             int batchSize = 256;
