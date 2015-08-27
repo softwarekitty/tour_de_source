@@ -105,8 +105,8 @@ namespace ConsoleApplication1
                 string rexPath = Util.getRexFilePath(rexStringsBase,nKeys,i);
                 HashSet<string> matchingStrings = getMatchStrings(nRexGeneratedStringsPerRegex, gen, patternMap[actualIndex], regexMap[actualIndex], Util.getTempFilePath(i));
                 System.IO.File.WriteAllText(rexPath, getDelimitedRexFileContent(matchingStrings));
-                HashSet<string> reconstitutedMatchingStrings = Util.getRexGeneratedStrings(actualIndex, nKeys, rexStringsBase);
-                if (!matchingStrings.Equals(reconstitutedMatchingStrings))
+                HashSet<string> reconstitutedMatchingStrings = Util.getRexGeneratedStrings(i, nKeys, rexStringsBase, nRexGeneratedStringsPerRegex);
+                if (!matchingStrings.SetEquals(reconstitutedMatchingStrings))
                 {
                     throw new Exception("must be able to get original Rex strings back from rex strings file");
                 }
@@ -133,7 +133,6 @@ namespace ConsoleApplication1
             System.IO.File.WriteAllText(tempFilePath, pattern);
             int maxAttempts = 9;
             int attemptCounter = 0;
-            int counter = 0;
             while (matchingStrings.Count < maxStrings && attemptCounter < maxAttempts)
             {
 
@@ -146,7 +145,7 @@ namespace ConsoleApplication1
                 //System.IO.File.WriteAllText(@"C:\Users\IEUser\Desktop\rexOutput.txt", rexOutput);
                 //System.IO.File.WriteAllLines(@"C:\Users\IEUser\Desktop\rexOutputSplit.txt", rexOutputLines);
 
-
+                int counter = 0;
                 foreach (string rexOutLine in rexOutputLines)
                 {
                     if (matchingStrings.Count == maxStrings)
@@ -154,12 +153,13 @@ namespace ConsoleApplication1
                         break;
                     }
 
-                    //this says it's okay for the one line to be blank
+                    //this says to skip over a first blank line
                     if (rexOutLine.Equals("") && counter == 0)
                     {
                         counter++;
                         continue;
                     }
+                    //Console.WriteLine("rexOutLine: "+rexOutLine);
                     string unescapedGeneratedLine = unescapeRexLine(rexOutLine);
                     Match generatedLineMatch = regex.Match(unescapedGeneratedLine);
                     if (generatedLineMatch.Success)
@@ -192,9 +192,9 @@ namespace ConsoleApplication1
         static string unescapeRexLine(string rexLine)
         {
             int lineLength = rexLine.Length;
-            StringBuilder unescaped = new StringBuilder().Append(rexLine.Substring(1, lineLength - 2));
-            //Console.WriteLine("original:::"+rexLine+"::: noQuotes:::"+unescaped.ToString()+":::");
 
+            StringBuilder unescaped = new StringBuilder().Append(rexLine.Substring(1, lineLength - 2));
+            //Console.WriteLine("original:::" + rexLine + "::: noQuotes:::" + unescaped + ":::");
             unescaped.Replace(@"\\", @"\");
             unescaped.Replace(@"\n", "\n");
             unescaped.Replace(@"\t", "\t");

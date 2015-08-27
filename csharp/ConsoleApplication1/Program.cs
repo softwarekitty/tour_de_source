@@ -23,8 +23,8 @@ namespace ConsoleApplication1
 
             if(!File.Exists(filteredCorpusPath)){
 
-                string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exportedCorpusRex.txt";
-                //string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\nRexStringsStudy\rexSample_0.txt";
+                //string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exportedCorpusRex.txt";
+                string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\nRexStringsStudy\rexSample_2.txt";
                 if (!File.Exists(exportedCorpusPath))
                 {
                     Console.WriteLine("exiting because the file does not exist: " + exportedCorpusPath);
@@ -65,12 +65,13 @@ namespace ConsoleApplication1
 
             string allRowsBase = output_path+@"allRows\";
             Directory.CreateDirectory(allRowsBase);
-            double minSimilarity = 0.75;
+            double minSimilarity = 0.0;
 
 
             //determine nRows by inspecting the line numbers in filteredCorpus.txt
             int nRows = Util.countFileLines(filteredCorpusPath);
             int nRowsBefore = nRowsExist(allRowsBase, nRows);
+            int nRexStringsToUse = 100;
 
             // we have to do batches bc runaway regex matchings never release memory
             int batchSize = 256;
@@ -82,7 +83,7 @@ namespace ConsoleApplication1
                  {
                     int nRunnawaysWithoutStress = 1024;
                     Console.WriteLine(unverifiedTimeoutRows+ " rows have unverified timeouts.  verifying a chunk of up to "+nRunnawaysWithoutStress+" cells with timeouts.");
-                    TimeoutVerifier.verifyRows(allRowsBase,nRows,minSimilarity, filteredCorpusPath,nRunnawaysWithoutStress, batchSize, rexStringsBase);
+                    TimeoutVerifier.verifyRows(allRowsBase,nRows,minSimilarity, filteredCorpusPath,nRunnawaysWithoutStress, batchSize, rexStringsBase, nRexStringsToUse);
                     Console.WriteLine("chunk of timeout verification complete");
                 }
                 else
@@ -97,7 +98,7 @@ namespace ConsoleApplication1
             {
 
                 Console.WriteLine("batchSize: " + batchSize + " nRowsBefore: "+nRowsBefore+ " nRows: "+nRows);
-                SimilarityMatrixBuilder.createBatchOfRows(batchSize,allRowsBase,filteredCorpusPath, rexStringsBase, minSimilarity);
+                SimilarityMatrixBuilder.createBatchOfRows(batchSize,allRowsBase,filteredCorpusPath, rexStringsBase, minSimilarity, nRexStringsToUse);
                 int nRowsAfter = nRowsExist(allRowsBase, nRows);
                 Console.WriteLine("nRowsAfter: "+nRowsAfter + " diff: "+(nRowsAfter-nRowsBefore)+" batchSize:"+batchSize );
                 return;

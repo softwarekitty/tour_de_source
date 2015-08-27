@@ -25,11 +25,12 @@ namespace ConsoleApplication1
         }
 
 
-        public static void createBatchOfRows(int batchSize, string allRowsBase, string filteredCorpusPath, string rexStringsBase, double minSimilarity)
+        public static void createBatchOfRows(int batchSize, string allRowsBase, string filteredCorpusPath, string rexStringsBase, double minSimilarity, int nMatchStrings)
         {
 
             // create regexMap and keyList
             Dictionary<int, Regex> regexMap = new Dictionary<int, Regex>();
+
             Regex numberFinder = new Regex(@"(\d+)\t(.*)");
             using (StreamReader r = new StreamReader(filteredCorpusPath))
             {
@@ -58,11 +59,12 @@ namespace ConsoleApplication1
 
             //these do not have to be sequential or in order.
             int[] batchIndices = getBatchOfIndices(allRowsBase,keyList.Count, batchSize);
-            Parallel.For(0, batchIndices.Length, options, i => evaluateOneRow(i, batchIndices,differentSeeds[i], rexStringsBase, regexMap, keyList, minSimilarity,allRowsBase));
+            int jitty = 0;
+            Parallel.For(0, batchIndices.Length, options, i => evaluateOneRow(i, batchIndices,differentSeeds[i], rexStringsBase, regexMap, keyList, minSimilarity,allRowsBase, nMatchStrings));
         }
 
 
-        static void evaluateOneRow(int batchArrayIndex, int[] batchIndices, int differentSeed, string rexStringsBase, Dictionary<int, Regex> regexMap,List<int> keyList, double minSimilarity, string rowFileBase)
+        static void evaluateOneRow(int batchArrayIndex, int[] batchIndices, int differentSeed, string rexStringsBase, Dictionary<int, Regex> regexMap,List<int> keyList, double minSimilarity, string rowFileBase, int nMatchStrings)
         {
 
             Stopwatch stopwatch = new Stopwatch();
@@ -77,9 +79,9 @@ namespace ConsoleApplication1
             }
             Random gen = new Random(differentSeed);
 
-            HashSet<string> matchingStrings_outer = Util.getRexGeneratedStrings(rowIndex,nKeys,rexStringsBase);
-            double nMatchingStrings = matchingStrings_outer.Count;
-            int maxErrors = (int)((1 - minSimilarity) * nMatchingStrings) + 1;
+            HashSet<string> matchingStrings_outer = Util.getRexGeneratedStrings(rowIndex,nKeys,rexStringsBase, nMatchStrings);
+            int maxErrors = (int)((1 - minSimilarity) * nMatchStrings) + 1;
+            //int maxErrors = nMatchStrings;
 
             //in order to protect against exponential worst-case regexes we chunk the row,
             //and wait in powers of two for each chunk.  It's a mess but we cannot get inside of
