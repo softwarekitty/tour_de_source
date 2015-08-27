@@ -1,0 +1,800 @@
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+,\eERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ^,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+qERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): $Q$d
+2jxj8oSFLPEfrP4q8yVn6h0vf
+kERROR org.apache.hadoop.streaming.StreamJob (main): J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): \a9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+IERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+eERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+v%ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+oERROR org.apache.hadoop.streaming.StreamJob (main): fT
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main):  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+2ERROR org.apache.hadoop.streaming.StreamJob (main): t(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): r
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): G
+2jxj8oSFLPEfrP4q8yVn6h0vf
+I\0kERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+C`MERROR org.apache.hadoop.streaming.StreamJob (main): +f
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): >Ur
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): d
+2jxj8oSFLPEfrP4q8yVn6h0vf
+g[@dERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): vU1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+GERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+4ERROR org.apache.hadoop.streaming.StreamJob (main): .&h bkx
+2jxj8oSFLPEfrP4q8yVn6h0vf
+bERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+w%ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+3SZERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+.ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+GsERROR org.apache.hadoop.streaming.StreamJob (main): $
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ipERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+04ERROR org.apache.hadoop.streaming.StreamJob (main): ~
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): X
+2jxj8oSFLPEfrP4q8yVn6h0vf
+sERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7-=dERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+}uERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): .
+2jxj8oSFLPEfrP4q8yVn6h0vf
++XERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): Vo
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): :e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): /z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+UERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+FeERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+mERROR org.apache.hadoop.streaming.StreamJob (main): Q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+vERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+u7ERROR org.apache.hadoop.streaming.StreamJob (main): r\e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): mZ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+OjERROR org.apache.hadoop.streaming.StreamJob (main): k.P
+2jxj8oSFLPEfrP4q8yVn6h0vf
+/ERROR org.apache.hadoop.streaming.StreamJob (main): x
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+CERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+2<ERROR org.apache.hadoop.streaming.StreamJob (main): &
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 7gQK8
+2jxj8oSFLPEfrP4q8yVn6h0vf
+uhERROR org.apache.hadoop.streaming.StreamJob (main): j
+2jxj8oSFLPEfrP4q8yVn6h0vf
+2ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+A5ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+{ERROR org.apache.hadoop.streaming.StreamJob (main): 7-
+2jxj8oSFLPEfrP4q8yVn6h0vf
+X4#ERROR org.apache.hadoop.streaming.StreamJob (main): c
+2jxj8oSFLPEfrP4q8yVn6h0vf
+FERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+`ERROR org.apache.hadoop.streaming.StreamJob (main): ,q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): >
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+fERROR org.apache.hadoop.streaming.StreamJob (main): 	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+aERROR org.apache.hadoop.streaming.StreamJob (main): T
+2jxj8oSFLPEfrP4q8yVn6h0vf
+BERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): *
+2jxj8oSFLPEfrP4q8yVn6h0vf
+XERROR org.apache.hadoop.streaming.StreamJob (main): g
+2jxj8oSFLPEfrP4q8yVn6h0vf
+uERROR org.apache.hadoop.streaming.StreamJob (main): >I0$yO
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): \e\aj
+2jxj8oSFLPEfrP4q8yVn6h0vf
+|ERROR org.apache.hadoop.streaming.StreamJob (main): 6
+2jxj8oSFLPEfrP4q8yVn6h0vf
+3mERROR org.apache.hadoop.streaming.StreamJob (main): q{
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): -
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+lERROR org.apache.hadoop.streaming.StreamJob (main): $
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): <
+2jxj8oSFLPEfrP4q8yVn6h0vf
+fERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): %
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): zz
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Y+5zERROR org.apache.hadoop.streaming.StreamJob (main): ZB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+-+ERROR org.apache.hadoop.streaming.StreamJob (main): @
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+<gEERROR org.apache.hadoop.streaming.StreamJob (main): ^D
+2jxj8oSFLPEfrP4q8yVn6h0vf
+QERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): [)
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+|ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+AERROR org.apache.hadoop.streaming.StreamJob (main): 9@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): /
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): \"EJ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+OgERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\aERROR org.apache.hadoop.streaming.StreamJob (main): zuO1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): e9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+YERROR org.apache.hadoop.streaming.StreamJob (main): -HHl
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): M\
+2jxj8oSFLPEfrP4q8yVn6h0vf
+QERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+]ERROR org.apache.hadoop.streaming.StreamJob (main): K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): N/.
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ;)>#
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SDNERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ZERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+aERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+OERROR org.apache.hadoop.streaming.StreamJob (main): zg
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): Do
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+yGERROR org.apache.hadoop.streaming.StreamJob (main): a:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ?rX
+2jxj8oSFLPEfrP4q8yVn6h0vf
+C%sERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ;\evp{[\a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+TERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+QiERROR org.apache.hadoop.streaming.StreamJob (main): Y_
+2jxj8oSFLPEfrP4q8yVn6h0vf
+P6ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Y7CERROR org.apache.hadoop.streaming.StreamJob (main): _
+2jxj8oSFLPEfrP4q8yVn6h0vf
+aERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): `
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): n
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+lERROR org.apache.hadoop.streaming.StreamJob (main): [
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\edERROR org.apache.hadoop.streaming.StreamJob (main): 7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): t
+2jxj8oSFLPEfrP4q8yVn6h0vf
+9`#qERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+/ERROR org.apache.hadoop.streaming.StreamJob (main): Sw
+2jxj8oSFLPEfrP4q8yVn6h0vf
+`DERROR org.apache.hadoop.streaming.StreamJob (main): 1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+%8>ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): :L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+pERROR org.apache.hadoop.streaming.StreamJob (main): g
+2jxj8oSFLPEfrP4q8yVn6h0vf
+YAERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 5
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 7]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+R&ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+=r-ERROR org.apache.hadoop.streaming.StreamJob (main): h@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+nERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[4ERROR org.apache.hadoop.streaming.StreamJob (main): oP[!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+N(@ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+L\0:ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): B
+2jxj8oSFLPEfrP4q8yVn6h0vf
+%YERROR org.apache.hadoop.streaming.StreamJob (main): x
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): u\0y-
+2jxj8oSFLPEfrP4q8yVn6h0vf
+3ERROR org.apache.hadoop.streaming.StreamJob (main): #
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+CERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): G
+2jxj8oSFLPEfrP4q8yVn6h0vf
++ERROR org.apache.hadoop.streaming.StreamJob (main): p
+2jxj8oSFLPEfrP4q8yVn6h0vf
+PERROR org.apache.hadoop.streaming.StreamJob (main): &rH(NU4w_
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): fj
+2jxj8oSFLPEfrP4q8yVn6h0vf
+TXJAERROR org.apache.hadoop.streaming.StreamJob (main): <9RU
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): KJh@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+cERROR org.apache.hadoop.streaming.StreamJob (main): <VG
+2jxj8oSFLPEfrP4q8yVn6h0vf
+pqERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): :
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ZERROR org.apache.hadoop.streaming.StreamJob (main): 85T	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+(6ERROR org.apache.hadoop.streaming.StreamJob (main): ?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+AERROR org.apache.hadoop.streaming.StreamJob (main): 3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+xERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+vN\eERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+tERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7ERROR org.apache.hadoop.streaming.StreamJob (main): 8
+2jxj8oSFLPEfrP4q8yVn6h0vf
+o~ERROR org.apache.hadoop.streaming.StreamJob (main): P
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): {]b.K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+PERROR org.apache.hadoop.streaming.StreamJob (main): ~
+2jxj8oSFLPEfrP4q8yVn6h0vf
+S#I@ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+=#ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+lERROR org.apache.hadoop.streaming.StreamJob (main): !
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): D
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\e-0ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7FuERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): {)
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): H
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+EERROR org.apache.hadoop.streaming.StreamJob (main): W
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): x
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+]ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0]ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+5ERROR org.apache.hadoop.streaming.StreamJob (main): }
+2jxj8oSFLPEfrP4q8yVn6h0vf
+J#,)uCERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+.r$+ERROR org.apache.hadoop.streaming.StreamJob (main): :S
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): i
+2jxj8oSFLPEfrP4q8yVn6h0vf
+RERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ;4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): tlf
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+!e3ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+G\eERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+WERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+CERROR org.apache.hadoop.streaming.StreamJob (main): ^
+2jxj8oSFLPEfrP4q8yVn6h0vf
+3}ERROR org.apache.hadoop.streaming.StreamJob (main): 8O\"o@m
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): d1}B
+2jxj8oSFLPEfrP4q8yVn6h0vf
+@>6ERROR org.apache.hadoop.streaming.StreamJob (main): n)
+2jxj8oSFLPEfrP4q8yVn6h0vf
+2ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+PERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+HERROR org.apache.hadoop.streaming.StreamJob (main): ;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): \0K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): m@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+&ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): _
+2jxj8oSFLPEfrP4q8yVn6h0vf
+iERROR org.apache.hadoop.streaming.StreamJob (main): Xul$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+eERROR org.apache.hadoop.streaming.StreamJob (main): C
+2jxj8oSFLPEfrP4q8yVn6h0vf
+9ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): SGu
+2jxj8oSFLPEfrP4q8yVn6h0vf
+CERROR org.apache.hadoop.streaming.StreamJob (main): fU
+2jxj8oSFLPEfrP4q8yVn6h0vf
+|ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+:ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ZcERROR org.apache.hadoop.streaming.StreamJob (main): \
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): <
+2jxj8oSFLPEfrP4q8yVn6h0vf
+eERROR org.apache.hadoop.streaming.StreamJob (main): 11
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): \a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+IL3UERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+eERROR org.apache.hadoop.streaming.StreamJob (main): EM
+2jxj8oSFLPEfrP4q8yVn6h0vf
+oERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+rERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): %
+2jxj8oSFLPEfrP4q8yVn6h0vf
+tpzERROR org.apache.hadoop.streaming.StreamJob (main): )b-{Q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+!ERROR org.apache.hadoop.streaming.StreamJob (main): P
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): dK?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): C)
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): \Y.
+2jxj8oSFLPEfrP4q8yVn6h0vf
+WERROR org.apache.hadoop.streaming.StreamJob (main): 1a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+9+lERROR org.apache.hadoop.streaming.StreamJob (main): 1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): Kxu/x
+2jxj8oSFLPEfrP4q8yVn6h0vf
+<ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+kERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): )
+2jxj8oSFLPEfrP4q8yVn6h0vf
+j@ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): D
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): b
+2jxj8oSFLPEfrP4q8yVn6h0vf
+D1ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+UERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ZERROR org.apache.hadoop.streaming.StreamJob (main): Q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\eERROR org.apache.hadoop.streaming.StreamJob (main): R
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+AERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+]ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+hERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+AQERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+JERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+4ERROR org.apache.hadoop.streaming.StreamJob (main): lf3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+$-l]ERROR org.apache.hadoop.streaming.StreamJob (main): `
+2jxj8oSFLPEfrP4q8yVn6h0vf
+1zs3ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+N[FERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+q#PERROR org.apache.hadoop.streaming.StreamJob (main): \e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): \aX
+2jxj8oSFLPEfrP4q8yVn6h0vf
+9>ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+iPERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 6
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\3mERROR org.apache.hadoop.streaming.StreamJob (main): Q5
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): @9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+9ERROR org.apache.hadoop.streaming.StreamJob (main): L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#yERROR org.apache.hadoop.streaming.StreamJob (main): u\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): /
+2jxj8oSFLPEfrP4q8yVn6h0vf
+*\aERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+!ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+pERROR org.apache.hadoop.streaming.StreamJob (main): %
+2jxj8oSFLPEfrP4q8yVn6h0vf
+TERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+uERROR org.apache.hadoop.streaming.StreamJob (main): f
+2jxj8oSFLPEfrP4q8yVn6h0vf
+`ERROR org.apache.hadoop.streaming.StreamJob (main): \a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 6mr
+2jxj8oSFLPEfrP4q8yVn6h0vf
+3ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): T
+2jxj8oSFLPEfrP4q8yVn6h0vf
+EERROR org.apache.hadoop.streaming.StreamJob (main): 4]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+x\ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 8..
+2jxj8oSFLPEfrP4q8yVn6h0vf
+OERROR org.apache.hadoop.streaming.StreamJob (main): L0FSiA
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): rj
+2jxj8oSFLPEfrP4q8yVn6h0vf
+a]ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): \e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): G]7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): v
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): K,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+_ERROR org.apache.hadoop.streaming.StreamJob (main):  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+EERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[AERROR org.apache.hadoop.streaming.StreamJob (main): S\
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SERROR org.apache.hadoop.streaming.StreamJob (main): a=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ck
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): n
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): U
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): Y|:/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): f]&us
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\" Mmv]'ERROR org.apache.hadoop.streaming.StreamJob (main): X
+2jxj8oSFLPEfrP4q8yVn6h0vf
+UERROR org.apache.hadoop.streaming.StreamJob (main): ><
+2jxj8oSFLPEfrP4q8yVn6h0vf
+iERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+nERROR org.apache.hadoop.streaming.StreamJob (main): MO`L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): c:Wx
+2jxj8oSFLPEfrP4q8yVn6h0vf
+NERROR org.apache.hadoop.streaming.StreamJob (main): 0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): M,7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+BERROR org.apache.hadoop.streaming.StreamJob (main): 	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+LERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): ^
+2jxj8oSFLPEfrP4q8yVn6h0vf
+:ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[ERROR org.apache.hadoop.streaming.StreamJob (main): -)6o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+<!?bERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+?zERROR org.apache.hadoop.streaming.StreamJob (main): 3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+=ERROR org.apache.hadoop.streaming.StreamJob (main): e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+2ERROR org.apache.hadoop.streaming.StreamJob (main): ))
+2jxj8oSFLPEfrP4q8yVn6h0vf
+R\06:ERROR org.apache.hadoop.streaming.StreamJob (main): &\eDk
+2jxj8oSFLPEfrP4q8yVn6h0vf
+jyERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Z$\"Y(ERROR org.apache.hadoop.streaming.StreamJob (main): r
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+~@tERROR org.apache.hadoop.streaming.StreamJob (main): jf
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): l
+2jxj8oSFLPEfrP4q8yVn6h0vf
+?ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+pERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\ERROR org.apache.hadoop.streaming.StreamJob (main): D
+2jxj8oSFLPEfrP4q8yVn6h0vf
+LERROR org.apache.hadoop.streaming.StreamJob (main): GS
+2jxj8oSFLPEfrP4q8yVn6h0vf
+lERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): =O
+2jxj8oSFLPEfrP4q8yVn6h0vf
+KERROR org.apache.hadoop.streaming.StreamJob (main): \0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+jERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+rERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+*ioERROR org.apache.hadoop.streaming.StreamJob (main): <#
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\aERROR org.apache.hadoop.streaming.StreamJob (main): sA
+2jxj8oSFLPEfrP4q8yVn6h0vf
+yesERROR org.apache.hadoop.streaming.StreamJob (main): =P
+2jxj8oSFLPEfrP4q8yVn6h0vf
+:ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 9_
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): f
+2jxj8oSFLPEfrP4q8yVn6h0vf
+?ERROR org.apache.hadoop.streaming.StreamJob (main): Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+AERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+]}ZERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+:_ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): (-
+2jxj8oSFLPEfrP4q8yVn6h0vf
+:ERROR org.apache.hadoop.streaming.StreamJob (main): a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+(ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+l?ERROR org.apache.hadoop.streaming.StreamJob (main): J0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): W[;6-
+2jxj8oSFLPEfrP4q8yVn6h0vf
+thERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+KjERROR org.apache.hadoop.streaming.StreamJob (main): ?0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+RqbERROR org.apache.hadoop.streaming.StreamJob (main): [
+2jxj8oSFLPEfrP4q8yVn6h0vf
+rewAERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): \")V
+2jxj8oSFLPEfrP4q8yVn6h0vf
+C?.	ERROR org.apache.hadoop.streaming.StreamJob (main): mj3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+//ERROR org.apache.hadoop.streaming.StreamJob (main): N\a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): g
+2jxj8oSFLPEfrP4q8yVn6h0vf
+=ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+yERROR org.apache.hadoop.streaming.StreamJob (main): 2T
+2jxj8oSFLPEfrP4q8yVn6h0vf
+yERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+vERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+zERROR org.apache.hadoop.streaming.StreamJob (main): z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+uSERROR org.apache.hadoop.streaming.StreamJob (main): L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0ERROR org.apache.hadoop.streaming.StreamJob (main): MS
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): bMn
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): :mD
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): A
+2jxj8oSFLPEfrP4q8yVn6h0vf
+?ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+);ERROR org.apache.hadoop.streaming.StreamJob (main): %
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): C
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\ERROR org.apache.hadoop.streaming.StreamJob (main): ( 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+HERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): 7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): N)
+2jxj8oSFLPEfrP4q8yVn6h0vf
+X'6p0ERROR org.apache.hadoop.streaming.StreamJob (main): \e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+iERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+LVERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ERROR org.apache.hadoop.streaming.StreamJob (main): l?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ ERROR org.apache.hadoop.streaming.StreamJob (main): 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+DXERROR org.apache.hadoop.streaming.StreamJob (main): .
+2jxj8oSFLPEfrP4q8yVn6h0vf

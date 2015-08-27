@@ -103,11 +103,13 @@ namespace ConsoleApplication1
                 {
                     int key_j = keyConverter[j];
                     double edgeWeight = values[i][j];
+
                     if (edgeWeight >= minEdgeWeight)
                     {
                         sb.Append(key_i + " " + key_j + " " + edgeWeight + "\n");
                     }
                 }
+                sb.Append(key_i + " " + key_i + " " + 1.0 + "\n");
             }
             return sb.ToString();
         }

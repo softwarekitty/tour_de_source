@@ -1,0 +1,874 @@
+]~# xdefineSQLITE_VERSION\";\"5
+2jxj8oSFLPEfrP4q8yVn6h0vf
+##defineSQLITE_VERSION\"B\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+d#%define SQLITE_VERSION[\"\"B=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#  define	SQLITE_VERSION:\"g9\"-
+2jxj8oSFLPEfrP4q8yVn6h0vf
+O:8# define SQLITE_VERSION\"!\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ b#define~SQLITE_VERSION@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+:=#defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+     b!t#	defineSQLITE_VERSION`\"oI\"&T
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^7s#	pdefine SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Uq# @udefine SQLITE_VERSION\"l,\"e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  g3;#
+(-defineSQLITE_VERSION@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SY#define!SQLITE_VERSION\"\"H
+2jxj8oSFLPEfrP4q8yVn6h0vf
+bo:S#define	KSQLITE_VERSION\"7\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+/ (n#	 ?defineSQLITE_VERSION\"BA\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #defineSQLITE_VERSION;;\"j\"K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define SQLITE_VERSION\"\"a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# ^define
+SQLITE_VERSION|;\"\"7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define]SQLITE_VERSION}{\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+
+WI#	define nSQLITE_VERSION\"H\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+3$##Ldefine
+SQLITE_VERSION@\"^_\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+{#defineSQLITE_VERSION[[^\"z\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\"<G#define SQLITE_VERSION\"\"u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#ndefine SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+,I3#define SQLITE_VERSION`\"#\"61BEff> h@)i
+2jxj8oSFLPEfrP4q8yVn6h0vf
+?/#	defineSQLITE_VERSION\"\"o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+
+#definekZSQLITE_VERSION@`\"\"2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #	v_Bdefine SQLITE_VERSION\"\"`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+O 		]#  	 define ,SQLITE_VERSION\"\"s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+; N#>defineW	SQLITE_VERSION\",>\0h\"FhW
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#defineOSQLITE_VERSION@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# define BSQLITE_VERSION[|\"w\"P
+2jxj8oSFLPEfrP4q8yVn6h0vf
+;&#	define iSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define SQLITE_VERSION;\"\"4`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  #  	 define	SQLITE_VERSION\"`\"u#
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define \encSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  
+#define S\"SQLITE_VERSION\"\"K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  Xy#   define $SQLITE_VERSION\"5\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	f #defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Z(#	define ESQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#  define *USQLITE_VERSION\"&\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	# !define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+mR#  define0SQLITE_VERSION\"\"r
+2jxj8oSFLPEfrP4q8yVn6h0vf
+] # define SQLITE_VERSION\"=\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define	}SQLITE_VERSION\"JK\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#	define G-SQLITE_VERSION{]?\"\"a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ l#define SQLITE_VERSION\"\"0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+:#define	SQLITE_VERSION@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Ai#.define .SQLITE_VERSION[\" \"i
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	#RB67define|>SQLITE_VERSION\"\"\"l
+2jxj8oSFLPEfrP4q8yVn6h0vf
+~#define `SQLITE_VERSION\"C\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+l}#       define QSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+iL9 # Bdefine SQLITE_VERSION\"v\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+,F# G/defineSQLITE_VERSION`\"\"w
+2jxj8oSFLPEfrP4q8yVn6h0vf
+<S\"zLi 4#define SQLITE_VERSION\"`\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+pV#define
+c1\aSQLITE_VERSION\"r\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# Qdefine SQLITE_VERSION\"5\"AP
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#Tdefine SQLITE_VERSION@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# xedefine<SQLITE_VERSION{\"\"<k/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+o?o#  define SQLITE_VERSION\"\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+n7M\"e# 1define	2SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ hL#A0-&PdefineSQLITE_VERSION\",_\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	   ##   	 define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7X#define
+SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+		?#define
+SQLITE_VERSION\"5?\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define SQLITE_VERSION\"q\"=Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+?#7Bdefine	SQLITE_VERSION`@\"\"x!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+~y#Zdefine3SQLITE_VERSION\"n=\"T1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0 #define GQSQLITE_VERSION`\"\"19
+2jxj8oSFLPEfrP4q8yVn6h0vf
++L/  g\e0]#1:define 2\e>SQLITE_VERSION'\"\"W
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ 	##l{define r,`SQLITE_VERSION@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define
+SQLITE_VERSION\"od\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ # defineSQLITE_VERSION`\"\"5
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#
+_define E%THSQLITE_VERSION\"~8\"}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+}  # define SQLITE_VERSION[^\"Zy>R/j\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+S	#defineSQLITE_VERSION^`\"@\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+.# defineIGSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+M#defineecqSQLITE_VERSION\"'\"U}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define y&[K~SQLITE_VERSION%[\"O\")
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# CvdefineSQLITE_VERSION\"\"x
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# p# define	SQLITE_VERSION{:-\"3\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+z#wdefine SQLITE_VERSION@``\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# defineSQLITE_VERSION>\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7o#  define SQLITE_VERSION\"u\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+we\DC#define 	SQLITE_VERSION*\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#J\"GdefinefSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+'  R/#defineSQLITE_VERSION\"\".-
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	\a#defineSQLITE_VERSION@`\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0v\O DA#xdefine	SQLITE_VERSION\"2(\"a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+@  dv#define SQLITE_VERSION\"ho\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define @SQLITE_VERSION\"a!d\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+YD#$CdefineCSQLITE_VERSION\"E\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+L#define (b0SQLITE_VERSION\"Q\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+*V ,AvIxu%_V#  define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  #define 0SQLITE_VERSION{*\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define >XSQLITE_VERSION\"%\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#GGdefine SQLITE_VERSION|\"\"z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+N#defineSQLITE_VERSION\"\"\e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+w#	defineK_SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+]_#  
+VCdefineSQLITE_VERSION; :\"h*h\"6
+2jxj8oSFLPEfrP4q8yVn6h0vf
+EU8h# 
+ define
+SQLITE_VERSION\"#|3\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+{#
+defineSQLITE_VERSION`, \"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^VJ#defineY7CSQLITE_VERSION\"$\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+`#define S_SQLITE_VERSION:\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define SQLITE_VERSION`\"N\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+N# defineSQLITE_VERSION~[\"\"L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+W	 O# define
+\e5SQLITE_VERSION\"P.\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define	SQLITE_VERSION\"B-K\"y!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+X^>		#define
+maSQLITE_VERSION?\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+$j	#bdefineSQLITE_VERSION.[\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+j# l^define	+SQLITE_VERSION\"\"`_
+2jxj8oSFLPEfrP4q8yVn6h0vf
+m	 	{#  nbdefine 6uSQLITE_VERSION\"^D\"\a+AN
+2jxj8oSFLPEfrP4q8yVn6h0vf
+W	
+#	  3$defineSQLITE_VERSION'\"0\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+`# 
+ define\aT-lSQLITE_VERSION<\"\a\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#	+define98SQLITE_VERSION\"%VWH*g\"a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+n #  PHz=9define SQLITE_VERSION\"+y\"J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+63# defineSQLITE_VERSION;\"[Vc:\"T%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+M''uo#defineSQLITE_VERSION\"\"=]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+e
+ 7b#definesxSQLITE_VERSION\"&<\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# !;#define SQLITE_VERSION\"9\"Cp
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#
+  define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+c#define	SQLITE_VERSION<?\"$\"Vg
+2jxj8oSFLPEfrP4q8yVn6h0vf
+]	  J0Z# 	defineSQLITE_VERSION\"\"k
+2jxj8oSFLPEfrP4q8yVn6h0vf
+K#
+ defineSQLITE_VERSION\"\"YN7d\em
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	#Wdefine	SQLITE_VERSION\"\"8c
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# 	define SQLITE_VERSION\"t\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+pU#	 	define	q	 ZSQLITE_VERSION\"\"?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+1hW#  G|defineSQLITE_VERSION>`?`\"\"|-
+2jxj8oSFLPEfrP4q8yVn6h0vf
+zE#Cdefine SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Tm#define{SQLITE_VERSION\"iw\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Ud#
+ xdefine	SQLITE_VERSION@@\@\"\"PU
+2jxj8oSFLPEfrP4q8yVn6h0vf
+y\aa$#defineySQLITE_VERSION@\"`eQ2\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+E
+#		 defineSQLITE_VERSION[\"\"n
+2jxj8oSFLPEfrP4q8yVn6h0vf
+E#	  0define A [SQLITE_VERSION\"\"/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #define SQLITE_VERSION\"g\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#
+define SQLITE_VERSION[\"~\"v
+2jxj8oSFLPEfrP4q8yVn6h0vf
+'0#define SQLITE_VERSION`=~\"\"j{m
+2jxj8oSFLPEfrP4q8yVn6h0vf
+U- # define bSQLITE_VERSION%!\"\"#X:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+   o2#define=EeK[SQLITE_VERSION=`\"e\"4%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[\"jD[)#define DSQLITE_VERSION\";\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+$ =#rdefine _SQLITE_VERSION{\"\"-.
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#	LDdefineltFhNSQLITE_VERSION>:\"I\"H*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+;# \0$define
+SQLITE_VERSION!\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+_J+#   tdefine >SQLITE_VERSION\"\"$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#	define SQLITE_VERSION\"t\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+L9M#Vdefine OSQLITE_VERSION\"\"l4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+:l	K#!defineSQLITE_VERSION\"`\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	 #	 I]define SQLITE_VERSION{%\"\"(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+/# defineSQLITE_VERSION^\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+o#4QHdefine
+USQLITE_VERSION\"\"`!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Rz#    defineSQLITE_VERSION\")\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define	SQLITE_VERSION\"\"w'
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0# N^define SQLITE_VERSION*\"\"`hD
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0#define5SQLITE_VERSION\"\"N
+2jxj8oSFLPEfrP4q8yVn6h0vf
+l4 #
+ 	define SQLITE_VERSION\"\"h
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#
+rdefine
+SQLITE_VERSION\"hW_\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+
+# 	 define SQLITE_VERSION\"\"'<a,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+`  h$#'defineAALSQLITE_VERSION;>\"\"k
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	yeJ#eYsodefine4SQLITE_VERSION\"CDPk\";790
+2jxj8oSFLPEfrP4q8yVn6h0vf
+]f4#define LuSQLITE_VERSION\"\"0Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+z  s\!hZ#	   defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define
+uSQLITE_VERSION
+\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# define])SQLITE_VERSION\"\",
+2jxj8oSFLPEfrP4q8yVn6h0vf
+~U#  define?\aSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+   #define KSQLITE_VERSION.@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+r   c%#&define SQLITE_VERSION\"xT\",
+2jxj8oSFLPEfrP4q8yVn6h0vf
+op}ko#eE7define SQLITE_VERSION!(|\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+z@+WFm  :\0F#define~2wSQLITE_VERSION\"}\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  <l#N\e%Q9defineSQLITE_VERSION,\"z\"41m
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  # 	|define }obSQLITE_VERSION\"8f\eul\"x/,pU.
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	n#define SQLITE_VERSION[\"b\"9[[\a5
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ 
+ 2# define SQLITE_VERSION\"+ I\"o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #		7jdr~define	 1bsSQLITE_VERSION[$`,@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+yRv#	define 1SQLITE_VERSION[$<\"\"Hs
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#  Qdefine SQLITE_VERSION:\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+U#Jdefine 3SQLITE_VERSION{`\"F=\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#3defineSQLITE_VERSION^\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ }#     defineSQLITE_VERSION\] \"\"e:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+YP#	   zOvdefineSQLITE_VERSION`\"Ok\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Q 
+#define SQLITE_VERSION\"NV9\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+HW 
+# *v'define YSQLITE_VERSION=\"P\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+wpJ1#  9define mSQLITE_VERSION^&*\"\"R
+2jxj8oSFLPEfrP4q8yVn6h0vf
+RO4pZ@1# define SQLITE_VERSION\"\"4R?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+yMh@ #N9eRdefine !SQLITE_VERSION\"`n\"z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+_#;define HlSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  #hdefine SQLITE_VERSION\"S\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#  adefine6|SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+H}j3T*#define5rSQLITE_VERSION\"\"%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+CB#cdefine SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	   O\0#  v9u]Gdefine SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+: 8q#;!define-SQLITE_VERSION\"}d\"8
+2jxj8oSFLPEfrP4q8yVn6h0vf
+y7ox6#
+	8define \"SQLITE_VERSION\"\"3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #Qhdefine	SQLITE_VERSION[`\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+{5 r\"#define	SQLITE_VERSION\"\"'!D
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#  define SQLITE_VERSION`\"li\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#npLEdefineSQLITE_VERSION%\"H\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+X # pdefineSQLITE_VERSION'\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#defineSQLITE_VERSION,/\"A\"{
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	 #  [defineSQLITE_VERSION{;\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+g#z]define
+9SQLITE_VERSION\"o\aI\"$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+z#define SQLITE_VERSION{\"&^\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+f#define f=SQLITE_VERSION;?\"\"V
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#|qdefineSQLITE_VERSION\"\"M6a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+E# defineUSQLITE_VERSION\"(\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# *define<SQLITE_VERSION\"W4\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+UNo#defineSQLITE_VERSION@[\"y\"B$\"H.c
+2jxj8oSFLPEfrP4q8yVn6h0vf
+=.
+#4defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+    #	Tdefine ISQLITE_VERSION@\"#\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	 #define iSQLITE_VERSION\"\"|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+vt#Odefine SQLITE_VERSION\"i0LME\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+|?#|defineSQLITE_VERSION`\"\"=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+}# define VSQLITE_VERSION]( \"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+s5 # Adefine \0SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#  ]Odefine SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+LNu#Ydefine
+SQLITE_VERSION\"\"Sh
+2jxj8oSFLPEfrP4q8yVn6h0vf
+5#
+  Cdefine SQLITE_VERSION@@@\"\"{ds%7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+=	#6define SQLITE_VERSION|
+\"(\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#1define fkSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define	SQLITE_VERSION\"h\"	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+l#define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#
+  define SQLITE_VERSION`\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+$X9_AL#sdefine 9USQLITE_VERSION`\"8\"2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#Cdefine
+\s8SQLITE_VERSION:\"!\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+tC
+#define	SQLITE_VERSION\"\"/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  #\adefine
+_SQLITE_VERSION\"f\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	#@define RSQLITE_VERSION\"@g\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+h%  #cqhJd;define SQLITE_VERSION\"\"o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+;#^defineYSQLITE_VERSION=\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\" #define	SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ 	# define pgSQLITE_VERSION\"EX\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	#define 7SQLITE_VERSION<@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+v#	  define SQLITE_VERSION;@\"'|\"$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+'#	  _define SQLITE_VERSION@\"|G\"JF
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Q>&#define
+SQLITE_VERSION\"\"Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ \e+#define f\SQLITE_VERSION\"\"Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VvMBv\a#define	SQLITE_VERSION[\"	E\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	#defineo>srSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ 	#?m Cdefine 	SQLITE_VERSION@\"p\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#6define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#	define SQLITE_VERSION``@\"5\"\
+2jxj8oSFLPEfrP4q8yVn6h0vf
+$Pt#	U(defineSQLITE_VERSION:\"G\"@}GtXF
+2jxj8oSFLPEfrP4q8yVn6h0vf
+!2bo  #	^Nhdefine SQLITE_VERSION#\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#vQdefine	ESQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define SQLITE_VERSION\"\"&\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  #defineo)p0SQLITE_VERSION@@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+w l'\0kI^#defineSQLITE_VERSION=]:{?\"C]c\"z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #define	\SQLITE_VERSION@\"\"s*1F/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+I W0*# fBdefine qSQLITE_VERSION$}\"R(\"J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+   &hiGq#define SQLITE_VERSION|\"\")Nr
+2jxj8oSFLPEfrP4q8yVn6h0vf
+vB #  define 6zSQLITE_VERSION\"j\"M3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+N#defineSQLITE_VERSION\"B\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+XP#defineNnFySQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+,9Vo\e$#c:define fFQoSQLITE_VERSION{\"L\"!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+
+E	j7D#|define <mJSQLITE_VERSION\"A/y'\"x
+2jxj8oSFLPEfrP4q8yVn6h0vf
+W\"#%define WSQLITE_VERSION\"B\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+h'#define LSQLITE_VERSION\"\";
+2jxj8oSFLPEfrP4q8yVn6h0vf
+XKg#Bdefine	SQLITE_VERSION[\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+fI?H#  -defineSQLITE_VERSION\"\"s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#
+ 	defineUSQLITE_VERSION\"hN\a\"7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0i_*#define SQLITE_VERSION+~\"\"\"1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  	
+\a#ndefine SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#defineSQLITE_VERSION-`\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Px# defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  # (define SQLITE_VERSION.\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+]  #*define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+nKC\"Jb# define SQLITE_VERSION\"\"|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+V[	 #;	define SQLITE_VERSION\"J\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+rp?#	
+  define pSQLITE_VERSION\"\"w
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#
+\eK:\a\0dF=i`defineSQLITE_VERSION;\"\"Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	;dIJ#\edefine SQLITE_VERSION~{\"\"
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ eP3dN#+define SQLITE_VERSION[\"X|U\"4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+CPP#definec&SQLITE_VERSION@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\"u#   defineXSQLITE_VERSION:\"\"Q7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+~O<#* define SQLITE_VERSION\"[\"3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #define X.7\0n:SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	B#FNdefine %SQLITE_VERSION\"@\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\# _define	\ej,SQLITE_VERSION@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#	  define SQLITE_VERSION^\"o\"<2x
+2jxj8oSFLPEfrP4q8yVn6h0vf
+/ vbct#  defineSQLITE_VERSION]\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+{~ E`#define	pxSQLITE_VERSION[\"\"C
+2jxj8oSFLPEfrP4q8yVn6h0vf
+E    #define SQLITE_VERSION\"`\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^~#hdefine N$=SQLITE_VERSION|\"\"z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define;=sv	SQLITE_VERSION\"\"r
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\e#   define SQLITE_VERSION@\"zR3\"V
+2jxj8oSFLPEfrP4q8yVn6h0vf
+~ =#define SQLITE_VERSION@^[\"}\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #define SQLITE_VERSION@\"\"9:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# definenSQLITE_VERSION\"B}\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  ht#RlPGwdefine SQLITE_VERSION\"1\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Z#	define SQLITE_VERSION\"\"X(?n
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	g# 	$define	#SQLITE_VERSION@\"\"'
+2jxj8oSFLPEfrP4q8yVn6h0vf
+{b~#defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0		#~define SQLITE_VERSION::\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# kdefineSQLITE_VERSION{%\"\"Ju
+2jxj8oSFLPEfrP4q8yVn6h0vf
+6mW#define	SQLITE_VERSION?(/\"\"`
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Vn#{defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\e}y]C#define SQLITE_VERSION\"H\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#]defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	 #sc`\X-defineSQLITE_VERSION\":\"-J,\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0P2Y#define	SQLITE_VERSION$\".\"h
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Zd*# define SQLITE_VERSION\"\"a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+##|define3<,SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+b#define SQLITE_VERSION\"\"}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #tdefine (%SSSQLITE_VERSION\"\"X
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ 
+#
+ 		P2.defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Y 
+    Ghk-;# define <,SQLITE_VERSION\"0\"A\K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0! #define*SQLITE_VERSION[\"_<\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ig#define `9p=SQLITE_VERSION\"$\"|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+hI#defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  #
+gwxdefine SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ # #nldefine .SQLITE_VERSION@\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#)define YSQLITE_VERSION\"\"o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+c#define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+4  x#define SQLITE_VERSION#`\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+UC5# HD,define =.qY:5SQLITE_VERSION\"_\"c79
+2jxj8oSFLPEfrP4q8yVn6h0vf
+2>#define 99SQLITE_VERSION\"\"s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#DRdefineSQLITE_VERSION\"x\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+k#define0w8|SQLITE_VERSION\"\"r
+2jxj8oSFLPEfrP4q8yVn6h0vf
+8$J]
+#
+  	defineSQLITE_VERSION%\"[t\"+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ :#q_define	SQLITE_VERSION\"\"W
+2jxj8oSFLPEfrP4q8yVn6h0vf
+@4D<L# F!define SQLITE_VERSION\"\"\0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+@ \0#$Ldefine sSQLITE_VERSION\"\".<
+2jxj8oSFLPEfrP4q8yVn6h0vf
+@[kQ#define	SQLITE_VERSION:\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#  defineSQLITE_VERSION\"	_\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #define SQLITE_VERSION?!\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+G#  9VdefineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#  @define -SQLITE_VERSION/\"i\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+$LY# define
+dSQLITE_VERSION\"\"9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+U># define SQLITE_VERSION.\"\";
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	\0#defineSQLITE_VERSION{\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+_R ?`2,# define SQLITE_VERSION`\"H\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	  I\# 	edefine TSQLITE_VERSION`\"=}\"(|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0# 	define SQLITE_VERSION\"\"Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define
+ad:SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#)define 9SQLITE_VERSION:[||\"&\"A
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#tM	\adefine pSQLITE_VERSION\"\0\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define	SQLITE_VERSION\"\"8
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#9define	SQLITE_VERSION\?\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ y$#adefine M`SQLITE_VERSION\"\"F
+2jxj8oSFLPEfrP4q8yVn6h0vf
+,AV# 	Ndefine MSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  #define ]SQLITE_VERSION`\"Y\"\=s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #   
+defineSQLITE_VERSION\"\">i6]i
+2jxj8oSFLPEfrP4q8yVn6h0vf
+E#3define SQLITE_VERSION{{\"}\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+
+#
+ define 0PSQLITE_VERSION\"r8\"E24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+U
+ # Vdefine1SQLITE_VERSION\"H\"b<
+2jxj8oSFLPEfrP4q8yVn6h0vf
+1#	^Gdefine	-SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+9  i*#wdefineSQLITE_VERSION\"L\" 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^EuKpE# 	defineSQLITE_VERSION\"r\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+H   # 	 	define :SQLITE_VERSION`<@\" \"`J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+n #  xdefine @;	SQLITE_VERSION@\"*\"$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+F#define \a(-SQLITE_VERSION\"\"{4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#	 
+define /SQLITE_VERSION\"\"oEJ\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+a#define	A\"SQLITE_VERSION`\":\"9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^#defineSQLITE_VERSION\"W5\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  #define XSQLITE_VERSION*\"\"v^!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+D$#e#define m@SQLITE_VERSION\"\"	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# define )SQLITE_VERSION\"[5no\a\"\e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# define SQLITE_VERSION={\"+\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ 	#Bdefine SQLITE_VERSION@\"\"x
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #defineSQLITE_VERSION@\"yyZ9\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define SQLITE_VERSION`\"z\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+4#
+ Z\"define eOSQLITE_VERSION\"Nw\"\a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define SQLITE_VERSION-\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+5@# define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# 6define SQLITE_VERSION[\"\"9{
+2jxj8oSFLPEfrP4q8yVn6h0vf
+C#`define SQLITE_VERSION\"\"1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# definewSQLITE_VERSION;\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[U,G# definebSQLITE_VERSION|`\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+DBw#define F~|QaSQLITE_VERSION)%\"u\"J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define HSQLITE_VERSION\"\"c
+2jxj8oSFLPEfrP4q8yVn6h0vf
+a 
+#define \eSQLITE_VERSION\"\"S*Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ \#	=$defineSQLITE_VERSION`\"FW\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+4#define SQLITE_VERSION{\"7Oo\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+O#defineSQLITE_VERSION\"\"YJ+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+V(# define SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0#Odefine b@SQLITE_VERSION^<~\"\"[
+2jxj8oSFLPEfrP4q8yVn6h0vf
+F   #
+defineySQLITE_VERSION\"rq\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\eN#	 &define	ESQLITE_VERSION@\"&5@\"e}N
+2jxj8oSFLPEfrP4q8yVn6h0vf
+mYB#define	SQLITE_VERSION\"\"O-q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ # GMdefine SQLITE_VERSION}`\"<\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+# `3\0&Sdefine &QSQLITE_VERSION\"x\"S>>dFQ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  Y# Ddefine 5SQLITE_VERSION[\")&\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ # 	define6/ SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+  1#define SQLITE_VERSION\"\"c
+2jxj8oSFLPEfrP4q8yVn6h0vf
+za+@u#define SQLITE_VERSION,:\"\"X
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Y  #define SQLITE_VERSION\"\"m
+2jxj8oSFLPEfrP4q8yVn6h0vf
+9##define @SQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+6#
+  defineSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+I6g?V#Bdefine KSQLITE_VERSION\")\"Uh
+2jxj8oSFLPEfrP4q8yVn6h0vf
+%'#defineSQLITE_VERSION\"b\"q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+o;#  V|define SQLITE_VERSION\"IL\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^   
+	 	 ,#define SQLITE_VERSION<'\"{:\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #Adefine SQLITE_VERSION[	\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\"#defineSQLITE_VERSION@\"\"L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\eCu.#cD}# defineSQLITE_VERSION`\"/yv\"z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+?`# D;define SQLITE_VERSION\"0\"$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+ #	 define TSQLITE_VERSION\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#  S'Ndefine SQLITE_VERSION$\"\"KP!4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+,#	define SdSQLITE_VERSION@\"\"M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Kw+i(#
+ 
+define SQLITE_VERSION\"\a\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#define?&{*fSQLITE_VERSION.\"L\"\"
+2jxj8oSFLPEfrP4q8yVn6h0vf

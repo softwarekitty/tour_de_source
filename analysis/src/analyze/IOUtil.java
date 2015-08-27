@@ -215,19 +215,21 @@ public class IOUtil {
 			PythonParsingException {
 		HashMap<String, WeightRankedRegex> patternWRRMap = new HashMap<String, WeightRankedRegex>();
 		String content = IOUtil.getFileContents(PaperWriter.homePath +
-			"analysis/analysis_output/patternWeightMap.txt");
-		Pattern finder = Pattern.compile("(.*)\\t(.*)\\t(\\d+)");
+			"analysis/analysis_output/exportedCorpusRex.txt");
+		Pattern finder = Pattern.compile("(\\d+)\\t(\\d+)\\t(.*)\\t(.*)");
 		Matcher pairMatcher = finder.matcher(content);
 		while (pairMatcher.find()) {
-			String rexShortenedPattern = pairMatcher.group(1);
-			String originalPattern = pairMatcher.group(2);
-			Integer weight = Integer.parseInt(pairMatcher.group(3));
-			WeightRankedRegex previous = patternWRRMap.put(rexShortenedPattern, new WeightRankedRegex(originalPattern, weight));
+			String originalPattern = pairMatcher.group(3);
+			String rawPattern = pairMatcher.group(4);
+			//System.out.println(pairMatcher.group(0) + " original.length: " + originalPattern.length() + " rawLength: " + rawPattern.length());
+
+			Integer weight = Integer.parseInt(pairMatcher.group(2));
+			WeightRankedRegex previous = patternWRRMap.put(rawPattern, new WeightRankedRegex(originalPattern, weight));
 			if (previous != null) {
 				System.out.println("information hidden by rex flattening of slashes in pattern: " +
 					originalPattern +
-					" with shortened version: " +
-					rexShortenedPattern +
+					" with raw version: " +
+					rawPattern +
 					" and previous wrr: pattern=" +
 					previous.getContent() +
 					" weight=" +
@@ -322,11 +324,10 @@ public class IOUtil {
 
 			Integer index = Integer.parseInt(pairMatcher.group(1));
 			String rawPattern = pairMatcher.group(2);
-			String normalizedPattern = "'" + rawPattern + "'";
-			WeightRankedRegex wrr = patternWRRMap.get(normalizedPattern);
+			WeightRankedRegex wrr = patternWRRMap.get(rawPattern);
 			if (wrr == null) {
 				System.out.println("warning: could not find pattern: " +
-					normalizedPattern + " in patternWeightMap");
+					rawPattern + " in patternWeightMap");
 				// System.exit(1);
 			} else {
 				lookup.put(index, wrr);

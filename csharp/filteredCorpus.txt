@@ -1,0 +1,2871 @@
+1	  
+15	  ([^:]*):  (.*)
+16	  (\S+) \((\d+)\)
+17	  (http://.*)
+29	  http://
+40	 (SENATOR|REPRESENTATIVE)\([Ss]\) ([^,]+(,[^,]+){0,})
+41	 ([a|b])/
+44	 *"(.*)" *<.*@.*>
+48	 *({.*}) = ({.*})$
+68	 -[HS]J \d+;? ?
+71	 0001:[0-9a-fA-F]{8}\s*([_\?@$0-9a-zA-Z]*)\s*([0-9a-fA-F]{8}).*
+75	 DELETED ---$
+89	 \n
+91	 \| 
+94	 at 0x[0-9a-f]+
+99	 error: 
+100	 failed: (.*)$
+108	 {2,}
+109	 {2,}\n
+113	 |\(
+117	!\s*
+123	"(.*)"
+125	"(.*)"(\s*\[.*\])
+126	"(.*)".*PRIMARY KEY$
+137	"([0-9]*) ([0-9]*) ([0-9]*) ([0-9]*)
+138	"([0-9][.0-9]*)
+140	"([^"]*)"
+141	"([^"]*)",?
+144	"([^"]+)"|(\S+)
+146	"(\\\\|\\"|[^"])*"
+149	".*"
+159	"[^"]*"
+176	"|\\
+186	# Command: [/\w_]+ (.*)
+189	# Fadvise: ([\w]+)
+191	# Iterations: ([0-9]+)
+194	# Sched features: ([\w]+)
+195	# StopWatch ([\w]+) total/cumulative duration ([0-9.]+). Samples: ([0-9]+)
+205	#!.*\n
+209	## PATH PLACEHOLDER ##
+210	## REPLAY PLACEHOLDER ##
+223	#(.*)\n
+224	#(..)(..)(..)
+227	#([\$a-zA-Z0-9_\-\&]+)
+228	#([\w-]+)
+234	#(\S+)
+235	#(\d+)
+239	#+$
+241	#.*$
+245	#:([a-zA-Z][a-zA-Z0-9_-]*)
+250	#F([^#]+)
+252	#[ \t]*doctest:.*
+259	#\s*-\*-\s*noplot\s*-\*-
+260	#\s*-\*-\s+coding:\s+(\w+)\s+-\*-
+261	#\s*all-random\s+
+262	#\s*coding[:=]\s*([-\w.]+)
+267	#\s*ipdoctest:\s*EXTERNAL
+269	#\s*random\s+
+276	#\w\w\w$
+277	#\w\w\w\w\w\w$
+283	#d8e8ff
+285	#define ([A-Z][A-Z0-9_]+) (.*)\n
+292	#define NODE_MAJOR_VERSION
+293	#define NODE_MINOR_VERSION
+294	#define NODE_PATCH_VERSION
+295	#define NODE_VERSION_IS_RELEASE
+300	#define __ARM_NR_(\w*)\s*\(__ARM_NR_BASE\+\s*(\w*)\)
+301	#define __NR_(\w*)\s*([0-9]*)
+303	#define __NR_(\w*)\s*\(__NR_SYSCALL_BASE\+\s*(\w*)\)
+304	#define __NR_(\w*)\s*\(__NR_timer_create\+(\w*)\)
+305	#define[ \t]+([A-Z0-9a-z_]+)[ \t]+([0-9]+)[ \t]*/\*[ \t]*(.*)[ \t]*\*/
+308	#define\WDB_VERSION_MAJOR\W(\d+)
+309	#define\WDB_VERSION_MINOR\W(\d+)
+310	#define\WDB_VERSION_PATCH\W(\d+)
+313	#define\s+ETS_VER\s+([0-9]+)
+317	#define\sSET_(\S*)\(
+321	#egg=(.*)$
+334	#s*define\s+HASHVERSION\s+2\s*
+335	#s*define\s+WITH_LIBINTL\s+1\s*
+337	#x([\d|A-F]{4,4})
+341	%
+345	%%HiResBoundingBox: .*
+347	%(.)
+349	%(..?)%
+356	%(@|d|f|lld|\d+\.?f|\d+\.\d+f|\d+d)
+357	%([0-9A-Fa-f]{2})
+358	%([0-9]+)
+359	%([0-9a-fA-F][0-9a-fA-F])
+363	%([YmdHMS])
+366	%+ ?(.*)\n[ \t]*
+368	%.*
+369	%.*coding[:=]\s*([-\w\.]+)
+370	%20
+373	%G|\[m|\[[\d;]+[HJnrm]
+376	%[^%]|%$
+378	%[^0-9A-Fa-f]|%[0-9A-Fa-f][^0-9A-Fa-f]
+379	%[^\r\n\v]*
+389	%\((\w+)\)s
+395	%\s*#.*coding[:=]\s*([-\w.]+)
+399	%e
+400	%i
+406	%pi
+417	&#([0-9]+);?
+419	&#([xX]?[0-9a-fA-F]+)[^0-9a-fA-F]
+420	&#(\d+);
+421	&#(\d+|[xX][0-9a-fA-F]+);
+423	&#(x?[0-9A-Fa-f]+)[^0-9A-Fa-f]
+424	&#(x?[0-9a-fA-F]+)[^0-9a-fA-F]
+426	&#8211;
+427	&#8212;
+428	&#8216;
+429	&#8217;
+430	&#8220;
+431	&#8221;
+432	&#8230;
+440	&#\d+;
+442	&&
+445	&(#?)(x?)(\w+);
+465	&([A-Za-z0-9_]+);
+472	&([a-zA-Z][a-zA-Z0-9]*)[^a-zA-Z0-9]
+474	&(\S*)\s*(.*)
+476	&(\w+);
+486	&\w+;
+488	&amp;
+495	&nbsp;
+496	&quot;
+498	''
+510	'(..+)'\s+(..+$)
+514	'([..\n]+)'\s+(..+$)
+518	'.'
+519	'.*
+520	'.*'$
+527	'[^']*'
+529	'\?(.)'
+532	( +)
+534	( +|\n)
+538	( |\n|^)\.\. 
+541	(!\S*)(.*)
+555	(#.*)?$
+564	(%?):([a-zA-Z][a-zA-Z0-9_-]*)%
+566	(%[A-z])
+569	(&#\d+;)
+571	(&&)
+572	(''')\s*$
+577	(((((((((((x)))))))))))
+578	((((((((((y))))))))))(.)
+583	(((verify))) *\(( *)(\d+)
+585	((,|^)\s*[\w\-\.]+)
+641	((DB|User|Msg|MsgAssertion)Exceptio(n))\(( *)(\d+) *,? *(\S+.+\S) *,?
+642	((User|Msg|MsgAssertion)Exceptio(n))\(( *)(\d+)
+644	(([A-Z_][A-Z0-9_]*)|(__.*__))$
+645	(([^-/]+)-?([^/]+)?)/?.*
+647	(([^:]+::)*)
+654	(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
+655	(([umsg]asser(t|ted))) *\(( *)(\d+)
+656	(([umsgf]asser(t|ted))) *\(( *)(\d+)
+658	(([wum]asser(t|ted))) *\(( *)(\d+) *,\s*([\S\s+<\(\)"]+) *,?.*
+659	(([wum]asser(t|ted)))\s*\(([^\d]*)(\d+)\s*,?()
+670	((\d|\w|_)+)
+671	((\t)|(    ))(.*)
+672	((\w|\.)+)\((\d+)\):
+675	((^|[^%])(%%)*%s)
+679	((^|\n)\s*)-
+680	((^|\n)\s*)@
+681	((^|\n)\s*\d+)\.
+683	((a))
+684	((a)|(b))(c)?
+685	((fasser(t|ted))) *\(( *)(\d+)()
+686	((fassertFailed)()) *\(( *)(\d+)
+687	((fassertFailed)()) *\(( *)(\d+)()
+688	((final|abstract)[ \t]+)?((public|private|protected)[ \t]+)?(static[ \t]+)?class[ \t]+\w+((implements|extends)\w+)?
+692	((msgasser(t|ted)))\s*\(([^\d]*)(\d+)\s*,?()
+694	((msgasser(t|ted)NoTrace))\s*\(([^\d]*)(\d+)\s*,?()
+697	()(  +)
+701	(-)(\d+)$
+712	(-?\d+)(\d{3})
+714	(-[a-zA-Z])([0-9]*)
+715	(-\w*)$
+718	(.)
+720	(.)([A-Z][a-z]+)
+727	(.*)
+729	(.*) ([(][^()]*[)])
+731	(.*) <(.*)>
+735	(.*) \(([0-9]+)\)$
+737	(.*) \(\d\)
+738	(.*) cache:$
+746	(.*),\s+((\w+\.?) (\d+), (\d{4}))
+759	(.*)//(.*)
+762	(.*): mark as failed$
+763	(.*): reinstated$
+764	(.*):(<.*)
+769	(.*):\t?........ (.) (.*)$
+772	(.*)[-_](.*)
+775	(.*)\(
+776	(.*)\((.*)\)
+778	(.*)\(.*\)
+781	(.*)\*$
+783	(.*)\.([0123456789]+)\.([0123456789]+)\.([0123456789]+)$
+784	(.*)\.(\w+:.+\s)
+786	(.*)\.\w{3,4}$
+787	(.*)\[(.*)\](.*)
+788	(.*)\[([^\[\]]+)\](.*)
+789	(.*)\n
+795	(.*)\x01(.*)###(.*)$
+796	(.*)\|(.*)
+800	(.*)_\d\d
+805	(.*){(.*)}(.*)
+852	(.*[Jj]amfile\.v2)|(.*[Bb]uild\.jam)
+865	(.+):(\d+)
+867	(.+):<(.+)
+871	(.+)=(.+)
+881	(.+)\!$
+882	(.+)\.(\w*)$
+886	(.+)_(\d+)_(\d+)_(.+)
+902	(..)
+910	(.{60})
+918	(/[a-zA-Z][a-zA-Z0-9]*)+$
+921	(/\.)|(//)|([\\:\*\?\""\<\>\|]|[\x00-\x1f]|[\x7f-\x9f])
+926	(/status$)
+927	(0x[0-9A-Fa-f]+|0\d*|[1-9]\d*)
+935	(3\.1\d+)|(MiKTeX \d+.\d+)
+936	(:)
+937	(:)(:*)
+938	(:)*
+939	(:*)
+940	(:+)
+945	(:|\s)0+\.(\d+)
+946	(;?)$
+949	(<!DOCTYPE[^]]*]>)
+966	(<[^>]*>)(.*)
+968	(<[^>]+>)
+969	(<\?xml version.*\?>)
+971	(<\w+ object at )0x\w+>
+978	(<function \w+ at )0x\w+>
+982	(<module 'epydoc_test' from ).*
+998	(>(\s*>)+)(,|\n$)
+999	(></)|("")|(\n\s+)\n|(.|\s)
+1001	(>[ \t]*)(.*\n)
+1673	(BlackBerry|HTC|LG|MOT|Nokia|NOKIAN|PLAYSTATION|PSP|SAMSUNG|SonyEricsson)
+1677	(ERROR|FATAL):
+1681	(H|S)
+1682	(I[0-9a-f]{8,40})|([Bb]ug|[Ll][Pp])[\s\#:]*(\d+)|([Bb]lue[Pp]rint|[Bb][Pp])[\s\#:]*([A-Za-z0-9\-]+)
+1686	(Jamfile<.*>)%(.*)
+1693	(Okay|[EW]\d{3}):\s(.*)
+1697	(RHEL.*PC)
+1699	(Read-only)|(protected)
+1701	(Resolving |Connecting to )
+1703	(Saving to:|\s*\d+K)
+1705	(TARGET_XPCOM_ABI|OS_TARGET|MOZ_DEBUG)\s*=\s*(.*)
+1710	(Y=.*)
+1714	([ ]+)\t
+1715	([ ]+_)|(_[ ]+)|([ ]+)
+1719	([!{}:;>+\(\[,])\s+
+1720	(["\\`])
+1723	([#$&%_\${}])
+1724	([$\\%&@]+)?(\w+)
+1727	([% \t\x80-\xff])
+1728	([&<"\\'>])
+1732	([(\[{])|([)}\])])
+1740	([+-]?[\d\.]+)(\S+)
+1744	([+-]\d{4})$
+1745	([+\-&|!(){}\[\]\^"~*?:\\])
+1750	([-0-9.]+)([a-zA-Z]+)
+1764	([0-9.]+)
+1765	([0-9.]+)$
+1766	([0-9.]+)(\S*)$
+1767	([0-9A-F]{1,2}:){5}[0-9A-F]{1,2}
+1771	([0-9]*) planes
+1774	([0-9]+) INFO TEST-START . Shutdown.*
+1780	([0-9]+)([DdHhMm]|[sS]?)
+1784	([0-9]+):([0-9]+)
+1792	([0-9]+)_([0-9]+)
+1794	([0-9]+.[0-9]+)
+1797	([0-9]+\.[0-9]+\.[0-9]+)\s*(\(\S*\))?
+1807	([0-9]{4}-[0-9]{2}-[0-9]{2})  ([0-9]{4,5}) {1,2}(.*)
+1817	([:\-\w]*){([^}]+)}
+1825	([=!]=)\s*(None|False|True)
+1827	([=\(\)|\-!@~\"&/\\\^\$\=])
+1829	([?*]+/?)
+1833	([A-Z0-9]+) \/\* Frameworks \*\/
+1834	([A-Z0-9]+) \/\* Resources \*\/
+1838	([A-Z])([a-z0-9]+)
+1839	([A-Z]+)
+1841	([A-Z]+)([A-Z][a-z])
+1842	([A-Z]+)\s+:\s+(.*)$
+1843	([A-Z]+[a-z]*)([A-Za-z0-9]+)
+1847	([A-Z][A-Z])([A-Z][0-9a-z])
+1849	([A-Z][a-z]+)
+1850	([A-Z][a-z]+[A-Z][^ ]+)
+1855	([A-Z]{3}_ERROR_[A-Z_0-9]+)\s+=?\s*\(?([A-Z_0-9-][A-Z_0-9-+ ]+[A-Z_0-9])
+1860	([A-Za-z0-9_.-]*|"[^"]*")\s+(\S+)\s+(.*)
+1869	([A-Za-z]+)([0-9]+)
+1871	([A-Za-z]+)(hat|check|dot|breve|acute|ddot|grave|tilde|mathring|bar|vec)
+1882	([\"$`])
+1884	([\"\\])
+1886	([\$\|\\])
+1893	([\-0-9])|([\-0-9]/[0-9])
+1897	([\.,])
+1899	([\13\14])
+1902	([\[\]#$%&_{}^~\\])
+1907	([\\"])
+1911	([\\'])
+1912	([\\()\r\n])
+1917	([\d.]+) ([\d.]+) ([\d.]+) (\d+)/(\d+)
+1922	([\d\.]+)
+1925	([\d\w\-_]+)(.*)
+1926	([\d\w\-_]+)\s+(\d+)/(tcp|udp)(.*)
+1930	([\n\r\t\x08\x07])
+1933	([\s:])(0)(px|em|%|in|cm|mm|pc|pt|ex)
+1935	([\s\\])
+1938	([\t ]+)
+1941	([\w-]+)([.#])(\w+)
+1942	([\w-]+):(.+)
+1944	([\w-]+[\w]+)\s+(\w+)\s+(\w+)
+1948	([\w.+]+)\s*\(#(\d+),\s*([\w ]+),\s*([\w :]+)\)\s*\[([^\]]+)\]?
+1949	([\w.+]+)\s*\(#?([^,]+),\s*([\w ]+),\s*([\w :]+)\)\s*\[([^\]]+)\]?
+1950	([\w.+]+)\s*\(#?([^,]+),\s*([\w ]+),\s*([\w :]+)\)\s*\[PyPy [^\]]+\]?
+1953	([\w\-\.]+)='([^']+)'
+1963	([\w]*)([^:=]*:?=?)([sif]?)
+1966	([\x00-\x08\x0b\x0c\x0e-\x1f])
+1967	([\x00-\x1f\x7f])
+1968	([\x00-\x7F])+
+1969	([\x00-\x7f])+
+1972	([\x0c])
+1973	([\x20\x21\x23-\x5B\x5D-\x7E]+)
+1983	([^ ]+) ([^ ]+)(( HTTP/([0-9.]+))$|$)
+1991	([^#:]*#)(.*)
+2001	([^,;]+[,;]?)
+2003	([^,]+),\s+(\d{2})\s+([^\s]+)\s+(\d{4})\s+(\d{2}):(\d{2}):(\d{2})\s+([^\s]+)
+2004	([^-]*)-
+2005	([^-]*-).*
+2008	([^.]*).*
+2009	([^/\\]+)\.xcodeproj
+2010	([^/]+)
+2012	([^/]+)\.a$
+2013	([^/]+)\.so$
+2022	([^:]*):\s+scsi([0-9]+)\s+channel=([0-9]+)\s+id=([0-9]+)\s+lun=([0-9]+)
+2024	([^:]+):(.*)
+2028	([^;?#]*)(;[^?#]*)?(\?[^#]*)?(#.*)?
+2030	([^<]*)(<[^>]*>)
+2038	([^A-Z])([A-Z])
+2040	([^[]+)\[([^]]+)\]
+2041	([^\"\'=\s])(\s*)#([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])
+2044	([^\(]*)(\((.*)%(.*)\))?
+2045	([^\(]*)(\(.*\))?
+2046	([^\(]+)
+2052	([^\?\!]*\?)?([^\?\!]*\!)?(.*)
+2054	([^\\] )
+2064	([^\t -~])
+2066	([^\w\s]*)\s*(\t|  )\s*([^\w\s]*)
+2075	([_A-Za-z]\w*)
+2081	([a-z0-9])([A-Z])
+2084	([a-zA-Z-]+):\s*$
+2086	([a-zA-Z0-9+.-]+)://
+2088	([a-zA-Z0-9]*)$
+2090	([a-zA-Z0-9_$%]+)
+2093	([a-zA-Z\d]+) \[(\d+)\] (.*)
+2094	([a-zA-Z]):\\(.*)
+2095	([a-zA-Z]+)([A-Z][a-z])
+2112	([a-z\d])([A-Z])
+2114	([a-z])([A-Z])
+2124	([a-z]*) ([^ \r\n]*)
+2131	([a-z]+://|//).*
+2136	([a-z_]+)_total
+2137	([abc]|rc)[\-\.](\d+)$
+2139	([aeiouy])y
+2140	([b:]+)
+2144	([idel])|(\d+):|(-?\d+)
+2146	([sh]db)\s
+2147	([shv]db)\s
+2149	([{}])
+2152	([}{])
+2153	(\ ?\ ?\ ?)\[\^([^\]]*)\]:\s*(.*)
+2154	(\"|\\')
+2161	(\$\(([a-zA-Z0-9\-_]+)\))
+2163	(\$\{)\d+(:[^}]+\})
+2178	(\(\s|\s\))
+2181	(\(|\)|\s+|\+)
+2187	(\*|__key__)
+2190	(\+|-|\*|/|//|\*\*|and|or|xor|=\?|=|==|<>|<|>|<=|>=)$
+2193	(\.0+)*$
+2195	(\.[\d]+)?$
+2198	(\.cpp)?$
+2199	(\.c|\.cpp)?$
+2203	(\.|::)
+2207	(\/+[a-z]*\/[a-z]*$)
+2211	(\033|~{)
+2220	(\D)(\d{4})$
+2221	(\D)[.]
+2222	(\D)[.](\D)
+2231	(\S)\s+(\S)
+2235	(\S*)\s*RHEL\s
+2236	(\S+(\.\w+)*)\.(\w*)$
+2237	(\S+)
+2239	(\S+)$
+2243	(\S+): (\S+)
+2244	(\S+):(\d+): \[(\S+)(, \S+)?] (.*)
+2247	(\S+);.*
+2250	(\S+)\s(\S+)
+2251	(\S+)\s*(.*)
+2252	(\S+)\s*,\s*
+2254	(\S+)\s*=\s*("([^"]*)"|\'([^\']*)\')
+2268	(\S+)\s+(..+$)
+2269	(\S+)\s+(\S+)
+2279	(\S+[^<|^!|^>])\s*(=+)\s*(\S+)
+2283	(\S.+):$
+2284	(\W)
+2288	(\W*)(\w*)
+2289	(\W+)
+2290	(\[(.+des([0-9]+).htm)\])
+2311	(\\*)([,;]+)
+2314	(\\+)"
+2318	(\\\\)|(\$\$)|\$\{([^}]+)\}
+2320	(\\|")
+2321	(\\|\*|\+|\?|\||\{|\}|\[|\]|\(|\)|\^|\$|\.|\#|\ )
+2326	(\d)
+2332	(\d)\.(\d{4})
+2334	(\d*)(:?)
+2339	(\d*\.?\d*)\s*(\S*)
+2342	(\d+(\.\d+)*)
+2343	(\d+(\.\d+)?) (K|M|G|T)b?$
+2346	(\d+) ([^=]+)=
+2348	(\d+) bytes
+2350	(\d+) bytes \(\d+\.*\d* \w*\) copied, (\d+\.*\d*) s, \d+\.*\d* \w./s
+2353	(\d+) files? changed, (\d+) insertions?\(\+\), (\d+) deletions?\(\-\)
+2355	(\d+) megabytes
+2358	(\d+)$
+2359	(\d+)% packet loss
+2361	(\d+)(.*)
+2364	(\d+)(\s+\d){3,}\s+([TF])
+2365	(\d+)(\s+\d+){2}\s+([TF])
+2366	(\d+)(st|nd|rd|th)
+2368	(\d+),\s*(.+),\s*(.+),\s*(.+)
+2369	(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+)
+2372	(\d+)-(\d+)-(\d+)
+2378	(\d+)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)
+2381	(\d+).(\d+).(\d+)
+2392	(\d+):.*virtio\d+-input.\d
+2395	(\d+)\+(\d+) records in
+2396	(\d+)\+(\d+) records out
+2397	(\d+)\+\d records out
+2398	(\d+)\.(\d+)
+2401	(\d+)\.(\d+)(\.(\d+))?(b(\d+))?
+2405	(\d+)\.(\d+)\.(\d+)\.(\d+)
+2410	(\d+)\s+(\d+)\s+(\d+)
+2413	(\d+)bit
+2421	(\d+[abc])$
+2426	(\d+\.\d+)
+2427	(\d+\.\d+)(.*)
+2431	(\d+\.\d+\.\d+\.\d+|\W:{2}\d\W):\d+,\d+\s+([\w\.\-:\d]+)
+2434	(\d+|\D+)
+2439	(\d\.){2}
+2464	(\d{1,3}\.\d{2})%
+2467	(\d{2,3})
+2468	(\d{2})
+2477	(\d{4})
+2478	(\d{4})-([^-]+)-(\d{,2})T(\d{,2}):(\d{2})((\+|-)(\d{,2}:\d{2}))
+2486	(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2}):(\d{2})(\.\d+)?
+2488	(\d{4})\.(\d{2})\.(\d{2})\.(\d{2})\.(\d{2})\.(\d{2})$
+2494	(\n)( +)
+2499	(\n\s*<\!--)
+2506	(\r\n)|\r|(\n\r)
+2507	(\r\n|\n|\r)
+2512	(\s)
+2525	(\s)@\s*([^\s]+)
+2527	(\s*#)|(\s*$)
+2532	(\s*)$
+2539	(\s*)[^\s]+@[^(\s]+(\s*)\(.+\)
+2542	(\s*<[^>]+>[\s\n\r]*)$
+2546	(\s*[;,\s]\s*)
+2549	(\s*\=)|(\s*\:)
+2550	(\s*\n\s*)
+2556	(\s*def\s+\w+\s*)\[(html|plain)\](.*)
+2579	(\s|&nbsp;)(&|&amp;|&\#38;)(\s|&nbsp;)
+2580	(\s|,)+
+2582	(\t+)
+2600	(\w+) as (\w+)
+2601	(\w+) as (\w+) in (\w+)
+2602	(\w+)$
+2603	(\w+)(.*)
+2611	(\w+)(\.|:)\s*(.*)
+2612	(\w+)-(\w+)\ : (.*)
+2617	(\w+)://(.*)
+2622	(\w+)=([-\w]+)
+2624	(\w+)Manifest
+2637	(\w+)\s*<((\w|,| |-)+)>
+2640	(\w+)\s*\(\)
+2644	(\w+)\s+(\w+)\s+(\w+)
+2645	(\w+)\|(\w+)
+2646	(\w+)_(\d+)_(\d+)_(\w+)$
+2647	(\w+)_new$
+2651	(\w+://.*|/.*|\w:\.*|\w:/.*)
+2655	(\w+\W*)
+2656	(\w+\d+)[:\s]
+2661	(\w+|-+>|=+>|"[^"]+"|\'[^\']+\'|\|)
+2667	(\w{,3}), (\d{,4})/(\d{,2})/(\d{2}) (\d{,2}):(\d{2}):(\d{2}) (\w{,3})
+2669	(\w{3}, \d{1,2} \w{3} \d{4} \d\d:\d\d:\d\d) [\+\-]\d{4}
+2676	(\x1b|~{)
+2740	(\{[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}\} |  # GUID\n                   [a-z0-9-\.\+_]*\@[a-z0-9-\._]+)  # Email format
+2751	(^/dev/x{0,1}[a-z]{0,1}d{0,1})([a-z]+)[0-9]*$
+2757	(^[ \t]*>>> |^[ \t]*\.\.\. )
+2758	(^[ \t]*In \[\d+\]: |^[ \t]*\ \ \ \.\.\.+: )
+2759	(^[ ]*[+]?[\(\)0-9/\/\.\- ]+$)
+2764	(^[^\.]+)\.
+2766	(^[a-zA-Z]+)([0-9]+)$
+2774	(^\s+Address 0x)[0-9A-Fa-f]+( is )\d+( bytes inside a block of size )[0-9,]+( free'd)
+2775	(^\s+Address 0x)[0-9A-Fa-f]+( is not stack'd)
+2776	(^\s+Invalid read of size )\d+
+2777	(^\s+Invalid write of size )\d+
+2780	(^package:)|\s
+2787	(^|/)Change[Ll]og$
+2789	(^|[\W_])sample\d*[\W_]
+2797	(^|\\n)([^\\]*)$
+2800	(^|\n)[ ]{0,3}>[ ]?(.*)
+2812	(^|\})(([^\{\:])+\:)+([^\{]*\{)
+2815	(_F2PY_STRING_CONSTANT_\d+_|F2PY_EXPR_TUPLE_\d+)
+2830	(a)
+2836	(a)(b)?b
+2837	(a)?a
+2838	(a)|(b)
+2840	(add|subtract|multiply|divide|remainder|power|and~|or~|xor~|minimum|maximum|negate|complement|absolute|random|head|tail|next|back|skip|at|pick|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|last|path|find|select|make|to|copy\*|insert|remove|change|poke|clear|trim|sort|min|max|abs|cp|copy)$
+2845	(at|bl|iz)$
+2847	(a|(b))
+2848	(a|alpha|b|beta|pre|rc)\d*$
+2850	(b)|(:+)
+2856	(centos|redhat|fedora)
+2859	(const)?.*::basic_string<.*>\s*(\*|\&)?$
+2860	(const)?\s*char\s*\*?$
+2861	(const)?\s*double$
+2862	(const)?\s*float$
+2863	(const)?\s*int$
+2864	(const)?\s*long$
+2865	(const)\s+((unsigned|signed)?(bool|char|short|int|long))
+2866	(const-)?([A-Za-z0-9]+)\*?\s+
+2868	(debian|ubuntu)
+2869	(driver|source|address)
+2870	(error|source|input|license|help|install|echo|Usage|with|func|throw-on-error|function|does|has|context|probe|\?\?|as-pair|mod|modulo|round|repend|about|set-net|append|join|rejoin|reform|remold|charset|array|replace|move|extract|forskip|forall|alter|first+|also|take|for|forever|dispatch|attempt|what-dir|change-dir|clean-path|list-dir|dirize|rename|split-path|delete|make-dir|delete-dir|in-dir|confirm|dump-obj|upgrade|what|build-tag|process-source|build-markup|decode-cgi|read-cgi|write-user|save-user|set-user-name|protect-system|parse-xml|cvs-date|cvs-version|do-boot|get-net-info|desktop|layout|scroll-para|get-face|alert|set-face|uninstall|unfocus|request-dir|center-face|do-events|net-error|decode-url|parse-header|parse-header-date|parse-email-addrs|import-email|send|build-attach-body|resend|show-popup|hide-popup|open-events|find-key-face|do-face|viewtop|confine|find-window|insert-event-func|remove-event-func|inform|dump-pane|dump-face|flag-face|deflag-face|clear-fields|read-net|vbug|path-thru|read-thru|load-thru|do-thru|launch-thru|load-image|request-download|do-face-alt|set-font|set-para|get-style|set-style|make-face|stylize|choose|hilight-text|hilight-all|unlight-text|focus|scroll-drag|clear-face|reset-face|scroll-face|resize-face|load-stock|load-stock-block|notify|request|flash|request-color|request-pass|request-text|request-list|request-date|request-file|dbug|editor|link-relative-path|emailer|parse-error)$
+2871	(exit|quit)(\s*\(.*\))?$
+2876	(fe80::[^\s|/]*)
+2877	(filename = ).*
+2880	(final|stable)$
+2884	(grubby version)?(\s)?(\d+)\.(\d+)(.*)
+2886	(halt|quit|do|load|q|recycle|call|run|ask|parse|view|unview|return|exit|break)$
+2888	(http://)(\w*)
+2895	(https?://\S+)
+2896	(https?://|git://)github
+2900	(h|s)\w*(\d\d\d\d\d)
+2903	(iex|\.{3})> 
+2905	(initrd(.*).img|ramdisk.image.gz)
+2906	(interface|) ([^ ]*) : public (.*)$
+2911	(js_Execute|CallHook) ([^ ]+) ([^ ]+ )?([^ ]+ms)
+2912	(mapperprop|mapper|table|column|session|attribute|engine):(.*)
+2913	(mapper|table|column|session|attribute|engine):(.*)
+2915	(native|alias|all|any|as-string|as-binary|bind|bound\?|case|catch|checksum|comment|debase|dehex|exclude|difference|disarm|either|else|enbase|foreach|remove-each|form|free|get|get-env|if|in|intersect|loop|minimum-of|maximum-of|mold|new-line|new-line\?|not|now|prin|print|reduce|compose|construct|repeat|reverse|save|script\?|set|shift|switch|throw|to-hex|trace|try|type\?|union|unique|unless|unprotect|unset|until|use|value\?|while|compress|decompress|secure|open|close|read|read-io|write-io|write|update|query|wait|input\?|exp|log-10|log-2|log-e|square-root|cosine|sine|tangent|arccosine|arcsine|arctangent|protect|lowercase|uppercase|entab|detab|connected\?|browse|launch|stats|get-modes|set-modes|to-local-file|to-rebol-file|encloak|decloak|create-link|do-browser|bind\?|hide|draw|show|size-text|textinfo|offset-to-caret|caret-to-offset|local-request-file|rgb-to-hsv|hsv-to-rgb|crypt-strength\?|dh-make-key|dh-generate-key|dh-compute-key|dsa-make-key|dsa-generate-key|dsa-make-signature|dsa-verify-signature|rsa-make-key|rsa-generate-key|rsa-encrypt)$
+2916	(nextval\(')([^']+)('.*$)
+2922	(plugins.*|scripts.*)$
+2929	(redhat|fedora|centos)
+2933	(require|define)\s*\(\s*([\\'\"][^\\'\"]+[\\'\"]\s*,)?\s*\[([^\]]+)\]
+2939	(sha1|sha224|sha384|sha256|sha512|md5)=([a-f0-9]+)
+2947	(tag:blogger.com,1999:blog-)(\w*)
+2948	(tag:blogger.com,1999:blog-)(\w*)(.page-)(\w*)
+2949	(tag:blogger.com,1999:blog-)(\w*)(.post-)(\w*)
+2962	(virtfn[0-9])
+2963	(vmlinu[xz]|kernel.img)
+2969	(x*)
+2971	(x|i[3-6])86$
+2975	({)|(})
+2978	({[^{}$]*\$[^{}$]*\$[^{}]*})
+2979	({[^{}]*})
+2980	({[^}]+})?(\w+)
+2984	(}?\s*)$
+2990	, ([a-zA-Z0-9_]+)=
+2992	, *<
+2997	,$
+3002	,.*$
+3004	,?\s+
+3005	,[ ]*([-]?\d+|n)
+3008	,\S
+3012	,\s*$
+3018	,|;
+3020	- 
+3023	-$
+3028	-([0-9]{4}\.[0-9]{2}|p[0-9]+)$
+3029	-(a|b|c)(\d+)$
+3038	-- ADDMODULE MARKER 1 --
+3039	-- ADDMODULE MARKER 2 --
+3045	---
+3048	--- \w
+3049	----- (Start|End) Table ([A-Z](.[0-9])+) -----
+3053	----gnatsweb-attachment----\n
+3055	---\s*$
+3065	--[^>]*>
+3066	--\d{4}-\d{2}-\d{2}
+3068	--cols=[0-9]+
+3073	--rows=[0-9]+
+3074	--test-config=(.*)$
+3075	--user-config=(.*)$
+3076	--vm-bytes
+3077	-.*
+3078	->
+3079	->\s*(\S+)$
+3097	-[ -]*$
+3100	-[^-]*$
+3107	-\d+
+3108	-\d+$
+3110	-arch\s+(\S+)
+3111	-arch\s+(\w+)
+3118	-d 192.168.[0-9]{1,3}.[0-9]{1,3} -j
+3123	-isysroot\s+(\S+)
+3124	-isysroot\s+\S+(\s|$)
+3129	-netdev\s
+3132	-py([123]\.[0-9])$
+3133	-py(\d\.?\d?)
+3145	-{2,}
+3150	.* = (.*);\n
+3151	.* FAILED TESTS\n
+3154	.* warning:.*
+3175	.*(\.ipy|\.py[w]?)$
+3176	.*(\.so|\.py[cod]?)$
+3179	.*(\d\.\d) \d+ \(experimental\).*
+3182	.*(kind=)(album|tag|photo|comment)
+3183	.*-(\w*)$
+3186	.*-sdk ([a-zA-Z0-9.]*)
+3188	.*/
+3189	.*/(.*)
+3191	.*/(\d+)
+3193	.*/.*_V(\d+\.\d+)/mongo
+3205	.*/|\.$|\.\.$
+3206	.*6300ESB Watchdog Timer
+3209	.*: warning: overriding commands for target .+
+3210	.*:$
+3218	.*<(.*)>.*
+3298	.*@.*\..*
+3320	.*File exists.*
+3329	.*OOM max count: (\d+).*
+3335	.*SUSE.*
+3366	.*[/\\](.+)(\:\d+|\(\d+\))\:
+3368	.*[/\\]bin[.]v2[/\\]
+3369	.*[0-9]$
+3378	.*[\\/]([^\\/]+)[\\/][^\\/]+[\\/]scons[\\/]?$
+3379	.*[^.]\.\.[^.].*
+3380	.*[^aeiouy][aeiouy][^aeiouywxY]$
+3383	.*\!$
+3385	.*\$\{.+\}.*
+3388	.*\((.*)\).*
+3397	.*\*$
+3401	.*\.([a-zA-Z]{3,}$)
+3403	.*\.(gz|xz|7z|bz2)$
+3406	.*\.\.\.\s+\.\.\..*
+3411	.*\.dmg
+3412	.*\.exe
+3414	.*\.htm
+3418	.*\.py$
+3419	.*\.tar\.bz
+3420	.*\.tar\.gz
+3422	.*\.zip
+3426	.*\?$
+3427	.*\?.*token=(.*)(&?)
+3429	.*\[(.*)\].*
+3432	.*\\
+3438	.*\n.*f_edx:(.*)\n.*f_ecx:(.*)\n.*extf_edx:(.*)\n.*extf_ecx:(.*)
+3443	.*\s(\d+).*
+3446	.*\s=\s(\d+)\s;
+3448	.*\srelease\s(\d)\.(\d)\s.*
+3454	.*_([vV]\d+\.\d+)$
+3455	.*_?column_(\d+)_.+
+3456	.*_runfac(\d*\.?\d*).*
+3471	.*error.*
+3474	.*foo.*bar
+3478	.*gtest_main.*\n
+3481	.*https:\/\/aus2.mozilla.org.*
+3485	.*kallsyms.*
+3486	.*lib(n?cursesw?)\.so.*
+3487	.*lib(stdc\+\+|gcc_s).* => (.*) \(.*\)
+3488	.*lib2to3.*\.pickle$
+3489	.*libessqlsrv.*\.so
+3490	.*libtdsodbc.*\.so
+3497	.*node(\d+)
+3498	.*note:.*is clipping its content
+3502	.*postgis
+3503	.*public static final class id {.*
+3508	.*subject=\w+$
+3523	.*}.*
+3524	.+
+3543	.+@.+\..+
+3551	.+\.(html|txt|rst|ical|csv)$
+3556	..
+3557	.. auto(function|method|attribute|class|exception|module)::\s*([A-Za-z0-9_.]+)\s*$
+3579	.js$
+3584	.py[co]$
+3585	.py\w$
+3586	.py\w?$
+3587	.tar.gz
+3589	.{1,2047}
+3593	/$
+3594	/(.*)
+3610	/(developers/)?apps/
+3617	/(tools|libs)/(.*)$
+3618	/(tools|libs)/(.*)/(test|example)
+3620	/*(.*)
+3621	/+
+3622	/+$
+3624	/.*
+3626	/.+/$
+3629	//
+3632	//$
+3634	//+
+3643	//\s+Env: TEST_FILE_NAME
+3645	//\s+Files:(.*)
+3646	//\s+Flags:(.*)
+3651	//|/$
+3653	/=?
+3664	/[*] #undef ([A-Z][A-Z0-9_]+) [*]/\n
+3687	/\*\*
+3692	/\.svn/?
+3699	/_ah/upload/(.*)
+3702	/b2g\s*$
+3703	/bcr/
+3706	/cgcc/
+3712	/cygdrive/([a-z])/(.*)
+3715	/dev/cdrom-\w+|/dev/cdrom\d*
+3716	/dev/disk([0-9]+)[^s]
+3719	/dev/sd
+3720	/dev/shm/\S*
+3721	/dev/vd\S+
+3722	/dev/vda
+3746	/plugin-container\s*$
+3751	/projects/([-\w]+)/([-\w]+)/
+3763	/status/object/([0-9]+)/.*
+3769	/usr/bin/qemu-system-x86_64 -machine accel=kvm
+3785	0 INFO SimpleTest START.*
+3786	0*$
+3787	00000000
+3788	00000000 <(v8dbg_.*)>:
+3791	0D
+3796	0x[0-9a-fA-F]+
+3801	0{6,}\d
+3805	100.*
+3806	10[01].*
+3807	10\^\{(.+)\}
+3810	127.0.0.1:
+3811	127.0.0.1:0
+3819	220.*\r\n$
+3823	3\.1\d+
+3827	50*$
+3833	: 
+3834	:   
+3837	: Failure\n
+3841	:( *\n     \|\n)\x02
+3848	:([a-zA-Z][a-zA-Z0-9_-]*)
+3849	:([a-zA-Z_\-]+):(.*)$
+3851	:(\d+)$
+3853	:(\s*)\x02
+3854	:(\s+)
+3855	:(\s|$)
+3857	:(\w+)$
+3858	:*
+3859	:+
+3862	:.{2}-.*$
+3864	::
+3865	::(\s*($|\n))
+3866	:<
+3869	:[0-9]*$
+3877	:\d+$
+3881	:\s*$
+3882	:\s*(#.*)?$
+3889	:day
+3892	:filename
+3895	:month
+3897	:title
+3898	:uuid
+3899	:year
+3901	:|\*|\?|"|<|>|\|
+3904	; *q *=
+3905	;(\s+)
+3906	;+$
+3907	;+\}
+3908	;;+
+3911	;\s*
+3935	<!--.*
+3939	<!--|-->
+3944	<![^<>]*>
+3945	<![^>]*>
+3949	<#\d+#>
+3951	<&
+3955	<(.*):(.*)>
+3956	<(.*)>
+3960	<(.+)>
+3980	<([^ ]+)(>| ).*
+3982	<([^/!])>\s+</
+3983	<([^/!][^>]*[^/])>\s+</
+3984	<([^:]+:[^\s"<>]+)>
+3992	<([^\s\w/])
+3996	<([a-zA-Z][a-zA-Z0-9]*)/([^/]*)/
+4010	<(app)\((\?[a-z][a-z]*)\s*,\s*(\?[a-z][a-z]*)\)>
+4024	</(\w+)>
+4025	</*key>
+4028	</?(\w+)
+4037	</?u>
+4038	</?xsl:([^>]*)/?>?
+4042	</[<>a-zA-Z]
+4043	</[a-z]*>
+4048	</dict>
+4050	</form\s*>
+4051	</p>
+4078	<ErrorCode>(.+)</ErrorCode>
+4089	<H[13]
+4106	<TestThread\(.*, initial\)>
+4108	<Timeout>(.+)</Timeout>
+4111	<WSSID>(.+)</WSSID>
+4121	<[^<>]*>
+4129	<[^>]*>
+4132	<[^>]+>
+4133	<[^>]+>|[^\s<]+
+4141	<[a-zA-Z][a-zA-Z0-9]*/
+4149	<\/([\w\:\-]+)[^>]*>
+4154	<\?.*\?>
+4160	<\S[^>]*>
+4209	<a href=[^>]*>([^<]+)<
+4214	<a[^>]*\shref
+4222	<b>Added:</b> (\d{4}-\d\d-\d\d \d\d:\d\d:\d\d)
+4225	<base\s+href\s*=\s*[\'"]?([^\'">]+)
+4238	<br[^>]*>
+4241	<ci.*</ci>
+4245	<code>(.*)</code><description>(.*)</description>
+4252	<dict>
+4268	<dl><dd>
+4277	<files>\s*</files>
+4283	<graphic.*passwd=.*>
+4285	<h1>.*</h1>
+4305	<id>([^<]+)</id>
+4379	<meta[^>]*content\s*=\s*[\'"]?text/html;\s*charset\s*=\s*([^ \'">]+)\s*[\'"]?[^>]*>
+4402	<p[^/>]*>\s*</p>
+4403	<param([^<>]+)>
+4405	<path\[(\d+)\]>(.*)
+4419	<replaceable>[^<]+</replaceable>
+4421	<root>([^<]*)</root>
+4443	<span id=short-desc-content>([^<]*)</span>
+4469	<title>(.*) video by (.*) - Photobucket</title>
+4470	<title>(.*)</title>
+4478	<title>([^- ]+ - )?Revision \d+:
+4486	<title>\([^<]*\)</title>
+4487	<toolset.*version>(\d+)[.](\d*)
+4498	<type>boost::(lazy_)?(enable|disable)_if
+4504	<url>([^<]+)</url>
+4521	= *([0-9]*.+[0-9]*) ([a-zA-Z]*)
+4525	=...=
+4531	==END TEST==
+4535	==\d+==\s+I\s+refs:\s+([0-9,]+)
+4536	==\d+==\s+malloc/free:\s+[0-9,]+\s+allocs,\s+[0-9,]+\s+frees,\s+([0-9,]+)\s+bytes allocated.
+4537	==\d+==\s+possibly\s+lost:\s+([0-9,]+)\s+bytes
+4538	==\d+==\s+still\s+reachable:\s+([0-9,]+)\s+bytes
+4540	=[ =]*$
+4541	=[^,)]+,
+4542	=[^,)]+\)$
+4543	=[a-fA-F0-9]{2}
+4557	>([^<]+)</TITLE
+4564	>[ \r\n]+<
+4571	@
+4573	@%\(([a-zA-Z][a-zA-Z0-9_-]*)\)s
+4574	@'([^']+)'
+4580	@([^\'"\s]+)
+4582	@([a-zA-Z0-9_][a-zA-Z0-9_]*)\.route
+4585	@(\w*)(.*)
+4586	@(\w+)
+4594	@.*
+4601	@@BINARYDIR@@
+4602	@@PACKAGE_BASENAME@@
+4603	@@PACKAGE_CONFLICTS@@
+4604	@@PACKAGE_NAME@@
+4605	@@PACKAGE_OBSOLETES@@
+4606	@@PACKAGE_PROVIDES@@
+4607	@@PACKAGE_REVISION@@
+4608	@@PACKAGE_VERSION@@
+4609	@@VERSION(>|>=|!=)(\d.*)@@(.*)
+4610	@@VERSION>(.*)@@(.*)
+4611	@[a-z]+
+4616	@\w+
+4617	@\w+( [^{}:\n]+)?:
+4621	@arches=
+4623	@dists=
+4635	AC(.*)
+4643	AMD64
+4648	API|TOKEN|KEY|SECRET|PASS|PROFANITIES_LIST|SIGNATURE
+4668	AbstractBadgeImpl$
+4669	Accelerate
+4676	Allocation:\s+(\S+.*)
+4685	AsciiString$
+4688	Audio Files
+4698	Available subcommands:
+4699	B
+4713	BUG:.*---\[ end trace .* \]---
+4718	Backing store path:\s+(/+.+)
+4719	BadgeImpl
+4722	Bill Docket
+4723	Bill Name:\s+([H|S]F\d+)
+4724	Bill Status
+4725	Bill Text
+4726	BillID=(\d*)
+4746	CONSTRAINT (\w+) UNIQUE \(([^\)]+)\)
+4748	CPU #(\d+)
+4749	CPU Affinity: +[-y]+
+4752	CPU\d+:
+4753	CPU\s+.*
+4761	Capacity:\s+(\S+.*)
+4767	Change (\d+) submitted.
+4772	Client UrlCache MMF Ver \d\.\d.*
+4776	CoSponsor
+4782	Committed revision (\d+)\.
+4783	Components\.[a-zA-Z]
+4784	Components\.classes
+4785	Components\.interfaces
+4786	Components\.manager
+4787	Components\.results
+4788	Components\.utils
+4796	Content-Length: (\d+)
+4799	Contents of
+4806	Copyright [\d-]*20[0-1][0-9] the V8 project authors. All rights reserved.
+4822	DD>([^<]+)
+4825	DEFAULT
+4828	DISK_CHANGE_SIZE
+4834	DOCTYPE|xml
+4839	DRIVER_PATH
+4851	Debian
+4856	Details for werkzeug.testsuite.debug.Foo object at
+4857	Devices of vm1:\nmachine\n  aid = __0\n  aobject = pci.0\n  parent_bus = ()\n  child_bus = \[.*QPCIBus.*, .*QStrictCustomBus.*\]\n  params:\ni440FX\n  aid = __1\n  aobject = None\n  parent_bus = ({'aobject': 'pci.0'},)\n  child_bus = \[\]\n  params:\n    driver = i440FX\n    addr = 00\n    bus = pci.0\nPIIX4_PM\n  aid = __2\n  aobject = None\n  parent_bus = ({'aobject': 'pci.0'},)\n  child_bus = \[\]\n  params:\n    driver = PIIX4_PM\n    addr = 01.3\n    bus = pci.0\nPIIX3\n  aid = __3\n  aobject = None\n  parent_bus = ({'aobject': 'pci.0'},)\n  child_bus = \[\]\n  params:\n    driver = PIIX3\n    addr = 01\n    bus = pci.0\npiix3-ide\n  aid = __4\n  aobject = None\n  parent_bus = ({'aobject': 'pci.0'},)\n  child_bus = \[.*QIDEBus.*\]\n  params:\n    driver = piix3-ide\n    addr = 01.1\n    bus = pci.0\nfdc\n  aid = __5\n  aobject = None\n  parent_bus = \(\)\n  child_bus = \[.*QFloppyBus.*\]\n  params:
+4860	Disk*.(\d+)\s+Offline
+4863	District (\d+)
+4864	District:
+4868	Duration: (\d{2}):(\d{2}):(\d{2}.\d{2}),
+4877	ELEMENT FACE INTERCONNECTIVITY DATA
+4880	END
+4886	ERROR
+4888	ERROR FAIL
+4889	ERROR TODO WORKED
+4892	ERROR[: ]|failed: 
+4898	EXAMPLE
+4904	EndProjectSection$
+4905	Enforcing
+4913	ErrorReturnCode_(\d+)
+4915	Existing quips:
+4918	FAIL
+4919	FAIL -
+4920	FAIL Exited
+4927	Fail(ed|ure in) example:
+4929	Failure
+4932	Fedora
+4933	Fennec/([\d.]+)
+4943	Files:\n(  .+\n)+
+4948	FlashCopy Mapping, id \[([0-9]+)\], successfully created
+4967	GET http://([a-zA-Z0-9-_.]+)(:([0-9]+))?
+4981	G_CONST_RETURN |const 
+5001	HFS\s+(.+)
+5002	HOSTNAME=(.*)
+5003	HTML
+5005	HTTP/(\d+).(\d+)
+5007	HTTP/(\d\.\d)\s+(\d+)\s+(.*)$
+5009	HTTP/1.[0-9]+ 200 OK
+5010	HTTP/1.[01] ([0-9]+)
+5014	HTTP\((\.\.(\/\.\.)*)\)
+5020	Host:\s+(\w+)\s+Channel:\s+(\d+)\s+Id:\s+(\d+)\s+Lun:\s+(\d+)\n\s+Vendor:\s+([a-zA-Z0-9_-]+)\s+Model: 
+5021	Host:\s+(\w+)\s+Channel:\s+(\d+)\s+Id:\s+(\d+)\s+Lun:\s+(\d+)\n\s+Vendor:\s+([a-zA-Z0-9_-]+)\s+Model:.*\n.*Type:\s+([a-zA-Z0-9_-]+)
+5032	INFO PASS
+5035	INPUT *(.*\.aux)
+5043	In \[(\d+)\]:\s?(.*)\s*
+5045	In the (House|Senate)
+5047	In\ \[\d+\]: 
+5048	Index: 
+5049	Input #0, ([\w,]+)?, from
+5052	Interim result: *(\S+)
+5064	KAthJax-[0-9a-f]{32}
+5073	L -(\d+) -\d+
+5079	LC_ALL.[^\s]\s
+5081	LINE (\d+) OF FILE (\d+)
+5084	LIST OF EDGES
+5085	LIST OF FACES
+5092	LR Number:
+5094	LUN
+5100	Last Changed Rev: (\d+)
+5110	Linux version ([0-9.]+-[^ ]+)
+5111	Loaded: loaded
+5113	Local variables in frame
+5129	MIGRATE
+5138	MatplotlibBox:\(([\d.]+)pt\+([\d.]+)pt\)x([\d.]+)pt
+5145	MemFree:\s+(.\d+)\s+(\w+)
+5146	MemFree:\s+(\d+).*
+5148	MemTotal:\s+(\d+)\s+kB
+5156	Microsoft Visual C\+\+ Toolkit 2003
+5157	Microsoft Visual Studio 10
+5158	Microsoft Visual Studio 11
+5159	Microsoft Visual Studio 8
+5160	Microsoft Visual Studio 9
+5185	NPT_SET_LOCAL_LOGGER\s*\([ "]*(\S+)[ "]*\)
+5190	Name:\s+(\S+)
+5197	No bootable device.
+5200	No open
+5201	No space
+5204	No such file
+5207	Node\s+
+5216	Number of elements
+5217	Number of files successfully Verified: ([0-9]*)
+5218	Number of nodes
+5232	OUTPUT *(.*)
+5236	Operation not permitted
+5238	Out\[(\d+)\]:\s?(.*)\s*
+5241	Output written on (.+) \(
+5250	PATH.[^\s]+\s
+5255	PM
+5259	PROCESS_CHECK
+5267	Party: 
+5279	Please choose another session
+5286	Prefiled
+5289	ProductVersion:\s+([0-9]+)\.([0-9]+)\.([0-9]+)
+5290	ProjectSection\(ProjectDependencies\) = postProject$
+5299	QEMU_AUDIO_DRV.[^\s]+\s
+5300	QEMU_PID
+5304	REBOL$
+5306	REG_\w+\s+([^\r]+)\r\n
+5316	Ran (\d+) tests
+5320	Received: From yyy.com \(\[.*\]\) by localhost;
+5322	Red Hat
+5325	Registering archive: (\S+)\s*$
+5331	Report time: (.*)
+5334	Resigned
+5344	Return code
+5347	Revision: ([0-9]+)
+5350	Robot.*
+5351	Roll Calls
+5360	S(\s+0.0+){2}.*vhost-\d+[\d|+]
+5366	SECRET|PASSWORD|PROFANITIES_LIST
+5367	SECRET|PASSWORD|PROFANITIES_LIST|SIGNATURE
+5383	SNIPPET::([A-Za-z0-9_\-\/\.]+)
+5393	SUSE
+5395	SYMBOL_
+5400	Scheduler
+5404	Send buffer size: (\d+)
+5418	Skipping \d+ byte
+5428	Spider.*
+5436	Status
+5437	Status: (\S+)
+5442	Subversion Revision:
+5443	Success: created profile .* at '([^']+)'
+5462	TIME
+5467	TOTEM_INFO_DURATION=(\d+)
+5468	TOTEM_INFO_VIDEO_CODEC=([\w]+)
+5470	TREEVIS ([^ ]+) (.*)$
+5478	Target\s+(\d+)
+5488	This is file for test of copy-in.
+5489	This is file for test of copy-out.
+5490	This is file for test of tar-in.
+5491	This is file for test of tar-out.
+5497	This is file for test_formatted_disk.
+5498	This is file for test_formatted_part.
+5516	Total
+5521	Traceback (most recent call last):
+5526	Type:\s+(\S+)
+5531	UNEXPECTED
+5532	UNSEEN (\d+)
+5534	UP
+5539	URL: (\S+)
+5545	U[\dA-F]{5,5}
+5546	Ubuntu
+5554	Usage
+5555	Usage:
+5579	Vector<(.+)>
+5581	Versi&oacute;n (.+) ([0-9]+).([0-9])+ megabytes
+5582	Versi.+n (.+) ([0-9]+).([0-9])+ megabytes
+5584	Version:.*-r(\d+)\s*$
+5587	Virtual Disk, id \[([0-9]+)\], successfully created
+5588	VmRSS:[\t ]*(\d+) kB
+5589	VmSwap:[\t ]*(\d+) kB
+5601	WINUTILS
+5602	WIN_UTIL
+5603	WIN_UTILS
+5604	WIN_VIRTIO
+5611	Websafe
+5619	Wrote: (.*)
+5624	XConsortium
+5626	Xorg
+5628	YEAS -?\s?(\d+)(.*)NAYS -?\s?(\d+)(.*)ABSENT( OR NOT VOTING)? -?\s?(\d+)(.*)
+5637	[ ,]
+5638	[ ,]+
+5639	[ -]
+5640	[ -~]*$
+5652	[ \n]*{
+5653	[ \n]*{(([^{}}]|{[^}]*})*)}
+5657	[ \t:]+
+5661	[ \t\n]
+5669	[ \t]
+5670	[ \t]*
+5673	[ \t]*(#)
+5676	[ \t]*([A-Z0-9a-z_]+)[ \t]*=[ \t]*([-0-9]+)[, \t]*
+5677	[ \t]*([A-Z0-9a-z_]+)[ \t]*=[ \t]*([-0-9]+)[, \t]*/\*[ \t]*(.*)[ \t]*\*/
+5683	[ \t]*\.[ \t]*
+5686	[ \t]*\n[ \t]*
+5687	[ \t]+
+5690	[ \t]+([A-Z0-9]+) \/\* (.+) \*\/,\n
+5692	[ \t]+([A-Z0-9]+) \/\* PBXTargetDependency \*\/,\n
+5697	[ \t][ \t]+
+5702	[ ]+
+5705	[ ]+\t
+5711	[ _]
+5713	[ {}$]
+5714	["!|@]
+5715	["&<>]|[^\x00-\x7f]
+5716	["\'/]
+5718	["\'](.+)["\']\s*:\s*(.*)
+5719	["\'](.+-div)[\'"]
+5733	[$><;[{~`|&()]
+5736	[$][{]\d+:([^}]+)[}]
+5738	[$^#\\']
+5741	[%\\]
+5745	[&<>"]
+5746	[&<>\"\n\r\x80-\xff]+
+5750	[&<]|]]>
+5751	[&?]acl($|=|&)
+5752	[&?]location($|=|&)
+5753	[&?]logging($|=|&)
+5754	[&?]requestPayment($|=|&)
+5755	[&?]torrent($|=|&)
+5756	[&?]versionId=([^&]+)($|=|&)
+5757	[&?]versioning($|=|&)
+5758	[&?]versions($|=|&)
+5763	[()\\]
+5764	[()]
+5765	[()]|\s=[^=]|[^=!<>]=\s
+5778	[+-]?(\d*)(.*)
+5780	[+-]?\d+
+5785	[, ]+
+5786	[,*")([\]]
+5788	[,;: ]+
+5792	[,;]
+5793	[,<>()]
+5796	[,\s]+
+5812	[-+]?(\d+(\.\d*)?|\d*\.\d+)([eE][-+]?\d+)?
+5813	[-+]?(\d+|\d*\.\d+)$
+5816	[-+]?\d+
+5821	[-./\s]
+5824	[-.]
+5825	[-/.: ]+
+5828	[-A-Za-z0-9!\#$%&'*+/=?^_`{|}~]
+5829	[-T:/.]|\s+
+5833	[-\s]
+5843	[-_a-z0-9]{64}
+5845	[-a-zA-Z_@.]+
+5851	[. -]
+5852	[.+-]$
+5854	[./\\]
+5855	[./]
+5861	[.\-]
+5862	[.](\D)
+5863	[.]{2,}
+5866	[.~]?([abc])\.?
+5870	[/*?]|\[[^]]*/[^]]*\]
+5872	[/,-]
+5874	[/<>:"\|\?\*]
+5875	[/\\ ]
+5879	[/]+
+5883	[0-9-]*(.+)$
+5890	[0-9]
+5891	[0-9]*
+5892	[0-9]*$
+5902	[0-9]+,[0-9]*
+5903	[0-9]+,[0-9]+
+5907	[0-9]+\.[0-9]+
+5910	[0-9]+\s+[+-][0-9]+
+5911	[0-9][} ]*$
+5929	[0-9a-fA-F]{2}
+5937	[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+5947	[1-9][0-9]*
+5952	[:"<>|?]
+5956	[:;, ] *
+5957	[:;,] *
+5958	[:@/]
+5960	[:]
+5963	[;,]
+5970	[<>&]
+5971	[<>:"\?\*\|]
+5973	[<>=]
+5974	[<>\'"]
+5978	[=!]=
+5982	[=?\x7f-\xff]
+5983	[=\x7f-\xff]
+5986	[?*+]+
+5995	[@]
+5996	[@{} ]
+5997	[A-F0-9]{2}:[A-F0-9]{2}:[A-F0-9]{2}:[A-F0-9]{2}:[A-F:0-9]{2}:[A-F:0-9]{2}
+5999	[A-Z0-9$-_.]{3,20}
+6003	[A-Z]*_API 
+6004	[A-Z]+
+6012	[A-Z][a-z]+
+6014	[A-Z][a-z]+([A-Z][a-z]*)+
+6022	[A-Z_][a-zA-Z0-9]+$
+6025	[A-Za-z0-9][A-Za-z0-9\-_]*
+6028	[A-Za-z]
+6033	[A-Za-z_][A-Za-z0-9_]*
+6034	[A-Za-z_][A-Za-z0-9_]*$
+6038	[EWN]\d{3}
+6039	[EW]\d{3}
+6044	[Hh][123456]
+6051	[N|n]ame
+6058	[Tt ].*$
+6061	[Vv]irtio block
+6062	[Vv]irtio memory
+6063	[Vv]irtio network
+6067	[[({] | []}),;:]
+6068	[[*?]
+6071	[\'"\\]
+6075	[\']([a-zA-Z0-9]+)[\']
+6083	[\({\[\]}\)\n]
+6086	[\*\?]
+6088	[\+-]?[0-9\.]*
+6089	[\+\!]+$
+6092	[\-\.](dev)[\-\.]?r?(\d+)$
+6094	[\-\s]
+6099	[\.0-9]+
+6101	[\.\-\ ]
+6104	[\.\-\/]
+6106	[\.\-]
+6107	[\.\-](dev|devel)$
+6108	[\.\-_ ]?[Ee](\d+)
+6111	[\._-]
+6116	[\/][^\/]+[\/]?$
+6118	[\000-\037\177-\377]
+6119	[\000-\037]
+6127	[\?\&]gsessionid=(\w*)
+6128	[\?\&]gsessionid=(\w*\-)
+6131	[\D]*(\d+)\w*$
+6133	[\W]*
+6134	[\W]+
+6135	[\W_]
+6137	[\W_]+
+6139	[\[\]\*\?]
+6140	[\[\]]
+6142	[\\"]
+6144	[\\"]|[^ -~]
+6145	[\\'|"|#|\\|\[|\]|\{|\}|\(|\)]
+6148	[\\/\*]
+6151	[\\/]
+6154	[\\]
+6155	[\\]([a-zA-Z]+[*]?) ?({|\s*\n?)
+6159	[\\]end{([^}]*)}
+6167	[\d\.]+
+6171	[\n ]+$
+6175	[\n@{}&<>]
+6178	[\n\r\t\x0b\x0c]
+6182	[\n\r]{0,1}$
+6183	[\n\t\r}]
+6184	[\n\t]
+6188	[\n]+
+6191	[\r\n\t]
+6192	[\r\n]
+6205	[\s,]+
+6211	[\s\(\)]+
+6212	[\s\-]+
+6221	[\s\{\}\[\]\(\)\= ,:]
+6222	[\s\{\}\[\]\(\)\=]
+6223	[\s\{\}\[\]\(\)]
+6224	[\s]
+6226	[\s]+
+6229	[\t !"#$%&\\'()*\-/<=>?@\[\\\]^_`{|},.]+
+6234	[\t ]+\n
+6235	[\t-\r -/:-@[-`{-~]
+6236	[\t\b\r\f#]
+6237	[\t\n #$%&'()*;<=>?[{|}~]|^$
+6246	[\t]
+6247	[\w ]+
+6249	[\w']+
+6273	[\x00-\x06\x0e-\x1f]
+6279	[\x00-\x08\x0b-\x0c\x0e-\x1f]
+6281	[\x00-\x08\x0b\x0c\x0e-\x1f]
+6282	[\x00-\x08\x0e-\x1f\x7f]
+6283	[\x00-\x08\x0e-\x1f]
+6288	[\x00-\x1f\x7f()<>@,;:\[\]={} \t\\"]
+6289	[\x00-\x1f\x7f-\xff]
+6290	[\x00-\x1f]
+6291	[\x00-\x20]
+6292	[\x00-\x20]+
+6297	[\x01-\x1f]
+6298	[\x02\x1f\x16\x0f\x03]
+6299	[\x7f-\xff]
+6304	[\|,]
+6313	[^ -~\n]
+6315	[^ \r\na-zA-Z0-9\-'()+,./:=?;!*#@$_%]
+6321	[^ \t]
+6327	[^!-~]
+6336	[^%]+%[^.]+[.](compile)
+6337	[^%]+%[^.]+[.](link|archive)
+6338	[^%]+%testing[.](capture-output)
+6339	[^%]+%testing[.](expect-failure|expect-success)
+6342	[^']*'([^']*)'.*
+6348	[^-._\w]+$
+6350	[^-A-Za-z0-9_.]
+6355	[^.]*
+6356	[^.]*\.(.*)
+6358	[^/\\,{]\*\*|\*\*[^/\\,}]
+6361	[^0-9, ]
+6364	[^0-9:\.]
+6366	[^0-9A-Za-z]
+6373	[^0-9]+
+6388	[^=]+=(.+)
+6391	[^A-Z]
+6393	[^A-Z^a-z^0-9^:]+
+6394	[^A-Z^a-z^0-9^\/]+
+6395	[^A-Za-z0-9 ]
+6399	[^A-Za-z0-9\-_.~!*'();:@&=+$,/?%#[\]]
+6401	[^A-Za-z0-9]
+6405	[^A-Za-z0-9_.!~*()-]
+6406	[^A-Za-z0-9_.-]
+6407	[^A-Za-z0-9_.:;\-]
+6408	[^A-Za-z0-9_.;\-]
+6410	[^A-Za-z0-9_\.\-]
+6414	[^A-Za-z_]
+6416	[^V_]
+6418	[^[]+\[(\d+/[A-Za-z]+/\d+):[^\d]*
+6419	[^\'"]*
+6421	[^\)]+
+6426	[^\\][^\\]*
+6429	[^\d]
+6434	[^\r\n\t ]?([^\r\n\t ]| [^\r\n\t ])*[^\r\n\t ]?$
+6449	[^\w.-]
+6450	[^\w.-]+
+6452	[^\w\-\.\/]+
+6455	[^\w\.\- ]
+6456	[^\w\.\-]
+6461	[^\w\d_]
+6465	[^\w]
+6466	[^\w]+
+6468	[^\x00-\x21\xff]{1,250}$
+6470	[^\}\{]+\{\}
+6472	[^]~%\\{}]+
+6473	[^_\w]
+6477	[^a-z0-9]
+6478	[^a-z0-9]+
+6482	[^a-zA-Z.0-9]
+6489	[^a-zA-Z0-9.]
+6490	[^a-zA-Z0-9._-]
+6498	[^a-zA-Z0-9_-]
+6509	[^a-z]
+6513	[^aeiouy]*[aeiouy]+[^aeiouy](\w*)
+6523	[_\s]+
+6526	[_a-zA-Z]\w*$
+6530	[a-f0-9]+$
+6531	[a-f0-9]+\s+<.*:$
+6533	[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}
+6534	[a-fA-F0-9]{1,4}
+6555	[a-zA-Z0-9]+\.[0-9]+
+6556	[a-zA-Z0-9_-]+
+6557	[a-zA-Z0-9_-]{6}$
+6566	[a-zA-Z]
+6567	[a-zA-Z]+
+6580	[a-zA-Z][-a-zA-Z0-9_:]*
+6583	[a-zA-Z][a-zA-Z0-9.-]*$
+6584	[a-zA-Z][a-zA-Z0-9]*
+6590	[a-zA-Z]\w*$
+6592	[a-zA-Z_$][A-Za-z0-9_$..]*
+6596	[a-zA-Z_]([a-zA-Z0-9_.]*) *$
+6600	[a-zA-Z_][0-9a-zA-Z_+-]*|[0-9+-][0-9a-zA-Z_.+-]*|"([^"\n\\]|\\.)*("|\\?$)|\'([^\'\n\\]|\\.)*(\'|\\?$)
+6607	[a-zA-Z_][a-zA-Z0-9_]*
+6608	[a-zA-Z_][a-zA-Z0-9_]*$
+6609	[a-zA-Z_][a-zA-Z_0-9]*
+6610	[a-zA-Z_]\w*
+6611	[a-zA-Z_]\w*$
+6617	[a-z]+
+6620	[a-z]+(_[A-Z]+)?$
+6625	[a-z]::[^=]|:[a-z]+:|`|\.\.\s*\w+:
+6626	[a-z][A-Z]{3}([a-z])[A-Z]{3}[a-z]
+6629	[a-z_]
+6630	[a-z_][a-z0-9_]{2,30}$
+6639	[aeiou]
+6640	[aeiouy]
+6641	[aeiouy].
+6646	[eE]
+6647	[filesystem|fs] type
+6648	[gG]
+6650	[infINF]
+6651	[kK]
+6652	[kK]ey
+6653	[mM]
+6657	[pP]ython
+6666	[uU][rR]?[\\'\"]
+6667	[vhs]d[a-z]*[\d]+
+6669	[x-](\d+)
+6671	[xh]vc0
+6673	[{ ]*[-+0-9]
+6677	[~:+_ -]
+6679	\ +\n
+6681	\ \ +
+6682	\ \ \ \.\.\.+: 
+6689	\"\"\"|\\'\\'\\'
+6706	\$([^\$]+)\$
+6707	\$([a-zA-Z0-9_]*)\$
+6708	\$([a-zA-Z_][a-zA-Z0-9_]*)
+6713	\$(\w+)
+6717	\$<\d+>[/*]?
+6722	\$?(\d+):\$?(\d+)
+6726	\$Revision: (\d+)
+6728	\$VersionInfo\$
+6729	\$[()]
+6735	\$[a-zA-Z]+: (.+) \$
+6736	\$[a-zA-Z]+: (.+) \$$
+6741	\$\$.*
+6743	\$\$|\${\w+}
+6748	\$\(([a-zA-Z_][a-zA-Z0-9_]*)\)
+6749	\$\((\w+)\)
+6751	\$\(VERSION\)
+6753	\$\([^\$]*(\$[^\)][^\$]*)*\$\)
+6756	\$\S+\$
+6761	\$\{(.*)\}
+6763	\$\{([\w\-]+)\}
+6766	\$\{([a-zA-Z0-9\-_]+)\}
+6769	\$\{.+\}
+6770	\$\{?[a-zA-Z_][a-zA-Z0-9_]*(\([^)]*\))?(\.[a-zA-Z0-9_]+(\([^)]*\))?)*\}?
+6772	\$\{\D
+6788	\${(\w+)}
+6796	\%(-?\w+)
+6800	\%\s+(.*)$
+6802	\'
+6804	\(
+6809	\((.*)\)
+6810	\((.*)\)$
+6819	\((H|S)\)
+6826	\(([\d,]+)\)
+6830	\(([^()]+)\)$
+6831	\(([^)]+)\)
+6835	\(([a-zA-Z0-9_]+)=
+6836	\((\S+).py, line (\d+)
+6839	\((\d+)\)
+6844	\((\w+)\)
+6851	\(.*\)
+6852	\(.*\)$
+6853	\(.*\)\s*$
+6857	\(CVS\) ([\d\.]+) 
+6866	\([^()]*\)
+6870	\([^)]*\)
+6871	\([^)]+\)
+6872	\([^)]+\)\s*(([A-Za-z0-9_][A-Za-z0-9_]*))
+6878	\(\)
+6885	\(\n
+6892	\(beta\)$
+6896	\(live[^\)]*\)
+6900	\(used in test (.+)\)
+6901	\(used in test .+\) 
+6903	\(|\)
+6904	\)
+6910	\)\s*
+6911	\)\s*$
+6913	\*
+6921	\*([a-zA-Z]+)\*
+6923	\*(\S+)
+6924	\*(\d+)?$
+6925	\*(\w(\w|')*)\*(.*)
+6927	\*/
+6934	\*\*([0-9]+)
+6936	\*\S
+6937	\*\s*([0-9]+)
+6938	\*\s[^:]+:
+6942	\+
+6949	\+(\w+)
+6950	\+=[=+]+=\+ *$
+6960	\-
+6964	\-\-?\w+[\-\w]*$
+6965	\-\-[A-Za-z][\w\-]*(\.[\w\-]+)*\=.*
+6970	\-|\s|T|t|:|\.|Z
+6973	\. \. \.
+6974	\.$
+6981	\.([\$a-zA-Z0-9_\-\&]+)
+6987	\.([hc]|py|txt|sln|vcproj)$
+6988	\.(\d)+$
+6990	\.(\d+)$
+6991	\.(\w+)'>
+6999	\.(title|a|dd|h[0-9])$
+7001	\.+
+7002	\..*
+7004	\.1$
+7005	\.?(dev-r|dev\.r)\.?(\d+)$
+7006	\.?(dev|git|bzr)\.?(\d+)$
+7007	\.?(pre|preview|-c)(\d+)$
+7008	\.?(r|-|-r)\.?(\d+)$
+7009	\.?0+$
+7010	\.?[^.]*
+7015	\.[0-9]+
+7022	\.[svn|git|hg|scc|vssscc]
+7025	\.\.*
+7028	\.\.\.
+7031	\.\.\.+
+7035	\.\.|^\./|\.$|/\./|^-
+7036	\.\.|^\./|\.$|/\./|^-|^_ah/
+7037	\.\d+
+7038	\.\d+$
+7040	\.\w
+7055	\.dll$
+7060	\.exe$
+7061	\.git$
+7062	\.html$
+7065	\.jar?$
+7068	\.lib$
+7072	\.o$
+7074	\.pdb$
+7081	\.repeat\d+
+7083	\.setup$
+7094	\.|\\
+7096	\.|\\|\/|\||\:|\?|\*|"|<|>|[\x00-\x1f\x7f-\x9f]
+7097	\.|_
+7100	\/([A-Za-z]+)
+7106	\/\* BEGIN LOOP \*\/
+7107	\/\* Begin PBXBuildFile section \*\/\n
+7109	\/\* Begin PBXFileReference section \*\/\n
+7113	\/\* END LOOP \*\/
+7121	\/\/[^\n\r]*
+7127	\:
+7137	\<(\d+)\>(.*)
+7143	\<\!\-\-\#\s?[A-z0-9_-]*\s?\:s?[A-z0-9\s_-]*\s?\-\-\>
+7164	\?(.*)
+7170	\?[a-zA-Z_][a-zA-Z0-9_]*
+7172	\?\?[=/\'\(\)\!<>\-]
+7177	\@(\w+)
+7178	\A#!.*(tclsh|wish|expect).*$
+7182	\A#!.*node.*$
+7183	\A#!.*perl.*$
+7184	\A#!.*php.*$
+7186	\A#!.*python3.*$
+7187	\A#!.*ruby.*$
+7217	\A\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ
+7226	\A\s\s\S+,
+7235	\S*
+7236	\S* *\d*-\d*-\d* \d*:\d*:\d* [+-]\d* \w*
+7237	\S+
+7242	\S+\s(\S+)\t(.+)
+7245	\S+\s\((\d+)\s\S+\)
+7247	\S+| +|\n
+7248	\S\s
+7251	\W%\W
+7257	\W+$
+7270	\W_\(
+7273	\[
+7283	\[#x([\d|A-F]{4,4})-#x([\d|A-F]{4,4})\]
+7285	\[(.*)\]
+7304	\[([^\]]*)\]
+7310	\[(\d?\d?\d?)%\]
+7315	\[.* test environment .*\n
+7316	\[.*$
+7318	\[.*\]
+7319	\[.*\]\sSONAME\s+([^\s]+)
+7320	\[.*\d+ tests.*\n
+7322	\[.+\] (.+)
+7324	\[0\:0\] -A .* -j ACCEPT -p icmp -m icmp --icmp-type 8 -s 192.168.11.0/24
+7325	\[0\:0\] -A .* -j ACCEPT -p icmp -s 192.168.11.0/24
+7326	\[0\:0\] -A .* -j ACCEPT -p tcp --dport 80:81 -s 192.168.10.0/24
+7327	\[0\:0\] -A .* -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192.168.10.0/24
+7328	\[0\:0\] -A .* -j ACCEPT -p udp --dport 200:299 -s 192.168.99.0/24
+7329	\[=+\] \d+ tests .* ran.*
+7337	\[SQLCode\: (\d+)\]
+7339	\[[0-9]+\]$
+7341	\[[^]]*\]
+7342	\[[^]]+]$
+7343	\[[a-zA-Z0-9.]:
+7360	\[\[([^\]^!][^\]]*)\]\]
+7374	\[\[\!\!([^\]]*)\]\]
+7381	\[\]
+7382	\[\d+ depth=(-?\d+)\]
+7385	\[\d+ refs\]\r?\n?$
+7387	\[\d\]\s+=
+7393	\[_POSITION\]
+7407	\[tag:\s*([\S]+)\s*]
+7413	\[|\]|\n+|\s+
+7415	\\"
+7417	\\$
+7418	\\'
+7428	\\(ABC|ASCII|C|Cpp|EOF|infinity|NULL|plusminus|POSIX|UNIX)\s
+7431	\\([.(){}[\]"\\])
+7432	\\([0-3][0-7][0-7])
+7435	\\([0-9a-fA-F]{1,6})\s?
+7438	\\([a-zA-Z])+\s+
+7439	\\([abfnrtv?"\\\\']|\d+|x[0-9a-fA-F]+)
+7442	\\(\\'|\"|\\|[abfnrtv]|x.{0,2}|[0-7]{1,3})
+7444	\\(\d+)
+7445	\\(begin|end){([_a-zA-Z]+)}|([()\[\]])
+7446	\\(t|n|r|"|\\)
+7448	\\*\#
+7449	\\*\n
+7450	\\-
+7453	\\.|.
+7455	\\?(gettext|_)\(
+7457	\\?[()]
+7467	\\[A-Za-z]+
+7469	\\[\s.-]
+7471	\\[^ntrab]
+7473	\\[ntrab]
+7474	\\\$
+7475	\\\.
+7476	\\\?([^\.]+)\.(.*)
+7481	\\\n|\\(\\|<%)
+7485	\\`
+7493	\\document(style|class)
+7499	\\hackscore\s*{[^}]*}
+7500	\\line([iv]+){
+7503	\\openout.*`(.*)'
+7504	\\openout.*`(.*\.aux)'
+7509	\\u([0-9A-F]{4})|\\U([0-9A-F]{8})
+7510	\\u([0-9a-fA-F]{4})
+7512	\\u.{4}|\\.
+7516	\\x([0-9a-fA-F]{2}|[0-9a-fA-F])
+7521	\\|\/|\||\:|\?|\*|"|<|>|[\x00-\x1f\x7f-\x9f]/
+7522	\]
+7525	\^
+7526	\^@
+7530	\^timerConfirmation\^=\^no\^
+7659	\d
+7662	\d*(\S)
+7663	\d*\.\d*\.\d*\.\d*
+7667	\d+ (\d+):
+7669	\d+ GNU.sparse.numbytes=(\d+)\n
+7670	\d+ GNU.sparse.offset=(\d+)\n
+7674	\d+ failur.*\d+ librar
+7675	\d+ hdrcharset=([^\n]+)\n
+7687	\d+(\.)?\d*[eE]-?\d+
+7688	\d+(\.\d*)?
+7690	\d+-
+7691	\d+-\d+
+7692	\d+-\d+-\d+([\s|T|t]\d+:\d+:\d+.\d+(Z|(\s?[\-|\+]\d+:\d+)))?
+7694	\d+.\d+.\d+
+7698	\d+: (eth\d+):
+7703	\d+[\.\d+]+
+7707	\d+\.\d+
+7711	\d+\.\d+\.\d+\.\d+
+7714	\d+\s\d+:
+7722	\d;\s*url=
+7726	\d\.htm$
+7727	\d\D\w\W\s\S
+7729	\d\d-[a-zA-Z]{3,3}-\d\d\d\d \d\d:\d\d
+7735	\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ
+7736	\d{1,2}/\d{1,2}/\d{4,4}
+7738	\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}
+7739	\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+7745	\d{2}/\d{2}/\d{4}
+7747	\d{3} 
+7752	\d{4}-\d{2}-\d{2}
+7762	\n                            \s* ([^\s;]+) \s*            #content-coding\n                            (;\s* q \s*=\s* ([0-9\.]+))? #q\n                            
+7801	\n       \|
+7835	\n +
+7836	\n$
+7838	\n(.)
+7839	\n(.+\S+)\ +\S+
+7840	\n(.+\S+)\ +\S+\ +(.+\S+)
+7846	\n(Contents of the|The section) 
+7847	\n([ \t]*)$
+7855	\n+$
+7856	\n+|\r+|\f+
+7860	\n.*cloud-stack-version=.*
+7873	\nVersion (.+), ([0-9]+).([0-9])+ MBs
+7874	\n[ \t]*
+7876	\n[ ]+\n
+7877	\n[\t ]*$
+7878	\n[\t ]*\n[\t ]*$
+7881	\n\n
+7885	\n\n+
+7886	\n\n\n+
+7889	\n\r?[\t ]*$
+7891	\n\s*
+7900	\n\s*\n
+7901	\n\s*\n*
+7902	\n\s+
+7909	\n__com.redhat_drive_add
+7911	\ndevice_add
+7912	\ndrive_add
+7913	\ngcc version (\d+\.\d+\.\d+)
+7919	\npci_add
+7923	\n{3,}
+7934	\r*\n
+7937	\r?\n\d
+7938	\r?\n\r?\n
+7939	\r[ \t]+def 
+7942	\r\n?
+7945	\r\n|\r
+7946	\r\n|\r+|\n
+7948	\r|\n
+7949	\r|\n|\r\n
+7951	\s$
+7954	\s([^a])
+7955	\s([^a]*)
+7957	\s(b)
+7964	\s*# SOURCE LINE (\d+)
+7965	\s*#![^\r\n]*
+7966	\s*#(.*)$
+7967	\s*#*\s*pylint:(.*)
+7968	\s*#+.*coding[:=]\s*([-\w.]+)
+7970	\s*#.*$
+7979	\s*#define\s+([a-zA-Z][a-zA-Z_0-9]*)\s+([a-zA-Z_0-9]+)
+7980	\s*$
+7983	\s*(#|$)
+7993	\s*(-?\d+)\s*$
+7994	\s*(-?\d+)\s*-\s*(-?\d+)\s*$
+7996	\s*(.+)\s*:\s*([-a-zA-Z]+)\s*$
+7999	\s*(<=?|>=?|===?|!=|~=)\s*((\w|[-.*_!+])+)
+8015	\s*([-\+])
+8016	\s*([0-9a-fA-F]+)\s+([0-9a-fA-F]+)\s+([0-9a-fA-F]+)
+8022	\s*([^: ]*)\s*:(.*)
+8024	\s*([^=:]+)(=|:)\s*(.*)
+8026	\s*([^\s\(\)"\\'=,\[\]/\?]+)\s*
+8027	\s*([^\s\(\)"\\'\-=,\[\]/\?]*)\s*\[
+8036	\s*([a-f0-9]+):\s*(\S.*)
+8039	\s*([a-zA-Z_][-.:a-zA-Z_0-9]*)(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[-a-zA-Z0-9./:;+*%?!&$\(\)_#=~]*))?
+8043	\s*([a-zA-Z_][-:.a-zA-Z_0-9]*)[$]?(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[][\-a-zA-Z0-9./,:;+*%?!&$\(\)_#=~\\'"@]*))?
+8045	\s*(\#.*)?$
+8051	\s*(\d+)  (.*)$
+8052	\s*(\d+)\s*
+8054	\s*(\d+)\s*,\s*(\d+)\s*
+8058	\s*(\w*(\s*\w+)+)\s*<\s*(\S*(\s*\S+)+)\S*>
+8059	\s*(\w*)\s*::
+8064	\s*(t_[a-zA-Z_0-9]*)\s*=
+8067	\s*,?\s*
+8068	\s*,?\s*new Array\(
+8069	\s*,\s
+8071	\s*,\s*|\s+
+8072	\s*-
+8073	\s*->\s*
+8074	\s*-[ef]\s+
+8076	\s*-\s*at\s*-\s*
+8077	\s*-e\s+
+8078	\s*-e\s+.*#egg=(.*)$
+8079	\s*-f\s+
+8080	\s*-{10}
+8081	\s*.*#\s*.*define\s.*SQLITE_VERSION\W*"(.*)"
+8086	\s*/[/*]\s*
+8088	\s*/\*\s*\*/
+8089	\s*/\s*
+8091	\s*:?\s*([\w\.]+\s*,?\s*)*
+8092	\s*:\s*
+8095	\s*<(\w*)>
+8097	\s*</table>
+8107	\s*<entry><token>([^<]+)</token></entry>\s*<entry>([^<]+)</entry>
+8108	\s*<entry><type>([^<]+)</></entry>
+8116	\s*=.*
+8117	\s*=?\s*
+8118	\s*=\s*
+8120	\s*>$
+8129	\s*@(\w*):
+8137	\s*SELECT
+8143	\s*[-\w]+\s*:\s*[^:;]*;?
+8148	\s*[^\s]+\s*=
+8151	\s*\#\s*include\s+<cxxtest/
+8152	\s*\$\$.*
+8153	\s*\((\d+)\)\s*
+8155	\s*\(.*\)\s*$
+8156	\s*\(0[0-7]+\).*
+8157	\s*\(0[xX][0-9a-fA-F]*\).*
+8158	\s*\(\d+[ulUL]*\).*
+8163	\s*\*\/\s*$
+8165	\s*\*\s*G_CONST_RETURN\s*\*\s*
+8174	\s*\[.*$
+8176	\s*\[auto-props\]
+8182	\s*\n\s*
+8184	\s*\n\s*\n\s*
+8187	\s*\{\s*
+8188	\s*\|\s*
+8189	\s*\}\s*
+8190	\s*\}\s*$
+8191	\s*]\s*
+8192	\s*__version__\s*=\s*(("([^"]|\\")*"|\'([^\']|\\\')*\'))
+8195	\s*def\s*([_\w][_\w\d]*)\s*\(
+8196	\s*def\s+(p_[a-zA-Z_0-9]*)\(
+8197	\s*def\s+(t_[a-zA-Z_0-9]*)\(
+8198	\s*define|\s*endef
+8200	\s*else\s*:\s*(#|$)
+8206	\s*https?:
+8207	\s*https?:.*#egg=(.*)$
+8210	\s*import\s+(\S+)\.([^\s.]+)\s+as\s+(\S+)(\s+for\s+(\S+))?
+8221	\s*modtime:\s*(.*)
+8230	\s*{
+8234	\s+#
+8240	\s+(-\S+):\s+(.*)$
+8241	\s+(-\S+)\s+(.*)$
+8246	\s+([!{};:>+\(\)\],])
+8247	\s+([A-Z])\s+.*CDFS.*\n
+8248	\s+([a-z0-9-]+)\s+
+8249	\s+([a-zA-Z]+)\s+
+8250	\s+(\S+\s*)$
+8251	\s+(\d+)$
+8252	\s+(\d+),$
+8255	\s+(\r?\n)$
+8264	\s+Flags for (\S.+):$
+8265	\s+Flags from (\S.+):$
+8266	\s+\((.*)\)$
+8269	\s+\(default:\s+\'(.*)\'\)$
+8275	\s+\S
+8287	\s+const$
+8290	\s+in\s+
+8291	\s+inet6\s+([0-9a-f:]+)/\d+\s+scope\s+link
+8297	\s+{(\d+), (0|"\w+")},$
+8298	\s+{(\d+), (\d+)},$
+8299	\s+{(\d+), arcs_(\d+)_(\d+)},$
+8300	\s+{(\d+), labels},$
+8304	\s-drive\s[^\s]+
+8305	\s.*
+8308	\s?((["][^"]*["]|[\'][^\']*[\'])\s+dluohs)
+8310	\s?([a-zA-Z_\d]+tset)\s+fed
+8312	\s?["\']([a-zA-Z_"\'\s\d]+)["\']\s+tset
+8314	\sSONAME\s+([^\s]+)
+8322	\sassert *\(
+8327	\smarkdown(=[\\'"]?[^> ]*[\\'"]?)?
+8334	\s|,
+8340	\s|\+|\-|\*|\/|<<|>>]
+8343	\t(\S*)\s+(\S*.*)
+8345	\t+
+8347	\tobjectVersion = ([0-9]+);
+8350	\w([A-Z])\.
+8351	\w*
+8352	\w*:\w*:\w*:\w*:\w*:\w*
+8360	\w+(Class|Iface)
+8363	\w+(\.\w+)*
+8367	\w+:
+8370	\w+:|#
+8371	\w+@(\w+)(\.\w+)*
+8374	\w+\(
+8378	\w+\.erb
+8379	\w+\.feature
+8383	\w+\.rb
+8393	\w+\s*:\s*\w
+8394	\w+\s+\[?(\w+)\]?
+8402	\w\w*\d\d\d\d\d.htm
+8404	\w\w\w\w
+8405	\w{12}
+8411	\x01
+8416	\x03[0-9]{1,2}(,[0-9]{1,2})?
+8680	\{
+8682	\{% csrf_token
+8683	\{%\s*(block|extends)
+8688	\{([-\w]+)\}
+8690	\{([^\}]*)\}
+8692	\{([^}]*)\}
+8698	\{(http:\/\/[A-Za-z0-9_\.\/]+\/nzb)\}file
+8710	\{\{ plugin_object (\d+) \}\}
+8716	\{\{|\}\}
+8721	\|
+8722	\|(.*)\|
+8723	\|([\w\|\-]+)$
+8724	\|(\S+)\|
+8729	\}
+8730	\}\}
+8733	^
+8740	^   ([^ ]+)
+8742	^  --
+8744	^ (.*)$
+8750	^ *(.*) *( *) *$
+8751	^ *(0x[0-9a-f]+) +0x([0-9a-f]+): +eax=0x([0-9a-f]+) ebx=0x([0-9a-f]+) ecx=0x([0-9a-f]+) edx=0x([0-9a-f]+)$
+8752	^ *([0-9]+)
+8764	^ | $|/ | /
+8780	^#
+8783	^# Your branch is (ahead of|behind) '(.*)' by (\d+) commit
+8784	^# and have (\d+) and (\d+) different
+8787	^#!(.*)
+8790	^#!.*pythonw?[0-9.]*([ \t].*)?$
+8797	^### 
+8800	^##AGENT-WARNING##.*
+8804	^#(ifndef|define|endif\s*//)\s*[\w_]+\s*$
+8807	^#.*coding[:=]\s*([-\w.]+)
+8817	^#[0-9A-Fa-f]{6}$
+8822	^#\s*next_offset=(\S+)\s*$
+8827	^#define ([A-Z]+)\s+(\d+)$
+8829	^#define ASYNC_PROTOCOL_MAJOR\t*(.*)
+8837	^#define\s+(\w+)\s+(\d+)$
+8839	^#format \w*\n
+8840	^#import[\s\t]*([^\s^\t]*)[\s\t]*$
+8846	^#include\s
+8858	^$|^\s*#
+8859	^%
+8861	^%%([^:]*):[ \t]*(.*)[ \t]*$
+8862	^%Q.(.*).$
+8863	^%[%!\w]([^:]*)[ \t]*$
+8867	^%q.(.*).$
+8870	^'(.*)'$
+8876	^(#[0-9a-f]+|rgb\(\d+%?,\d*%?,?\d*%?\)?|\d{0,2}\.?\d{0,2}(cm|em|ex|in|mm|pc|pt|px|%|,|\))?)$
+8897	^(([^:/?#]+):)?(//([^/?#]*):([^/?#]*))?
+8906	^((http[s]?):\/)#?\/?([^:\/\s]+)((\/[\w\-\.]+)*\/)*([\w\-\.]+[^#?\s]+)
+8907	^((unit)?test.*|smoketest)\.py$
+8908	^((x?v|s)d)
+8909	^()( +)
+8922	^(.*) ?\[([^ ]*) \+(0x[0-9A-F]{1,8})\](.*)$
+8937	^(.*)(ed|ing)$
+8942	^(.*)<(.*)>(.*)$
+8943	^(.*)=([-+]?[0-9]+)
+8949	^(.*)\*(\d+)\*$
+8950	^(.*)\.(.*)\.(\d+)\.(\d+)\.(\d+)$
+8951	^(.*)\.(diff|patch)$
+8953	^(.*)\.stgit$
+8955	^(.*)\[(.*)\](.*)$
+8956	^(.*)\[(zero|one|two|few|many|other)\]$
+8957	^(.*)\s*<(.*)>\s*$
+8958	^(.*)\s*<(.*)>\s*(.*)\s*$
+8959	^(.*)\s*\((.*)\)\s*$
+8960	^(.*)\|(-?[0-9]+)$
+8961	^(.*)_([0-9]+)$
+8962	^(.*)`(.*)`(.*)$
+8963	^(.*){(.*)}(.*)$
+8964	^(.*)~([+-][0-9]{2})00$
+8988	^(.*[/#])([^/#]+)$
+9003	^(.+)&sig=(\w{32})$
+9004	^(.+)(\[[^\]]+\])$
+9008	^(.+):(\d+)$
+9010	^(.+)<(.+)>(.*)$
+9012	^(.+)[ \._\-]([0-9]{1})([0-9]{2})[\._ -][^\/]*$
+9013	^(.+)[ \._\-]([0-9]{2})([0-9]{2,3})[\._ -][^\/]*$
+9015	^(.+)[:(]\d+[:)]
+9019	^(.+)\.([^\.])*
+9043	^(..[^\(:]+)?[\(:](\d+)[\):]:?\s*(.*)
+9051	^(0x)?[0-9]+$
+9053	^(0|-?[1-9][0-9]*)$
+9057	^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$
+9063	^(<=|>=|<|>|!=|==)?\s*([^\s,]+)$
+9065	^(<=|>=|<|>|!=|={2,3}|~=)?\s*([^\s,]+)$
+9069	^(> )+
+9245	^(@[a-z]+)?{
+9254	^(CONFIG_\w+)=(.*)$
+9260	^(FF|GF)\((\d+)\)$
+9268	^(I|E)/(stdout|stderr|GeckoConsole)\s*\(\s*\d+\):\s*(.*)$
+9269	^(Keyed)?(Call|Load|Store)IC_
+9273	^(MemTotal|MemFree|Buffers|Cached|SwapCached|Active|Inactive|SwapTotal|SwapFree|Dirty|VmallocTotal|VmallocUser|VmallocChunk):\s*(\d+)\s*kB
+9274	^(Mozilla.*(Gecko|KHTML|MSIE|Presto|Trident)|Opera).*$
+9276	^(None or|optional) ([\w\.]+)$|^([\w\.]+) or None$
+9277	^(PPC|Intel) Mac OS X
+9278	^(Q|QQ)\<(.+)\>$
+9282	^(WebSocket-Protocol: [\x20-\x7e]+\r\n)?(Cookie: [^\r]*\r\n)*(Cookie2: [^\r]*\r\n)?(Cookie: [^\r]*\r\n)*\r\n
+9283	^(Win|Linux|PPC Mac OS X)
+9284	^(Win|PPC Mac OS X)
+9288	^(Y|X|A|N) ([\S ]+)$
+9289	^(Z|ZZ|Q|QQ)\((.+)\)$
+9290	^(Z|ZZ|Q|QQ)\[(.+)\]$
+9292	^([ \t\r\f\v]+)
+9297	^([ \t]*class +[a-zA-Z0-9_]+) *( *) *((=.*)?):
+9298	^([ \|0-9-]*)
+9299	^([ \|0-9-]*)(.*) ?\[([^ ]*) \+(0x[0-9A-F]{1,8})\](.*)$
+9300	^([ ]*)
+9303	^([+-]) (.*)$
+9304	^([+-])(\d{2}):?(\d{2})$
+9306	^([,;/%?]|!!?|\s*)\s*([\w\.]+)(\s+.*$|$)
+9317	^([0-7]{6}) ([a-z]+) ([0-9a-f]{40})\t(.*)$
+9318	^([0-9.]+)
+9321	^([0-9\.]+)\s*([0-9\.]+)\s*([0-9\.]+)\s*([0-9]+)\/([0-9]+)
+9324	^([0-9]+)$
+9334	^([0-9]+x)*[0-9]*[*]?(s\W)?$
+9337	^([0-9]{1,3}\.){0,3}[0-9]{1,3}(/[0-9]{1,2}){1}$
+9339	^([0-9]{4})$
+9342	^([0-9]{4})\.([0-9]+)\.([0-9]+)$
+9343	^([0-9]{4})~([01][0-9])~([0-9]{2})$
+9344	^([0-9]{4})~([01][0-9])~([0-9]{2})~([0-9]{1,2})~([0-9]{2})~([0-9]{2})$
+9353	^([0-9a-fA-F]{8}) . (.*)$
+9359	^([0-9a-f]{40})\s+(\S+)$
+9360	^([0-9a-f]{8})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{12})$
+9364	^([01]?[0-9])~([0-9]{2})~([0-9]{4})~([0-9]{1,2})~([0-9]{2})~([0-9]{2})$
+9371	^([>\w\-]+)\s*:\s*(.*)\s*$
+9376	^([A-Z])([A-Z])
+9379	^([A-Z]+)([1-9][0-9]*)$
+9383	^([A-Z][A-Z][A-Z])([-+]?[0-9]+)([A-Z][A-Z][A-Z]);([0-9]+)/([0-9]+),([0-9]+)/([0-9]+)$
+9385	^([A-Z]\w+::[a-z0-9-]+)\s*:?(\s*\(.*\)\s*){0,2}\s*$
+9386	^([A-Z]\w+:[a-z0-9-]+)\s*:?(\s*\(.*\)\s*){0,2}\s*$
+9389	^([A-Za-z ]+):\s+(.+)$
+9395	^([A-Za-z]+):\s+(.+)$
+9396	^([A-Za-z]:)?[/\\\\]*
+9398	^([A-Za-z][^:]*):[ \t]*(.*)[ \t]*$
+9399	^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]) *(\d[ABCEGHJKLMNPRSTVWXYZ]\d)$
+9400	^([MACDRUG_ ][MACDRUG_ ])(.)(.)   .   [^0-9-]+(\d+|-)(.{23})(.+)
+9401	^([MAGCUD_ ][MAGCUD_ ]) (.+)
+9408	^([\s*,;/])([\?\w\.\-\+]+\w*\s*)(\(?.*$)
+9413	^([\w\-:]*)
+9417	^([\w\.]+) \.\.\. \[([^\]]+)\]$
+9418	^([\w\.]+)$
+9421	^([\w\d]([\w\d\-]{0,61}[\w\d])?\.)*[\w\d]([\w\d\-]{0,61}[\w\d])?$
+9426	^([^ ]+)
+9429	^([^ ]+) \((.+)\)
+9437	^([^.]*)\.([^:]*):[\t ]+(.*)
+9438	^([^.]+)[.]([^.]+)[.]?([^.]*)
+9441	^([^/])\:/
+9442	^([^/]+)(/.*)$
+9443	^([^/]+)/([^/]+)$
+9445	^([^: \t\n]+):([1-9][0-9]*):
+9446	^([^:]*): *(.*)
+9448	^([^:]*):([^@]*)@([^:]*):([^/]*)/([^/]*)/?(.*)
+9449	^([^:]*):([^@]*)@([^:]*):([^/]*)/([^/]*)/?(.*)$
+9451	^([^:]*):[^:]*$
+9452	^([^:]*):\t(.*)
+9453	^([^:]+)$
+9454	^([^:]+): (\w+) \(([\w\.]+)\)
+9463	^([^<]*)(/(<.*))?$
+9464	^([^<]*)<([^>]*)>\s+(\d+\s+[+-]\d{4})$
+9465	^([^<]+)[<]?(.*)[>]?$
+9468	^([^=]+)=\'(.*)\'$
+9470	^([^@]*@)?([^:]*)(:.*)?
+9477	^([^\t]*)\t\t
+9489	^([a-z0-9.-]+|\[[a-f0-9]*:[a-f0-9:]+\])(:\d+)?$
+9490	^([a-zA-F0-9_-]*)[\.]?.*$
+9492	^([a-zA-Z-]+\.[0-9]+)\.[0-9]+.log$
+9499	^([a-zA-Z0-9]+)([-](.*))?$
+9505	^([a-zA-Z0-9_]+):( |$)
+9506	^([a-zA-Z0-9_]+)=(.*)
+9508	^([a-zA-Z0-9_]+)[ \t]*=(.*)
+9510	^([a-zA-Z]:[^(]*)\(([0-9]+)\)
+9515	^([a-zA-Z_][a-zA-Z0-9_]*)\s*=\s*(.*)$
+9517	^([a-zA-Z_]\w*)(\.[a-zA-Z_]\w*)*$
+9519	^([a-zA-z0-9]+)=([\S\s]*)$
+9520	^([a-z\._]*) = ([0-9]*)$
+9521	^([a-z]*)(:|%3A)([\w-]*)$
+9525	^([a-z]\w*)\s*:?(\s*\(.*\)\s*){0,2}\s*$
+9526	^([a-z]{2,3}(_[a-z]{2,8})*)\.py$
+9544	^(\+[3-9]{1,}|\+{3,}|\+[1-9][0-9]+)$
+9547	^(\-[3-9]{1,}|\-{3,}|\-[1-9][0-9]+)$
+9550	^(\.\.)[\/](.*)$
+9554	^(\S+ \S+ \S+ \S+: )?(.*)$
+9557	^(\S+) \(in ([^)]+)\) \((.+)\)$
+9558	^(\S+):?
+9560	^(\S+)\s+(\S+)\s+(\S+)\s+(\d+.\d+\s\S+)\s+(\d+.\d+.*)
+9561	^(\S+)\s+\D*(\d+)
+9566	^(\d*)\.(\d*)\[(\d+)\]$
+9569	^(\d+(\.\d+)*)
+9571	^(\d+)
+9578	^(\d+)([a-z]+)$
+9591	^(\d+)L?:|^\((\d+)L?,
+9599	^(\d+)\s+([+-]\d\d:?\d\d)$
+9603	^(\d+\.\d+(\.\d+)*)((a|b|c|rc)(\d+))?(\.(post)(\d+))?(\.(dev)(\d+))?$
+9606	^(\d+\.\d+)\.\d+(.*)
+9609	^(\d+\.|[-*|]|\[\d+\]) .
+9611	^(\d:)?(\S+)-(\S+)$
+9612	^(\d\d)
+9618	^(\d{1,3})\.(\d{1,4})$
+9622	^(\d{2})(\d{2})(\d{3})(\d{2})(\d{3})(\d)$
+9627	^(\d{3})\s(\d{3})$
+9642	^(\s*#!("[^"]+"|\S+))\s+(.*)$
+9653	^(\s*)()(\S+)(.*$)
+9656	^(\s*)(.*)
+9658	^(\s*)(\S*\s*)(.*$)
+9661	^(\s*)(def .+:|class .+:)
+9662	^(\s*)(def|class)(\s.*)?$
+9664	^(\s*)<.+> 
+9668	^(\s*<[^>]+>\s*)
+9670	^(\s*@charset [^;]+;\s*)+
+9685	^(\s+)
+9689	^(\s+\(c-name\s+)([^\s]+)(\s*\))$
+9690	^(\s+\(copy-func\s+)(\w+)(.*)$
+9691	^(\s+\(implements\s+)([^\s]+)(\s*\))$
+9692	^(\s+\(in-module\s+)(\w+)(.*)$
+9693	^(\s+\(of-object\s+)(\w+)(\s+\((\w+)\))?(.*)$
+9694	^(\s+\(parent\s+)(\w+)(\s+\((\w+)\))?(.*)$
+9695	^(\s+\(release-func\s+)(\w+)(.*)$
+9696	^(\s+\(return-type\s+)([^\s]+)(\s*\))$
+9702	^(\w){1,2}$
+9704	^(\w){1,3}$
+9706	^(\w){1,4}$
+9711	^(\w){3}$
+9713	^(\w*)
+9715	^(\w+)
+9721	^(\w+):\d+\s\((\d+).+$
+9725	^(\w+)=([a-f0-9]+)
+9732	^(\w+)\s*:\s+(\d+)
+9733	^(\w+)\s*:\s+(\d+)\s\w+
+9734	^(\w+)\s*:\s+(\d+.\d+)
+9735	^(\w+)\s*=\s*(.+)$
+9738	^(\w+)\s+(.+)
+9739	^(\w+)\s+(\w+)\s+(\w+)\s+(\S+)\s+(([a-fA-F0-9]{2}:?){6})
+9745	^(\w+|/|\.|\(|\"|\\')
+9746	^(\w+|/|\.|\*|\"|\\')
+9747	^(\w[\s\w'.-]*)(\((.*)\))?
+9756	^(acc|borland|como|cw|dmc|darwin|gcc|hp_cxx|intel|kylix|vc|mgw|qcc|sun|vacpp)\d*$
+9766	^(centos|redhat|fedora)
+9770	^(debian|ubuntu)
+9771	^(def|class)\s+
+9773	^(dict|dictionary|map|mapping) from ([\w\.]+) to ([\w\.]+)$
+9774	^(dict|dictionary|map|mapping) from ([\w\.]+) to (list|set|sequence|tuple|collection) of ([\w\.]+)$
+9779	^(fails|needs-focus|random|skip|asserts|fuzzy)
+9784	^(https://nodeload.github.com/[^/]+/[^/]+/)zipball(/.*)$
+9785	^(https?)://([^/]+)(/.*)$
+9798	^(list|set|sequence|tuple|collection) of ([\w\.]+)$
+9810	^(pgpgin|pgpgout|pswpin|pswpout)\s(\d+)
+9819	^(syn keyword vimCommand contained|syn keyword vimOption contained|syn keyword vimAutoEvent contained)\s+(.*)
+9827	^(}|struct\s+\w+);\s*$
+9832	^-+
+9839	^--- NEW FILE
+9842	^--out-xml=(.*)$
+9845	^-?\d
+9847	^-?\d+$
+9854	^.(.*).$
+9866	^.*##(.*)##.*$
+9876	^.*(\s+)$
+9886	^.*: Opening '(.*)' for reading$
+9890	^.*::
+9891	^.*:\$
+9892	^.*<(()/[\d\w_\+\.\-/]*)>.*$
+9914	^.*Abstract.*
+9917	^.*ERROR org\.apache\.hadoop\.streaming\.StreamJob \(main\): (.*)$
+9935	^.*\(\s*(.*)\s*\).*\](.*)$
+9936	^.*\*/\s*$
+9937	^.*\.(c|cpp)$
+9938	^.*\.h$
+9946	^.*\/
+9947	^.*\\
+9954	^.*\{\{
+9956	^.*_test.py$
+9958	^.*ld\.so\.cache$
+9967	^.+$
+9974	^.+[:(]\d+[:)]|^Done processing
+9976	^.+\.js$
+9978	^.+\:.+(\d+)
+9979	^.+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,3}|[0-9]{1,3})(\]?)$
+9985	^...?.?\....?.?
+9986	^..?\...?
+9995	^.{3,20}$
+9997	^/
+10001	^/([\w-]+)(/|$)
+10003	^/([^/])/
+10006	^/(artist|release|track|label|release-group)/([^/]*)$
+10008	^/(usr/|)(bin|sbin)/
+10011	^/+
+10012	^// Copyright .*$
+10013	^// See .* for documentation.$
+10016	^//([^/]*)(.*)$
+10024	^/?[a-zA-Z0-9_-]+(/[a-zA-Z0-9_-]+)?/?$
+10025	^/?[a-zA-Z0-9_.-]+(/[a-zA-Z0-9_.-]+)*/?$
+10027	^/[-\w/]*$
+10031	^/admin
+10036	^/dev/
+10038	^/dev/[a-z]+$
+10097	^6\.
+10105	^<!-- ##### (\w+) (\w+) ##### -->$
+10108	^<(.*)>$
+10110	^<([\w\.]+)>$
+10136	^<p( [^>]+)?>
+10138	^<type [\'"](.+)[\'"]>$
+10140	^== Rolled over to ChangeLog-\d{4}-\d{2}-\d{2} ==$
+10147	^==\d+==
+10150	^>(.*)$
+10154	^@(.*)
+10156	^@([a-z]+)([ \t]|$)
+10157	^@(\S+)\s*:(.*\n?)$
+10158	^@(\w+)
+10161	^@@ -([0-9]*),([0-9]*) \+([0-9]*),([0-9]*) @@
+10163	^@@ -(\d+),(\d+) \+(\d+),(\d+) @@.*
+10166	^@@ -\d+,\d+ \+(\d+),(\d+) @@.*$
+10169	^@[Aa][Tt][Tt][Rr][Ii][Bb][Uu][Tt][Ee]\s*(..*$)
+10170	^@[Dd][Aa][Tt][Aa]
+10171	^@[Rr][Ee][Ll][Aa][Tt][Ii][Oo][Nn]\s*(\S*)
+10174	^@\S*
+10186	^Attached scsi disk (.+) at scsi(.+), channel (.+), id (.+), lun (.+)$
+10192	^BLOCK (.*)
+10219	^DYNAMIC SYMBOL TABLE
+10235	^Error:.*$
+10274	^Gui
+10284	^I+
+10318	^META\-INF/(\w+)\.(rsa|sf)$
+10347	^P(\d)
+10366	^Pull: (.*)\n$
+10373	^RADIO/radio[.](.+[.])?img$
+10391	^SCSI error : <(.+)> return code = (.+)$
+10393	^SESSIONID-
+10394	^SET_(\S*)\(
+10409	^Status against revision:\s+(\d+)
+10426	^Transmitting
+10433	^VPATH\s*=
+10434	^Vendor:
+10438	^Version\s+(.*)
+10450	^Working file: (.*)$
+10452	^You have \d+ new
+10454	^[ -~]*$
+10456	^[ 0-9a-zA-Z\._\+/\$-]{1,256}$
+10465	^[ \t]*(#|%:)[ \t]*(ifdef|ifndef|if|else|elif|endif|include|import|define|undef|pragma)[ \t]*(.*)\r*$
+10466	^[ \t]*(#|%:)[ \t]*(include)[ \t]*(.*)\r*$
+10472	^[ \t]*Traceback \(most recent call last\):.*
+10473	^[ \t]*[Xv!_][Xv!_ \t]*\n
+10474	^[ \t]*[^# \t]
+10475	^[ \t]*\n
+10479	^[ \t]*from[ \t]+([^ \t]+)[ \t]+
+10480	^[ \t]*import[ \t]+([^#]+)
+10482	^[ \t]+def +[a-zA-Z0-9_]+ *( *self *, *(( *(.*) *)) *) *:
+10485	^[ ]{0,3}((\d+\.)|[*+-])[ ](.*)
+10490	^[ ]{0,3}[*+-][ ](.*)
+10493	^[ ]{0,3}\d+\.[ ](.*)
+10496	^[ ]{4,7}((\d+\.)|[*+-])[ ].*
+10498	^["<].*[>"]$
+10501	^[#/;]
+10506	^[+/0-9A-Za-z]*=*$
+10510	^[,&^\|\*/\+-]|^is |^not |^in |^and |^or 
+10515	^[-+]?(0|[1-9][0-9,]*)$
+10516	^[-+]?([0][0-7,]*)$
+10517	^[-+]?0x[0-9a-fA-F,]+$
+10518	^[-+]?[0-9]+$
+10519	^[-+]?[0-9]+(\.[0-9]*)?[eE][-+][0-9]+$
+10520	^[-+]?[0-9][0-9,]*\.[0-9]*$
+10521	^[-+]?[a-zA-Z0-9_]+$
+10523	^[-0-9]+|-+$
+10524	^[-=*_^#]{3,}\s*$
+10528	^[-\w/]+$
+10533	^[-_A-Za-z0-9]+$
+10534	^[-_a-zA-Z0-9.]+:(//[^/]*)?/[^/]*$
+10537	^[-a-zA-Z0-9_]+$
+10538	^[.-]
+10542	^[.](\d)
+10547	^[0-9.]+$
+10548	^[0-9/]+$
+10553	^[0-9A-Za-z+/]*[0-9A-Za-z+/=]{,2}$
+10554	^[0-9A-Za-z-_. ]+$
+10556	^[0-9A-Za-z._-]{0,100}$
+10564	^[0-9]
+10567	^[0-9]+
+10571	^[0-9]+-(.*)$
+10572	^[0-9]+.[0-9]*$
+10576	^[0-9]+[Ee]$
+10591	^[0-9]{4}$
+10594	^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+10601	^[0-9a-f]{20,40}$
+10603	^[0-9a-f]{40} refs/heads/(.+)$
+10604	^[0-9a-f]{40}$
+10623	^[67]
+10624	^[67]\.
+10625	^[78]\.
+10627	^[:~._+-]+
+10628	^[= ]([*> ]) ([^- ]+)-([^ ]+) \[ (.*) \]
+10635	^[A-F0-9\-]+$
+10638	^[A-Z0-9][a-z0-9]*(-[A-Z0-9][a-z0-9]*)*$
+10640	^[A-Z]
+10645	^[A-Z][A-Z_0-9]*$
+10650	^[A-Z_]*$
+10656	^[A-Za-z0-9$./_]+$
+10664	^[A-Za-z0-9_-]*$
+10677	^[A-Za-z_][A-Za-z0-9_\.\-]*$
+10679	^[FE]?[0-9]+$
+10680	^[JB]?[0-9]+([.][0-9]*)?$
+10682	^[Mm]akefile.*$
+10685	^[\"\[`\\']|[\"\]`\\']$
+10686	^[\'"](.*)[\'"]$
+10691	^[\S]+@[\S]+\.[\S]+$
+10693	^[\\'\"][^\\'\"]+[\\'\"]$
+10694	^[\d ]+$
+10698	^[\n\r]{0,1}
+10699	^[\r\n]*(\s*)
+10702	^[\s\t\n]*([^\n]*)
+10708	^[\t ]*\n
+10709	^[\t ]*\n?$
+10714	^[\w.@+-]+$
+10715	^[\w.\*]+([\s,:;]\s*[\w.\*]+)*$
+10717	^[\w/:+-]+$
+10719	^[\w\-:\$]+
+10724	^[\w\.\-\/]*$
+10728	^[\w\d_]+\.[\w\d_]+\.\d+$
+10732	^[\w_]+$
+10739	^[^ ]*/([^ ]+)( .*)?
+10741	^[^(\[]*
+10745	^[^-_.]+
+10750	^[^:]*:([^:]*)$
+10753	^[^:]+
+10767	^[^{]*\}|\{[^}]*$
+10779	^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
+10788	^[a-z0-9][a-z0-9\._-]{1,253}[a-z0-9]$
+10789	^[a-z0-9][a-z0-9_]{2,}$
+10794	^[a-z0-9_\-]+$
+10798	^[a-zA-Z0-9+-.]+$
+10799	^[a-zA-Z0-9-]{1,100}$
+10800	^[a-zA-Z0-9-]{1,500}$
+10802	^[a-zA-Z0-9._%-+]+@[a-zA-Z0-9._%-]+.[a-zA-Z]{2,6}$
+10805	^[a-zA-Z0-9/_^\-\.:=]+$
+10806	^[a-zA-Z0-9\-]+$
+10809	^[a-zA-Z0-9\.\-:+"]+$
+10812	^[a-zA-Z0-9]+$
+10824	^[a-zA-Z0-9_-]{1,500}$
+10825	^[a-zA-Z0-9_-]{3,20}$
+10826	^[a-zA-Z0-9_:\.\-,]+$
+10827	^[a-zA-Z0-9_=-]+$
+10828	^[a-zA-Z0-9_=.\\/-]+$
+10831	^[a-zA-Z0-9_\.]+$
+10834	^[a-zA-Z0-9_]+\.[ch]$
+10835	^[a-zA-Z0-9_]+\.py$
+10839	^[a-zA-Z]
+10840	^[a-zA-Z]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*$
+10844	^[a-zA-Z]+(\s|$)
+10851	^[a-zA-Z][a-zA-Z0-9\-_]*$
+10859	^[a-zA-Z_]
+10864	^[a-zA-Z_][a-zA-Z0-9_]*$
+10866	^[a-zA-Z_][a-zA-Z0-9_]*[(]
+10869	^[a-zA-Z_]\w*
+10870	^[a-zA-Z_]\w*(\.[a-zA-Z_]\w*)*$
+10874	^[a-z]+$
+10881	^[a-z][a-z0-9_$()+-/]*$
+10890	^[aeiouy][^aeiouy]$
+10892	^[cC](\:[\\\/]+)
+10897	^[http|file|chrome|about].*
+10898	^[modprobe|insmod].*xen-vbd.*
+10899	^[sgydpn]+$
+10904	^[~a-zA-Z_]
+10907	^\"|\"$
+10910	^\#([0-9a-fA-F]{6})$
+10912	^\$([_a-zA-Z]\w*|{[_a-zA-Z]\w*})$
+10919	^\$\((.*)\)(/(.*)|)$
+10921	^\$\d+
+10923	^\$\w+:\s+(.*)\s+\$$
+10928	^\${VISUAL[:}/]
+10929	^\${\d+[:}]
+10930	^\${\d+\/
+10932	^\((.*)\)$
+10959	^\* ([^:]*):(:|[ \t]*([^\t,\n.]+)([^ \t\n]*))[ \t\n]*
+10963	^\*\*\d+\*\*
+10977	^\-l
+10979	^\.
+10981	^\.+
+10984	^\./site-packages
+10991	^\.\.\s+(current)?module::\s*([a-zA-Z0-9_.]+)\s*$
+10992	^\.\.\s+autosummary::\s*
+10998	^\/+
+10999	^\/\w\/
+11006	^\?(.*)
+11009	^\?\w+$
+11011	^\S
+11019	^\S+@\S+\.\S+$
+11021	^\S+\s+
+11022	^\W+
+11030	^\[([^]]+)\](.*)$
+11031	^\[.*\]
+11032	^\[.*\]$
+11046	^\\(section|subsection|subsubsection|paragraph|subparagraph){(numpy|scipy)\.
+11051	^\d* *([\w.,'\s]+)$
+11059	^\d+(\.\d+)*$
+11073	^\d+\.\d+(\.\d+)?$
+11075	^\d+\.\d+\.\d+\.\d+$
+11080	^\d+_\d+_?\d*$
+11081	^\d+px$
+11082	^\d[A-F]\d$
+11085	^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ$
+11088	^\d{10}[\.\d]+$
+11089	^\d{10}\.\d$
+11092	^\d{15}(\d{2}[0-9xX])?$
+11098	^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$
+11099	^\d{4}-\d{1,2}-\d{1,2}$
+11102	^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d+$
+11106	^\d{5}$
+11110	^\n
+11116	^\n?namespace\s+\w+\s*{\s*\n?$
+11119	^\s
+11128	^\s*#(\d+)\s*(.*) \[(0x[0-9A-Za-z]+)\]$
+11129	^\s*#.*
+11130	^\s*#.*$
+11132	^\s*#\s*([0-9]+).*
+11133	^\s*#\s*define\s+OPENSSL_VERSION_NUMBER\s+(0x[0-9a-fA-F]+)
+11138	^\s*#\s*include\s*([<"])([^>"]*)[>"].*$
+11139	^\s*#\s*include\s*<(gtest/.+)>
+11143	^\s*#\s*macfreeze:\s*(\S*)\s*(.*)\s*$
+11145	^\s*#define SSH_([A-Z_]+)\s+([0-9x]*)\s*$
+11151	^\s*(#|//[^/]|////).*$
+11153	^\s*(([A-Z][a-z]*)+) = (\d+)
+11154	^\s*(([A-Z][a-z]*)+),?\s*# (\d+)$
+11164	^\s*(<=|>=|<|>|!=|==)\s*([^\s,]+)\s*$
+11165	^\s*(>>> )?(\.\.\. )?from .* import .*\*
+11166	^\s*(>>> )?(\.\.\. )?raise((\s*\(\s*)|\s+)\w+\s*,
+11167	^\s*(>>> )?(\.\.\. )?raise(\s+(\\'|\")|\s*(\(\s*)+(\\'|\"))
+11168	^\s*(>>> )?(\.\.\. )?raise(\s+Exception|\s*(\(\s*)+Exception)
+11169	^\s*(>>>|...) (.*)$
+11193	^\s*(GType|GtkType)\s+\n([a-z]\w+_get_type)\s*(\(void\)|\(\)).*$
+11197	^\s*([0-9]+:[0-9]+)\s*(.+)
+11199	^\s*([0-9]+:[0-9]+)\s*\|\s*([0-9]+:[0-9]+)\s*\|\s*(.+)
+11204	^\s*([A-Z_]+) = (\d+)$
+11205	^\s*([A-Z_]+): (\d+)
+11215	^\s*([\w\s\*]+)\(\s*\*\s*(\w+)\s*\)\s*\(([^()]*)\);
+11223	^\s*(\S+)\s*$
+11225	^\s*(\n\r|\r\n|\r|\n)
+11228	^\s*(\w+)\s*:
+11231	^\s*(\w|\d)+\s*$
+11234	^\s*(def|class|else|elif|except|finally)
+11237	^\s*(else|elif|except|finally).*\:
+11238	^\s*(if|try|elif|while|for)
+11239	^\s*(if|try|elif|while|for|with)
+11240	^\s*(import |from .+ import)
+11249	^\s*//\s*$
+11253	^\s*/\*.*
+11255	^\s*/\*\*\s
+11261	^\s*<CxxTest\s+preamble>\s*$
+11262	^\s*<CxxTest\s+world>\s*$
+11271	^\s*@
+11272	^\s*@([a-zA-Z]+)
+11273	^\s*@?#
+11306	^\s*T_GENERIC_PROTOCOL: (\d+) calls to (.*) with a (.*):$
+11307	^\s*T_VIRTUAL_CALL: (\d+) calls on (.*):$
+11320	^\s*\#
+11322	^\s*\#+\s*
+11325	^\s*\$\$.*\n
+11327	^\s*\((.*)\)\s*$
+11330	^\s*\*
+11333	^\s*\**\s*$
+11334	^\s*\*+/
+11335	^\s*\*?\s*$
+11336	^\s*\*\s*
+11337	^\s*\*\w+(\+\+|--);
+11340	^\s*\.\.\s+(current)?module::\s*([a-zA-Z0-9_.]+)\s*$
+11341	^\s*\.\.\s+automodule::\s*([A-Za-z0-9_.]+)\s*$
+11343	^\s*\/\*
+11344	^\s*\/\/
+11352	^\s*\]\s*$
+11355	^\s*\d+\s(\.\S+)\s+[a-f0-9]
+11361	^\s*\n+\s*\n+\s*$
+11367	^\s*\|\s.*\s\|\s*$|^\s*\+[=+-]+\+\s*$
+11382	^\s*finally:\s*(#.*)?$
+11383	^\s*from flask import\s+
+11389	^\s*language\s*=\s*ObjC\s*;
+11397	^\s*public static final int ([A-Z_]+) = (\d+);$
+11404	^\s*using boostbook
+11405	^\s*using doxygen.*$
+11406	^\s*using fop.*$
+11407	^\s*using xsltproc.*$
+11409	^\s*var\s+[a-zA-Z_$]\w*\s*=\s*function\s+([a-zA-Z_$]\w*)\s*\(
+11432	^\s+.*
+11438	^\s+<spontaneous>\s*$|^.*\((\d+)\)$
+11440	^\s+File .* in runUntilCurrent
+11442	^\s+File .*erroneous\.py., line \d+, in setUp$
+11443	^\s+File .*erroneous\.py., line \d+, in testHiddenException$
+11444	^\s+File .*erroneous\.py., line \d+, in test_fail$
+11455	^\s+\(c-name\s+([^\s]+)\s*\)$
+11456	^\s+\(field\s+\(type-and-name\s+([^\s]+)\s+([^\s]+)\s*\)\s*\)$
+11458	^\s+\(parameter\s+\(type-and-name\s+([^\s]+)\s+([^\s]+)\s*\)(\s*.*)\)$
+11459	^\s+\(value\s+\(name\s+([^\s]+)\)\s+\(c-name\s+([^\s]+)\s*\)\s*\)$
+11461	^\s+at 0x[0-9A-Fa-f]+: 
+11462	^\s+by 0x[0-9A-Fa-f]+: 
+11463	^\s+color:\s*#4D926F;$
+11472	^\s+raise FoolishError, .I am a broken setUp method.$
+11474	^\s+raise RuntimeError\(self.hiddenExceptionMsg\)
+11475	^\s+raise|^\s+return|^\s+pass
+11484	^\t*
+11488	^\w
+11489	^\w(\-?\w)*$
+11494	^\w+:
+11497	^\w+:\/\/
+11505	^\w{22}$
+11519	^\|\s*
+11521	^_
+11522	^_+
+11524	^_ZThn[0-9]+_
+11528	^_[_A-Za-z0-9]*$
+11530	^__.*__$
+11531	^__[A-Za-z0-9]+[A-Za-z0-9_]*__$
+11532	^__[_A-Za-z0-9]*[A-Za-z0-9]+_?$
+11537	^_imp__(.*) in python\d+\.dll
+11539	^_|_$
+11540	^`!p\s
+11541	^`!v\s
+11555	^audio
+11556	^begin [0-7]{3}
+11557	^bob
+11565	^cat 
+11571	^class ([^,]*), addr (\d\d:\d\d.\d+), pci id (\w{4}:\w{4}) \(sub (\w{4}:\w{4})\)
+11582	^columns .* are not unique$
+11584	^compile
+11587	^const int ASYNC_PROTOCOL_MINOR\t*= (.*);
+11589	^content-range: bytes ([0-9]+)-([0-9]+)/([0-9]+)$
+11590	^content-type: (.*)$
+11601	^de
+11605	^def\s*(\w+)\s*=(.*)$
+11631	^dmd-(\d+)-(\d+).
+11636	^egg=([-A-Za-z0-9_.]+)$
+11640	^end_request: I/O error, dev (.*), sector .*$
+11642	^ephemeral(\d|[1-9]\d+)$
+11648	^file://
+11650	^file:///[a-z]:
+11655	^flags\s*:(.*)
+11662	^gemsets for ([^ ]+)
+11663	^get_bill_text?
+11668	^gui
+11670	^h\d+$
+11671	^hadoop.*streaming.*\.jar$
+11680	^http(s)?://
+11684	^http://([^/]+).sourceforge
+11688	^http://build.mozilla.org/talos/
+11697	^http://testserver/somewhere/else/\?c=\d+#baz$
+11698	^http://testserver/somewhere/else/\?c=\d+$
+11699	^http://testserver/somewhere/else/\?foo=bar&c=\d+#baz$
+11700	^http://testserver/somewhere/else/\?foo=bar&c=\d+$
+11704	^https://
+11705	^https://([^/]+)
+11707	^https?://
+11710	^https?://\S+$
+11711	^https?://\w
+11712	^https?://bitbucket.org
+11713	^https?://bitbucket.org/
+11717	^https?://github.com/([^/]+)/([^/]+)($|/.*$)
+11718	^https?://github.com/([^/]+)/?$
+11720	^https?://github.com/[^/]+/?$
+11722	^https?://github.com/[^/]+/[^/]+/?$
+11723	^https?://github.com/[^/]+/[^/]+/tree/([^/]+)/?$
+11724	^https?://github.com/[^/]+/[^/]+/tree/[^/]+/?$
+11731	^id(\d+)$
+11734	^initialize\(
+11745	^js\(\d+,0x[0-9a-f]+\) malloc: \*\*\* error for object 0x[0-9a-f]+: pointer being freed was not allocated\n\*\*\* set a breakppoint in malloc_error_break to debug\n$
+11752	^lib
+11754	^lib([^/]+)\.(a|dylib)$
+11757	^libtool: file: .* has no symbols$
+11759	^link
+11763	^lsr: Cannot access .*: No such file or directory.
+11767	^major
+11770	^md5=([a-f0-9]+)$
+11776	^modules\/(\w+)\/(.*)$
+11777	^mongodb 
+11778	^mongodb \(.*\)
+11808	^ns:((\w+\.)*(\w+))$
+11825	^places/(\d+)/$
+11832	^pull .*$
+11834	^push .*$
+11840	^quit.*
+11843	^r(ev)?\s*(\d+)
+11844	^rebt
+11845	^rebt.*
+11847	^redo\s+(\d+)$
+11848	^refs/heads/
+11858	^restorecon reset (.+) context (.+)->(.+)
+11862	^rmr: hdfs://.*$
+11865	^ruby-
+11867	^run
+11868	^run(.*)Test$
+11870	^s(\d+)(-c)?
+11872	^s3:\/\/([^\/]*)\/(.*)$
+11874	^scale:\d+\-\d+\:$
+11877	^sd (.+):(.+):(.+):(.+): Attached scsi disk (.+)$
+11939	^struct +[a-zA-Z_][a-zA-Z0-9_]* *{$
+11940	^struct\[([a-zA-Z_][a-zA-Z0-9_]*)\]$
+11945	^template\s*<\s*$
+11954	^the 
+11966	^undo\s+(\d+)$
+11967	^uninst .*$
+11972	^v([0-9]+|[0-9]+\.[0-9]+)(/.*|$)
+11974	^v(ersion)?\s*(\d+)
+11975	^v..?.?\...?.?
+11978	^v?(\d+!)?(\d+(\.\d+)*)((a|b|c|rc)(\d+))?(\.(post)(\d+))?(\.(dev)(\d+))?(\+([a-zA-Z\d]+(\.[a-zA-Z\d]+)?))?$
+11979	^v[0-9]
+11982	^var _0x[a-f0-9]+ ?\= ?\[
+12003	^yt-(.*)$
+12019	_(\w(\w|')*)_(.*)
+12022	_(unit)?test$
+12023	_(unit)?test\.py$
+12024	_+
+12025	_.*
+12027	_:([A-Za-z][A-Za-z0-9]*)
+12029	_F2PY_STRING_CONSTANT_\d+_
+12042	_REGEXP_
+12049	_[A-Z]_
+12054	_\[[Ee](\d+)\]
+12056	_\d+$
+12060	__([a-z]+)__ = '([^']+)'
+12061	__(\w+)__
+12063	__.*__
+12064	__FAIL(.*)__FAIL
+12067	__\w+__$
+12068	___
+12073	__metrics(.*)__metrics
+12075	__start_page_load_report(.*)__end_page_load_report
+12076	__start_report(.*)__end_report
+12077	__start_tp_report(.*)__end_tp_report
+12078	__startuptime,(\d*)
+12080	__u\d+$
+12082	__version__ = '([^']+)'
+12088	_bio\.cfm\?id=
+12090	_flymake\.cc$
+12091	_flymake\.cpp$
+12092	_flymake\.h$
+12094	_id$
+12098	`
+12101	`([^`]+`)
+12104	``
+12112	a*
+12113	a+
+12114	a.*
+12116	a\s
+12118	ab+c
+12135	addr:(.*)\ *Bcast:(.*)\ *Mask:(.*)
+12139	aki-[0-9a-f]{8}
+12145	alloc_sleep_millisecs:(\d+)
+12150	an open
+12153	and
+12166	ari-[0-9a-f]{8}
+12170	as (\w+)
+12172	asm-([\w\d_\+\.\-]+)(/.*)
+12176	attachment.cgi\?id=\d+&action=review
+12192	autoyast\=[\w\d\:\.\/]+
+12194	available: (\d+) nodes
+12195	available:\s+(\d+)\s+nodes\s+.*
+12198	b*
+12199	b+
+12200	b2g-l10n.js
+12201	ba
+12202	backing file
+12203	backing file:
+12210	bill=SB|SCR|SJR\d+
+12213	biltxt
+12216	blocked
+12225	bot|http|\.com|crawl|spider|python|curl|yandex
+12228	browser.search.order.([1-9])
+12230	browser\.contentHandlers\.types\.([0-5])\.title
+12231	browser\.contentHandlers\.types\.([0-5])\.uri
+12232	browser\.contentHandlers\.types\.[0-5]
+12233	browser\.search\.order\.[1-9]
+12244	by ([^;(\n]+;?|\w+)
+12246	bytes=(\d+)-(\d+)
+12248	c.*
+12251	call.*mount.*first
+12252	call\slaunch\sbefore
+12256	cc_(.*)$
+12271	chrome\/help\/images\/[A-Za-z-_]+\.png
+12273	cirrus
+12275	class (\w+)
+12277	class (\w[^\s:]*)(: public (\w[^\s{]*))?\s*{
+12288	clocksource=[a-z \-_]+
+12289	clocksource=[a-z\- ]+
+12294	cms/page/(\d+)
+12303	coding[=:]\s*([-\w.]+)
+12311	commit [\da-f]{40}$
+12318	connect1 =
+12326	const.*char.*versionString\[\].*=
+12329	content
+12333	coord =
+12335	count
+12341	crash|assert
+12355	date
+12360	decode\..+
+12364	default
+12365	default:.*off
+12367	defines.inc
+12373	dev$
+12389	diff -
+12392	diff: (.+)% (passed|failed)
+12393	digest 
+12396	disable.*=.*yes
+12397	disk size:\s+(\S+.*)
+12403	django_compressor\.\w{12}
+12409	doctype\s+: (\w+)
+12414	dot version ([\d\.]+)
+12419	download_url:'([^']+)'
+12423	dummy
+12424	e
+12425	e1000|^ide
+12426	easy_install(-\d\.\d)?$
+12428	ecap\s+(.\w+)
+12434	el6
+12435	else[ \f\t]+if
+12442	enabled
+12452	enum\s*{([^}]*)}\s*([A-Z][A-Za-z]*)(\s|;)
+12455	episodenumber(\d+)
+12460	error:
+12462	errors=(\d+)
+12466	eval\(\w+\(\w+\((\w+)\)\)\);
+12479	expect$
+12480	expectedFailures=(\d+)
+12485	extra\s*==\s*("([^"]+)"|\'([^\']+)\')
+12489	fail
+12492	failed:
+12494	failures=(\d+)
+12496	fd\d+
+12501	file format:\s+(\S+)
+12504	file=
+12505	filename = .*
+12510	files? changed
+12515	flags\s+:\s+([\w\s]+)\n
+12524	foo-0.0.0-py[23].\d.egg$
+12525	foo.*bar
+12526	foo\d
+12529	fourth commit
+12532	from django.*import
+12533	from($|\s+\.+)
+12535	ftp://.*$
+12543	gecko\.handlerService\.defaultHandlersVersion
+12544	gecko\.handlerService\.schemes\.
+12560	get_ipython\(\)\.magic\(u?["\\']%?autopx
+12577	gl.*Program(s|)NV
+12578	glGetVertexAttribfvNV
+12579	glWindowPos.*MESA
+12582	goog.require\('([^']*)'\)
+12585	goog\.provide\s*\(\s*[\'"]([^\)]+)[\'"]\s*\)
+12588	goog\.require\s*\(\s*[\'"]([^\)]+)[\'"]\s*\)
+12601	h$
+12602	h(e)l[A-Z]lo.*th[^e]*e(r)e
+12604	h[23]$
+12611	hdc
+12641	href\s*=\s*[\'"]?<([\w\.]+)>[\'"]?\s*(,?)
+12642	hsl\(\s*(\d+)\s*,\s*(\d+)%\s*,\s*(\d+)%\s*\)$
+12655	http(s)?\://([\w\.-]*)(\:(\d+))?(/.*)?
+12658	http://
+12665	http://([^/]+)(/\S*)\s*
+12667	http://(\S+)\s*
+12682	http://example.com/login\?next=http%3A%2F%2Flocalhost%3A[0-9]+%2Fabsolute
+12705	https://github.com/([^/]+)$
+12706	https://www.google.com/a/[a-z0-9.-]+/ServiceLogin
+12708	https?://
+12710	https?://.*
+12728	hwclock
+12729	hwidcmd
+12730	i.86
+12731	i686-apple-darwin[0-9]*-llvm-gcc-4.2
+12739	id:(\d{1}):initdefault:
+12747	idle
+12752	image/(gif|p?jpeg|(x-)?png)
+12753	image:\s+(\S+)
+12757	import django
+12760	importScripts\([\\'"]([^\\'"]+)[\\'"]\)
+12763	import\s+([^;]+)
+12767	index
+12782	init\((.*)\):
+12784	initrd-(\d+)\.(\d+)\.(\d+)-(.*).img
+12789	interface[ \t]+\w+
+12795	invalid literal for int().*: '?'?
+12797	invalid literal for long().*: '?0xOoops'?
+12799	ip(engine|controller)z-\d+\.(log|err|out)
+12801	irb\([a-zA-Z_][a-zA-Z0-9_]*\):\d{3}:\d+[>*"\'] |>> |\?> 
+12802	irb\([a-zA-Z_][a-zA-Z0-9_]*\):\d{3}:\d+[>*] 
+12817	join_mcast_pid:(\d+)
+12823	ks\=[\w\d\:\.\/]+
+12842	length (\d*):
+12848	lib(.*)\.so
+12854	libs/([^/]+)
+12855	lightlink
+12861	line \d+
+12873	lost
+12874	lost: 0 bytes in 0 blocks
+12875	lost: 0 bytes in 0 blocks.
+12877	lsi53c895a
+12883	mac=
+12884	mac=00:00:00:00:00:00
+12885	macaddr=(\S+)
+12898	mapper/
+12907	md5=[0-9a-f]{32}$
+12908	md[0-9]$|sd[a-z]+$
+12909	md[0-9]$|sd[a-z]+$|xvd[a-z]+$
+12925	messages -> ([A-Za-z_0-9]+) {
+12934	mobile-l10n.js
+12938	mode=readline
+12947	module\s+([^;]+)
+12949	monitor_result
+12970	n( mod \d+)? (is|in|within|(not in))( not)? ([^\s]+)
+13009	ns\d+$
+13010	nsyms\s+(\d+)
+13011	ntpdate
+13012	ntpdate|w32tm
+13013	num_dim.*=
+13014	num_elem.*=
+13015	num_nodes.*=
+13016	o
+13017	o b
+13018	o:(.*)s
+13022	offset (.*) sec
+13028	operator(==|!=|<|<<|<=|>=|>>|>)\(
+13030	or
+13044	ovs-vswitchd \(Open vSwitch\) (.+)
+13045	p(\d+)$
+13050	p\s*cnf\s*(\d*)\s*(\d*)
+13056	pages_to_scan:(\d+)
+13062	part_end
+13063	part_num
+13064	part_size
+13065	part_start
+13076	pid
+13078	pip \d(\.[\d])+(\.?(rc|dev|pre|post)\d+)? from (.*) \(python \d(.[\d])+\)$
+13079	pip(\d(\.\d)?)?$
+13092	pre$
+13098	processor
+13100	processor\s*:
+13102	processor\s+:\s*(\d+)\n
+13110	project-root.jam
+13112	project.pbxproj$
+13113	projects/([^/]+)/?$
+13118	publish.*
+13127	p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|ins|del|hr|hr/|style|li|dt|dd|thead|tbody|tr|th|td
+13138	r
+13148	raise\s+\w+\s*,\s*\w+\s*,\s*\w+
+13150	range\([ ]*([-]?\d+|n).*\)
+13156	rc_view
+13161	refs/(heads|remotes)/
+13162	refundInfoList.refundInfo\((\d+)\).(.*)
+13164	register_module
+13166	rel=[\\'"](\w+)[\\'"]
+13178	repeat\d+
+13180	repo\=[\:\w\d\/]*
+13181	repo\=cdrom[\:\w\d\/]*
+13185	requestContext, 
+13186	request\.module
+13191	reset \w+ speed USB device
+13192	resource out of date
+13195	return code \[([0-9]+)\]
+13196	return.*[ \(]..._FAILURE
+13202	rgb\(\s*(\d+)%\s*,\s*(\d+)%\s*,\s*(\d+)%\s*\)$
+13203	rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$
+13204	rgb\s*\(\s*([0-9,\s]+)\s*\)
+13216	running
+13218	s
+13219	s$
+13221	s3n://.*\.elasticmapreduce/libs/state-pusher/[^/]+/fetch
+13225	scan_sleep_millisecs:(\d+)
+13227	sd\w
+13229	searchplugins\/.+\.xml
+13230	second commit
+13235	self:\s*(.*)\s*
+13243	sessionToken
+13245	set
+13249	set\s+([-a-zA-Z0-9]+)\s+(.+)\s*$
+13253	shell:
+13257	shut off
+13263	skips=(\d+)
+13271	sources.redhat.com
+13278	sqlalchemy/([a-z_]+/){0,2}[a-z_]+\.py
+13279	src (.+)
+13292	start
+13294	static arc arcs_(\d+)_(\d+)\[(\d+)\] = {$
+13295	static dfa dfas\[(\d+)\] = {$
+13296	static label labels\[(\d+)\] = {$
+13297	static state states_(\d+)\[(\d+)\] = {$
+13300	stopped
+13309	successes=(\d+)
+13316	sysvinit
+13318	tag
+13319	tag:.*\[(.*)\]
+13320	tag:blogger.com,1999:user-(\d+)\.blog-(\d+)
+13323	tap
+13332	test2
+13333	test3
+13334	test4
+13338	test_(.+)\.[json|yaml]
+13339	test_file_commit0
+13340	test_file_commit1
+13341	test_file_commit2
+13346	text/html|application/x(ht)?ml
+13347	the LaTeX files are in (.*)\.
+13349	thread_id=(\d+)
+13364	to-.*
+13367	total
+13379	tray.*open
+13389	type=(B|R|)
+13398	u?r?["\\']
+13399	ubuntu
+13403	unconverted data remains: \.([0-9]+)$
+13404	undefined symbol: (.*)\t\((.*)\)
+13405	unexpectedSuccesses=(\d+)
+13408	unknown operand
+13409	unrecognized
+13411	unzip: exiting
+13415	upstart
+13420	url\(([^\)]+)\)
+13425	url\s*\(([^)]+)
+13440	ustar *\x00|[ \x00]*$
+13443	v=(.*)$
+13447	v[0-9]+.*
+13449	val \w+\s*:
+13454	var 
+13461	varchar\((\d+)\)
+13463	vecLib
+13465	vendor_id\s+:\s+(\w+)
+13468	version *= *([\'"][^\'"]*[\'"])
+13478	virtio
+13480	virtual size:\s+(\S+.*)
+13483	vmlinuz-(\d+)\.(\d+)\.(\d+)-(.*)
+13485	vport[0-9]p[0-9]+
+13486	vport_ops
+13488	wait (\d+) seconds
+13496	wg_hcyl_pin_(\d*).*_h(\d*).*
+13509	wrong|error
+13510	wuzzy
+13515	x*
+13516	x+
+13517	x86\s+\[?(\w+)\]?
+13518	x86_64
+13521	xen
+13526	xvd
+13538	zip$
+13539	{
+13547	{(..+)}
+13551	{([^}]*)}
+13552	{([^}]*)}(.*)
+13553	{([^}]+)}
+13561	{[^}]*}
+13571	{\w+}
+13585	{|}
+13587	}
+13588	} (\w+);
+13592	~
+13593	~$|\.bak$|#$|\.cvsignore$

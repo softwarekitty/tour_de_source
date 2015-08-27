@@ -23,8 +23,7 @@ namespace ConsoleApplication1
 
             if(!File.Exists(filteredCorpusPath)){
 
-                //string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exportedCorpusRex.txt";
-                string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\csharp\nRexStringsStudy\rexSample_2.txt";
+                string exportedCorpusPath = @"\\vmware-host\Shared Folders\Documents\SoftwareProjects\tour_de_source\analysis\analysis_output\exportedCorpusRex.txt";
                 if (!File.Exists(exportedCorpusPath))
                 {
                     Console.WriteLine("exiting because the file does not exist: " + exportedCorpusPath);
@@ -65,13 +64,13 @@ namespace ConsoleApplication1
 
             string allRowsBase = output_path+@"allRows\";
             Directory.CreateDirectory(allRowsBase);
-            double minSimilarity = 0.0;
+            double minSimilarity = 0.75;
 
 
             //determine nRows by inspecting the line numbers in filteredCorpus.txt
             int nRows = Util.countFileLines(filteredCorpusPath);
             int nRowsBefore = nRowsExist(allRowsBase, nRows);
-            int nRexStringsToUse = 500;
+            int nRexStringsToUse = 300;
 
             // we have to do batches bc runaway regex matchings never release memory
             int batchSize = 256;

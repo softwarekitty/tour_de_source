@@ -1,0 +1,856 @@
+syn keyword vimCommand contained	 G
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained s{S
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained =]u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  8J@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	
+		
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedo
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained /T
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained _
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained i'6>=#
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained   N,\0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+X
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  F
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained |H!W
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained   
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained lp
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedM
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  n
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  df
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained&p3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  	 foPm
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+  N
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 	Y@-
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  .:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained t@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  \"4\aD!p@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  4\"*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedej
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  8
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained {
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained5\"%n\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	 uX]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedQ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained    _Hb}fNQ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  {
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained     
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  pc%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  l
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained		i\e?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  
+ TV
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedy
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+69^
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained p
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  w:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption containedqc,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained #~\Q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained;n
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	F
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	[B
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained9\aAc
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedA 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedP
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	lU
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 	 '1R
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained D
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained   dP
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	,=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained );
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	 #
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained T
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  	y#xV\0}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained \o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained '.$2fw
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained _
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	  
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedp
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained}k
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 8N7a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+Th
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained,m
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+Iu]+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+X/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained     
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained F
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+jv
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained>9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained   B
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	4pRR
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained j
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained,`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  k|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  \*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained xY2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained Z8T8#l
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained @Y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	eL
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  +u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained     AF'
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	 m	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+ m^,$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained -,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	 m
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 	  	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained   /\0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+F:
+^Sup_:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained [D
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+=|,7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 	 ?Q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedl:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  nI1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained ]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	     j
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained		Jm
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedHbI,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained #
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained   oDY
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained =J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained   s_*{?Eie
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained /1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedF1
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+cT0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained kd8wg
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+ EQBmc
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	i.
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained ]y4?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	 d
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained{
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	  \e=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	,>
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  \eam;\a
+H -
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained   ?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	S
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained Abc
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained   O(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 	
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedb]k2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  (	e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained >*E;s|G}R?O
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	LSR
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained    	=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  T2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained I*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedV
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	bhp\eTq]hP
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	 K5G
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 1v
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained @Ba?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	 f
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	  i
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained    h}S
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained\0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained (81ef
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained    S
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained [%$p
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained !
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained g
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption containedz
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 	 6
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedk
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained T\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained:\eB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained   t
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	5'
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained   	D
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained		 J`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  PJk
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 	 +_HsU\e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	{9`\e\0K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained h+U
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained bn
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  ]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 7O
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	 u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained818}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  &tx
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  A
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  \.Rf-[
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedV\eC)
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained2Vy
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained|VH
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+	|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained ,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedtM
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained\ek>4k
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained &3sN/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained Po
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained b~
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained&
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained lU
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained w
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+f}>
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained k;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  C
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  .
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained _FL
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+di
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+a.w
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained r	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	  -l
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+A
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained   	 -.RZ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained <
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained ^E'
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained FKD
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  ;q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+j
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 0b=0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 	w
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption containedsFR=C
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained )&
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 	:XQZ 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  	P
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained ^P
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  b
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  A
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained -
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	%V'S\0}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  'a[C{y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 		2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained +
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedx
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+ SQ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained W
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	
+ {G
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  5
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained x
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained +VdwJK\0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+p	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+Y^U
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	Rc
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+ 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained .
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained&b
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained		
+|d!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 	%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent containedMf
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained qB~a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained bH
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 	|n'j}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption containedTbkp+i
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	?d)
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+]0A
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedb\"iv}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+ u%(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  I
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained\a^
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained   sT
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	 !
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	C
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained S;JO!ow
+!K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption containeda
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained t
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained m2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained7!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained :	k
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  W,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained S7J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedI
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	 |
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+ ]I
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained		  &De
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 6<
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	 	 \"t
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption containeds`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained\a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+R
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained      i
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained(\J\"F
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	7}U
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained  	 
+ [
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption containedG'\a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	 `in
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained  =
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained J2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained   
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained .6V8
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained ]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained WRdOQ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+B}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+7J$;!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained   d8ZI
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained   
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 	E
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained,u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	C
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	Q3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained %7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained |g<_LL
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained 	\"r
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedmA<r*J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained pc
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained   	w0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained
+ Y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained -?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  
+NM
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand containedSK
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained 2_M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained		`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained a{}c
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained  6
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	   d
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained		
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained 
+
+ 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	
+ ^
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimCommand contained	<W
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimAutoEvent contained	ZZ\a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained c
+2jxj8oSFLPEfrP4q8yVn6h0vf
+syn keyword vimOption contained	1
+2jxj8oSFLPEfrP4q8yVn6h0vf

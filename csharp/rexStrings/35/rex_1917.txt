@@ -1,0 +1,850 @@
+SwapTotal:  	  29103 	kB~
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:901kB'H
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:4 kB*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:	 100465   kBb&
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:7kBS2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:9888kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:	5411	kBe
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:485kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:7 kBC
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:684801
+ kBc
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 880kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 34kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:565kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:6492 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree: 9    kB[g
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive: 9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:828 kB.f
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:64kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:  7kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:79kBI
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser: 94 kB\
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:  6998295  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:88kB*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:88	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty: 34kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:9179kB\0<q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:65kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:  7	 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive: 76984kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:		0kBd
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:1	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:2  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:68kB]ci
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:61kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:	 18    kB#
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:	989 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:  4kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers: 78kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal: 1kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:8kB\
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal: 8 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:0kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:2kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:892kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:9 kBng
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:338817kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal: 8838kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached: 407 kByiJxz
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 7 	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:9	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers: 41
+  kB%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:7 
+kBBk
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 	8839 kBnW	;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:	 9  kB\av
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:9kBy}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:  899kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal: 9  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:
+ 1kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:53	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:87kB}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:92kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:
+ 4     kB.*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached: 98 kB-\ai
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal: 9591kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:2	 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive: 26kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active: 4798	
+ 	  kB,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached: 883kBy\P 
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:198 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:70 kB&9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:7	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 9   	 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 88kBR0n
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:   9	kB\"^
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:6
+kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:6kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:8kB%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 9  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:680kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:  
+6kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:   7kB@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:819 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:3	   kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers: 9	 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:	921  kBW
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:50kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:	 
+9			kBvA
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:95kB#
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal: 		 9	kBh
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:7 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 2kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:86 kBA0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:49kBp
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:6kBHJ~
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 89 kB<
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:94391kB|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:
+ 8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:02kB<(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:898 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:9689kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:	8kB;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:79kBNa
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active: 8 kBT
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:  	 2 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:8kB,gLR4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:4kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:1989  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:94 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:46 	kBE
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:   6kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:558kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive: 	1385	kB\0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:9   kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:9 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:96kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree: 	7kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:811 kB4f
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:05	kB}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:1 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:	0kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:8 kB6\"
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:918kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:   2979kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:8kBU
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:387
+kB>
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:8kB[
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 8kB\a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:  8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:7   kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:11kB)\a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:74kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:  3 
+kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:8 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:318kB?S
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:6kBg
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached: 
+5kBo/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:	 9kBG
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:740814kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:	   8kB=2f68
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:   7kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:9  	kB%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:8
+ 
+ kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:  98kBI
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 8kB%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal: 4kBH
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:884	
+kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached: 64054015  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:8849 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:3kBXo
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:    	66 kB8
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:1kBMK
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:71816	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:2 kB>
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:6kB^
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:3kBx
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:	32kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:987kBR}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:1 kB)
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:		 074kB@.
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:91kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:
+	
+52kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:9
+	 	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:	 138 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:816	kB[=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree: 
+85kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached: 9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:298kB>
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:5469 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:7kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:74kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:45kBI-M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:	83kBg>aI
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree: 9	kBqlHds
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:		78 kBq<]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:959kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:8  kB#
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:
+	 9
+kBm
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:7kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:5 kBqB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:398 kB`.
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive: 81kBB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:883kBj
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:1kBY
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:
+	816kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:85  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active: 9490  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:   0kBb\"O
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:8	kBF|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser: 	32  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:6       kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:0kB,
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:50  	kB{@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:79kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:7875595kBeT
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:919kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:9 kBS
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:  7783kBO
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:67kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active: 8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:8   kB*P
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:6   	kBZ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:   9kBb
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:89kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:92kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:87618kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree: 8 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:264258kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:9kBQZ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:1kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:89 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:4961 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:2
+kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:8716852kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:1365890kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:	9379kBS_:d
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:8 
+kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 	8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:   99 kBJI
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached: 8kBbgY73
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:09	kBB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:48		kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:  6 kBd[W_J
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:
+ 	
+9	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:9  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:  844kBS
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:798kB&Y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:	298	kBXUl
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:
+8559kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:	8 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:5kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:29 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:  2kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:  96	 kB'
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:
+6kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:	519909  	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:	9	kBB&N
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:	 4kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:9kBP
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:87kB\*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:7 	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 19kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 9
+kBp
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:7	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:99kB]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:9kB\anT
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 
+9kB(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:  2 kB?V
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:231  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:298 	kB-!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 40kB9
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive: 8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached: 888kB2Noq
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:2 kBt#|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:1 kBKX
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 	0897kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:	8kB\e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:598kBQ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:627kBy2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:	0kBdP
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:		3 kBq
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:99kBQ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:7kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:14kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:7 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree: 	9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:88 kBx
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:	   	   	   88kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:9 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:	24599kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:82 
+kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:4kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:49kBE\
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:	   8  
+ kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:3 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:2kBJL#
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal: 9     kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 91 kBA
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 	
+ 	 503233kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:	8kB\aM
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:	 		   5 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 91kB=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:  2
+kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:0kB$Q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:9  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 29kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:
+98kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:591 kBVe6
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:2kBZ:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 9kB:D&
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk: 3480kB4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:59kBN
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:8kBP
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal: 5	   	kB$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:097	kB|~|0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:49 kBGcmyF
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:8kB+g|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:3 kB<5
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:  92 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:	4kB
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:7kB&
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:  895kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:991kBD
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:7
+ kBDq
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:4 kBk
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:
+82948kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:6kBcM
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:  882kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:4kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 	298879kB]
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:99889kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:368kB:x6o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser: 8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 
+49 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:8988889kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:38 kBM
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:292 kBa
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:987kB\a7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached: 59898    kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:8kBj
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive:9kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:83589kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:63kBlA
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:6kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:7kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:  9	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:885kBI
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:77kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 3	 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:1	 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:  
+8 kBex~
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal: 5 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:9kBSiVn/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Inactive: 
+9kBcy
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:8 
+ 
+ kB
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:   1kB7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal: 8kB(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:997kB8
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser: 9kBz
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:9kBLU-`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:94kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active: 6 kBIe
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached:29 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty: 888kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:8kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:82kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:9	  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:27  	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:	 	
+	 1   kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:6kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:6kB6
+i
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty: 94kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:4kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:80kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:842kB,@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:958kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 9kB#7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 8kB#S
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:82 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 3898kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree: 6541678960kBX[\0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:66762 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal: 9kB4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active: 	9kBZ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:7982kB|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:89 kBZ(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:	743	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal: 19  kB\03
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:4  kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocUser:991kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:98 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapFree:6kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:
+ 
+ 177kB|w
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Cached:38 kB|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:00 	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocTotal:88kB<
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:   9kB:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Active:899398kB\e`8o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemFree:07 kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+MemTotal:
+93kB7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapCached: 549 kB{'
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:9148kBS
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Dirty:2kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Buffers:32kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+SwapTotal:	519kB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+VmallocChunk:5	kB
+2jxj8oSFLPEfrP4q8yVn6h0vf

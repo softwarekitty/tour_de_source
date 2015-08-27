@@ -1,0 +1,807 @@
+W[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168k10a0/24Wk
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192%168[10)0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168E10r0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+~[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192g16810*0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+M,[0:0] -A sB5l -j ACCEPT -p tcp --dport 80:81 -s 192o168r10R0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+D[0:0] -A \ -j ACCEPT -p tcp --dport 80:81 -s 192S16810s0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A d -j ACCEPT -p tcp --dport 80:81 -s 192(168Y10j0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+?[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168100/24P
+2jxj8oSFLPEfrP4q8yVn6h0vf
+I/[0:0] -A jU{ -j ACCEPT -p tcp --dport 80:81 -s 192F168910)0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+;[0:0] -A W -j ACCEPT -p tcp --dport 80:81 -s 192J168C100/24WK;N
+2jxj8oSFLPEfrP4q8yVn6h0vf
+a[0:0] -A wT -j ACCEPT -p tcp --dport 80:81 -s 192;168)10k0/24}[
+2jxj8oSFLPEfrP4q8yVn6h0vf
+2[0:0] -A q -j ACCEPT -p tcp --dport 80:81 -s 192168810|0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192i168/10G0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+<Xc+[0:0] -A + -j ACCEPT -p tcp --dport 80:81 -s 192(168'100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192:168c10J0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A b -j ACCEPT -p tcp --dport 80:81 -s 192168}10w0/24S$%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+c[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192L168&10D0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+;[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192V168j10z0/24:O
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A -b -j ACCEPT -p tcp --dport 80:81 -s 192?168g10w0/247
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192[168210&0/24H
+2jxj8oSFLPEfrP4q8yVn6h0vf
+i7[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192'16810\0/24A
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192,1688100/24b
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7i'R[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168310`0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+grjK.[0:0] -A ) -j ACCEPT -p tcp --dport 80:81 -s 192k168.10C0/24W
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192<16810e0/242;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7[0:0] -A b -j ACCEPT -p tcp --dport 80:81 -s 1927168|10I0/24t
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\af7[0:0] -A bo[1 -j ACCEPT -p tcp --dport 80:81 -s 192G168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A MxN -j ACCEPT -p tcp --dport 80:81 -s 192v168L10d0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+I[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192y168z10 0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+2[0:0] -A 8x -j ACCEPT -p tcp --dport 80:81 -s 192c168`100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810J0/249
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A 8[ -j ACCEPT -p tcp --dport 80:81 -s 192d16810k0/24\!g
+2jxj8oSFLPEfrP4q8yVn6h0vf
+
+[0:0] -A J -j ACCEPT -p tcp --dport 80:81 -s 192168`10{0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192_16810`0/24i=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168/10P0/24/n
+2jxj8oSFLPEfrP4q8yVn6h0vf
+*[0:0] -A $ -j ACCEPT -p tcp --dport 80:81 -s 192n1681090/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1921168A100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+v7[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192K168|1030/24T
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168$10i0/24~4
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A u -j ACCEPT -p tcp --dport 80:81 -s 192s16810!0/24^ E7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+w[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192L168x10@0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192y168x10\0/24xn
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A y<Y -j ACCEPT -p tcp --dport 80:81 -s 192b168!1060/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+A\a&[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192b168100/24?O
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A `RW_ -j ACCEPT -p tcp --dport 80:81 -s 192:168Z10+0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192)168P10-0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+,B[0:0] -A c] -j ACCEPT -p tcp --dport 80:81 -s 192168Q100/24t\a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A \a@1 -j ACCEPT -p tcp --dport 80:81 -s 192	168d10x0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168?10y0/24L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+.[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192/168q10W0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+b*}[0:0] -A t -j ACCEPT -p tcp --dport 80:81 -s 192)168610d0/24]/C K	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+swk&[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192<168{100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A sZ -j ACCEPT -p tcp --dport 80:81 -s 192m168K100/24cw
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Z[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192a168u10	0/24St
+2jxj8oSFLPEfrP4q8yVn6h0vf
+z[0:0] -A n -j ACCEPT -p tcp --dport 80:81 -s 192168?100/24QB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A t -j ACCEPT -p tcp --dport 80:81 -s 192[168;10P0/248w
+2jxj8oSFLPEfrP4q8yVn6h0vf
+cR[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168k100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168100/24fU4X
+2jxj8oSFLPEfrP4q8yVn6h0vf
+BA[0:0] -A h$ -j ACCEPT -p tcp --dport 80:81 -s 192k16810S0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192y168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168$1040/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1921168\10E0/2470
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Nj[0:0] -A B -j ACCEPT -p tcp --dport 80:81 -s 192P168Q10-0/24R:|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168e10k0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+2\e\a[0:0] -A k -j ACCEPT -p tcp --dport 80:81 -s 192L168_10`0/24fJ
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A >#q -j ACCEPT -p tcp --dport 80:81 -s 1927168S10A0/24IC&
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A j -j ACCEPT -p tcp --dport 80:81 -s 192d168W100/24E.
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192o168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A \"\e[ -j ACCEPT -p tcp --dport 80:81 -s 192168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192D168`10x0/24kq&=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168W10P0/24_
+2jxj8oSFLPEfrP4q8yVn6h0vf
+][0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192z168C10^0/24K]_^f
+2jxj8oSFLPEfrP4q8yVn6h0vf
+]|czS[0:0] -A \/j -j ACCEPT -p tcp --dport 80:81 -s 192k168:1090/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192m168y100/24p
+2jxj8oSFLPEfrP4q8yVn6h0vf
+([0:0] -A #P -j ACCEPT -p tcp --dport 80:81 -s 192`168D10=0/241
+2jxj8oSFLPEfrP4q8yVn6h0vf
+3X[0:0] -A % -j ACCEPT -p tcp --dport 80:81 -s 192168#10U0/24h
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\c[0:0] -A m -j ACCEPT -p tcp --dport 80:81 -s 192;16810'0/241\
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192=168>10w0/24(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+}[0:0] -A (, -j ACCEPT -p tcp --dport 80:81 -s 192S16810)0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+?2[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168q10S0/24f
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192)168w10!0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+w[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192Z168	10G0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+|[0:0] -A ] -j ACCEPT -p tcp --dport 80:81 -s 192#168a10T0/24k
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192'168>1090/24\0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A ] -j ACCEPT -p tcp --dport 80:81 -s 192o168p10_0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+~[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192]168f10\0/24Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0c[0:0] -A b -j ACCEPT -p tcp --dport 80:81 -s 192+168#10&0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A WU_ -j ACCEPT -p tcp --dport 80:81 -s 1925168{10^0/24N[
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Sj![0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192`16810c0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A - -j ACCEPT -p tcp --dport 80:81 -s 1925168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A 2 -j ACCEPT -p tcp --dport 80:81 -s 192W168^10I0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+M[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168K1060/24{fx`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192d168100/24H
+2jxj8oSFLPEfrP4q8yVn6h0vf
+H[0:0] -A \eI -j ACCEPT -p tcp --dport 80:81 -s 192l168;10i0/24y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+=k[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810*0/24R
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	:/[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192z168m100/24k3
+2jxj8oSFLPEfrP4q8yVn6h0vf
+.\"[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192k168p10w0/24`m
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192>1681030/247o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192D168|10L0/24M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+l[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192u168	10U0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1927168K10)0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0\06[0:0] -A *m -j ACCEPT -p tcp --dport 80:81 -s 192^16810-0/24@L
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192{168810I0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192}168)10)0/24s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168F100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+g[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192,168_10M0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168o10C0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Az[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192S16810i0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168=100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192%168@10`0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A Z -j ACCEPT -p tcp --dport 80:81 -s 192s168H10\0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168K10/0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+q'[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192z168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A 35e -j ACCEPT -p tcp --dport 80:81 -s 19216810G0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192T168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168;10a0/248H|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192r168m10_0/24y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A b -j ACCEPT -p tcp --dport 80:81 -s 192[16810i0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+R(K[0:0] -A _ -j ACCEPT -p tcp --dport 80:81 -s 192]168210Z0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192Q168?10m0/24TPi&}\0N
+2jxj8oSFLPEfrP4q8yVn6h0vf
+h[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192_168	10`0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192c168q10	0/24geH
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192,168i10B0/24&
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168v10*0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192A168s10|0/24\"dH
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A @h -j ACCEPT -p tcp --dport 80:81 -s 192Y168610D0/24s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A \aQ -j ACCEPT -p tcp --dport 80:81 -s 1925168f10e0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A )y -j ACCEPT -p tcp --dport 80:81 -s 192H168>100/24+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+6h#[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168>10V0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Z[0:0] -A ` -j ACCEPT -p tcp --dport 80:81 -s 192n168%10W0/24=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A } -j ACCEPT -p tcp --dport 80:81 -s 192k1681030/24o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192E168010w0/24V
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A < -j ACCEPT -p tcp --dport 80:81 -s 192G168710e0/24T(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A b -j ACCEPT -p tcp --dport 80:81 -s 192|168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A S\e -j ACCEPT -p tcp --dport 80:81 -s 192P168_10G0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+D[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192r168Q10!0/24X
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1922168310,0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+}[0:0] -A } -j ACCEPT -p tcp --dport 80:81 -s 19216810D0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+s[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192-16810q0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192J168/10[0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192Q168;10H0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+{V[0:0] -A < -j ACCEPT -p tcp --dport 80:81 -s 192P16810w0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192)168x100/24:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+U[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192a168_10x0/24o*O
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168|100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A U7 -j ACCEPT -p tcp --dport 80:81 -s 192168/10O0/24 %K
+2jxj8oSFLPEfrP4q8yVn6h0vf
+E8[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192r168R10)0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+R\e1[0:0] -A Tu -j ACCEPT -p tcp --dport 80:81 -s 192168~10A0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192~168\100/24M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+~![0:0] -A ! -j ACCEPT -p tcp --dport 80:81 -s 192C168h10r0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+v[0:0] -A Ek -j ACCEPT -p tcp --dport 80:81 -s 192`168^10N0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A HY1 -j ACCEPT -p tcp --dport 80:81 -s 1922168+10%0/24r
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A w -j ACCEPT -p tcp --dport 80:81 -s 192W168.10S0/24/
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#kz\"[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192w168+1050/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168410>0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192t168j10H0/249j
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192y168^100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+'W[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192y1681100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A i -j ACCEPT -p tcp --dport 80:81 -s 192168N10Y0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192J168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+a|r[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192C168100/24Z
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A n\0 -j ACCEPT -p tcp --dport 80:81 -s 1929168K10p0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+G[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192	168e10Q0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192Z168Z10V0/24\0`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+{d[0:0] -A RN		 -j ACCEPT -p tcp --dport 80:81 -s 1921681030/24YT5
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192d168,10 0/2449*
+2jxj8oSFLPEfrP4q8yVn6h0vf
+8[0:0] -A IK -j ACCEPT -p tcp --dport 80:81 -s 192168i10P0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^B1e[0:0] -A M -j ACCEPT -p tcp --dport 80:81 -s 192J168u10s0/24$
+2jxj8oSFLPEfrP4q8yVn6h0vf
+y[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168j10q0/246
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192v168Q100/24^E
+2jxj8oSFLPEfrP4q8yVn6h0vf
+E[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192h168<10o0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+6p[0:0] -A 0 -j ACCEPT -p tcp --dport 80:81 -s 192f168u10Y0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+0#[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168010h0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+D[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192l168o100/24d
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A y -j ACCEPT -p tcp --dport 80:81 -s 192_16810i0/24p
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192P168H10O0/24	
+2jxj8oSFLPEfrP4q8yVn6h0vf
+('[0:0] -A l -j ACCEPT -p tcp --dport 80:81 -s 192i168_10N0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192!16810#0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+d[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168.10Q0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A \ -j ACCEPT -p tcp --dport 80:81 -s 192i168610Z0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+W[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168{100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+.[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192<168o10L0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192U168Y100/24Oz9?
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192|168D100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+G[0:0] -A % -j ACCEPT -p tcp --dport 80:81 -s 192168i10s0/24N
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\e[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192k16810U0/24=
+2jxj8oSFLPEfrP4q8yVn6h0vf
+;[0:0] -A V -j ACCEPT -p tcp --dport 80:81 -s 1928168F10X0/24\0<
+2jxj8oSFLPEfrP4q8yVn6h0vf
+`FLK[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1921683100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192w168u100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+/[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192M168h10+0/24[
+2jxj8oSFLPEfrP4q8yVn6h0vf
+B[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1923168G1080/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168A10&0/246
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168p100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+>[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192H168U10s0/24H;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192K16810u0/24C
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A / -j ACCEPT -p tcp --dport 80:81 -s 192(16831060/24X
+2jxj8oSFLPEfrP4q8yVn6h0vf
++5[0:0] -A t -j ACCEPT -p tcp --dport 80:81 -s 192V168O100/24o
+2jxj8oSFLPEfrP4q8yVn6h0vf
+z[0:0] -A 9 -j ACCEPT -p tcp --dport 80:81 -s 192D168910u0/24u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+u[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192\168I10^0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192U168Y10#0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+,,[0:0] -A ) -j ACCEPT -p tcp --dport 80:81 -s 192w168S10.0/24t
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192o168>100/240ml
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192g168>100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A M& p -j ACCEPT -p tcp --dport 80:81 -s 192J168G10x0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A X0o -j ACCEPT -p tcp --dport 80:81 -s 192168q100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192V168e10)0/24 
+2jxj8oSFLPEfrP4q8yVn6h0vf
++[0:0] -A SJ -j ACCEPT -p tcp --dport 80:81 -s 192C168T10G0/24 r-Y\
+2jxj8oSFLPEfrP4q8yVn6h0vf
+R[0:0] -A F -j ACCEPT -p tcp --dport 80:81 -s 192x168v10^0/24!
+2jxj8oSFLPEfrP4q8yVn6h0vf
+4=[0:0] -A u -j ACCEPT -p tcp --dport 80:81 -s 192168E100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A qNL -j ACCEPT -p tcp --dport 80:81 -s 192\168d10y0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+l[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192X168i10d0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192L16810%0/248
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1924168U10_0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  ^+ -j ACCEPT -p tcp --dport 80:81 -s 192:168q10x0/24uq7
+2jxj8oSFLPEfrP4q8yVn6h0vf
+u$5[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192=168y100/24&#
+2jxj8oSFLPEfrP4q8yVn6h0vf
+:yM[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168J10W0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192 168100/24p.
+2jxj8oSFLPEfrP4q8yVn6h0vf
+%[0:0] -A Lu~ -j ACCEPT -p tcp --dport 80:81 -s 192X168-10=0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+/[0:0] -A }0 -j ACCEPT -p tcp --dport 80:81 -s 192168~10g0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+	`[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810m0/24M@
+2jxj8oSFLPEfrP4q8yVn6h0vf
+s[0:0] -A l -j ACCEPT -p tcp --dport 80:81 -s 192X16810M0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+i[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192O168Q10O0/24P
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192S168 100/24[2
+2jxj8oSFLPEfrP4q8yVn6h0vf
+K+{*4as$[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168=10/0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192+168Y10 0/24m
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168^10E0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+}e5[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192k168L10]0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1927168K10K0/24:
+2jxj8oSFLPEfrP4q8yVn6h0vf
+y8;[0:0] -A \"fN -j ACCEPT -p tcp --dport 80:81 -s 192S16810'0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+}[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192P168t10F0/24\
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A U -j ACCEPT -p tcp --dport 80:81 -s 19216810{0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+z[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192w168910i0/24Y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+'.I[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192616810M0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Ql[0:0] -A   -j ACCEPT -p tcp --dport 80:81 -s 192{168g10f0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192$16810	0/24z;Rb
+2jxj8oSFLPEfrP4q8yVn6h0vf
+c[0:0] -A \ -j ACCEPT -p tcp --dport 80:81 -s 192e168y10^0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A - -j ACCEPT -p tcp --dport 80:81 -s 192168E10U0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192I168-10i0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A d= -j ACCEPT -p tcp --dport 80:81 -s 192n168110.0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+o\0~Da[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192Z168I100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A $ -j ACCEPT -p tcp --dport 80:81 -s 192j168$10#0/24Y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A [fZ -j ACCEPT -p tcp --dport 80:81 -s 192F168G10}0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A < -j ACCEPT -p tcp --dport 80:81 -s 192016810	0/243&
+2jxj8oSFLPEfrP4q8yVn6h0vf
+;#PQ[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192!168R100/24N
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810 0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\aQ[@[0:0] -A ' -j ACCEPT -p tcp --dport 80:81 -s 192168k10f0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+C9{4$[0:0] -A k -j ACCEPT -p tcp --dport 80:81 -s 1926168V10n0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192-168100/247
+2jxj8oSFLPEfrP4q8yVn6h0vf
+'[0:0] -A \a -j ACCEPT -p tcp --dport 80:81 -s 1927168n10_0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168c100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+6~[0:0] -A k -j ACCEPT -p tcp --dport 80:81 -s 192`16810I0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192]168,10]0/24<sA+<
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192B16810$0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+T[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192K168/10t0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+I~\e[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810y0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A eI%F -j ACCEPT -p tcp --dport 80:81 -s 192S168h10$0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A Ca -j ACCEPT -p tcp --dport 80:81 -s 192168010D0/241
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0X[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192^168a10P0/24Y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+R[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192}168G1070/24e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A M -j ACCEPT -p tcp --dport 80:81 -s 19216810J0/24N
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A 	?6 -j ACCEPT -p tcp --dport 80:81 -s 192n168=100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+.[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192A16810(0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A j# -j ACCEPT -p tcp --dport 80:81 -s 1929168'10E0/24[
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A / -j ACCEPT -p tcp --dport 80:81 -s 192D16810X0/24
+Y{
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192n168@1000/24\"iB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^\[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192F168Z10_0/24Q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A h -j ACCEPT -p tcp --dport 80:81 -s 192h168t10A0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A ' -j ACCEPT -p tcp --dport 80:81 -s 192j16810[0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7C[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192(168210X0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A k -j ACCEPT -p tcp --dport 80:81 -s 192H168 100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+3@[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192!168V100/24~y
+2jxj8oSFLPEfrP4q8yVn6h0vf
+n[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1927168}1040/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A N -j ACCEPT -p tcp --dport 80:81 -s 19216810M0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192}168 10G0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A h -j ACCEPT -p tcp --dport 80:81 -s 192K168>10h0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192~168R100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+@MRg [0:0] -A \" -j ACCEPT -p tcp --dport 80:81 -s 192D168I10t0/24w>`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A 25x]\0; -j ACCEPT -p tcp --dport 80:81 -s 192N168L1040/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A N -j ACCEPT -p tcp --dport 80:81 -s 192:168m10&0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+
+[0:0] -A $t -j ACCEPT -p tcp --dport 80:81 -s 192Y168]100/24iM
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168u10T0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+y6[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192G168~10t0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+b[0:0] -A h -j ACCEPT -p tcp --dport 80:81 -s 192h168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+g[0:0] -A , -j ACCEPT -p tcp --dport 80:81 -s 192L168|10W0/24i
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192K168D100/24Gw\d
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192D168Z10<0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192\1681000/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+{[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192	16810C0/24FNSk
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192.168P100/24Xk-m|
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192*168<100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+u[0:0] -A - -j ACCEPT -p tcp --dport 80:81 -s 192m1681030/24u +5
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192#16810D0/240
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168R100/24C
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192g16810w0/24(
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192s168j100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\[0:0] -A ~ -j ACCEPT -p tcp --dport 80:81 -s 19216810f0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+4[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192K1681010/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+a[0:0] -A | -j ACCEPT -p tcp --dport 80:81 -s 192`16810i0/243
+2jxj8oSFLPEfrP4q8yVn6h0vf
+qU[0:0] -A a -j ACCEPT -p tcp --dport 80:81 -s 192K168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#[0:0] -A { -j ACCEPT -p tcp --dport 80:81 -s 192D168W10}0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192o168{100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A \e -j ACCEPT -p tcp --dport 80:81 -s 192x1681020/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^[0:0] -A \ae -j ACCEPT -p tcp --dport 80:81 -s 192168;1070/24;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+N[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810[0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192D168<100/24WF
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A }N -j ACCEPT -p tcp --dport 80:81 -s 192V168Q10}0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A ~ -j ACCEPT -p tcp --dport 80:81 -s 192168C10i0/241
+2jxj8oSFLPEfrP4q8yVn6h0vf
+p~a[0:0] -A v:j -j ACCEPT -p tcp --dport 80:81 -s 192$168g10U0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+r[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168O10]0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A R -j ACCEPT -p tcp --dport 80:81 -s 192168X100/24gP	pu
+2jxj8oSFLPEfrP4q8yVn6h0vf
+q[0:0] -A v$ -j ACCEPT -p tcp --dport 80:81 -s 192C168!100/24gGB
+2jxj8oSFLPEfrP4q8yVn6h0vf
+c[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168K10K0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Y#B76f4z[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192]168X1040/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216831040/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+<GX-[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192f168:10%0/24Ix,M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+'[0:0] -A V -j ACCEPT -p tcp --dport 80:81 -s 1922168 10[0/24^
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A e -j ACCEPT -p tcp --dport 80:81 -s 192q168G10e0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A f -j ACCEPT -p tcp --dport 80:81 -s 192168W10 0/24?t
+2jxj8oSFLPEfrP4q8yVn6h0vf
+6/[0:0] -A k^ -j ACCEPT -p tcp --dport 80:81 -s 19216810$0/24u
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A A -j ACCEPT -p tcp --dport 80:81 -s 1925168,10C0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168r10;0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810w0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#[0:0] -A )u -j ACCEPT -p tcp --dport 80:81 -s 192168g10r0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192Q16810A0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A r -j ACCEPT -p tcp --dport 80:81 -s 192v16810H0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+^[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192!1684100/24_B
+2jxj8oSFLPEfrP4q8yVn6h0vf
+t][0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192c168510@0/24;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A k -j ACCEPT -p tcp --dport 80:81 -s 192v168d10Z0/24if
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A y -j ACCEPT -p tcp --dport 80:81 -s 192168:10|0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+M9[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192Y168n100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+7[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810X0/24=lN
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168#1000/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A 0 -j ACCEPT -p tcp --dport 80:81 -s 192716810-0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168810k0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A h -j ACCEPT -p tcp --dport 80:81 -s 192W16810/0/24f'z}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810j0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+M[0:0] -A ;k -j ACCEPT -p tcp --dport 80:81 -s 192k16861030/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+o[0:0] -A 1! -j ACCEPT -p tcp --dport 80:81 -s 192c168q10b0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192.168#10;0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+%5[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168o10<0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+@[0:0] -A ~+* -j ACCEPT -p tcp --dport 80:81 -s 192t168|100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192g168310b0/24M)
+2jxj8oSFLPEfrP4q8yVn6h0vf
+<[0:0] -A e' -j ACCEPT -p tcp --dport 80:81 -s 192*168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A ,d -j ACCEPT -p tcp --dport 80:81 -s 192`16810J0/24}
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192'168=10Z0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+JY`[0:0] -A $Ca -j ACCEPT -p tcp --dport 80:81 -s 192z168(10u0/24Fe
+2jxj8oSFLPEfrP4q8yVn6h0vf
+([0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192e168d100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+y[0:0] -A < -j ACCEPT -p tcp --dport 80:81 -s 192168)10T0/241
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A { -j ACCEPT -p tcp --dport 80:81 -s 192?168C10L0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+
+[0:0] -A \0 -j ACCEPT -p tcp --dport 80:81 -s 19216810;0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+gg[0:0] -A e -j ACCEPT -p tcp --dport 80:81 -s 192168#100/24cK
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192	1688100/24a
+2jxj8oSFLPEfrP4q8yVn6h0vf
+([0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 1923168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+K7 S[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192W16810 0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A { -j ACCEPT -p tcp --dport 80:81 -s 1923168!10<0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+uq[0:0] -A z -j ACCEPT -p tcp --dport 80:81 -s 192x168U10E0/24
+
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A G -j ACCEPT -p tcp --dport 80:81 -s 192168X10M0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A tC -j ACCEPT -p tcp --dport 80:81 -s 192168v100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A u -j ACCEPT -p tcp --dport 80:81 -s 192168510_0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192Y168F1020/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A t -j ACCEPT -p tcp --dport 80:81 -s 192;168C10I0/24T%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192616810d0/24D
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0[0:0] -A iH0 -j ACCEPT -p tcp --dport 80:81 -s 192!168/10S0/24ked
+2jxj8oSFLPEfrP4q8yVn6h0vf
+gjs 
+;/[0:0] -A V= -j ACCEPT -p tcp --dport 80:81 -s 192168100/24M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192x168D10f0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168P10G0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A SvVFi -j ACCEPT -p tcp --dport 80:81 -s 192168p1050/24M
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#[0:0] -A T -j ACCEPT -p tcp --dport 80:81 -s 192E168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+_j[0:0] -A m -j ACCEPT -p tcp --dport 80:81 -s 192168-10v0/24n<
+2jxj8oSFLPEfrP4q8yVn6h0vf
+i[0:0] -A 3 -j ACCEPT -p tcp --dport 80:81 -s 192m16810O0/24DE
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192:168y10s0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+<[0:0] -A i -j ACCEPT -p tcp --dport 80:81 -s 192016810|0/24%
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192&168|1040/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192E168l10.0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+1\[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192i16810:0/24eO0`z h~
+2jxj8oSFLPEfrP4q8yVn6h0vf
+o[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192?16810q0/24CIN
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168H10n0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A I -j ACCEPT -p tcp --dport 80:81 -s 1928168310	0/249
+2jxj8oSFLPEfrP4q8yVn6h0vf
+u[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192w168B10'0/24`
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\a*[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192#168h10[0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\0$[0:0] -A d -j ACCEPT -p tcp --dport 80:81 -s 192168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A \0 -j ACCEPT -p tcp --dport 80:81 -s 192'168d10;0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192%168^1060/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A hv -j ACCEPT -p tcp --dport 80:81 -s 192O168|10Q0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168<10S0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+N,[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192E16810Z0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[X[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168-1050/24P_
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192>168@10i0/24;
+2jxj8oSFLPEfrP4q8yVn6h0vf
+Q[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\aG\[0:0] -A ~ -j ACCEPT -p tcp --dport 80:81 -s 192h16810~0/24b
+2jxj8oSFLPEfrP4q8yVn6h0vf
+c[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192o16810H0/24M0
+2jxj8oSFLPEfrP4q8yVn6h0vf
+xm9[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192y168F100/24=s
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A Yy -j ACCEPT -p tcp --dport 80:81 -s 192+168G10~0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+S[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192Y168+10a0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192 168100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+b[0:0] -A `& -j ACCEPT -p tcp --dport 80:81 -s 192516810}0/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+#j[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192S1689100/24
+2jxj8oSFLPEfrP4q8yVn6h0vf
+\w+s[0:0] -A # -j ACCEPT -p tcp --dport 80:81 -s 192I168=10y0/24]q
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 192168/10=0/243`e
+2jxj8oSFLPEfrP4q8yVn6h0vf
+[0:0] -A  -j ACCEPT -p tcp --dport 80:81 -s 19216810'0/24c\e	
+2jxj8oSFLPEfrP4q8yVn6h0vf
