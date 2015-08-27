@@ -48,6 +48,10 @@ Similarly, there are several principals that can be followed to enhance the perf
 \subsubsection{Developer Awareness of Best Practices}
 One category of 5 clusters in the top 100 contained regex patterns to parse the contents of angle brackets.  Because the contents of angle brackets are usually unconstrained, regex are a poor replacement for XML or HTML parsers.  Using regex instead of a parser can lead to many programming disasters, as thoroughly discussed on the StackOverflow page dedicated to this topic\footnote{\url{http://stackoverflow.com/questions/1732348}}.  More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
 
+\subsubsection{Library Support for Developers}
+Within standard programming languages, regular expressions libraries are very common, yet there are  differences between languages in the features that they support. For example, Java supports possessive quantifiers like \verb! `ab*+c'! (here the `+' is modifying the `*' to make it possessive) whereas Python does not. Such differences among programming language implementations was identified as a pain point for using regular expressions by 17\% of the survey participants. \todoMid{"so what?"} 
+
+
 \subsubsection{Automated Regex Repair}
 Given a suite of tests and a high suspiciousness score for lines of code containing regex, an automated system could searh for similar regexes to try in place of the faulty one.  The same clustering technique that we used to study regex behavior could be used to index groups of similar regexes, speeding up the process of searching for a replacement.
 \todoMid{Katie do this}
