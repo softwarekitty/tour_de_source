@@ -8,16 +8,16 @@ The results in this work have several implications for tool designers who want t
 
 \subsubsection{Capturing Specific Content}
 The survey results from Section~\ref{rq1:survey} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.
-The capture group (CG) feature is the most frequently used feature in terms of patterns (Table~\ref{table:featureStats}).  As mentioned in Section~\ref{rq4:results}, capturing content was a primary goal evident in several categories of cluster.  The CG feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  Thus, we observe that the ability to capture some part of a match provides a powerful tool to programmers.
+The capture group (CG) feature is the most frequently used feature in terms of patterns (Table~\ref{table:featureStats}).  The CG feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  As mentioned in Section~\ref{rq4:results}, capturing content was a primary goal evident in several categories of cluster, in particular, the fourth-largest cluster will capture the content between brackets or parentheses (Section~\ref{cluster:contentparens}).  Thus, we observe that the ability to capture some part of a match provides a powerful tool to programmers.
 
 Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
 
 \subsubsection{Counting Lines and Finding Flags}
 Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of the 13,912 patterns in the corpus, 3,444 (24\%) contained ANY followed by KLE  (i.e., \verb!`.*'!), often at the end of the pattern.
-One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of ``Counting lines that match a pattern" and ``Counting substrings that match a pattern" at 3.2 or Rarely/Occasionally.
+One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of ``Counting lines that match a pattern" and ``Counting substrings that match a pattern" at 3.2 or rarely/occasionally.
 
-Delimiters that separate items on one line like \verb!'\t'! are also quite common.  Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found that 18 of the top 100 clusters revolved around the presence of a single character.
-The top ranked activity for developers is ``Locating content within a file or files," and usually this content is located using some small set of characters that the user knows will flag that content.  Looking closely at that category of cluster, some of the characters being searched for were \verb!\n!, \verb!-! and \verb!.! - all common delimiters in different scenarios. This emphasizes the need for regex tools to  facilitate easy file parsing.
+Delimiters that separate items on one line like \verb!`\t'! are also quite common.  Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found that 17 of the top 100 clusters revolved around the presence of a single character (Section~\ref{cluster:single}).
+The top ranked activity for developers is ``Locating content within a file or files," and usually this content is located using some small set of characters that the user knows will flag that content.  Looking closely at the \emph{Specific Character Must Match} cluster, some of the characters being searched for were \verb!\n!, \verb!-! and \verb!.!, which are all common delimiters in different scenarios. This emphasizes the need for regex tools to  facilitate easy file parsing.
 
 
 
@@ -43,18 +43,18 @@ Another avenue of refactoring could be for performance. Various implementations 
 
 
 \subsubsection{Developer Awareness of Best Practices}
-One category of 10 clusters in the top 100 contained regex patterns to parse the contents of angle brackets.  As the contents of angle brackets are usually unconstrained, regexes are a poor replacement for XML or HTML parsers.  More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
+One category of 10 clusters in the top 100 contained regex patterns, \emph{Content of Brackets and Parenthesis}, parses the contents of angle brackets.  As the contents of angle brackets are usually unconstrained, regexes are a poor replacement for XML or HTML parsers.  More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
 %http://english.stackexchange.com/questions/50851/the-contents-are-or-the-contents-is
 
 \subsubsection{Library Support for Developers}
-Within standard programming languages, regular expressions libraries are very common, yet there are  differences between languages in the features that they support. For example, Java supports possessive quantifiers like \verb! `ab*+c'! (here the `+' is modifying the `*' to make it possessive) whereas Python does not. Such differences among programming language implementations was identified as a pain point for using regular expressions by 17\% of the survey participants. This provides an opportunity for future work that makes such differences between languages explicit or for new libraries that translate between regex utilizations in various languages when porting projects.
+Within standard programming languages, regular expressions libraries are very common, yet there are  differences between languages in the features that they support. For example, Java supports possessive quantifiers like \verb! `ab*+c'! (here the `+' is modifying the `*' to make it possessive) whereas Python does not. Differences among programming language implementations was identified as a pain point for using regular expressions by 17\% of the survey participants. This provides an opportunity for future work that makes such differences between languages explicit or for new libraries that translate between regex utilizations in various languages. 
 
 %\subsubsection{Support for Regexes Composition}
 %According to our survey, over 60\% of developers find regexes to be difficult to compose. Additionally, developers frequently or very frequently write tests for their regexes. This provides an opportunity to instead
 
 \subsubsection{Automated Regex Repair}
 Regular expression errors are common and have produced thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques to fix.
-Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes can lead to big changes in semantics, so we hypothesize that using the semantic clusters identified in Section~\ref{rq4:results} to identify potential repair candidates would efficiently and effectively converge on a repair candidate.
+Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes can lead to big changes in semantics, so we hypothesize that using the semantic clusters identified in Section~\ref{rq4:results} to identify potential repair candidates could efficiently and effectively converge on a repair candidate.
 
 
 
