@@ -9,13 +9,13 @@
 \toprule
 index & pattern & nProjects & index & pattern & nProjects \\
 \midrule
-1 & \begin{minipage}{0.3in}\begin{verbatim}`\(.*\)'\end{verbatim}\end{minipage} & 54  & 5 & \begin{minipage}{0.5in}\begin{verbatim}`(.*)\((.*)\)'\end{verbatim}\end{minipage} & 3 \\
+1 & \begin{minipage}{0.3in}\begin{verbatim}`:+'\end{verbatim}\end{minipage} & 8 & 5 & \begin{minipage}{0.5in}\begin{verbatim}`[:]'\end{verbatim}\end{minipage} & 6 \\
 \midrule
-2 & \begin{minipage}{0.3in}\begin{verbatim}`\((.*)\)'\end{verbatim}\end{minipage} & 30 & 6 & \begin{minipage}{0.6in}\begin{verbatim}`.*\((.*)\).*'\end{verbatim}\end{minipage} & 2 \\
+2 & \begin{minipage}{0.3in}\begin{verbatim}`(:)'\end{verbatim}\end{minipage} & 8 & 6 & \begin{minipage}{0.6in}\begin{verbatim}`([^:]+):(.*)'\end{verbatim}\end{minipage} & 6 \\
 \midrule
-3 & \begin{minipage}{0.3in}\begin{verbatim}`\([^)]*\)'\end{verbatim}\end{minipage} & 16 & 7 & \begin{minipage}{0.5in}\begin{verbatim}`(.*)\(.*\)'\end{verbatim}\end{minipage} & 1 \\
+3 & \begin{minipage}{0.3in}\begin{verbatim}`(:+)'\end{verbatim}\end{minipage} & 8 & 7 & \begin{minipage}{0.5in}\begin{verbatim}`\s*:\s*'\end{verbatim}\end{minipage} & 4 \\
 \midrule
-4 & \begin{minipage}{0.3in}\begin{verbatim}`\([^()]*\)'\end{verbatim}\end{minipage} & 0 &&&\\
+4 & \begin{minipage}{0.3in}\begin{verbatim}`(:)(:*)'\end{verbatim}\end{minipage} & 8 & 8 & \begin{minipage}{0.5in}\begin{verbatim}`\:'\end{verbatim}\end{minipage} & 2 \\
 
 \bottomrule
 \end{tabular}

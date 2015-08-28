@@ -4,22 +4,20 @@
 In this section, we discuss the implications of these empirical findings on tool designers and users of regex tools and opportunities for future work.
 
 \subsection{Implications For Tool Designers}
-The results in this work have several implications for tool designers who want to effectively support developers who use regular expressions. 
+The results in this work have several implications for tool designers who want to effectively support developers who use regular expressions.
 
 \subsubsection{Capturing Specific Content}
-The survey results from Section~\ref{rq1:survey} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.  
-The capture group (CG) feature is the most frequently used feature in terms of patterns (Table~\ref{table:featureStats}).  
-As mentioned in Section~\ref{rq4:results}, capturing values assigned to variables when parsing source code was one of the main categories of clusters observed.  \todoMid{update?}
-Thus, we observe that the ability to capture some part of a match provides a powerful tool to programmers.  
-The CG feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  
+The survey results from Section~\ref{rq1:survey} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.
+The capture group (CG) feature is the most frequently used feature in terms of patterns (Table~\ref{table:featureStats}).  As mentioned in Section~\ref{rq4:results}, capturing content was a primary goal evident in several categories of cluster.  The CG feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  Thus, we observe that the ability to capture some part of a match provides a powerful tool to programmers.
+
 Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
 
 \subsubsection{File Parsing}
 Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of the 13,912 patterns in the corpus, 3,444 (24\%) contained ANY followed by KLE  (i.e., \verb!`.*'!), often at the end of the pattern.
 One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of ``Counting lines that match a pattern" and ``Counting substrings that match a pattern" at 3.2 or Rarely/Occasionally.
 
-Delimiters that separate items on one line like \verb!','! are also quite common.  Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found 19 clusters whose essential behavior was to search for one or two characters.  \todoMid{update!} 
-Yet, the top ranked activity for developers is ``Locating content within a file or files," and usually this content is located using some small set of characters that the user knows will flag that content.  Looking closely at that category of cluster, some of the characters being searched for were \verb!-!, \verb!#! and \verb!:! - all common delimiters in different scenarios. This emphasizes the need for regex tools to  facilitate easy file parsing. 
+Delimiters that separate items on one line like \verb!'\t'! are also quite common.  Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found that 18 of the top 100 clusters revolved around the presence of a single character.
+The top ranked activity for developers is ``Locating content within a file or files," and usually this content is located using some small set of characters that the user knows will flag that content.  Looking closely at that category of cluster, some of the characters being searched for were \verb!\n!, \verb!-! and \verb!.! - all common delimiters in different scenarios. This emphasizes the need for regex tools to  facilitate easy file parsing.
 
 
 
@@ -30,35 +28,35 @@ Based on our findings, there are many opportunities for future work.
 
 
 \subsubsection{Context-Specific Regex Support}
-In some environments, such as command line or text editor, regexes are used extensively (Section~\ref{rq1:survey}), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.  
+In some environments, such as command line or text editor, regexes are used extensively (Section~\ref{rq1:survey}), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.
 
 \subsubsection{Refactoring Regexes}
-The survey showed that users want readability and find the lack of readable regexes to be a major pain point.  
-This provides an opportunity to introduce refactoring transformations to enhance readability. 
-As one opportunity, certain character classes that are logically equivalent can be expressed differently, for example, \verb!\d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!. While \verb!\d! is more succinct, \verb![0-9]! may be easier to read, so a refactoring for \emph{default to custom character classes} could be introduced. 
-Human studies are needed to evaluate the readability of various regex features in order to define and support appropriate regex refactorings for readability. 
+The survey showed that users want readability and find the lack of readable regexes to be a major pain point.
+This provides an opportunity to introduce refactoring transformations to enhance readability.
+As one opportunity, certain character classes that are logically equivalent can be expressed differently, for example, \verb!\d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!. While \verb!\d! is more succinct, \verb![0-9]! may be easier to read, so a refactoring for \emph{default to custom character classes} could be introduced.
+Human studies are needed to evaluate the readability of various regex features in order to define and support appropriate regex refactorings for readability.
 
-Another avenue of refactoring could be for performance. Various implementations of regex libraries may perform more efficiently with some features than others. An evaluation of regex feature implementation speeds would facilitate semantic transformations based on performance, similar to performance refactorings for LabVIEW~\cite{chambers2013smell, chambers2015impact}. 
+Another avenue of refactoring could be for performance. Various implementations of regex libraries may perform more efficiently with some features than others. An evaluation of regex feature implementation speeds would facilitate semantic transformations based on performance, similar to performance refactorings for LabVIEW~\cite{chambers2013smell, chambers2015impact}.
 
 %Other similar refactoring techniques may become evident with a more thorough search.  A tool that preserved the exact behavior of a regex but optimized for readability could be incorporated into an IDE and relieve some developer pain.  More research is needed into why certain character classes are considered more readable, as has been done for other refactoring work (e.g.,~\cite{StoleeTSE2013}).
 %Similarly, there are several principals that can be followed to enhance the performance of a regex.  Using non-capture groups whenever possible, avoiding backtracking, etc.  In theory it seems possible to build a compiler that could compose a regex with identical behavior but with better readability and performance.
 
 
 \subsubsection{Developer Awareness of Best Practices}
-\todoMid{update based on clusters}
-One category of five clusters in the top 100 contained regex patterns to parse the contents of angle brackets.  As the contents of angle brackets is usually unconstrained, regexes are a poor replacement for XML or HTML parsers.  More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
+One category of 10 clusters in the top 100 contained regex patterns to parse the contents of angle brackets.  As the contents of angle brackets are usually unconstrained, regexes are a poor replacement for XML or HTML parsers.  More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
+%http://english.stackexchange.com/questions/50851/the-contents-are-or-the-contents-is
 
 \subsubsection{Library Support for Developers}
-Within standard programming languages, regular expressions libraries are very common, yet there are  differences between languages in the features that they support. For example, Java supports possessive quantifiers like \verb! `ab*+c'! (here the `+' is modifying the `*' to make it possessive) whereas Python does not. Such differences among programming language implementations was identified as a pain point for using regular expressions by 17\% of the survey participants. \todoMid{"so what?"} 
+Within standard programming languages, regular expressions libraries are very common, yet there are  differences between languages in the features that they support. For example, Java supports possessive quantifiers like \verb! `ab*+c'! (here the `+' is modifying the `*' to make it possessive) whereas Python does not. Such differences among programming language implementations was identified as a pain point for using regular expressions by 17\% of the survey participants. \todoMid{"so what?"}
 
 
 \subsubsection{Automated Regex Repair}
-Regular expression errors are common and have produced thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques to fix. 
-Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes can lead to big changes in semantics, so we hypothesize that using the semantic clusters identified in Section~\ref{rq4:results} to identify potential repair candidates would efficiently and effectively converge on a repair candidate. 
+Regular expression errors are common and have produced thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques to fix.
+Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes can lead to big changes in semantics, so we hypothesize that using the semantic clusters identified in Section~\ref{rq4:results} to identify potential repair candidates would efficiently and effectively converge on a repair candidate.
 
 
-\subsubsection{A Modern WRD Character Class}
-\todoMid{update}
-One unexpected result of our clustering is that, behaviorally speaking, the negation of the word class NWRD was used in 208 projects, while the word class itself was used in only 114 projects. After inspecting several projects using the patterns found in this behavioral cluster, we concluded that most users are trying to sanitize arbitrary strings that must conform to a system character set requirement, such as requirements for filenames.  For example, a user might replace all NWRD matching characters with the `\_' to guarantee that an arbitrary string can be used as a filename.  We also considered the largest cluster using custom character classes (\verb?`[^ -~]'(122)?) and concluded that users are constructing a more permissive version of the NWRD character class, to allow more non-letter, non-digit characters than just the `\_' in their sanitized strings.  More research is needed to determine if a more modern WRD class could be useful, and if so, what characters set is preferred.
+% \subsubsection{A Modern WRD Character Class}
+% \todoMid{update}
+% One unexpected result of our clustering is that, behaviorally speaking, the negation of the word class NWRD was used in 208 projects, while the word class itself was used in only 114 projects. After inspecting several projects using the patterns found in this behavioral cluster, we concluded that most users are trying to sanitize arbitrary strings that must conform to a system character set requirement, such as requirements for filenames.  For example, a user might replace all NWRD matching characters with the `\_' to guarantee that an arbitrary string can be used as a filename.  We also considered the largest cluster using custom character classes (\verb?`[^ -~]'(122)?) and concluded that users are constructing a more permissive version of the NWRD character class, to allow more non-letter, non-digit characters than just the `\_' in their sanitized strings.  More research is needed to determine if a more modern WRD class could be useful, and if so, what characters set is preferred.
 
 
