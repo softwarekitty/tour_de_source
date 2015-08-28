@@ -7,7 +7,7 @@
 \BOOKMARK [2][-]{subsection.3.4}{Analyzing Features}{section.3}% 7
 \BOOKMARK [2][-]{subsection.3.5}{Clustering and Semantic Analysis}{section.3}% 8
 \BOOKMARK [1][-]{section.4}{Results}{}% 9
-\BOOKMARK [2][-]{subsection.4.1}{RQ1: In what context do developers use regular expressions?}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.1}{RQ1: In what contexts do developers use regular expressions?}{section.4}% 10
 \BOOKMARK [2][-]{subsection.4.2}{RQ2: How is the re module used?}{section.4}% 11
 \BOOKMARK [2][-]{subsection.4.3}{RQ3: Which regular expression language features are most commonly used in Python?}{section.4}% 12
 \BOOKMARK [3][-]{subsubsection.4.3.1}{Feature Usage}{subsection.4.3}% 13
