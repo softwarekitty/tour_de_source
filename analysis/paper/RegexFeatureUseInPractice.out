@@ -13,11 +13,11 @@
 \BOOKMARK [3][-]{subsubsection.4.3.1}{Feature Usage}{subsection.4.3}% 13
 \BOOKMARK [3][-]{subsubsection.4.3.2}{Feature Support in Regex Tools}{subsection.4.3}% 14
 \BOOKMARK [3][-]{subsubsection.4.3.3}{Survey Results for Feature Usage}{subsection.4.3}% 15
-\BOOKMARK [2][-]{subsection.4.4}{RQ4: How semantically similar are regexes?}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.4}{RQ4: How behaviorally similar are regexes?}{section.4}% 16
 \BOOKMARK [3][-]{subsubsection.4.4.1}{Code Search and Variable Capturing}{subsection.4.4}% 17
 \BOOKMARK [3][-]{subsubsection.4.4.2}{Content Of Brackets and Parenthesis}{subsection.4.4}% 18
 \BOOKMARK [3][-]{subsubsection.4.4.3}{Anchored Patterns}{subsection.4.4}% 19
-\BOOKMARK [3][-]{subsubsection.4.4.4}{Requiring Two or More Characters In Sequence}{subsection.4.4}% 20
+\BOOKMARK [3][-]{subsubsection.4.4.4}{Requiring Two or More Characters in Sequence}{subsection.4.4}% 20
 \BOOKMARK [3][-]{subsubsection.4.4.5}{Requiring a Specific Character to Match}{subsection.4.4}% 21
 \BOOKMARK [3][-]{subsubsection.4.4.6}{Multiple Matching Alternatives}{subsection.4.4}% 22
 \BOOKMARK [1][-]{section.5}{Discussion}{}% 23
@@ -29,11 +29,12 @@
 \BOOKMARK [3][-]{subsubsection.5.2.2}{Refactoring Regexes}{subsection.5.2}% 29
 \BOOKMARK [3][-]{subsubsection.5.2.3}{Developer Awareness of Best Practices}{subsection.5.2}% 30
 \BOOKMARK [3][-]{subsubsection.5.2.4}{Library Support for Developers}{subsection.5.2}% 31
-\BOOKMARK [3][-]{subsubsection.5.2.5}{Automated Regex Repair}{subsection.5.2}% 32
-\BOOKMARK [1][-]{section.6}{Threats to Validity}{}% 33
-\BOOKMARK [2][-]{subsection.6.1}{Conclusion}{section.6}% 34
-\BOOKMARK [2][-]{subsection.6.2}{Internal}{section.6}% 35
-\BOOKMARK [2][-]{subsection.6.3}{Construct}{section.6}% 36
-\BOOKMARK [2][-]{subsection.6.4}{External}{section.6}% 37
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 38
-\BOOKMARK [1][-]{section.8}{References}{}% 39
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Support for Regexes Composition}{subsection.5.2}% 32
+\BOOKMARK [3][-]{subsubsection.5.2.6}{Automated Regex Repair}{subsection.5.2}% 33
+\BOOKMARK [1][-]{section.6}{Threats to Validity}{}% 34
+\BOOKMARK [2][-]{subsection.6.1}{Conclusion}{section.6}% 35
+\BOOKMARK [2][-]{subsection.6.2}{Internal}{section.6}% 36
+\BOOKMARK [2][-]{subsection.6.3}{Construct}{section.6}% 37
+\BOOKMARK [2][-]{subsection.6.4}{External}{section.6}% 38
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 39
+\BOOKMARK [1][-]{section.8}{References}{}% 40
