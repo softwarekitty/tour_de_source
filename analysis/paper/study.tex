@@ -1,3 +1,4 @@
+%\vspace{-5pt}
 \section{Study}
 \label{sec:study}
 
@@ -9,7 +10,9 @@ Within a particular file in a project, a {utilization} is composed of a function
 \begin{figure}[tb]
 \centering
 \includegraphics[width=\columnwidth]{../illustrations/exampleUsage.eps}
+\vspace{-6pt}
 \caption{Example of one regex utilization}
+\vspace{-6pt}
 \label{fig:exampleUsage}
 \end{figure}
 
@@ -92,12 +95,6 @@ In row {\tt A}, column {\tt B} we see that {\tt B} is 90\% similar to {\tt A}.
 In row {\tt B}, column {\tt A}, we see that {\tt A} is 50\% similar to {\tt B}.  Each pattern is always 100\% similar to itself, by definition.
 
 
-\begin{figure}[tb]
-\centering
-\includegraphics[height=0.6in]{../illustrations/minimalMatrix.eps}
-\caption{A similarity matrix created by counting strings matched}
-\label{fig:minimalMatrix}
-\end{figure}
 
 Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix are averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph}.
 This facilitates clustering using the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.
@@ -111,6 +108,13 @@ For clustering, we prune the similarity matrix to retain all similarity values g
 We note that MCL can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
 After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.
 The end result is clusters of highly semantically similar regular expressions.  The top 100 clusters are categorized by inspection into six categories of behavior (see Section~\ref{rq4:results}).
+
+\begin{figure}[tb]
+\centering
+\includegraphics[height=0.6in]{../illustrations/minimalMatrix.eps}
+\caption{A similarity matrix created by counting strings matched}
+\label{fig:minimalMatrix}
+\end{figure}
 
 
 \begin{figure}[tb]
