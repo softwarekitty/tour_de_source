@@ -1,4 +1,5 @@
 *.pyc
+*.pdf
 *.class
 .DS_Store
 *.db

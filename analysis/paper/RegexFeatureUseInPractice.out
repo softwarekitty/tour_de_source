@@ -13,13 +13,13 @@
 \BOOKMARK [3][-]{subsubsection.4.3.1}{Feature Usage}{subsection.4.3}% 13
 \BOOKMARK [3][-]{subsubsection.4.3.2}{Feature Support in Regex Tools}{subsection.4.3}% 14
 \BOOKMARK [3][-]{subsubsection.4.3.3}{Survey Results for Feature Usage}{subsection.4.3}% 15
-\BOOKMARK [2][-]{subsection.4.4}{RQ4: How behaviorally similar are regexes?}{section.4}% 16
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Code Search and Variable Capturing}{subsection.4.4}% 17
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Content Of Brackets and Parenthesis}{subsection.4.4}% 18
+\BOOKMARK [2][-]{subsection.4.4}{RQ4: How behaviorally similar are regexes across projects?}{section.4}% 16
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Multiple Matching Alternatives}{subsection.4.4}% 17
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Specific Character Must Match}{subsection.4.4}% 18
 \BOOKMARK [3][-]{subsubsection.4.4.3}{Anchored Patterns}{subsection.4.4}% 19
-\BOOKMARK [3][-]{subsubsection.4.4.4}{Requiring Two or More Characters in Sequence}{subsection.4.4}% 20
-\BOOKMARK [3][-]{subsubsection.4.4.5}{Requiring a Specific Character to Match}{subsection.4.4}% 21
-\BOOKMARK [3][-]{subsubsection.4.4.6}{Multiple Matching Alternatives}{subsection.4.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.4.4}{Content of Brackets and Parenthesis}{subsection.4.4}% 20
+\BOOKMARK [3][-]{subsubsection.4.4.5}{Two or More Characters in Sequence}{subsection.4.4}% 21
+\BOOKMARK [3][-]{subsubsection.4.4.6}{Code Search and Variable Capturing}{subsection.4.4}% 22
 \BOOKMARK [1][-]{section.5}{Discussion}{}% 23
 \BOOKMARK [2][-]{subsection.5.1}{Implications For Tool Designers}{section.5}% 24
 \BOOKMARK [3][-]{subsubsection.5.1.1}{Capturing Specific Content}{subsection.5.1}% 25
