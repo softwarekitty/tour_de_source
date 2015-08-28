@@ -314,7 +314,7 @@ The smallest pattern in Table~\ref{table:exampleCluster} contains only the colon
 
 For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects any member of the cluster appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`:+'(31)!.
 
-We manually mapped the top 100 largest clusters based on the number of projects into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \verb!`b*'! and \verb!`^'!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category, the number of clusters it represents, number of patterns in those clusters, and the number of projects. The most common category is \emph{Multi Matches}, which contains clusters that have a disjunction of behaviors (e.g., matching a comma or semicolon, as in \verb!`,|;'(18)!). Each cluster was mapped to exactly one category. Next, we describe the categories, ordered by the number of projects they regex patterns map to. 
+We manually mapped the top 100 largest clusters based on the number of projects into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \verb!`b*'! and \verb!`^'!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category, the number of clusters it represents, number of patterns in those clusters, and the number of projects. The most common category is \emph{Multi Matches}, which contains clusters that have a disjunction of behaviors (e.g., matching a comma or semicolon, as in \verb!`,|;'(18)!). Each cluster was mapped to exactly one category. Next, we describe the categories, ordered by the number of projects the regex patterns map to. 
 
 %When a cluster can fit in multiple categories, it is placed in the most specific category.  The following six categories are listed in order from most specific behavior to least specific behavior.
 
@@ -344,7 +344,8 @@ Code Search & 15 & 27 & 92 \\
 
 %6
 \subsubsection{Multiple Matching Alternatives}
-The requirements for matching these clusters are defined by disjunctive alternatives, for example:
+These clusters match under a variety of conditions by using a character class or a disjunctive \verb!|!. 
+For example: 
 \verb!`(\W)'(89)! matches any alphanumeric character, \verb!`(\s)'(89)! matches any whitespace character, \verb!`\d'(58)! matches any numeric character, and \verb!`,|;'(18)! matches a comma or semicolon.  Most of these clusters are represented by patterns that use default character classes.  This corroborates our survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which 56\% (10) of the participants indicated they use the default classes more than custom.
 This category contains 21 clusters, each appearing in an average of 33 projects.  These clusters have a combined total of 237 patterns, with at least one pattern present in 295 projects. 
 
@@ -357,25 +358,30 @@ This category contains 17 clusters, each appearing in an average of 17.1 project
 
 %3
 \subsubsection{Anchored Patterns}
-This category contains 20 clusters, each appearing in an average of 15.4 projects.  These clusters have a combined total of 85 patterns, with at least one pattern present in 141 projects. Each of the clusters uses at least one endpoint anchor to require matches to be absolutely positioned, for example:
-\verb!`(\w+)$'(35)!, \verb!`^-?\d+$'(17)!, \verb!`^\s'(16)!, and \verb!`^[ -~]*$'(10)!.
+Each of the clusters uses at least one endpoint anchor to require matches to be absolutely positioned, for example:
+\verb!`(\w+)$'(35)!, \verb!`^-?\d+$'(17)!, \verb!`^\s'(16)!, and \verb!`^[ -~]*$'(10)! each use  \verb!$! and/or \verb!^!.
+This category contains 20 clusters, each appearing in an average of 15.4 projects.  These clusters have a combined total of 85 patterns, with at least one pattern present in 141 projects. 
 
 %2
 \subsubsection{Content of Brackets and Parenthesis}
-This category contains 10 clusters, each appearing in an average of 18.4 projects.  These clusters have a combined total of 46 patterns, with at least one pattern present in 111 projects. Each of the clusters center around finding a pair of characters that surround content, often capturing that content:
-\verb!`\(.*\)'(29)!, \verb!`".*"'(25)!, \verb!`<(.+)>'(23)!, and \verb!`\[.*\]'(22)!.
+The clusters in this category center around finding a pair of characters that surround content, often also capturing that content. For example, 
+\verb!`\(.*\)'(29)! matches when content is surrounded by parentheses, \verb!`".*"'(25)! matches  when content is surrounded by double quotes, \verb!`<(.+)>'(23)! matches and captures content surrounded by angled brackets, and \verb!`\[.*\]'(22)! matches when content is surrounded by square brackets.
+This category contains 10 clusters, each appearing in an average of 18.4 projects.  These clusters have a combined total of 46 patterns, with at least one pattern present in 111 projects. 
 
 %4
 \subsubsection{Two or More Characters in Sequence}
-This category contains 16 clusters, each appearing in an average of 13 projects.  These clusters have a combined total of 40 patterns, with at least one pattern present in 120 projects. These clusters require several characters in a row to match some pattern, for example:
-\verb!`\d+\.\d+'(30)!, \verb!`  '(17)!, \verb!`([A-Z][a-z]+[A-Z][^ ]+)'(11)!, and \verb!@[a-z]+'(9)!.
-
+These clusters require several characters in a row to match some pattern, for example:
+\verb!`\d+\.\d+'(30)! requires one or more digits followed by one or more digits, \verb!`  '(17)! requires two spaces in a row, 
+%\verb!`([A-Z][a-z]+[A-Z][^ ]+)'(11)!, 
+and \verb!`@[a-z]+'(9)! requires the at symbol followed by two or more lowercase characters, as in a twitter handle.
+This category contains 16 clusters, each appearing in an average of 13 projects.  These clusters have a combined total of 40 patterns, with at least one pattern present in 120 projects. 
 
 %1
 \subsubsection{Code Search and Variable Capturing}
-This category contains 15 clusters, each appearing in an average of 11.7 projects.  These clusters have a combined total of 27 patterns, with at least one pattern present in 92 projects. These clusters center around a recognizable effort to parse code and often capture variable values in it, for example:
-\verb!`^https?://'(23)!, \verb!`(.+)=(.+)'(9)!, \verb!`\$\{([\w\-]+)\}'(11)!, and \verb!`SECRET|PASSWORD|PROFANITIES_LIST'(13)!
-
+These clusters center around a recognizable effort to parse source code or URLs and often capture variable values in it, for example:
+\verb!`^https?://'(23)! matches a web address, \verb!`(.+)=(.+)'(9)! matches an assignment statement, and\\ \verb!`\$\{([\w\-]+)\}'(11)! matches and captures content within string interpolation. 
+%, and \verb!`SECRET|PASSWORD|PROFANITIES_LIST'(13)!. 
+This category contains 15 clusters, each appearing in an average of 11.7 projects.  These clusters have a combined total of 27 patterns, with at least one pattern present in 92 projects. 
 
 \paragraph{Summary - RQ4}
 When tool designers are considering what features to include, data about usage in practice is valuable.  Semantic similarity clustering  helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.

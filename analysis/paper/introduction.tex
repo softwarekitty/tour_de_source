@@ -16,7 +16,7 @@ First, we survey developers about the context of their regex usage, include how 
 Second, we measure how often regex features (e.g., kleene star, character classes, and capture groups are all features) appear in regular expressions and used in Python projects.
 By comparing the features to those supported by four common regex support tools, brics~\cite{brics}, hampi~\cite{hampi}, Rex~\cite{rex}, and RE2~\cite{re2} and surveying developers about some of the less supported feature, we discuss the potential impact of omitting various features.
 Third, using  a semantic analysis to cluster similar regular expressions that occur in multiple projects, we explore the most common behaviors captured by  regexes in Python.
-Our results indicate that regexes are most frequently used in command line tools and IDEs, that capturing the contents of brackets and searching for delimiter characters were some of the most specific cluster behaviors, and that the capture group feature and the endpoint anchor features are the most widely used features that are poorly supported in regex tools.
+Our results indicate that regexes are most frequently used in command line tools and IDEs, that capturing the contents of brackets and searching for delimiter characters were some of the most specific  behaviors represents in the clusters, and that the capture group feature and the endpoint anchor features are the most widely used features that are also poorly supported in regex tools.
 The contributions of this work are:
 \begin{itemize}
     \item A survey of 18 professional software developers about their experience with regular expressions,
