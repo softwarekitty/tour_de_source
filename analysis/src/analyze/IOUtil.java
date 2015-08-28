@@ -263,6 +263,10 @@ public class IOUtil {
 		int totalWeight = 0;
 		StringBuilder sb = new StringBuilder();
 		DecimalFormat df = new DecimalFormat("0.00");
+		List<TreeSet<Integer>> categories = new LinkedList<TreeSet<Integer>>();
+		for(int catID =0;catID<6;catID++){
+			categories.add(new TreeSet<Integer>());
+		}
 
 		int i = 0;
 		TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
@@ -298,10 +302,12 @@ public class IOUtil {
 			i++;
 			totalPatterns += nPatterns;
 			allProjectIDs.addAll(cluster.getProjectIDs());
+			addClusterToCategories(cluster, categories);
 		}
+		String categoryProjectInfo = getCategoryProjectInfo(categories);
 		sb.insert(0, "Cluster stats:\n\nnClusters: " + i + "\nTotalPatterns: " +
 			totalPatterns + "\ntotalnProjects: " + allProjectIDs.size() +
-			"\nsuffix: " + suffix + "\n\n\n");
+			"\nsuffix: " + suffix + "\n"+categoryProjectInfo+"\n\n\n");
 		File output = new File(analysis_output_path, filename);
 
 		// delete the old version
@@ -309,6 +315,92 @@ public class IOUtil {
 			output.delete();
 		}
 		createAndWrite(output, sb.toString());
+	}
+
+//	`^https?://'(23), `&#(x?[0-9A-Fa-f]+)[^0-9A-Fa-f]'(18), 
+//	`<base\s+href\s*=\s*[\'"]?([^\'">]+)'(17), `SECRET|PASSWORD|PROFANITIES_LIST'(13),
+//	                     `^([a-zA-Z0-9_]+)=(.*)'(12), `\$\{([\w\-]+)\}'(11), `https?://'(9), 
+//	                     `http://'(9), `(.+)=(.+)'(9), `var'(9), `HTML'(9), `Xorg'(9), `Websafe'(9), 
+//	                     `cc_(.*)$'(9), `lightlink'(9)	
+	static ArrayList<String> list0 = new ArrayList<String>(
+		    Arrays.asList("^https?://", "&#(x?[0-9A-Fa-f]+)[^0-9A-Fa-f]", "<base\\s+href\\s*=\\s*[\\'\"]?([^\\'\">]+)",
+		    		"SECRET|PASSWORD|PROFANITIES_LIST","^([a-zA-Z0-9_]+)=(.*)",
+		    		"\\$\\{([\\w\\-]+)\\}","https?://","http://","(.+)=(.+)","var","HTML","Xorg","Websafe",
+		    		"cc_(.*)$","lightlink"));
+
+//	`\(.*\)'(29), `{[^}]*}'(27), `".*"'(25), `<(.+)>'(23), `\[.*\]'(22), 
+//			`<(.*)>'(21), `\([^)]+\)'(10), `'.''(9), `/.+/$'(9), `'.*'$'(9)
+	static ArrayList<String> list1 = new ArrayList<String>(
+		    Arrays.asList("\\(.*\\)","{[^}]*}","\".*\"","<(.+)>","\\[.*\\]","<(.*)>","\\([^)]+\\)",
+		    		"'.'","/.+/$","'.*'$"));
+	
+//	`(\w+)$'(35), `^[-\w/]+$'(30), `^[a-zA-Z]'(17), `^-?\d+$'(17), 
+//	`^\s'(16), `:\d+$'(16), `^\s*\#'(15), `^[\w_]+$'(14), `^(\d+)'(14), 
+//	'^\w'(13), `^/'(13), `^\W+'(11), `^[\w.@+-]+$'(10), `(\d+)$'(10), 
+//	`^[a-zA-Z][a-zA-Z0-9\-_]*$'(10), `^[ -~]*$'(10), `.*\!$'(10)
+	static ArrayList<String> list2 = new ArrayList<String>(
+		    Arrays.asList("(\\w+)$","^[-\\w/]+$","^[a-zA-Z]","^-?\\d+$","^\\s",":\\d+$","^\\s*\\#","^[\\w_]+$","^(\\d+)","^\\w",
+		    		"^/","^\\W+","^[\\w.@+-]+$","(\\d+)$","^[a-zA-Z][a-zA-Z0-9\\-_]*$","^[ -~]*$",".*\\!$"));
+	
+//	`\d+\.\d+'(30), `  '(17), `//'(16), `(\S)\s+(\S)'(16), `(\033|~{)'(14), 
+//	`([a-z\d])([A-Z])'(13), `%([0-9A-Fa-f]{2})'(13), `\.\d+$'(12),
+//	`\\"'(11), `\$\$.*'(11), `([A-Z][a-z]+[A-Z][^ ]+)'(11), `[ \t][ \t]+'(10), 
+//	`\\[A-Za-z]+'(9), `[A-Z][a-z]+'(9), `\*/'(9), `@[a-z]+'(9), 
+//	`\$[()]'(9), `v[0-9]+.*'(9)
+	static ArrayList<String> list3 = new ArrayList<String>(
+		    Arrays.asList("\\d+\\.\\d+","  ","//","(\\S)\\s+(\\S)","(\\033|~{)","([a-z\\d])([A-Z])","%([0-9A-Fa-f]{2})","\\.\\d+$",
+		    		"\\\\\"","\\$\\$.*","([A-Z][a-z]+[A-Z][^ ]+)","[ \\t][ \\t]+","[A-Za-z]+","[A-Z][a-z]+","\\*/","@[a-z]+",
+		    		"\\$[()]","v[0-9]+.*"));
+	
+//	`\n\s*'(42), `/+'(39), `:+'(31), `\.+'(24), 
+//	`( +)'(24), `%'(22), `{'(21), `\|'(19), `\-'(17), `@'(17), 
+//	`#.*$'(16), `\['(14), `}'(14), `\('(12), `a+'(10), 
+//	`\t+'(10), `\)'(9), `\]'(9)
+	static ArrayList<String> list4 = new ArrayList<String>(
+		    Arrays.asList("\\n\\s*","/+",":+","\\.+","( +)","%","{",
+		    		"\\|","\\-","@","#.*$","\\[","}","\\(","a+",
+		    		"\\t+","\\)","\\]"));
+	
+//	`..'(95), `(\W)'(89), `(\s)'(89), `\S+'(74), `\d'(58), 
+//	`"|\\'(35), `[\000-\037]'(31), ,`[\\/]'(31) `[\({\[\]}\)\n]'(21), 
+//	`[^!-~]'(19), `[ ,]'(19), `[\\"]|[^ -~]'(19),  `{|}'(18), 
+//	`,|;'(18), `[<>&]'(16), `[-.]'(12), `[()]'(11),  
+//	`(["\\`])'(10), `\s*=.*'(9), `[@{} ]'(9), `["\'/]'(9)
+	static ArrayList<String> list5 = new ArrayList<String>(
+		    Arrays.asList("..","(\\W)","(\\s)","\\S+","\\d","\"|\\\\","[\\000-\\037]",
+		    		"[\\\\/]","[\\({\\[\\]}\\)\\n]","[^!-~]","[ ,]","[\\\\\"]|[^ -~]","{|}",
+		    		",|;","[<>&]","[-.]","[()]","([\"\\\\`])","\\s*=.*","[@{} ]","[\"\\'/]"));
+
+	private static void addClusterToCategories(Cluster cluster,
+			List<TreeSet<Integer>> categories) {
+		LinkedList<List<String>> categoryOracle = new LinkedList<List<String>>();
+		categoryOracle.add(list0);
+		categoryOracle.add(list1);
+		categoryOracle.add(list2);
+		categoryOracle.add(list3);
+		categoryOracle.add(list4);
+		categoryOracle.add(list5);
+		String shortest = cluster.getShortest();
+		int i = 0;
+		for(List<String> categoryMembers : categoryOracle){
+			if(categoryMembers.contains(shortest)){
+				categories.get(i).addAll(cluster.getProjectIDs());
+				break;
+			}
+			i++;
+		}
+		
+	}
+
+	private static String getCategoryProjectInfo(
+			List<TreeSet<Integer>> categories) {
+		StringBuilder sb = new StringBuilder();
+		int i = 1;
+		for(TreeSet<Integer> ids : categories){
+			sb.append("category " + i +" nProjects: " +ids.size()+"\n");
+			i++;
+		}
+		return sb.toString();
 	}
 
 	public static HashMap<Integer, WeightRankedRegex> getLookup(

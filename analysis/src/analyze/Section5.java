@@ -106,73 +106,73 @@ public class Section5 {
 				}
 			}
 		}
-
-		int[][] supportedFeatureGroups = {
-				{ FeatureDictionary.I_META_CAPTURING_GROUP },
-				{ FeatureDictionary.I_META_OR },
-				{ FeatureDictionary.I_REP_ADDITIONAL,
-						FeatureDictionary.I_REP_KLEENISH,
-						FeatureDictionary.I_REP_QUESTIONABLE },
-				{ FeatureDictionary.I_REP_DOUBLEBOUNDED,
-						FeatureDictionary.I_REP_LOWERBOUNDED,
-						FeatureDictionary.I_REP_SINGLEEXACTLY },
-				{ FeatureDictionary.I_META_CC, FeatureDictionary.I_META_NCC,
-						FeatureDictionary.I_CC_RANGE },
-				{ FeatureDictionary.I_CC_WHITESPACE,
-						FeatureDictionary.I_CC_NWHITESPACE,
-						FeatureDictionary.I_CC_DECIMAL,
-						FeatureDictionary.I_CC_NDECIMAL,
-						FeatureDictionary.I_CC_WORD,
-						FeatureDictionary.I_CC_NWORD },
-				{ FeatureDictionary.I_CC_WHITESPACE,
-						FeatureDictionary.I_CC_DECIMAL,
-						FeatureDictionary.I_CC_WORD },
-				{ FeatureDictionary.I_CC_NWHITESPACE,
-						FeatureDictionary.I_CC_NDECIMAL,
-						FeatureDictionary.I_CC_NWORD },
-				{ FeatureDictionary.I_CC_WHITESPACE,
-						FeatureDictionary.I_CC_NWHITESPACE },
-				{ FeatureDictionary.I_CC_DECIMAL,
-						FeatureDictionary.I_CC_NDECIMAL },
-				{ FeatureDictionary.I_CC_WORD, FeatureDictionary.I_CC_NWORD },
-				{ FeatureDictionary.I_META_DOT_ANY },
-				{ FeatureDictionary.I_POS_END_ANCHOR,
-						FeatureDictionary.I_POS_START_ANCHOR } };
-
-		String featureDetailFilePrefix = "supportedFeatureDetail_";
-		for (int[] group : supportedFeatureGroups) {
-			int totalNPatterns = 0;
-			StringBuilder supportedContentSB = new StringBuilder();
-			String groupString = getGroupString(group, FeaturePile.fd);
-			TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
-			TreeSet<Cluster> realClustersContainingAny = new TreeSet<Cluster>();
-			TreeSet<Cluster> allClustersContainingAny = new TreeSet<Cluster>();
-			Cluster singleClusters = new Cluster(Integer.MAX_VALUE);
-			for (Cluster cluster : behavioralClusters) {
-				if (cluster.containsAnyFeatures(group)) {
-					allClustersContainingAny.add(cluster);
-					totalNPatterns += cluster.size();
-					allProjectIDs.addAll(cluster.computeProjectIDs());
-					if (cluster.size() > 1) {
-						realClustersContainingAny.add(cluster);
-					} else if (cluster.size() > 0) {
-						singleClusters.add(cluster.first());
-					} else {
-						System.err.println("empty cluster found");
-					}
-				}
-			}
-			singleClusters.initialzeStats();
-			String realClusterString = getRealClusterSample(realClustersContainingAny, 30, group);
-			supportedContentSB.append(groupString + "\ntotalNProjectIDs: " +
-				allProjectIDs.size() + "\ntotalNClusters: " +
-				allClustersContainingAny.size() + "\ntotalNPatterns:" +
-				totalNPatterns + "\nrealClusters:\n" + realClusterString +
-				"\nnProjects with single pattern: " +
-				singleClusters.getProjectIDs().size() + "\n");
-			IOUtil.createAndWrite(new File(behavioral_analysis_path +
-				featureDetailFilePrefix + groupString + ".txt"), supportedContentSB.toString());
-		}
+//
+//		int[][] supportedFeatureGroups = {
+//				{ FeatureDictionary.I_META_CAPTURING_GROUP },
+//				{ FeatureDictionary.I_META_OR },
+//				{ FeatureDictionary.I_REP_ADDITIONAL,
+//						FeatureDictionary.I_REP_KLEENISH,
+//						FeatureDictionary.I_REP_QUESTIONABLE },
+//				{ FeatureDictionary.I_REP_DOUBLEBOUNDED,
+//						FeatureDictionary.I_REP_LOWERBOUNDED,
+//						FeatureDictionary.I_REP_SINGLEEXACTLY },
+//				{ FeatureDictionary.I_META_CC, FeatureDictionary.I_META_NCC,
+//						FeatureDictionary.I_CC_RANGE },
+//				{ FeatureDictionary.I_CC_WHITESPACE,
+//						FeatureDictionary.I_CC_NWHITESPACE,
+//						FeatureDictionary.I_CC_DECIMAL,
+//						FeatureDictionary.I_CC_NDECIMAL,
+//						FeatureDictionary.I_CC_WORD,
+//						FeatureDictionary.I_CC_NWORD },
+//				{ FeatureDictionary.I_CC_WHITESPACE,
+//						FeatureDictionary.I_CC_DECIMAL,
+//						FeatureDictionary.I_CC_WORD },
+//				{ FeatureDictionary.I_CC_NWHITESPACE,
+//						FeatureDictionary.I_CC_NDECIMAL,
+//						FeatureDictionary.I_CC_NWORD },
+//				{ FeatureDictionary.I_CC_WHITESPACE,
+//						FeatureDictionary.I_CC_NWHITESPACE },
+//				{ FeatureDictionary.I_CC_DECIMAL,
+//						FeatureDictionary.I_CC_NDECIMAL },
+//				{ FeatureDictionary.I_CC_WORD, FeatureDictionary.I_CC_NWORD },
+//				{ FeatureDictionary.I_META_DOT_ANY },
+//				{ FeatureDictionary.I_POS_END_ANCHOR,
+//						FeatureDictionary.I_POS_START_ANCHOR } };
+//
+//		String featureDetailFilePrefix = "supportedFeatureDetail_";
+//		for (int[] group : supportedFeatureGroups) {
+//			int totalNPatterns = 0;
+//			StringBuilder supportedContentSB = new StringBuilder();
+//			String groupString = getGroupString(group, FeaturePile.fd);
+//			TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
+//			TreeSet<Cluster> realClustersContainingAny = new TreeSet<Cluster>();
+//			TreeSet<Cluster> allClustersContainingAny = new TreeSet<Cluster>();
+//			Cluster singleClusters = new Cluster(Integer.MAX_VALUE);
+//			for (Cluster cluster : behavioralClusters) {
+//				if (cluster.containsAnyFeatures(group)) {
+//					allClustersContainingAny.add(cluster);
+//					totalNPatterns += cluster.size();
+//					allProjectIDs.addAll(cluster.computeProjectIDs());
+//					if (cluster.size() > 1) {
+//						realClustersContainingAny.add(cluster);
+//					} else if (cluster.size() > 0) {
+//						singleClusters.add(cluster.first());
+//					} else {
+//						System.err.println("empty cluster found");
+//					}
+//				}
+//			}
+//			singleClusters.initialzeStats();
+//			String realClusterString = getRealClusterSample(realClustersContainingAny, 30, group);
+//			supportedContentSB.append(groupString + "\ntotalNProjectIDs: " +
+//				allProjectIDs.size() + "\ntotalNClusters: " +
+//				allClustersContainingAny.size() + "\ntotalNPatterns:" +
+//				totalNPatterns + "\nrealClusters:\n" + realClusterString +
+//				"\nnProjects with single pattern: " +
+//				singleClusters.getProjectIDs().size() + "\n");
+//			IOUtil.createAndWrite(new File(behavioral_analysis_path +
+//				featureDetailFilePrefix + groupString + ".txt"), supportedContentSB.toString());
+//		}
 
 	}
 

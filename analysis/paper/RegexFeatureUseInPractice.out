@@ -1,0 +1,40 @@
+\BOOKMARK [1][-]{section.1}{Introduction }{}% 1
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 2
+\BOOKMARK [1][-]{section.3}{Study}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Research Questions}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Survey Design}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Regex Corpus}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Analyzing Features}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{Clustering and Semantic Analysis}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Results}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{RQ1: In what context do developers use regular expressions?}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{RQ2: How is the re module used?}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.3}{RQ3: Which regular expression language features are most commonly used in Python?}{section.4}% 12
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Feature Usage}{subsection.4.3}% 13
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Feature Support in Regex Tools}{subsection.4.3}% 14
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Survey Results for Feature Usage}{subsection.4.3}% 15
+\BOOKMARK [2][-]{subsection.4.4}{RQ4: How semantically similar are regexes?}{section.4}% 16
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Single Literal Characters}{subsection.4.4}% 17
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Default Character Classes}{subsection.4.4}% 18
+\BOOKMARK [3][-]{subsubsection.4.4.3}{User-Defined Character Classes}{subsection.4.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.4.4}{ Matching Whole Strings}{subsection.4.4}% 20
+\BOOKMARK [3][-]{subsubsection.4.4.5}{Parsing Angle Bracket Contents}{subsection.4.4}% 21
+\BOOKMARK [3][-]{subsubsection.4.4.6}{Capturing Variable Assignments}{subsection.4.4}% 22
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 23
+\BOOKMARK [2][-]{subsection.5.1}{Implications For Tool Designers}{section.5}% 24
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Capturing Specific Content}{subsection.5.1}% 25
+\BOOKMARK [3][-]{subsubsection.5.1.2}{File Parsing}{subsection.5.1}% 26
+\BOOKMARK [2][-]{subsection.5.2}{Opportunities For Future Work}{section.5}% 27
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Context-Specific Regex Support}{subsection.5.2}% 28
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Refactoring Regexes}{subsection.5.2}% 29
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Developer Awareness of Best Practices}{subsection.5.2}% 30
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Library Support for Developers}{subsection.5.2}% 31
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Automated Regex Repair}{subsection.5.2}% 32
+\BOOKMARK [3][-]{subsubsection.5.2.6}{A Modern WRD Character Class}{subsection.5.2}% 33
+\BOOKMARK [1][-]{section.6}{Threats to Validity}{}% 34
+\BOOKMARK [2][-]{subsection.6.1}{Conclusion}{section.6}% 35
+\BOOKMARK [2][-]{subsection.6.2}{Internal}{section.6}% 36
+\BOOKMARK [2][-]{subsection.6.3}{Construct}{section.6}% 37
+\BOOKMARK [2][-]{subsection.6.4}{External}{section.6}% 38
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 39
+\BOOKMARK [1][-]{section.8}{References}{}% 40

@@ -4,6 +4,13 @@ nClusters: 2228
 TotalPatterns: 2871
 totalnProjects: 722
 suffix: _i1.80_p0.75_k83_
+category 1 nProjects: 92
+category 2 nProjects: 111
+category 3 nProjects: 132
+category 4 nProjects: 124
+category 5 nProjects: 189
+category 6 nProjects: 295
+
 
 
 cluster 0 stats:
