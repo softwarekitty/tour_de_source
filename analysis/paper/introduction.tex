@@ -17,7 +17,7 @@ Regex researchers and tool designers must pick what features to include or exclu
 
 First, we survey developers about how they use regexes.  Second, we gather a sample of regexes from Python projects and analyze the frequency of feature inclusion in distinct patterns (e.g., kleene star: \verb!*! and the end anchor: \verb!$! are features).  Third, we investigate what features are supported by four large projects that aim to support regex usage (brics~\cite{brics}, hampi~\cite{hampi}, Rex~\cite{rex}, and RE2~\cite{re2}), and which features are not supported, but are frequently used by developers.  Finally, we cluster regular expressions that appear in multiple projects by behavior, investigating high-level behavioral themes in these clusters.
 
-Our results indicate that regexes are most frequently used in command line tools and IDEs, that the capture group and endpoint anchor features are widely used by developers but poorly supported in regex tools, and that capturing the contents of brackets and searching for delimiter characters were some of the most apparent  behavioral themes observed in the regex clusters created by our technique.
+Our results indicate that regexes are most frequently used in command line tools and IDEs.  We observe that the capture group and endpoint anchor features are widely used by developers, but poorly supported in regex tools.  Capturing the contents of brackets and searching for delimiter characters were some of the most apparent  behavioral themes observed in the regex clusters created by our technique.
 The contributions of this work are:
 \begin{itemize}
     \item A survey of 18 professional software developers about their experience with regular expressions,
