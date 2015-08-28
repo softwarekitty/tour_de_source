@@ -32,7 +32,8 @@
 \newcommand{\sorta}{\tikz\draw[gray,fill=gray] (0,0) circle (.5ex);}
 \newcommand{\no}{\tikz\draw[black] (0,0) circle (.5ex);}
 \renewcommand{\dbltopfraction}{.9}
-
+\usepackage{bigstrut}
+    \setlength\bigstrutjot{2pt}
 \newtheorem{mydef}{Definition}
 
 \begin{document}
@@ -148,6 +149,7 @@ When clustering regexes based on semantic similarity, we observe that programmer
 
 % use section* for acknowledgement
 \section*{Acknowledgment}
+\todoMid{thank Dwolla}
 This work is supported in part by NSF SHF-1218265, NSF SHF-EAGER-1446932, and the Harpole-Pentair endowment at Iowa State University.
 
 

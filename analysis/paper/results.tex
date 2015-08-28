@@ -16,37 +16,41 @@ Six (33\%) of the survey participants report to compose regexes using general pu
 \newcommand{\horiz}{\hspace{2.1pt}}
 
 \begin{table}
-\caption{Survey results for number of regexes composed per year by technical environment \label{tab:regexenviron}}
+\caption{Survey results for number of regexes composed per year by technical environment (RQ1) \label{tab:regexenviron}}
 \begin{center}
 \begin{small}
 \begin{tabular}{l | r @{  \horiz} r @{ \horiz } r @{ \horiz } r @{ \horiz } r @{ \horiz } r }
-Language/Environment & 0 & 1-5 & 6-10 & 11-20 & 21-50 & 51+ \\ \hline
-General  (e.g., Java)  & 1 & 6 & 5 & 3& 1& 2 \\
-Scripting  (e.g., Perl) &5 &4 &3 &3 &2  &1 \\
-Query  (e.g., SQL) & 15&2 &0 &0 &1  & 0\\
-Command line (e.g., grep)   &2 &5 &3 &2 &0  &6 \\
+\toprule
+\textbf{Language/Environment} & 0 & 1-5 & 6-10 & 11-20 & 21-50 & 51+ \\  \hline \bigstrut
+General  (e.g., Java)  & 1 & 6 & 5 & 3& 1& 2 \\ \hline \bigstrut
+Scripting  (e.g., Perl) &5 &4 &3 &3 &2  &1 \\ \hline \bigstrut
+Query  (e.g., SQL) & 15&2 &0 &0 &1  & 0\\ \hline \bigstrut
+Command line (e.g., grep)   &2 &5 &3 &2 &0  &6 \\ \hline \bigstrut
 Text editor (e.g., IntelliJ)   & 2& 5& 0& 5& 1& 5\\
+\bottomrule
 \end{tabular}
 \end{small}
-\end{center}
+\end{center} 
 \end{table}
 
 \begin{table}
-\caption{Survey results for regex usage frequencies for various activities, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 \label{tab:regexactivities}}
+\caption{Survey results for regex usage frequencies for  activities, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 (RQ1)\label{tab:regexactivities}}
 \begin{center}
+\begin{small}
 \begin{tabular}{l|c}
-Activity & Frequency \\ \hline
-Locating content within a file or files & 4.4\\
-Capturing parts of strings & 4.3 \\
-Parsing user input & 4.0\\
-Counting lines that match a pattern & 3.2\\
-Counting  substrings that match a pattern & 3.2\\
-Parsing generated text & 3.0\\
-Filtering collections (lists, tables, etc.) & 3.0 \\
-Checking for a single character & 1.7\\
-
-
+\toprule
+\textbf{Activity} & \textbf{Frequency} \\  \hline \bigstrut
+Locating content within a file or files & 4.4\\ \hline \bigstrut
+Capturing parts of strings & 4.3 \\ \hline \bigstrut 
+Parsing user input & 4.0\\ \hline \bigstrut
+Counting lines that match a pattern & 3.2\\ \hline \bigstrut
+Counting  substrings that match a pattern & 3.2\\  \hline \bigstrut
+Parsing generated text & 3.0\\  \hline \bigstrut
+Filtering collections (lists, tables, etc.) & 3.0 \\ \hline \bigstrut
+Checking for a single character & 1.7\\ 
+\bottomrule
 \end{tabular}
+\end{small}
 \end{center}
 \end{table}
 
@@ -95,7 +99,7 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 \centering
 \includegraphics[width=\columnwidth]{../analysis_output/partFunctions.eps}
 \vspace{-6pt}
-\caption{How often are  {\tt re} functions used? (RQ1)}
+\caption{How often are  {\tt re} functions used? (RQ2)}
 \vspace{-6pt}
 \label{fig:partFunctions}
 \end{figure}
@@ -104,7 +108,7 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 \centering
 \includegraphics[width=0.9\columnwidth]{../analysis_output/partFlags.eps}
 \vspace{-6pt}
-\caption{Which behavioral flags are used? (RQ1)}
+\caption{Which behavioral flags are used? (RQ2)}
 %\vspace{-6pt}
 \label{fig:partFlags}
 \end{figure}
@@ -218,17 +222,20 @@ Survey participants were asked if they use only CCC, use CCC more than default, 
 Participants were also asked to explain their preferences.  Participants who favored CCC mostly said something equivalent to ``it is more explicit," whereas the participants who favored default character classes said,  ``it is less verbose" and ``I like using built-in code."
 
 \begin{table}
-\caption{Survey results for preferences between custom character and default character classes. \label{tab:cccvsdefault}}
+\caption{Survey results for preferences between custom character and default character classes (RQ3) \label{tab:cccvsdefault}}
 \begin{center}
+\begin{small}
 \begin{tabular}{l|c}
-Preference & Frequency \\ \hline
-use only CCC & 1\\
-use CCC more than default & 5 \\
-use both equally & 2\\
-use default more than CCC & 10\\
+\toprule
+\textbf{Preference} & \textbf{Frequency} \\  \hline \bigstrut
+use only CCC & 1\\ \hline \bigstrut
+use CCC more than default & 5 \\ \hline \bigstrut
+use both equally & 2\\ \hline \bigstrut
+use default more than CCC & 10\\ \hline \bigstrut
 use only default & 2\\
-
+\bottomrule
 \end{tabular}
+\end{small}
 \end{center}
 \end{table}
 
@@ -246,17 +253,19 @@ Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy re
 
 
 \begin{table}
-\caption{Survey results for regex usage frequencies, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 \label{tab:regexfeaturegroups}}
+\caption{Survey results for regex usage frequencies, averaged using a 6-point likert scale: Very Frequently=6, Frequently=5, Occasionally=4, Rarely=3, Very Rarely=2, and Never=1 (RQ3) \label{tab:regexfeaturegroups}}
 \begin{center}
 \begin{small}
-\begin{tabular}{lllc}
-Group & Code &  Frequency \\ \hline
-endpoint anchors & (STR, END) & 4.4\\
-capture groups & (CG) & 4.2 \\
-word boundaries & (WNW) & 3.5 \\
-lazy repetition & (LZY) &  2.9\\
+\begin{tabular}{llc}
+\toprule
+\textbf{Group} & \textbf{Code} &  \textbf{Frequency} \\  \hline \bigstrut
+endpoint anchors & (STR, END) & 4.4\\ \hline \bigstrut
+capture groups & (CG) & 4.2 \\ \hline \bigstrut
+word boundaries & (WNW) & 3.5 \\ \hline \bigstrut
+lazy repetition & (LZY) &  2.9\\ \hline \bigstrut
 \multirow{2}{*}{(neg) look-ahead/behind} &  (LKA, NLKA,  & \multirow{2}{*}{2.5}\\
 & LKB, NLKB) & \\
+\bottomrule
 \end{tabular}
 \end{small}
 \end{center}
@@ -280,10 +289,12 @@ In our developer survey, 11\% (2) of participants use this feature frequently an
 %\verb!(?P<vowel>[aeiou]x(?P=vowel))! which will match the strings 'axa' and 'oxo' but not 'txt'.  The same functionality can be obtained with a much shorter expression: \verb!([aeiou])x\1! where the \verb!'\1'! references the CG started by the first left parenthesis found when moving from left to right.
 When survey participants were asked if they prefer to always use numbered (BKR) or named (BKRN) back references, 66\% (12) of survey participants said that they always use BKR, and the remaining 33\% (6) said ``it depends."  Not one participant preferred named capture groups.  BKR is present in 5\% of scanned projects, while BKRN is present in only 1.7\%, which corroborates our findings that numbered  are generally preferred over named capture groups.
 
-\subsection{RQ4: How semantically similar are regexes?}
+\subsection{RQ4: How behaviorally similar are regexes?}
 \label{rq4:results}
 
-Since Rex does not support all the features present in the corpus, and because we discarded patterns found in only one project, we only generated sets of matching strings for 2,871 (21\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 923 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats}, as described in Section~\ref{results:rq3}.
+
+In clustering the regular expressions, we are interested in observing cross-project regex similarity and thus discarded patterns found in only one project. 
+Since Rex does not support all the regex features present in the corpus, we only generated sets of strings for measuring similarity for 2,871 (21\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 923 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats}, as described in Section~\ref{results:rq3}.
 The generated strings for each pattern are used to measure the pairwise similarity for all patterns and construct the similarity matrix.
 
 
@@ -307,6 +318,25 @@ We manually mapped the top 100 clusters into 6 behavioral categories (determined
 
 When a cluster can fit in multiple categories, it is placed in the most specific category.  The following six categories are listed in order from most specific behavior to least specific behavior.
 
+\begin{table}
+\begin{center}
+\begin{small}
+\caption{Cluster categories and sizes (RQ4) \label{tab:clustercats}}
+\begin{tabular}{llll}
+\toprule
+\textbf{Category} & \textbf{Clusters} & \textbf{Patterns} & \textbf{Projects} \\  \hline \bigstrut
+Code Search & 15 & & 92 \\ \hline \bigstrut
+Content of Parens & 10 & & 111\\ \hline \bigstrut
+Anchored Patterns & 20 & & 141\\ \hline \bigstrut
+Two or More Chars & 16 & & 120\\ \hline \bigstrut
+Requiring a Char & 17 & & 184\\ \hline \bigstrut
+Multi Matches & 21 & & 295\\
+\bottomrule
+\end{tabular}
+\end{small}
+\end{center}
+\end{table}
+
 \subsubsection{Code Search and Variable Capturing}
 This category contains 15 clusters, each appearing in an average of 11.7 projects, with at least one pattern within this category present in 92 projects. These clusters center around a recognizable effort to parse code and often capture variable values in it, for example:
 \verb!`^https?://'(23)!, \verb!`(.+)=(.+)'(9)!, \verb!`\$\{([\w\-]+)\}'(11)!, and \verb!`SECRET|PASSWORD|PROFANITIES_LIST'(13)!
@@ -319,7 +349,7 @@ This category contains 10 clusters, each appearing in an average of 18.4 project
 This category contains 20 clusters, each appearing in an average of 15.4 projects, with at least one pattern within this category present in 141 projects. Each of the clusters uses at least one endpoint anchor to require matches to be absolutely positioned, for example:
 \verb!`(\w+)$'(35)!, \verb!`^-?\d+$'(17)!, \verb!`^\s'(16)!, and \verb!`^[ -~]*$'(10)!.
 
-\subsubsection{Requiring Two or More Characters In Sequence}
+\subsubsection{Requiring Two or More Characters in Sequence}
 This category contains 16 clusters, each appearing in an average of 13 projects, with at least one pattern within this category present in 120 projects. These clusters require several characters in a row to match some pattern, for example:
 \verb!`\d+\.\d+'(30)!, \verb!`  '(17)!, \verb!`([A-Z][a-z]+[A-Z][^ ]+)'(11)!, and \verb!@[a-z]+'(9)!.
 
