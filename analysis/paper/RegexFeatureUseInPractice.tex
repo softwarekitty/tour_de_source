@@ -141,15 +141,15 @@ We only explore regular expressions in Python projects so these results many not
 
 \section{Conclusion}
 \label{sec:conclusion}
-Regular expressions are used frequently in programming projects. In our analysis of nearly 4,000 Python projects scraped from GitHub, we observed that over 42\% contained a regular expression. The most commonly found regular expressions deal with matching whitespace or digits.
-In analyzing the features used in regular expressions, we find that the most common is the {\tt +} token.
-When clustering regexes based on semantic similarity, we observe that programmers frequently create identical regular expressions using slightly different patterns. After mapping the features supported by four popular regex tools from academia and industry, we observe that most of the most popular features are also supported. However, those  unsupported can have an impact on the tool users.
+In this work, we have explored the contexts in which regular expressions are used as well as the features and behavioral similarities of regexes found in open source Python projects. In a survey of 18 professional developers, we find that 50\% compose regular expressions at least weekly. The most common purposes are locating content within a file or capturing parts of strings. The most difficult parts about working with regular expressions were reported to be composing and reading them. 
+In a study of regular expression usage in nearly 4,000 Python projects, we find that over 42\% of projects contain a regular expression. 
+We present an approach to measure behavioral similarity between regexes by generating strings that match one regex and pairwise  testing the remaining regexes against it. This similarity measure is used to form cross-project behavioral clusters. In the top 100 largest clusters, we find that \todoLast{X and Y are most common}. 
+These results have implications for tool designers and for future research aimed at better supporting developers in using regular expressions. 
 
-\todoMid{add: mining regexes from repos represents just a fraction of all regexes composed by developers. A deeper study into programmer behavior regarding regex usage in all tools, not just those that appear in repos, is needed, and left for future work}
 
 % use section* for acknowledgement
 \section*{Acknowledgment}
-\todoMid{thank Dwolla}
+Special thanks to the Dwolla developers for their survey participation. 
 This work is supported in part by NSF SHF-1218265, NSF SHF-EAGER-1446932, and the Harpole-Pentair endowment at Iowa State University.
 
 
