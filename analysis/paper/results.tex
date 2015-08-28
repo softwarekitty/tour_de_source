@@ -78,22 +78,13 @@ The fact that all the surveyed developers compose regexes, and half of the devel
 
 \subsection{RQ2: How  is the {\tt re} module used?}
 We explore regex utilizations and flags used in the scraped Python projects.
-%We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}).
-%We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}).
-%\subsubsection{Regex Utilizations per Project}
+
 Out of the \DTLfetch{data}{key}{nProjScanned}{value}\ projects scanned, \DTLfetch{data}{key}{percentProjectsUsingRegex}{value}\% (\DTLfetch{data}{key}{nProjectsUsingRegex}{value}) contained at least one regex utilization.  To illustrate how saturated projects are with regexes, we measure utilizations per project, files scanned per project, files contained utilizations, and  utilizations  per file, as shown in Table~\ref{table:saturation}.
 
 Of projects containing at least one utilization, the average utilizations per project was 32 and the maximum  was 1,427.  The project with the most utilizations is a C\# project\footnote{\url{https://github.com/Ouroboros/Arianrhod}} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
 From Table~\ref{table:saturation}, we also see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.
 
-% to find max nprojects: select distinct uniqueSourceID, count(*) as ct from RegexCitationMerged group by uniqueSourceID order by ct;
-
-
-%As we scanned \DTLfetch{data}{key}{nProjScanned}{value} projects, we would expect to have seen $11*2*3898=85,756$ regex usages, which is higher than the actual \DTLfetch{data}{key}{nUsages}{value} usages observed. \todo{Explain why? Be pedantic. }
-
 \input{../analysis_output/saturation}
-
-%\subsubsection{Usage Frequency of {\tt re} Module}
 
 \begin{figure}[tb]
 \centering
@@ -116,50 +107,9 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 \input{../analysis_output/featureStats}
 
 The number of projects that use each of the {\tt re} functions is shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex object compiled using {\tt re.compile} as an argument.
-%\todoNow{can we connect any of these function calls to the findings from the survey? For example, according to Table~\ref{tab:regexactivities}, participants frequently or occasionally want to capture parts of strings, which maps to the X function in {\tt re}}
-%\subsubsection{Usage Frequency of {\tt re} Module Flags}
 
 When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed.
  Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.   Although multiple flags can be combined using a bitwise or, this was never observed.
-
-
-
-%\subsubsection{Most Frequently Observed Patterns}
-%
-%Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects in which the pattern appears.  \todoNow{Is this still true???} The patterns are quoted to show the presence of spaces, if any.  We  elaborate on the top four patterns and  reference the feature set in Table~\ref{table:featureStats}.
-%
-%
-%The first pattern, \verb!`\s+'!, uses the WSP character class feature.  This character class represents one or more whitespace characters,  defined as spaces, tabs, newlines, vertical whitespace, carriage returns or form feeds.  The \verb!+! (the ADD feature) at the end of the pattern means that it must match one or more whitespace characters.  The pattern \verb!`\s+'! is often used to split sentences into separate words which may have more than one space between them, or contain tabs or other types of whitespace.
-%
-%Interestingly, the second most common pattern, \verb!`\s'!, also uses the WSP character. In this case, it does not match several whitespace characters (though it would match the first of several).
-%
-%The third pattern, \verb!\d+!,  uses the DEC character class, which is composed of the digits from 0 to 9.  Like the first pattern, the third uses the ADD feature to match one or more digits.
-%
-%The fourth pattern, \verb![\x80-\xff]!, uses the CCC feature to create a custom character class, and the RNG feature to specify a range of characters.
-%%The hexadecimal value \verb!\x80! is equivalent to the value 128 in decimal, and the hexadecimal value \verb!\xff! is equivalent to 255 in decimal.
-%When hexadecimal values are used within a character class like this (and the UNICODE flag is not active), it signifies the corresponding characters in an ASCII lookup table.
-%%The range specified by this pattern is highlighted on the right side of Figure~\ref{fig:ASCIItable}.  Table image found at: \url{https://courses.engr.illinois.edu/ece390/books/labmanual/ascii-code/quickref.png}.
-%%\todo{run program again to unescape pattern strings}
-%%\todo{Figure 6 seems largely unnecessary}
-%
-%
-%%\todo{more of the topN patterns if there is space}
-%
-%%\begin{figure}[tb]
-%%\centering
-%%\includegraphics[width=\columnwidth]{../illustrations/ASCIItable.eps}
-%%\cprotect\caption{On the Right, ASCII Characters Matching \verb!'[\x80-\xff]'! (RQ1)}
-%%\label{fig:ASCIItable}
-%%\end{figure}
-%
-%\input{../analysis_output/topNW}
-
-% %\subsection{Pattern Characteristics}
-
-% Table~\ref{table:patternStats} (description of table contents)
-
-% \input{../analysis_output/patternStats}
-%\todoNow{add patternStats table back in and describe it if there is enough time.  Note the longest pattern present in patternLength.csv in analysis folder was probably automatially generated from text and is monstrous!}
 
 
 \paragraph{Summary - RQ2}
@@ -314,7 +264,7 @@ The smallest pattern in Table~\ref{table:exampleCluster} contains only the colon
 
 For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects any member of the cluster appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`:+'(31)!.
 
-We manually mapped the top 100 largest clusters based on the number of projects into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \verb!`b*'! and \verb!`^'!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category, the number of clusters it represents, number of patterns in those clusters, and the number of projects. The most common category is \emph{Multi Matches}, which contains clusters that have a disjunction of behaviors (e.g., matching a comma or semicolon, as in \verb!`,|;'(18)!). Each cluster was mapped to exactly one category. Next, we describe the categories, ordered by the number of projects the regex patterns map to. 
+We manually mapped the top 100 largest clusters based on the number of projects into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \verb!`b*'! and \verb!`^'!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category, the number of clusters it represents, number of patterns in those clusters, and the number of projects. The most common category is \emph{Multi Matches}, which contains clusters that have a disjunction of behaviors (e.g., matching a comma or semicolon, as in \verb!`,|;'(18)!). Each cluster was mapped to exactly one category. Next, we describe the categories, ordered by the number of projects the regex patterns map to.
 
 %When a cluster can fit in multiple categories, it is placed in the most specific category.  The following six categories are listed in order from most specific behavior to least specific behavior.
 
@@ -327,15 +277,15 @@ We manually mapped the top 100 largest clusters based on the number of projects 
 \textbf{Category} & \textbf{Clusters} & \textbf{Patterns} & \textbf{Projects} \\  \hline \bigstrut
 Multi Matches & 21 & 237 & 295\\
 \hline \bigstrut
-Specific Char & 17 & 103 & 184\\ 
+Specific Char & 17 & 103 & 184\\
 \hline \bigstrut
-Anchored Patterns & 20 & 85 & 141\\ 
+Anchored Patterns & 20 & 85 & 141\\
 \hline \bigstrut
- Content of Parens & 10 & 46 & 111\\ 
+ Content of Parens & 10 & 46 & 111\\
 \hline \bigstrut
 Two or More Chars & 16 & 40 & 120\\
 \hline \bigstrut
-Code Search & 15 & 27 & 92 \\ 
+Code Search & 15 & 27 & 92 \\
 \bottomrule
 \end{tabular}
 \end{small}
@@ -344,44 +294,43 @@ Code Search & 15 & 27 & 92 \\
 
 %6
 \subsubsection{Multiple Matching Alternatives}
-These clusters match under a variety of conditions by using a character class or a disjunctive \verb!|!. 
-For example: 
-\verb!`(\W)'(89)! matches any alphanumeric character, \verb!`(\s)'(89)! matches any whitespace character, \verb!`\d'(58)! matches any numeric character, and \verb!`,|;'(18)! matches a comma or semicolon.  Most of these clusters are represented by patterns that use default character classes.  This corroborates our survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which 56\% (10) of the participants indicated they use the default classes more than custom.
-This category contains 21 clusters, each appearing in an average of 33 projects.  These clusters have a combined total of 237 patterns, with at least one pattern present in 295 projects. 
+The patterns in these clusters match under a variety of conditions by using a character class or a disjunctive \verb!|!.
+For example:
+\verb!`(\W)'(89)! matches any alphanumeric character, \verb!`(\s)'(89)! matches any whitespace character, \verb!`\d'(58)! matches any numeric character, and \verb!`,|;'(18)! matches a comma or semicolon.  Most of these clusters are represented by patterns that use default character classes.  This corroborates our survey results \todoNow{this might need a n-percent of these use default cc data point, or I don't see how this is corroborating something} to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which 56\% (10) of the participants indicated they use the default classes more than custom.
+This category contains 21 clusters, each appearing in an average of 33 projects.  These clusters have a combined total of 237 patterns, with at least one pattern present in 295 projects.
 
 %5
 \subsubsection{Specific Character Must Match}
 Each cluster in this category requires one specific character to match, for example:
-\verb!`\n\s*'(42)! matches only if a newline is found, \verb!`:+'(31)! matches only if a colon is found, \verb!`%'(22)!, matches only if a percent sign is found and \verb!`}'(14)! matches only if a right curly brace is found.  
-This is in contrast to the survey in Section~\ref{rq1:survey} in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{tab:regexactivities}).
-This category contains 17 clusters, each appearing in an average of 17.1 projects.  These clusters have a combined total of 103 patterns, with at least one pattern present in 184 projects. 
+\verb!`\n\s*'(42)! matches only if a newline is found, \verb!`:+'(31)! matches only if a colon is found, \verb!`%'(22)!, matches only if a percent sign is found and \verb!`}'(14)! matches only if a right curly brace is found.
+This behavior contrasts with the survey in Section~\ref{rq1:survey} in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{tab:regexactivities}).
+This category contains 17 clusters, each appearing in an average of 17.1 projects.  These clusters have a combined total of 103 patterns, with at least one pattern present in 184 projects.
 
 %3
 \subsubsection{Anchored Patterns}
 Each of the clusters uses at least one endpoint anchor to require matches to be absolutely positioned, for example:
-\verb!`(\w+)$'(35)!, \verb!`^-?\d+$'(17)!, \verb!`^\s'(16)!, and \verb!`^[ -~]*$'(10)! each use  \verb!$! and/or \verb!^!.
-This category contains 20 clusters, each appearing in an average of 15.4 projects.  These clusters have a combined total of 85 patterns, with at least one pattern present in 141 projects. 
+\verb!`(\w+)$'(35)! captures the word characters at the end of the input, \verb!`^\s'(16)! matches a whitespace at the beginning of the input, and \verb!`^-?\d+$'(17)! requires that the entire input is an (optionally negative) integer.
+This category contains 20 clusters, each appearing in an average of 15.4 projects.  These clusters have a combined total of 85 patterns, with at least one pattern present in 141 projects.
 
 %2
 \subsubsection{Content of Brackets and Parenthesis}
-The clusters in this category center around finding a pair of characters that surround content, often also capturing that content. For example, 
-\verb!`\(.*\)'(29)! matches when content is surrounded by parentheses, \verb!`".*"'(25)! matches  when content is surrounded by double quotes, \verb!`<(.+)>'(23)! matches and captures content surrounded by angled brackets, and \verb!`\[.*\]'(22)! matches when content is surrounded by square brackets.
-This category contains 10 clusters, each appearing in an average of 18.4 projects.  These clusters have a combined total of 46 patterns, with at least one pattern present in 111 projects. 
-
+The clusters in this category center around finding a pair of characters that surround content, often also capturing that content. For example,
+\verb!`\(.*\)'(29)! matches when content is surrounded by parentheses and \verb!`".*"'(25)! matches  when content is surrounded by double quotes.  The cluster \verb!`<(.+)>'(23)! matches and captures content surrounded by angled brackets.
+This category contains 10 clusters, each appearing in an average of 18.4 projects.  These clusters have a combined total of 46 patterns, with at least one pattern present in 111 projects.
+%, and \verb!`\[.*\]'(22)! matches when content is surrounded by square brackets
 %4
 \subsubsection{Two or More Characters in Sequence}
 These clusters require several characters in a row to match some pattern, for example:
-\verb!`\d+\.\d+'(30)! requires one or more digits followed by one or more digits, \verb!`  '(17)! requires two spaces in a row, 
-%\verb!`([A-Z][a-z]+[A-Z][^ ]+)'(11)!, 
+\verb!`\d+\.\d+'(30)! requires one or more digits followed by a period character, followed by one or more digits.  The cluster \verb!`  '(17)! requires two spaces in a row,
+%\verb!`([A-Z][a-z]+[A-Z][^ ]+)'(11)!,
 and \verb!`@[a-z]+'(9)! requires the at symbol followed by two or more lowercase characters, as in a twitter handle.
-This category contains 16 clusters, each appearing in an average of 13 projects.  These clusters have a combined total of 40 patterns, with at least one pattern present in 120 projects. 
+This category contains 16 clusters, each appearing in an average of 13 projects.  These clusters have a combined total of 40 patterns, with at least one pattern present in 120 projects.
 
 %1
 \subsubsection{Code Search and Variable Capturing}
 These clusters center around a recognizable effort to parse source code or URLs and often capture variable values in it, for example:
-\verb!`^https?://'(23)! matches a web address, \verb!`(.+)=(.+)'(9)! matches an assignment statement, and\\ \verb!`\$\{([\w\-]+)\}'(11)! matches and captures content within string interpolation. 
-%, and \verb!`SECRET|PASSWORD|PROFANITIES_LIST'(13)!. 
-This category contains 15 clusters, each appearing in an average of 11.7 projects.  These clusters have a combined total of 27 patterns, with at least one pattern present in 92 projects. 
+\verb!`^https?://'(23)! matches a web address, and \verb!`(.+)=(.+)'(9)! matches an assignment statement, capturing both the variable name and value.  The cluster \\ \verb!`\$\{([\w\-]+)\}'(11)! matches an evaluated string interpolation and captures the code to evaluate.
+This category contains 15 clusters, each appearing in an average of 11.7 projects.  These clusters have a combined total of 27 patterns, with at least one pattern present in 92 projects.
 
 \paragraph{Summary - RQ4}
 When tool designers are considering what features to include, data about usage in practice is valuable.  Semantic similarity clustering  helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
@@ -389,43 +338,5 @@ When tool designers are considering what features to include, data about usage i
 We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the colon for the cluster in Table~\ref{table:exampleCluster}.
 These six categories define what users are doing with regexes at a high level: matching with alternatives, matching literal characters, matching with sequences, matching with endpoint anchors, parsing contents of brackets or braces, or searching and capturing Code.
 One of the six common cluster categories, \emph{Code Search and Variable Capturing}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
-
-
-%\subsection{{RQ5:} What is the impact of \emph{not} supporting various regular expression features?}
-%\label{results:rq3}
-%
-%
-%
-%
-%\paragraph{Summary - RQ5}
-
-%whereas each group in the second part is drawn from a subset of strings in the corpus known to contain at least one of the desired features.  We did this because the presence of a feature in a pattern can be easily lost
-
-
-
-
-
- %All 1375 projects containing at least 1 Rex-Compatible pattern
-
-
-% We guide the results analysis for this research question based on the features \emph{not} supported by popular regex tools.
-% Table~\ref{table:featureStats} shows the mapping from features to regex tools.
-
-
-
-
-
-% \subsubsection{Feature Groups Overview}
-% Instead of analyzing every feature independently, we chose small groups of conceptually related features.  For each of these groups, we selected all clusters that had at least one of the features in at least one pattern within the cluster to form a `feature group'-focused cluster set.
-
-% Table~\ref{table:featureGroups} shows the total number of projects that contain at least one pattern from at least one cluster in the cluster set, and some selected clusters represented by the shortest string in the cluster.  These clusters were selected not because of being within the largest number of projects, but because they illustrate some interesting usage of a feature that will be explored in detail later.
-
-% \input{../behavioral_clustering/featureGroups}
-
-
-% (note that for the ANY group, all but two of the top 30 clusters used `.*', but that .* as a pattern alone only appeared in 23 projects)
-
-
-% tell them how the cluster groups in the first part are all drawn from a subset of the corpus limited by what Rex can support, whereas the cluster groups in the second part are all drawn from the complete corpus, but are not guaranteed to have behavioral similarity like in the first part.
 
 
