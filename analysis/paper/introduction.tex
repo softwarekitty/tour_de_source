@@ -8,19 +8,19 @@ Beyond supporting regular expression usage, the applications of regular expressi
 specification for string constraint solvers~\cite{Trinh:2014:SSS:2660267.2660372, hampi}, and as queries in a data mining framework~\cite{Begel:2010:CDE:1806799.1806821} or on the semantic web~\cite{Lee:2010:PSQ:1871871.1871877}.
 Regexes are also employed in critical missions like mysql injection prevention~\cite{Yeole:2011:ADT:1980022.1980229} and network intrusion detection~\cite{network}, or in more diverse applications like DNA sequencing alignment~\cite{1594922}.
 
-These researchers and tool designers must pick what features to include or exclude, which  can be a difficult  design decision. Supporting advanced features may be more expensive, taking more time and potentially making the project too complex and cumbersome to execute well.  A selection of only the simplest of regex features limits the applicability or relevance of that work. Despite extensive research effort in the area of regex support,  no research has been done about how regexes are used in practice and what features are essential for the most common use cases.
+These regex researchers and tool designers must pick what features to include or exclude, which  can be a difficult  design decision. Supporting advanced features may be more expensive, taking more time and potentially making the project too complex and cumbersome to execute well.  A selection of only the simplest of regex features limits the applicability or relevance of that work. Despite extensive research effort in the area of regex support,  no research has been done about how regexes are used in practice and what features are essential for the most common use cases.
 
 
 \emph{The goal of this work is to explore 1) the context in which developers use regular expressions, and 2) the features and diversity of  regular expressions found in Python projects}.
-First, we survey developers about the context of their regex usage, include how often and for what purposes regexes are composed.
-Second, we measure how often regex features (e.g., kleene star, character classes, and capture groups are all features) appear in regular expressions and used in Python projects.
+First, we survey developers about the context of their regex usage, including how often and for what purposes regexes are composed.
+Second, we measure how often regex features (e.g., kleene star, character classes, and capture groups) appear in regular expressions used in Python projects.
 By comparing the features to those supported by four common regex support tools, brics~\cite{brics}, hampi~\cite{hampi}, Rex~\cite{rex}, and RE2~\cite{re2} and surveying developers about some of the less supported feature, we discuss the potential impact of omitting various features.
 Third, using  a semantic analysis to cluster similar regular expressions that occur in multiple projects, we explore the most common behaviors captured by  regexes in Python.
 Our results indicate that regexes are most frequently used in command line tools and IDEs, that capturing the contents of brackets and searching for delimiter characters were some of the most specific  behaviors represents in the clusters, and that the capture group feature and the endpoint anchor features are the most widely used features that are also poorly supported in regex tools.
 The contributions of this work are:
 \begin{itemize}
     \item A survey of 18 professional software developers about their experience with regular expressions,
-	\item An empirical analysis of regex feature usage of nearly 14,000 regular expressions in \DTLfetch{data}{key}{nProjScanned}{value} open-source Python projects, mapping of those features to those supported by common regex tools and survey results showing the impact of not supporting various features,
+	\item An empirical analysis of regex feature usage in nearly 14,000 regular expressions in \DTLfetch{data}{key}{nProjScanned}{value} open-source Python projects, mapping of those features to those supported by common regex tools and survey results showing the impact of not supporting various features,
 	\item An approach for measuring semantic similarity of regular expressions and qualitative analysis of the most common semantically similar clusters, and
 	\item A discussion of opportunities for future work in supporting programmers in writing regular expressions.
 \end{itemize}
