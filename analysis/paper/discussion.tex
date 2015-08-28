@@ -12,7 +12,7 @@ The capture group (CG) feature is the most frequently used feature in terms of p
 
 Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
 
-\subsubsection{File Parsing}
+\subsubsection{Counting Lines and Finding Flags}
 Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of the 13,912 patterns in the corpus, 3,444 (24\%) contained ANY followed by KLE  (i.e., \verb!`.*'!), often at the end of the pattern.
 One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of ``Counting lines that match a pattern" and ``Counting substrings that match a pattern" at 3.2 or Rarely/Occasionally.
 
@@ -47,10 +47,10 @@ One category of 10 clusters in the top 100 contained regex patterns to parse the
 %http://english.stackexchange.com/questions/50851/the-contents-are-or-the-contents-is
 
 \subsubsection{Library Support for Developers}
-Within standard programming languages, regular expressions libraries are very common, yet there are  differences between languages in the features that they support. For example, Java supports possessive quantifiers like \verb! `ab*+c'! (here the `+' is modifying the `*' to make it possessive) whereas Python does not. Such differences among programming language implementations was identified as a pain point for using regular expressions by 17\% of the survey participants. This provides an opportunity for future work that makes such differences between languages explicit or for new libraries that translate between regex utilizations in various languages when porting projects. 
+Within standard programming languages, regular expressions libraries are very common, yet there are  differences between languages in the features that they support. For example, Java supports possessive quantifiers like \verb! `ab*+c'! (here the `+' is modifying the `*' to make it possessive) whereas Python does not. Such differences among programming language implementations was identified as a pain point for using regular expressions by 17\% of the survey participants. This provides an opportunity for future work that makes such differences between languages explicit or for new libraries that translate between regex utilizations in various languages when porting projects.
 
 \subsubsection{Support for Regexes Composition}
-According to our survey, over 60\% of developers find regexes to be difficult to compose. Additionally, developers frequently or very frequently write tests for their regexes. This provides an opportunity to instead 
+According to our survey, over 60\% of developers find regexes to be difficult to compose. Additionally, developers frequently or very frequently write tests for their regexes. This provides an opportunity to instead
 
 \subsubsection{Automated Regex Repair}
 Regular expression errors are common and have produced thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques to fix.
