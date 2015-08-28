@@ -106,7 +106,7 @@ public class Section5 {
 				}
 			}
 		}
-
+//
 //		int[][] supportedFeatureGroups = {
 //				{ FeatureDictionary.I_META_CAPTURING_GROUP },
 //				{ FeatureDictionary.I_META_OR },

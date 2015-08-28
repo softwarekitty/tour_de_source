@@ -8,10 +8,10 @@ In this section, we present the results of each research question.
 \subsection{RQ1: In what context do developers use regular expressions?}
 \label{rq1:survey}
 
-The survey was completed by 18 professional software developers with an average of nine years of programming experience ($\sigma = 4.28$). 
-On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly. 
+The survey was completed by 18 professional software developers with an average of nine years of programming experience ($\sigma = 4.28$).
+On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly.
 Table~\ref{tab:regexenviron} shows how frequently participants compose regexes using each of several languages and technical environments.
-Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  Regexes were rarely used in query languages like SQL, but for command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. 
+Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  Regexes were rarely used in query languages like SQL, but for command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year.
 
 \newcommand{\horiz}{\hspace{2.1pt}}
 
@@ -59,21 +59,21 @@ Among the most common usages are capturing parts of a string and locating conten
 Using a similar 7-point likert scale that includes `always' as a seventh point, developers indicated that they test their regexes with the same frequency as they test their code (average response was 5.2, which is between frequently and very frequently).  Half of the 18 developers indicate that they use external tools to test their regexes, and the other half indicated that they only use tests that they write themselves. Of the nine developers using tools, six mentioned some online composition aide such as \url{regex101.com} where a regex and input string are entered, and the input string is highlighted according to what is matched.
 %The other three developers mentioned 'ScalaCheck' (a testing framework), 'IDE regex plugins', and 'Language specific Regexlib'.
 
-When asked an open ended question about pain points encountered with regular expressions, we observed three main categories. The most common, ``hard to compose," was represented in 61\% (11) responses. Next, 
+When asked an open ended question about pain points encountered with regular expressions, we observed three main categories. The most common, ``hard to compose," was represented in 61\% (11) responses. Next,
  39\% (7) developers responded that regexes are ``hard to read" and 17\% (3) indicated difficulties with ``inconsistency across implementations," which manifest when using regexes in multiple languages. These responses do not sum to 18 as three developers provided overlapping  answers.
 
 \paragraph{Summary - RQ1}
-%The survey validates the assumption that regex are widely used by professional software developers and sheds some light into the context in which regexes are used. 
-%Future research into regex can focus on activities that prove to be most important to developers, namely capturing parts of strings and searching for specific content.  
-%Although research into regex use in general purpose and scripting languages is important, usage within command line tools and text editors should also be considered.  
+%The survey validates the assumption that regex are widely used by professional software developers and sheds some light into the context in which regexes are used.
+%Future research into regex can focus on activities that prove to be most important to developers, namely capturing parts of strings and searching for specific content.
+%Although research into regex use in general purpose and scripting languages is important, usage within command line tools and text editors should also be considered.
 
-Overall, regexes are used frequently with common usages including locating content within a file, capturing parts of strings, and parsing user input. 
-The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regex being hard to read and hard to compose, and most of the tools that they indicate using are focused on composition. 
+Overall, regexes are used frequently with common usages including locating content within a file, capturing parts of strings, and parsing user input.
+The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regex being hard to read and hard to compose, and most of the tools that they indicate using are focused on composition.
 
 
 
 \subsection{RQ2: How  is the {\tt re} module used?}
-We explore regex utilizations and flags used in the scraped Python projects. 
+We explore regex utilizations and flags used in the scraped Python projects.
 %We measure the frequency of usage for calls to the 8 functions of the {\tt re} module (i.e., {\tt compile}, {\tt search}, {\tt match}, {\tt split}, {\tt findall}, {\tt finditer}, {\tt sub} and {\tt subn}).
 %We also measure usage of the 8 {\tt re} flags (i.e., {\tt DEFAULT}, {\tt IGNORECASE}, {\tt LOCALE}, {\tt MULTILINE}, {\tt DOTALL}, {\tt UNICODE}, {\tt VERBOSE} and {\tt DEBUG}).
 %\subsubsection{Regex Utilizations per Project}
@@ -122,7 +122,7 @@ When considering flag use, we excluded the default flag, which is built into the
 
 %\subsubsection{Most Frequently Observed Patterns}
 %
-%Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects in which the pattern appears.  \todoNow{Is this still true???} The patterns are quoted to show the presence of spaces, if any.  We  elaborate on the top four patterns and  reference the feature set in Table~\ref{table:featureStats}. 
+%Table~\ref{table:topNW} contains the most frequently used patterns, ordered by the number of projects in which the pattern appears.  \todoNow{Is this still true???} The patterns are quoted to show the presence of spaces, if any.  We  elaborate on the top four patterns and  reference the feature set in Table~\ref{table:featureStats}.
 %
 %
 %The first pattern, \verb!`\s+'!, uses the WSP character class feature.  This character class represents one or more whitespace characters,  defined as spaces, tabs, newlines, vertical whitespace, carriage returns or form feeds.  The \verb!+! (the ADD feature) at the end of the pattern means that it must match one or more whitespace characters.  The pattern \verb!`\s+'! is often used to split sentences into separate words which may have more than one space between them, or contain tabs or other types of whitespace.
@@ -160,7 +160,7 @@ When considering flag use, we excluded the default flag, which is built into the
 
 \paragraph{Summary - RQ2}
 
-Only about half of the projects sampled contained any utilizations.  Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.  
+Only about half of the projects sampled contained any utilizations.  Most utilizations used the {\tt re.compile} function to compile a regex object before actually using the regex to find a match.  Most utilizations did not use a flag to modify matching behavior.
 
 
 
@@ -190,7 +190,7 @@ We consider the literal feature to be ubiquitous in all patterns, and necessary 
 
 The eight most commonly used features, ADD, CG, KLE, CCC, ANY, RNG, STR and END,
 appear in over half the projects. %The remaining 26 features appear in less than half of the projects containing utilizations.
-CG is more commonly used in patterns than the highest ranked feature (ADD) by a wide margin (over 8\%), even though they appear in similar numbers of projects. 
+CG is more commonly used in patterns than the highest ranked feature (ADD) by a wide margin (over 8\%), even though they appear in similar numbers of projects.
 
 \subsubsection{Feature Support in Regex Tools}
 \label{regextoolsresults}
@@ -202,19 +202,19 @@ To create the tool mappings, we consulted documentation for each of the selected
 %\todoLast{Were there any features supported by the tools that we did not find in the corpus? Answer: RE2 has a lot of features we didn't study and that weren't found in the corpus in any substantial quantity.  I think this is addressed by the earlier mention: Only features appearing in at least 10 projects are listed.}
 
 
-Of the four projects selected for this analysis, RE2 supports the most studied features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.  
+Of the four projects selected for this analysis, RE2 supports the most studied features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.
 %All projects support NCC, OR, and the four less common repetition features: QST, SNG, DBB and LWB.  RE2 is the only project to support the WNW, ENDZ and NWNW features.
-No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.%, which inspired in part the survey questions about feature usage. 
+No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.%, which inspired in part the survey questions about feature usage.
 
 
 \subsubsection{Survey Results for Feature Usage}
-The pattern language for Python, which is used to compose regexes, supports default character classes like the ANY or dot character class: \verb!.! meaning, `any character except newline' (a full list of features and examples is in the first four columns of Table~\ref{table:featureStats}).  
-It also supports three other default character classes: \verb!\d!, \verb!\w!, \verb!\s! (and their negations). All of these default character classes can be simulated using the custom character class (CCC) feature, which can create semantically equivalent regexes.  
-For example  the decimal character class: \verb!\d! is equivalent to a CCC containing all 10 digits:  \verb!\d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!.  
-%Users have a choice when using regex between writing \verb!\d! and \verb![0-9]! and whereas the first option may be shorter, the second may seem more intuitive and readable.  
-Other default character classes such as the word character class: \verb!\w! may not be as intuitive to encode in a CCC: \verb![a-zA-Z0-9_]!.  
+The pattern language for Python, which is used to compose regexes, supports default character classes like the ANY or dot character class: \verb!.! meaning, `any character except newline' (a full list of features and examples is in the first four columns of Table~\ref{table:featureStats}).
+It also supports three other default character classes: \verb!\d!, \verb!\w!, \verb!\s! (and their negations). All of these default character classes can be simulated using the custom character class (CCC) feature, which can create semantically equivalent regexes.
+For example  the decimal character class: \verb!\d! is equivalent to a CCC containing all 10 digits:  \verb!\d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!.
+%Users have a choice when using regex between writing \verb!\d! and \verb![0-9]! and whereas the first option may be shorter, the second may seem more intuitive and readable.
+Other default character classes such as the word character class: \verb!\w! may not be as intuitive to encode in a CCC: \verb![a-zA-Z0-9_]!.
 
-Survey participants were asked if they use only CCC, use CCC more than default, use both equally, use default more than CCC or use only default.  Results for this question are shown in Table~\ref{tab:cccvsdefault}, with 67\% (12) indicating that they use default the most. 
+Survey participants were asked if they use only CCC, use CCC more than default, use both equally, use default more than CCC or use only default.  Results for this question are shown in Table~\ref{tab:cccvsdefault}, with 67\% (12) indicating that they use default the most.
 Participants were also asked to explain their preferences.  Participants who favored CCC mostly said something equivalent to ``it is more explicit," whereas the participants who favored default character classes said,  ``it is less verbose" and ``I like using built-in code."
 
 \begin{table}
@@ -232,7 +232,7 @@ use only default & 2\\
 \end{center}
 \end{table}
 
-To further explore how frequently participants use various regex features, participants were asked five questions (on a 6-point likert scale) about how frequently they use specific related groups of features, 
+To further explore how frequently participants use various regex features, participants were asked five questions (on a 6-point likert scale) about how frequently they use specific related groups of features,
 %\begin{itemize} \itemsep -2pt
 %    \item endpoint anchors (STR, END): \verb!^! and \verb!$!
 %    \item capture groups(CG): (capture me)
@@ -240,9 +240,9 @@ To further explore how frequently participants use various regex features, parti
 %    \item (negative) look-ahead/behinds (LKA, NLKA, LKB, NLKB): \verb!a(?=bc)!, \verb!(?<!x)yz!, \verb!(?<=a)!, \verb!a(?!yz)!
 %    \item lazy repetition (LZY): \verb!ab+?!, \verb!xy{2,3}?!
 %\end{itemize}
-%These features were 
-chosen based on the tool feature support explored in Section~\ref{regextoolsresults}. 
-Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used. \todoLast{Carl: check table for correct mapping of group to code}
+%These features were
+chosen based on the tool feature support explored in Section~\ref{regextoolsresults}.
+Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used.
 
 
 \begin{table}
@@ -254,7 +254,7 @@ Group & Code &  Frequency \\ \hline
 endpoint anchors & (STR, END) & 4.4\\
 capture groups & (CG) & 4.2 \\
 word boundaries & (WNW) & 3.5 \\
-lazy repetition & (LZY) &  2.9\\ 
+lazy repetition & (LZY) &  2.9\\
 \multirow{2}{*}{(neg) look-ahead/behind} &  (LKA, NLKA,  & \multirow{2}{*}{2.5}\\
 & LKB, NLKB) & \\
 \end{tabular}
@@ -267,7 +267,8 @@ lazy repetition & (LZY) &  2.9\\
 
 \paragraph{Summary - RQ3}
 We found that the eight most common features are found on over 50\% of the projects.
-We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects. Some of the less supported features, such as endpoint anchors and capture groups, are at least occasionally used by developers. 
+We also identify brics as the project supporting the fewest features and RE2 as the project supporting the most features, and identify groups of features supported or not supported by the four regex projects. Some of the less supported features, such as endpoint anchors and capture groups, are used by developers occasionally to frequently.
+%I was confused by the 'at least occasionally' verbage, at first it looked like 'the least occasionally'
 
 From Table~\ref{table:featureStats} we know that STR and END features are present in over half of the scanned projects containing utilizations.  In our survey, over half (56\%) of the respondents answers that they use endpoint anchors frequently or very frequently, and none of them claimed to never use them. The brics library does not support this feature, which is a missed opportunity for developers who could otherwise have used brics to model their regexes that use STR and END.
 
@@ -276,13 +277,13 @@ In our developer survey, 11\% (2) of participants use this feature frequently an
 
 %\subsubsection{PNG and BKRN vs CG and BKR}
 %The PNG group (python-style named capture groups) and BKRN (back-references: named) are intended to operate together to allow users to name the content that is expected to appear in a capture group.  A simple example of how these can be used together with the named capture group matching some vowel is:
-%\verb!(?P<vowel>[aeiou]x(?P=vowel))! which will match the strings 'axa' and 'oxo' but not 'txt'.  The same functionality can be obtained with a much shorter expression: \verb!([aeiou])x\1! where the \verb!'\1'! references the CG started by the first left parenthesis found when moving from left to right.  
+%\verb!(?P<vowel>[aeiou]x(?P=vowel))! which will match the strings 'axa' and 'oxo' but not 'txt'.  The same functionality can be obtained with a much shorter expression: \verb!([aeiou])x\1! where the \verb!'\1'! references the CG started by the first left parenthesis found when moving from left to right.
 When survey participants were asked if they prefer to always use numbered (BKR) or named (BKRN) back references, 66\% (12) of survey participants said that they always use BKR, and the remaining 33\% (6) said ``it depends."  Not one participant preferred named capture groups.  BKR is present in 5\% of scanned projects, while BKRN is present in only 1.7\%, which corroborates our findings that numbered  are generally preferred over named capture groups.
 
 \subsection{RQ4: How semantically similar are regexes?}
 \label{rq4:results}
 
- Since Rex does not support all the features present in the corpus, we could only generate sets of matching strings for 9,727 (70\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 270 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats}, as described in Section~\ref{results:rq3}.
+Since Rex does not support all the features present in the corpus, and because we discarded patterns found in only one project, we only generated sets of matching strings for 2,871 (21\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 923 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats}, as described in Section~\ref{results:rq3}.
 The generated strings for each pattern are used to measure the pairwise similarity for all patterns and construct the similarity matrix.
 
 
@@ -290,64 +291,50 @@ The generated strings for each pattern are used to measure the pairwise similari
 When tool designers are considering what features to include, data about usage in practice is valuable.  Semantic similarity clustering  helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in actual matching behavior.  We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
 
 %\subsubsection{General Information About Clusters Found}
-From 9,503 distinct patterns, the MCL clustering technique identified 514 clusters with 2 or more patterns, and 7,214 clusters of size 1.  Recall that only pairs of patterns with a similarity level of 0.75 were included in the matrix passed to MCL.  The average size of clusters larger than size one was 3.7.Each pattern belongs to exactly one cluster.
+From 2,871 distinct patterns, the MCL clustering technique identified 186 clusters with 2 or more patterns, and 2,042 clusters of size 1.  Recall that only pairs of patterns with a similarity level of 0.75 were included in the matrix passed to MCL.  The average size of clusters larger than size one was 4.5.  Each pattern belongs to exactly one cluster.
 
 %\subsubsection{An Example Cluster}
-Table~\ref{table:exampleCluster} provides an example of a behavioral cluster representing 13 patterns with at least one pattern from this cluster present in 100 different projects.  At first glance this cluster may seem to revolve around the `\verb!\s*!' parts of these patterns, but actually this cluster was formed because each of these patterns has a comma literal, and other details did not interfere with matching the Rex-generated strings with commas in them.
+Table~\ref{table:exampleCluster} provides an example of a behavioral cluster containing 12 patterns (4 longer patterns omitted for brevity) with at least one pattern from this cluster present in 31 different projects.  All patterns in this cluster share the literal `:' character.
+%Three example strings generated by Rex for the first pattern are: `-()', `*'8(5)', `Oe()'.  For the third pattern, Rex generated these three strings: ` ()', `(q)F', `(n)M'.  The pattern: \verb!\(.*\)$! is very similar, but will not match the string `(n)M', and so was placed in a different cluster.
 \input{../behavioral_clustering/exampleCluster}
 
 %\subsubsection{Using the Smallest Pattern to Represent a Cluster}
-The smallest pattern in Table~\ref{table:exampleCluster} is the single comma literal \verb!`,'! at index 1.  This smallest pattern gives the a good idea of what all the patterns within it have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the strings created by Rex from another pattern within the cluster, and so we assume that \emph{the smallest pattern is a good representation of the cluster}.
+The smallest pattern in Table~\ref{table:exampleCluster} contains only the colon and the plus character \verb!`:+'! at index 1.  This smallest pattern gives a good idea of what all the patterns within the cluster have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior.  And yet in order for the smallest pattern to be clustered with other patterns, it had to match most of the strings created by Rex from another pattern within the cluster, and so we assume that \emph{the smallest pattern is a good representation of the cluster}.
 
-For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects a member of the cluster appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`,'(100)!.
+For the rest of this paper, a cluster will be represented by one of the shortest patterns it contains, followed by the number of projects any member of the cluster appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`:+'(31)!.
 
-We  manually mapped the top 100 clusters into each of 6 behavioral categories (determined by inspection), omitting 40 clusters that did not fit into any of these catagories.
-\leavevmode\color{gray}
- ...including 29 clusters composed of long strings (example: \verb!set_fabric_sense_len\)\(!) which were in the top 100 because 28 projects that were scanned were forked linux kernels.
-\leavevmode\color{black}
+We manually mapped the top 100 clusters into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \verb!`b*'! and \verb!`^'!.  The remaining 99 clusters were all categorized.
 
-Next, we define the six categories and provide examples from the relevant clusters.
+When a cluster can fit in multiple categories, it is placed in the most specific category.  The following six categories are listed in order from most specific behavior to least specific behavior.
 
-\subsubsection{Single Literal Characters}
-This category contains 19 clusters representing \todoNow{X} projects. Each of the clusters center around a single literal character. For example, three of the top clusters in this category include:
-\verb!`\\'(110)!, \verb!`,'(100)!, and \verb!`:'(91)!. This is in contrast to the survey in Section~\ref{sec:survey} in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{tab:regexactivities}).
-% \verb!`-'(74)!, \verb!`#'(69)!, \verb!` '(66)!, \verb!`/'(65)!, \verb!`\.'(61)!, \verb!`='(52)!, \verb!`//'(51)!, \verb!`\n'(41)!, \verb!`;'(38)!, \verb!`_'(36)!, \verb!`@'(36)!, \verb!`"'(33)!, \verb!`%'(29)!, \verb!`&'(28)!, \verb!`&'(28)!, \verb!`''(28)!
+\subsubsection{Code Search and Variable Capturing}
+This category contains 15 clusters, each appearing in an average of 11.7 projects, with at least one pattern within this category present in 92 projects. These clusters center around a recognizable effort to parse code and often capture variable values in it, for example:
+\verb!`^https?://'(23)!, \verb!`(.+)=(.+)'(9)!, \verb!`\$\{([\w\-]+)\}'(11)!, and \verb!`SECRET|PASSWORD|PROFANITIES_LIST'(13)!
 
-\subsubsection{Default Character Classes}
-This category contains 12 clusters. Each of the clusters revolves around the use of a default character class. For example, three of the top clusters in this category are:
-\verb!`\s'(277)!, \verb!`\W'(208)!, and \verb!`\d'(193)!. This corroborates our survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which 56\% (10) of the participants indicated they use the default classes more than custom.
-%\verb!`\w'(114)!, \verb!`\w+$'(71)!,
-% \verb!`\D'(65)!, \verb!`\S'(53)!, \verb!`^\s'(40)!, \verb!`^\d+'(39)!, \verb!`^\s*'(39)!, \verb!`\d+$'(38)!, \verb!`\s*'(30)!
+\subsubsection{Content Of Brackets and Parenthesis}
+This category contains 10 clusters, each appearing in an average of 18.4 projects, with at least one pattern within this category present in 111 projects. Each of the clusters center around finding a pair of characters that surround content, often capturing that content:
+\verb!`\(.*\)'(29)!, \verb!`".*"'(25)!, \verb!`<(.+)>'(23)!, and \verb!`\[.*\]'(22)!.
 
-\subsubsection{User-Defined Character Classes}
-This category contains 10 clusters. Each of the clusters center around user defined character classes. For example, three of the top clusters in this category are:
-\verb!`[a-zA-Z]'(138)!, \verb!`[^!-~]'(122)!, and \verb!`[&<]'(50)!. This further supports our survey results in which 33\% (6) participants indicated they use the custom classes more than default. The remaining two participants use both equally.
-% \verb!`[A-Z]'(47)!, \verb!`[ \t]'(37)!, \verb!`[-\s]'(35)!, \verb!`^[a-zA-Z]'(33)!, \verb!`[][\()<>@,:;"."]'(29)!, \verb!`[*?[]'(29)!, \verb!`[?/]+'(28)!
+\subsubsection{Anchored Patterns}
+This category contains 20 clusters, each appearing in an average of 15.4 projects, with at least one pattern within this category present in 141 projects. Each of the clusters uses at least one endpoint anchor to require matches to be absolutely positioned, for example:
+\verb!`(\w+)$'(35)!, \verb!`^-?\d+$'(17)!, \verb!`^\s'(16)!, and \verb!`^[ -~]*$'(10)!.
 
+\subsubsection{Requiring Two or More Characters In Sequence}
+This category contains 16 clusters, each appearing in an average of 13 projects, with at least one pattern within this category present in 120 projects. These clusters require several characters in a row to match some pattern, for example:
+\verb!`\d+\.\d+'(30)!, \verb!`  '(17)!, \verb!`([A-Z][a-z]+[A-Z][^ ]+)'(11)!, and \verb!@[a-z]+'(9)!.
 
-\subsubsection{ Matching Whole Strings}
-This category contains 8 clusters. Each of the clusters begins with the STR anchor and ends with the END anchor, requiring the entire input string to match the pattern. For example, three of the top clusters in this category include:
-\verb!`^\d+$'(78)!, \verb!`^\w+$'(74)!, and \verb!`^\s*$'(59)!.
-%, \verb!`^[-\w]+$'(45)!, \verb!`^[a-zA-Z]\w*$'(43)!, \verb!`^[ ]*(#.*)?$'(41)!, \verb!`^[a-f0-9]{40}$'(34)!, \verb!`^\S+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$'(29)!
+\subsubsection{Requiring a Specific Character to Match}
+This category contains 17 clusters, each appearing in an average of 17.1 projects, with at least one pattern within this category present in 184 projects. Each cluster requires one specific character to match, for example:
+\verb!`\n\s*'(42)!, \verb!`:+'(31)!, \verb!`%'(22)!, and \verb!`}'(14)!.  This is in contrast to the survey in Section~\ref{sec:survey} in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{tab:regexactivities}).
 
-
-\subsubsection{Parsing Angle Bracket Contents}
-This category contains 5 clusters. Each of the clusters contains a pair of angle brackets that contain a repeating character class.  It appears that these clusters are being used to recognize or capture the contents of the angle brackets.  For example, three of the top clusters in this category include:
-\verb!`<.+>'(63)!, \verb?`<!\s+([^<>]*)>'(35)?, and \verb!`(<[^<>]*)/>'(35)!. %, ,  \verb!`\(.*\)'(31)!
-% too long for column width: \verb!`<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]'(57)!,
-
-\subsubsection{Capturing Variable Assignments}
-This category contains 4 clusters. Each of the clusters contain an equals symbol and some pattern on either side of it, which appears to be a variable on the left of the equals sign and a value on the right.  This type of cluster is very likely used to capture the value of the variable assignment when parsing source code. For example, three of the top clusters in this category are:
-\verb!`\nmd5_data = {\n([^}]+)}'(69)!, \verb!`.*rlen=([0-9]+)'(57)!, and \verb!`coding[:=]\s*([-\w.]+)'(48)!.
-%, \verb!`((^|;)\s*charset=)([^;]*)'(34)!
-
-%\subsubsection{Clusters Not Falling Into Any Category}
-%\verb!`\d+\.\d+'(53)!, \verb!`\d+\.\d+\.\d+'(48)!, \verb!`".*"'(42)!,\verb!`*$'(42)!, \verb!`(^|.*:)\s*\w*("|\')'(41)!, \verb!`\(\*'(38)!, \verb!`/|-'(36)!, \verb!`.'(35)!, \verb!`\\|/'(31)!, \verb!`::'(30)!, \verb!`/\*'(29)!
+\subsubsection{Multiple Matching Alternatives}
+This category contains 21 clusters, each appearing in an average of 33 projects, with at least one pattern within this category present in 295 projects. Unlike the previous category, the requirements for matching these clusters are defined by alternatives, for example:
+\verb!`(\W)'(89)!, \verb!`(\s)'(89)!, \verb!`\d'(58)!, \verb!`[\\/]'(31)!, and \verb!`,|;'(18)!.  Most of these clusters are represented by patterns that use default character classes.  This corroborates our survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which 56\% (10) of the participants indicated they use the default classes more than custom.
 
 \paragraph{Summary - RQ4}
-We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the comma for the cluster in Table~\ref{table:exampleCluster}.
-These six categories define what users are doing with regexes at a high level: using default character classes, defining their own character classes, matching single characters, parsing variable assignments, parsing the contents of brackets, or matching whole lines. The higher frequency of default character class matching than custom character class matching corroborates our developer survey responses.
- One of the six common cluster categories, \emph{capturing variable assignments}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
+We used the behavior of individual patterns to form clusters, and identified six main categories that clusters belonged to.  Overall, we see that many clusters are defined by the presence of particular tokens, such as the colon for the cluster in Table~\ref{table:exampleCluster}.
+These six categories define what users are doing with regexes at a high level: matching with alternatives, matching literal characters, matching with sequences, matching with endpoint anchors, parsing contents of brackets or braces, or searching and capturing Code.
+One of the six common cluster categories, \emph{Code Search and Variable Capturing}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
 
 
 %\subsection{{RQ5:} What is the impact of \emph{not} supporting various regular expression features?}
