@@ -23,18 +23,13 @@
 \BOOKMARK [1][-]{section.5}{Discussion}{}% 23
 \BOOKMARK [2][-]{subsection.5.1}{Implications For Tool Designers}{section.5}% 24
 \BOOKMARK [3][-]{subsubsection.5.1.1}{Capturing Specific Content}{subsection.5.1}% 25
-\BOOKMARK [3][-]{subsubsection.5.1.2}{File Parsing}{subsection.5.1}% 26
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Counting Lines and Finding Flags}{subsection.5.1}% 26
 \BOOKMARK [2][-]{subsection.5.2}{Opportunities For Future Work}{section.5}% 27
 \BOOKMARK [3][-]{subsubsection.5.2.1}{Context-Specific Regex Support}{subsection.5.2}% 28
 \BOOKMARK [3][-]{subsubsection.5.2.2}{Refactoring Regexes}{subsection.5.2}% 29
 \BOOKMARK [3][-]{subsubsection.5.2.3}{Developer Awareness of Best Practices}{subsection.5.2}% 30
 \BOOKMARK [3][-]{subsubsection.5.2.4}{Library Support for Developers}{subsection.5.2}% 31
-\BOOKMARK [3][-]{subsubsection.5.2.5}{Support for Regexes Composition}{subsection.5.2}% 32
-\BOOKMARK [3][-]{subsubsection.5.2.6}{Automated Regex Repair}{subsection.5.2}% 33
-\BOOKMARK [1][-]{section.6}{Threats to Validity}{}% 34
-\BOOKMARK [2][-]{subsection.6.1}{Conclusion}{section.6}% 35
-\BOOKMARK [2][-]{subsection.6.2}{Internal}{section.6}% 36
-\BOOKMARK [2][-]{subsection.6.3}{Construct}{section.6}% 37
-\BOOKMARK [2][-]{subsection.6.4}{External}{section.6}% 38
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 39
-\BOOKMARK [1][-]{section.8}{References}{}% 40
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Automated Regex Repair}{subsection.5.2}% 32
+\BOOKMARK [1][-]{section.6}{Threats to Validity}{}% 33
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 34
+\BOOKMARK [1][-]{section.8}{References}{}% 35
