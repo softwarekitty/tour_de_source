@@ -1,0 +1,649 @@
+Categories: 
+
+keyword parsing and variable capturing (n:15)(avg:11.7):
+`^https?://'(23), `&#(x?[0-9A-Fa-f]+)[^0-9A-Fa-f]'(18), 
+`<base\s+href\s*=\s*[\'"]?([^\'">]+)'(17), `SECRET|PASSWORD|PROFANITIES_LIST'(13),
+`^([a-zA-Z0-9_]+)=(.*)'(12), `\$\{([\w\-]+)\}'(11), `https?://'(9), 
+`http://'(9), `(.+)=(.+)'(9), `var'(9), `HTML'(9), `Xorg'(9), `Websafe'(9), 
+`cc_(.*)$'(9), `lightlink'(9)
+
+content sandwiched between a pair of chars (n:10)(avg:18.4):
+`\(.*\)'(29), `{[^}]*}'(27), `".*"'(25), `<(.+)>'(23), `\[.*\]'(22), 
+`<(.*)>'(21), `\([^)]+\)'(10), `'.''(9), `/.+/$'(9), `'.*'$'(9)
+
+anchored patterns (n:17)(avg:15.3):
+`(\w+)$'(35), `^[-\w/]+$'(30), `^[a-zA-Z]'(17), `^-?\d+$'(17), 
+`^\s'(16), `:\d+$'(16), `^\s*\#'(15), `^[\w_]+$'(14), `^(\d+)'(14), 
+'^\w'(13), `^/'(13), `^\W+'(11), `^[\w.@+-]+$'(10), `(\d+)$'(10), 
+`^[a-zA-Z][a-zA-Z0-9\-_]*$'(10), `^[ -~]*$'(10), `.*\!$'(10)
+
+requires two or more matching chars in sequence (n:18)(avg:12):
+`\d+\.\d+'(30), `  '(17), `//'(16), `(\S)\s+(\S)'(16), `(\033|~{)'(14), 
+`([a-z\d])([A-Z])'(13), `%([0-9A-Fa-f]{2})'(13), `\.\d+$'(12),
+`\\"'(11), `\$\$.*'(11), `([A-Z][a-z]+[A-Z][^ ]+)'(11), `[ \t][ \t]+'(10), 
+`\\[A-Za-z]+'(9), `[A-Z][a-z]+'(9), `\*/'(9), `@[a-z]+'(9), 
+`\$[()]'(9), `v[0-9]+.*'(9), 
+
+must include a specific character to match (n:18)(avg:19.4):
+`\n\s*'(42), `/+'(39), `:+'(31), `\.+'(24), 
+`( +)'(24), `%'(22), `{'(21), `\|'(19), `\-'(17), `@'(17), 
+`#.*$'(16), `\['(14), `}'(14), `\('(12), `a+'(10), 
+`\t+'(10), `\)'(9), `\]'(9)
+
+at least one char matches a pattern that accepts more than one character (n:21)(avg:33):
+`..'(95), `(\W)'(89), `(\s)'(89), `\S+'(74), `\d'(58), 
+`"|\\'(35), `[\000-\037]'(31), ,`[\\/]'(31) `[\({\[\]}\)\n]'(21), 
+`[^!-~]'(19), `[ ,]'(19), `[\\"]|[^ -~]'(19),  `{|}'(18), 
+`,|;'(18), `[<>&]'(16), `[-.]'(12), `[()]'(11),  
+`(["\\`])'(10), `\s*=.*'(9), `[@{} ]'(9), `["\'/]'(9), 
+
+other:
+`^'(146), 
+
+
+
+cluster 0 stats:
+behavior: zero something or almost anything
+nPatterns: 86.0
+nProjects: 146
+shortest: ^ 
+
+cluster 1 stats:
+behavior: has two chars
+nPatterns: 39.0
+nProjects: 95
+shortest: ..
+
+cluster 2 stats:
+behavior: nonword
+nPatterns: 36.0
+nProjects: 89
+shortest: (\W)
+
+cluster 3 stats:
+behavior: whitespace
+nPatterns: 33.0
+nProjects: 89
+shortest: (\s)
+
+cluster 4 stats:
+behavior: non-whitespace
+nPatterns: 27.0
+nProjects: 74
+shortest: \S+
+
+cluster 5 stats:
+behavior: digits
+internalID: 5
+nPatterns: 23.0
+nProjects: 58
+shortest: \d
+
+cluster 6 stats:
+behavior: newline-space
+nPatterns: 16.0
+nProjects: 42
+shortest: \n\s*
+
+cluster 7 stats:
+behavior: forward slash
+nPatterns: 14.0
+nProjects: 39
+shortest: /+
+
+cluster 8 stats:
+behavior: back slash
+internalID: 9
+nPatterns: 13.0
+nProjects: 35
+shortest: "|\\
+
+cluster 9 stats:
+behavior: word-ending
+nPatterns: 8.0
+nProjects: 35
+shortest: (\w+)$
+
+cluster 10 stats:
+behavior: colon
+nPatterns: 12.0
+nProjects: 31
+shortest: :+
+
+cluster 11 stats:
+behavior: control chars
+nPatterns: 10.0
+nProjects: 31
+shortest: [\000-\037]
+
+cluster 12 stats:
+behavior: any slash
+nPatterns: 9.0
+nProjects: 31
+shortest: [\\/]
+
+cluster 13 stats:
+behavior: all word or dash
+nPatterns: 16.0
+nProjects: 30
+shortest: ^[-\w/]+$
+
+cluster 14 stats:
+behavior: digit dot digit
+nPatterns: 7.0
+nProjects: 30
+shortest: \d+\.\d+
+
+cluster 15 stats:
+behavior: something in parentheses
+nPatterns: 7.0
+nProjects: 29
+shortest: \(.*\)
+
+cluster 16 stats:
+behavior: something in curly braces
+internalID: 12
+nPatterns: 9.0
+nProjects: 27
+shortest: {[^}]*}
+
+cluster 17 stats:
+behavior: something in quotes
+internalID: 22
+nPatterns: 6.0
+nProjects: 25
+shortest: ".*"
+
+cluster 18 stats:
+behavior: period
+nPatterns: 9.0
+nProjects: 24
+shortest: \.+
+
+cluster 19 stats:
+behavior: space char
+nPatterns: 5.0
+nProjects: 24
+shortest: ( +)
+
+cluster 20 stats:
+behavior: something in angle brackets
+nPatterns: 4.0
+nProjects: 23
+shortest: <(.+)>
+
+cluster 21 stats:
+behavior: url parsing
+nPatterns: 3.0
+nProjects: 23
+shortest: ^https?://
+
+cluster 22 stats:
+behavior: something in square brackets
+nPatterns: 7.0
+nProjects: 22
+shortest: \[.*\]
+
+cluster 23 stats:
+behavior: percent char
+nPatterns: 6.0
+nProjects: 22
+shortest: %
+
+cluster 24 stats:
+behavior: something in angle brackets 2
+nPatterns: 8.0
+nProjects: 21
+shortest: <(.*)>
+
+cluster 25 stats:
+behavior: opening curly brace
+nPatterns: 5.0
+nProjects: 21
+shortest: {
+
+cluster 26 stats:
+behavior: parenthesis or curly or square or newline
+nPatterns: 3.0
+nProjects: 21
+shortest: [\({\[\]}\)\n]
+
+cluster 27 stats:
+behavior: no dash or tilde char
+nPatterns: 7.0
+nProjects: 19
+shortest: [^!-~]
+
+cluster 28 stats:
+behavior: space or comma
+nPatterns: 6.0
+nProjects: 19
+shortest: [ ,]
+
+cluster 29 stats:
+behavior: customized non-word CCC
+nPatterns: 5.0
+nProjects: 19
+shortest: [\\"]|[^ -~]
+
+cluster 30 stats:
+behavior: maybe backslash
+nPatterns: 3.0
+nProjects: 19
+shortest: \|
+
+cluster 31 stats:
+behavior: either curly brace
+nPatterns: 5.0
+nProjects: 18
+shortest: {|}
+
+cluster 32 stats:
+behavior: comma or colon
+nPatterns: 5.0
+nProjects: 18
+shortest: ,|;
+
+cluster 33 stats:
+behavior: html esc. chars
+nPatterns: 3.0
+nProjects: 18
+shortest: &#(x?[0-9A-Fa-f]+)[^0-9A-Fa-f]
+
+cluster 34 stats:
+behavior: dash char
+nPatterns: 6.0
+nProjects: 17
+shortest: \-
+
+cluster 35 stats:
+behavior: at char
+nPatterns: 5.0
+nProjects: 17
+shortest: @
+
+cluster 36 stats:
+behavior: two spaces
+nPatterns: 4.0
+nProjects: 17
+shortest:   
+
+cluster 37 stats:
+behavior: starts with a letter
+nPatterns: 4.0
+nProjects: 17
+shortest: ^[a-zA-Z]
+
+cluster 38 stats:
+behavior: starts with numbers
+nPatterns: 2.0
+nProjects: 17
+shortest: ^-?\d+$
+
+cluster 39 stats:
+behavior: capturing href in base tag
+nPatterns: 1.0
+nProjects: 17
+shortest: <base\s+href\s*=\s*[\'"]?([^\'">]+)
+
+cluster 40 stats:
+behavior: pound char
+nPatterns: 7.0
+nProjects: 16
+shortest: #.*$
+
+cluster 41 stats:
+behavior: forward slash 2
+nPatterns: 5.0
+nProjects: 16
+shortest: //
+
+cluster 42 stats:
+behavior: space at start
+nPatterns: 4.0
+nProjects: 16
+shortest: ^\s
+
+cluster 43 stats:
+behavior: angle brackets or amp.
+nPatterns: 4.0
+nProjects: 16
+shortest: [<>&]
+
+cluster 44 stats:
+behavior: capturing around space
+nPatterns: 3.0
+nProjects: 16
+shortest: (\S)\s+(\S)
+
+cluster 45 stats:
+behavior: digits at end
+nPatterns: 2.0
+nProjects: 16
+shortest: :\d+$
+
+cluster 46 stats:
+behavior: space then pound at start
+nPatterns: 5.0
+nProjects: 15
+shortest: ^\s*\#
+
+cluster 47 stats:
+behavior: word char at start
+nPatterns: 5.0
+nProjects: 14
+shortest: ^[\w_]+$
+
+cluster 48 stats:
+behavior: left square bracket
+nPatterns: 4.0
+nProjects: 14
+shortest: \[
+
+cluster 49 stats:
+behavior: closing curly brace
+nPatterns: 4.0
+nProjects: 14
+shortest: }
+
+cluster 50 stats:
+behavior: starts with numbers
+nPatterns: 4.0
+nProjects: 14
+shortest: ^(\d+)
+
+cluster 51 stats:
+behavior: C escape char
+nPatterns: 2.0
+nProjects: 14
+shortest: (\033|~{)
+
+cluster 52 stats:
+behavior: starts with word
+nPatterns: 4.0
+nProjects: 13
+shortest: ^\w
+
+cluster 53 stats:
+behavior: starts with forward slash
+nPatterns: 3.0
+nProjects: 13
+shortest: ^/
+
+cluster 54 stats:
+behavior: lowercase or number then uppercase chars
+nPatterns: 2.0
+nProjects: 13
+shortest: ([a-z\d])([A-Z])
+
+cluster 55 stats:
+behavior: these exact words
+nPatterns: 2.0
+nProjects: 13
+shortest: SECRET|PASSWORD|PROFANITIES_LIST
+
+cluster 56 stats:
+behavior: percent then two hex chars
+nPatterns: 2.0
+nProjects: 13
+shortest: %([0-9A-Fa-f]{2})
+
+cluster 57 stats:
+behavior: a dot then digit
+nPatterns: 3.0
+nProjects: 12
+shortest: \.\d+$
+
+cluster 58 stats:
+behavior: dash or period
+nPatterns: 3.0
+nProjects: 12
+shortest: [-.]
+
+cluster 59 stats:
+behavior: open paren
+nPatterns: 2.0
+nProjects: 12
+shortest: \(
+
+cluster 60 stats:
+behavior: capturing variable and value
+nPatterns: 2.0
+nProjects: 12
+shortest: ^([a-zA-Z0-9_]+)=(.*)
+
+cluster 61 stats:
+behavior: can start with nonword, also capturing an equality statement
+nPatterns: 4.0
+nProjects: 11
+shortest: ^\W+
+
+cluster 62 stats:
+behavior: slash then double-quote
+nPatterns: 3.0
+nProjects: 11
+shortest: \\"
+Features:
+
+cluster 63 stats:
+behavior: open or closed parens
+nPatterns: 3.0
+nProjects: 11
+shortest: [()]
+
+cluster 64 stats:
+behavior: two dollar chars
+nPatterns: 2.0
+nProjects: 11
+shortest: \$\$.*
+
+cluster 65 stats:
+behavior: cap and lowercase in an order
+nPatterns: 2.0
+nProjects: 11
+shortest: ([A-Z][a-z]+[A-Z][^ ]+)
+
+cluster 66 stats:
+behavior: dollar then capture contents of curly brace
+nPatterns: 2.0
+nProjects: 11
+shortest: \$\{([\w\-]+)\}
+
+cluster 67 stats:
+behavior: a chars
+nPatterns: 5.0
+nProjects: 10
+shortest: a+
+
+cluster 68 stats:
+behavior: start to end custom word class
+nPatterns: 5.0
+nProjects: 10
+shortest: ^[\w.@+-]+$
+
+cluster 69 stats:
+behavior: digits at the end
+nPatterns: 3.0
+nProjects: 10
+shortest: (\d+)$
+
+cluster 70 stats:
+behavior: tab char
+nPatterns: 3.0
+nProjects: 10
+shortest: \t+
+
+cluster 71 stats:
+behavior: start to end letter then custom word chars
+nPatterns: 2.0
+nProjects: 10
+shortest: ^[a-zA-Z][a-zA-Z0-9\-_]*$
+
+cluster 72 stats:
+behavior: double-quote, back-tick or backslash
+nPatterns: 2.0
+nProjects: 10
+shortest: (["\\`])
+
+cluster 73 stats:
+behavior: start to end dot, dash or tilde
+nPatterns: 2.0
+nProjects: 10
+shortest: ^[ -~]*$
+
+cluster 74 stats:
+behavior: something in parentheses 2
+nPatterns: 2.0
+nProjects: 10
+shortest: \([^)]+\)
+Features:
+
+cluster 75 stats:
+behavior: tabs or similar
+nPatterns: 2.0
+nProjects: 10
+shortest: [ \t][ \t]+
+
+cluster 76 stats:
+behavior: ends with slash, bang
+nPatterns: 2.0
+nProjects: 10
+shortest: .*\!$
+
+cluster 77 stats:
+behavior: url parsing 2
+nPatterns: 4.0
+nProjects: 9
+shortest: https?://
+
+cluster 78 stats:
+behavior: url parsing 3
+nPatterns: 3.0
+nProjects: 9
+shortest: http://
+
+cluster 79 stats:
+behavior: close paren
+nPatterns: 2.0
+nProjects: 9
+shortest: \)
+
+cluster 80 stats:
+behavior: slash letter(s)
+nPatterns: 2.0
+nProjects: 9
+shortest: \\[A-Za-z]+
+
+cluster 81 stats:
+behavior: close square brace
+nPatterns: 2.0
+nProjects: 9
+shortest: \]
+
+cluster 82 stats:
+behavior: capturing variable and value 2
+nPatterns: 2.0
+nProjects: 9
+shortest: (.+)=(.+)
+
+cluster 83 stats:
+behavior: capitol then lowercases
+nPatterns: 2.0
+nProjects: 9
+shortest: [A-Z][a-z]+
+
+cluster 84 stats:
+behavior: equals char
+nPatterns: 2.0
+nProjects: 9
+shortest: \s*=.*
+
+cluster 85 stats:
+behavior: any single char within single quotes
+nPatterns: 1.0
+nProjects: 9
+shortest: '.'
+
+cluster 86 stats:
+behavior: exactly that word
+nPatterns: 1.0
+nProjects: 9
+shortest: var 
+
+cluster 87 stats:
+behavior: exactly that word
+nPatterns: 1.0
+nProjects: 9
+shortest: HTML
+
+cluster 88 stats:
+behavior: exactly that word
+nPatterns: 1.0
+nProjects: 9
+shortest: Xorg
+
+cluster 89 stats:
+behavior: star then forward slash
+nPatterns: 1.0
+nProjects: 9
+shortest: \*/
+
+cluster 90 stats:
+behavior: ending with something within forward slashes
+nPatterns: 1.0
+nProjects: 9
+shortest: /.+/$
+
+cluster 91 stats:
+behavior: ending with something within single quotes
+nPatterns: 1.0
+nProjects: 9
+shortest: '.*'$
+
+cluster 92 stats:
+behavior: curly braces, at, space
+nPatterns: 1.0
+nProjects: 9
+shortest: [@{} ]
+
+cluster 93 stats:
+behavior: double quote, single quote or forward slash
+nPatterns: 1.0
+nProjects: 9
+shortest: ["\'/]
+
+cluster 94 stats:
+behavior: exactly that word
+nPatterns: 1.0
+nProjects: 9
+shortest: Websafe
+
+cluster 95 stats:
+behavior: at then some letters
+nPatterns: 1.0
+nProjects: 9
+shortest: @[a-z]+
+
+cluster 96 stats:
+behavior: dollar then some paren char
+nPatterns: 1.0
+nProjects: 9
+shortest: \$[()]
+
+cluster 97 stats:
+behavior: ends with cc_ something (captured)
+nPatterns: 1.0
+nProjects: 9
+shortest: cc_(.*)$
+
+cluster 98 stats:
+behavior: exactly that word
+nPatterns: 1.0
+nProjects: 9
+shortest: lightlink
+
+cluster 99 stats:
+behavior: v then numbers
+nPatterns: 1.0
+nProjects: 9
+shortest: v[0-9]+.*
