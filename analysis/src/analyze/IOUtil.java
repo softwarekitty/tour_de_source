@@ -263,9 +263,14 @@ public class IOUtil {
 		int totalWeight = 0;
 		StringBuilder sb = new StringBuilder();
 		DecimalFormat df = new DecimalFormat("0.00");
-		List<TreeSet<Integer>> categories = new LinkedList<TreeSet<Integer>>();
+//		List<TreeSet<Integer>> categories = new LinkedList<TreeSet<Integer>>();
+//		for(int catID =0;catID<6;catID++){
+//			categories.add(new TreeSet<Integer>());
+//		}
+		
+		List<Cluster> categoryClusters = new LinkedList<Cluster>();
 		for(int catID =0;catID<6;catID++){
-			categories.add(new TreeSet<Integer>());
+			categoryClusters.add(new Cluster(10));
 		}
 
 		int i = 0;
@@ -302,12 +307,12 @@ public class IOUtil {
 			i++;
 			totalPatterns += nPatterns;
 			allProjectIDs.addAll(cluster.getProjectIDs());
-			addClusterToCategories(cluster, categories);
+			addClusterToCategoryClusters(cluster, categoryClusters);
 		}
-		String categoryProjectInfo = getCategoryProjectInfo(categories);
+		String categoryProjectInfo = getCategoryProjectInfo(categoryClusters);
 		sb.insert(0, "Cluster stats:\n\nnClusters: " + i + "\nTotalPatterns: " +
 			totalPatterns + "\ntotalnProjects: " + allProjectIDs.size() +
-			"\nsuffix: " + suffix + "\n"+categoryProjectInfo+"\n\n\n");
+			"\nsuffix: " + suffix + "\n\n"+categoryProjectInfo+"\n\n\n");
 		File output = new File(analysis_output_path, filename);
 
 		// delete the old version
@@ -371,8 +376,8 @@ public class IOUtil {
 		    		"[\\\\/]","[\\({\\[\\]}\\)\\n]","[^!-~]","[ ,]","[\\\\\"]|[^ -~]","{|}",
 		    		",|;","[<>&]","[-.]","[()]","([\"\\\\`])","\\s*=.*","[@{} ]","[\"\\'/]"));
 
-	private static void addClusterToCategories(Cluster cluster,
-			List<TreeSet<Integer>> categories) {
+	private static void addClusterToCategoryClusters(Cluster cluster,
+			List<Cluster> categories) {
 		LinkedList<List<String>> categoryOracle = new LinkedList<List<String>>();
 		categoryOracle.add(list0);
 		categoryOracle.add(list1);
@@ -384,21 +389,50 @@ public class IOUtil {
 		int i = 0;
 		for(List<String> categoryMembers : categoryOracle){
 			if(categoryMembers.contains(shortest)){
-				categories.get(i).addAll(cluster.getProjectIDs());
+				categories.get(i).addAll(cluster);
 				break;
 			}
 			i++;
 		}
 		
 	}
+	static String[] categoryNames = {"Code Search and Variable Capturing",
+		"Content Of Brackets and Parenthesis","Anchored Patterns","Requiring Two or More Characters In Sequence",
+		"Requiring a Specific Character to Match","Multiple Matching Alternatives"};
 
 	private static String getCategoryProjectInfo(
-			List<TreeSet<Integer>> categories) {
+			List<Cluster> categoryClusters) throws ClassNotFoundException, SQLException {
 		StringBuilder sb = new StringBuilder();
 		int i = 1;
-		for(TreeSet<Integer> ids : categories){
-			sb.append("category " + i +" nProjects: " +ids.size()+"\n");
+		for(Cluster category : categoryClusters){
+			category.initialzeStats();
+			TreeSet<RankedFeature> featurePile = category.getFeaturePile();
+			StringBuilder topNString = new StringBuilder();
+			Iterator<RankedFeature> it = featurePile.iterator();
+			int n = 1;
+			int topN = 20;
+			boolean listAll = true;
+			while (it.hasNext() && (listAll || n <= topN)) {
+				RankedFeature rF = it.next();
+				if (rF.getFrequency() == 0) {
+					break;
+				}
+				topNString.append(rF.dump(n));
+				n++;
+			}
+			double nPatterns = category.size();
+			sb.append("categoryCluster " + i + " stats:\nname: "+categoryNames[i-1]+"\ninternalID: " +
+					category.thisClusterID + "\nnPatterns: " + nPatterns +
+				"\nnProjects: " + category.getRankableValue() + "\nshortest: " +
+				category.getShortest() + "\nFeatures:\n\n" +
+				topNString.toString() + "\n\n");
 			i++;
+			int j = 0;
+			for (WeightRankedRegex wrr : category) {
+				sb.append(wrr.dump(j, 4));
+				j++;
+			}
+			sb.append("\n\n\n\n");
 		}
 		return sb.toString();
 	}
