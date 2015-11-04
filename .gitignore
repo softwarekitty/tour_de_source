@@ -1,5 +1,6 @@
 *.pyc
 *.pdf
+!regex_usage_in_practice_survey.pdf
 *.class
 .DS_Store
 *.db

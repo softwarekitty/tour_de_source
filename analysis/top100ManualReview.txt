@@ -17,14 +17,14 @@ anchored patterns (n:20)(avg:15.4):
 '^\w'(13), `^/'(13), `\.\d+$'(12), `^\W+'(11), `^[\w.@+-]+$'(10), `(\d+)$'(10), 
 `^[a-zA-Z][a-zA-Z0-9\-_]*$'(10), `^[ -~]*$'(10), `.*\!$'(10), `\$[()]'(9)
 
-requires two or more matching chars in sequence (n:16)(avg:):
+requires two or more matching chars in sequence (n:16)(avg:13):
 `\d+\.\d+'(30), `  '(17), `//'(16), `(\S)\s+(\S)'(16), `(\033|~{)'(14), 
 `([a-z\d])([A-Z])'(13), `%([0-9A-Fa-f]{2})'(13),
 `\\"'(11), `\$\$.*'(11), `([A-Z][a-z]+[A-Z][^ ]+)'(11), `[ \t][ \t]+'(10), 
 `\\[A-Za-z]+'(9), `[A-Z][a-z]+'(9), `\*/'(9), `@[a-z]+'(9), 
  `v[0-9]+.*'(9)
 
-must include a specific character to match (n:17)(avg:):
+must include a specific character to match (n:17)(avg:17.1):
 `\n\s*'(42), `/+'(39), `:+'(31), `\.+'(24), 
 `( +)'(24), `%'(22), `{'(21), `\|'(19), `\-'(17), `@'(17), 
 `\['(14), `}'(14), `\('(12), `a+'(10), 
