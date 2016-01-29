@@ -25,24 +25,27 @@ In this work, we primarily focus on patterns since they are cross-cutting across
 
 \subsection{Research Questions}
 \label{sec:rqs}
-To understand the contexts in which regular expressions are used  and regular expression feature usage, we perform a survey of developers and explore Python projects. We aim to answer the following research questions:\\
+To understand the contexts in which regular expressions are used  and feature usage, we perform a survey of developers and explore regular expressions found in Python projects. We aim to answer the following research questions:\\
 
 \noindent \textbf{RQ1:} In what contexts do developers use regular expressions?
 
-We designed and deployed a survey about when, why, and how often they use regular expressions. This was completed by 18 professional developers at a small software start-up company.\\
+We designed and deployed a survey about when, why, and how often they use regular expressions. This was completed by 18 professional developers at a small software  company.\\
 
 \noindent \textbf{RQ2:} How  is the {\tt re} module used in Python projects?
 
 We explore invocations of  the {\tt re} module in \DTLfetch{data}{key}{nProjScanned}{value} Python projects.\\
 
 
-\noindent \textbf{RQ3:} Which regular expression language features are most commonly used in python?
+\noindent \textbf{RQ3:} Which regular expression language features are most commonly used in Python?
 
 We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Section~\ref{study:corpus} with examples. We then map the feature coverage for four common regex support tools, brics, hampi, RE2 and Rex, and explore survey responses of feature usage for some of the less supported features.\\
 
 \noindent \textbf{RQ4:} How behaviorally similar are regexes across projects?
 
-We measure similarity between pairs of regexes by generating strings that match each and evaluating each other regex against those strings to build a similarity matrix. Then we use clustering to form semantic groupings. \\
+As this is a first step in understanding behavioral overlap in
+regexes, we measure similarity between pairs of regexes by generating strings that match each and evaluating each other regex against those strings to build a similarity matrix. Then we use clustering to form behaviorally similar groupings. 
+
+Note that regular expressions in modern code libraries are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences,  provide expressiveness beyond regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt (.+)\verb!\!1}. However, building an automaton to recognize such a pattern is infeasible. Thus, performing a more formal analysis, such as a containment analysis, on the automata representing regular expressions  found in practice, is not feasible.  We use string matching as an alternative that allows regexes with such features to be considered in the behavioral analysis.\\
 
 %\noindent \textbf{RQ5:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
 %
@@ -53,8 +56,8 @@ Next, we describe our survey, how the corpus of regex patterns was built, how fe
 \subsection{Survey Design}
 \label{study:survey}
 To understand the context of when and how programmers use regular expressions, 
-we designed a survey with 40 questions about regex usage and context. 
-This survey was deployed to 22 developers at Dwolla, a company that provides software for
+we designed a survey with 40 questions about regex usage and context.\footnote{\url{https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf}}  
+This survey was deployed to 22 professional developers at Dwolla, a company that provides software for
  online and mobile payment management.
 Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
 The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers. The questions asked about regex usage frequency, languages, purposes, and the use of various language features, as explored in Section~\ref{rq1:survey} and Section~\ref{results:rq3}. 
@@ -63,7 +66,18 @@ The survey was completed by 18 participants (82\% response rate) that identified
 
 \subsection{Regex Corpus}
 \label{study:corpus}
-Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects.  Each project's commit history was scanned at 20 evenly-spaced commits.  If the project had fewer than 20 commits, then all commits were scanned.  The most recent commit was always included, and the spacing between all other chosen commits was determined by dividing the remaining number of commits by 19 (rounding as needed).
+Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects.  
+We did so  by dividing a range of about 8 million repo IDs for Python projects
+into 32 sections of equal size and scanning from the beginning of those
+segments until we ran out of memory. At that point, we felt we had enough data
+to do an analysis without further perfecting our mining techniques. We built
+the AST of each file in each project to find utilizations of the 're' module
+functions. In most projects, almost all regex utilizations are present in the
+most recent version of a project, but to be more thorough, we also scanned up
+to 19 earlier versions. The number 20 was chosen to try and maximize returns on
+computing resources invested after observing the scanning process in many hours
+of trial scans.
+Each project's commit history was scanned at 20 evenly-spaced commits.  If the project had fewer than 20 commits, then all commits were scanned.  The most recent commit was always included, and the spacing between all other chosen commits was determined by dividing the remaining number of commits by 19 (rounding as needed).
 All regex utilizations were obtained, sans duplicates. Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In the end, we observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex utilizations in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
 In collecting the set of distinct patterns for analysis,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of utilizations using flags, which can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable).
@@ -101,7 +115,7 @@ This facilitates clustering using the  Markov Clustering (MCL) algorithm\footnot
 We chose MCL  because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
 
 
-In the implementation, strings are generated for each pattern using Rex~\cite{rex}.  Rex generates matching strings by representing the regular expression as an automation, and then passing that automation to a constraint solver that generates members for it\footnote{\url{http://research.microsoft.com/en-us/projects/rex/}}.  If asked to produce more strings than the automation can provide, Rex will instead produce a list of all possible strings.
+In the implementation, strings are generated for each pattern using Rex~\cite{rex}.  Rex generates matching strings by representing the regular expression as an automaton, and then passing that automation to a constraint solver that generates members for it\footnote{\url{http://research.microsoft.com/en-us/projects/rex/}}.  If asked to produce more strings than the automation can provide, Rex will instead produce a list of all possible strings.
 Our goal is to generate 400 strings for each pattern to balance the runtime of the similarity analysis with the precision of the similarity calculations.
 
 For clustering, we prune the similarity matrix to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL.

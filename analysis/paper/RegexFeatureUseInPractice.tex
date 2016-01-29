@@ -42,28 +42,27 @@
 % can use linebreaks \\ within to get better formatting as desired
 %\title{Regex Feature Use In Practice}
 %\title{Regular Expression Feature Usage in Python}
-\title{Exploring  Regular Expression Usage and Context}
+\title{Exploring  Regular Expression Usage and Context in Python}
 
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
 \numberofauthors{2}
 
-\author{
-\alignauthor
-Carl Chapman\\
-       \affaddr{Department of Computer Science}\\
-       \affaddr{Iowa State University}\\
-       \affaddr{Ames, IA, USA}\\
-      \email{carl1978@iastate.edu}\\
- \alignauthor
-Kathryn T. Stolee\\
-       \affaddr{Departments of Computer Science and}\\
-             \affaddr{Electrical and Computer Engineering}\\
-       \affaddr{Iowa State University}\\
-       \affaddr{Ames, IA, USA}\\
-      \email{kstolee@iastate.edu}\\
-}
+%\author{
+%\alignauthor
+%Carl Chapman\\
+%       \affaddr{Department of Computer Science}\\
+%       \affaddr{Iowa State University}\\
+%       \affaddr{Ames, IA, USA}\\
+%      \email{carl1978@iastate.edu}\\
+% \alignauthor
+%Kathryn T. Stolee\\
+%       \affaddr{Departments of Computer Science}\\
+%       \affaddr{North Carolina State University}\\
+%       \affaddr{Raleigh, NC, USA}\\
+%      \email{ktstolee@ncsu.edu}\\
+%}
 
 % make the title area
 \maketitle
@@ -75,13 +74,17 @@ Due to the popularity and pervasive use of regular expressions, researchers have
 This information is critical to inform tool designers about how to best support developers working with regular expressions.
 %Each tool has made design decisions about which regular expression features to support, and these decisions impact the usefulness and power of the tools. Yet, these decisions are often made with little information as there does not exist an empirical study of regular expression feature usage to inform these design decisions.
 
-In this paper, we explore the context in which regular expressions are used.
-We survey 18 professional developers about the context and frequency of their regular expression usage. Then, we
-explore a sample of regular expressions, focusing on how often distinct features are used.  We analyzed nearly 4,000 open source Python projects from GitHub and extracted nearly 14,000 unique regular expression patterns that were used for analysis.
+In this paper, we explore the context in which regular expressions are used through a combination of developer surveys and repository analysis.
+We survey 18 professional developers from a small software company about their regular expression usage and pain points. 
+Our results indicate that developers frequently use regular expressions in their programming practices, often composing regular expressions at least weekly. 
+Then, we
+analyzed nearly 4,000 open source Python projects from GitHub and extracted nearly 14,000 unique regular expression patterns that were used for analysis, focusing on how often distinct features are used. 
 We also map the most common features used in regular expressions to those features supported by four common regular expression engines from industry and academia: brics, Hampi, RE2, and Rex.
-Our results indicate that developers frequently use regular expressions in their programming practices, often composing regular expressions at least weekly. Using semantic analysis of regular expressions across projects,
+Using similarity analysis of regular expressions across projects,
 we identify six common behavioral clusters that describe how regular expressions are often used in practice.
-We conclude by discussing the implications for  tool  designers and outline several directions of future work.
+This is the first rigorous examination of regex usage and it provides empirical evidence to support design decisions by regex tool
+builders.
+%We conclude by discussing the implications for  tool  designers and outline several directions of future work. 
 %\todoLast{Katie: revise}
 
 
