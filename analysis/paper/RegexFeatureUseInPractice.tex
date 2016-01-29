@@ -86,7 +86,7 @@ We also map the most common features used in regular expressions to those featur
 Using similarity analysis of regular expressions across projects,
 we identify six common behavioral clusters that describe how regular expressions are often used in practice.
 This is the first rigorous examination of regex usage and it provides empirical evidence to support design decisions by regex tool
-builders. It also points to areas of needed future work, such as refactoring regular expressions to increase refactoring understandability.   
+builders. It also points to areas of needed future work, such as refactoring regular expressions to increase refactoring understandability, support for migrating regexes between language, and context-specific tool support for common regexes usages.   
 %We conclude by discussing the implications for  tool  designers and outline several directions of future work. 
 %\todoLast{Katie: revise}
 
@@ -114,7 +114,7 @@ builders. It also points to areas of needed future work, such as refactoring reg
 
 \section{Threats to Validity}
 \label{sec:threats}
-The threats to validity of this work stem primarily from the reliability of measures, instrumentation, selection bias, hypothesis guessing, and the representativeness of participants and projects.
+The following threats impact our results and conclusions:
 
 %\subsection{Conclusion}
 \textbf{Reliability of Measures:} The validity of our survey results is dependent on the clarity of the questions. The authors went through several iterations of the survey and included examples for all the regex feature descriptions to improve understandability.
@@ -132,6 +132,7 @@ Implementation errors are a risk for research involving repository analysis. To 
 
 We also did not scrape all commits in every project for regular expression utilizations, rather, we grabbed each project every 20 commits. It is possible that in between the scanned commits, a regular expression utilization was added and then removed, leading to fewer utilizations in our final data set.
 
+\textbf{Recall bias:} The survey participants were asked to reflect on their past behavior, which may not be representative of actual behavior. To mitigate this, we designed the survey to lead the participants to think about their behavior before summarizing (e.g., asking how often they use regexes in each of several environments before asking how frequently they use regexes). 
 
 %\subsection{Construct}
 

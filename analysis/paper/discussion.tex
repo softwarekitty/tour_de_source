@@ -60,12 +60,10 @@ One reasonable explanation for this tendency to put \verb!`.*'! at the end of a 
 
 \subsection{Opportunities For Future Work}
 
-There are many opportunities for future work.
+There are many opportunities for future work. \todoLast{Hey Kids! Need a thesis topic? Here's a bunch! Promote this awesome section earlier}
 
 
 
-\subsubsection{Context-Specific Regex Support}
-In some environments, such as command line or text editor, regexes are used extensively (Section~\ref{rq1:survey}), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.
 
 \subsubsection{Refactoring Regexes}
 The survey showed that users want readability and find the lack of readable regexes to be a major pain point.
@@ -80,10 +78,10 @@ Another avenue of refactoring could be for performance. Various implementations 
 
 
 \subsubsection{Developer Awareness of Best Practices}
-One category of 10 clusters in the top 100 contained regex patterns, \emph{Content of Brackets and Parenthesis}, parses the contents of angle brackets.  As the contents of angle brackets are usually unconstrained, regexes are a poor replacement for XML or HTML parsers.  More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
+One category of 10 clusters in the top 100 contained regex patterns, \emph{Content of Brackets and Parenthesis}, parses the contents of angle brackets.  As the contents of angle brackets are usually unconstrained, regexes are a poor replacement for XML or HTML parsers.  This may be a missed opportunity for the regex users to take advantage of more robust tools. More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
 %http://english.stackexchange.com/questions/50851/the-contents-are-or-the-contents-is
 
-\subsubsection{Library Support for Developers}
+\subsubsection{Migration  Support for Developers}
 Within standard programming languages, regular expressions libraries are very common, yet there are  differences between languages in the features that they support. For example, Java supports possessive quantifiers like \verb! `ab*+c'! (here the `+' is modifying the `*' to make it possessive) whereas Python does not. Differences among programming language implementations was identified as a pain point for using regular expressions by 17\% of the survey participants. This provides an opportunity for future work that makes such differences between languages explicit or for new libraries that translate between regex utilizations in various languages.
 
 %\subsubsection{Support for Regexes Composition}
@@ -93,6 +91,9 @@ Within standard programming languages, regular expressions libraries are very co
 Regular expression errors are common and have produced thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques to fix.
 Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes can lead to big changes in behavior, so we hypothesize that using the semantic clusters identified in Section~\ref{rq4:results} to identify potential repair candidates could efficiently and effectively converge on a repair candidate.
 
+
+\subsubsection{Tool-Specific Regex Exploration}
+In some environments, such as command line or text editor, regexes are used extensively (Section~\ref{rq1:survey}), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.
 
 
 % \subsubsection{A Modern WRD Character Class}
