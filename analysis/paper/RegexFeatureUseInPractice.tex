@@ -78,16 +78,16 @@ Due to the popularity and pervasive use of regular expressions, researchers have
 %Each tool has made design decisions about which regular expression features to support, and these decisions impact the usefulness and power of the tools. Yet, these decisions are often made with little information as there does not exist an empirical study of regular expression feature usage to inform these design decisions.
 
 In this paper, we explore the context in which regular expressions are used through a combination of developer surveys and repository analysis.
-We survey 18 professional developers from a small software company about their regular expression usage and pain points. 
-Our results indicate that developers frequently use regular expressions in their programming practices, often composing regular expressions at least weekly. 
+We survey 18 professional developers from a small software company about their regular expression usage and pain points.
+Our results indicate that developers frequently use regular expressions in their programming practices, often composing regular expressions at least weekly.
 Then, we
-analyzed nearly 4,000 open source Python projects from GitHub and extracted nearly 14,000 unique regular expression patterns that were used for analysis, focusing on how often distinct features are used. 
+analyzed nearly 4,000 open source Python projects from GitHub and extracted nearly 14,000 unique regular expression patterns that were used for analysis, focusing on how often distinct features are used.
 We also map the most common features used in regular expressions to those features supported by four common regular expression engines from industry and academia: brics, Hampi, RE2, and Rex.
 Using similarity analysis of regular expressions across projects,
 we identify six common behavioral clusters that describe how regular expressions are often used in practice.
 This is the first rigorous examination of regex usage and it provides empirical evidence to support design decisions by regex tool
-builders. It also points to areas of needed future work, such as refactoring regular expressions to increase refactoring understandability, support for migrating regexes between language, and context-specific tool support for common regexes usages.   
-%We conclude by discussing the implications for  tool  designers and outline several directions of future work. 
+builders. It also points to areas of needed future work, such as refactoring regular expressions to increase refactoring understandability, support for migrating regexes between language, and context-specific tool support for common regexes usages.
+%We conclude by discussing the implications for  tool  designers and outline several directions of future work.
 %\todoLast{Katie: revise}
 
 
@@ -132,7 +132,7 @@ Implementation errors are a risk for research involving repository analysis. To 
 
 We also did not scrape all commits in every project for regular expression utilizations, rather, we grabbed each project every 20 commits. It is possible that in between the scanned commits, a regular expression utilization was added and then removed, leading to fewer utilizations in our final data set.
 
-\textbf{Recall bias:} The survey participants were asked to reflect on their past behavior, which may not be representative of actual behavior. To mitigate this, we designed the survey to lead the participants to think about their behavior before summarizing (e.g., asking how often they use regexes in each of several environments before asking how frequently they use regexes). 
+\textbf{Recall bias:} The survey participants were asked to reflect on their past behavior, which may not be representative of actual behavior. To mitigate this, we designed the survey to lead the participants to think about their behavior before summarizing (e.g., asking how often they use regexes in each of several environments before asking how frequently they use regexes).
 
 %\subsection{Construct}
 
