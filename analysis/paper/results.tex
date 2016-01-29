@@ -374,19 +374,18 @@ This category contains 16 clusters, each appearing in an average of 13 projects.
 %1
 \subsubsection{Code Search and Variable Capturing}
 \label{cluster:search}
-These clusters center around a recognizable effort to parse source code or URLs and often capture variable values in it, for example:
+These clusters show a recognizable effort to parse source code or URLs. For example,
 \verb!`^https?://'(23)! matches a web address, and \verb!`(.+)=(.+)'(9)! matches an assignment statement, capturing both the variable name and value.
-The cluster \\ \verb!`\$\{([\w\-]+)\}'(11)! matches an evaluated string interpolation and captures the code to evaluate.
-This category contains 15 clusters, each appearing in an average of 11.7 projects.
+The cluster  \verb!`\$\{([\w\-]+)\}'(11)! matches an evaluated string interpolation and captures the code to evaluate.
+This category contains 15 clusters.%, each appearing in an average of 11.7 projects.
 %These clusters have a combined total of 27 patterns, with at least one pattern present in 92 projects.
 
 \vspace{6pt}
 \textbf{Summary - RQ4:}
-When tool designers are considering what features to include, data about usage in practice is valuable.  Behavioral similarity clustering  helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in  matching behavior. % We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
-
+%When tool designers are considering what features to include, data about usage in practice is valuable.  Behavioral similarity clustering  helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in  matching behavior. % We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
 We used the behavior of individual patterns to form clusters, and identified six main categories for the clusters.
 % Overall, we see that many clusters are defined by the presence of particular tokens, such as the colon for the cluster in Table~\ref{table:exampleCluster}.
-These six categories define what users are doing with regexes at a high level: matching with alternatives, matching literal characters, matching with sequences, matching with endpoint anchors, parsing contents of brackets or braces, or searching and capturing code, and can be considered in conjunction with the self-described regex activities from the survey in Table~\ref{tab:regexactivities} to be representative of common uses for regexes.
+These six categories define what users are doing with regexes at a high level: matching with alternatives, matching literal characters, matching with sequences, matching with endpoint anchors, parsing contents of brackets or braces, or searching and capturing code. %, and can be considered in conjunction with the self-described regex activities from the survey in Table~\ref{tab:regexactivities} to be representative of common uses for regexes.
 %One of the six common cluster categories, \emph{Code Search and Variable Capturing}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
 
 
