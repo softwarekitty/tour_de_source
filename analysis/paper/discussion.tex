@@ -75,7 +75,7 @@ Within standard programming languages, regular expressions libraries are very co
 
 \subsubsection{Automated Regex Repair}
 Regular expression errors are common and have produced thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques to fix.
-Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes can lead to big changes in semantics, so we hypothesize that using the semantic clusters identified in Section~\ref{rq4:results} to identify potential repair candidates could efficiently and effectively converge on a repair candidate.
+Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes can lead to big changes in behavior, so we hypothesize that using the semantic clusters identified in Section~\ref{rq4:results} to identify potential repair candidates could efficiently and effectively converge on a repair candidate.
 
 
 

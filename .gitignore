@@ -20,5 +20,7 @@ output
 *.js
 *.Rout
 .RData
+*.synctex
 *.synctex.gz
+*.synctex.gz(busy)
 */RegexFeatureUseInPractice.pdf
