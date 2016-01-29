@@ -8,12 +8,13 @@ In this section, we discuss the implications of these empirical findings
 \subsection{Implications For Tool Designers}
 The results in this work have several implications for tool designers who want to effectively support developers who use regular expressions.
 
-\subsubsection{Developer Preferences Vary Considerably}
-Often, equivalent regexes can be built using different language features. In the case of CCC versus default character classes (Table~\ref{tab:cccvsdefault}), developers are roughly evenly split in their preferences, indicating that tool builders should support both ways of doing things to enable as many developers as possible. \todoMid{can we come up with an example that's not well supported by existing tools?}
+\subsubsection{Both Default and Custom Character Classes Are Frequently Used}
+The same character class can be expressed in different ways, for example \verb!`[0-9]'! is equivalent to \verb!`\d'!.  Our results indicate that both approaches are widely used (Table~\ref{tab:cccvsdefault}), so tool builders should continue to support both approaches.
 
-\subsubsection{Capturing Specific Content}
+\subsubsection{Capturing Specific Content Near A Delimiter}
 The survey results from Section~\ref{rq1:survey} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.
-Looking at this from a feature perspective, the capture group (CG) is the most frequently used in terms of patterns (Table~\ref{table:featureStats}).  This feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  As mentioned in Section~\ref{rq4:results}, capturing content was a primary goal evident in several categories of cluster, in particular, the fourth-largest cluster will capture the content between brackets or parentheses (Section~\ref{cluster:contentparens}).  Thus, we observe that the ability to capture some part of a match provides a powerful tool to programmers.
+Looking at this from a feature perspective, the capture group (CG) is the most frequently used in terms of patterns (Table~\ref{table:featureStats}).  This feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  As mentioned in Section~\ref{rq4:results}, capturing content was a primary goal evident in several categories of cluster.  The fourth-largest cluster category is based on capturing the content between brackets or parentheses (Section~\ref{cluster:contentparens}).
+Many uses of CG also use the ANY and KLE features, eg. \verb!(.*){(.*)}(.*)! and \verb!\\s*([^: ]*)\\s*:(.*)!.  This type of usage frequently revolves around an important delimiter character such as \verb!:! or \verb!\!.  Tool designers should consider the centrality of this use case and its implications for non-English users of regex.  For example,
 
 \todoMid{In my experience, I have used capture groups in the find and replace functionality of a text editor to transform large, well-structured documents in many steps.  I have also used them in java programs to get the critical data from some predictable text (like part of a number).  Then I have also used them in shell scripts in a similar way - to pass the captured content into a program.  It's worth noting the prevalence of }
 \verb!(.*)!
