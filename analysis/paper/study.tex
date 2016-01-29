@@ -45,7 +45,6 @@ We consider regex language features to be tokens that specify the matching behav
 As this is a first step in understanding behavioral overlap in
 regexes, we measure similarity between pairs of regexes by overlap in matching strings. For each regex, matching strings are generated and then  evaluated against each other regex to compute pairwise similarity. Then we use clustering to form behaviorally similar groupings. 
 
-Note that regular expressions in modern code libraries are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences,  provide expressiveness beyond regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt (.+)\verb!\!1}. However, building an automaton to recognize such a pattern is infeasible. Thus, performing a more formal analysis, such as a containment analysis, on the automata representing regular expressions  found in practice, is not feasible.  We use string matching as an alternative that allows regexes with such features to be considered in the behavioral analysis.\\
 
 %\noindent \textbf{RQ5:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
 %
@@ -123,7 +122,11 @@ Once all patterns were transformed into vectors, we examined each feature indepe
 
 
 \subsection{Clustering and Behavioral Similarity}
-Our similarity analysis clusters regular expressions by their behavioral similarity.
+An ideal analysis of similarity for regexes would use subsumption or containment analysis. However, we struggled to find a tool that could facilitate such an analysis. Further, regular expressions in modern code libraries are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences,  provide expressiveness beyond regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt (.+)\verb!\!1}. However, building an automaton to recognize such a pattern and to facilitate containment analysis, is infeasible. 
+For these reasons, we developed a similarity analysis based on string matching. 
+
+
+Our similarity analysis clusters regular expressions by their behavioral similarity on matched strings.
 Consider two unspecified patterns {\tt A} and {\tt B}, a set {\tt mA} of 100 strings that pattern {\tt A} matches, and a set {\tt mB} of 100 strings that pattern {\tt B} matches.
 If pattern {\tt B} matches 90 of the 100 strings in the set {\tt mA}, then {\tt B} is 90\% similar to {\tt A}.
 If pattern {\tt A} only matches 50 of the strings in {\tt mB}, then {\tt A} is 50\% similar to {\tt B}.
@@ -142,8 +145,9 @@ We chose MCL  because it offers a fast and tunable way to cluster items by simil
 For clustering, we prune the similarity matrix to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL.
 This threshold was selected based on recommendations in the MCL manual. The impact of lowering the threshold would likely result  in either the same number of more diverse clusters, or a larger number of clusters, but is unlikely to markedly change the largest clusters or their summaries, which are the focus of our analysis for RQ4 (Section~\ref{rq4:results}), but further study is needed to substantiate this claim. 
 We also note that MCL can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
-After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.
-The end result is clusters of highly behaviorally similar regular expressions.  The top 100 clusters are categorized by inspection into six categories of behavior (see Section~\ref{rq4:results}).
+After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.   The top 100 clusters are categorized by inspection into six categories of behavior (see Section~\ref{rq4:results}).
+
+The end result is clusters and categories of highly behaviorally similar regular expressions, though we note that this approach has a tendency to over-approximate the similarity of two regexes. We measure similarity based on a finite set of generated strings, but some regexes  match an infinite set (e.g., \verb!ab*c!), so measuring similarity based on the first 400 strings may lead to an artificially high similarity value. To mitigate this threat, we chose a large number of generated strings for each regex.
 
 
 %\todoNow{fix this before the ICSE deadline - after putting several days into this, I have a partial fix but the fact is there was information loss when going between the java program and the cs program and back again.  So it remains to be seen if it will be feasible to do non-automatic repairs.}
