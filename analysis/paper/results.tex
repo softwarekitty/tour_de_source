@@ -90,7 +90,7 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 \begin{figure}[tb]
 \centering
 \includegraphics[width=\columnwidth]{../analysis_output/partFunctions.eps}
-\vspace{-6pt}
+\vspace{-12pt}
 \caption{How often are  {\tt re} functions used? (RQ2)}
 \vspace{-6pt}
 \label{fig:partFunctions}
@@ -272,9 +272,6 @@ From 2,871 distinct patterns, MCL clustering identified 186 clusters with 2 or m
 Table~\ref{table:exampleCluster} provides an example of a behavioral cluster containing 12 patterns (four longer patterns omitted for brevity) with at least one pattern from this cluster present in 31 different projects.  All patterns in this cluster share the literal `:' character. The smallest pattern, \verb!`:+'!,  matches one or more colons.
 %Another pattern from this cluster, \verb!([^:]+):(.*)!, requires at least one non-colon character to occur before a colon character.  Our similarity value between these two regexes was below the minimum of 0.75 because Rex generated many strings for `:+' that start with one or more colons.
 % Todo: create a graph graphic with edge weights showing similarity values for all 8 of these patterns.
-
-
-
 We observe that the smallest pattern in a cluster provides an insight about some key characteristic that all the patterns within the cluster have in common.  A shorter pattern will tend to have less extraneous behavior because it is specifying less behavior,
 yet, in order for the smallest pattern to be clustered, it had to match most of the strings created by Rex from many other patterns within the cluster, and so we observe that {the smallest pattern is useful as a representative of the cluster}.
 
@@ -328,11 +325,6 @@ Each cluster in this category requires one specific character to match, for exam
 Table~\ref{table:exampleCluster} presents a cluster that falls under this category. 
 % \todoMid{Repair after merge conflict later}
 % Table~\ref{table:exampleCluster} presents a cluster that falls under this category. While the cluster is centered on the presence of the \verb!`:'! character, the other regexes in the cluster also exhibit more diverse behavior.
-
-
-
-
-
 The commonality of this cluster category contrasts with the survey in Section~\ref{rq1:survey} in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{tab:regexactivities}).
 %This category contains 17 clusters, each appearing in an average of 17.1 projects.
 % These clusters have a combined total of 103 patterns, with at least one pattern present in 184 projects.
