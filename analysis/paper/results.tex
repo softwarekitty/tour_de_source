@@ -96,21 +96,22 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 \label{fig:partFunctions}
 \end{figure}
 
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.9\columnwidth]{../analysis_output/partFlags.eps}
-\vspace{-6pt}
-\caption{Which behavioral flags are used? (RQ2)}
-\vspace{-6pt}
-\label{fig:partFlags}
-\end{figure}
+%\begin{figure}[tb]
+%\centering
+%\includegraphics[width=0.9\columnwidth]{../analysis_output/partFlags.eps}
+%\vspace{-6pt}
+%\caption{Which behavioral flags are used? (RQ2)}
+%\vspace{-6pt}
+%\label{fig:partFlags}
+%\end{figure}
 
 \input{../analysis_output/featureStats}
 
 The number of projects that use each of the {\tt re} functions is shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations, presumably because each usage of those functions can accept a regex object compiled using {\tt re.compile} as an argument. (Note that compiled objects can also be used to call functions of the re module, ie {\tt compiledObject.findall(...)}, but we ignore these utilizations so that our analysis is easier to automate, and because we are primarily interested in extracting the patterns which these 8 functions contain.)
 
-When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed.
- Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.   Although multiple flags can be combined using a bitwise or, this was never observed.
+%When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  
+Of all utlizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing process, was never observed.
+% Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.   Although multiple flags can be combined using a bitwise or, this was never observed.
 
 \vspace{6pt}
 \textbf{Summary - RQ2:}
