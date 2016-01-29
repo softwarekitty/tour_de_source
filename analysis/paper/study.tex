@@ -68,7 +68,7 @@ Our goal was to understand the practices of professional developers. Thus, we de
 \subsection{Regex Corpus}
 \label{study:corpus}
 Our goal was to collect regexes from a variety of projects to represent the breadth of how developers use the language features. 
-Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value} Python projects.  
+Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value}  projects containing Python code.  
 We did so  by dividing a range of about 8 million repo IDs for Python projects
 into 32 sections of equal size and scanning from the beginning of those
 segments until we ran out of memory. At that point, we felt we had enough data
@@ -98,33 +98,11 @@ For each escaped pattern, the PCRE-parser produces a tree of feature tokens, whi
 \includegraphics[height=0.6in]{../illustrations/featureParsing.eps}
 \caption{Two patterns parsed into feature vectors}
 \label{fig:featureParsing}
+\vspace{-12pt}
 \end{figure}
 
 Once all patterns were transformed into vectors, we examined each feature independently for all patterns, tracking the number of patterns and  projects that the each feature appears in at least once.
 
-\subsection{Clustering and Behavior Similarity Analysis}
-Our similarity analysis clusters regular expressions by their behavioral similarity.
-Consider two unspecified patterns {\tt A} and {\tt B}, a set {\tt mA} of 100 strings that pattern {\tt A} matches, and a set {\tt mB} of 100 strings that pattern {\tt B} matches.
-If pattern {\tt B} matches 90 of the 100 strings in the set {\tt mA}, then {\tt B} is 90\% similar to {\tt A}.
-If pattern {\tt A} only matches 50 of the strings in {\tt mB}, then {\tt A} is 50\% similar to {\tt B}.
-We use similarity scores to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.
-In row {\tt A}, column {\tt B} we see that {\tt B} is 90\% similar to {\tt A}.
-In row {\tt B}, column {\tt A}, we see that {\tt A} is 50\% similar to {\tt B}.  Each pattern is always 100\% similar to itself, by definition.
-
-
-
-Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix are averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph}.
-This facilitates clustering using the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.
-We chose MCL  because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
-
-
-In the implementation, strings are generated for each pattern using Rex~\cite{rex}.  Rex generates matching strings by representing the regular expression as an automaton, and then passing that automation to a constraint solver that generates members for it\footnote{\url{http://research.microsoft.com/en-us/projects/rex/}}.  If asked to produce more strings than the automation can provide, Rex will instead produce a list of all possible strings.
-Our goal is to generate 400 strings for each pattern to balance the runtime of the similarity analysis with the precision of the similarity calculations.
-
-For clustering, we prune the similarity matrix to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL.
-We note that MCL can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
-After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.
-The end result is clusters of highly behaviorally similar regular expressions.  The top 100 clusters are categorized by inspection into six categories of behavior (see Section~\ref{rq4:results}).
 
 \begin{figure}[tb]
 \centering
@@ -142,6 +120,30 @@ The end result is clusters of highly behaviorally similar regular expressions.  
 \vspace{-6pt}
 \label{fig:matrixToGraph}
 \end{figure}
+
+
+\subsection{Clustering and Behavioral Similarity}
+Our similarity analysis clusters regular expressions by their behavioral similarity.
+Consider two unspecified patterns {\tt A} and {\tt B}, a set {\tt mA} of 100 strings that pattern {\tt A} matches, and a set {\tt mB} of 100 strings that pattern {\tt B} matches.
+If pattern {\tt B} matches 90 of the 100 strings in the set {\tt mA}, then {\tt B} is 90\% similar to {\tt A}.
+If pattern {\tt A} only matches 50 of the strings in {\tt mB}, then {\tt A} is 50\% similar to {\tt B}.
+We use similarity scores to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.
+In row {\tt A}, column {\tt B} we see that {\tt B} is 90\% similar to {\tt A}.
+In row {\tt B}, column {\tt A}, we see that {\tt A} is 50\% similar to {\tt B}.  Each pattern is always 100\% similar to itself, by definition.
+
+
+In the implementation, strings are generated for each pattern using Rex~\cite{rex}.  Rex generates matching strings by representing the regular expression as an automaton, and then passing that automation to a constraint solver that generates members for it\footnote{\url{http://research.microsoft.com/en-us/projects/rex/}}.  If the regex matches a finite set of strings smaller than 400, Rex will produce a list of all possible strings.
+Our goal is to generate 400 strings for each pattern to balance the runtime of the similarity analysis with the precision of the similarity calculations.
+
+Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix are averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph}.
+This facilitates clustering using the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.
+We chose MCL  because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
+
+For clustering, we prune the similarity matrix to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL.
+This threshold was selected based on recommendations in the MCL manual. The impact of lowering the threshold would likely result  in either the same number of more diverse clusters, or a larger number of clusters, but is unlikely to markedly change the largest clusters or their summaries, which are the focus of our analysis for RQ4 (Section~\ref{rq4:results}), but further study is needed to substantiate this claim. 
+We also note that MCL can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
+After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.
+The end result is clusters of highly behaviorally similar regular expressions.  The top 100 clusters are categorized by inspection into six categories of behavior (see Section~\ref{rq4:results}).
 
 
 %\todoNow{fix this before the ICSE deadline - after putting several days into this, I have a partial fix but the fact is there was information loss when going between the java program and the cs program and back again.  So it remains to be seen if it will be feasible to do non-automatic repairs.}

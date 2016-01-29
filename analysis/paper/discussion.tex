@@ -6,6 +6,9 @@ In this section, we discuss the implications of these empirical findings on tool
 \subsection{Implications For Tool Designers}
 The results in this work have several implications for tool designers who want to effectively support developers who use regular expressions.
 
+\subsubsection{Developer Preferences Vary Considerably}
+Often, equivalent regexes can be built using different language features. In the case of CCC versus default character classes (Table~\ref{tab:cccvsdefault}), developers are roughly evenly split in their preferences, indicating that tool builders should support both ways of doing things to enable as many developers as possible. 
+
 \subsubsection{Capturing Specific Content}
 The survey results from Section~\ref{rq1:survey} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.
 The capture group (CG) feature is the most frequently used feature in terms of patterns (Table~\ref{table:featureStats}).  The CG feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  As mentioned in Section~\ref{rq4:results}, capturing content was a primary goal evident in several categories of cluster, in particular, the fourth-largest cluster will capture the content between brackets or parentheses (Section~\ref{cluster:contentparens}).  Thus, we observe that the ability to capture some part of a match provides a powerful tool to programmers.
