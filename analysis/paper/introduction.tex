@@ -18,13 +18,13 @@ Regex researchers and tool designers must pick what features to include or exclu
 First, we survey professional developers about how they use regexes and their pain points.  Second, we gather a sample of regexes from Python projects and analyze the frequency of feature usage (e.g., kleene star: \verb!*! and the end anchor: \verb!$! are features).    Third, we investigate what features are supported by four large projects that aim to support regex usage (brics~\cite{brics}, hampi~\cite{hampi}, Rex~\cite{rex}, and RE2~\cite{re2}), and which features are not supported, but are frequently used by developers.  Finally, we cluster regular expressions that appear in multiple projects by behavior, investigating high-level behavioral themes in regex usage. 
 
 \todoLast{beef these up last}
-Our results indicate that regexes are most frequently used in command line tools and IDEs.  We observe that the capture group and endpoint anchor features are widely used by developers, but poorly supported in regex tools.  Capturing the contents of brackets and searching for delimiter characters were some of the most apparent  behavioral themes observed in the regex clusters created by our technique, and we also recognized a common cluster of regexes intended to parse source code.
+Our results indicate that regexes are most frequently used in command line tools and IDEs.    Capturing the contents of brackets and searching for delimiter characters were some of the most apparent  behavioral themes observed in the regex clusters created by our technique, and we also recognized a common behavioral cluster of regexes intended to parse source code. 
 The contributions of this work are:
 \begin{itemize}
     \item A survey of 18 professional software developers about their experience with regular expressions,
 	\item An empirical analysis of regex feature usage in nearly 14,000 regular expressions in \DTLfetch{data}{key}{nProjScanned}{value} open-source Python projects, mapping of those features to those supported by common regex tools and survey results showing the impact of not supporting various features,
 	\item An approach for measuring behavioral similarity of regular expressions and qualitative analysis of the most common behaviorally similar clusters, and
-	\item A discussion of opportunities for future work in supporting programmers in writing regular expressions.
+	\item An evidence-based discussion of opportunities for future work in supporting programmers in writing regular expressions, including refactoring regexes and migration support between languages.
 \end{itemize}
 
 %The rest of the paper is organized as follows. Section~\ref{sec:related} motivates this work by discussing research in supporting programmers in the use, creation, and validation of regular expressions. Section~\ref{sec:study} presents the research questions, survey design, and study setup for exploring regular expressions in the wild. Results of these explorations are in Section~\ref{sec:results} followed by a discussion in Section~\ref{sec:discussion}. Threats to validity are in Section~\ref{sec:threats} and the conclusion is in Section~\ref{sec:conclusion}.
