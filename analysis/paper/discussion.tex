@@ -1,17 +1,19 @@
 \section{Discussion}
 \label{sec:discussion}
 
-In this section, we discuss the implications of these empirical findings on tool designers and users of regex tools and opportunities for future work.
+In this section, we discuss the implications of these empirical findings 
+%on tool designers and users of regex tools
+ and opportunities for future work.
 
 \subsection{Implications For Tool Designers}
 The results in this work have several implications for tool designers who want to effectively support developers who use regular expressions.
 
 \subsubsection{Developer Preferences Vary Considerably}
-Often, equivalent regexes can be built using different language features. In the case of CCC versus default character classes (Table~\ref{tab:cccvsdefault}), developers are roughly evenly split in their preferences, indicating that tool builders should support both ways of doing things to enable as many developers as possible. 
+Often, equivalent regexes can be built using different language features. In the case of CCC versus default character classes (Table~\ref{tab:cccvsdefault}), developers are roughly evenly split in their preferences, indicating that tool builders should support both ways of doing things to enable as many developers as possible. \todoMid{can we come up with an example that's not well supported by existing tools?}
 
 \subsubsection{Capturing Specific Content}
 The survey results from Section~\ref{rq1:survey} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.
-The capture group (CG) feature is the most frequently used feature in terms of patterns (Table~\ref{table:featureStats}).  The CG feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  As mentioned in Section~\ref{rq4:results}, capturing content was a primary goal evident in several categories of cluster, in particular, the fourth-largest cluster will capture the content between brackets or parentheses (Section~\ref{cluster:contentparens}).  Thus, we observe that the ability to capture some part of a match provides a powerful tool to programmers.
+Looking at this from a feature perspective, the capture group (CG) is the most frequently used in terms of patterns (Table~\ref{table:featureStats}).  This feature has two functions: 1) it allows logical grouping as would be expected by parenthesis, and 2) it allows retrieval of information in one logical grouping.  As mentioned in Section~\ref{rq4:results}, capturing content was a primary goal evident in several categories of cluster, in particular, the fourth-largest cluster will capture the content between brackets or parentheses (Section~\ref{cluster:contentparens}).  Thus, we observe that the ability to capture some part of a match provides a powerful tool to programmers. 
 
 \todoMid{In my experience, I have used capture groups in the find and replace functionality of a text editor to transform large, well-structured documents in many steps.  I have also used them in java programs to get the critical data from some predictable text (like part of a number).  Then I have also used them in shell scripts in a similar way - to pass the captured content into a program.  It's worth noting the prevalence of }
 \verb!(.*)!
@@ -23,31 +25,42 @@ The capture group (CG) feature is the most frequently used feature in terms of p
  \verb!\\[(.*)\\]!.
  \todoMid{ I think it's hard for a reader of our paper to understand this trend without seeing the large number of similar-themed actual regexes, and then our findings feel a little flat because of course capture groups are used to get information...  At the same time, I think it's important to recognize that about half of the patterns I've seen could not be expressed without using CG to specify logical groups for repetition or as the end of any abstraction expressed using other features.  One very interesting question for future research is how to tell when regexes are using CG for just capturing, just grouping or both.  We do not have an approach but it's a point to be explored.}
 
-Any non-trivial tool or research that hopes to be applicable to regex use in practice must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
+This feature is well supported by existing tools, but this provides evidence that future tools must treat the CG feature as especially important, and must support some way to reason about what information is retrieved by capture groups.
 
-\subsubsection{Counting Lines and Finding Flags}
-Text files containing one unit of information per line are common in a wide variety of applications (for example log and csv files).  Out of the 13,912 patterns in the corpus, 3,444 (24\%) contained ANY followed by KLE  (i.e., \verb!`.*'!), often at the end of the pattern.
-One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of ``Counting lines that match a pattern" and ``Counting substrings that match a pattern" at 3.2 or rarely/occasionally.
+\subsubsection{Finding Specific Content}
+Two categorical clusters, \emph{Specific Characters Must Match} (Section~\ref{cluster:single}) and \emph{Two or More Characters in Sequence} (Section~\ref{cluster:multiple}), deal with identifying the presence of specific character(s). While multiple character matching subsumes single character matching, the overarching theme  is that these regexes are looking to validate strings based on the presence of very specific content, as would be done for many common activities listed in Table~\ref{tab:regexactivities}, such as parsing user input. (This is in contract to \emph{capturing} specific content, as \emph{finding} deals with string validation and \emph{capturing} deals with string extraction.) 
 
-Delimiters that separate items on one line like \verb!`\t'! are also quite common.  Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found that 17 of the top 100 clusters revolved around the presence of a single character (Section~\ref{cluster:single}).
-The top ranked activity for developers is ``Locating content within a file or files," and usually this content is located using some small set of characters that the user knows will flag that content.  Looking closely at the \emph{Specific Character Must Match} cluster, some of the characters being searched for were \verb!\n!, \verb!-! and \verb!.!, which are all common delimiters in different scenarios. This emphasizes the need for regex tools to  facilitate easy file parsing.
-\todoMid{The main difference between the Specific Character Must Match group and the multiple characters must match is that the first can subsume the second.  I think it's important to defend this and expose that we understand that our simplification of clusters to their shortest representative combined with the behavioral clustering technique will drastically over-emphasize similarities revolving around single characters, so instead of listing this as a major group, or a major finding, we may need to admit that it is an emphasis that our technique introduces artificially.  I think that in practice, the patterns being searched for usually revolve around more than just a single character, although maybe not a lot more than that.  I think it is more telling that despite our technique's tendency to over-cluster things around a single character, there was still an entire category that required two or more characters, and so those specific pairs or triples or whatever in that cluster are extremely key character combinations.  Let's see a few of those that seem to make sense: }
-\verb! {2,}!
-\todoMid{ :two or more spaces, }
-\verb!@[a-z]+!
-\todoMid{ :a lowercase twitter handle or similar,}
- \verb!\\$[()]!
- \todoMid{ :a dollar followed by either paren, }
- \verb!v[0-9]+.*!
- \todoMid{ :the letter `v' followed by some numbers, perhaps a version number.  }
+%As indicated by the clusters of specific character matches in Section~\ref{cluster:single}, finding specific content is important.
+%Delimiters that separate items on one line like \verb!`\t'! are also quite common.  
+%Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found that 17 of the top 100 clusters revolved around the presence of a single character.
+The commonality of regexes related to finding content is consistent with the top ranked activity for developers, ``Locating content within a file or files." 
+%and usually this content is located using some small set of characters that the user knows will flag that content.  
+Looking closely at the \emph{Specific Character Must Match} cluster, some of the characters being searched for were \verb!\n!, \verb!-! and \verb!.!, which are all common delimiters in different scenarios. Combined with the cluster on \emph{Code Search and Variable Capturing} (Section~\ref{cluster:search}), this emphasizes the need for regex tools to  facilitate easy file parsing, or for a tool to include built-in support for specific types of parsing, such as finding a twitter handle (i.e., \verb!@[a-z]+!) or a version number, (i.e., \verb!v[0-9]+.*!), both of which are appear in these clusters. 
+\todoMid{Can we make the following statement? Presumably, the developer may also want to capture specific content, such as the actual twitter handle or the actual version number, but may not know how to do that with regex libraries and may rely on string parsing instead.}
 
-\todoMid{In a completely unrelated train of thought, I have been considering how regexes are one major way, and perhaps the only practical way in the world of computer science to handle the invisible characters like ASCII 0-32.  That's 33 characters like `backspace' and `end of medium' and 'vertical tab' that can appear in text and cause problems.  I've heard them called `Gremlins'.  So what do people do?  They write regexes to clean those out.}
+%\todoMid{The main difference between the Specific Character Must Match group and the multiple characters must match is that the first can subsume the second.  I think it's important to defend this and expose that we understand that our simplification of clusters to their shortest representative combined with the behavioral clustering technique will drastically over-emphasize similarities revolving around single characters, so instead of listing this as a major group, or a major finding, we may need to admit that it is an emphasis that our technique introduces artificially.  I think that in practice, the patterns being searched for usually revolve around more than just a single character, although maybe not a lot more than that.  I think it is more telling that despite our technique's tendency to over-cluster things around a single character, there was still an entire category that required two or more characters, and so those specific pairs or triples or whatever in that cluster are extremely key character combinations.  Let's see a few of those that seem to make sense: }
+%\verb! {2,}!
+%\todoMid{ :two or more spaces, }
+%\verb!@[a-z]+!
+%\todoMid{ :a lowercase twitter handle or similar,}
+% \verb!\\$[()]!
+% \todoMid{ :a dollar followed by either paren, }
+% \verb!v[0-9]+.*!
+% \todoMid{ :the letter `v' followed by some numbers, perhaps a version number.  }
+
+\subsubsection{Counting Lines}
+Text files containing one unit of information per line are common in a wide variety of applications (for example .log and .csv files).  Out of the 13,912 patterns in the corpus, 3,444 (24\%) contained ANY followed by KLE  (i.e., \verb!`.*'!), often at the end of the pattern.
+One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of ``Counting lines that match a pattern" and ``Counting substrings that match a pattern" at 3.2 or rarely/occasionally. It may be valuable for tool builders to include support for common activities such as line counting. 
+
+
+
+%\todoMid{In a completely unrelated train of thought, I have been considering how regexes are one major way, and perhaps the only practical way in the world of computer science to handle the invisible characters like ASCII 0-32.  That's 33 characters like `backspace' and `end of medium' and 'vertical tab' that can appear in text and cause problems.  I've heard them called `Gremlins'.  So what do people do?  They write regexes to clean those out.}
 
 
 
 \subsection{Opportunities For Future Work}
 
-Based on our findings, there are many opportunities for future work.
+There are many opportunities for future work.
 
 
 

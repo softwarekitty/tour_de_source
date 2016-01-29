@@ -28,7 +28,8 @@
 \clubpenalty=10000
 
 \newcommand{\todoNow}[1]{\textbf{\textcolor{red}{TODO.NOW: #1}}} %comment out for submission
-\newcommand{\todoMid}[1]{\textbf{\textcolor{green}{TODO.MID: #1}}} %comment out for submission
+\newcommand{\todoMid}[1]{\textbf{\textcolor{magenta}{TODO.MID: #1}}} %comment out for submission
+%\newcommand{\todoMid}[1]{\textbf{\textcolor{magenta}{}}} %comment out for submission
 \newcommand{\todoLast}[1]{\textbf{\textcolor{blue}{TODO.LAST: #1}}} %comment out for submission
 \newcommand{\yes}{\tikz\draw[black,fill=black] (0,0) circle (.5ex);}
 \newcommand{\sorta}{\tikz\draw[gray,fill=gray] (0,0) circle (.5ex);}
@@ -85,7 +86,7 @@ We also map the most common features used in regular expressions to those featur
 Using similarity analysis of regular expressions across projects,
 we identify six common behavioral clusters that describe how regular expressions are often used in practice.
 This is the first rigorous examination of regex usage and it provides empirical evidence to support design decisions by regex tool
-builders.
+builders. It also points to areas of needed future work, such as refactoring regular expressions to increase refactoring understandability.   
 %We conclude by discussing the implications for  tool  designers and outline several directions of future work. 
 %\todoLast{Katie: revise}
 
