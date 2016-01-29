@@ -6,26 +6,33 @@ In this section, we discuss the implications of these empirical findings
  and opportunities for future work.
 
 \subsection{Implications For Tool Designers}
-The results in this work have several implications for tool designers who want to effectively support developers who use regular expressions.
+The results have  implications for regex tool designers. % who want to effectively support developers who use regular expressions.
 
-\subsubsection{All Character Classes Are Common}
-The same character class can be expressed in different ways, for example \verb!`[0-9]'! is equivalent to \verb!`\d'!.  Our results indicate that both approaches are widely used (Table~\ref{tab:cccvsdefault}), so tool builders should continue to support both approaches.
+%\subsubsection{All Character Classes Are Common}
+%The same character class can be expressed in different ways, for example \verb!`[0-9]'! is equivalent to \verb!`\d'!.  Our results indicate that both approaches are widely used (Table~\ref{tab:cccvsdefault}), so tool builders should continue to support both approaches.
+
+
+\subsubsection{Finding Specific Content}
+Two categorical clusters, \emph{Specific Characters Must Match} (Section~\ref{cluster:single}) and \emph{Two or More Characters in Sequence} (Section~\ref{cluster:multiple}), deal with identifying the presence of specific character(s). 
+While multiple character matching subsumes single character matching, the overarching theme is that these regexes are looking to validate strings based on the presence of very specific content, as would be done for many common activities listed in Table~\ref{tab:regexactivities}, such as, ``Locating content within a file or files."
+%(This is in contract to \emph{capturing} specific content, as \emph{finding} deals with string validation and \emph{capturing} deals with string extraction.)
+%As indicated by the clusters of specific character matches in Section~\ref{cluster:single}, finding specific content is important.
+%Delimiters that separate items on one line like \verb!`\t'! are also quite common.
+%Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found that 17 of the top 100 clusters revolved around the presence of a single character.
+%The commonality of regexes related to finding content is consistent with the top ranked activity for developers, ``Locating content within a file or files."
+%and usually this content is located using some small set of characters that the user knows will flag that content.
+Looking closely at the \emph{Specific Character Must Match} cluster, some of the characters being searched for were \verb!\n!, \verb!-! and \verb!.!, which are all common delimiters in different scenarios. This indicates the need for regex tools to facilitate easy file parsing, or for tools to include built-in support for specific, common types of parsing. 
+
 
 \subsubsection{Capturing Specific Content Near A Delimiter}
 The survey results from Section~\ref{rq1:survey} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.
 From a feature perspective, the capture group (CG) is the most frequently used in terms of patterns (Table~\ref{table:featureStats}).  This feature has two functions: 1) logical grouping as would be expected by parenthesis, and 2) retrieval of information in one logical grouping.  As mentioned in Section~\ref{rq4:results}, capturing content was a primary goal evident in several cluster categories.  The fourth-largest category is based entirely on capturing the content between brackets or parentheses (Section~\ref{cluster:contentparens}).
 
+%Combined with the cluster on \emph{Code Search and Variable Capturing} (Section~\ref{cluster:search}), this emphasizes the need for regex tools to  facilitate easy file parsing, or for a tool to include built-in support for specific, common types of parsing. 
+
+
 Many uses of CG also use the ANY and KLE features, eg. \verb!(.*){(.*)}(.*)! and \verb!\\s*([^: ]*)\\s*:(.*)!.  This type of usage frequently revolves around an important delimiter character such as \verb!:! or \verb!\!.  This use case is well supported by existing tools for ASCII characters, but future tools should consider the centrality of this use case and its implications for non-English users of regex tools.  For example, Unicode characters like `U+060D' the Arabic Date Separator, or `U+18806' the Mongilian Soft Hyphen may be used to locate segments of text that a user would want to capture.
 
-\subsubsection{Finding Specific Content}
-Two categorical clusters, \emph{Specific Characters Must Match} (Section~\ref{cluster:single}) and \emph{Two or More Characters in Sequence} (Section~\ref{cluster:multiple}), deal with identifying the presence of specific character(s). While multiple character matching subsumes single character matching, the overarching theme  is that these regexes are looking to validate strings based on the presence of very specific content, as would be done for many common activities listed in Table~\ref{tab:regexactivities}, such as parsing user input. (This is in contract to \emph{capturing} specific content, as \emph{finding} deals with string validation and \emph{capturing} deals with string extraction.)
-
-%As indicated by the clusters of specific character matches in Section~\ref{cluster:single}, finding specific content is important.
-%Delimiters that separate items on one line like \verb!`\t'! are also quite common.
-%Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found that 17 of the top 100 clusters revolved around the presence of a single character.
-The commonality of regexes related to finding content is consistent with the top ranked activity for developers, ``Locating content within a file or files."
-%and usually this content is located using some small set of characters that the user knows will flag that content.
-Looking closely at the \emph{Specific Character Must Match} cluster, some of the characters being searched for were \verb!\n!, \verb!-! and \verb!.!, which are all common delimiters in different scenarios. Combined with the cluster on \emph{Code Search and Variable Capturing} (Section~\ref{cluster:search}), this emphasizes the need for regex tools to  facilitate easy file parsing, or for a tool to include built-in support for specific, common types of parsing. 
 %, such as finding a twitter handle (i.e., \verb!@[a-z]+!) or a version number, (i.e., \verb!v[0-9]+.*!).
 %and then capture specific content, such as the actual twitter handle or the actual version number, but may not know how to do that capture groups and may rely on string parsing instead.
 
@@ -75,7 +82,7 @@ Within standard programming languages, regular expressions libraries are very co
 
 
 \subsubsection{Similarity Beyond String Matching}
-While the string matching similarity analysis over-approximates similarity when compared to containment analysis, it may under-approximate similarity in another sense.
+While the similarity analysis over-approximates similarity when compared to containment analysis, it may under-approximate similarity in another sense.
 %We define behavioral similarity based on strings matched by pairs of regular expressions. However, t
 For example, two regexes that have dissimilar matching behavior could be very similar in purpose and in the eyes of the developer. For example, \verb!workitem:\[(\d+)\] - (.*)! and \verb!issue:\[(\d+)\] - (.*)! could both be used to  capture the id and title from an issue tracking system, but match very different sets of strings. Future work would apply abstractions to the regex strings, such as removing or relaxing literals, prior to similarity analysis to capture and cluster such similarities.
 

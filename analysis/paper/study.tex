@@ -106,7 +106,7 @@ Once all patterns were transformed into vectors, we examined each feature indepe
 
 
 \subsection{Clustering and Behavioral Similarity}
-An ideal analysis of similarity for regexes would use subsumption or containment analysis. However, we struggled to find a tool that could facilitate such an analysis. Further, regular expressions in modern code libraries are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences,  provide expressiveness beyond regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt (.+)\verb!\!1}. However, building an automaton to recognize such a pattern and to facilitate containment analysis, is infeasible. 
+An ideal analysis of similarity for regexes would use subsumption or containment analysis. However, we struggled to find a tool that could facilitate such an analysis. Further, regular expressions in code libraries (e.g., for Python, Java) are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences, make the libraries more expressive than regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt ([a-z]+)\verb!\!1}. However, building an automaton to recognize such a pattern and to facilitate containment analysis, is infeasible. 
 For these reasons, we developed a similarity analysis based on string matching. 
 
 
