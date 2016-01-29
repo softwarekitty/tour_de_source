@@ -322,7 +322,7 @@ This category contains 21 clusters, each appearing in an average of 33 projects.
 \label{cluster:single}
 Each cluster in this category requires one specific character to match, for example:
 \verb!`\n\s*'(42)! matches only if a newline is found, \verb!`:+'(31)! matches only if a colon is found, \verb!`%'(22)!, matches only if a percent sign is found and \verb!`}'(14)! matches only if a right curly brace is found.
-Table~\ref{table:exampleCluster} presents a cluster that falls under this category. While the cluster is centered on the presence of the \verb!`:'! character, the other regexes in the cluster also exhibit more diverse behavior.
+Table~\ref{table:exampleCluster} presents a cluster that falls under this category. While the cluster is centered on the presence of the \verb!`:'! character, the other regexes in the cluster also exhibit more diverse behavior. This becomes a cluster because all the Rex-generated strings have a \verb!`:'! in them, so \verb!`:+'! is seen as highly similar to \verb!\\s*:\\s*! and \verb!\\s*([^: ]*)\\s*:(.*)!. 
  
 The commonality of this cluster category contrasts with the survey in Section~\ref{rq1:survey} in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{tab:regexactivities}).
 This category contains 17 clusters, each appearing in an average of 17.1 projects. 
