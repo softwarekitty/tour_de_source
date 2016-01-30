@@ -38,7 +38,7 @@ We explore invocations of  the {\tt re} module in \DTLfetch{data}{key}{nProjScan
 
 \noindent \textbf{RQ3:} Which regular expression language features are most commonly used in Python?
 
-We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Section~\ref{study:corpus} with examples. We then map the feature coverage for four common regex support tools, brics, hampi, RE2 and Rex, and explore survey responses regarding feature usage for some of the less supported features.\\
+We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Table~\ref{table:featureStats} with examples. We then map the feature coverage for four common regex support tools, brics, hampi, RE2 and Rex, and explore survey responses regarding feature usage for some of the less supported features.\\
 
 \noindent \textbf{RQ4:} How behaviorally similar are regexes across projects?
 
@@ -68,11 +68,11 @@ Our goal was to understand the practices of professional developers. Thus, we de
 \label{study:corpus}
 Our goal was to collect regexes from a variety of projects to represent the breadth of how developers use the language features.
 Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value}  projects containing Python code.
-We did so  by dividing a range of about 8 million repo IDs for Python projects
-into 32 sections of equal size and scanning from the beginning of those
+We did so  by dividing a range of about 8 million repo IDs 
+into 32 sections of equal size and scanning  for Python projects from the beginning of those
 segments until we ran out of memory. At that point, we felt we had enough data
 to do an analysis without further perfecting our mining techniques. We built
-the AST of each file in each project to find utilizations of the 're' module
+the AST of each Python file in each project to find utilizations of the {\tt re} module
 functions. In most projects, almost all regex utilizations are present in the
 most recent version of a project, but to be more thorough, we also scanned up
 to 19 earlier versions. The number 20 was chosen to try and maximize returns on
@@ -146,10 +146,10 @@ Our goal is to generate 400 strings for each pattern to balance the runtime of t
 
 For clustering, we prune the similarity matrix to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL.
 This threshold was selected based on recommendations in the MCL manual. The impact of lowering the threshold would likely result  in either the same number of more diverse clusters, or a larger number of clusters, but is unlikely to markedly change the largest clusters or their summaries, which are the focus of our analysis for RQ4 (Section~\ref{rq4:results}), but further study is needed to substantiate this claim.
-We also note that MCL can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
+We also note that MCL can also be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
 After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.   The top 100 clusters are categorized by inspection into six categories of behavior. % (see Section~\ref{rq4:results}).
 
-The end result is clusters and categories of highly behaviorally similar regular expressions, though we note that this approach has a tendency to over-approximate the similarity of two regexes. We measure similarity based on a finite set of generated strings, but some regexes  match an infinite set (e.g., \verb!ab*c!), so measuring similarity based on the first 400 strings may lead to an artificially high similarity value. To mitigate this threat, we chose a large number of generated strings for each regex.
+The end result is clusters and categories of highly behaviorally similar regular expressions, though we note that this approach has a tendency to over-approximate the similarity of two regexes. We measure similarity based on a finite set of generated strings, but some regexes  match an infinite set (e.g., \verb!ab*c!), so measuring similarity based on the first 400 strings may lead to an artificially high similarity value. To mitigate this threat, we chose a large number of generated strings for each regex, but future work includes exploring other approaches to computing regex similarity.
 
 
 %\todoNow{fix this before the ICSE deadline - after putting several days into this, I have a partial fix but the fact is there was information loss when going between the java program and the cs program and back again.  So it remains to be seen if it will be feasible to do non-automatic repairs.}

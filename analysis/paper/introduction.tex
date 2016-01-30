@@ -13,7 +13,7 @@ Regexes are also employed in critical missions like MySQL injection prevention~\
 Regex researchers and tool designers must pick what features to include or exclude, which  can be a difficult  design decision. Supporting advanced features may be more expensive, taking more time and potentially making the project too complex and cumbersome to execute well.  A selection of only the simplest of regex features limits the applicability or relevance of that work. Despite extensive research effort in the area of regex support,  no research has been done about how regexes are used in practice and what features are essential for the most common use cases.
 
 
-\emph{The goal of this work is to explore 1) the context in which developers use regular expressions, and 2) the features and similarities of  regular expressions found in Python\footnote{Python is the fourth most common language on GitHub (after Java, Javascript and Ruby) and  Python's regex pattern language is close enough to other regex flavors that our conclusions are likely to generalize.} projects}.
+\emph{The goal of this work is to explore 1) the context in which developers use regular expressions, and 2) the features and similarities of  regular expressions found in Python\footnote{Python is the fourth most common language on GitHub (after Java, Javascript and Ruby) and  Python's regex pattern language is close enough to other regex libraries that our conclusions are likely to generalize.} projects}.
 
 First, we survey professional developers about how they use regexes and their pain points.  Second, we gather a sample of regexes from Python projects and analyze the frequency of feature usage (e.g., kleene star: \verb!*! and the end anchor: \verb!$! are features).    Third, we investigate what features are supported by four large projects that aim to support regex usage (brics~\cite{brics}, hampi~\cite{hampi}, Rex~\cite{rex}, and RE2~\cite{re2}), and which features are not supported, but are frequently used by developers.  Finally, we cluster regular expressions that appear in multiple projects by behavior, investigating high-level behavioral themes in regex usage.
 
@@ -23,7 +23,7 @@ The contributions of this work are:
     \item A survey of 18 professional software developers about their experience with regular expressions,
 	\item An empirical analysis of regex feature usage in nearly 14,000 regular expressions in \DTLfetch{data}{key}{nProjScanned}{value} open-source Python projects, mapping of those features to those supported by common regex tools and survey results showing the impact of not supporting various features,
 	\item An approach for measuring behavioral similarity of regular expressions and qualitative analysis of the most common behaviorally similar clusters, and
-	\item An evidence-based discussion of opportunities for future work in supporting programmers in writing regular expressions, including refactoring regexes, developing regex similarity analyses, and providing migration support between languages.
+	\item An evidence-based discussion of opportunities for future work in supporting programmers who use regular expressions, including refactoring regexes, developing regex similarity analyses, and providing migration support between languages.
 %    \todoNow{Is Migration support the best option to mention here?}
 \end{itemize}
 
