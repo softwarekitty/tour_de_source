@@ -21,7 +21,9 @@ While multiple character matching subsumes single character matching, the overar
 %Although survey participants indicated an average frequency of 1.7 (very rarely or never) for ``checking for a single character," we found that 17 of the top 100 clusters revolved around the presence of a single character.
 %The commonality of regexes related to finding content is consistent with the top ranked activity for developers, ``Locating content within a file or files."
 %and usually this content is located using some small set of characters that the user knows will flag that content.
-Looking closely at the \emph{Specific Character Must Match} cluster, some of the characters being searched for were \verb!\n!, \verb!-! and \verb!.!, which are all common delimiters in different scenarios. This indicates the need for regex tools to facilitate easy file parsing, or for tools to include built-in support for specific, common types of parsing.
+More study is needed into what content is most frequently searched for, but from our cluster analysis we found that version numbers, twitter or user handles, hex values, decimal numbers, capitalized words, and particular combinations of whitespace, slashes and other delimiters were discernible targets.
+
+%Looking closely at the \emph{Specific Character Must Match} cluster, some of the characters being searched for were \verb!\n!, \verb!-! and \verb!.!, which are all common delimiters in different scenarios. This indicates the need for regex tools to facilitate easy file parsing, or for tools to include built-in support for specific, common types of parsing.
 
 
 \subsubsection{Capturing Specific Content Near A Delimiter}
@@ -83,7 +85,7 @@ Within standard programming languages, regular expressions libraries are very co
 
 \vspace{-2pt}
 \subsubsection{Similarity Beyond String Matching}
-There are various ways to compute similarity between regexes, each with different tradeoffs. 
+There are various ways to compute similarity between regexes, each with different tradeoffs.
 While the similarity analysis we employ over-approximates similarity when compared to containment analysis, it may under-approximate similarity in another sense.
 %We define behavioral similarity based on strings matched by pairs of regular expressions. However, t
 For example, two regexes that have dissimilar matching behavior could be very similar in purpose and in the eyes of the developer. For example, \verb!commit:\[(\d+)\] - (.*)! and \verb!push:\[(\d+)\] - (.*)! could both be used to  capture the id and command from a versioning system, but match very different sets of strings. Future work would apply abstractions to the regex strings, such as removing or relaxing literals, prior to similarity analysis to capture and cluster such similarities.
