@@ -21,7 +21,7 @@ Within a source code file, a {utilization} is composed of a function, a pattern,
 Note that because the vast majority of regex features are shared across most general programming languages (e.g., Java, C, C\#, or Ruby), a Python {pattern} will (almost always) behave the same when used in other languages, whereas a utilization is not universal in the same way (i.e., it may not compile in other languages, even with small modifications to function and flag names).
 As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though it has an equivalent flag in Java.
 
-In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior. Next, we describe the research questions, data set collection and analysis. 
+In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior. Next, we describe the research questions, data set collection and analysis.
 
 \subsection{Research Questions}
 \label{sec:rqs}
@@ -43,7 +43,7 @@ We consider regex language features to be tokens that specify the matching behav
 \noindent \textbf{RQ4:} How behaviorally similar are regexes across projects?
 
 As this is a first step in understanding behavioral overlap in
-regexes, we measure similarity between pairs of regexes by overlap in matching strings. For each regex, matching strings are generated and then  evaluated against each other regex to compute pairwise similarity. Then we use clustering to form behaviorally similar groupings. 
+regexes, we measure similarity between pairs of regexes by overlap in matching strings. For each regex, matching strings are generated and then  evaluated against each other regex to compute pairwise similarity. Then we use clustering to form behaviorally similar groupings.
 
 
 %\noindent \textbf{RQ5:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
@@ -54,20 +54,20 @@ regexes, we measure similarity between pairs of regexes by overlap in matching s
 
 \subsection{Survey Design and Implementation}
 \label{study:survey}
-To understand the context of when and how programmers use regular expressions, 
-we designed a survey, implemented using Google Forms, with 40 questions. The questions asked about regex usage frequency, languages, purposes, pain points, and the use of various language features.\footnote{\url{https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf}}  Participation was voluntary and participants were entered in a lottery for a \$50 gift card. 
+To understand the context of when and how programmers use regular expressions,
+we designed a survey, implemented using Google Forms, with 40 questions. The questions asked about regex usage frequency, languages, purposes, pain points, and the use of various language features.\footnote{\url{https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf}}  Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
 
-Our goal was to understand the practices of professional developers. Thus, we deployed the survey to 22 professional developers at Dwolla, a small software company that provides tools for online and mobile payment management. While this sample comes from a single company, we note anecdotally that Dwolla is a start-up and most of the developers worked previously for other software companies, and thus bring their past experiences with them. Surveyed developers have nine years of experience, on average, indicating the results may generalize beyond a single, small software company, but further study is needed. 
+Our goal was to understand the practices of professional developers. Thus, we deployed the survey to 22 professional developers at Dwolla, a small software company that provides tools for online and mobile payment management. While this sample comes from a single company, we note anecdotally that Dwolla is a start-up and most of the developers worked previously for other software companies, and thus bring their past experiences with them. Surveyed developers have nine years of experience, on average, indicating the results may generalize beyond a single, small software company, but further study is needed.
 
 
-%The questions asked about regex usage frequency, languages, purposes, and the use of various language features, as explored in Section~\ref{rq1:survey} and Section~\ref{results:rq3}. 
+%The questions asked about regex usage frequency, languages, purposes, and the use of various language features, as explored in Section~\ref{rq1:survey} and Section~\ref{results:rq3}.
 %\todoMid{More details on survey design}
 
 
 \subsection{Regex Corpus}
 \label{study:corpus}
-Our goal was to collect regexes from a variety of projects to represent the breadth of how developers use the language features. 
-Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value}  projects containing Python code.  
+Our goal was to collect regexes from a variety of projects to represent the breadth of how developers use the language features.
+Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value}  projects containing Python code.
 We did so  by dividing a range of about 8 million repo IDs for Python projects
 into 32 sections of equal size and scanning from the beginning of those
 segments until we ran out of memory. At that point, we felt we had enough data
@@ -78,13 +78,13 @@ most recent version of a project, but to be more thorough, we also scanned up
 to 19 earlier versions. The number 20 was chosen to try and maximize returns on
 computing resources invested after observing the scanning process in many hours
 of trial scans.
-% If the project had fewer than 20 commits, then all commits were scanned.  
+% If the project had fewer than 20 commits, then all commits were scanned.
 % The most recent commit was always included, and the spacing between all other chosen commits was determined by dividing the remaining number of commits by 19 (rounding as needed).
 All regex utilizations were obtained, sans duplicates. Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In the end, we observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex utilizations in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
 In collecting the set of distinct patterns for analysis,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of utilizations using flags, which can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable).
 The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) of the utilizations were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings.  Each of the pattern strings was pre-processed by removing Python quotes (\verb!`\\W!' becomes \verb!\\W!), unescaping escaped characters (\verb!\\W! becomes \verb!\W!) and parsing the resulting  string using an ANTLR-based, open source PCRE parser\footnote{\url{https://github.com/bkiers/pcre-parser}}.
-This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we  chose to exclude because appeared very rarely (e.g., reference conditions).
+This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we  chose to exclude because they appeared very rarely (e.g., reference conditions).  An additional 0.1\% (16) of the patterns were excluded because they were empty or otherwise malformed so as to cause a parsing error.
 
 The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We  refer to this set of weighted, distinct pattern strings as the \emph{corpus}.
 
@@ -106,8 +106,8 @@ Once all patterns were transformed into vectors, we examined each feature indepe
 
 
 \subsection{Clustering and Behavioral Similarity}
-An ideal analysis of similarity for regexes would use subsumption or containment analysis. However, we struggled to find a tool that could facilitate such an analysis. Further, regular expressions in code libraries (e.g., for Python, Java) are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences, make the libraries more expressive than regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt ([a-z]+)\verb!\!1}. However, building an automaton to recognize such a pattern and to facilitate containment analysis, is infeasible. 
-For these reasons, we developed a similarity analysis based on string matching. 
+An ideal analysis of similarity for regexes would use subsumption or containment analysis. However, we struggled to find a tool that could facilitate such an analysis. Further, regular expressions in code libraries (e.g., for Python, Java) are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences, make the libraries more expressive than regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt ([a-z]+)\verb!\!1}. However, building an automaton to recognize such a pattern and to facilitate containment analysis, is infeasible.
+For these reasons, we developed a similarity analysis based on string matching.
 
 
 \begin{figure}[tb]
@@ -145,7 +145,7 @@ Our goal is to generate 400 strings for each pattern to balance the runtime of t
 
 
 For clustering, we prune the similarity matrix to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL.
-This threshold was selected based on recommendations in the MCL manual. The impact of lowering the threshold would likely result  in either the same number of more diverse clusters, or a larger number of clusters, but is unlikely to markedly change the largest clusters or their summaries, which are the focus of our analysis for RQ4 (Section~\ref{rq4:results}), but further study is needed to substantiate this claim. 
+This threshold was selected based on recommendations in the MCL manual. The impact of lowering the threshold would likely result  in either the same number of more diverse clusters, or a larger number of clusters, but is unlikely to markedly change the largest clusters or their summaries, which are the focus of our analysis for RQ4 (Section~\ref{rq4:results}), but further study is needed to substantiate this claim.
 We also note that MCL can be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
 After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.   The top 100 clusters are categorized by inspection into six categories of behavior. % (see Section~\ref{rq4:results}).
 
