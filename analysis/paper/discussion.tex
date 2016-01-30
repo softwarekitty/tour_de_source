@@ -65,9 +65,9 @@ There are many opportunities for future work. %\todoLast{Hey Kids! Need a thesis
 
 \subsubsection{Refactoring Regexes}
 The survey showed that users want readability and find the lack of readable regexes to be a major pain point.
-This provides an opportunity to introduce refactoring transformations to enhance readability.
-As one opportunity, certain character classes that are logically equivalent can be expressed differently, for example, \verb!\d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!. While \verb!\d! is more succinct, \verb![0-9]! may be easier to read, so a refactoring for \emph{default to custom character classes} could be introduced.
-Human studies are needed to evaluate the readability of various regex features in order to define and support appropriate regex refactorings for readability.
+This provides an opportunity to introduce refactoring transformations to enhance readability or comprehension.
+As one opportunity, certain character classes are logically equivalent and can be expressed differently, for example, \verb!\d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!. While \verb!\d! is more succinct, \verb![0-9]! may be easier to read, so a refactoring for \emph{default to custom character classes} could be introduced.
+Human studies are needed to evaluate the readability and comprehension of various regex features in order to define and support appropriate regex refactorings.
 
 Another avenue of refactoring could be for performance. Various implementations of regex libraries may perform more efficiently with some features than others. An evaluation of regex feature implementation speeds would facilitate semantic transformations based on performance, similar to performance refactorings for LabVIEW~\cite{chambers2013smell, chambers2015impact}.
 
@@ -82,6 +82,7 @@ Within standard programming languages, regular expressions libraries are very co
 
 
 \subsubsection{Similarity Beyond String Matching}
+There are many ways to compute similarity between regexes, each with different tradeoffs. 
 While the similarity analysis over-approximates similarity when compared to containment analysis, it may under-approximate similarity in another sense.
 %We define behavioral similarity based on strings matched by pairs of regular expressions. However, t
 For example, two regexes that have dissimilar matching behavior could be very similar in purpose and in the eyes of the developer. For example, \verb!workitem:\[(\d+)\] - (.*)! and \verb!issue:\[(\d+)\] - (.*)! could both be used to  capture the id and title from an issue tracking system, but match very different sets of strings. Future work would apply abstractions to the regex strings, such as removing or relaxing literals, prior to similarity analysis to capture and cluster such similarities.
@@ -105,7 +106,7 @@ One category of 10 clusters in the top 100 contained regex patterns, \emph{Conte
 
 
 \subsubsection{Tool-Specific Regex Exploration}
-In some environments, such as command line or text editor, regexes are used extensively (Section~\ref{rq1:survey}), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.
+In some environments, such as command line or text editor, regexes are used extensively by the surveyed developers (Section~\ref{rq1:survey}), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.
 
 
 % \subsubsection{A Modern WRD Character Class}

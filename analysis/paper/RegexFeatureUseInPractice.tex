@@ -119,7 +119,7 @@ The following threats impact our results and conclusions:
 %\subsection{Conclusion}
 \textbf{Reliability of Measures:} The validity of our survey results is dependent on the clarity of the questions. The authors went through several iterations of the survey and included examples for all the regex feature descriptions to improve understandability.
 
-The similarity measure between regexes used in the cluster algorithm is computed empirically rather than analytically, and the more Rex-generated strings used to compute the similarity measure, the more likely it is to be accurate. Our experiments used 400 strings to balance performance and precision, but a higher number could lead to more cohesive clusters. However, regex patters that use any feature not supported by Rex were omitted from the cluster analysis. %\todoMid{talk about tools for formal analysis}
+The similarity measure between regexes used in the cluster algorithm is computed empirically rather than analytically, and the more Rex-generated strings used to compute the similarity measure, the more likely it is to be accurate. Our experiments used 400 strings to balance performance and precision, but a higher number could lead to more cohesive clusters. Additionally, regex patters that use any feature not supported by Rex were omitted from the cluster analysis. Last, the threshold of 0.75 was chosen based on the MCL recommendation, but it may not create optimal clusters. %\todoMid{talk about tools for formal analysis}
 %In our clustering algorithm, we require a similarity level of 0.75 so that we do not over-estimate the similarity between regular  expressions.\todoNow{what does this last sentence mean?  Is this paragraph okay?}
 
 %\subsection{Internal}
@@ -143,7 +143,7 @@ We also did not scrape all commits in every project for regular expression utili
 \textbf{Interaction of Selection and Treatment:} Our survey participants were software developers from a small startup company and may not be representative of developers who use regexes. Given that the average participant has nine years of development experience, their responses likely pull from a variety of experiences with regular expression usage.
 
 \textbf{Interaction of Setting and Treatment:}
-We only explore regular expressions in Python projects so these results many be coupled with the activities performed using Python and not generalize to other languages. The regex usage context reported by survey participants, however, includes information on  regex usage in a  variety of settings and languages. Future work will replicate this study in other languages and the survey with a larger group of participants.
+We only explore regular expressions in Python projects so these results may be coupled with the activities performed using Python and not generalize to other languages. The regex usage context reported by survey participants, however, includes information on  regex usage in a  variety of settings and languages. Future work will replicate this study in other languages and the survey with a larger group of participants.
 
 
 
