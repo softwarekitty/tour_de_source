@@ -11,7 +11,7 @@ The survey was completed by 18 participants (82\% response rate) that identified
 Respondents have an average of nine years of programming experience ($\sigma = 4.28$).
 On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly.
 Table~\ref{tab:regexenviron} shows how frequently participants compose regexes using each of several languages and technical environments.
-Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  For command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. Yet, regexes were rarely used in query languages like SQL. Upon further investigation, it turns out the surveyed developers were not on teams that dealt heavily with a database. 
+Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  For command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. Yet, regexes were rarely used in query languages like SQL. Upon further investigation, it turns out the surveyed developers were not on teams that dealt heavily with a database.
 
 
 
@@ -109,11 +109,11 @@ From Table~\ref{table:saturation}, we also see that each project had an average 
 
 \input{../analysis_output/featureStats}
 
-The number of projects that use each of the {\tt re} functions is shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations. %, presumably because each usage of the other seven functions can accept a regex object compiled using {\tt re.compile} as an argument. 
+The number of projects that use each of the {\tt re} functions is shown in Figure~\ref{fig:partFunctions}.  The y-axis denotes the total utilizations, with a maximum of \DTLfetch{data}{key}{nUsages}{value}. The {\tt re.compile} function encompasses \DTLfetch{data}{key}{percentCompile}{value}\% of all utilizations. %, presumably because each usage of the other seven functions can accept a regex object compiled using {\tt re.compile} as an argument.
 Note that compiled objects can also be used to call functions of the re module, ie {\tt compiledObject.findall(...)}, but we ignore these utilizations so that our analysis is easier to automate, and because we are primarily interested in extracting the patterns which these 8 functions contain.
 
 
-%When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.  
+%When considering flag use, we excluded the default flag, which is built into the {\tt re} module, and present internally whenever no flag is used.
 Of all utilizations, \DTLfetch{data}{key}{percentFlags0}{value}\% had no flag, or explicitly specified the default flag.  The debug flag, which causes the {\tt re} regex engine to display extra information about its parsing, was never observed. This may be because developers use it for debugging and choose not to commit it to their repositories.
 % Figure~\ref{fig:partFlags} presents the number of projects in which each flag appears. Ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.   Although multiple flags can be combined using a bitwise or, this was never observed.
 
@@ -254,8 +254,8 @@ When survey participants were asked if they prefer to always use numbered (BKR) 
 \label{rq4:results}
 
 
-In clustering the regular expressions, we are interested in observing cross-project regex similarity and thus discarded patterns found in only one project.
-Then, since Rex does not support all the regex features present in the corpus, we were only able to generate sets of strings for measuring similarity for 2,871 (21\%) of the \DTLfetch{data}{key}{nCorpus}{value} patterns in the corpus. The impact is that 923 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats} for Rex.
+In clustering the regular expressions, we are most interested in observing behavior of regexes found in multiple projects.  Starting with the 13,597 patterns of the corpus, we discarded 10,015 (74\%) patterns that were not found in multiple projects.
+Then we excluded an additional 711 (5\%) patterns that contain features not supported by Rex.  We studied the remaining 2,871 (21\%) patterns using our similarity analysis technique. The impact is that 923 projects were excluded from the data set for the similarity analysis. Omitted features are indicated in Table~\ref{table:featureStats} for Rex.
 %The generated strings for each pattern are used to measure the pairwise similarity for all patterns and construct the similarity matrix.
 
 
