@@ -31,6 +31,20 @@ public class Cluster extends TreeSet<WeightRankedRegex> implements
 		this.topN = topN;
 		projectIDs = new TreeSet<Integer>();
 	}
+	
+	public String getLatex(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("\\item ");
+		sb.append("["+getDescription()+"] ");
+		sb.append("");
+		
+		return sb.toString();
+	}
+
+	private String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	public void initialzeStats() throws ClassNotFoundException, SQLException {
 		this.projectIDs = computeProjectIDs();
