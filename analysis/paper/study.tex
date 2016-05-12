@@ -47,10 +47,10 @@ regexes, we measure similarity between pairs of regexes by overlap in matching s
 \label{study:survey}
 To understand the context of when and how programmers use regular expressions,
 we designed a survey, implemented using Google Forms, with 40 questions. The questions asked about regex usage frequency, languages, purposes, pain points, and the use of various language
-features.\footnote{\url{https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf}}
+features.\footnote{\url{https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf}}  Though exact usage frequency may be hard to recall, we mitigate this by asking for usage frequency in 15 specific contexts before asking for the overall usage frequency.
 Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
 
-Our goal was to understand the practices of professional developers. Thus, we deployed the survey to 22 professional developers at  a small software company that provides tools for online and mobile payment management. While this sample comes from a single company, we note anecdotally that the company is a start-up and most of the developers worked previously for other software companies, and thus bring their past experiences with them. Surveyed developers have nine years of experience, on average, indicating the results may generalize beyond a single, small software company, but further study is needed.
+Our goal was to understand the practices of professional developers. Thus, we deployed the survey to 22 professional developers at Dwolla (with permission from H.R.), a small software company that provides tools for online and mobile payment management. While this sample comes from a single company, we note anecdotally that the company is a start-up and most of the developers worked previously for other software companies, and thus bring their past experiences with them. Surveyed developers have nine years of experience, on average, indicating the results may generalize beyond a single, small software company, but further study is needed.
 
 \subsection{Regex Corpus}
 \label{study:corpus}
@@ -63,14 +63,12 @@ to do an analysis without further perfecting our mining techniques. We built
 the AST of each Python file in each project to find utilizations of the {\tt re} module
 functions. In most projects, almost all regex utilizations are present in the
 most recent version of a project, but to be more thorough, we also scanned up
-to 19 earlier versions. The number 20 was chosen to try and maximize returns on
-computing resources invested after observing the scanning process in many hours
-of trial scans.
-All regex utilizations were obtained, sans duplicates. Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In the end, we observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex utilizations in \DTLfetch{data}{key}{nProjScanned}{value} projects.
+to 19 earlier versions. The number 20 was chosen to try and maximize returns on computing resources invested after observing the scanning process in many hours of trial scans.
+All regex utilizations were obtained, sans duplicates. Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In the end, we scanned \DTLfetch{data}{key}{nProjScanned}{value} Python projects, 42.2\% (1,645) of which use the {\tt re} module.  From these projects, we observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex utilizations.
 
 In collecting the set of distinct patterns for analysis,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of utilizations using flags, which can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable).
 The remaining \DTLfetch{data}{key}{percentCleanUsages}{value}\% (\DTLfetch{data}{key}{nCleanUsages}{value}) of the utilizations were collapsed into \DTLfetch{data}{key}{nDistinctPatterns}{value} distinct pattern strings.  Each of the pattern strings was pre-processed by removing Python quotes (\verb!`\\W!' becomes \verb!\\W!), unescaping escaped characters (\verb!\\W! becomes \verb!\W!) and parsing the resulting  string using an ANTLR-based, open source PCRE parser\footnote{\url{https://github.com/bkiers/pcre-parser}}.
-This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another \DTLfetch{data}{key}{percentAlien}{value}\% (\DTLfetch{data}{key}{N_ALIEN}{value}) of the patterns used regex features that we  chose to exclude because they appeared very rarely (e.g., reference conditions).  An additional 0.1\% (16) of the patterns were excluded because they were empty or otherwise malformed so as to cause a parsing error.
+This parser was unable to support \DTLfetch{data}{key}{percentUnicode}{value}\% (\DTLfetch{data}{key}{N_UNICODE}{value}) of the patterns due to unsupported unicode characters.  Another 0.13\% (19) of the patterns used regex features that we  chose to exclude because they appeared very rarely (e.g., reference conditions).  An additional 0.16\% (22) of the patterns were excluded because they were empty or otherwise malformed so as to cause a parsing error.
 
 The \DTLfetch{data}{key}{nCorpus}{value} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We  refer to this set of weighted, distinct pattern strings as the \emph{corpus}.
 
@@ -128,4 +126,5 @@ This threshold was selected based on recommendations in the MCL manual. The impa
 We also note that MCL can also be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
 After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.   The top 100 clusters are categorized by inspection into six categories of behavior.
 
-The end result is clusters and categories of highly behaviorally similar regular expressions, though we note that this approach has a tendency to over-approximate the similarity of two regexes. We measure similarity based on a finite set of generated strings, but some regexes  match an infinite set (e.g., \verb!ab*c!), so measuring similarity based on the first 400 strings may lead to an artificially high similarity value. To mitigate this threat, we chose a large number of generated strings for each regex, but future work includes exploring other approaches to computing regex similarity.
+The end result is clusters and categories of highly behaviorally similar regular expressions, though we note that this approach can only be an approximation, and may over-estimate or under-estimate similarity depending on how the test strings happen to interact with other regexes. To mitigate this threat, we chose a large number of generated strings for each regex, but future work includes exploring other approaches to computing regex similarity.
+% we cannot claim that this will always overestimate similarity - the error cuts both ways
