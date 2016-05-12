@@ -1,0 +1,24 @@
+OK-FIXED: precise numbers Such data would be very hard to recall on demand
+
+?: discussion section somewhat vague and hence hard to extract value from.   
+?: I would have liked examples supporting the three "implications" stated theer in terms of specific tools (e.g. the 4 charted in Table 4).
+
+?: Sec 5.1.1 seems more of an observation than a true implication. 
+?: For Sec 5.1.3, its not clear why it makes sense to build support for a feature like line counting, which had been graded as "rare/occasional use" by the developers.
+
+OK-FIXED: - It would be useful to have a sentence or tow explaining the purpose or objective of RQ4 right where the RQs are stated or at beginning of Sec 4.4. This does not become clear till the reads the section. 
+The motivation is quite clear and strong actually - to identify the common use-cases of regexes in software projects.
+OK-FIXED: - In Sec 4.3.1 (and a couple of other places as well) the authors use the term "projects", referring both to Python software projects that USE regexes and also to program analysis tools that ANALYZE regexes or use regexes for program analysis.
+This distinction should be made clear.
+
+?: A discussion of the 10k expressions that did not appear in multiple projects and how well they fall into the detected behavior groups might given further validation to that technique.
+
+OK-NOFIX: I would also consider reducing the alphabet from current unicode to unicode general categories to help group the results 
+(e.g. "ab+" would be a regular expression matching two unicode lowercase letters (Ll) and a unicode symbol math (Sm)).  
+Though this type of change was mentioned in future work.
+
+
+OK-NOFIX: In other words, they only studied how regular expression are used. The messages
+  to software engineers from such observations are unclear.   i was hoping ... one could understand how to write better regular expressions.
+  
+OK-FIXED: In string similarity analysis, only 400 strings are enumerated and compared from each regex. Could the sampling bias skew the results?
