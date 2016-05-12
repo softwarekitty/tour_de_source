@@ -1,0 +1,230 @@
+\begin{thebibliography}{10}
+
+\bibitem{Alkhateeb:2009:ESR:1540656.1540975}
+F.~Alkhateeb, J.-F. Baget, and J.~Euzenat.
+\newblock Extending sparql with regular expression patterns (for querying rdf).
+\newblock {\em Web Semant.}, 7(2):57--73, Apr. 2009.
+
+\bibitem{Anand:2013:OSM:2503903.2503991}
+S.~Anand, E.~K. Burke, T.~Y. Chen, J.~Clark, M.~B. Cohen, W.~Grieskamp,
+  M.~Harman, M.~J. Harrold, and P.~Mcminn.
+\newblock An orchestrated survey of methodologies for automated software test
+  case generation.
+\newblock {\em J. Syst. Softw.}, 86(8):1978--2001, Aug. 2013.
+
+\bibitem{1594922}
+A.~Arslan.
+\newblock Multiple sequence alignment containing a sequence of regular
+  expressions.
+\newblock In {\em Computational Intelligence in Bioinformatics and
+  Computational Biology, 2005. CIBCB '05. Proceedings of the 2005 IEEE
+  Symposium on}, pages 1--7, Nov 2005.
+
+\bibitem{Babbar:2010:CBA:1871840.1871848}
+R.~Babbar and N.~Singh.
+\newblock Clustering based approach to learning regular expressions over large
+  alphabet for noisy unstructured text.
+\newblock In {\em Proceedings of the Fourth Workshop on Analytics for Noisy
+  Unstructured Text Data}, AND '10, pages 43--50, New York, NY, USA, 2010. ACM.
+
+\bibitem{Baeza-Yates:1996:FTS:235809.235810}
+R.~A. Baeza-Yates and G.~H. Gonnet.
+\newblock Fast text searching for regular expressions or automaton searching on
+  tries.
+\newblock {\em J. ACM}, 43(6):915--936, Nov. 1996.
+
+\bibitem{Beck:2014:RVD:2591062.2591111}
+F.~Beck, S.~Gulan, B.~Biegel, S.~Baltes, and D.~Weiskopf.
+\newblock Regviz: Visual debugging of regular expressions.
+\newblock In {\em Companion Proceedings of the 36th International Conference on
+  Software Engineering}, ICSE Companion 2014, pages 504--507, New York, NY,
+  USA, 2014. ACM.
+
+\bibitem{Begel:2010:CDE:1806799.1806821}
+A.~Begel, Y.~P. Khoo, and T.~Zimmermann.
+\newblock Codebook: Discovering and exploiting relationships in software
+  repositories.
+\newblock In {\em Proceedings of the 32Nd ACM/IEEE International Conference on
+  Software Engineering - Volume 1}, ICSE '10, pages 125--134, New York, NY,
+  USA, 2010. ACM.
+
+\bibitem{Callau:2011:DUD:1985441.1985448}
+O.~Calla\'{u}, R.~Robbes, E.~Tanter, and D.~R\"{o}thlisberger.
+\newblock How developers use the dynamic features of programming languages: The
+  case of smalltalk.
+\newblock In {\em Proceedings of the 8th Working Conference on Mining Software
+  Repositories}, MSR '11, pages 23--32, New York, NY, USA, 2011. ACM.
+
+\bibitem{Callau:2013:DUD:2589712.2589718}
+O.~Calla\'{u}, R.~Robbes, E.~Tanter, and D.~R\"{o}thlisberger.
+\newblock How (and why) developers use the dynamic features of programming
+  languages: The case of smalltalk.
+\newblock {\em Empirical Software Engineering}, 18(6):1156--1194, Dec. 2013.
+
+\bibitem{chambers2013smell}
+C.~Chambers and C.~Scaffidi.
+\newblock Smell-driven performance analysis for end-user programmers.
+\newblock In {\em Proc. of VLH/CC '13}, pages 159--166, 2013.
+
+\bibitem{chambers2015impact}
+C.~Chambers and C.~Scaffidi.
+\newblock Impact and utility of smell-driven performance tuning for end-user
+  programmers.
+\newblock {\em Journal of Visual Languages \& Computing}, 28:176--194, 2015.
+\newblock to appear.
+
+\bibitem{Chen:2014:ESD:2597073.2597108}
+T.-H. Chen, M.~Nagappan, E.~Shihab, and A.~E. Hassan.
+\newblock An empirical study of dormant bugs.
+\newblock In {\em Proceedings of the 11th Working Conference on Mining Software
+  Repositories}, MSR 2014, pages 82--91, New York, NY, USA, 2014. ACM.
+
+\bibitem{Dattero:2004:PLG:962081.962087}
+R.~Dattero and S.~D. Galup.
+\newblock Programming languages and gender.
+\newblock {\em Commun. ACM}, 47(1):99--102, Jan. 2004.
+
+\bibitem{Dyer:2014:MBA:2568225.2568295}
+R.~Dyer, H.~Rajan, H.~A. Nguyen, and T.~N. Nguyen.
+\newblock Mining billions of ast nodes to study actual and potential usage of
+  java language features.
+\newblock In {\em Proceedings of the 36th International Conference on Software
+  Engineering}, ICSE 2014, pages 779--790, New York, NY, USA, 2014. ACM.
+
+\bibitem{Galler:2014:STD:2683035.2683100}
+S.~J. Galler and B.~K. Aichernig.
+\newblock Survey on test data generation tools.
+\newblock {\em Int. J. Softw. Tools Technol. Transf.}, 16(6):727--751, Nov.
+  2014.
+
+\bibitem{Ghosh:2013:JAT:2486788.2486925}
+I.~Ghosh, N.~Shafiei, G.~Li, and W.-F. Chiang.
+\newblock Jst: An automatic test generation tool for industrial java
+  applications with strings.
+\newblock In {\em Proceedings of the 2013 International Conference on Software
+  Engineering}, ICSE '13, pages 992--1001, Piscataway, NJ, USA, 2013. IEEE
+  Press.
+
+\bibitem{Grechanik:2010:EIL:1852786.1852801}
+M.~Grechanik, C.~McMillan, L.~DeFerrari, M.~Comi, S.~Crespi, D.~Poshyvanyk,
+  C.~Fu, Q.~Xie, and C.~Ghezzi.
+\newblock An empirical investigation into a large-scale java open source code
+  repository.
+\newblock In {\em Proceedings of the 2010 ACM-IEEE International Symposium on
+  Empirical Software Engineering and Measurement}, ESEM '10, pages 11:1--11:10,
+  New York, NY, USA, 2010. ACM.
+
+\bibitem{hampi}
+A.~Kiezun, V.~Ganesh, S.~Artzi, P.~J. Guo, P.~Hooimeijer, and M.~D. Ernst.
+\newblock Hampi: A solver for word equations over strings, regular expressions,
+  and context-free grammars.
+\newblock {\em ACM Trans. Softw. Eng. Methodol.}, 21(4):25:1--25:28, Feb. 2013.
+
+\bibitem{genprog-tse-journal}
+C.~{Le Goues}, T.~Nguyen, S.~Forrest, and W.~Weimer.
+\newblock {GenProg}: A generic method for automated software repair.
+\newblock {\em Transactions on Software Engineering}, 38(1):54--72, 2012.
+
+\bibitem{Lee:2010:PSQ:1871871.1871877}
+J.~Lee, M.-D. Pham, J.~Lee, W.-S. Han, H.~Cho, H.~Yu, and J.-H. Lee.
+\newblock Processing sparql queries with regular expressions in rdf databases.
+\newblock In {\em Proceedings of the ACM Fourth International Workshop on Data
+  and Text Mining in Biomedical Informatics}, DTMBIO '10, pages 23--30, New
+  York, NY, USA, 2010. ACM.
+
+\bibitem{Li:2008:REL:1613715.1613719}
+Y.~Li, R.~Krishnamurthy, S.~Raghavan, S.~Vaithyanathan, and H.~V. Jagadish.
+\newblock Regular expression learning for information extraction.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing}, EMNLP '08, pages 21--30, Stroudsburg, PA, USA, 2008.
+  Association for Computational Linguistics.
+
+\bibitem{Linares-Vasquez:2014:MEA:2597073.2597085}
+M.~Linares-V\'{a}squez, G.~Bavota, C.~Bernal-C\'{a}rdenas, R.~Oliveto,
+  M.~Di~Penta, and D.~Poshyvanyk.
+\newblock Mining energy-greedy api usage patterns in android apps: An empirical
+  study.
+\newblock In {\em Proceedings of the 11th Working Conference on Mining Software
+  Repositories}, MSR 2014, pages 2--11, New York, NY, USA, 2014. ACM.
+
+\bibitem{Livshits:2005:RAJ:2099708.2099724}
+B.~Livshits, J.~Whaley, and M.~S. Lam.
+\newblock Reflection analysis for java.
+\newblock In {\em Proceedings of the Third Asian Conference on Programming
+  Languages and Systems}, APLAS'05, pages 139--160, Berlin, Heidelberg, 2005.
+  Springer-Verlag.
+
+\bibitem{Meyerovich:2013:EAP:2509136.2509515}
+L.~A. Meyerovich and A.~S. Rabkin.
+\newblock Empirical analysis of programming language adoption.
+\newblock In {\em Proceedings of the 2013 ACM SIGPLAN International Conference
+  on Object Oriented Programming Systems Languages \&\#38; Applications},
+  OOPSLA '13, pages 1--18, New York, NY, USA, 2013. ACM.
+
+\bibitem{brics}
+A.~M\o{}ller.
+\newblock dk.brics.automaton -- finite-state automata and regular expressions
+  for {Java}, 2010.
+\newblock \texttt{http://www.brics.dk/automaton/}.
+
+\bibitem{network}
+{The Bro Network Security Monitor}.
+\newblock https://www.bro.org/, May 2015.
+
+\bibitem{Parnin:2013:AUJ:2589712.2589717}
+C.~Parnin, C.~Bird, and E.~Murphy-Hill.
+\newblock Adoption and use of java generics.
+\newblock {\em Empirical Softw. Engg.}, 18(6):1047--1089, Dec. 2013.
+
+\bibitem{re2}
+{RE2}.
+\newblock https://github.com/google/re2, May 2015.
+
+\bibitem{Richards:2010:ADB:1809028.1806598}
+G.~Richards, S.~Lebresne, B.~Burg, and J.~Vitek.
+\newblock An analysis of the dynamic behavior of javascript programs.
+\newblock {\em SIGPLAN Not.}, 45(6):1--12, June 2010.
+
+\bibitem{Spishak:2012:TSR:2318202.2318207}
+E.~Spishak, W.~Dietl, and M.~D. Ernst.
+\newblock A type system for regular expressions.
+\newblock In {\em Proceedings of the 14th Workshop on Formal Techniques for
+  Java-like Programs}, FTfJP '12, pages 20--26, New York, NY, USA, 2012. ACM.
+
+\bibitem{Tillmann:2014:TAT:2642937.2642941}
+N.~Tillmann, J.~de~Halleux, and T.~Xie.
+\newblock Transferring an automated test generation tool to practice: From pex
+  to fakes and code digger.
+\newblock In {\em Proceedings of the 29th ACM/IEEE International Conference on
+  Automated Software Engineering}, ASE '14, pages 385--396, New York, NY, USA,
+  2014. ACM.
+
+\bibitem{Trinh:2014:SSS:2660267.2660372}
+M.-T. Trinh, D.-H. Chu, and J.~Jaffar.
+\newblock S3: A symbolic string solver for vulnerability detection in web
+  applications.
+\newblock In {\em Proceedings of the 2014 ACM SIGSAC Conference on Computer and
+  Communications Security}, CCS '14, pages 1232--1243, New York, NY, USA, 2014.
+  ACM.
+
+\bibitem{rex}
+M.~Veanes, P.~d. Halleux, and N.~Tillmann.
+\newblock Rex: Symbolic regular expression explorer.
+\newblock In {\em Proceedings of the 2010 Third International Conference on
+  Software Testing, Verification and Validation}, ICST '10, pages 498--507,
+  Washington, DC, USA, 2010. IEEE Computer Society.
+
+\bibitem{cacm10}
+W.~Weimer, S.~Forrest, C.~{Le Goues}, and T.~Nguyen.
+\newblock Automatic program repair with evolutionary computation.
+\newblock {\em Communications of the ACM Research Highlight}, 53(5):109--116,
+  May 2010.
+
+\bibitem{Yeole:2011:ADT:1980022.1980229}
+A.~S. Yeole and B.~B. Meshram.
+\newblock Analysis of different technique for detection of sql injection.
+\newblock In {\em Proceedings of the International Conference \&\#38; Workshop
+  on Emerging Trends in Technology}, ICWET '11, pages 963--966, New York, NY,
+  USA, 2011. ACM.
+
+\end{thebibliography}

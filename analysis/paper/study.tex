@@ -1,4 +1,3 @@
-%\vspace{-5pt}
 \section{Study}
 \label{sec:study}
 
@@ -9,7 +8,7 @@ Within a source code file, a {utilization} is composed of a function, a pattern,
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\columnwidth]{../illustrations/exampleUsage.eps}
+\includegraphics[width=\columnwidth]{nontex/exampleUsage.eps}
 \vspace{-12pt}
 \caption{Example of one regex utilization}
 \vspace{-6pt}
@@ -35,7 +34,6 @@ We designed and deployed a survey about when, why, and how often they use regula
 
 We explore invocations of  the {\tt re} module in \DTLfetch{data}{key}{nProjScanned}{value} Python projects scraped from GitHub.\\
 
-
 \noindent \textbf{RQ3:} Which regular expression language features are most commonly used in Python?
 
 We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Table~\ref{table:featureStats} with examples. We then map the feature coverage for four common regex support tools, brics, hampi, RE2 and Rex, and explore survey responses regarding feature usage for some of the less supported features.\\
@@ -45,32 +43,20 @@ We consider regex language features to be tokens that specify the matching behav
 As this is a first step in understanding behavioral overlap in
 regexes, we measure similarity between pairs of regexes by overlap in matching strings. For each regex, matching strings are generated and then  evaluated against each other regex to compute pairwise similarity. Then we use clustering to form behaviorally similar groupings.
 
-
-%\noindent \textbf{RQ5:} What is the impact of \emph{not} supporting various regular expression features on tool users and designers?
-%
-%We use semantic analysis to illustrate the impact of missing features on a tool's applicability by identifying what each feature (or group of features) is commonly used for. \\
-
-%Next, we describe our survey, how the corpus of regex patterns was built, how features were analyzed, and how the clustering was performed.
-
 \subsection{Survey Design and Implementation}
 \label{study:survey}
 To understand the context of when and how programmers use regular expressions,
-we designed a survey, implemented using Google Forms, with 40 questions. The questions asked about regex usage frequency, languages, purposes, pain points, and the use of various language 
-features.\footnote{survey link removed for anonymity}%\url{https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf}}  
+we designed a survey, implemented using Google Forms, with 40 questions. The questions asked about regex usage frequency, languages, purposes, pain points, and the use of various language
+features.\footnote{\url{https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf}}
 Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
 
 Our goal was to understand the practices of professional developers. Thus, we deployed the survey to 22 professional developers at  a small software company that provides tools for online and mobile payment management. While this sample comes from a single company, we note anecdotally that the company is a start-up and most of the developers worked previously for other software companies, and thus bring their past experiences with them. Surveyed developers have nine years of experience, on average, indicating the results may generalize beyond a single, small software company, but further study is needed.
-
-
-%The questions asked about regex usage frequency, languages, purposes, and the use of various language features, as explored in Section~\ref{rq1:survey} and Section~\ref{results:rq3}.
-%\todoMid{More details on survey design}
-
 
 \subsection{Regex Corpus}
 \label{study:corpus}
 Our goal was to collect regexes from a variety of projects to represent the breadth of how developers use the language features.
 Using the GitHub API, we scraped \DTLfetch{data}{key}{nProjScanned}{value}  projects containing Python code.
-We did so  by dividing a range of about 8 million repo IDs 
+We did so  by dividing a range of about 8 million repo IDs
 into 32 sections of equal size and scanning  for Python projects from the beginning of those
 segments until we ran out of memory. At that point, we felt we had enough data
 to do an analysis without further perfecting our mining techniques. We built
@@ -80,8 +66,6 @@ most recent version of a project, but to be more thorough, we also scanned up
 to 19 earlier versions. The number 20 was chosen to try and maximize returns on
 computing resources invested after observing the scanning process in many hours
 of trial scans.
-% If the project had fewer than 20 commits, then all commits were scanned.
-% The most recent commit was always included, and the spacing between all other chosen commits was determined by dividing the remaining number of commits by 19 (rounding as needed).
 All regex utilizations were obtained, sans duplicates. Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In the end, we observed and recorded \DTLfetch{data}{key}{nUsages}{value} non-duplicate regex utilizations in \DTLfetch{data}{key}{nProjScanned}{value} projects.
 
 In collecting the set of distinct patterns for analysis,  we ignore the \DTLfetch{data}{key}{percentBadFlags}{value}\%  of utilizations using flags, which can alter regex behavior.  An additional \DTLfetch{data}{key}{percentInvalidPattern}{value}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable).
@@ -96,33 +80,28 @@ For each escaped pattern, the PCRE-parser produces a tree of feature tokens, whi
 
 \begin{figure}[tb]
 \centering
-\includegraphics[height=0.6in]{../illustrations/featureParsing.eps}
+\includegraphics[height=0.6in]{nontex/featureParsing.eps}
 \caption{Two patterns parsed into feature vectors}
 \label{fig:featureParsing}
 \vspace{-12pt}
 \end{figure}
 
-Once all patterns were transformed into vectors, we examined each feature independently for all patterns, tracking the number of patterns and  projects that the each feature appears in at least once.  
-
-
-
+Once all patterns were transformed into vectors, we examined each feature independently for all patterns, tracking the number of patterns and  projects that the each feature appears in at least once.
 
 \subsection{Clustering and Behavioral Similarity}
 An ideal analysis of regex behavioral similarity would use subsumption or containment analysis. However, we struggled to find a tool that could facilitate such an analysis. Further, regular expressions in code libraries (e.g., for Python, Java) are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences, make the libraries more expressive than regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt ([a-z]+)\verb!\!1}. However, building an automaton to recognize such a pattern and to facilitate containment analysis, is infeasible.
 For these reasons, we developed a similarity analysis based on string matching.
 
-
 \begin{figure}[tb]
 \centering
-\includegraphics[height=0.6in]{../illustrations/minimalMatrix.eps}
+\includegraphics[height=0.6in]{nontex/minimalMatrix.eps}
 \caption{A similarity matrix created by counting strings matched}
 \label{fig:minimalMatrix}
 \end{figure}
 
-
 \begin{figure}[tb]
 \centering
-\includegraphics[width=0.7\columnwidth]{../illustrations/matrixToGraph.eps}
+\includegraphics[width=0.7\columnwidth]{nontex/matrixToGraph.eps}
 \vspace{-6pt}
 \caption{Creating a similarity graph from a similarity matrix}
 \vspace{-6pt}
@@ -141,21 +120,12 @@ Once the similarity matrix is built, the values of cells reflected across the di
 This facilitates clustering using the  Markov Clustering (MCL) algorithm\footnote{\url{http://micans.org/mcl/}}.
 We chose MCL  because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
 
-
 In the implementation, strings are generated for each pattern using Rex~\cite{rex}.  Rex generates matching strings by representing the regular expression as an automaton, and then passing that automation to a constraint solver that generates members for it\footnote{\url{http://research.microsoft.com/en-us/projects/rex/}}.  If the regex matches a finite set of strings smaller than 400, Rex will produce a list of all possible strings.
 Our goal is to generate 400 strings for each pattern to balance the runtime of the similarity analysis with the precision of the similarity calculations.
-
 
 For clustering, we prune the similarity matrix to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL.
 This threshold was selected based on recommendations in the MCL manual. The impact of lowering the threshold would likely result  in either the same number of more diverse clusters, or a larger number of clusters, but is unlikely to markedly change the largest clusters or their summaries, which are the focus of our analysis for RQ4 (Section~\ref{rq4:results}), but further study is needed to substantiate this claim.
 We also note that MCL can also be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
-After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.   The top 100 clusters are categorized by inspection into six categories of behavior. % (see Section~\ref{rq4:results}).
+After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.   The top 100 clusters are categorized by inspection into six categories of behavior.
 
 The end result is clusters and categories of highly behaviorally similar regular expressions, though we note that this approach has a tendency to over-approximate the similarity of two regexes. We measure similarity based on a finite set of generated strings, but some regexes  match an infinite set (e.g., \verb!ab*c!), so measuring similarity based on the first 400 strings may lead to an artificially high similarity value. To mitigate this threat, we chose a large number of generated strings for each regex, but future work includes exploring other approaches to computing regex similarity.
-
-
-%\todoNow{fix this before the ICSE deadline - after putting several days into this, I have a partial fix but the fact is there was information loss when going between the java program and the cs program and back again.  So it remains to be seen if it will be feasible to do non-automatic repairs.}
-%
-%
-%We note that there was an operational error in pulling patterns from our database prior to the similarity analysis and clustering, so that 224 patterns (2.3\%) of the 9,727 patterns were omitted. These were duplicate patterns that were quoted differently (for example \verb!`\W'! and \verb!"\W"!).  The result of this error is a slight underestimate in number of projects per pattern (and per cluster), and a slight over-estimate in the pattern, file and project statistics shown in Table~\ref{table:featureStats}.  We do not believe that this error affects our conclusions.
-
