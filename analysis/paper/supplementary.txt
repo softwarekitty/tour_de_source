@@ -1,0 +1,12 @@
+Hello,
+
+Here are the links removed from the submission:
+
+Survey: https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf
+
+GitHub repo: https://github.com/softwarekitty/tour_de_source
+
+Also, the company we surveyed was Dwolla, but I removed all named references to it since it's a small, Iowa-based startup that would impact anonymity. 
+
+Thanks!
+Katie 
