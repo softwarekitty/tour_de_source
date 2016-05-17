@@ -31,6 +31,7 @@
     \setlength\bigstrutjot{2pt}
 
 \begin{document}
+\toappear{}
 
 \title{Exploring  Regular Expression Usage and Context\\ in Python}
 
@@ -56,16 +57,32 @@ Kathryn T. Stolee\\
 Due to the popularity and pervasive use of regular expressions, researchers have created tools to support their creation, validation, and use. However, little is known about the context in which regular expressions are used, the features that are most common, and how behaviorally similar regular expressions are to one another.
 
 In this paper, we explore the context in which regular expressions are used through a combination of developer surveys and repository analysis.
-We survey 18 professional developers from a small software company about their regular expression usage and pain points.
-Our results indicate that developers frequently use regular expressions in their programming practices, often composing regular expressions at least weekly.
+We survey 18 professional developers about their regular expression usage and pain points.
+%, showing 
+% that developers frequently use regular expressions in their programming practices.
 Then, we
-analyzed nearly 4,000 open source Python projects from GitHub and extracted nearly 14,000 unique regular expression patterns, focusing the analysis on how often features are used.
+analyze nearly 4,000 open source Python projects from GitHub and extract nearly 14,000 unique regular expression patterns.
 We  map the most common features used in regular expressions to those features supported by four major regex research efforts from industry and academia: brics, Hampi, RE2, and Rex.
 Using similarity analysis of regular expressions across projects,
 we identify six common behavioral clusters that describe how regular expressions are often used in practice.
 This is the first rigorous examination of regex usage and it provides empirical evidence to support design decisions by regex tool
-builders. It also points to areas of needed future work, such as refactoring regular expressions to increase refactoring understandability, support for migrating regexes between language, and context-specific tool support for common regexes usages.
+builders. It also points to areas of needed future work, such as refactoring regular expressions to increase regex understandability and context-specific tool support for common regexes usages.
 \end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10011007.10011006.10011072</concept_id>
+<concept_desc>Software and its engineering~Software libraries and repositories</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Software and its engineering~Software libraries and repositories}
+\printccsdesc
+
+\keywords{regular expressions, repository analysis, developer survey}
+
 
 \input{introduction}
 
