@@ -20,7 +20,7 @@ Within a source code file, a {utilization} is composed of a function, a pattern,
 Note that because the vast majority of regex features are shared across most general programming languages (e.g., Java, C, C\#, or Ruby), a Python {pattern} will (almost always) behave the same when used in other languages, whereas a utilization is not universal in the same way (i.e., it may not compile in other languages, even with small modifications to function and flag names).
 As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though it has an equivalent flag in Java.
 
-In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior. Next, we describe the research questions, data set collection and analysis.
+In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior. Next, we describe the research questions, data set collection, and analysis.
 
 \subsection{Research Questions}
 \label{sec:rqs}
@@ -51,7 +51,7 @@ we designed a survey, implemented using Google Forms, with 40 questions. The que
 features.\footnote{\url{https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf}}  Though exact usage frequency may be hard to recall, we mitigate this by asking for usage frequency in 15 specific contexts before asking for the overall usage frequency.
 Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
 
-Our goal was to understand the practices of professional developers. Thus, we deployed the survey to 22 professional developers at Dwolla (with permission from H.R.), a small software company that provides tools for online and mobile payment management. While this sample comes from a single company, we note anecdotally that the company is a start-up and most of the developers worked previously for other software companies, and thus bring their past experiences with them. Surveyed developers have nine years of experience, on average, indicating the results may generalize beyond a single, small software company, but further study is needed.
+Our goal was to understand the practices of professional developers. Thus, we deployed the survey to 22 professional developers at Dwolla, a small software company that provides tools for online and mobile payment management. While this sample comes from a single company, we note anecdotally that the company is a start-up and most of the developers worked previously for other software companies, thus bringing their past experiences with them. Surveyed developers have nine years of experience, on average, indicating the results may generalize beyond a single, small software company, but further study is needed.
 
 \subsection{Regex Corpus}
 \label{study:corpus}
@@ -82,13 +82,14 @@ For each escaped pattern, the PCRE-parser produces a tree of feature tokens, whi
 \includegraphics[height=0.6in]{nontex/featureParsing.eps}
 \caption{Two patterns parsed into feature vectors}
 \label{fig:featureParsing}
-\vspace{-12pt}
+%\vspace{-12pt}
 \end{figure}
 
-Once all patterns were transformed into vectors, we examined each feature independently for all patterns, tracking the number of patterns and  projects that the each feature appears in at least once.
+Once all patterns were transformed into vectors, we examined each feature individually for all patterns, tracking the number of patterns and  projects that the each feature appears in at least once.
 
+\newpage
 \subsection{Clustering and Behavioral Similarity}
-An ideal analysis of regex behavioral similarity would use subsumption or containment analysis. However, we struggled to find a tool that could facilitate such an analysis. Further, regular expressions in code libraries (e.g., for Python, Java) are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences, make the libraries more expressive than regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt ([a-z]+)\verb!\!1}. However, building an automaton to recognize such a pattern and to facilitate containment analysis, is infeasible.
+An ideal analysis of regex behavioral similarity would use subsumption or containment analysis. However, we struggled to find a tool that could facilitate such an analysis. Further, regular expressions in source code libraries  are often not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences (e.g., supported in Python, Java), make the libraries more expressive. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt ([a-z]+)\verb!\!1}. However, building an automaton to recognize such a pattern and  facilitate containment analysis, is infeasible.
 For these reasons, we developed a similarity analysis based on string matching.
 
 \begin{figure}[tb]
